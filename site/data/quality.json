@@ -1,0 +1,97 @@
+{
+ "source": "LMArena leaderboard-dataset (text/latest), CC-BY-4.0",
+ "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+ "note": "rank as published in the LMArena text leaderboard (it includes closed models); higher rating is better",
+ "models": {
+  "google/gemma-4-26B-A4B-it": {
+   "coding": {
+    "rating": 1446,
+    "rank": 107,
+    "votes": 1445,
+    "date": "2026-10-13"
+   },
+   "overall": {
+    "rating": 1434,
+    "rank": 90,
+    "votes": 6097,
+    "date": "2026-10-13"
+   },
+   "arena_name": "gemma-4-26b-a4b"
+  },
+  "google/gemma-4-31B-it": {
+   "coding": {
+    "rating": 1459,
+    "rank": 85,
+    "votes": 1417,
+    "date": "2026-10-13"
+   },
+   "overall": {
+    "rating": 1443,
+    "rank": 67,
+    "votes": 6145,
+    "date": "2026-10-13"
+   },
+   "arena_name": "gemma-4-31b"
+  },
+  "openai/gpt-oss-20b": {
+   "coding": {
+    "rating": 1307,
+    "rank": 253,
+    "votes": 2112,
+    "date": "2026-10-13"
+   },
+   "overall": {
+    "rating": 1287,
+    "rank": 259,
+    "votes": 10421,
+    "date": "2026-10-13"
+   },
+   "arena_name": "gpt-oss-20b"
+  },
+  "openai/gpt-oss-120b": {
+   "coding": {
+    "rating": 1379,
+    "rank": 191,
+    "votes": 6411,
+    "date": "2026-10-13"
+   },
+   "overall": {
+    "rating": 1365,
+    "rank": 191,
+    "votes": 30214,
+    "date": "2026-10-13"
+   },
+   "arena_name": "gpt-oss-120b"
+  },
+  "zai-org/GLM-4.5-Air": {
+   "coding": {
+    "rating": 1397,
+    "rank": 176,
+    "votes": 6100,
+    "date": "2026-10-13"
+   },
+   "overall": {
+    "rating": 1384,
+    "rank": 170,
+    "votes": 30658,
+    "date": "2026-10-13"
+   },
+   "arena_name": "glm-4.5-air"
+  },
+  "mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
+   "coding": {
+    "rating": 1362,
+    "rank": 215,
+    "votes": 3338,
+    "date": "2026-10-13"
+   },
+   "overall": {
+    "rating": 1338,
+    "rank": 217,
+    "votes": 17464,
+    "date": "2026-10-13"
+   },
+   "arena_name": "mistral-small-2506"
+  }
+ }
+}

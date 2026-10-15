@@ -46,7 +46,7 @@ code{font-family:var(--mono);font-size:.88em;background:var(--code);border:1px s
 .lbl,label.f{display:flex;flex-direction:column;gap:6px;font-size:.78rem;font-weight:550;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
 .lbl .t{font-size:.78rem}
 [hidden]{display:none!important}
-select,input[type=number],input[type=text],input:not([type]),textarea{font:inherit;font-size:.95rem;text-transform:none;letter-spacing:0;font-weight:450;background:var(--card2);color:var(--fg);border:1px solid var(--bd);border-radius:10px;padding:10px 12px;width:100%;transition:border-color .15s,box-shadow .15s}
+select,input[type=number],input[type=text],input[type=search],input:not([type]),textarea{font:inherit;font-size:.95rem;text-transform:none;letter-spacing:0;font-weight:450;background:var(--card2);color:var(--fg);border:1px solid var(--bd);border-radius:10px;padding:10px 12px;width:100%;transition:border-color .15s,box-shadow .15s}
 select{appearance:none;-webkit-appearance:none;padding-right:34px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%239ba3b4' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
 select:hover,input:hover,textarea:hover{border-color:var(--bd2)}
 select:focus,input:focus,textarea:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px var(--glow)}
@@ -119,3 +119,14 @@ footer.site p{max-width:34em;margin:8px 0 0}
 @media(max-width:600px){.hero{padding:40px 0 16px}.card{padding:16px}.tps{margin-left:0;text-align:left;width:100%;order:3}.tps b{font-size:1.4rem}}
 pre{margin:0;padding:12px 14px;background:var(--code);border:1px solid var(--bd);border-radius:12px;overflow-x:auto;font:.82rem/1.55 var(--mono);white-space:pre-wrap;word-break:break-word}.code pre{border:0;border-radius:0}
 .seg,.seg .opt{text-transform:none;letter-spacing:0}.seg.small{grid-template-columns:repeat(auto-fit,minmax(64px,1fr))}
+/* sort & filter bar */
+.viewbar .vb-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;margin-bottom:12px}.viewbar h2{margin:0;font-size:1.05rem}.viewbar .vb-top p{margin:0}
+.viewbar .vb-fields{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.viewbar input[type=search]{min-height:44px}.viewbar input[type=range]{width:100%;min-height:44px;accent-color:var(--acc)}
+.viewbar .dirbtn{min-height:44px;justify-content:center;width:100%}
+.viewbar .vb-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.viewbar .vb-actions .btn{padding:9px 16px;min-height:40px}
+.viewbar output{color:var(--fg);text-transform:none;letter-spacing:0}
+.q-line{margin:2px 0 0;font-size:.85rem}
+.tw th button.sortbtn{all:unset;cursor:pointer;font:inherit;color:inherit;display:inline-flex;gap:4px;align-items:center}.tw th button.sortbtn:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:4px}
+.tw th[aria-sort=ascending] button::after{content:"\25B2";font-size:.7em}.tw th[aria-sort=descending] button::after{content:"\25BC";font-size:.7em}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}

@@ -155,6 +155,55 @@
     return e ? Math.min(cal.clamp[1], Math.max(cal.clamp[0], e.efficiency)) : null;
   }
 
+  // ---- sort / filter helpers (pure; used by the page and by tests) ----
+  const CTX_STEPS = [4096, 8192, 16384, 32768, 65536, 131072, 262144];
+  function familyOf(m) {
+    const id = m.id.toLowerCase();
+    if (/gemma/.test(id)) return "Gemma"; if (/qwen/.test(id)) return "Qwen"; if (/gpt-oss/.test(id)) return "gpt-oss";
+    if (/mistral/.test(id)) return "Mistral"; if (/glm/.test(id)) return "GLM"; if (/llama/.test(id)) return "Llama";
+    const o = m.id.split("/")[0]; return o.charAt(0).toUpperCase() + o.slice(1);
+  }
+  // Largest standard context size (4k..256k, capped at the model's maximum) whose KV cache still fits next to the weights
+  // in the same placement (GPU pool, or GPU pool + system RAM when offloading). 0 = does not fit even at 4k.
+  function maxCtx(p, hwr, kvq) {
+    const cap = hwr.cpuOnly ? hwr.ramAvail : hwr.pool + (p.mode === "gpu" || !hwr.discrete ? 0 : hwr.ramAvail);
+    let best = 0;
+    for (const c of CTX_STEPS) { if (c > p.model.context_max) break; if (p.weightsGB + kvGB(p.model, c, kvq) <= cap) best = c; }
+    return best;
+  }
+  function qualityOf(Q, m, use) {
+    const e = Q && Q.models && Q.models[m.id]; if (!e) return null;
+    const c = use === "coding" && e.coding ? e.coding : e.overall; if (!c) return null;
+    return { rating: c.rating, rank: c.rank, category: c === e.coding ? "coding" : "overall", votes: c.votes, date: c.date };
+  }
+  const PERMISSIVE = /^(apache|mit|bsd|isc|unlicense)/i;
+  const SORTS = { rec: "Recommended", tps: "Tokens/sec", size: "Model size", quality: "Quality (LMArena)", ctx: "Context that fits", name: "Name" };
+  const NATURAL_DIR = { rec: "desc", tps: "desc", size: "desc", quality: "desc", ctx: "desc", name: "asc" };
+  const DEFAULT_VIEW = { sort: "rec", dir: "desc", q: "", src: "all", fit: "all", lic: "all", fam: "all", min: 0 };
+  function viewActive(v) { return v.q !== "" || v.src !== "all" || v.fit !== "all" || v.lic !== "all" || v.fam !== "all" || +v.min > 0; }
+  function passes(p, v) {
+    const si = speedInfo(p).short;
+    if (v.q && !(p.model.name + " " + p.quantLabel + " " + p.family + " " + p.model.id).toLowerCase().includes(v.q.trim().toLowerCase())) return false;
+    if (v.src === "measured" && si !== "measured") return false;
+    if (v.src === "measured+scaled" && si === "estimated") return false;
+    if (v.fit === "gpu" && p.mode !== "gpu") return false;
+    if (v.fit === "offload" && p.mode === "gpu") return false;
+    if (v.lic === "permissive" && !PERMISSIVE.test(p.model.license || "")) return false;
+    if (v.fam !== "all" && p.family !== v.fam) return false;
+    if (+v.min > 0 && !(p.tps != null && p.tps >= +v.min)) return false;
+    return true;
+  }
+  // Returns filtered + sorted copy. Items missing the sort value (no tps / no LMArena rating) always go last.
+  function applyView(results, v) {
+    const key = { tps: p => p.tps, size: p => p.model.params_b, quality: p => p.quality && p.quality.rating, ctx: p => p.maxCtx, name: p => p.model.name.toLowerCase() }[v.sort];
+    const sgn = v.dir === "asc" ? 1 : -1, rows = results.filter(p => passes(p, v));
+    if (v.sort === "rec" || !key) return v.dir === "asc" ? rows.slice().reverse() : rows;
+    return rows.map((p, i) => ({ p, i, k: key(p) })).sort((a, b) => {
+      const an = a.k == null, bn = b.k == null; if (an || bn) return an === bn ? a.i - b.i : an ? 1 : -1;
+      const c = a.k < b.k ? -1 : a.k > b.k ? 1 : 0; return c ? c * sgn : a.i - b.i;
+    }).map(x => x.p);
+  }
+
   function recommend(input, data, opts) {
     const hw = data.hardware, A = hw.assumptions;
     const hwr = resolveHardware(input, hw);
@@ -168,6 +217,7 @@
     const out = [];
     for (const m of data.models.models) {
       if (opts.use === "vision" && !m.vision) continue;
+      // opts.use === "all": no use-case filter
       if (opts.use === "coding" && !m.tags.includes("coding")) continue;
       if (opts.use === "chat" && !(m.tags.includes("chat") || m.tags.includes("coding"))) continue;
       if (opts.ctx > m.context_max) continue;
@@ -178,6 +228,8 @@
       p.rank = (p.usable ? 1000 : 0) + (p.comfortable ? 500 : 0) + (p.mode === "gpu" ? 200 : 0) + capacity(m) * 3 +
                (opts.use === "coding" && m.tags.length === 1 && m.tags[0] === "coding" ? 15 : 0);
       p.command = command(p, opts, hwr);
+      p.family = familyOf(m); p.maxCtx = maxCtx(p, hwr, opts.kvq);
+      p.quality = qualityOf(data.quality, m, opts.use);
       out.push(p);
     }
     out.sort((a, b) => b.rank - a.rank);
@@ -195,6 +247,6 @@
     return { cls: "est", short: "scaled from measured", text: "scaled from measured ~" + v + " tok/s",
       detail: "Not measured directly: scaled by bytes read from a measurement of " + how + " (" + runs + "). Treat as an estimate." };
   }
-  const api = { speedInfo, makeLookup, calibratedEff, kvGB, resolveHardware, recommend, command, plan };
+  const api = { applyView, viewActive, familyOf, maxCtx, SORTS, NATURAL_DIR, DEFAULT_VIEW, CTX_STEPS, speedInfo, makeLookup, calibratedEff, kvGB, resolveHardware, recommend, command, plan };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else root.Advisor = api;
 })(typeof window !== "undefined" ? window : globalThis);

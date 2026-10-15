@@ -52,4 +52,21 @@ assert(Sub.issueUrl({ github_issue: { repo: "me/repo" } }, v.clean).startsWith("
   const m6 = A.recommend({ kind: "apple", device: "m6", memory_gb: 16, ram_gb: 32, ram_type: "ddr5-5600" }, data, { use: "chat", ctx: 4096, kvq: "f16" }).hwr, m6b = A.recommend({ kind: "apple", device: "m6", memory_gb: 32, ram_gb: 32, ram_type: "ddr5-5600" }, data, { use: "chat", ctx: 4096, kvq: "f16" }).hwr;
   assert.strictEqual(m6.gpuBw, 153); assert.strictEqual(m6b.gpuBw, 170);
 }
+// 5. sort / filter (applyView)
+{
+  const dq = { ...data, quality: rd("quality.json") };
+  const r = A.recommend({ kind: "gpu", device: "rtx-5090", count: 1, ram_gb: 64, ram_type: "ddr5-5600" }, dq, { use: "all", ctx: 16384, kvq: "f16" }).results;
+  const V = o => ({ ...A.DEFAULT_VIEW, ...o });
+  assert(r.length > 8 && A.applyView(r, V({})).length === r.length, "default view keeps every model");
+  const by = A.applyView(r, V({ sort: "tps" })); assert(by.every((p, i) => !i || by[i - 1].tps >= p.tps));
+  assert.deepStrictEqual(A.applyView(r, V({ sort: "tps", dir: "asc" })).map(p => p.model.id), by.map(p => p.model.id).reverse());
+  const ql = A.applyView(r, V({ sort: "quality", dir: "asc" })); const firstNull = ql.findIndex(p => !p.quality); assert(firstNull < 0 || ql.slice(firstNull).every(p => !p.quality), "unrated last even ascending");
+  assert(A.applyView(r, V({ src: "measured" })).every(p => A.speedInfo(p).short === "measured"));
+  assert(A.applyView(r, V({ src: "measured+scaled" })).every(p => A.speedInfo(p).short !== "estimated"));
+  assert(A.applyView(r, V({ fit: "gpu" })).every(p => p.mode === "gpu") && A.applyView(r, V({ fit: "offload" })).every(p => p.mode !== "gpu"));
+  assert(A.applyView(r, V({ min: 100 })).every(p => p.tps >= 100)); assert(A.applyView(r, V({ q: "QWEN" })).every(p => /qwen/i.test(p.model.id)));
+  assert(r.every(p => p.maxCtx >= 16384), "everything shown fits the chosen context, so max context >= it"); assert(r.every(p => p.maxCtx <= p.model.context_max));
+  assert(r.filter(p => p.quality).every(p => p.quality.rank > 0 && p.quality.rating > 1000)); assert(!A.viewActive(A.DEFAULT_VIEW) && A.viewActive(V({ fam: "Qwen" })));
+  console.log("sort/filter ok on", r.length, "models;", r.filter(p => p.quality).length, "with LMArena rating");
+}
 console.log("ALL TESTS PASSED");
