@@ -1,0 +1,426 @@
+{
+ "generated": "2026-10-14",
+ "gpus": [
+  {
+   "id": "rtx-3060-12",
+   "name": "GeForce RTX 3060 12GB",
+   "vendor": "NVIDIA",
+   "vram_gb": 12,
+   "bandwidth_gbps": 360,
+   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-3060-12-gb.c3682",
+   "basis": "memory bus x data rate from TechPowerUp listing",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "rtx-3090",
+   "name": "GeForce RTX 3090",
+   "vendor": "NVIDIA",
+   "vram_gb": 24,
+   "bandwidth_gbps": 936,
+   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-3090.c3622",
+   "basis": "memory bus x data rate from TechPowerUp listing",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "rtx-4060",
+   "name": "GeForce RTX 4060",
+   "vendor": "NVIDIA",
+   "vram_gb": 8,
+   "bandwidth_gbps": 272,
+   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4060.c4107",
+   "basis": "memory bus x data rate from TechPowerUp listing",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "rtx-4060ti-16",
+   "name": "GeForce RTX 4060 Ti 16GB",
+   "vendor": "NVIDIA",
+   "vram_gb": 16,
+   "bandwidth_gbps": 288,
+   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4060-ti-16-gb.c4155",
+   "basis": "memory bus x data rate from TechPowerUp listing",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "rtx-4070",
+   "name": "GeForce RTX 4070 12GB",
+   "vendor": "NVIDIA",
+   "vram_gb": 12,
+   "bandwidth_gbps": 504,
+   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4070.c3924",
+   "basis": "memory bus x data rate from TechPowerUp listing",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "rtx-4090",
+   "name": "GeForce RTX 4090",
+   "vendor": "NVIDIA",
+   "vram_gb": 24,
+   "bandwidth_gbps": 1008,
+   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4090.c3889",
+   "basis": "memory bus x data rate from TechPowerUp listing",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "rtx-5070",
+   "name": "GeForce RTX 5070",
+   "vendor": "NVIDIA",
+   "vram_gb": 12,
+   "bandwidth_gbps": 672,
+   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5070.c4218",
+   "basis": "memory bus x data rate from TechPowerUp listing",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "rtx-5070ti",
+   "name": "GeForce RTX 5070 Ti",
+   "vendor": "NVIDIA",
+   "vram_gb": 16,
+   "bandwidth_gbps": 896,
+   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5070-ti.c4243",
+   "basis": "memory bus x data rate from TechPowerUp listing",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "rtx-5090",
+   "name": "GeForce RTX 5090",
+   "vendor": "NVIDIA",
+   "vram_gb": 32,
+   "bandwidth_gbps": 1792,
+   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216",
+   "basis": "memory bus x data rate from TechPowerUp listing",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "rx-7900xtx",
+   "name": "Radeon RX 7900 XTX",
+   "vendor": "AMD",
+   "vram_gb": 24,
+   "bandwidth_gbps": 960,
+   "source_url": "https://www.techpowerup.com/gpu-specs/radeon-rx-7900-xtx.c3941",
+   "basis": "memory bus x data rate from TechPowerUp listing",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "rtx-pro-6000",
+   "name": "RTX PRO 6000 Blackwell Workstation",
+   "vendor": "NVIDIA",
+   "vram_gb": 96,
+   "bandwidth_gbps": 1792,
+   "source_url": "https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell.c4272",
+   "basis": "memory bus x data rate from TechPowerUp listing",
+   "last_verified": "2026-10-14"
+  }
+ ],
+ "apple": [
+  {
+   "id": "m4",
+   "name": "Apple M4",
+   "bandwidth_gbps": 120,
+   "source_url": "https://en.wikipedia.org/wiki/Apple_M4",
+   "basis": "Wikipedia: 120 GB/s",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "m4-pro",
+   "name": "Apple M4 Pro",
+   "bandwidth_gbps": 273,
+   "source_url": "https://en.wikipedia.org/wiki/Apple_M4",
+   "basis": "Wikipedia: 273 GB/s",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "m4-max-32",
+   "name": "Apple M4 Max (32-core GPU)",
+   "bandwidth_gbps": 410,
+   "source_url": "https://support.apple.com/en-us/122211",
+   "basis": "Apple tech specs: 410 GB/s",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "m4-max-40",
+   "name": "Apple M4 Max (40-core GPU)",
+   "bandwidth_gbps": 546,
+   "source_url": "https://support.apple.com/en-us/122211",
+   "basis": "Apple tech specs: 546 GB/s",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "m3-ultra",
+   "name": "Apple M3 Ultra",
+   "bandwidth_gbps": 819,
+   "source_url": "https://support.apple.com/en-us/122211",
+   "basis": "Apple tech specs: 819 GB/s",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "m5",
+   "name": "Apple M5",
+   "bandwidth_gbps": 153.6,
+   "source_url": "https://en.wikipedia.org/wiki/Apple_M5",
+   "basis": "Wikipedia: theoretical 153.6 GB/s",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "m5-pro",
+   "name": "Apple M5 Pro",
+   "bandwidth_gbps": 307,
+   "source_url": "https://en.wikipedia.org/wiki/Apple_M5",
+   "basis": "Wikipedia: up to 307 GB/s",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "m5-max-32",
+   "name": "Apple M5 Max (32-core GPU)",
+   "bandwidth_gbps": 460,
+   "source_url": "https://en.wikipedia.org/wiki/Apple_M5",
+   "basis": "Wikipedia: 460 GB/s",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "m5-max-40",
+   "name": "Apple M5 Max (40-core GPU)",
+   "bandwidth_gbps": 614,
+   "source_url": "https://en.wikipedia.org/wiki/Apple_M5",
+   "basis": "Wikipedia: 614 GB/s",
+   "last_verified": "2026-10-14"
+  }
+ ],
+ "unified": [
+  {
+   "id": "strix-halo",
+   "name": "AMD Ryzen AI Max+ 395 (Strix Halo)",
+   "bandwidth_gbps": 256,
+   "memory_options_gb": [
+    128
+   ],
+   "source_url": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-max-plus-395.html",
+   "basis": "AMD page: 256-bit LPDDR5x-8000, max 128 GB; 256 bit x 8000 MT/s = 256 GB/s (computed)",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "dgx-spark",
+   "name": "NVIDIA DGX Spark",
+   "bandwidth_gbps": 273,
+   "memory_options_gb": [
+    128
+   ],
+   "source_url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+   "basis": "NVIDIA page: 273 GB/s, 128 GB unified",
+   "last_verified": "2026-10-14"
+  }
+ ],
+ "ram_types": [
+  {
+   "id": "ddr4-3200",
+   "name": "DDR4-3200 dual channel",
+   "bandwidth_gbps": 51.2,
+   "basis": "computed: 2 x 64-bit x 3200 MT/s (theoretical)"
+  },
+  {
+   "id": "ddr5-5600",
+   "name": "DDR5-5600 dual channel",
+   "bandwidth_gbps": 89.6,
+   "basis": "computed: 2 x 64-bit x 5600 MT/s (theoretical)"
+  },
+  {
+   "id": "ddr5-6400",
+   "name": "DDR5-6400 dual channel",
+   "bandwidth_gbps": 102.4,
+   "basis": "computed: 2 x 64-bit x 6400 MT/s (theoretical)"
+  }
+ ],
+ "assumptions": {
+  "_note": "ASSUMPTIONS, not verified specs. Editable; shown in the UI.",
+  "gpu_overhead_gb": 1.0,
+  "os_reserve_ram_gb": 8,
+  "unified_usable_fraction": {
+   "apple": 0.7,
+   "unified": 0.85
+  },
+  "expert_weight_fraction_moe": 0.9,
+  "speed_efficiency": 0.55,
+  "cpu_speed_efficiency": 0.6,
+  "min_usable_tps": 5,
+  "comfortable_tps": 15
+ },
+ "targets": [
+  {
+   "slug": "rtx-3090-24gb",
+   "title": "RTX 3090 24GB",
+   "kind": "gpu",
+   "device": "rtx-3090",
+   "count": 1,
+   "memory_gb": null,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "rtx-4090-24gb",
+   "title": "RTX 4090 24GB",
+   "kind": "gpu",
+   "device": "rtx-4090",
+   "count": 1,
+   "memory_gb": null,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "rtx-5090-32gb",
+   "title": "RTX 5090 32GB",
+   "kind": "gpu",
+   "device": "rtx-5090",
+   "count": 1,
+   "memory_gb": null,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "rtx-3060-12gb",
+   "title": "RTX 3060 12GB (32GB RAM)",
+   "kind": "gpu",
+   "device": "rtx-3060-12",
+   "count": 1,
+   "memory_gb": null,
+   "ram_gb": 32,
+   "ram_type": "ddr4-3200",
+   "note": ""
+  },
+  {
+   "slug": "rtx-4060-8gb",
+   "title": "8GB VRAM class (RTX 4060 8GB, 32GB RAM)",
+   "kind": "gpu",
+   "device": "rtx-4060",
+   "count": 1,
+   "memory_gb": null,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "rtx-4060ti-16gb",
+   "title": "16GB VRAM class (RTX 4060 Ti 16GB, 32GB RAM)",
+   "kind": "gpu",
+   "device": "rtx-4060ti-16",
+   "count": 1,
+   "memory_gb": null,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "rtx-5070-12gb",
+   "title": "RTX 5070 12GB",
+   "kind": "gpu",
+   "device": "rtx-5070",
+   "count": 1,
+   "memory_gb": null,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "rx-7900-xtx-24gb",
+   "title": "AMD RX 7900 XTX 24GB",
+   "kind": "gpu",
+   "device": "rx-7900xtx",
+   "count": 1,
+   "memory_gb": null,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "strix-halo-128gb",
+   "title": "AMD Ryzen AI Max+ 395 (Strix Halo) 128GB",
+   "kind": "unified",
+   "device": "strix-halo",
+   "count": 1,
+   "memory_gb": 128,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "dgx-spark-128gb",
+   "title": "NVIDIA DGX Spark 128GB",
+   "kind": "unified",
+   "device": "dgx-spark",
+   "count": 1,
+   "memory_gb": 128,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "mac-studio-m3-ultra-96gb",
+   "title": "Mac Studio M3 Ultra 96GB",
+   "kind": "apple",
+   "device": "m3-ultra",
+   "count": 1,
+   "memory_gb": 96,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "macbook-pro-m4-max-128gb",
+   "title": "MacBook Pro / Mac M4 Max 128GB (40-core GPU)",
+   "kind": "apple",
+   "device": "m4-max-40",
+   "count": 1,
+   "memory_gb": 128,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "mac-m4-16gb",
+   "title": "Mac mini / MacBook M4 16GB",
+   "kind": "apple",
+   "device": "m4",
+   "count": 1,
+   "memory_gb": 16,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "mac-m4-pro-64gb",
+   "title": "Mac mini / MacBook M4 Pro 64GB",
+   "kind": "apple",
+   "device": "m4-pro",
+   "count": 1,
+   "memory_gb": 64,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "dual-rtx-3090-48gb",
+   "title": "2x RTX 3090 (48GB total)",
+   "kind": "gpu",
+   "device": "rtx-3090",
+   "count": 2,
+   "memory_gb": null,
+   "ram_gb": 64,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "rtx-pro-6000-96gb",
+   "title": "RTX PRO 6000 96GB (bonus page)",
+   "kind": "gpu",
+   "device": "rtx-pro-6000",
+   "count": 1,
+   "memory_gb": null,
+   "ram_gb": 64,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  }
+ ],
+ "target_note": "Target list from research.md section 3 (judgment-based, not measured demand). Memory sizes of Mac configs are example configurations; verify before relying on them."
+}

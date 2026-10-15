@@ -1,0 +1,583 @@
+{
+ "generated": "2026-10-14",
+ "models": [
+  {
+   "id": "google/gemma-4-26B-A4B-it",
+   "name": "Gemma 4 26B-A4B",
+   "params_b": 25.81,
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true,
+   "license": "apache-2.0",
+   "context_max": 262144,
+   "kv": {
+    "layers": 30,
+    "full_layers": 5,
+    "full_kv_heads": 2,
+    "full_head_dim": 512,
+    "swa_layers": 25,
+    "swa_kv_heads": 8,
+    "swa_head_dim": 256,
+    "window": 1024
+   },
+   "gguf_repo": "unsloth/gemma-4-26B-A4B-it-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "UD-Q4_K_M",
+     "gb": 16.95
+    },
+    "Q5_K_M": {
+     "label": "UD-Q5_K_M",
+     "gb": 21.15
+    },
+    "Q6_K": {
+     "label": "UD-Q6_K",
+     "gb": 23.17
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 27.32
+    }
+   },
+   "source_url": "https://huggingface.co/google/gemma-4-26B-A4B-it",
+   "gguf_source_url": "https://huggingface.co/unsloth/gemma-4-26B-A4B-it-GGUF",
+   "last_verified": "2026-10-14",
+   "active_params_b": 3.8,
+   "active_source": "model card text on source_url"
+  },
+  {
+   "id": "google/gemma-4-31B-it",
+   "name": "Gemma 4 31B",
+   "params_b": 31.27,
+   "moe": false,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true,
+   "license": "apache-2.0",
+   "context_max": 262144,
+   "kv": {
+    "layers": 60,
+    "full_layers": 10,
+    "full_kv_heads": 4,
+    "full_head_dim": 512,
+    "swa_layers": 50,
+    "swa_kv_heads": 16,
+    "swa_head_dim": 256,
+    "window": 1024
+   },
+   "gguf_repo": "unsloth/gemma-4-31B-it-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 18.32
+    },
+    "Q5_K_M": {
+     "label": "Q5_K_M",
+     "gb": 21.66
+    },
+    "Q6_K": {
+     "label": "Q6_K",
+     "gb": 25.2
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 33.15
+    }
+   },
+   "source_url": "https://huggingface.co/google/gemma-4-31B-it",
+   "gguf_source_url": "https://huggingface.co/unsloth/gemma-4-31B-it-GGUF",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "google/gemma-4-12B-it",
+   "name": "Gemma 4 12B",
+   "params_b": 11.96,
+   "moe": false,
+   "tags": [
+    "chat"
+   ],
+   "vision": true,
+   "license": "apache-2.0",
+   "context_max": 262144,
+   "kv": {
+    "layers": 48,
+    "full_layers": 8,
+    "full_kv_heads": 1,
+    "full_head_dim": 512,
+    "swa_layers": 40,
+    "swa_kv_heads": 8,
+    "swa_head_dim": 256,
+    "window": 1024
+   },
+   "gguf_repo": "unsloth/gemma-4-12b-it-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 7.12
+    },
+    "Q5_K_M": {
+     "label": "Q5_K_M",
+     "gb": 8.41
+    },
+    "Q6_K": {
+     "label": "Q6_K",
+     "gb": 9.79
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 13.13
+    }
+   },
+   "source_url": "https://huggingface.co/google/gemma-4-12B-it",
+   "gguf_source_url": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "Qwen/Qwen3.6-27B",
+   "name": "Qwen3.6 27B",
+   "params_b": 27.78,
+   "moe": false,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true,
+   "license": "apache-2.0",
+   "context_max": 262144,
+   "kv": {
+    "layers": 64,
+    "full_layers": 16,
+    "full_kv_heads": 4,
+    "full_head_dim": 256
+   },
+   "gguf_repo": "unsloth/Qwen3.6-27B-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 16.82
+    },
+    "Q5_K_M": {
+     "label": "Q5_K_M",
+     "gb": 19.51
+    },
+    "Q6_K": {
+     "label": "Q6_K",
+     "gb": 22.52
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 28.6
+    }
+   },
+   "source_url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+   "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.6-27B-GGUF",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "Qwen/Qwen3.6-35B-A3B",
+   "name": "Qwen3.6 35B-A3B",
+   "params_b": 35.95,
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true,
+   "license": "apache-2.0",
+   "context_max": 262144,
+   "kv": {
+    "layers": 40,
+    "full_layers": 10,
+    "full_kv_heads": 2,
+    "full_head_dim": 256
+   },
+   "gguf_repo": "unsloth/Qwen3.6-35B-A3B-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "UD-Q4_K_M",
+     "gb": 22.13
+    },
+    "Q5_K_M": {
+     "label": "UD-Q5_K_M",
+     "gb": 26.46
+    },
+    "Q6_K": {
+     "label": "UD-Q6_K",
+     "gb": 29.31
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 36.9
+    }
+   },
+   "source_url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+   "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF",
+   "last_verified": "2026-10-14",
+   "active_params_b": 3,
+   "active_source": "model card text on source_url"
+  },
+  {
+   "id": "Qwen/Qwen3.5-9B",
+   "name": "Qwen3.5 9B",
+   "params_b": 9.65,
+   "moe": false,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true,
+   "license": "apache-2.0",
+   "context_max": 262144,
+   "kv": {
+    "layers": 32,
+    "full_layers": 8,
+    "full_kv_heads": 4,
+    "full_head_dim": 256
+   },
+   "gguf_repo": "unsloth/Qwen3.5-9B-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 5.68
+    },
+    "Q5_K_M": {
+     "label": "Q5_K_M",
+     "gb": 6.58
+    },
+    "Q6_K": {
+     "label": "Q6_K",
+     "gb": 7.46
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 9.53
+    }
+   },
+   "source_url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+   "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "Qwen/Qwen3.5-4B",
+   "name": "Qwen3.5 4B",
+   "params_b": 4.66,
+   "moe": false,
+   "tags": [
+    "chat"
+   ],
+   "vision": true,
+   "license": "apache-2.0",
+   "context_max": 262144,
+   "kv": {
+    "layers": 32,
+    "full_layers": 8,
+    "full_kv_heads": 4,
+    "full_head_dim": 256
+   },
+   "gguf_repo": "unsloth/Qwen3.5-4B-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 2.74
+    },
+    "Q5_K_M": {
+     "label": "Q5_K_M",
+     "gb": 3.14
+    },
+    "Q6_K": {
+     "label": "Q6_K",
+     "gb": 3.53
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 4.48
+    }
+   },
+   "source_url": "https://huggingface.co/Qwen/Qwen3.5-4B",
+   "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "openai/gpt-oss-20b",
+   "name": "gpt-oss 20B",
+   "params_b": 20.91,
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": false,
+   "license": "apache-2.0",
+   "context_max": 131072,
+   "kv": {
+    "layers": 24,
+    "full_layers": 12,
+    "full_kv_heads": 8,
+    "full_head_dim": 64,
+    "swa_layers": 12,
+    "swa_kv_heads": 8,
+    "swa_head_dim": 64,
+    "window": 128
+   },
+   "gguf_repo": "unsloth/gpt-oss-20b-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 11.62
+    },
+    "Q5_K_M": {
+     "label": "Q5_K_M",
+     "gb": 11.72
+    },
+    "Q6_K": {
+     "label": "Q6_K",
+     "gb": 12.04
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 12.11
+    }
+   },
+   "source_url": "https://huggingface.co/openai/gpt-oss-20b",
+   "gguf_source_url": "https://huggingface.co/unsloth/gpt-oss-20b-GGUF",
+   "last_verified": "2026-10-14",
+   "active_params_b": 3.6,
+   "active_source": "model card text on source_url"
+  },
+  {
+   "id": "openai/gpt-oss-120b",
+   "name": "gpt-oss 120B",
+   "params_b": 116.83,
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": false,
+   "license": "apache-2.0",
+   "context_max": 131072,
+   "kv": {
+    "layers": 36,
+    "full_layers": 18,
+    "full_kv_heads": 8,
+    "full_head_dim": 64,
+    "swa_layers": 18,
+    "swa_kv_heads": 8,
+    "swa_head_dim": 64,
+    "window": 128
+   },
+   "gguf_repo": "unsloth/gpt-oss-120b-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 62.77
+    },
+    "Q5_K_M": {
+     "label": "Q5_K_M",
+     "gb": 62.89
+    },
+    "Q6_K": {
+     "label": "Q6_K",
+     "gb": 63.28
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 63.39
+    }
+   },
+   "source_url": "https://huggingface.co/openai/gpt-oss-120b",
+   "gguf_source_url": "https://huggingface.co/unsloth/gpt-oss-120b-GGUF",
+   "last_verified": "2026-10-14",
+   "active_params_b": 5.1,
+   "active_source": "model card text on source_url"
+  },
+  {
+   "id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+   "name": "Qwen3-Coder 30B-A3B",
+   "params_b": 30.53,
+   "moe": true,
+   "tags": [
+    "coding"
+   ],
+   "vision": false,
+   "license": "apache-2.0",
+   "context_max": 262144,
+   "kv": {
+    "layers": 48,
+    "full_layers": 48,
+    "full_kv_heads": 4,
+    "full_head_dim": 128
+   },
+   "gguf_repo": "unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 18.56
+    },
+    "Q5_K_M": {
+     "label": "Q5_K_M",
+     "gb": 21.73
+    },
+    "Q6_K": {
+     "label": "Q6_K",
+     "gb": 25.09
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 32.48
+    }
+   },
+   "source_url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
+   "gguf_source_url": "https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
+   "last_verified": "2026-10-14",
+   "active_params_b": 3.3,
+   "active_source": "model card text on source_url"
+  },
+  {
+   "id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+   "name": "Mistral Small 3.2 24B",
+   "params_b": 24.01,
+   "moe": false,
+   "tags": [
+    "chat"
+   ],
+   "vision": true,
+   "license": "apache-2.0",
+   "context_max": 131072,
+   "kv": {
+    "layers": 40,
+    "full_layers": 40,
+    "full_kv_heads": 8,
+    "full_head_dim": 128
+   },
+   "gguf_repo": "unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 14.33
+    },
+    "Q5_K_M": {
+     "label": "Q5_K_M",
+     "gb": 16.76
+    },
+    "Q6_K": {
+     "label": "Q6_K",
+     "gb": 19.35
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 25.05
+    }
+   },
+   "source_url": "https://huggingface.co/mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+   "gguf_source_url": "https://huggingface.co/unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "Qwen/Qwen3-VL-8B-Instruct",
+   "name": "Qwen3-VL 8B",
+   "params_b": 8.77,
+   "moe": false,
+   "tags": [],
+   "vision": true,
+   "license": "apache-2.0",
+   "context_max": 262144,
+   "kv": {
+    "layers": 36,
+    "full_layers": 36,
+    "full_kv_heads": 8,
+    "full_head_dim": 128
+   },
+   "gguf_repo": "unsloth/Qwen3-VL-8B-Instruct-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 5.03
+    },
+    "Q5_K_M": {
+     "label": "Q5_K_M",
+     "gb": 5.85
+    },
+    "Q6_K": {
+     "label": "Q6_K",
+     "gb": 6.73
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 8.71
+    }
+   },
+   "source_url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+   "gguf_source_url": "https://huggingface.co/unsloth/Qwen3-VL-8B-Instruct-GGUF",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "zai-org/GLM-4.5-Air",
+   "name": "GLM-4.5-Air",
+   "params_b": 110.47,
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": false,
+   "license": "mit",
+   "context_max": 131072,
+   "kv": {
+    "layers": 46,
+    "full_layers": 46,
+    "full_kv_heads": 8,
+    "full_head_dim": 128
+   },
+   "gguf_repo": "unsloth/GLM-4.5-Air-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 72.98
+    },
+    "Q5_K_M": {
+     "label": "Q5_K_M",
+     "gb": 83.52
+    },
+    "Q6_K": {
+     "label": "Q6_K",
+     "gb": 99.01
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 117.46
+    }
+   },
+   "source_url": "https://huggingface.co/zai-org/GLM-4.5-Air",
+   "gguf_source_url": "https://huggingface.co/unsloth/GLM-4.5-Air-GGUF",
+   "last_verified": "2026-10-14",
+   "active_params_b": 12,
+   "active_source": "model card text on source_url"
+  }
+ ],
+ "changelog": [
+  {
+   "date": "2026-10-14",
+   "changes": [
+    "added Gemma 4 26B-A4B",
+    "added Gemma 4 31B",
+    "added Gemma 4 12B",
+    "added Qwen3.6 27B",
+    "added Qwen3.6 35B-A3B",
+    "added Qwen3.5 9B",
+    "added Qwen3.5 4B",
+    "added gpt-oss 20B",
+    "added gpt-oss 120B",
+    "added Qwen3-Coder 30B-A3B",
+    "added Mistral Small 3.2 24B",
+    "added Qwen3-VL 8B",
+    "added GLM-4.5-Air"
+   ]
+  }
+ ]
+}

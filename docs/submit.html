@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Submit your benchmark | Local LLM Advisor</title><meta name="description" content="Share a llama-bench result so others with the same hardware know what to expect.">
+<link rel="stylesheet" href="style.css"><style>.err{color:#ff7b7b;font-size:.78rem;min-height:1em}label.row{flex-direction:row;align-items:center;gap:8px}textarea{background:#0c0e12;color:var(--fg);border:1px solid var(--bd);border-radius:6px;padding:8px;font:inherit}.hp{position:absolute;left:-9999px}</style></head><body><div class="wrap">
+<header><p><a href="index.html">&larr; Local LLM Advisor</a></p><h1>Submit your benchmark</h1><p>Real numbers from real machines make the recommendations better. Submissions are shown as <b>unverified community data</b>, are never used to compute the estimates, and are reviewed before being published.</p></header>
+<div class="card"><p id="mode" class="mut"></p></div>
+<section class="card"><h2>1. Run llama-bench</h2>
+<pre>llama-bench -m /path/to/model.gguf -p 512 -n 128 -ngl 99 -fa 1 -r 3</pre>
+<p class="mut">Defaults: 512 prompt tokens (<code>pp512</code>), 128 generated tokens (<code>tg128</code>). Use <code>-ngl 99</code> for a model that fits fully on your GPU or unified memory; if you offload, say so in the notes. Get the build with <code>llama-bench --version</code>. Close other GPU-heavy apps first. Report the average (the first number before &plusmn;).</p></section>
+<form id="f" class="card" novalidate>
+ <label>Paste your llama-bench output (optional; fills in the numbers)<textarea id="paste" rows="5" placeholder="| model | size | params | backend | ngl | test | t/s |"></textarea></label><div id="parsed" class="mut"></div>
+ <label>Hardware<select id="hardware_id" name="hardware_id"></select><span class="err" id="e_hardware_id"></span></label>
+ <label>Hardware, if Other<input name="hardware_other" id="hardware_other" maxlength="120" placeholder="e.g. RTX 3080 10GB"><span class="err" id="e_hardware_other"></span></label>
+ <label>Memory (GB, optional: VRAM or unified memory)<input name="memory_gb" id="memory_gb" inputmode="decimal"><span class="err" id="e_memory_gb"></span></label>
+ <label>Model (name or GGUF file)<input name="model" id="model" maxlength="160" placeholder="gpt-oss-20b-mxfp4.gguf"><span class="err" id="e_model"></span></label>
+ <label>Quantization<select name="quant" id="quant"></select><span class="err" id="e_quant"></span></label>
+ <label>Quant name, if Other<input name="quant_other" id="quant_other" maxlength="24"><span class="err" id="e_quant_other"></span></label>
+ <label>Backend<select name="backend" id="backend"></select><span class="err" id="e_backend"></span></label>
+ <label>Prompt processing, tokens/s (pp)<input name="pp_tps" id="pp_tps" inputmode="decimal"><span class="err" id="e_pp_tps"></span></label>
+ <label>Prompt tokens tested (default 512)<input name="pp_n" id="pp_n" inputmode="numeric" placeholder="512"><span class="err" id="e_pp_n"></span></label>
+ <label>Generation, tokens/s (tg)<input name="tg_tps" id="tg_tps" inputmode="decimal"><span class="err" id="e_tg_tps"></span></label>
+ <label>Generated tokens tested (default 128)<input name="tg_n" id="tg_n" inputmode="numeric" placeholder="128"><span class="err" id="e_tg_n"></span></label>
+ <label>llama.cpp build<input name="build" id="build" placeholder="b6123 or commit hash"><span class="err" id="e_build"></span></label>
+ <label>Operating system<select name="os" id="os"></select><span class="err" id="e_os"></span></label>
+ <label>OS / driver detail (optional)<input name="os_detail" id="os_detail" maxlength="80" placeholder="Ubuntu 24.04, driver 570"><span class="err" id="e_os_detail"></span></label>
+ <label class="row"><input type="checkbox" id="flash_attn"> Flash attention enabled (<code>-fa 1</code>)</label>
+ <label>Notes (optional, max 500)<textarea name="notes" id="notes" rows="3" maxlength="500" placeholder="power limit, offloading, context depth, anything unusual"></textarea><span class="err" id="e_notes"></span></label>
+ <label>Contact (optional; never published; only to ask about an odd result)<input name="contact" id="contact" maxlength="80"><span class="err" id="e_contact"></span></label>
+ <div class="hp" aria-hidden="true"><label>Leave empty<input name="website" id="website" tabindex="-1" autocomplete="off"></label></div>
+ <label class="row"><input type="checkbox" id="consent"> I ran this myself and agree it may be published as unverified community data (CC0).</label><span class="err" id="e_consent"></span>
+ <div><button id="send" type="submit">Validate</button></div><div id="status"></div>
+</form><div id="out"></div>
+<footer>No benchmark is verified by us. Moderation: format and plausibility checks only. <a href="data-sources.html">Data sources</a></footer>
+</div><script src="submit.js"></script><script src="submit-ui.js"></script></body></html>
