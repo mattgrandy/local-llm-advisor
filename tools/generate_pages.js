@@ -10,42 +10,47 @@ const out = path.join(SITE, "hardware"); fs.mkdirSync(out, { recursive: true });
 const CTX = 16384, USES = [["coding", "Coding"], ["chat", "Chat / general"], ["vision", "Vision"]];
 const MODE = { gpu: "fits fully", "moe-offload": "MoE offload", "dense-offload": "partial offload", cpu: "CPU" };
 
+const L = require("./layout.js");
+const bcls = sh => sh === "measured" ? "measured" : sh === "estimated" ? "estimated" : "scaled";
+const ANAME = {};
 function page(t) {
   const input = { kind: t.kind, device: t.device, count: t.count, memory_gb: t.memory_gb, ram_gb: t.ram_gb, ram_type: t.ram_type };
-  let hwr, sections = "", best = null;
+  let hwr, sections = "";
   for (const [use, label] of USES) {
     const r = A.recommend(input, data, { use, ctx: CTX, kvq: "f16" }); hwr = r.hwr;
     const rows = r.results.slice(0, 5);
-    if (use === "chat") best = rows[0];
-    sections += `<section class="card"><h2>Best for ${label} (${CTX / 1024}k context)</h2>` + (rows.length ? `<table><tr><th>Model</th><th>Quant</th><th>Fit</th><th>Memory (GB)</th><th>tok/s (generation)</th></tr>` +
-      rows.map(p => `<tr><td><a href="${p.model.source_url}" rel="noopener">${esc(p.model.name)}</a></td><td>${esc(p.quantLabel)}</td><td>${MODE[p.mode]}</td><td>${(p.weightsGB + p.kvGB).toFixed(1)}</td><td title="${esc(A.speedInfo(p).detail)}">~${p.tps ? p.tps.toFixed(0) : "?"} <span class="badge ${A.speedInfo(p).cls}">${A.speedInfo(p).short}</span>${p.speed ? ` <a href="${p.speed.sources[0].url}" rel="noopener">src</a>` : ""}</td></tr>`).join("") + `</table>
-      <p class="mut">Top pick command:</p><pre>${esc(rows[0].command.llama)}</pre><pre>${esc(rows[0].command.ollama)}</pre>${rows[0].command.ollamaNote ? `<p class="mut">${esc(rows[0].command.ollamaNote)}</p>` : ""}`
-      : `<p>No model in the dataset fits this config for ${label.toLowerCase()} at this context.</p>`) + `</section>`;
+    sections += `<section class="card"><h2>Best for ${label} <span class="mut">&middot; ${CTX / 1024}k context</span></h2>` + (rows.length ? `<div class="tw"><table><thead><tr><th>Model</th><th>Quant</th><th>Fit</th><th>Memory</th><th>Speed (generation)</th></tr></thead><tbody>` +
+      rows.map(p => { const si = A.speedInfo(p); return `<tr><td><a href="${p.model.source_url}" rel="noopener">${esc(p.model.name)}</a></td><td class="num">${esc(p.quantLabel)}</td><td>${MODE[p.mode]}</td><td class="num">${(p.weightsGB + p.kvGB).toFixed(1)} GB</td><td title="${esc(si.detail)}"><b>~${p.tps ? p.tps.toFixed(0) : "?"}</b> tok/s <span class="badge ${bcls(si.short)}">${si.short}</span>${p.speed ? ` <a href="${p.speed.sources[0].url}" rel="noopener">src</a>` : ""}</td></tr>`; }).join("") + `</tbody></table></div>
+      <div class="cmd"><div class="code"><div class="top"><span>llama.cpp &middot; top pick</span><button class="copy" type="button" data-c="l-${use}">Copy</button></div><pre id="l-${use}">${esc(rows[0].command.llama)}</pre></div>
+      <div class="code"><div class="top"><span>ollama &middot; top pick</span><button class="copy" type="button" data-c="o-${use}">Copy</button></div><pre id="o-${use}">${esc(rows[0].command.ollama)}</pre></div></div>${rows[0].command.ollamaNote ? `<p class="mut">${esc(rows[0].command.ollamaNote)}</p>` : ""}`
+      : `<p class="mut">No model in the dataset fits this config for ${label.toLowerCase()} at this context.</p>`) + `</section>`;
   }
   const comm = ((data.measured && data.measured.community) || []).filter(c => c.hw_id === t.device);
-  if (comm.length) sections += `<section class="card"><h2>Community-submitted benchmarks <span class="badge est">unverified</span></h2><p class="mut">Format-reviewed only; not used in the numbers above.</p><table><tr><th>Model</th><th>Quant</th><th>Backend</th><th>pp tok/s</th><th>tg tok/s</th><th>Date</th></tr>${comm.map(c => `<tr><td>${esc(c.model)}</td><td>${esc(c.quant)}</td><td>${esc(c.backend)}</td><td>${c.pp_tps}</td><td>${c.tg_tps}</td><td>${esc(c.date || "")}</td></tr>`).join("")}</table></section>`;
+  if (comm.length) sections += `<section class="card"><h2>Community-submitted benchmarks <span class="badge est">unverified</span></h2><p class="mut">Format-reviewed only; not used in the numbers above.</p><div class="tw"><table><thead><tr><th>Model</th><th>Quant</th><th>Backend</th><th>pp tok/s</th><th>tg tok/s</th><th>Date</th></tr></thead><tbody>${comm.map(c => `<tr><td>${esc(c.model)}</td><td>${esc(c.quant)}</td><td>${esc(c.backend)}</td><td class="num">${c.pp_tps}</td><td class="num">${c.tg_tps}</td><td class="num">${esc(c.date || "")}</td></tr>`).join("")}</tbody></table></div></section>`;
   const nmeas = Object.values(data.measured ? (data.measured.entries[t.device] || []) : []).length;
   const q = new URLSearchParams({ kind: t.kind, device: t.device, count: t.count, mem: t.memory_gb || "", ram: t.ram_gb, ramt: t.ram_type });
   const title = `Best local LLMs for ${t.title}`;
   const desc = `Which local LLM runs on ${t.title}? Memory-fit math with KV cache, estimated speed and copy-paste llama.cpp / ollama commands. Last verified ${data.models.generated}.`;
-  const hwline = `${esc(hwr.name)}: ${hwr.pool.toFixed(1)} GB usable for model + KV cache, ${hwr.gpuBw} GB/s memory bandwidth` + (hwr.discrete && !hwr.cpuOnly ? `, ${hwr.ramAvail} GB RAM available for offload` : "") + ".";
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(title)} | Local LLM Advisor</title><meta name="description" content="${esc(desc)}"><link rel="stylesheet" href="../style.css"></head><body><div class="wrap">
-<header><p><a href="../index.html">&larr; Local LLM Advisor</a> &middot; <a href="index.html">all hardware</a></p><h1>${esc(title)}</h1><p>${hwline}</p></header>
-<div class="slot" data-slot="sponsor-top">PLACEHOLDER: sponsor slot (no sponsor yet, no link)</div>
+  const stats = `<div class="stats"><div class="stat"><b>${hwr.pool.toFixed(1)} GB</b><span>usable for model + KV cache</span></div><div class="stat"><b>${hwr.gpuBw} GB/s</b><span>memory bandwidth</span></div>${hwr.discrete && !hwr.cpuOnly ? `<div class="stat"><b>${hwr.ramAvail} GB</b><span>RAM available for offload</span></div>` : ""}<div class="stat"><b>${nmeas}</b><span>measured data point${nmeas === 1 ? "" : "s"} on file</span></div></div>`;
+  return L.head("../", `${title} | Local LLM Advisor`, desc) + L.nav("../", "hw") + `<main class="wrap">
+<header class="page-hero"><div class="crumbs"><a href="../index.html">Advisor</a> / <a href="index.html">Hardware</a> / ${esc(t.title)}</div><h1>${esc(title)}</h1><p>${esc(hwr.name)}. Memory-fit math with KV cache, speeds labelled by how they were obtained, and commands you can paste.</p></header>
+${stats}
+<div class="slot" data-slot="sponsor-top"><span>Sponsor slot. No sponsor yet and no link.</span></div>
 ${sections}
-<div class="slot" data-slot="affiliate-upgrade">PLACEHOLDER: affiliate "cheapest upgrade" box for ${esc(t.title)} (no affiliate links yet)</div>
-<p><a href="../index.html?${q}">Open the interactive advisor with this hardware</a> to change context length, KV cache type, RAM or use case.</p>
-<p class="mut">Speeds marked <span class="badge ok">measured</span> are medians of real runs (short-context generation) from <a href="../data-sources.html">these sources</a>; <span class="badge est">scaled from measured</span> means a measurement of a same-size or same-model-different-quant run, scaled by bytes read; <span class="badge est">estimated</span> comes from memory bandwidth (spec source: <a href="${hwr.source_url}" rel="noopener">${esc(hwr.source_url)}</a>)${hwr.eff ? ` &times; an efficiency factor of ${hwr.eff.toFixed(2)} ${esc(hwr.effSource)}` : ""}. ${nmeas ? nmeas + " measured data point" + (nmeas > 1 ? "s" : "") + " on file for this hardware" : "No measured data on file for this hardware yet"} &middot; <a href="../submit.html">submit your benchmark</a>. ${t.kind === "apple" || t.kind === "unified" ? "Memory size on this page is an example configuration; check what your machine has. " : "System RAM here is an example (" + t.ram_gb + " GB, " + t.ram_type + "). "}Model data last verified ${data.models.generated}. Ranking = fits and fast enough first, then larger; not a quality benchmark.</p>
-<footer>Page generated ${new Date().toISOString().slice(0, 10)} by tools/generate_pages.js</footer></div></body></html>`;
+<div class="slot" data-slot="affiliate-upgrade"><span>Affiliate box: &ldquo;cheapest upgrade&rdquo; for ${esc(t.title)}. No affiliate links yet.</span></div>
+<p><a class="btn" href="../index.html?${q}">Open the interactive advisor with this hardware &rarr;</a></p>
+<p class="mut">Speeds marked <span class="badge measured">measured</span> are medians of real runs (short-context generation) from <a href="../data-sources.html">these sources</a>; <span class="badge scaled">scaled from measured</span> means a measurement of a same-size or same-model-different-quant run, scaled by bytes read; <span class="badge estimated">estimated</span> comes from memory bandwidth (spec source: <a href="${hwr.source_url}" rel="noopener">${esc(hwr.source_url)}</a>)${hwr.eff ? ` &times; an efficiency factor of ${hwr.eff.toFixed(2)} ${esc(hwr.effSource)}` : ""}. ${nmeas ? nmeas + " measured data point" + (nmeas > 1 ? "s" : "") + " on file for this hardware" : "No measured data on file for this hardware yet"} &middot; <a href="../submit.html">submit your benchmark</a>. ${t.kind === "apple" || t.kind === "unified" ? "Memory size on this page is an example configuration; check what your machine has. " : "System RAM here is an example (" + t.ram_gb + " GB, " + t.ram_type + "). "}Model data last verified ${data.models.generated}. Ranking = fits and fast enough first, then larger; not a quality benchmark.</p>
+<p class="mut">Page generated ${new Date().toISOString().slice(0, 10)} by tools/generate_pages.js</p></main>` + L.footer("../");
 }
 
 const index = [];
+const KLABEL = { gpu: "Discrete GPU", apple: "Apple Silicon", unified: "Unified memory", cpu: "CPU" };
 for (const t of data.hardware.targets) {
   fs.writeFileSync(path.join(out, t.slug + ".html"), page(t));
-  index.push(`<li><a href="${t.slug}.html">${esc(t.title)}</a></li>`);
+  const hwr0 = A.recommend({ kind: t.kind, device: t.device, count: t.count, memory_gb: t.memory_gb, ram_gb: t.ram_gb, ram_type: t.ram_type }, data, { use: "chat", ctx: CTX, kvq: "f16" }).hwr;
+  index.push(`<a class="hw" style="animation-delay:${index.length * 35}ms" href="${t.slug}.html"><span class="ic">${L.ICON[t.kind] || L.ICON.gpu}</span><b>${esc(t.title)}</b><span class="badges"><span class="badge plain">${KLABEL[t.kind] || t.kind}</span><span class="badge plain">${hwr0.pool.toFixed(0)} GB usable</span><span class="badge plain">${hwr0.gpuBw} GB/s</span></span><span class="go">See recommendations &rarr;</span></a>`);
 }
-fs.writeFileSync(path.join(out, "index.html"), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Local LLM recommendations by hardware</title><link rel="stylesheet" href="../style.css"></head><body><div class="wrap"><p><a href="../index.html">&larr; Advisor</a></p><h1>Local LLM recommendations by hardware</h1><ul>${index.join("")}</ul></div></body></html>`);
+fs.writeFileSync(path.join(out, "index.html"), L.head("../", "Local LLM recommendations by hardware | Local LLM Advisor", "Best local LLMs for popular GPUs, Macs and unified-memory PCs, with memory-fit math and copy-paste commands.") + L.nav("../", "hw") + `<main class="wrap"><header class="page-hero"><div class="crumbs"><a href="../index.html">Advisor</a> / Hardware</div><h1>Local LLM recommendations by hardware</h1><p>${data.hardware.targets.length} popular setups, each with the best models for coding, chat and vision, and commands to run them.</p></header><div class="grid">${index.join("")}</div></main>` + L.footer("../"));
 if (process.env.SITE_URL) {
   const base = process.env.SITE_URL.replace(/\/$/, "");
   const urls = ["/index.html", "/hardware/index.html", ...data.hardware.targets.map(t => `/hardware/${t.slug}.html`)];
@@ -58,13 +63,15 @@ console.log("generated", data.hardware.targets.length, "pages in", out);
   const M = data.measured;
   if (M) {
     const rows = Object.entries(M.entries).map(([h, es]) => `<tr><td>${esc(h)}</td><td>${es.length}</td><td>${esc([...new Set(es.flatMap(e => e.sources.map(s => s.id)))].join(", "))}</td></tr>`).join("");
-    fs.writeFileSync(path.join(SITE, "data-sources.html"), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Data sources | Local LLM Advisor</title><link rel="stylesheet" href="style.css"></head><body><div class="wrap"><p><a href="index.html">&larr; Advisor</a></p><h1>Data sources &amp; attribution</h1>
-<p>Measured speeds come from public benchmark data, credited here. Data generated ${esc(M.generated)}. ${M.counts.rows_used} measured rows used; ${M.counts.points} (hardware, model, quant) data points across ${M.counts.hardware} hardware entries.</p>
-<ul>${M.attribution.map(a => `<li>${a.url ? `<a href="${a.url}" rel="noopener">${esc(a.name)}</a>` : esc(a.name)}</li>`).join("")}</ul>
-<p>LocalScore results are community-submitted averages published on localscore.ai (open-source project, Apache-2.0, by Mozilla Builders / Justine Tunney's llamafile team and cjpais). Only public pages were read, at a low request rate. This site is not affiliated with LocalScore or Mozilla.</p>
-<h2>How "measured" and "estimated" work</h2><p>${esc(M.calibration.method)} Global default efficiency before calibration: ${M.calibration.global_assumption}.</p>
-<table><tr><th>Hardware id</th><th>Data points</th><th>Sources</th></tr>${rows}</table>
-<h2>Community submissions</h2><p>${M.counts.community} reviewed submissions, always shown as unverified. <a href="submit.html">Submit yours</a>.</p></div></body></html>`);
+    fs.writeFileSync(path.join(SITE, "data-sources.html"), L.head("", "Data sources | Local LLM Advisor", "Where the measured benchmark data comes from, with attribution.") + L.nav("", "data") + `<main class="wrap"><header class="page-hero"><div class="crumbs"><a href="index.html">Advisor</a> / Data sources</div><h1>Data sources &amp; attribution</h1><p>Measured speeds come from public benchmark data, credited here. Data generated ${esc(M.generated)}.</p></header>
+<div class="stats"><div class="stat"><b>${M.counts.rows_used}</b><span>measured rows used</span></div><div class="stat"><b>${M.counts.points}</b><span>(hardware, model, quant) points</span></div><div class="stat"><b>${M.counts.hardware}</b><span>hardware entries</span></div><div class="stat"><b>${M.counts.community}</b><span>community submissions</span></div></div>
+<section class="card"><h2>Sources</h2><ul>${M.attribution.map(a => `<li>${a.url ? `<a href="${a.url}" rel="noopener">${esc(a.name)}</a>` : esc(a.name)}</li>`).join("")}</ul>
+<p class="mut">LocalScore results are community-submitted averages published on localscore.ai (open-source project, Apache-2.0, by Mozilla Builders / Justine Tunney's llamafile team and cjpais). Only public pages were read, at a low request rate. This site is not affiliated with LocalScore or Mozilla.</p></section>
+<section class="card"><h2>How &ldquo;measured&rdquo; and &ldquo;estimated&rdquo; work</h2><p class="mut">${esc(M.calibration.method)} Global default efficiency before calibration: ${M.calibration.global_assumption}.</p></section>
+<section class="card"><h2>Coverage by hardware</h2><div class="tw"><table><thead><tr><th>Hardware id</th><th>Data points</th><th>Sources</th></tr></thead><tbody>${rows}</tbody></table></div></section>
+<section class="card"><h2>Community submissions</h2><p class="mut">${M.counts.community} reviewed submissions, always shown as unverified. <a href="submit.html">Submit yours</a>.</p></section></main>` + L.footer(""));
+    fs.writeFileSync(path.join(SITE, "index.html"), L.head("", "Local LLM Advisor - which local LLM should you run on your hardware?", "Free tool: pick your GPU, Mac or RAM and get local LLM recommendations with memory-fit math (incl. KV cache), measured or estimated speed and copy-paste ollama / llama.cpp commands.") + L.nav("", "home") + fs.readFileSync(path.join(__dirname, "pages", "index.body.html"), "utf8") + L.footer("").replace(/<\/body><\/html>$/, "") + "</body></html>");
+    fs.writeFileSync(path.join(SITE, "submit.html"), L.head("", "Submit your benchmark | Local LLM Advisor", "Share a llama-bench result so others with the same hardware know what to expect.") + L.nav("", "submit") + fs.readFileSync(path.join(__dirname, "pages", "submit.body.html"), "utf8") + L.footer("").replace(/<\/body><\/html>$/, "") + "</body></html>");
   }
   if (process.env.SITE_URL) {
     const f = path.join(SITE, "sitemap.xml"), base = process.env.SITE_URL.replace(/\/$/, "");

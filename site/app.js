@@ -19,7 +19,22 @@
   }
   const esc = s => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
   const MODE = { gpu: "Fits fully in GPU/unified memory", "moe-offload": "MoE: experts partly on CPU (--n-cpu-moe)", "dense-offload": "Partial layer offload to CPU (slow)", cpu: "CPU only" };
+  // segmented controls: enhance <select data-seg> without changing the select's API
+  const segs = [];
+  document.querySelectorAll("select[data-seg]").forEach(sel => {
+    const wrap = document.createElement("div"); wrap.className = "seg" + (sel.dataset.seg === "small" ? " small" : ""); wrap.setAttribute("role", "radiogroup"); wrap.setAttribute("aria-label", sel.getAttribute("aria-label") || sel.id);
+    [...sel.options].forEach(op => {
+      const l = document.createElement("label"), r = document.createElement("input"); r.type = "radio"; r.name = "seg-" + sel.id; r.value = op.value;
+      r.onchange = () => { sel.value = r.value; sel.dispatchEvent(new Event("change")); };
+      const d = document.createElement("span"); d.className = "opt"; d.innerHTML = `<b>${esc(op.textContent)}</b>` + (op.dataset.sub ? `<small>${esc(op.dataset.sub)}</small>` : "");
+      l.append(r, d); wrap.append(l);
+    });
+    sel.hidden = true; sel.after(wrap);
+    segs.push(() => wrap.querySelectorAll("input").forEach(r => r.checked = r.value === sel.value));
+  });
+  const syncSegs = () => segs.forEach(f => f());
   function render() {
+    syncSegs();
     const k = $("kind").value;
     const input = { kind: k, device: $("device").value, count: +$("count").value, memory_gb: +$("mem").value,
                     ram_gb: +$("ram").value, ram_type: $("ramt").value };
@@ -31,24 +46,24 @@
       (hwr.eff ? ` Estimated speeds use an efficiency factor of ${hwr.eff.toFixed(2)}, ${esc(hwr.effSource)}.` : "");
     const comm = ((measured && measured.community) || []).filter(c => c.hw_id === input.device);
     $("community").innerHTML = comm.length ? `<section class="card"><h2>Community-submitted benchmarks <span class="badge est">unverified</span></h2>
-      <p class="mut">Reviewed for format only; not independently verified and never used in the estimates above.</p><table><tr><th>Model</th><th>Quant</th><th>Backend</th><th>pp tok/s</th><th>tg tok/s</th><th>llama.cpp build</th><th>Date</th></tr>` +
-      comm.map(c => `<tr><td>${esc(c.model)}</td><td>${esc(c.quant)}</td><td>${esc(c.backend)}</td><td>${c.pp_tps}</td><td>${c.tg_tps}</td><td>${esc(c.build || "")}</td><td>${esc(c.date || "")}</td></tr>`).join("") + `</table></section>` : "";
+      <p class="mut">Reviewed for format only; not independently verified and never used in the estimates above.</p><div class="tw"><table><tr><th>Model</th><th>Quant</th><th>Backend</th><th>pp tok/s</th><th>tg tok/s</th><th>llama.cpp build</th><th>Date</th></tr>` +
+      comm.map(c => `<tr><td>${esc(c.model)}</td><td>${esc(c.quant)}</td><td>${esc(c.backend)}</td><td>${c.pp_tps}</td><td>${c.tg_tps}</td><td>${esc(c.build || "")}</td><td>${esc(c.date || "")}</td></tr>`).join("") + `</table></div></section>` : "";
     if (!results.length) { $("results").innerHTML = `<div class="card">Nothing in the dataset fits this setup at ${o.ctx} context. Try a shorter context, q8_0 KV, or more memory.</div>`; return; }
+    const total = hwr.pool, ramTot = hwr.cpuOnly ? hwr.pool : (hwr.ramAvail || hwr.pool);
+    const meter = (label, used, cap, cls) => { const pct = cap > 0 ? Math.min(100, used / cap * 100) : 0; return `<div class="meter"><div class="row"><span>${label}</span><span><b>${used.toFixed(1)}</b> / ${cap.toFixed(0)} GB &middot; ${Math.round(pct)}%</span></div><div class="bar" role="img" aria-label="${label} ${Math.round(pct)} percent used"><i class="${cls || (pct > 92 ? "warn" : "")}" style="width:${pct}%"></i></div></div>`; };
     $("results").innerHTML = results.slice(0, 8).map((p, i) => {
-      const m = p.model;
-      return `<div class="card"><h3>${i + 1}. ${esc(m.name)} <span class="mut">${esc(p.quantLabel)}</span></h3>
-      <span class="badge ${p.mode === "gpu" ? "ok" : "est"}">${MODE[p.mode]}</span>
-      <span class="badge ${Advisor.speedInfo(p).cls}" title="${esc(Advisor.speedInfo(p).detail)}">${Advisor.speedInfo(p).text}</span>${p.usable ? "" : '<span class="badge est">likely too slow</span>'}
-      <span class="badge">${m.moe ? `MoE ${m.params_b}B total / ${m.active_params_b}B active` : m.params_b + "B dense"}</span>
-      <span class="badge">${esc(m.license || "license: see source")}</span>
-      <p class="mut">${esc(Advisor.speedInfo(p).detail)}${p.speed ? " Source: " + p.speed.sources.map(x => `<a href="${x.url}" rel="noopener">${esc(x.id)}</a>`).join(", ") + ", latest " + esc(p.speed.latest) + "." : ""}</p>
-      <p class="mut">Memory: weights ${p.weightsGB.toFixed(1)} GB + KV cache ${p.kvGB.toFixed(2)} GB @ ${o.ctx} ctx. On GPU ${p.gpuGB.toFixed(1)} GB, on CPU/RAM ${p.cpuGB.toFixed(1)} GB.</p>
-      <div>llama.cpp <button data-c="l${i}">copy</button><pre id="l${i}">${esc(p.command.llama)}</pre>
-      ollama <button data-c="o${i}">copy</button><pre id="o${i}">${esc(p.command.ollama)}</pre>
-      ${p.command.ollamaNote ? `<p class="mut">${esc(p.command.ollamaNote)}</p>` : ""}</div>
-      <p class="mut">Source: <a href="${m.source_url}" rel="noopener">${esc(m.id)}</a> &middot; GGUF: <a href="${m.gguf_source_url}" rel="noopener">${esc(m.gguf_repo)}</a> &middot; last verified ${m.last_verified}</p></div>`;
+      const m = p.model, si = Advisor.speedInfo(p), bc = si.short === "measured" ? "measured" : si.short === "estimated" ? "estimated" : "scaled";
+      return `<article class="card res hov" style="animation-delay:${i * 45}ms"><div class="res-h"><span class="n">#${i + 1}</span><h3>${esc(m.name)}</h3><span class="q">${esc(p.quantLabel)}</span>
+      <div class="tps"><b>~${p.tps ? Math.round(p.tps) : "?"}</b><span>tok/s generation</span></div></div>
+      <div class="badges"><span class="badge ${bc}" title="${esc(si.detail)}">${esc(si.short)}</span><span class="badge ${p.mode === "gpu" ? "ok" : "est"}">${MODE[p.mode]}</span>${p.usable ? "" : '<span class="badge est">likely too slow</span>'}
+      <span class="badge plain">${m.moe ? `MoE ${m.params_b}B total / ${m.active_params_b}B active` : m.params_b + "B dense"}</span><span class="badge plain">${esc(m.license || "license: see source")}</span></div>
+      ${hwr.cpuOnly ? "" : meter(hwr.discrete ? "VRAM" : "Unified memory", p.gpuGB, total)}${p.cpuGB > 0.05 || hwr.cpuOnly ? meter("System RAM", p.cpuGB, ramTot, "ram") : ""}
+      <p class="mut">${esc(si.detail)}${p.speed ? " Source: " + p.speed.sources.map(x => `<a href="${x.url}" rel="noopener">${esc(x.id)}</a>`).join(", ") + ", latest " + esc(p.speed.latest) + "." : ""} Memory: weights ${p.weightsGB.toFixed(1)} GB + KV cache ${p.kvGB.toFixed(2)} GB @ ${o.ctx} ctx.</p>
+      <div class="cmd"><div class="code"><div class="top"><span>llama.cpp</span><button class="copy" type="button" data-c="l${i}">Copy</button></div><pre id="l${i}">${esc(p.command.llama)}</pre></div>
+      <div class="code"><div class="top"><span>ollama</span><button class="copy" type="button" data-c="o${i}">Copy</button></div><pre id="o${i}">${esc(p.command.ollama)}</pre></div></div>
+      ${p.command.ollamaNote ? `<p class="mut">${esc(p.command.ollamaNote)}</p>` : ""}
+      <p class="src">Source: <a href="${m.source_url}" rel="noopener">${esc(m.id)}</a> &middot; GGUF: <a href="${m.gguf_source_url}" rel="noopener">${esc(m.gguf_repo)}</a> &middot; last verified ${m.last_verified}</p></article>`;
     }).join("");
-    document.querySelectorAll("button[data-c]").forEach(b => b.onclick = () => navigator.clipboard && navigator.clipboard.writeText($(b.dataset.c).textContent));
   }
   $("kind").onchange = () => { fillDevices(); render(); };
   document.querySelectorAll("#f select,#f input").forEach(e => { if (e.id !== "kind") e.onchange = render; });
