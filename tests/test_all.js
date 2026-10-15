@@ -39,4 +39,17 @@ const pb = Sub.parseLlamaBench(`| model | size | params | backend | ngl | test |
 assert.strictEqual(pb.pp, 7594.49); assert.strictEqual(pb.tg, 119.61); assert.strictEqual(pb.backendRaw, "CUDA");
 assert.strictEqual(Sub.issueUrl({ mode: "none", github_issue: { repo: "" } }, v.clean), null);
 assert(Sub.issueUrl({ github_issue: { repo: "me/repo" } }, v.clean).startsWith("https://github.com/me/repo/issues/new?"));
+// 5. Apple configs: every config maps to a chip, has memory options + an Apple source, every target's memory is an official option, M5 Ultra present, no M4 Ultra
+{
+  const H = data.hardware, chips = Object.fromEntries(H.apple.map(c => [c.id, c]));
+  assert(chips["m5-ultra"] && !Object.keys(chips).some(k => /m4-ultra/.test(k)), "M5 Ultra present, no M4 Ultra");
+  for (const c of H.apple_configs) {
+    assert(chips[c.hw], "config chip " + c.id); assert(c.memory_options_gb.length && c.memory_options_gb.every(Number.isInteger)); assert(/apple\.com/.test(c.source_url), "Apple source " + c.id);
+    assert(/^(Mac Studio|MacBook Pro|MacBook Air|Mac mini|iMac)/.test(c.name) && / — /.test(c.name), "descriptive name " + c.name);
+  }
+  for (const c of H.apple) assert(/apple\.com/.test(c.source_url), "chip source is Apple " + c.id);
+  for (const t of H.targets.filter(t => t.kind === "apple")) { const c = H.apple_configs.find(c => c.id === t.config); assert(c, "target config " + t.slug); assert(c.hw === t.device && c.memory_options_gb.includes(t.memory_gb), "target memory is an official option " + t.slug); }
+  const m6 = A.recommend({ kind: "apple", device: "m6", memory_gb: 16, ram_gb: 32, ram_type: "ddr5-5600" }, data, { use: "chat", ctx: 4096, kvq: "f16" }).hwr, m6b = A.recommend({ kind: "apple", device: "m6", memory_gb: 32, ram_gb: 32, ram_type: "ddr5-5600" }, data, { use: "chat", ctx: 4096, kvq: "f16" }).hwr;
+  assert.strictEqual(m6.gpuBw, 153); assert.strictEqual(m6b.gpuBw, 170);
+}
 console.log("ALL TESTS PASSED");

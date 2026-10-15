@@ -117,16 +117,16 @@
    "id": "m4",
    "name": "Apple M4",
    "bandwidth_gbps": 120,
-   "source_url": "https://en.wikipedia.org/wiki/Apple_M4",
-   "basis": "Wikipedia: 120 GB/s",
+   "source_url": "https://support.apple.com/en-us/121555",
+   "basis": "Apple tech specs (Mac mini 2024, iMac): 120GB/s",
    "last_verified": "2026-10-14"
   },
   {
    "id": "m4-pro",
    "name": "Apple M4 Pro",
    "bandwidth_gbps": 273,
-   "source_url": "https://en.wikipedia.org/wiki/Apple_M4",
-   "basis": "Wikipedia: 273 GB/s",
+   "source_url": "https://support.apple.com/en-us/121555",
+   "basis": "Apple tech specs (Mac mini 2024): 273GB/s",
    "last_verified": "2026-10-14"
   },
   {
@@ -134,7 +134,7 @@
    "name": "Apple M4 Max (32-core GPU)",
    "bandwidth_gbps": 410,
    "source_url": "https://support.apple.com/en-us/122211",
-   "basis": "Apple tech specs: 410 GB/s",
+   "basis": "Apple tech specs: 410GB/s",
    "last_verified": "2026-10-14"
   },
   {
@@ -142,7 +142,7 @@
    "name": "Apple M4 Max (40-core GPU)",
    "bandwidth_gbps": 546,
    "source_url": "https://support.apple.com/en-us/122211",
-   "basis": "Apple tech specs: 546 GB/s",
+   "basis": "Apple tech specs: 546GB/s",
    "last_verified": "2026-10-14"
   },
   {
@@ -150,40 +150,61 @@
    "name": "Apple M3 Ultra",
    "bandwidth_gbps": 819,
    "source_url": "https://support.apple.com/en-us/122211",
-   "basis": "Apple tech specs: 819 GB/s",
+   "basis": "Apple tech specs: 819GB/s",
    "last_verified": "2026-10-14"
   },
   {
    "id": "m5",
    "name": "Apple M5",
-   "bandwidth_gbps": 153.6,
-   "source_url": "https://en.wikipedia.org/wiki/Apple_M5",
-   "basis": "Wikipedia: theoretical 153.6 GB/s",
+   "bandwidth_gbps": 153,
+   "source_url": "https://support.apple.com/en-us/126320",
+   "basis": "Apple tech specs (MacBook Air / MacBook Pro 14): 153GB/s",
    "last_verified": "2026-10-14"
   },
   {
    "id": "m5-pro",
    "name": "Apple M5 Pro",
    "bandwidth_gbps": 307,
-   "source_url": "https://en.wikipedia.org/wiki/Apple_M5",
-   "basis": "Wikipedia: up to 307 GB/s",
+   "source_url": "https://support.apple.com/en-us/126318",
+   "basis": "Apple tech specs: 307GB/s",
    "last_verified": "2026-10-14"
   },
   {
    "id": "m5-max-32",
    "name": "Apple M5 Max (32-core GPU)",
    "bandwidth_gbps": 460,
-   "source_url": "https://en.wikipedia.org/wiki/Apple_M5",
-   "basis": "Wikipedia: 460 GB/s",
+   "source_url": "https://support.apple.com/en-us/128107",
+   "basis": "Apple tech specs: 460GB/s",
    "last_verified": "2026-10-14"
   },
   {
    "id": "m5-max-40",
    "name": "Apple M5 Max (40-core GPU)",
    "bandwidth_gbps": 614,
-   "source_url": "https://en.wikipedia.org/wiki/Apple_M5",
-   "basis": "Wikipedia: 614 GB/s",
+   "source_url": "https://support.apple.com/en-us/128107",
+   "basis": "Apple tech specs: 614GB/s",
    "last_verified": "2026-10-14"
+  },
+  {
+   "id": "m5-ultra",
+   "name": "Apple M5 Ultra",
+   "bandwidth_gbps": 1200,
+   "source_url": "https://support.apple.com/en-us/128107",
+   "basis": "Apple tech specs: 1.2TB/s (Apple states a rounded figure; 64-core and 80-core GPU variants both listed at 1.2TB/s)",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "m6",
+   "name": "Apple M6",
+   "bandwidth_gbps": 153,
+   "source_url": "https://support.apple.com/en-us/128108",
+   "basis": "Apple tech specs (Mac mini): 153GB/s with 16GB, 170GB/s with 24GB/32GB",
+   "last_verified": "2026-10-14",
+   "bandwidth_by_mem_gb": {
+    "16": 153,
+    "24": 170,
+    "32": 170
+   }
   }
  ],
  "unified": [
@@ -357,47 +378,51 @@
   },
   {
    "slug": "mac-studio-m3-ultra-96gb",
-   "title": "Mac Studio M3 Ultra 96GB",
+   "title": "Mac Studio (2025) M3 Ultra 96GB",
    "kind": "apple",
    "device": "m3-ultra",
    "count": 1,
    "memory_gb": 96,
    "ram_gb": 32,
    "ram_type": "ddr5-5600",
-   "note": ""
+   "note": "",
+   "config": "studio-m3-ultra-60"
   },
   {
    "slug": "macbook-pro-m4-max-128gb",
-   "title": "MacBook Pro / Mac M4 Max 128GB (40-core GPU)",
+   "title": "MacBook Pro 14/16 (2024) M4 Max 128GB",
    "kind": "apple",
    "device": "m4-max-40",
    "count": 1,
    "memory_gb": 128,
    "ram_gb": 32,
    "ram_type": "ddr5-5600",
-   "note": ""
+   "note": "",
+   "config": "mbp-m4-max-40"
   },
   {
    "slug": "mac-m4-16gb",
-   "title": "Mac mini / MacBook M4 16GB",
+   "title": "Mac mini / iMac M4 16GB",
    "kind": "apple",
    "device": "m4",
    "count": 1,
    "memory_gb": 16,
    "ram_gb": 32,
    "ram_type": "ddr5-5600",
-   "note": ""
+   "note": "",
+   "config": "mini-m4"
   },
   {
    "slug": "mac-m4-pro-64gb",
-   "title": "Mac mini / MacBook M4 Pro 64GB",
+   "title": "Mac mini (2024) M4 Pro 64GB",
    "kind": "apple",
    "device": "m4-pro",
    "count": 1,
    "memory_gb": 64,
    "ram_gb": 32,
    "ram_type": "ddr5-5600",
-   "note": ""
+   "note": "",
+   "config": "mini-m4-pro"
   },
   {
    "slug": "dual-rtx-3090-48gb",
@@ -420,7 +445,398 @@
    "ram_gb": 64,
    "ram_type": "ddr5-5600",
    "note": ""
+  },
+  {
+   "slug": "mac-studio-m5-ultra-256gb",
+   "title": "Mac Studio M5 Ultra 256GB",
+   "kind": "apple",
+   "device": "m5-ultra",
+   "config": "studio-m5-ultra-80",
+   "count": 1,
+   "memory_gb": 256,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "mac-studio-m5-ultra-512gb",
+   "title": "Mac Studio M5 Ultra 512GB (ships late Oct 2026)",
+   "kind": "apple",
+   "device": "m5-ultra",
+   "config": "studio-m5-ultra-80",
+   "count": 1,
+   "memory_gb": 512,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "mac-studio-m5-max-128gb",
+   "title": "Mac Studio M5 Max 128GB",
+   "kind": "apple",
+   "device": "m5-max-40",
+   "config": "studio-m5-max-40",
+   "count": 1,
+   "memory_gb": 128,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "macbook-pro-m5-max-128gb",
+   "title": "MacBook Pro 14/16 M5 Max 128GB",
+   "kind": "apple",
+   "device": "m5-max-40",
+   "config": "mbp-m5-max-40",
+   "count": 1,
+   "memory_gb": 128,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "macbook-pro-m5-pro-48gb",
+   "title": "MacBook Pro 14/16 M5 Pro 48GB",
+   "kind": "apple",
+   "device": "m5-pro",
+   "config": "mbp-m5-pro-20",
+   "count": 1,
+   "memory_gb": 48,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "mac-mini-m6-32gb",
+   "title": "Mac mini M6 32GB",
+   "kind": "apple",
+   "device": "m6",
+   "config": "mini-m6",
+   "count": 1,
+   "memory_gb": 32,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "macbook-air-m5-32gb",
+   "title": "MacBook Air M5 32GB",
+   "kind": "apple",
+   "device": "m5",
+   "config": "air-m5-13",
+   "count": 1,
+   "memory_gb": 32,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
   }
  ],
- "target_note": "Target list from research.md section 3 (judgment-based, not measured demand). Memory sizes of Mac configs are example configurations; verify before relying on them."
+ "target_note": "Target list is judgment-based, not measured demand. Mac memory sizes are example configurations within Apple's official options.",
+ "apple_configs": [
+  {
+   "id": "studio-m5-ultra-80",
+   "hw": "m5-ultra",
+   "form_factor": "Mac Studio",
+   "name": "Mac Studio — M5 Ultra (80-core GPU)",
+   "memory_options_gb": [
+    256,
+    512
+   ],
+   "source_url": "https://support.apple.com/en-us/128107",
+   "note": "Announced Aug 25 2026, shipping since Sep 22 2026; 512GB option ships late October 2026 per Apple.",
+   "memory_notes": {
+    "512": "ships late Oct 2026"
+   },
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "studio-m5-ultra-64",
+   "hw": "m5-ultra",
+   "form_factor": "Mac Studio",
+   "name": "Mac Studio — M5 Ultra (64-core GPU)",
+   "memory_options_gb": [
+    96
+   ],
+   "source_url": "https://support.apple.com/en-us/128107",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "studio-m5-max-40",
+   "hw": "m5-max-40",
+   "form_factor": "Mac Studio",
+   "name": "Mac Studio — M5 Max (40-core GPU)",
+   "memory_options_gb": [
+    48,
+    64,
+    128
+   ],
+   "source_url": "https://support.apple.com/en-us/128107",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "studio-m5-max-32",
+   "hw": "m5-max-32",
+   "form_factor": "Mac Studio",
+   "name": "Mac Studio — M5 Max (32-core GPU)",
+   "memory_options_gb": [
+    36
+   ],
+   "source_url": "https://support.apple.com/en-us/128107",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "studio-m4-max-40",
+   "hw": "m4-max-40",
+   "form_factor": "Mac Studio",
+   "name": "Mac Studio (2025) — M4 Max (40-core GPU)",
+   "memory_options_gb": [
+    48,
+    64,
+    128
+   ],
+   "source_url": "https://support.apple.com/en-us/122211",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "studio-m4-max-32",
+   "hw": "m4-max-32",
+   "form_factor": "Mac Studio",
+   "name": "Mac Studio (2025) — M4 Max (32-core GPU)",
+   "memory_options_gb": [
+    36
+   ],
+   "source_url": "https://support.apple.com/en-us/122211",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "studio-m3-ultra-80",
+   "hw": "m3-ultra",
+   "form_factor": "Mac Studio",
+   "name": "Mac Studio (2025) — M3 Ultra (80-core GPU)",
+   "memory_options_gb": [
+    256
+   ],
+   "source_url": "https://support.apple.com/en-us/122211",
+   "note": "Apple tech-specs page lists 256GB for this config.",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "studio-m3-ultra-60",
+   "hw": "m3-ultra",
+   "form_factor": "Mac Studio",
+   "name": "Mac Studio (2025) — M3 Ultra (60-core GPU)",
+   "memory_options_gb": [
+    96
+   ],
+   "source_url": "https://support.apple.com/en-us/122211",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "mbp-m5-max-40",
+   "hw": "m5-max-40",
+   "form_factor": "MacBook Pro",
+   "name": "MacBook Pro 14/16 — M5 Max (40-core GPU)",
+   "memory_options_gb": [
+    48,
+    64,
+    128
+   ],
+   "source_url": "https://support.apple.com/en-us/126318",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "mbp-m5-max-32",
+   "hw": "m5-max-32",
+   "form_factor": "MacBook Pro",
+   "name": "MacBook Pro 14/16 — M5 Max (32-core GPU)",
+   "memory_options_gb": [
+    36
+   ],
+   "source_url": "https://support.apple.com/en-us/126318",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "mbp-m5-pro-20",
+   "hw": "m5-pro",
+   "form_factor": "MacBook Pro",
+   "name": "MacBook Pro 14/16 — M5 Pro (20-core GPU)",
+   "memory_options_gb": [
+    24,
+    48,
+    64
+   ],
+   "source_url": "https://support.apple.com/en-us/126318",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "mbp-m5-pro-16",
+   "hw": "m5-pro",
+   "form_factor": "MacBook Pro",
+   "name": "MacBook Pro 14 — M5 Pro (16-core GPU)",
+   "memory_options_gb": [
+    24,
+    48
+   ],
+   "source_url": "https://support.apple.com/en-us/126318",
+   "note": "14-inch only. Apple lists 64GB only for the 20-core GPU M5 Pro.",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "mbp-m5",
+   "hw": "m5",
+   "form_factor": "MacBook Pro",
+   "name": "MacBook Pro 14 — M5 (10-core GPU)",
+   "memory_options_gb": [
+    16,
+    24,
+    32
+   ],
+   "source_url": "https://support.apple.com/en-us/125405",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "mbp-m4-max-40",
+   "hw": "m4-max-40",
+   "form_factor": "MacBook Pro",
+   "name": "MacBook Pro 14/16 (2024) — M4 Max (40-core GPU)",
+   "memory_options_gb": [
+    48,
+    64,
+    128
+   ],
+   "source_url": "https://support.apple.com/en-us/121554",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "mbp-m4-max-32",
+   "hw": "m4-max-32",
+   "form_factor": "MacBook Pro",
+   "name": "MacBook Pro 14/16 (2024) — M4 Max (32-core GPU)",
+   "memory_options_gb": [
+    36
+   ],
+   "source_url": "https://support.apple.com/en-us/121554",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "mbp-m4-pro",
+   "hw": "m4-pro",
+   "form_factor": "MacBook Pro",
+   "name": "MacBook Pro 14/16 (2024) — M4 Pro",
+   "memory_options_gb": [
+    24,
+    48
+   ],
+   "source_url": "https://support.apple.com/en-us/121554",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "air-m5-13",
+   "hw": "m5",
+   "form_factor": "MacBook Air",
+   "name": "MacBook Air 13 — M5",
+   "memory_options_gb": [
+    16,
+    24,
+    32
+   ],
+   "source_url": "https://support.apple.com/en-us/126320",
+   "note": "8-core or 10-core GPU; same memory bandwidth.",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "air-m5-15",
+   "hw": "m5",
+   "form_factor": "MacBook Air",
+   "name": "MacBook Air 15 — M5 (10-core GPU)",
+   "memory_options_gb": [
+    16,
+    24,
+    32
+   ],
+   "source_url": "https://support.apple.com/en-us/126321",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "mini-m5-pro-20",
+   "hw": "m5-pro",
+   "form_factor": "Mac mini",
+   "name": "Mac mini — M5 Pro (20-core GPU)",
+   "memory_options_gb": [
+    48,
+    64
+   ],
+   "source_url": "https://support.apple.com/en-us/128108",
+   "note": "Apple lists 48GB / 64GB as the configure-to-order options for the 18-core CPU / 20-core GPU model.",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "mini-m5-pro-16",
+   "hw": "m5-pro",
+   "form_factor": "Mac mini",
+   "name": "Mac mini — M5 Pro (16-core GPU)",
+   "memory_options_gb": [
+    24
+   ],
+   "source_url": "https://support.apple.com/en-us/128108",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "mini-m6",
+   "hw": "m6",
+   "form_factor": "Mac mini",
+   "name": "Mac mini — M6",
+   "memory_options_gb": [
+    16,
+    24,
+    32
+   ],
+   "source_url": "https://support.apple.com/en-us/128108",
+   "note": "Bandwidth is 153GB/s with 16GB and 170GB/s with 24GB/32GB (Apple).",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "mini-m4-pro",
+   "hw": "m4-pro",
+   "form_factor": "Mac mini",
+   "name": "Mac mini (2024) — M4 Pro",
+   "memory_options_gb": [
+    24,
+    48,
+    64
+   ],
+   "source_url": "https://support.apple.com/en-us/121555",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "mini-m4",
+   "hw": "m4",
+   "form_factor": "Mac mini",
+   "name": "Mac mini (2024) — M4",
+   "memory_options_gb": [
+    16,
+    24,
+    32
+   ],
+   "source_url": "https://support.apple.com/en-us/121555",
+   "last_verified": "2026-10-14"
+  },
+  {
+   "id": "imac-m4",
+   "hw": "m4",
+   "form_factor": "iMac",
+   "name": "iMac 24 — M4",
+   "memory_options_gb": [
+    16,
+    24,
+    32
+   ],
+   "source_url": "https://www.apple.com/imac/specs/",
+   "last_verified": "2026-10-14"
+  }
+ ],
+ "apple_not_listed": [
+  "M4/M5 MacBook Air older than M5, MacBook Pro 14 M4 (base), iMac M5 (does not exist as of 2026-10-14), Mac Pro (M2 Ultra; discontinued Mar 2026): not verified against Apple pages in this pass."
+ ],
+ "apple_note": "Apple Mac configs verified against Apple support tech-spec pages on 2026-10-14. M5 Ultra: announced 2026-08-25, shipping 2026-09-22 (512GB option late Oct 2026). No M4 Ultra exists."
 }

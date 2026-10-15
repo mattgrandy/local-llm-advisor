@@ -14,7 +14,7 @@ const L = require("./layout.js");
 const bcls = sh => sh === "measured" ? "measured" : sh === "estimated" ? "estimated" : "scaled";
 const ANAME = {};
 function page(t) {
-  const input = { kind: t.kind, device: t.device, count: t.count, memory_gb: t.memory_gb, ram_gb: t.ram_gb, ram_type: t.ram_type };
+  const input = { kind: t.kind, device: t.device, label: t.config ? (data.hardware.apple_configs.find(c => c.id === t.config) || {}).name : undefined, count: t.count, memory_gb: t.memory_gb, ram_gb: t.ram_gb, ram_type: t.ram_type };
   let hwr, sections = "";
   for (const [use, label] of USES) {
     const r = A.recommend(input, data, { use, ctx: CTX, kvq: "f16" }); hwr = r.hwr;
@@ -28,7 +28,7 @@ function page(t) {
   const comm = ((data.measured && data.measured.community) || []).filter(c => c.hw_id === t.device);
   if (comm.length) sections += `<section class="card"><h2>Community-submitted benchmarks <span class="badge est">unverified</span></h2><p class="mut">Format-reviewed only; not used in the numbers above.</p><div class="tw"><table><thead><tr><th>Model</th><th>Quant</th><th>Backend</th><th>pp tok/s</th><th>tg tok/s</th><th>Date</th></tr></thead><tbody>${comm.map(c => `<tr><td>${esc(c.model)}</td><td>${esc(c.quant)}</td><td>${esc(c.backend)}</td><td class="num">${c.pp_tps}</td><td class="num">${c.tg_tps}</td><td class="num">${esc(c.date || "")}</td></tr>`).join("")}</tbody></table></div></section>`;
   const nmeas = Object.values(data.measured ? (data.measured.entries[t.device] || []) : []).length;
-  const q = new URLSearchParams({ kind: t.kind, device: t.device, count: t.count, mem: t.memory_gb || "", ram: t.ram_gb, ramt: t.ram_type });
+  const q = new URLSearchParams({ kind: t.kind, device: t.device, ...(t.config ? { config: t.config } : {}), count: t.count, mem: t.memory_gb || "", ram: t.ram_gb, ramt: t.ram_type });
   const title = `Best local LLMs for ${t.title}`;
   const desc = `Which local LLM runs on ${t.title}? Memory-fit math with KV cache, estimated speed and copy-paste llama.cpp / ollama commands. Last verified ${data.models.generated}.`;
   const stats = `<div class="stats"><div class="stat"><b>${hwr.pool.toFixed(1)} GB</b><span>usable for model + KV cache</span></div><div class="stat"><b>${hwr.gpuBw} GB/s</b><span>memory bandwidth</span></div>${hwr.discrete && !hwr.cpuOnly ? `<div class="stat"><b>${hwr.ramAvail} GB</b><span>RAM available for offload</span></div>` : ""}<div class="stat"><b>${nmeas}</b><span>measured data point${nmeas === 1 ? "" : "s"} on file</span></div></div>`;

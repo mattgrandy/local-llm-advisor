@@ -9,7 +9,7 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;",
 function head(d, title, desc) {
   return `<!doctype html><html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><meta name="color-scheme" content="dark light">
-<script src="${d}theme.js"></script><link rel="stylesheet" href="${d}style.css"></head><body>`;
+<script src="${d}theme.js?v=20261014b"></script><link rel="stylesheet" href="${d}style.css?v=20261014b"></head><body>`;
 }
 function nav(d, cur) {
   const a = (href, label, key, opt) => `<a class="l${opt ? " opt" : ""}" href="${d}${href}"${cur === key ? ' aria-current="page"' : ""}>${label}</a>`;

@@ -34,8 +34,9 @@
     const list = input.kind === "apple" ? hw.apple : hw.unified;
     const d = list.find(x => x.id === input.device);
     const frac = A.unified_usable_fraction[input.kind];
-    return { kind: input.kind, name: d.name + " " + input.memory_gb + "GB", pool: input.memory_gb * frac - 0.5,
-             gpuBw: d.bandwidth_gbps, discrete: false, ramAvail: 0, ramBw: d.bandwidth_gbps, ngpu: 1,
+    const bw = (d.bandwidth_by_mem_gb && d.bandwidth_by_mem_gb[String(input.memory_gb)]) || d.bandwidth_gbps;
+    return { kind: input.kind, name: (input.label || d.name) + " " + input.memory_gb + "GB", pool: input.memory_gb * frac - 0.5,
+             gpuBw: bw, discrete: false, ramAvail: 0, ramBw: bw, ngpu: 1,
              vram: input.memory_gb, frac, source_url: d.source_url };
   }
 
