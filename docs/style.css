@@ -133,3 +133,4 @@ pre{margin:0;padding:12px 14px;background:var(--code);border:1px solid var(--bd)
 .ctxnote{margin:8px 0 0;max-width:62ch}.ctxnote:empty{display:none}.ctxwarn,.depthline{line-height:1.5}
 .lbl .seg.small{grid-template-columns:repeat(auto-fit,minmax(72px,1fr))}
 @media (max-width:520px){.lbl .seg.small{grid-template-columns:repeat(3,1fr)}}
+.ctxnote{text-transform:none;letter-spacing:0;font-weight:400}
