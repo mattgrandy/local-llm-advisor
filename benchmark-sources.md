@@ -69,3 +69,7 @@ Samples saved in `/workspace/llm-advisor/data-samples/`.
 4. Artificial Analysis API (needs user to create a free key) as a second quality signal, with required attribution.
 5. Aider YAML for coding ranking.
 Weekly refresh fits all of these; GitHub/HF need no auth.
+
+
+## Update 2026-10-15 (pass 2)
+Used: witcheer/rtx-5090-benchmarks (HF, MIT), iBlessi/rtx-5080-llm-throughput (HF, CC-BY-4.0), steven0226/speculative-decoding-bench-rtx4090 (HF, CC-BY-4.0, baseline rows), studioburnside/mlx-local-inference-benchmarks (HF, Apache-2.0, headline decode), pgmharikrishnan/mlx-serve-local-llm-benchmarks-2026-10 (HF, MIT), llama.cpp discussion #15396 (gpt-oss guide), non-PR issues, and PR conversations (dataset only). Rejected / link-only: see "Candidates read but NOT used" in data/benchmarks/README.md. LocalScore: no new model pages exist (models 4-10 are not-found pages). Details and counts: data/benchmarks/README.md, `summary_counts.json`.

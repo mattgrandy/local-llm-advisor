@@ -19,6 +19,7 @@ BW = {x['id']: (x['bandwidth_gbps'], k) for k in ('gpus', 'apple', 'unified') fo
 KIND = {'gpus': 'gpu', 'apple': 'apple', 'unified': 'unified'}
 BPW = {'F16': 16, 'Q8': 8.5, 'Q6': 6.56, 'Q5': 5.7, 'Q4': 4.85, 'Q3': 3.9, 'Q2': 3.0}
 EXCLUDE_SRC = {'llamacpp-discussion-4167-summary'}
+EXCLUDE_PREFIX = ('llamacpp-pr-', 'ik_llama-pr-')   # pull-request threads: dev/PR builds, tuning sweeps -> kept in the dataset, not in site medians
 MIN_CAL_READ_GB = 3.0   # below this, per-token launch overhead dominates and bandwidth math is meaningless
 
 def qclass(q):
@@ -34,17 +35,19 @@ ALIASES = [
     (r'qwen3-?coder.*30b', 'Qwen/Qwen3-Coder-30B-A3B-Instruct'), (r'qwen3moe 30b', 'Qwen/Qwen3-Coder-30B-A3B-Instruct'),
     (r'qwen3-30b-a3b', 'Qwen/Qwen3-Coder-30B-A3B-Instruct'),
     (r'qwen3\.6[ -]?35b|qwen35moe 35b', 'Qwen/Qwen3.6-35B-A3B'), (r'qwen3\.6-27b', 'Qwen/Qwen3.6-27B'),
-    (r'gemma-?4[ -]?31b', 'google/gemma-4-31B-it'), (r'gemma-?4[ -]?26b', 'google/gemma-4-26B-A4B-it'),
+    (r'gemma[ -]?4[ -]?31b', 'google/gemma-4-31B-it'), (r'gemma[ -]?4[ -]?26b', 'google/gemma-4-26B-A4B-it'), (r'gemma[ -]?4[ -]?12b', 'google/gemma-4-12B-it'),
     (r'glm4moe 106b|glm-4\.5-air', 'zai-org/GLM-4.5-Air'),
     (r'qwen3\.5[ -]?9b', 'Qwen/Qwen3.5-9B'), (r'qwen3\.5[ -]?4b', 'Qwen/Qwen3.5-4B'),
 ]
 SITE = {m['id']: m for m in MODELS}
+# fine-tunes / spec-decode / pruned / re-quantised variants must NOT inherit the base model's identity
+VARIANT = re.compile(r'mtp|reap|tune|qwopus|qwable|escha|compat|flash-next|heretic|abliter|uncensored|distill|ornith|muse', re.I)
 
 def canon(model, params_b):
     """-> (canonical name, site_id|None, total_b, active_b|None, moe)"""
     s = (model or '').strip(); l = s.lower()
     if not s: return None
-    sid = next((i for pat, i in ALIASES if re.search(pat, l)), None)
+    sid = None if VARIANT.search(l) else next((i for pat, i in ALIASES if re.search(pat, l)), None)
     if sid:
         m = SITE[sid]; return (m['name'], sid, m['params_b'], m.get('active_params_b') if m['moe'] else None, bool(m['moe']))
     if 'llama 7b' in l or 'llama 2' in l: return ('Llama 2 7B', None, 6.74, None, False)
@@ -66,10 +69,12 @@ def load_rows():
     rows = json.load(open(f'{ROOT}/data/benchmarks/benchmarks_all.json'))
     out = []
     for r in rows:
-        if not r['hw_id'] or r['hw_id'] not in BW or r['source'] in EXCLUDE_SRC: continue
+        if not r['hw_id'] or r['hw_id'] not in BW or r['source'] in EXCLUDE_SRC or r['source'].startswith(EXCLUDE_PREFIX): continue
+        if 'excluded from site medians' in (r['notes'] or ''): continue
         tg = num(r['tg_tps'])
         if not tg or tg <= 0 or num(r['depth']): continue
         if 'batched' in (r['notes'] or '') or r['backend'] == 'CPU': continue
+        if num(r['pp_tps']) and not num(r['tg_tps']): continue
         c = canon(r['model'], r['params_b'])
         qc = qclass(r['quant']) or qclass(r['model'])
         if not c or not qc: continue
@@ -90,6 +95,7 @@ def main():
             tg=round(st.median(x['tg'] for x in xs), 2), pp=round(st.median(pps), 1) if pps else None, n=len(xs),
             tg_min=round(min(x['tg'] for x in xs), 2), tg_max=round(max(x['tg'] for x in xs), 2),
             sources=[dict(id=k, url=v) for k, v in sorted(srcs.items())],
+            size_gb=(round(st.median(sz) * 1.073741824, 2) if (sz := [num(x['r']['size_gib']) for x in xs if num(x['r']['size_gib'])]) else None),
             backends=sorted({x['r']['backend'] for x in xs if x['r']['backend']}),
             latest=max((x['r']['date'] or '') for x in xs)))
     # ---- calibration: efficiency = tg / (bandwidth / read_GB), dense models, read >= MIN_CAL_READ_GB
@@ -127,7 +133,10 @@ def main():
     if os.path.exists(cp): comm = json.load(open(cp))
     out = dict(generated=time.strftime('%Y-%m-%d'), entries=entries, calibration=cal, community=comm,
         attribution=[dict(name='LocalScore (Mozilla Builders / cjpais, Apache-2.0)', url='https://www.localscore.ai'),
-                     dict(name='llama.cpp community benchmark threads (ggml-org/llama.cpp, MIT)', url='https://github.com/ggml-org/llama.cpp/discussions'),
+                     dict(name='llama.cpp community benchmark threads incl. the gpt-oss guide #15396 (ggml-org/llama.cpp, MIT)', url='https://github.com/ggml-org/llama.cpp/discussions'),
+                     dict(name='witcheer/rtx-5090-benchmarks (Hugging Face, MIT)', url='https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks'),
+                     dict(name='iBlessi/rtx-5080-llm-throughput (Hugging Face, CC-BY-4.0)', url='https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput'),
+                     dict(name='steven0226/speculative-decoding-bench-rtx4090 (Hugging Face, CC-BY-4.0)', url='https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090'),
                      dict(name='Hugging Face / GitHub open-licensed benchmark repos (see data/benchmarks/README.md)', url='')],
         counts=dict(rows_used=len(rows), hardware=len(entries), points=sum(len(v) for v in entries.values()), community=len(comm)))
     json.dump(out, open(f'{ROOT}/site/data/measured.json', 'w'), indent=1)

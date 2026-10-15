@@ -1,6 +1,6 @@
 {
  "dgx-spark": {
-  "rows": 369,
+  "rows": 380,
   "sources": [
    "llamacpp-benches-dgx-spark",
    "llamacpp-benches-nemotron",
@@ -8,7 +8,9 @@
    "llamacpp-discussion-10879-scoreboard",
    "llamacpp-discussion-15013-comments",
    "llamacpp-discussion-15013-scoreboard",
+   "llamacpp-discussion-15396",
    "llamacpp-discussion-16578-comments",
+   "llamacpp-pr-27742",
    "localscore-model-pages"
   ],
   "models": [
@@ -39,15 +41,17 @@
    "qwen35moe 35B.A3B",
    "qwen3moe 30B.A3B",
    "qwen3next 80B.A3B",
-   "qwen3vlmoe 235B.A22B"
+   "qwen3vlmoe 235B.A22B",
+   "qwen4exp A3B"
   ],
-  "non_llama2_rows": 344
+  "non_llama2_rows": 355
  },
  "m3-ultra": {
-  "rows": 17,
+  "rows": 21,
   "sources": [
    "llamacpp-discussion-10879-comments",
    "llamacpp-discussion-10879-scoreboard",
+   "llamacpp-discussion-15396",
    "llamacpp-discussion-4167-summary",
    "localscore-model-pages"
   ],
@@ -55,9 +59,10 @@
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
    "Qwen2.5 14B Instruct",
+   "gpt-oss 20B",
    "llama 7B"
   ],
-  "non_llama2_rows": 8
+  "non_llama2_rows": 12
  },
  "m4": {
   "rows": 22,
@@ -78,23 +83,39 @@
   "non_llama2_rows": 18
  },
  "m4-max-32": {
-  "rows": 9,
+  "rows": 21,
   "sources": [
+   "llamacpp-discussion-15396",
    "llamacpp-discussion-4167-comments",
-   "llamacpp-discussion-4167-summary"
+   "llamacpp-discussion-4167-summary",
+   "localscore-model-pages"
   ],
   "models": [
+   "",
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct",
+   "gpt-oss 20B",
    "llama 7B"
   ],
-  "non_llama2_rows": 0
+  "non_llama2_rows": 12
  },
  "m4-max-40": {
-  "rows": 3,
+  "rows": 15,
   "sources": [
-   "llamacpp-discussion-4167-summary"
+   "hf-pgmharikrishnan-mlx-serve-local-llm-benchmarks-2026-10",
+   "llamacpp-discussion-4167-summary",
+   "localscore-model-pages"
   ],
-  "models": [],
-  "non_llama2_rows": 0
+  "models": [
+   "LFM2.5-24B A2B",
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct",
+   "Qwen3.8-27B",
+   "minicpm-v47 35B-A3B"
+  ],
+  "non_llama2_rows": 12
  },
  "m4-pro": {
   "rows": 23,
@@ -123,21 +144,32 @@
   "non_llama2_rows": 8
  },
  "m5-max-32": {
-  "rows": 0,
-  "sources": [],
-  "models": [],
-  "non_llama2_rows": 0
- },
- "m5-max-40": {
-  "rows": 6,
+  "rows": 3,
   "sources": [
-   "llamacpp-discussion-4167-comments",
-   "llamacpp-discussion-4167-summary"
+   "localscore-model-pages"
   ],
   "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct"
+  ],
+  "non_llama2_rows": 3
+ },
+ "m5-max-40": {
+  "rows": 12,
+  "sources": [
+   "hf-studioburnside-mlx-local-inference-benchmarks",
+   "llamacpp-discussion-4167-comments",
+   "llamacpp-discussion-4167-summary",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Qwen2.5 14B Instruct",
+   "Qwen3.6-35B-A3B",
+   "Tess-4-27B (Qwen3.6-27B fine-tune)",
    "llama 7B"
   ],
-  "non_llama2_rows": 0
+  "non_llama2_rows": 6
  },
  "m5-pro": {
   "rows": 17,
@@ -151,6 +183,25 @@
    "Qwen2.5 14B Instruct"
   ],
   "non_llama2_rows": 11
+ },
+ "m5-ultra": {
+  "rows": 3,
+  "sources": [
+   "llamacpp-discussion-4167-summary"
+  ],
+  "models": [],
+  "non_llama2_rows": 0
+ },
+ "m6": {
+  "rows": 4,
+  "sources": [
+   "llamacpp-discussion-4167-summary",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Meta Llama 3.1 8B Instruct"
+  ],
+  "non_llama2_rows": 1
  },
  "rtx-3060-12": {
   "rows": 7,
@@ -168,21 +219,23 @@
   "non_llama2_rows": 3
  },
  "rtx-3090": {
-  "rows": 42,
+  "rows": 103,
   "sources": [
    "llamacpp-discussion-10879-comments",
    "llamacpp-discussion-10879-scoreboard",
    "llamacpp-discussion-15013-comments",
    "llamacpp-discussion-15013-scoreboard",
+   "llamacpp-discussion-15396",
    "localscore-model-pages"
   ],
   "models": [
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
    "Qwen2.5 14B Instruct",
+   "gpt-oss 20B",
    "llama 7B"
   ],
-  "non_llama2_rows": 3
+  "non_llama2_rows": 64
  },
  "rtx-4060": {
   "rows": 2,
@@ -221,21 +274,27 @@
   "non_llama2_rows": 3
  },
  "rtx-4090": {
-  "rows": 78,
+  "rows": 105,
   "sources": [
+   "hf-steven0226-speculative-decoding-bench-rtx4090",
    "llamacpp-discussion-10879-comments",
    "llamacpp-discussion-10879-scoreboard",
    "llamacpp-discussion-15013-comments",
    "llamacpp-discussion-15013-scoreboard",
+   "llamacpp-discussion-15396",
    "localscore-model-pages"
   ],
   "models": [
+   "Llama 3.1 8B",
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
    "Qwen2.5 14B Instruct",
+   "Qwen3-14B",
+   "Qwen3-8B",
+   "gpt-oss 20B",
    "llama 7B"
   ],
-  "non_llama2_rows": 7
+  "non_llama2_rows": 34
  },
  "rtx-5070": {
   "rows": 6,
@@ -251,60 +310,130 @@
   "non_llama2_rows": 4
  },
  "rtx-5070ti": {
-  "rows": 34,
+  "rows": 50,
   "sources": [
    "llamacpp-discussion-10879-comments",
    "llamacpp-discussion-10879-scoreboard",
    "llamacpp-discussion-15013-comments",
    "llamacpp-discussion-15013-scoreboard",
+   "llamacpp-discussion-15396",
+   "llamacpp-pr-17906",
    "localscore-model-pages"
   ],
   "models": [
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
    "Qwen2.5 14B Instruct",
+   "gpt-oss 20B",
    "llama 7B"
   ],
-  "non_llama2_rows": 6
+  "non_llama2_rows": 22
  },
- "rtx-5090": {
-  "rows": 47,
+ "rtx-5080": {
+  "rows": 86,
   "sources": [
+   "hf-iBlessi-rtx-5080-llm-throughput",
+   "llamacpp-discussion-10879-comments",
    "llamacpp-discussion-10879-scoreboard",
    "llamacpp-discussion-15013-comments",
    "llamacpp-discussion-15013-scoreboard",
+   "llamacpp-discussion-15396",
+   "localscore-latest-runs",
    "localscore-model-pages"
   ],
   "models": [
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
    "Qwen2.5 14B Instruct",
-   "llama 7B"
+   "devstral-24b",
+   "gpt-oss 20B",
+   "gpt-oss-20b",
+   "llama 7B",
+   "llama3.2-3b",
+   "qwen2.5-14b",
+   "qwen2.5-7b",
+   "qwen2.5-coder-14b",
+   "qwen2.5-coder-7b",
+   "qwen3-coder-30b"
   ],
-  "non_llama2_rows": 5
+  "non_llama2_rows": 50
+ },
+ "rtx-5090": {
+  "rows": 295,
+  "sources": [
+   "hf-witcheer-rtx-5090-benchmarks",
+   "llamacpp-discussion-10879-scoreboard",
+   "llamacpp-discussion-15013-comments",
+   "llamacpp-discussion-15013-scoreboard",
+   "llamacpp-discussion-15396",
+   "llamacpp-pr-18683",
+   "llamacpp-pr-19375",
+   "llamacpp-pr-19769",
+   "llamacpp-thread-19081",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Gemma 4 12B",
+   "Gemma 4 31B",
+   "Gemma 4 31B-it",
+   "LFM2.5-8B-A1B",
+   "Ling-3.0-flash",
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Mistral Small 4 119B",
+   "Muse-Glimmer-30B",
+   "NVIDIA-Nemotron-3.5-Lightning-30B-A3B",
+   "Nemotron 3.5 Lightning 30B-A3B",
+   "Nemotron-3-Nano-30B-A3B",
+   "Nemotron-Cascade-2",
+   "North-Mini-Code-1.0",
+   "Ornith 1.5 35B-A3B",
+   "Ornith 1.5 9B",
+   "Qwable-3.6-27B",
+   "Qwable-5-27B-Coder",
+   "Qwen2.5 14B Instruct",
+   "Qwen3-Coder-Next",
+   "Qwen3.6-27B",
+   "Qwen3.6-27B-MTP",
+   "Qwen3.6-27B-MTP-pi-tune",
+   "Qwen3.6-28B-REAP-A3B",
+   "Qwen3.6-35B-A3B",
+   "Qwen3.8-27B",
+   "Qwen3.8-Flash-Next",
+   "Qwen3.8-Flash-Next 125B-A10B",
+   "Qwopus3.6-27B-Coder",
+   "Qwopus3.6-27B-Coder-Compat"
+  ],
+  "non_llama2_rows": 253
  },
  "rtx-pro-6000": {
-  "rows": 27,
+  "rows": 45,
   "sources": [
    "llamacpp-discussion-15013-comments",
    "llamacpp-discussion-15013-scoreboard",
+   "llamacpp-discussion-15396",
+   "llamacpp-pr-17906",
    "localscore-model-pages"
   ],
   "models": [
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
    "Qwen2.5 14B Instruct",
+   "gpt-oss 120B",
+   "gpt-oss 20B",
+   "gpt-oss ?B",
    "llama 7B"
   ],
-  "non_llama2_rows": 3
+  "non_llama2_rows": 21
  },
  "rx-7900xtx": {
-  "rows": 183,
+  "rows": 189,
   "sources": [
    "llamacpp-discussion-10879-comments",
    "llamacpp-discussion-10879-scoreboard",
    "llamacpp-discussion-15021-comments",
    "llamacpp-discussion-15021-scoreboard",
+   "llamacpp-pr-27952",
    "localscore-model-pages"
   ],
   "models": [
@@ -312,14 +441,15 @@
    "Meta Llama 3.1 8B Instruct",
    "Qwen2.5 14B Instruct",
    "gemma3 27B",
+   "gemma4 26B.A4B",
    "gemma4 31B",
    "glm4moe 106B.A12B",
    "llama 7B"
   ],
-  "non_llama2_rows": 15
+  "non_llama2_rows": 21
  },
  "strix-halo": {
-  "rows": 201,
+  "rows": 227,
   "sources": [
    "github-strix-halo-guide-BENCHMARKS",
    "hf-axjns-strix-halo-inference-bench",
@@ -329,6 +459,8 @@
    "llamacpp-discussion-15021-scoreboard",
    "llamacpp-discussion-16578-comments",
    "llamacpp-discussion-23659-body",
+   "llamacpp-pr-16095",
+   "llamacpp-pr-16827",
    "localscore-model-pages"
   ],
   "models": [
@@ -359,10 +491,10 @@
    "cognitivecomputations_Dolphin-Mistral-24B-Venice-Edition-Q6_K",
    "gemma-4-31B-it-UD-Q4_K_XL",
    "gemma4 31B",
+   "gpt-oss 120B",
    "gpt-oss ?B",
-   "gpt-oss-120b",
-   "gpt-oss-120b-Q4_K_M"
+   "gpt-oss-120b"
   ],
-  "non_llama2_rows": 134
+  "non_llama2_rows": 160
  }
 }

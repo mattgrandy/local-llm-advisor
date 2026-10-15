@@ -24,6 +24,9 @@ def normalize_device(raw, mem_gb=None, gpu_cores=None):
     if m:
         gen, var = m.group(1), (m.group(2) or '')
         base = f'm{gen}' + (f'-{var}' if var else '')
+        if not gpu_cores:
+            mc = re.search(r'(\d{2})\s*(?:GPU|[- ]core GPU)', s)
+            if mc: gpu_cores = int(mc.group(1))   # e.g. LocalScore '12P+4E+40GPU'
         if var == 'max' and gen in ('4', '5'):
             c = int(gpu_cores) if gpu_cores else None
             if c in (32, 40): hid = f'{base}-{c}'
@@ -45,6 +48,7 @@ def normalize_device(raw, mem_gb=None, gpu_cores=None):
             return ('rtx-4060-ti', '')
         if re.search(r'rtx 4060(?! ti)', l): return ('rtx-4060', 'rtx-4060')
         if re.search(r'rtx 4070(?! ti| super)', l): return ('rtx-4070', 'rtx-4070')
+        if re.search(r'rtx 5080', l): return ('rtx-5080', 'rtx-5080')
         if re.search(r'rtx 5070 ti', l): return ('rtx-5070ti', 'rtx-5070ti')
         if re.search(r'rtx 5070(?! ti)', l): return ('rtx-5070', 'rtx-5070')
         if re.search(r'rx 7900 xtx', l): return ('rx-7900xtx', 'rx-7900xtx')

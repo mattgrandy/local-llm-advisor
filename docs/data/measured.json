@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-14",
+ "generated": "2026-10-15",
  "entries": {
   "rtx-5090": [
    {
@@ -28,6 +28,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
      }
     ],
+    "size_gb": 3.82,
     "backends": [
      "CUDA",
      "Vulkan"
@@ -52,8 +53,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -73,8 +75,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -94,8 +97,829 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 298.34,
+    "pp": 12929.7,
+    "n": 5,
+    "tg_min": 282.26,
+    "tg_max": 367.9,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     },
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-05-28"
+   },
+   {
+    "model": "Qwen3.6 35B-A3B",
+    "site_id": "Qwen/Qwen3.6-35B-A3B",
+    "qclass": "Q4",
+    "params_b": 35.95,
+    "active_b": 3,
+    "moe": true,
+    "tg": 270.97,
+    "pp": 9239.9,
+    "n": 1,
+    "tg_min": 270.97,
+    "tg_max": 270.97,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 22.13,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-05-28"
+   },
+   {
+    "model": "Qwen3.6 27B",
+    "site_id": "Qwen/Qwen3.6-27B",
+    "qclass": "Q4",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 80.69,
+    "pp": 4620.3,
+    "n": 2,
+    "tg_min": 77.09,
+    "tg_max": 84.3,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 16.27,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "Nemotron-3-Nano-30B-A3B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 31.58,
+    "active_b": 3.0,
+    "moe": true,
+    "tg": 363.69,
+    "pp": 10674.4,
+    "n": 2,
+    "tg_min": 363.69,
+    "tg_max": 363.69,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 24.57,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "Qwen3.6-27B-MTP",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 27.32,
+    "active_b": null,
+    "moe": false,
+    "tg": 76.99,
+    "pp": 3835.8,
+    "n": 1,
+    "tg_min": 76.99,
+    "tg_max": 76.99,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 17.09,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-05-28"
+   },
+   {
+    "model": "Qwen3-Coder-Next",
+    "site_id": null,
+    "qclass": "Q2",
+    "params_b": 79.67,
+    "active_b": null,
+    "moe": false,
+    "tg": 224.87,
+    "pp": 4447.3,
+    "n": 1,
+    "tg_min": 224.87,
+    "tg_max": 224.87,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 26.76,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-05-28"
+   },
+   {
+    "model": "Gemma 4 12B",
+    "site_id": "google/gemma-4-12B-it",
+    "qclass": "Q6",
+    "params_b": 11.96,
+    "active_b": null,
+    "moe": false,
+    "tg": 122.3,
+    "pp": 7160.4,
+    "n": 1,
+    "tg_min": 122.3,
+    "tg_max": 122.3,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 9.77,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-06-04"
+   },
+   {
+    "model": "Gemma 4 31B",
+    "site_id": "google/gemma-4-31B-it",
+    "qclass": "Q6",
+    "params_b": 31.27,
+    "active_b": null,
+    "moe": false,
+    "tg": 55.35,
+    "pp": 3165.4,
+    "n": 1,
+    "tg_min": 55.35,
+    "tg_max": 55.35,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 25.2,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "Gemma 4 31B",
+    "site_id": "google/gemma-4-31B-it",
+    "qclass": "Q4",
+    "params_b": 31.27,
+    "active_b": null,
+    "moe": false,
+    "tg": 76.39,
+    "pp": 4255.3,
+    "n": 1,
+    "tg_min": 76.39,
+    "tg_max": 76.39,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 17.65,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "gpt-oss 120B",
+    "site_id": "openai/gpt-oss-120b",
+    "qclass": "Q4",
+    "params_b": 116.83,
+    "active_b": 5.1,
+    "moe": true,
+    "tg": 46.48,
+    "pp": 484.4,
+    "n": 1,
+    "tg_min": 46.48,
+    "tg_max": 46.48,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 0.01,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "LFM2.5-8B-A1B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 8.0,
+    "active_b": 1.0,
+    "moe": true,
+    "tg": 563.12,
+    "pp": 30680.7,
+    "n": 1,
+    "tg_min": 563.12,
+    "tg_max": 563.12,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 9.01,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "Mistral Small 4 119B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 119.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 35.88,
+    "pp": 243.1,
+    "n": 1,
+    "tg_min": 35.88,
+    "tg_max": 35.88,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 0.01,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "Muse-Glimmer-30B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 30.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 85.71,
+    "pp": 4739.8,
+    "n": 1,
+    "tg_min": 85.71,
+    "tg_max": 85.71,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 15.88,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "Qwable-3.6-27B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 27.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 77.57,
+    "pp": 3808.7,
+    "n": 1,
+    "tg_min": 77.57,
+    "tg_max": 77.57,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 16.55,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "Qwable-5-27B-Coder",
+    "site_id": null,
+    "qclass": "Q6",
+    "params_b": 27.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 62.9,
+    "pp": 3210.9,
+    "n": 1,
+    "tg_min": 62.9,
+    "tg_max": 62.9,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 22.43,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "Qwen3.6-27B-MTP-pi-tune",
+    "site_id": null,
+    "qclass": "Q6",
+    "params_b": 27.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 62.9,
+    "pp": 3197.7,
+    "n": 1,
+    "tg_min": 62.9,
+    "tg_max": 62.9,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 22.44,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "Qwen3.6 27B",
+    "site_id": "Qwen/Qwen3.6-27B",
+    "qclass": "Q6",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 61.85,
+    "pp": 3222.0,
+    "n": 1,
+    "tg_min": 61.85,
+    "tg_max": 61.85,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 22.53,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "Qwen3.6-28B-REAP-A3B",
+    "site_id": null,
+    "qclass": "Q6",
+    "params_b": 28.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 246.62,
+    "pp": 8226.9,
+    "n": 1,
+    "tg_min": 246.62,
+    "tg_max": 246.62,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 23.24,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "Qwen3.6 35B-A3B",
+    "site_id": "Qwen/Qwen3.6-35B-A3B",
+    "qclass": "Q6",
+    "params_b": 35.95,
+    "active_b": 3,
+    "moe": true,
+    "tg": 259.65,
+    "pp": 8321.5,
+    "n": 1,
+    "tg_min": 259.65,
+    "tg_max": 259.65,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 29.31,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "Qwopus3.6-27B-Coder-Compat",
+    "site_id": null,
+    "qclass": "Q6",
+    "params_b": 27.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 62.91,
+    "pp": 3210.9,
+    "n": 1,
+    "tg_min": 62.91,
+    "tg_max": 62.91,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 22.43,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "Qwopus3.6-27B-Coder",
+    "site_id": null,
+    "qclass": "Q5",
+    "params_b": 27.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 70.52,
+    "pp": 3760.8,
+    "n": 1,
+    "tg_min": 70.52,
+    "tg_max": 70.52,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 19.53,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-11"
+   },
+   {
+    "model": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 31.58,
+    "active_b": 3.0,
+    "moe": true,
+    "tg": 385.95,
+    "pp": 11863.7,
+    "n": 2,
+    "tg_min": 377.39,
+    "tg_max": 394.51,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 21.72,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-12"
+   },
+   {
+    "model": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B",
+    "site_id": null,
+    "qclass": "Q2",
+    "params_b": 32.91,
+    "active_b": 3.0,
+    "moe": true,
+    "tg": 401.06,
+    "pp": 12430.8,
+    "n": 2,
+    "tg_min": 399.26,
+    "tg_max": 402.86,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 18.84,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-13"
+   },
+   {
+    "model": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B",
+    "site_id": null,
+    "qclass": "Q3",
+    "params_b": 32.91,
+    "active_b": 3.0,
+    "moe": true,
+    "tg": 390.44,
+    "pp": 11877.0,
+    "n": 2,
+    "tg_min": 390.12,
+    "tg_max": 390.76,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 19.81,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-13"
+   },
+   {
+    "model": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B",
+    "site_id": null,
+    "qclass": "Q5",
+    "params_b": 32.91,
+    "active_b": 3.0,
+    "moe": true,
+    "tg": 348.71,
+    "pp": 11067.4,
+    "n": 1,
+    "tg_min": 348.71,
+    "tg_max": 348.71,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 26.96,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-13"
+   },
+   {
+    "model": "Qwen3.8-27B",
+    "site_id": null,
+    "qclass": "Q2",
+    "params_b": 27.32,
+    "active_b": null,
+    "moe": false,
+    "tg": 108.95,
+    "pp": 3620.7,
+    "n": 2,
+    "tg_min": 103.3,
+    "tg_max": 114.61,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 9.65,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-15"
+   },
+   {
+    "model": "Qwen3.8-27B",
+    "site_id": null,
+    "qclass": "Q3",
+    "params_b": 27.32,
+    "active_b": null,
+    "moe": false,
+    "tg": 96.23,
+    "pp": 3944.1,
+    "n": 1,
+    "tg_min": 96.23,
+    "tg_max": 96.23,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 11.91,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-15"
+   },
+   {
+    "model": "Qwen3.8-27B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 27.32,
+    "active_b": null,
+    "moe": false,
+    "tg": 77.58,
+    "pp": 3859.5,
+    "n": 2,
+    "tg_min": 76.22,
+    "tg_max": 78.94,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 17.5,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-15"
+   },
+   {
+    "model": "Qwen3.8-27B",
+    "site_id": null,
+    "qclass": "Q6",
+    "params_b": 27.32,
+    "active_b": null,
+    "moe": false,
+    "tg": 63.08,
+    "pp": 3223.3,
+    "n": 1,
+    "tg_min": 63.08,
+    "tg_max": 63.08,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 22.87,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-15"
+   },
+   {
+    "model": "Qwen3.8-27B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 27.32,
+    "active_b": null,
+    "moe": false,
+    "tg": 53.07,
+    "pp": 3834.0,
+    "n": 1,
+    "tg_min": 53.07,
+    "tg_max": 53.07,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 29.03,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-15"
+   },
+   {
+    "model": "Ornith 1.5 35B-A3B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 35.51,
+    "active_b": 3.0,
+    "moe": true,
+    "tg": 303.21,
+    "pp": 8953.0,
+    "n": 1,
+    "tg_min": 303.21,
+    "tg_max": 303.21,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 21.7,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-21"
+   },
+   {
+    "model": "Ornith 1.5 9B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.95,
+    "active_b": null,
+    "moe": false,
+    "tg": 225.22,
+    "pp": 11937.6,
+    "n": 1,
+    "tg_min": 225.22,
+    "tg_max": 225.22,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 5.63,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-23"
+   },
+   {
+    "model": "Ornith 1.5 9B",
+    "site_id": null,
+    "qclass": "Q6",
+    "params_b": 8.95,
+    "active_b": null,
+    "moe": false,
+    "tg": 187.71,
+    "pp": 10163.5,
+    "n": 1,
+    "tg_min": 187.71,
+    "tg_max": 187.71,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 7.36,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-08-23"
+   },
+   {
+    "model": "Qwopus3.8-27B-Flash",
+    "site_id": null,
+    "qclass": "Q6",
+    "params_b": 27.32,
+    "active_b": null,
+    "moe": false,
+    "tg": 62.96,
+    "pp": 3148.0,
+    "n": 1,
+    "tg_min": 62.96,
+    "tg_max": 62.96,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     }
+    ],
+    "size_gb": 22.43,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-09-07"
    }
   ],
   "rtx-pro-6000": [
@@ -121,6 +945,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
      }
     ],
+    "size_gb": 3.82,
     "backends": [
      "CUDA"
     ],
@@ -144,8 +969,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -165,8 +991,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -186,8 +1013,57 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 286.91,
+    "pp": 11522.0,
+    "n": 1,
+    "tg_min": 286.91,
+    "tg_max": 286.91,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2025-08-18"
+   },
+   {
+    "model": "gpt-oss 120B",
+    "site_id": "openai/gpt-oss-120b",
+    "qclass": "Q4",
+    "params_b": 116.83,
+    "active_b": 5.1,
+    "moe": true,
+    "tg": 196.31,
+    "pp": 5518.1,
+    "n": 1,
+    "tg_min": 196.31,
+    "tg_max": 196.31,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     }
+    ],
+    "size_gb": 63.37,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2025-08-18"
    }
   ],
   "rtx-4090": [
@@ -221,6 +1097,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
      }
     ],
+    "size_gb": 3.82,
     "backends": [
      "CUDA",
      "Vulkan"
@@ -245,8 +1122,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -266,8 +1144,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -287,8 +1166,420 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 253.07,
+    "pp": 9212.2,
+    "n": 10,
+    "tg_min": 221.95,
+    "tg_max": 258.06,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-03-10"
+   },
+   {
+    "model": "Llama 3.1 8B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 150.85,
+    "pp": null,
+    "n": 1,
+    "tg_min": 150.85,
+    "tg_max": 150.85,
+    "sources": [
+     {
+      "id": "hf-steven0226-speculative-decoding-bench-rtx4090",
+      "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-07-13"
+   },
+   {
+    "model": "Qwen3-14B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 83.89,
+    "pp": null,
+    "n": 1,
+    "tg_min": 83.89,
+    "tg_max": 83.89,
+    "sources": [
+     {
+      "id": "hf-steven0226-speculative-decoding-bench-rtx4090",
+      "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-07-13"
+   },
+   {
+    "model": "Qwen3-8B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.19,
+    "active_b": null,
+    "moe": false,
+    "tg": 133.34,
+    "pp": null,
+    "n": 2,
+    "tg_min": 126.3,
+    "tg_max": 140.38,
+    "sources": [
+     {
+      "id": "hf-steven0226-speculative-decoding-bench-rtx4090",
+      "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "CUDA",
+     "LM Studio(CUDA)"
+    ],
+    "latest": "2026-07-13"
+   },
+   {
+    "model": "Qwen3-8B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 8.19,
+    "active_b": null,
+    "moe": false,
+    "tg": 90.08,
+    "pp": null,
+    "n": 1,
+    "tg_min": 90.08,
+    "tg_max": 90.08,
+    "sources": [
+     {
+      "id": "hf-steven0226-speculative-decoding-bench-rtx4090",
+      "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-07-13"
+   }
+  ],
+  "rtx-5080": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 182.51,
+    "pp": 7425.0,
+    "n": 18,
+    "tg_min": 163.08,
+    "tg_max": 192.17,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-15594232"
+     },
+     {
+      "id": "llamacpp-discussion-10879-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879"
+     },
+     {
+      "id": "llamacpp-discussion-15013-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013#discussioncomment-14244491"
+     },
+     {
+      "id": "llamacpp-discussion-15013-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
+     }
+    ],
+    "size_gb": 3.82,
+    "backends": [
+     "CUDA",
+     "Vulkan"
+    ],
+    "latest": "2026-10-10"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 35.51,
+    "pp": 4045.2,
+    "n": 2,
+    "tg_min": 26.11,
+    "tg_max": 44.91,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 33.06,
+    "pp": 2415.7,
+    "n": 3,
+    "tg_min": 25.52,
+    "tg_max": 72.65,
+    "sources": [
+     {
+      "id": "localscore-latest-runs",
+      "url": "https://www.localscore.ai/latest"
+     },
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "llamafile"
+    ],
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 196.79,
+    "pp": 15538.8,
+    "n": 3,
+    "tg_min": 83.13,
+    "tg_max": 463.34,
+    "sources": [
+     {
+      "id": "localscore-latest-runs",
+      "url": "https://www.localscore.ai/latest"
+     },
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "llamafile"
+    ],
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 187.5,
+    "pp": 9447.0,
+    "n": 10,
+    "tg_min": 178.34,
+    "tg_max": 204.86,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     },
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "CUDA",
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-08-26"
+   },
+   {
+    "model": "qwen2.5-14b",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.8,
+    "active_b": null,
+    "moe": false,
+    "tg": 95.62,
+    "pp": 5039.3,
+    "n": 4,
+    "tg_min": 94.48,
+    "tg_max": 97.02,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-08-12"
+   },
+   {
+    "model": "llama3.2-3b",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 3.2,
+    "active_b": null,
+    "moe": false,
+    "tg": 305.27,
+    "pp": 18041.1,
+    "n": 4,
+    "tg_min": 298.21,
+    "tg_max": 312.89,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-08-12"
+   },
+   {
+    "model": "qwen2.5-7b",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 7.6,
+    "active_b": null,
+    "moe": false,
+    "tg": 178.22,
+    "pp": 10058.7,
+    "n": 4,
+    "tg_min": 176.61,
+    "tg_max": 180.02,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-08-12"
+   },
+   {
+    "model": "qwen2.5-coder-7b",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 7.6,
+    "active_b": null,
+    "moe": false,
+    "tg": 172.73,
+    "pp": 9579.2,
+    "n": 4,
+    "tg_min": 171.41,
+    "tg_max": 174.58,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-08-26"
+   },
+   {
+    "model": "qwen2.5-coder-14b",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.8,
+    "active_b": null,
+    "moe": false,
+    "tg": 94.14,
+    "pp": 4925.8,
+    "n": 4,
+    "tg_min": 93.41,
+    "tg_max": 94.89,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-08-26"
+   },
+   {
+    "model": "devstral-24b",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 23.6,
+    "active_b": null,
+    "moe": false,
+    "tg": 35.61,
+    "pp": 7356.1,
+    "n": 2,
+    "tg_min": 34.9,
+    "tg_max": 36.32,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-08-26"
    }
   ],
   "rtx-5070ti": [
@@ -322,6 +1613,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
      }
     ],
+    "size_gb": 3.82,
     "backends": [
      "CUDA",
      "Vulkan"
@@ -346,8 +1638,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -367,8 +1660,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -388,8 +1682,33 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 189.45,
+    "pp": 6332.9,
+    "n": 2,
+    "tg_min": 189.45,
+    "tg_max": 189.46,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2025-08-18"
    }
   ],
   "rtx-3090": [
@@ -423,6 +1742,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
      }
     ],
+    "size_gb": 3.82,
     "backends": [
      "CUDA",
      "ROCm",
@@ -448,8 +1768,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -469,8 +1790,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -490,8 +1812,33 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 189.45,
+    "pp": 6326.0,
+    "n": 15,
+    "tg_min": 111.51,
+    "tg_max": 282.51,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2025-08-23"
    }
   ],
   "rtx-5070": [
@@ -513,6 +1860,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
      }
     ],
+    "size_gb": null,
     "backends": [
      "CUDA"
     ],
@@ -536,8 +1884,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -557,8 +1906,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -578,8 +1928,9 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    }
   ],
   "rtx-3060-12": [
@@ -605,6 +1956,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
      }
     ],
+    "size_gb": 3.82,
     "backends": [
      "CUDA"
     ],
@@ -628,8 +1980,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -649,8 +2002,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -670,8 +2024,9 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    }
   ],
   "dgx-spark": [
@@ -705,6 +2060,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
      }
     ],
+    "size_gb": 3.82,
     "backends": [
      "CUDA",
      "Vulkan"
@@ -729,6 +2085,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-15524098"
      }
     ],
+    "size_gb": 24.5,
     "backends": [
      "CUDA",
      "Vulkan"
@@ -742,9 +2099,9 @@
     "params_b": 116.83,
     "active_b": 5.1,
     "moe": true,
-    "tg": 56.33,
-    "pp": 2046.7,
-    "n": 5,
+    "tg": 56.76,
+    "pp": 1993.0,
+    "n": 6,
     "tg_min": 45.34,
     "tg_max": 62.36,
     "sources": [
@@ -753,10 +2110,15 @@
       "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/dgx-spark/dgx-spark.md"
      },
      {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396#discussioncomment-15079003"
+     },
+     {
       "id": "llamacpp-discussion-16578-comments",
       "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-14748774"
      }
     ],
+    "size_gb": 63.37,
     "backends": [
      "CUDA"
     ],
@@ -770,8 +2132,8 @@
     "active_b": 3.6,
     "moe": true,
     "tg": 86.23,
-    "pp": 4125.3,
-    "n": 6,
+    "pp": 3797.8,
+    "n": 7,
     "tg_min": 83.43,
     "tg_max": 117.83,
     "sources": [
@@ -780,10 +2142,15 @@
       "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/dgx-spark/dgx-spark.md"
      },
      {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396#discussioncomment-15079003"
+     },
+     {
       "id": "llamacpp-discussion-16578-comments",
       "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-14980101"
      }
     ],
+    "size_gb": 12.1,
     "backends": [
      "CUDA",
      "Metal"
@@ -808,6 +2175,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-15033766"
      }
     ],
+    "size_gb": 134.12,
     "backends": [
      "CUDA"
     ],
@@ -831,6 +2199,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-16099009"
      }
     ],
+    "size_gb": 36.89,
     "backends": [
      "CUDA"
     ],
@@ -854,6 +2223,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-16377832"
      }
     ],
+    "size_gb": 48.03,
     "backends": [
      "CUDA"
     ],
@@ -877,6 +2247,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-16377832"
      }
     ],
+    "size_gb": 21.57,
     "backends": [
      "CUDA"
     ],
@@ -900,6 +2271,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-16377832"
      }
     ],
+    "size_gb": 74.66,
     "backends": [
      "CUDA"
     ],
@@ -923,6 +2295,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-16377832"
      }
     ],
+    "size_gb": 82.06,
     "backends": [
      "CUDA"
     ],
@@ -946,6 +2319,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/dgx-spark/dgx-spark.md"
      }
     ],
+    "size_gb": 32.48,
     "backends": [
      "CUDA"
     ],
@@ -969,6 +2343,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/dgx-spark/dgx-spark.md"
      }
     ],
+    "size_gb": 8.1,
     "backends": [
      "CUDA"
     ],
@@ -992,6 +2367,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/dgx-spark/dgx-spark.md"
      }
     ],
+    "size_gb": 2.52,
     "backends": [
      "CUDA"
     ],
@@ -1015,6 +2391,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/dgx-spark/dgx-spark.md"
      }
     ],
+    "size_gb": 31.84,
     "backends": [
      "CUDA"
     ],
@@ -1038,6 +2415,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/nemotron/nemotron-dgx-spark.md"
      }
     ],
+    "size_gb": 69.9,
     "backends": [
      "CUDA"
     ],
@@ -1061,6 +2439,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/nemotron/nemotron-dgx-spark.md"
      }
     ],
+    "size_gb": 4.23,
     "backends": [
      "CUDA"
     ],
@@ -1084,8 +2463,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -1105,8 +2485,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -1126,8 +2507,9 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    }
   ],
   "strix-halo": [
@@ -1161,6 +2543,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/15021"
      }
     ],
+    "size_gb": 3.82,
     "backends": [
      "ROCm",
      "Vulkan"
@@ -1185,6 +2568,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/23659"
      }
     ],
+    "size_gb": 113.86,
     "backends": [
      "ROCm"
     ],
@@ -1212,6 +2596,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/23659"
      }
     ],
+    "size_gb": 18.75,
     "backends": [
      "ROCm",
      "Vulkan"
@@ -1236,6 +2621,7 @@
       "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
      }
     ],
+    "size_gb": 13.58,
     "backends": [
      "Vulkan"
     ],
@@ -1259,6 +2645,7 @@
       "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
      }
     ],
+    "size_gb": 15.79,
     "backends": [
      "Vulkan"
     ],
@@ -1282,6 +2669,7 @@
       "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
      }
     ],
+    "size_gb": 19.51,
     "backends": [
      "Vulkan"
     ],
@@ -1305,6 +2693,7 @@
       "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
      }
     ],
+    "size_gb": 22.53,
     "backends": [
      "Vulkan"
     ],
@@ -1328,6 +2717,7 @@
       "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
      }
     ],
+    "size_gb": 36.9,
     "backends": [
      "Vulkan"
     ],
@@ -1355,6 +2745,7 @@
       "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
      }
     ],
+    "size_gb": 22.13,
     "backends": [
      "Vulkan"
     ],
@@ -1378,6 +2769,7 @@
       "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
      }
     ],
+    "size_gb": 17.92,
     "backends": [
      "Vulkan"
     ],
@@ -1401,6 +2793,7 @@
       "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
      }
     ],
+    "size_gb": 19.35,
     "backends": [
      "Vulkan"
     ],
@@ -1428,6 +2821,7 @@
       "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
      }
     ],
+    "size_gb": 49.63,
     "backends": [
      "Vulkan"
     ],
@@ -1451,6 +2845,7 @@
       "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
      }
     ],
+    "size_gb": 21.16,
     "backends": [
      "Vulkan"
     ],
@@ -1474,6 +2869,7 @@
       "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
      }
     ],
+    "size_gb": null,
     "backends": [
      "Vulkan"
     ],
@@ -1497,6 +2893,7 @@
       "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
      }
     ],
+    "size_gb": null,
     "backends": [
      "Vulkan"
     ],
@@ -1520,22 +2917,23 @@
       "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
      }
     ],
+    "size_gb": null,
     "backends": [
      "Vulkan"
     ],
     "latest": "2026-10-03"
    },
    {
-    "model": "Gemma 4 26B-A4B IT QAT",
-    "site_id": null,
+    "model": "Gemma 4 26B-A4B",
+    "site_id": "google/gemma-4-26B-A4B-it",
     "qclass": "Q4",
-    "params_b": 26.0,
-    "active_b": 4.0,
+    "params_b": 25.81,
+    "active_b": 3.8,
     "moe": true,
-    "tg": 74.8,
-    "pp": 1432.0,
-    "n": 1,
-    "tg_min": 74.8,
+    "tg": 61.63,
+    "pp": 1287.0,
+    "n": 2,
+    "tg_min": 48.46,
     "tg_max": 74.8,
     "sources": [
      {
@@ -1543,6 +2941,7 @@
       "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
      }
     ],
+    "size_gb": null,
     "backends": [
      "Vulkan"
     ],
@@ -1566,6 +2965,7 @@
       "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
      }
     ],
+    "size_gb": null,
     "backends": [
      "Vulkan"
     ],
@@ -1589,6 +2989,7 @@
       "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
      }
     ],
+    "size_gb": null,
     "backends": [
      "Vulkan"
     ],
@@ -1612,29 +3013,7 @@
       "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
      }
     ],
-    "backends": [
-     "Vulkan"
-    ],
-    "latest": "2026-10-03"
-   },
-   {
-    "model": "Gemma 4 26B-A4B",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 26.0,
-    "active_b": 4.0,
-    "moe": true,
-    "tg": 48.46,
-    "pp": 1142.0,
-    "n": 1,
-    "tg_min": 48.46,
-    "tg_max": 48.46,
-    "sources": [
-     {
-      "id": "github-strix-halo-guide-BENCHMARKS",
-      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
-     }
-    ],
+    "size_gb": null,
     "backends": [
      "Vulkan"
     ],
@@ -1658,6 +3037,7 @@
       "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
      }
     ],
+    "size_gb": null,
     "backends": [
      "Vulkan"
     ],
@@ -1681,6 +3061,7 @@
       "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
      }
     ],
+    "size_gb": null,
     "backends": [
      "Vulkan"
     ],
@@ -1704,6 +3085,7 @@
       "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
      }
     ],
+    "size_gb": null,
     "backends": [
      "Vulkan"
     ],
@@ -1727,8 +3109,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -1748,8 +3131,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -1769,8 +3153,9 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    }
   ],
   "m4": [
@@ -1792,6 +3177,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-9491068"
      }
     ],
+    "size_gb": 2.2,
     "backends": [
      "Metal"
     ],
@@ -1815,6 +3201,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-9491068"
      }
     ],
+    "size_gb": 1.17,
     "backends": [
      "Metal"
     ],
@@ -1838,6 +3225,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-9491068"
      }
     ],
+    "size_gb": 0.63,
     "backends": [
      "Metal"
     ],
@@ -1861,6 +3249,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-9491068"
      }
     ],
+    "size_gb": 4.11,
     "backends": [
      "Metal"
     ],
@@ -1884,6 +3273,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-16886673"
      }
     ],
+    "size_gb": 2.01,
     "backends": [
      "Metal"
     ],
@@ -1907,6 +3297,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-16886673"
      }
     ],
+    "size_gb": 4.68,
     "backends": [
      "Metal"
     ],
@@ -1930,8 +3321,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -1951,8 +3343,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -1972,8 +3365,9 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    }
   ],
   "m4-max-32": [
@@ -1995,6 +3389,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-13218715"
      }
     ],
+    "size_gb": 13.48,
     "backends": [
      "Metal"
     ],
@@ -2018,6 +3413,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-13218715"
      }
     ],
+    "size_gb": 7.16,
     "backends": [
      "Metal"
     ],
@@ -2041,10 +3437,101 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-13218715"
      }
     ],
+    "size_gb": 3.82,
     "backends": [
      "Metal"
     ],
     "latest": "2025-05-21"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 45.5,
+    "pp": 540.0,
+    "n": 1,
+    "tg_min": 45.5,
+    "tg_max": 45.5,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 25.56,
+    "pp": 284.6,
+    "n": 1,
+    "tg_min": 25.56,
+    "tg_max": 25.56,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 166.42,
+    "pp": 3255.2,
+    "n": 1,
+    "tg_min": 166.42,
+    "tg_max": 166.42,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 92.36,
+    "pp": 1277.4,
+    "n": 1,
+    "tg_min": 92.36,
+    "tg_max": 92.36,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2025-08-18"
    }
   ],
   "m5-max-40": [
@@ -2066,6 +3553,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-17386908"
      }
     ],
+    "size_gb": 13.48,
     "backends": [
      "Metal"
     ],
@@ -2089,6 +3577,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-17386908"
      }
     ],
+    "size_gb": 7.16,
     "backends": [
      "Metal"
     ],
@@ -2112,10 +3601,129 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-17386908"
      }
     ],
+    "size_gb": 3.82,
     "backends": [
      "Metal"
     ],
     "latest": "2026-06-22"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 39.57,
+    "pp": 392.7,
+    "n": 2,
+    "tg_min": 36.87,
+    "tg_max": 42.27,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "Qwen3.6 35B-A3B",
+    "site_id": "Qwen/Qwen3.6-35B-A3B",
+    "qclass": "Q4",
+    "params_b": 35.95,
+    "active_b": 3,
+    "moe": true,
+    "tg": 82.6,
+    "pp": null,
+    "n": 1,
+    "tg_min": 82.6,
+    "tg_max": 82.6,
+    "sources": [
+     {
+      "id": "hf-studioburnside-mlx-local-inference-benchmarks",
+      "url": "https://huggingface.co/datasets/studioburnside/mlx-local-inference-benchmarks"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "MLX"
+    ],
+    "latest": "2026-07-10"
+   },
+   {
+    "model": "Qwen3.6 35B-A3B",
+    "site_id": "Qwen/Qwen3.6-35B-A3B",
+    "qclass": "Q8",
+    "params_b": 35.95,
+    "active_b": 3,
+    "moe": true,
+    "tg": 71.4,
+    "pp": null,
+    "n": 1,
+    "tg_min": 71.4,
+    "tg_max": 71.4,
+    "sources": [
+     {
+      "id": "hf-studioburnside-mlx-local-inference-benchmarks",
+      "url": "https://huggingface.co/datasets/studioburnside/mlx-local-inference-benchmarks"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "MLX"
+    ],
+    "latest": "2026-07-10"
+   },
+   {
+    "model": "Tess-4-27B (Qwen3.6-27B fine-tune)",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 27.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 17.3,
+    "pp": null,
+    "n": 1,
+    "tg_min": 17.3,
+    "tg_max": 17.3,
+    "sources": [
+     {
+      "id": "hf-studioburnside-mlx-local-inference-benchmarks",
+      "url": "https://huggingface.co/datasets/studioburnside/mlx-local-inference-benchmarks"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "MLX"
+    ],
+    "latest": "2026-07-10"
+   },
+   {
+    "model": "Tess-4-27B (Qwen3.6-27B fine-tune)",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 27.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 28.3,
+    "pp": null,
+    "n": 1,
+    "tg_min": 28.3,
+    "tg_max": 28.3,
+    "sources": [
+     {
+      "id": "hf-studioburnside-mlx-local-inference-benchmarks",
+      "url": "https://huggingface.co/datasets/studioburnside/mlx-local-inference-benchmarks"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "MLX"
+    ],
+    "latest": "2026-07-10"
    }
   ],
   "rx-7900xtx": [
@@ -2149,6 +3757,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/15021"
      }
     ],
+    "size_gb": 3.82,
     "backends": [
      "ROCm",
      "Vulkan"
@@ -2173,6 +3782,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-13222968"
      }
     ],
+    "size_gb": 22.16,
     "backends": [
      "ROCm",
      "Vulkan"
@@ -2197,6 +3807,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-13223671"
      }
     ],
+    "size_gb": 17.22,
     "backends": [
      "ROCm",
      "Vulkan"
@@ -2221,6 +3832,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-16241493"
      }
     ],
+    "size_gb": 57.03,
     "backends": [
      "ROCm"
     ],
@@ -2244,6 +3856,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-18122886"
      }
     ],
+    "size_gb": 32.62,
     "backends": [
      "Vulkan"
     ],
@@ -2267,8 +3880,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -2288,8 +3902,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -2309,8 +3924,9 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    }
   ],
   "m3-ultra": [
@@ -2336,6 +3952,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/10879"
      }
     ],
+    "size_gb": 3.82,
     "backends": [
      "Metal",
      "Vulkan"
@@ -2360,8 +3977,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -2381,8 +3999,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -2402,8 +4021,33 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 115.52,
+    "pp": 2816.5,
+    "n": 1,
+    "tg_min": 115.52,
+    "tg_max": 115.52,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2025-08-18"
    }
   ],
   "rtx-4070": [
@@ -2425,6 +4069,7 @@
       "url": "https://github.com/ggml-org/llama.cpp/discussions/10879"
      }
     ],
+    "size_gb": null,
     "backends": [
      "Vulkan"
     ],
@@ -2448,8 +4093,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -2469,8 +4115,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -2490,8 +4137,9 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    }
   ],
   "rtx-4060ti-16": [
@@ -2513,8 +4161,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -2534,8 +4183,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -2555,8 +4205,9 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    }
   ],
   "rtx-4060": [
@@ -2578,8 +4229,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -2599,8 +4251,169 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
+   }
+  ],
+  "m5-max-32": [
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 62.19,
+    "pp": 637.4,
+    "n": 1,
+    "tg_min": 62.19,
+    "tg_max": 62.19,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 34.15,
+    "pp": 343.1,
+    "n": 1,
+    "tg_min": 34.15,
+    "tg_max": 34.15,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 229.29,
+    "pp": 3634.8,
+    "n": 1,
+    "tg_min": 229.29,
+    "tg_max": 229.29,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-15"
+   }
+  ],
+  "m4-max-40": [
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 52.85,
+    "pp": 631.8,
+    "n": 3,
+    "tg_min": 47.94,
+    "tg_max": 54.47,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 28.95,
+    "pp": 328.4,
+    "n": 3,
+    "tg_min": 25.62,
+    "tg_max": 30.23,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 180.04,
+    "pp": 3816.8,
+    "n": 3,
+    "tg_min": 178.99,
+    "tg_max": 183.47,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-15"
+   },
+   {
+    "model": "minicpm-v47 35B-A3B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 35.0,
+    "active_b": 3.0,
+    "moe": true,
+    "tg": 177.76,
+    "pp": 693.2,
+    "n": 1,
+    "tg_min": 177.76,
+    "tg_max": 177.76,
+    "sources": [
+     {
+      "id": "hf-pgmharikrishnan-mlx-serve-local-llm-benchmarks-2026-10",
+      "url": "https://huggingface.co/datasets/pgmharikrishnan/mlx-serve-local-llm-benchmarks-2026-10"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "MLX(mlx-serve)"
+    ],
+    "latest": "2026-10-13"
    }
   ],
   "m5-pro": [
@@ -2622,8 +4435,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -2643,8 +4457,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -2664,8 +4479,9 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    }
   ],
   "m4-pro": [
@@ -2687,8 +4503,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -2708,8 +4525,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -2729,8 +4547,33 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
+   }
+  ],
+  "m6": [
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 25.24,
+    "pp": 263.1,
+    "n": 1,
+    "tg_min": 25.24,
+    "tg_max": 25.24,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-15"
    }
   ],
   "m5": [
@@ -2752,8 +4595,9 @@
       "url": "https://www.localscore.ai/model/1"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -2773,8 +4617,9 @@
       "url": "https://www.localscore.ai/model/2"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -2794,23 +4639,24 @@
       "url": "https://www.localscore.ai/model/3"
      }
     ],
+    "size_gb": null,
     "backends": [],
-    "latest": "2026-10-14"
+    "latest": "2026-10-15"
    }
   ]
  },
  "calibration": {
   "moe_factor": {
-   "value": 0.774,
-   "n": 68,
+   "value": 0.785,
+   "n": 70,
    "basis": "measured on unified-memory hardware only (Strix Halo, DGX Spark); EXTRAPOLATED to other hardware, where there is no calibration data, so MoE estimates there are likely optimistic"
   },
   "by_hw": {
    "rtx-5090": {
-    "efficiency": 0.656,
-    "n": 33,
-    "p25": 0.632,
-    "p75": 0.68
+    "efficiency": 0.684,
+    "n": 59,
+    "p25": 0.648,
+    "p75": 0.769
    },
    "rtx-pro-6000": {
     "efficiency": 0.615,
@@ -2820,9 +4666,15 @@
    },
    "rtx-4090": {
     "efficiency": 0.676,
-    "n": 46,
+    "n": 51,
     "p25": 0.626,
-    "p75": 0.69
+    "p75": 0.692
+   },
+   "rtx-5080": {
+    "efficiency": 0.786,
+    "n": 41,
+    "p25": 0.744,
+    "p75": 0.848
    },
    "rtx-5070ti": {
     "efficiency": 0.733,
@@ -2867,16 +4719,16 @@
     "p75": 0.686
    },
    "m4-max-32": {
-    "efficiency": 0.775,
-    "n": 6,
-    "p25": 0.72,
+    "efficiency": 0.743,
+    "n": 8,
+    "p25": 0.69,
     "p75": 0.841
    },
    "m5-max-40": {
-    "efficiency": 0.792,
-    "n": 3,
-    "p25": 0.777,
-    "p75": 0.846
+    "efficiency": 0.777,
+    "n": 7,
+    "p25": 0.616,
+    "p75": 0.808
    },
    "rx-7900xtx": {
     "efficiency": 0.607,
@@ -2896,6 +4748,12 @@
     "p25": 0.737,
     "p75": 0.748
    },
+   "m4-max-40": {
+    "efficiency": 0.473,
+    "n": 6,
+    "p25": 0.427,
+    "p75": 0.486
+   },
    "m5-pro": {
     "efficiency": 0.694,
     "n": 9,
@@ -2909,24 +4767,24 @@
     "p75": 0.587
    },
    "m5": {
-    "efficiency": 0.641,
+    "efficiency": 0.644,
     "n": 5,
-    "p25": 0.634,
-    "p75": 0.673
+    "p25": 0.637,
+    "p75": 0.675
    }
   },
   "by_kind": {
    "gpu": {
-    "efficiency": 0.637,
-    "n": 346
+    "efficiency": 0.663,
+    "n": 418
    },
    "unified": {
     "efficiency": 0.798,
     "n": 109
    },
    "apple": {
-    "efficiency": 0.641,
-    "n": 52
+    "efficiency": 0.631,
+    "n": 67
    }
   },
   "method": "efficiency = measured_tg / (memory_bandwidth_GBps / read_GB); dense models only; read_GB = params*bits_per_weight/8 >= 3.0 GB; single-device; median; per-hardware factor needs >= 3 rows, else per-kind median, else the global assumption.",
@@ -2943,8 +4801,20 @@
    "url": "https://www.localscore.ai"
   },
   {
-   "name": "llama.cpp community benchmark threads (ggml-org/llama.cpp, MIT)",
+   "name": "llama.cpp community benchmark threads incl. the gpt-oss guide #15396 (ggml-org/llama.cpp, MIT)",
    "url": "https://github.com/ggml-org/llama.cpp/discussions"
+  },
+  {
+   "name": "witcheer/rtx-5090-benchmarks (Hugging Face, MIT)",
+   "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+  },
+  {
+   "name": "iBlessi/rtx-5080-llm-throughput (Hugging Face, CC-BY-4.0)",
+   "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+  },
+  {
+   "name": "steven0226/speculative-decoding-bench-rtx4090 (Hugging Face, CC-BY-4.0)",
+   "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090"
   },
   {
    "name": "Hugging Face / GitHub open-licensed benchmark repos (see data/benchmarks/README.md)",
@@ -2952,9 +4822,9 @@
   }
  ],
  "counts": {
-  "rows_used": 630,
-  "hardware": 20,
-  "points": 119,
+  "rows_used": 794,
+  "hardware": 24,
+  "points": 190,
   "community": 0
  }
 }

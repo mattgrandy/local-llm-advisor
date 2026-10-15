@@ -1,5 +1,5 @@
 {
- "rows_total": 6550,
+ "rows_total": 8983,
  "dropped_dup_of_scoreboard": 425,
  "dropped_author_flagged_invalid": 2,
  "dropped_nonpositive": 0,
@@ -140,14 +140,218 @@
    "license": "CC-BY-4.0"
   }
  },
- "rows_with_hw_id": 1111,
+ "rows_with_hw_id": 1654,
  "rows_device_unknown": 738,
  "generated": "2026-10-14 21:06 MDT",
  "localscore": {
   "rows": 1721,
   "model_page_rows": 1711,
   "latest_rows": 10,
-  "hw_matched": 128,
-  "retrieved": "2026-10-14"
+  "hw_matched": 154,
+  "retrieved": "2026-10-15"
+ },
+ "pass2": {
+  "date": "2026-10-15",
+  "new_rows": 2433,
+  "by_source": {
+   "llamacpp-discussion-15396": 942,
+   "llamacpp-pr-16634": 26,
+   "llamacpp-pr-16827": 30,
+   "llamacpp-pr-27952": 16,
+   "llamacpp-thread-10982": 2,
+   "llamacpp-pr-17906": 20,
+   "llamacpp-pr-24364": 10,
+   "llamacpp-pr-16095": 26,
+   "llamacpp-pr-27742": 3,
+   "llamacpp-pr-22673": 52,
+   "llamacpp-pr-19378": 351,
+   "llamacpp-pr-24546": 12,
+   "llamacpp-pr-26284": 216,
+   "llamacpp-pr-18537": 202,
+   "llamacpp-thread-19081": 110,
+   "llamacpp-pr-25635": 12,
+   "llamacpp-pr-18683": 56,
+   "llamacpp-pr-19375": 62,
+   "llamacpp-pr-28439": 5,
+   "llamacpp-pr-25893": 40,
+   "llamacpp-pr-19769": 2,
+   "hf-witcheer-rtx-5090-benchmarks": 192,
+   "hf-iBlessi-rtx-5080-llm-throughput": 34,
+   "hf-steven0226-speculative-decoding-bench-rtx4090": 5,
+   "hf-studioburnside-mlx-local-inference-benchmarks": 4,
+   "hf-pgmharikrishnan-mlx-serve-local-llm-benchmarks-2026-10": 3
+  },
+  "hw_matched": 475,
+  "refilled_hw_id": 0,
+  "notes": {
+   "threads": {
+    "ggml-org/llama.cpp#15396": {
+     "title": "guide : running gpt-oss with llama.cpp",
+     "comments": 211,
+     "rows": 961,
+     "pr": false
+    },
+    "ggml-org/llama.cpp#26918": {
+     "title": "Misc. bug:  Performance regression between b10356 and b10359 (RTX 5080 / Blackwell, ~40% slower)",
+     "comments": 3,
+     "rows": 0,
+     "pr": false
+    },
+    "ggml-org/llama.cpp#16634": {
+     "title": "metal : initial Metal4 tensor API support",
+     "comments": 34,
+     "rows": 313,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#16827": {
+     "title": "Massively Improved ROCm/HIP rocWMMA Performance (pp and tg)",
+     "comments": 35,
+     "rows": 30,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#27952": {
+     "title": "vulkan: int8 coopmat1 matmul implementation for AMD RDNA3 and RDNA4",
+     "comments": 27,
+     "rows": 16,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#10982": {
+     "title": "Research: Performance differences between Metal (macOS) and Vulkan (Linux)",
+     "comments": 51,
+     "rows": 2,
+     "pr": false
+    },
+    "ggml-org/llama.cpp#17906": {
+     "title": "CUDA: experimental native mxfp4 support for blackwell",
+     "comments": 65,
+     "rows": 20,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#24364": {
+     "title": "Force NVFP4 W4A8 path for NVFP4_W4A16 layers on Blackwell, where NVFP4 normally uses the native W4A4 path. ",
+     "comments": 24,
+     "rows": 10,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#16095": {
+     "title": "Model: Qwen3 Next",
+     "comments": 320,
+     "rows": 26,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#27742": {
+     "title": "model: add Qwen3.8-Flash-Next (qwen4exp)",
+     "comments": 144,
+     "rows": 3,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#22673": {
+     "title": "llama + spec: MTP Support ",
+     "comments": 416,
+     "rows": 64,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#19378": {
+     "title": "ggml: backend-agnostic tensor parallelism (experimental)",
+     "comments": 150,
+     "rows": 463,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#24546": {
+     "title": "CUDA: size routed MoE MMQ N-tiles from typical expert width on RDNA3",
+     "comments": 27,
+     "rows": 18,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#26284": {
+     "title": "HIP: tune rdna 3 mmq configs",
+     "comments": 21,
+     "rows": 956,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#18537": {
+     "title": "mmq.cu: tune mmq/rocblas switching for RDNA",
+     "comments": 25,
+     "rows": 915,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#19081": {
+     "title": "Misc. bug: GLM-4.7-Flash Inference Much slower as compared to other A3B Models",
+     "comments": 27,
+     "rows": 126,
+     "pr": false
+    },
+    "ggml-org/llama.cpp#25635": {
+     "title": "CUDA: XOR swizzle flash attn  K,V smem fp16 tiles",
+     "comments": 27,
+     "rows": 96,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#18683": {
+     "title": "model: try to improve Qwen3 Next",
+     "comments": 46,
+     "rows": 56,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#19375": {
+     "title": "models : optimizing qwen3next graph",
+     "comments": 31,
+     "rows": 62,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#28439": {
+     "title": "metal : wide query tile for kernel_flash_attn_ext",
+     "comments": 22,
+     "rows": 5,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#25893": {
+     "title": "metal: implement DSv4 Lightning Indexer",
+     "comments": 34,
+     "rows": 40,
+     "pr": true
+    },
+    "ggml-org/llama.cpp#19769": {
+     "title": "ggml : add NVFP4 quantization type support",
+     "comments": 68,
+     "rows": 2,
+     "pr": true
+    },
+    "ikawrakow/ik_llama.cpp#1596": {
+     "title": "Graph parallel for Gemma4-31B",
+     "comments": 34,
+     "rows": 0,
+     "pr": true
+    },
+    "ikawrakow/ik_llama.cpp#514": {
+     "title": "CUDA Kernel Error on RTX 5090 (Compute Capability 12.0): \"no kernel image is available for execution on the device\"",
+     "comments": 26,
+     "rows": 0,
+     "pr": false
+    }
+   },
+   "witcheer": {
+    "license": "mit",
+    "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks",
+    "hf_last_modified": "2026-10-15",
+    "rows": 192
+   },
+   "iblessi": {
+    "license": "cc-by-4.0",
+    "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput",
+    "hf_last_modified": "2026-10-01",
+    "rows": 34
+   },
+   "steven": {
+    "license": "cc-by-4.0",
+    "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090",
+    "hf_last_modified": "2026-07-24",
+    "rows": 5
+   },
+   "mlx_apple": {
+    "license": "apache-2.0 / mit",
+    "rows": 7
+   }
+  }
  }
 }

@@ -117,6 +117,8 @@
   const qc = id => (/^Q(\d)/.exec(id) || [])[1] ? "Q" + /^Q(\d)/.exec(id)[1] : "";
   function measuredReadGB(e) {
     const frac = e.moe && e.active_b && e.params_b ? e.active_b / e.params_b : 1;
+    // prefer the measured file's real size (GB) when known (e.g. gpt-oss ships MXFP4 weights, so 'Q8' files are about the same size)
+    if (e.size_gb) return e.size_gb * frac;
     return e.params_b * (BPW[e.qclass] || 0) / 8 * frac;
   }
   // tier "measured": same model + same quant class on this hardware (median of N submitted runs).

@@ -82,6 +82,16 @@
    "last_verified": "2026-10-14"
   },
   {
+   "id": "rtx-5080",
+   "name": "GeForce RTX 5080",
+   "vendor": "NVIDIA",
+   "vram_gb": 16,
+   "bandwidth_gbps": 960,
+   "source_url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+   "basis": "NVIDIA GeForce compare page: 16 GB GDDR7, 256-bit, 960 GB/sec (also NVIDIA RTX Blackwell architecture whitepaper: 30 Gbps GDDR7)",
+   "last_verified": "2026-10-15"
+  },
+  {
    "id": "rtx-5090",
    "name": "GeForce RTX 5090",
    "vendor": "NVIDIA",
@@ -344,6 +354,39 @@
    "note": ""
   },
   {
+   "slug": "rtx-4070-12gb",
+   "title": "RTX 4070 12GB",
+   "kind": "gpu",
+   "device": "rtx-4070",
+   "count": 1,
+   "memory_gb": null,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "rtx-5070ti-16gb",
+   "title": "RTX 5070 Ti 16GB",
+   "kind": "gpu",
+   "device": "rtx-5070ti",
+   "count": 1,
+   "memory_gb": null,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
+   "slug": "rtx-5080-16gb",
+   "title": "RTX 5080 16GB",
+   "kind": "gpu",
+   "device": "rtx-5080",
+   "count": 1,
+   "memory_gb": null,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": ""
+  },
+  {
    "slug": "rx-7900-xtx-24gb",
    "title": "AMD RX 7900 XTX 24GB",
    "kind": "gpu",
@@ -537,7 +580,7 @@
    "id": "studio-m5-ultra-80",
    "hw": "m5-ultra",
    "form_factor": "Mac Studio",
-   "name": "Mac Studio — M5 Ultra (80-core GPU)",
+   "name": "Mac Studio \u2014 M5 Ultra (80-core GPU)",
    "memory_options_gb": [
     256,
     512
@@ -553,7 +596,7 @@
    "id": "studio-m5-ultra-64",
    "hw": "m5-ultra",
    "form_factor": "Mac Studio",
-   "name": "Mac Studio — M5 Ultra (64-core GPU)",
+   "name": "Mac Studio \u2014 M5 Ultra (64-core GPU)",
    "memory_options_gb": [
     96
    ],
@@ -564,7 +607,7 @@
    "id": "studio-m5-max-40",
    "hw": "m5-max-40",
    "form_factor": "Mac Studio",
-   "name": "Mac Studio — M5 Max (40-core GPU)",
+   "name": "Mac Studio \u2014 M5 Max (40-core GPU)",
    "memory_options_gb": [
     48,
     64,
@@ -577,7 +620,7 @@
    "id": "studio-m5-max-32",
    "hw": "m5-max-32",
    "form_factor": "Mac Studio",
-   "name": "Mac Studio — M5 Max (32-core GPU)",
+   "name": "Mac Studio \u2014 M5 Max (32-core GPU)",
    "memory_options_gb": [
     36
    ],
@@ -588,7 +631,7 @@
    "id": "studio-m4-max-40",
    "hw": "m4-max-40",
    "form_factor": "Mac Studio",
-   "name": "Mac Studio (2025) — M4 Max (40-core GPU)",
+   "name": "Mac Studio (2025) \u2014 M4 Max (40-core GPU)",
    "memory_options_gb": [
     48,
     64,
@@ -601,7 +644,7 @@
    "id": "studio-m4-max-32",
    "hw": "m4-max-32",
    "form_factor": "Mac Studio",
-   "name": "Mac Studio (2025) — M4 Max (32-core GPU)",
+   "name": "Mac Studio (2025) \u2014 M4 Max (32-core GPU)",
    "memory_options_gb": [
     36
    ],
@@ -612,7 +655,7 @@
    "id": "studio-m3-ultra-80",
    "hw": "m3-ultra",
    "form_factor": "Mac Studio",
-   "name": "Mac Studio (2025) — M3 Ultra (80-core GPU)",
+   "name": "Mac Studio (2025) \u2014 M3 Ultra (80-core GPU)",
    "memory_options_gb": [
     256
    ],
@@ -624,7 +667,7 @@
    "id": "studio-m3-ultra-60",
    "hw": "m3-ultra",
    "form_factor": "Mac Studio",
-   "name": "Mac Studio (2025) — M3 Ultra (60-core GPU)",
+   "name": "Mac Studio (2025) \u2014 M3 Ultra (60-core GPU)",
    "memory_options_gb": [
     96
    ],
@@ -635,7 +678,7 @@
    "id": "mbp-m5-max-40",
    "hw": "m5-max-40",
    "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14/16 — M5 Max (40-core GPU)",
+   "name": "MacBook Pro 14/16 \u2014 M5 Max (40-core GPU)",
    "memory_options_gb": [
     48,
     64,
@@ -648,7 +691,7 @@
    "id": "mbp-m5-max-32",
    "hw": "m5-max-32",
    "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14/16 — M5 Max (32-core GPU)",
+   "name": "MacBook Pro 14/16 \u2014 M5 Max (32-core GPU)",
    "memory_options_gb": [
     36
    ],
@@ -659,7 +702,7 @@
    "id": "mbp-m5-pro-20",
    "hw": "m5-pro",
    "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14/16 — M5 Pro (20-core GPU)",
+   "name": "MacBook Pro 14/16 \u2014 M5 Pro (20-core GPU)",
    "memory_options_gb": [
     24,
     48,
@@ -672,7 +715,7 @@
    "id": "mbp-m5-pro-16",
    "hw": "m5-pro",
    "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14 — M5 Pro (16-core GPU)",
+   "name": "MacBook Pro 14 \u2014 M5 Pro (16-core GPU)",
    "memory_options_gb": [
     24,
     48
@@ -685,7 +728,7 @@
    "id": "mbp-m5",
    "hw": "m5",
    "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14 — M5 (10-core GPU)",
+   "name": "MacBook Pro 14 \u2014 M5 (10-core GPU)",
    "memory_options_gb": [
     16,
     24,
@@ -698,7 +741,7 @@
    "id": "mbp-m4-max-40",
    "hw": "m4-max-40",
    "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14/16 (2024) — M4 Max (40-core GPU)",
+   "name": "MacBook Pro 14/16 (2024) \u2014 M4 Max (40-core GPU)",
    "memory_options_gb": [
     48,
     64,
@@ -711,7 +754,7 @@
    "id": "mbp-m4-max-32",
    "hw": "m4-max-32",
    "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14/16 (2024) — M4 Max (32-core GPU)",
+   "name": "MacBook Pro 14/16 (2024) \u2014 M4 Max (32-core GPU)",
    "memory_options_gb": [
     36
    ],
@@ -722,7 +765,7 @@
    "id": "mbp-m4-pro",
    "hw": "m4-pro",
    "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14/16 (2024) — M4 Pro",
+   "name": "MacBook Pro 14/16 (2024) \u2014 M4 Pro",
    "memory_options_gb": [
     24,
     48
@@ -734,7 +777,7 @@
    "id": "air-m5-13",
    "hw": "m5",
    "form_factor": "MacBook Air",
-   "name": "MacBook Air 13 — M5",
+   "name": "MacBook Air 13 \u2014 M5",
    "memory_options_gb": [
     16,
     24,
@@ -748,7 +791,7 @@
    "id": "air-m5-15",
    "hw": "m5",
    "form_factor": "MacBook Air",
-   "name": "MacBook Air 15 — M5 (10-core GPU)",
+   "name": "MacBook Air 15 \u2014 M5 (10-core GPU)",
    "memory_options_gb": [
     16,
     24,
@@ -761,7 +804,7 @@
    "id": "mini-m5-pro-20",
    "hw": "m5-pro",
    "form_factor": "Mac mini",
-   "name": "Mac mini — M5 Pro (20-core GPU)",
+   "name": "Mac mini \u2014 M5 Pro (20-core GPU)",
    "memory_options_gb": [
     48,
     64
@@ -774,7 +817,7 @@
    "id": "mini-m5-pro-16",
    "hw": "m5-pro",
    "form_factor": "Mac mini",
-   "name": "Mac mini — M5 Pro (16-core GPU)",
+   "name": "Mac mini \u2014 M5 Pro (16-core GPU)",
    "memory_options_gb": [
     24
    ],
@@ -785,7 +828,7 @@
    "id": "mini-m6",
    "hw": "m6",
    "form_factor": "Mac mini",
-   "name": "Mac mini — M6",
+   "name": "Mac mini \u2014 M6",
    "memory_options_gb": [
     16,
     24,
@@ -799,7 +842,7 @@
    "id": "mini-m4-pro",
    "hw": "m4-pro",
    "form_factor": "Mac mini",
-   "name": "Mac mini (2024) — M4 Pro",
+   "name": "Mac mini (2024) \u2014 M4 Pro",
    "memory_options_gb": [
     24,
     48,
@@ -812,7 +855,7 @@
    "id": "mini-m4",
    "hw": "m4",
    "form_factor": "Mac mini",
-   "name": "Mac mini (2024) — M4",
+   "name": "Mac mini (2024) \u2014 M4",
    "memory_options_gb": [
     16,
     24,
@@ -825,7 +868,7 @@
    "id": "imac-m4",
    "hw": "m4",
    "form_factor": "iMac",
-   "name": "iMac 24 — M4",
+   "name": "iMac 24 \u2014 M4",
    "memory_options_gb": [
     16,
     24,
