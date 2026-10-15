@@ -25,7 +25,7 @@
     const wrap = document.createElement("div"); wrap.className = "seg" + (sel.dataset.seg === "small" ? " small" : ""); wrap.setAttribute("role", "radiogroup"); wrap.setAttribute("aria-label", sel.getAttribute("aria-label") || sel.id);
     [...sel.options].forEach(op => {
       const l = document.createElement("label"), r = document.createElement("input"); r.type = "radio"; r.name = "seg-" + sel.id; r.value = op.value;
-      r.onchange = () => { sel.value = r.value; sel.dispatchEvent(new Event("change")); };
+      r.addEventListener("change", () => { sel.value = r.value; sel.dispatchEvent(new Event("change")); });
       const d = document.createElement("span"); d.className = "opt"; d.innerHTML = `<b>${esc(op.textContent)}</b>` + (op.dataset.sub ? `<small>${esc(op.dataset.sub)}</small>` : "");
       l.append(r, d); wrap.append(l);
     });
@@ -65,8 +65,9 @@
       <p class="src">Source: <a href="${m.source_url}" rel="noopener">${esc(m.id)}</a> &middot; GGUF: <a href="${m.gguf_source_url}" rel="noopener">${esc(m.gguf_repo)}</a> &middot; last verified ${m.last_verified}</p></article>`;
     }).join("");
   }
-  $("kind").onchange = () => { fillDevices(); render(); };
-  document.querySelectorAll("#f select,#f input").forEach(e => { if (e.id !== "kind") e.onchange = render; });
+  $("kind").addEventListener("change", () => { fillDevices(); render(); });
+  document.querySelectorAll("#f select,#f input").forEach(e => { if (e.id !== "kind" && !e.closest(".seg")) e.addEventListener("change", render); });
+  document.querySelectorAll("#f input[type=number]").forEach(e => e.addEventListener("input", render));
   // prefill from query string (used by generated pages): ?kind=&device=&count=&mem=&ram=&ramt=&use=
   const q = new URLSearchParams(location.search);
   if (q.get("kind")) $("kind").value = q.get("kind");
