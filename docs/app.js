@@ -1,7 +1,8 @@
 (async function () {
+  const fc = Advisor.fmtCtx;
   const $ = id => document.getElementById(id);
-  const [hardware, models, measured, quality] = await Promise.all(["data/hardware.json", "data/models.json", "data/measured.json", "data/quality.json"].map(u => fetch(u).then(r => r.ok ? r.json() : null).catch(() => null)));
-  const data = { hardware, models, measured, quality };
+  const [hardware, models, measured, quality, depth] = await Promise.all(["data/hardware.json", "data/models.json", "data/measured.json", "data/quality.json", "data/depth_calibration.json"].map(u => fetch(u).then(r => r.ok ? r.json() : null).catch(() => null)));
+  const data = { hardware, models, measured, quality, depth };
   const opt = (v, t) => `<option value="${v}">${t}</option>`;
   $("ramt").innerHTML = hardware.ram_types.map(r => opt(r.id, r.name)).join("");
   $("ramt").value = "ddr5-5600";
@@ -96,6 +97,13 @@
     try { await navigator.clipboard.writeText(url); ok = true; } catch (e) { try { const t = document.createElement("textarea"); t.value = url; t.style.position = "fixed"; t.style.opacity = "0"; document.body.append(t); t.select(); ok = document.execCommand("copy"); t.remove(); } catch (e2) { /* ignore */ } }
     b.textContent = ok ? "Link copied" : "Copy failed: use the address bar"; setTimeout(() => { b.textContent = "Copy link to this view"; }, 1800);
   });
+  // estimated speed at the selected depth + time to first token; never claims measurement at depth
+  function longBlock(p, o) {
+    if (o.ctx < 8192 || !p.depth) return "";
+    const d = p.depth, ex = d.extrapolated;
+    const tt = p.ttft != null ? `Time to first token for a full ${Advisor.fmtCtx(o.ctx)} prompt: <b>~${Advisor.fmtDur(p.ttft)}</b> (estimated).` : "Time to first token: not estimated (no prompt-processing data for this hardware, or the model is offloaded).";
+    return `<p class="mut depthline"><span class="badge est">estimated</span> At ${Advisor.fmtCtx(o.ctx)} depth: <b>~${Math.round(d.tps)} tok/s</b> generation (${Math.round(d.ratio * 100)}% of the short-context speed). ${tt}${ex ? ` Beyond ${Advisor.fmtCtx(d.measuredDepthMax)} the slowdown is extrapolated; there are no measurements that deep for this model.` : ` Penalty fitted to measured runs up to ${Advisor.fmtCtx(d.measuredDepthMax)}; no measurement for this exact model and hardware at this depth.`}</p>`;
+  }
   function render() {
     syncSegs();
     writeUrl();
@@ -104,7 +112,7 @@
     const input = { kind: k, device: cfg ? cfg.hw : $("device").value, label: cfg ? cfg.name : undefined, count: +$("count").value, memory_gb: +$("mem").value,
                     ram_gb: +$("ram").value, ram_type: $("ramt").value };
     const o = { use: $("use").value, ctx: +$("ctx").value, kvq: $("kvq").value };
-    const { hwr, results: allRes } = Advisor.recommend(input, data, o);
+    const { hwr, results: allRes, excluded } = Advisor.recommend(input, data, o);
     $("hwinfo").innerHTML = `Using <b>${esc(hwr.name)}</b>: ${hwr.pool.toFixed(1)} GB usable for model + KV` +
       (hwr.discrete && !hwr.cpuOnly ? `, ${hwr.ramAvail.toFixed(0)} GB RAM available for offload` : "") +
       (hwr.frac ? ` (assumes ${Math.round(hwr.frac * 100)}% of unified memory usable)` : "") + `, ${hwr.gpuBw} GB/s memory bandwidth.` +
@@ -114,28 +122,33 @@
     $("community").innerHTML = comm.length ? `<section class="card"><h2>Community-submitted benchmarks <span class="badge est">unverified</span></h2>
       <p class="mut">Reviewed for format only; not independently verified and never used in the estimates above.</p><div class="tw"><table><tr><th>Model</th><th>Quant</th><th>Backend</th><th>pp tok/s</th><th>tg tok/s</th><th>llama.cpp build</th><th>Date</th></tr>` +
       comm.map(c => `<tr><td>${esc(c.model)}</td><td>${esc(c.quant)}</td><td>${esc(c.backend)}</td><td>${c.pp_tps}</td><td>${c.tg_tps}</td><td>${esc(c.build || "")}</td><td>${esc(c.date || "")}</td></tr>`).join("") + `</table></div></section>` : "";
-    const sortOpts = ["rec", "tps", "size", ...(allRes.some(p => p.quality) ? ["quality"] : []), "ctx", "name"];
+    const sortOpts = ["rec", "tps", ...(allRes.some(p => p.depth) ? ["tpsctx"] : []), "size", ...(allRes.some(p => p.quality) ? ["quality"] : []), "ctx", "name"];
     const effSort = syncView(sortOpts, Math.max(0, ...allRes.map(p => p.tps || 0)));
     const filtered = Advisor.applyView(allRes, Object.assign({}, view, { sort: effSort }));
     const active = Advisor.viewActive(view), limited = effSort === "rec" && !active && !view.all && filtered.length > 8;
     const results = limited ? filtered.slice(0, 8) : filtered;
+    const exc = excluded || [], extCount = allRes.filter(p => p.ctxStatus === "extended").length;
+    $("ctxnote").innerHTML = o.ctx >= 262144 ? `<b>${fc(o.ctx)} context</b> needs flash attention (<code>-fa on</code>, included in the commands) and a lot of memory; prompt processing takes minutes to hours and generation slows down. Speeds at this depth are estimates.` : o.ctx >= 65536 ? "Long context needs flash attention and extra memory; generation slows as the context fills (speed at depth is estimated)." : "";
+    $("excluded").innerHTML = exc.length ? `<div class="callout"><b>${exc.length} model${exc.length > 1 ? "s" : ""} not shown at ${fc(o.ctx)}:</b> context is capped at each model's verified maximum. ` + exc.map(e => `${esc(e.model.name)} (max context ${fc(e.native)})`).join(", ") + `.${extCount ? ` ${extCount} shown model${extCount > 1 ? "s are" : " is"} <b>extended</b> beyond the native maximum with YaRN, as documented on the model card.` : ""}</div>` : (extCount ? `<div class="callout">${extCount} model${extCount > 1 ? "s are" : " is"} <b>extended</b> beyond the native maximum with YaRN, as documented on the model card.</div>` : "");
     $("v-count").textContent = allRes.length ? `Showing ${results.length} of ${allRes.length} models that fit${active ? " (filters on)" : ""}.` : "";
     const canToggle = effSort === "rec" && !active && allRes.length > 8;
     $("v-all").hidden = !canToggle; if (canToggle) $("v-all").textContent = view.all ? "Show top 8 only" : `Show all ${allRes.length} models`;
     $("viewbar").hidden = !allRes.length;
-    if (!allRes.length) { $("results").innerHTML = `<div class="card">Nothing in the dataset fits this setup at ${o.ctx} context. Try a shorter context, q8_0 KV, or more memory.</div>`; return; }
+    if (!allRes.length) { $("results").innerHTML = `<div class="card">Nothing in the dataset fits this setup at ${Advisor.fmtCtx(o.ctx)} context. Try a shorter context, a q8_0 or q4_0 KV cache, or more memory.</div>`; return; }
     if (!results.length) { $("results").innerHTML = `<div class="card">No models match these filters. Use <b>Reset sort &amp; filters</b> above, or loosen a filter (the minimum tokens/sec and speed source are the strictest).</div>`; return; }
     const total = hwr.pool, ramTot = hwr.cpuOnly ? hwr.pool : (hwr.ramAvail || hwr.pool);
     const meter = (label, used, cap, cls) => { const pct = cap > 0 ? Math.min(100, used / cap * 100) : 0; return `<div class="meter"><div class="row"><span>${label}</span><span><b>${used.toFixed(1)}</b> / ${cap.toFixed(0)} GB &middot; ${Math.round(pct)}%</span></div><div class="bar" role="img" aria-label="${label} ${Math.round(pct)} percent used"><i class="${cls || (pct > 92 ? "warn" : "")}" style="width:${pct}%"></i></div></div>`; };
     $("results").innerHTML = results.map((p, i) => {
       const m = p.model, si = Advisor.speedInfo(p), bc = si.short === "measured" ? "measured" : si.short === "estimated" ? "estimated" : "scaled";
       return `<article class="card res hov" style="animation-delay:${i * 45}ms"><div class="res-h"><span class="n">#${i + 1}</span><h3>${esc(m.name)}</h3><span class="q">${esc(p.quantLabel)}</span>
-      <div class="tps"><b>~${p.tps ? Math.round(p.tps) : "?"}</b><span>tok/s generation</span></div></div>
+      <div class="tps"><b>~${p.tps ? Math.round(p.tps) : "?"}</b><span>tok/s generation${o.ctx >= 8192 && p.depth ? " (short ctx)" : ""}</span></div></div>
       <div class="badges"><span class="badge ${bc}" title="${esc(si.detail)}">${esc(si.short)}</span><span class="badge ${p.mode === "gpu" ? "ok" : "est"}">${MODE[p.mode]}</span>${p.usable ? "" : '<span class="badge est">likely too slow</span>'}
-      <span class="badge plain">${m.moe ? `MoE ${m.params_b}B total / ${m.active_params_b}B active` : m.params_b + "B dense"}</span><span class="badge plain">${esc(m.license || "license: see source")}</span></div>
+      <span class="badge plain">${m.moe ? `MoE ${m.params_b}B total / ${m.active_params_b}B active` : m.params_b + "B dense"}</span><span class="badge plain">${esc(m.license || "license: see source")}</span>${p.ctxStatus === "extended" ? '<span class="badge est">extended context (YaRN)</span>' : ""}</div>
       ${hwr.cpuOnly ? "" : meter(hwr.discrete ? "VRAM" : "Unified memory", p.gpuGB, total)}${p.cpuGB > 0.05 || hwr.cpuOnly ? meter("System RAM", p.cpuGB, ramTot, "ram") : ""}
-      <p class="mut q-line">${p.quality ? `LMArena ${p.quality.category} rank #${p.quality.rank} (rating ${p.quality.rating}, ${p.quality.date})` : "LMArena: not rated"} &middot; max context that fits here: ${p.maxCtx ? Math.round(p.maxCtx / 1024) + "k" : "under 4k"}</p>
-      <p class="mut">${esc(si.detail)}${p.speed ? " Source: " + p.speed.sources.map(x => `<a href="${x.url}" rel="noopener">${esc(x.id)}</a>`).join(", ") + ", latest " + esc(p.speed.latest) + "." : ""} Memory: weights ${p.weightsGB.toFixed(1)} GB + KV cache ${p.kvGB.toFixed(2)} GB @ ${o.ctx} ctx.</p>
+      <p class="mut q-line">${p.quality ? `LMArena ${p.quality.category} rank #${p.quality.rank} (rating ${p.quality.rating}, ${p.quality.date})` : "LMArena: not rated"} &middot; max context that fits here: ${p.maxCtx ? fc(p.maxCtx) : "under 4k"}${p.maxCtx > m.context_max ? " (extended)" : ""} &middot; model max context ${fc(m.context_max)}${p.limits.extended > m.context_max ? `, ${fc(p.limits.extended)} extended with YaRN` : ""}</p>
+      ${p.ctxStatus === "extended" ? `<p class="mut ctxwarn"><span class="badge est">extended context</span> ${fc(o.ctx)} is beyond this model's native ${fc(m.context_max)}. ${esc(m.context_extended.source)}. ${esc(m.context_extended.caveat)}</p>` : ""}
+      ${longBlock(p, o)}
+      <p class="mut">${esc(si.detail)}${p.speed ? " Source: " + p.speed.sources.map(x => `<a href="${x.url}" rel="noopener">${esc(x.id)}</a>`).join(", ") + ", latest " + esc(p.speed.latest) + "." : ""} Memory: weights ${p.weightsGB.toFixed(1)} GB + KV cache ${p.kvGB.toFixed(2)} GB @ ${fc(o.ctx)} ctx (${o.kvq}${m.kv.linear_state_gb ? `, incl. ${m.kv.linear_state_gb.toFixed(2)} GB fixed linear-attention state` : ""}).</p>
       <div class="cmd"><div class="code"><div class="top"><span>llama.cpp</span><button class="copy" type="button" data-c="l${i}">Copy</button></div><pre id="l${i}">${esc(p.command.llama)}</pre></div>
       <div class="code"><div class="top"><span>ollama</span><button class="copy" type="button" data-c="o${i}">Copy</button></div><pre id="o${i}">${esc(p.command.ollama)}</pre></div></div>
       ${p.command.ollamaNote ? `<p class="mut">${esc(p.command.ollamaNote)}</p>` : ""}
@@ -148,11 +161,13 @@
   document.querySelectorAll("#f input[type=number]").forEach(e => e.addEventListener("input", render));
   // prefill from query string (used by generated pages): ?kind=&device=&count=&mem=&ram=&ramt=&use=
   const q = new URLSearchParams(location.search);
+  const setIf = (id, v) => { if (v && [...$(id).options].some(op => op.value === v)) $(id).value = v; };
   if (q.get("kind")) $("kind").value = q.get("kind");
   fillDevices();
   if (q.get("config") && cfgOf(q.get("config")) && $("kind").value === "apple") { $("device").value = q.get("config"); fillMem(); }
   else if ($("kind").value === "apple" && q.get("device")) { const c = hardware.apple_configs.find(c => c.hw === q.get("device")); if (c) { $("device").value = c.id; fillMem(); } }
-  [["mem", "mem"], ["ram", "ram"], ["ramt", "ramt"], ["use", "use"], ["ctx", "ctx"], ["kvq", "kvq"]].forEach(([p, id]) => { if (q.get(p)) $(id).value = q.get(p); });
+  [["mem", "mem"], ["ram", "ram"], ["ramt", "ramt"], ["use", "use"]].forEach(([p, id]) => { if (q.get(p)) $(id).value = q.get(p); });
+  setIf("ctx", q.get("ctx")); setIf("kvq", q.get("kvq")); // ignore values that are not an offered option (a bad ?ctx= must not blank the select)
   if ($("kind").value !== "apple") [["device", "device"], ["count", "count"]].forEach(([p, id]) => { if (q.get(p)) $(id).value = q.get(p); });
   if (SORTS[q.get("sort")]) view.sort = q.get("sort");
   view.dir = q.get("dir") === "asc" || q.get("dir") === "desc" ? q.get("dir") : Advisor.NATURAL_DIR[view.sort];

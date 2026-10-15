@@ -5,8 +5,12 @@
   const GB = 1e9;
 
   // KV cache bytes for `ctx` tokens. K and V both counted (conservative: ignores K==V sharing).
-  function kvGB(model, ctx, kvq) {
-    const k = model.kv, bytes = kvq === "q8_0" ? 1.0625 : 2; // q8_0 = 34 bytes per 32 values
+  // Bytes per cached value: f16 = 2, q8_0 = 34 bytes per 32 values, q4_0 = 18 bytes per 32 values.
+  const KV_BYTES = { f16: 2, q8_0: 1.0625, q4_0: 0.5625 };
+  // KV bytes that attention reads per generated token at depth `ctx` (full layers: all ctx tokens; sliding-window layers: at most `window`;
+  // linear-attention layers: nothing that grows with ctx). Also what the cache grows by.
+  function kvAttnGB(model, ctx, kvq) {
+    const k = model.kv, bytes = KV_BYTES[kvq] || 2;
     const full = 2 * k.full_kv_heads * k.full_head_dim * k.full_layers * bytes * ctx;
     let swa = 0;
     if (k.swa_layers) {
@@ -15,6 +19,38 @@
     }
     return (full + swa) / GB;
   }
+  // Total KV/state memory for `ctx` tokens. K and V both counted (conservative: ignores K==V sharing).
+  // Linear-attention (Gated DeltaNet) layers add a fixed-size f32 recurrent state that does not depend on ctx or the KV cache type.
+  function kvGB(model, ctx, kvq) { return kvAttnGB(model, ctx, kvq) + (model.kv.linear_state_gb || 0); }
+
+  // ---- context limits ----
+  // native = the model's own verified maximum (models.json context_max). Beyond that only models whose card documents YaRN
+  // extension (models.json context_extended) are allowed, and results are flagged "extended".
+  function ctxLimits(model) {
+    const ext = model.context_extended;
+    return { native: model.context_max, extended: ext ? Math.max(model.context_max, ext.max) : model.context_max, ext: ext || null };
+  }
+  function ctxStatus(model, ctx) { // "native" | "extended" | "over"
+    const l = ctxLimits(model); return ctx <= l.native ? "native" : ctx <= l.extended ? "extended" : "over";
+  }
+  function fmtCtx(n) { return n >= 1e6 ? (n / 1e6) + "M" : n >= 1024 ? Math.round(n / 1024) + "k" : String(n); }
+
+  // ---- long-context speed (ESTIMATE; constants fitted by tools/calibrate_depth.py, see data/depth_calibration.json) ----
+  // Decode: tg(d) = tg0 / (1 + kappa * KVread(d) / Wread).  Prefill: same form per chunk with kappa_pp, integrated over the prompt.
+  function depthSpeed(p, ctx, kvq, cal) {
+    if (!cal || !(p.tps > 0) || !(p.readGB > 0)) return null;
+    const x = kvAttnGB(p.model, ctx, kvq) / p.readGB, tps = p.tps / (1 + cal.kappa * x);
+    return { ctx, tps, ratio: tps / p.tps, extrapolated: ctx > cal.max_measured_depth, measuredDepthMax: cal.max_measured_depth };
+  }
+  // Time to first token for a prompt of `ctx` tokens (seconds), or null when there is no prompt-processing data for this hardware/model
+  // or the model does not run fully on GPU/unified memory (offload prefill is not modelled).
+  function ttftSeconds(p, ctx, kvq, cal) {
+    if (!cal || !(p.pp0 > 0) || p.mode !== "gpu" || !(p.readGB > 0)) return null;
+    const N = 64, step = ctx / N; let t = 0;
+    for (let i = 0; i < N; i++) { const mid = (i + 0.5) * step; t += step * (1 + cal.kappa_pp * kvAttnGB(p.model, mid, kvq) / p.readGB) / p.pp0; }
+    return t;
+  }
+  function fmtDur(s) { return s < 90 ? Math.round(s) + " s" : s < 5400 ? Math.round(s / 60) + " min" : (s / 3600).toFixed(1) + " h"; }
 
   function resolveHardware(input, hw) {
     const A = hw.assumptions;
@@ -55,7 +91,7 @@
     const base = { model, quant: qid, quantLabel: q.label, weightsGB: w, kvGB: kv, readGB };
     if (!hwr.cpuOnly && w + kv <= hwr.pool) {
       const ms = hwr.lookup ? hwr.lookup(model, qid, readGB) : null; // measured / scaled-from-measured speed, else null
-      return Object.assign(base, { mode: "gpu", gpuGB: w + kv, cpuGB: 0, tps: ms ? ms.tps : tps(hwr, A, readGB, 0) * (model.moe && model.active_params_b ? (hwr.moeFactor || 1) : 1), speed: ms });
+      return Object.assign(base, { mode: "gpu", gpuGB: w + kv, cpuGB: 0, pp0: ms && ms.pp ? ms.pp : null, tps: ms ? ms.tps : tps(hwr, A, readGB, 0) * (model.moe && model.active_params_b ? (hwr.moeFactor || 1) : 1), speed: ms });
     }
     if (!hwr.discrete) return null; // unified memory: no offload tier
     if (hwr.cpuOnly) {
@@ -98,13 +134,15 @@
     const repo = p.model.gguf_repo, tag = p.quantLabel;
     const ollama = `OLLAMA_CONTEXT_LENGTH=${opts.ctx} ollama run hf.co/${repo}:${tag}`;
     let flags = [`-hf ${repo}:${tag}`, `-c ${opts.ctx}`, "-fa on", "--jinja"];
-    if (opts.kvq === "q8_0") flags.push("-ctk q8_0 -ctv q8_0");
+    if (opts.kvq === "q8_0" || opts.kvq === "q4_0") flags.push(`-ctk ${opts.kvq} -ctv ${opts.kvq}`);
+    const ext = ctxStatus(p.model, opts.ctx) === "extended";
+    if (ext) { const l = ctxLimits(p.model); flags.push(`--rope-scaling yarn --rope-scale ${Math.ceil(opts.ctx / l.native)} --yarn-orig-ctx ${l.native}`); }
     if (p.mode === "gpu") flags.push("-ngl 99");
     else if (p.mode === "moe-offload") flags.push("-ngl 99", `--n-cpu-moe ${p.ncpumoe}`);
     else if (p.mode === "dense-offload") flags.push(`-ngl ${p.ngl}`);
     else if (p.mode === "cpu") flags.push("-ngl 0");
     return { ollama, llama: "llama-server " + flags.join(" "),
-      ollamaNote: p.mode === "moe-offload" ? "Ollama cannot set --n-cpu-moe; it chooses its own GPU/CPU split, so use the llama.cpp command for MoE offload control." :
+      ollamaNote: ext ? "Beyond the native context this needs YaRN rope scaling, which only the llama.cpp command sets; Ollama's context setting alone does not enable it." : p.mode === "moe-offload" ? "Ollama cannot set --n-cpu-moe; it chooses its own GPU/CPU split, so use the llama.cpp command for MoE offload control." :
                   (p.mode === "dense-offload" || p.mode === "cpu") ? "Ollama picks its own layer split; use llama.cpp for explicit control." : "" };
   }
 
@@ -130,7 +168,9 @@
     return function (model, qid, readGB) {
       const cls = qc(qid);
       const mk = (e, tier, tps) => ({ tier, tps, from: e.model, fromQuant: e.qclass, n: e.n, tgMin: e.tg_min, tgMax: e.tg_max,
-        latest: e.latest, sources: e.sources, backends: e.backends });
+        latest: e.latest, sources: e.sources, backends: e.backends,
+        // prompt-processing speed at short context: measured median as-is, or scaled by compute proxy (bytes read) like tg
+        pp: e.pp ? (tier === "measured" ? e.pp : e.pp * (measuredReadGB(e) / readGB)) : null });
       const same = entries.filter(e => e.site_id === model.id);
       const exact = same.find(e => e.qclass === cls);
       if (exact) return mk(exact, "measured", exact.tg);
@@ -158,7 +198,7 @@
   }
 
   // ---- sort / filter helpers (pure; used by the page and by tests) ----
-  const CTX_STEPS = [4096, 8192, 16384, 32768, 65536, 131072, 262144];
+  const CTX_STEPS = [4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1000000];
   function familyOf(m) {
     const id = m.id.toLowerCase();
     if (/gemma/.test(id)) return "Gemma"; if (/qwen/.test(id)) return "Qwen"; if (/gpt-oss/.test(id)) return "gpt-oss";
@@ -170,7 +210,7 @@
   function maxCtx(p, hwr, kvq) {
     const cap = hwr.cpuOnly ? hwr.ramAvail : hwr.pool + (p.mode === "gpu" || !hwr.discrete ? 0 : hwr.ramAvail);
     let best = 0;
-    for (const c of CTX_STEPS) { if (c > p.model.context_max) break; if (p.weightsGB + kvGB(p.model, c, kvq) <= cap) best = c; }
+    for (const c of CTX_STEPS) { if (c > ctxLimits(p.model).extended) break; if (p.weightsGB + kvGB(p.model, c, kvq) <= cap) best = c; }
     return best;
   }
   function qualityOf(Q, m, use) {
@@ -179,8 +219,8 @@
     return { rating: c.rating, rank: c.rank, category: c === e.coding ? "coding" : "overall", votes: c.votes, date: c.date };
   }
   const PERMISSIVE = /^(apache|mit|bsd|isc|unlicense)/i;
-  const SORTS = { rec: "Recommended", tps: "Tokens/sec", size: "Model size", quality: "Quality (LMArena)", ctx: "Context that fits", name: "Name" };
-  const NATURAL_DIR = { rec: "desc", tps: "desc", size: "desc", quality: "desc", ctx: "desc", name: "asc" };
+  const SORTS = { rec: "Recommended", tps: "Tokens/sec", tpsctx: "Tokens/sec at full context", size: "Model size", quality: "Quality (LMArena)", ctx: "Context that fits", name: "Name" };
+  const NATURAL_DIR = { rec: "desc", tps: "desc", tpsctx: "desc", size: "desc", quality: "desc", ctx: "desc", name: "asc" };
   const DEFAULT_VIEW = { sort: "rec", dir: "desc", q: "", src: "all", fit: "all", lic: "all", fam: "all", min: 0 };
   function viewActive(v) { return v.q !== "" || v.src !== "all" || v.fit !== "all" || v.lic !== "all" || v.fam !== "all" || +v.min > 0; }
   function passes(p, v) {
@@ -197,7 +237,7 @@
   }
   // Returns filtered + sorted copy. Items missing the sort value (no tps / no LMArena rating) always go last.
   function applyView(results, v) {
-    const key = { tps: p => p.tps, size: p => p.model.params_b, quality: p => p.quality && p.quality.rating, ctx: p => p.maxCtx, name: p => p.model.name.toLowerCase() }[v.sort];
+    const key = { tps: p => p.tps, tpsctx: p => p.depth && p.depth.tps, size: p => p.model.params_b, quality: p => p.quality && p.quality.rating, ctx: p => p.maxCtx, name: p => p.model.name.toLowerCase() }[v.sort];
     const sgn = v.dir === "asc" ? 1 : -1, rows = results.filter(p => passes(p, v));
     if (v.sort === "rec" || !key) return v.dir === "asc" ? rows.slice().reverse() : rows;
     return rows.map((p, i) => ({ p, i, k: key(p) })).sort((a, b) => {
@@ -216,18 +256,23 @@
       hwr.effSource = hwr.eff ? (M.calibration.by_hw[input.device] ? "calibrated to measured runs on this hardware" : "calibrated to measured runs on this hardware class") : null;
       if (input.kind !== "gpu" || (input.count || 1) === 1) hwr.lookup = makeLookup(M.entries[input.device]);
     }
-    const out = [];
+    const out = [], excluded = [], cal = data.depth || null;
     for (const m of data.models.models) {
       if (opts.use === "vision" && !m.vision) continue;
       // opts.use === "all": no use-case filter
       if (opts.use === "coding" && !m.tags.includes("coding")) continue;
       if (opts.use === "chat" && !(m.tags.includes("chat") || m.tags.includes("coding"))) continue;
-      if (opts.ctx > m.context_max) continue;
+      const cs = ctxStatus(m, opts.ctx);
+      if (cs === "over") { excluded.push({ model: m, ctx: opts.ctx, native: ctxLimits(m).native, extended: ctxLimits(m).extended > ctxLimits(m).native ? ctxLimits(m).extended : null }); continue; }
       const p = best(m, hwr, opts, A);
       if (!p) { continue; }
-      p.usable = p.tps != null && p.tps >= A.min_usable_tps;
-      p.comfortable = p.tps != null && p.tps >= A.comfortable_tps;
-      p.rank = (p.usable ? 1000 : 0) + (p.comfortable ? 500 : 0) + (p.mode === "gpu" ? 200 : 0) + capacity(m) * 3 +
+      p.ctxStatus = cs; p.limits = ctxLimits(m);
+      p.depth = depthSpeed(p, opts.ctx, opts.kvq, cal);
+      p.ttft = ttftSeconds(p, opts.ctx, opts.kvq, cal);
+      const effTps = p.depth ? p.depth.tps : p.tps; // judge "usable" at the requested context depth, not at an empty context
+      p.usable = effTps != null && effTps >= A.min_usable_tps;
+      p.comfortable = effTps != null && effTps >= A.comfortable_tps;
+      p.rank = (p.usable ? 1000 : 0) + (p.comfortable ? 500 : 0) + (p.mode === "gpu" ? 200 : 0) - (cs === "extended" ? 20 : 0) + capacity(m) * 3 +
                (opts.use === "coding" && m.tags.length === 1 && m.tags[0] === "coding" ? 15 : 0);
       p.command = command(p, opts, hwr);
       p.family = familyOf(m); p.maxCtx = maxCtx(p, hwr, opts.kvq);
@@ -235,7 +280,7 @@
       out.push(p);
     }
     out.sort((a, b) => b.rank - a.rank);
-    return { hwr, results: out };
+    return { hwr, results: out, excluded };
   }
 
   // Human label for a plan's speed provenance. cls: css class (ok=measured, est=estimated/scaled).
@@ -249,6 +294,6 @@
     return { cls: "est", short: "scaled from measured", text: "scaled from measured ~" + v + " tok/s",
       detail: "Not measured directly: scaled by bytes read from a measurement of " + how + " (" + runs + "). Treat as an estimate." };
   }
-  const api = { applyView, viewActive, familyOf, maxCtx, SORTS, NATURAL_DIR, DEFAULT_VIEW, CTX_STEPS, speedInfo, makeLookup, calibratedEff, kvGB, resolveHardware, recommend, command, plan };
+  const api = { ctxLimits, ctxStatus, fmtCtx, fmtDur, kvAttnGB, depthSpeed, ttftSeconds, KV_BYTES, applyView, viewActive, familyOf, maxCtx, SORTS, NATURAL_DIR, DEFAULT_VIEW, CTX_STEPS, speedInfo, makeLookup, calibratedEff, kvGB, resolveHardware, recommend, command, plan };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else root.Advisor = api;
 })(typeof window !== "undefined" ? window : globalThis);

@@ -16,8 +16,8 @@
  <div class="lbl"><span class="t">2 &middot; Use case</span>
   <select id="use" data-seg="4" aria-label="Use case"><option value="coding" data-sub="Code assistants">Coding</option><option value="chat" selected data-sub="Chat / general">Chat</option><option value="vision" data-sub="Images in">Vision</option><option value="all" data-sub="Every model">All</option></select></div>
  <div class="fields">
-  <div class="lbl"><span class="t">Context length</span><select id="ctx" data-seg="small" aria-label="Context length"><option value="4096">4k</option><option value="8192">8k</option><option value="16384" selected>16k</option><option value="32768">32k</option><option value="65536">64k</option><option value="131072">128k</option></select></div>
-  <div class="lbl"><span class="t">KV cache type</span><select id="kvq" data-seg="small" aria-label="KV cache type"><option value="f16">f16 (default)</option><option value="q8_0">q8_0 (half size)</option></select></div>
+  <div class="lbl"><span class="t">Context length</span><select id="ctx" data-seg="small" aria-label="Context length"><option value="4096">4k</option><option value="8192">8k</option><option value="16384" selected>16k</option><option value="32768">32k</option><option value="65536">64k</option><option value="131072">128k</option><option value="262144">256k</option><option value="524288">512k</option><option value="1000000" title="1,000,000 tokens">1M</option></select><p id="ctxnote" class="mut ctxnote" role="status"></p></div>
+  <div class="lbl"><span class="t">KV cache type</span><select id="kvq" data-seg="small" aria-label="KV cache type"><option value="f16">f16 (default)</option><option value="q8_0">q8_0 (half size)</option><option value="q4_0">q4_0 (quarter size)</option></select></div>
  </div>
 </form>
 <p id="cfgnote" class="mut"></p>
@@ -37,6 +37,7 @@
  </div>
  <div class="vb-actions"><button id="v-reset" class="btn ghost" type="button">Reset sort &amp; filters</button><button id="v-all" class="btn ghost" type="button" hidden></button><button id="v-copy" class="btn ghost" type="button">Copy link to this view</button></div>
 </section>
+<div id="excluded"></div>
 <div id="results"></div>
 <div id="community"></div>
 <div class="slot" data-slot="affiliate-upgrade"><span>Affiliate box: &ldquo;cheapest upgrade that runs this&rdquo;. No affiliate links yet.</span></div>
@@ -45,9 +46,10 @@
 <div class="explain">
 <div><h3>Fit</h3><p class="mut">GGUF file size (read from Hugging Face) + KV cache (computed from each model's config; sliding-window and linear-attention layers handled) + ~1&nbsp;GB overhead per GPU.</p></div>
 <div><h3>Speed</h3><p class="mut">Memory bandwidth &times; efficiency &divide; bytes read per token. Efficiency is calibrated against real runs. Real results vary with backend, drivers and context.</p></div>
+<div><h3>Long context</h3><p class="mut">Each model is capped at its verified maximum context. Beyond it, only models whose card documents YaRN are offered, flagged <b>extended</b>. Speed at depth and time-to-first-token are always <b>estimates</b> (penalty fitted to measured runs up to 128k; beyond that it is extrapolated). Long context needs flash attention and lots of memory.</p></div>
 <div><h3>Badges</h3><p class="mut"><span class="badge measured">measured</span> median of real runs.<br><span class="badge scaled">scaled from measured</span> a same-size or same-model-other-quant run, scaled by bytes read.<br><span class="badge estimated">estimated</span> bandwidth formula, not a benchmark.</p></div>
 <div><h3>Ranking</h3><p class="mut">Fits and is fast enough first, then bigger. A heuristic, not a quality benchmark. Assumptions are listed in <a href="data/hardware.json">hardware.json</a>.</p></div>
 </div></section>
 <section class="card"><h2>Data changelog</h2><div id="changelog" class="mut"></div><p class="mut">Hardware pages: <a href="hardware/index.html">all configs</a> &middot; <a href="submit.html">Submit your benchmark</a> &middot; <a href="data-sources.html">Data sources &amp; attribution</a></p></section>
 </main>
-<script src="advisor.js?v=20261015b"></script><script src="app.js?v=20261015b"></script>
+<script src="advisor.js?v=20261015c"></script><script src="app.js?v=20261015c"></script>

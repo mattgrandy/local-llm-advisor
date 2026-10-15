@@ -4,7 +4,7 @@ const fs = require("fs"), path = require("path");
 const SITE = path.join(__dirname, "..", "site");
 const A = require(path.join(SITE, "advisor.js"));
 const read = f => JSON.parse(fs.readFileSync(path.join(SITE, "data", f)));
-const data = { hardware: read("hardware.json"), models: read("models.json"), measured: fs.existsSync(path.join(SITE, "data", "measured.json")) ? read("measured.json") : null };
+const data = { hardware: read("hardware.json"), models: read("models.json"), depth: fs.existsSync(path.join(SITE, "data", "depth_calibration.json")) ? read("depth_calibration.json") : null, measured: fs.existsSync(path.join(SITE, "data", "measured.json")) ? read("measured.json") : null };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const out = path.join(SITE, "hardware"); fs.mkdirSync(out, { recursive: true });
 const CTX = 16384, USES = [["coding", "Coding"], ["chat", "Chat / general"], ["vision", "Vision"]];
@@ -35,6 +35,19 @@ function page(t) {
       <div class="tw"><table class="sortable" data-status="sort-status-${t.slug}"><thead><tr>${th("Model", "text")}${th("Params", "num")}${th("Quant", "text")}${th("Fit", "text")}${th("Memory", "num")}${th("Tok/s", "num")}<th>Source</th></tr></thead><tbody>` +
       rows.map(p => { const si = A.speedInfo(p); return `<tr><td data-v="${esc(p.model.name.toLowerCase())}"><a href="${p.model.source_url}" rel="noopener">${esc(p.model.name)}</a></td><td class="num" data-v="${p.model.params_b}">${p.model.params_b}B${p.model.moe ? " MoE" : ""}</td><td class="num" data-v="${esc(p.quantLabel.toLowerCase())}">${esc(p.quantLabel)}</td><td data-v="${MODE[p.mode]}">${MODE[p.mode]}</td><td class="num" data-v="${(p.weightsGB + p.kvGB).toFixed(2)}">${(p.weightsGB + p.kvGB).toFixed(1)} GB</td><td class="num" data-v="${p.tps ? p.tps.toFixed(1) : ""}"><b>~${p.tps ? p.tps.toFixed(0) : "?"}</b></td><td title="${esc(si.detail)}"><span class="badge ${bcls(si.short)}">${si.short}</span></td></tr>`; }).join("") + `</tbody></table></div>` : `<p class="mut">No model fits this config at this context.</p>`) + `</section>`;
   }
+  // long context: max context that fits per model and KV type, with the estimated speed at that depth
+  {
+    const r = A.recommend(input, data, { use: "all", ctx: 16384, kvq: "f16" });
+    const hw = r.hwr, fm = A.fmtCtx, th = (l, k) => `<th data-sort="${k}">${l}</th>`;
+    const cell = (p, kvq) => { const c = A.maxCtx(p, hw, kvq); if (!c) return `<td class="num" data-v="0">&lt;4k</td>`; const ext = c > p.model.context_max;
+      return `<td class="num" data-v="${c}">${fm(c)}${ext ? ' <span class="badge est" title="Beyond the native context: needs YaRN rope scaling documented on the model card">extended</span>' : ""}</td>`; };
+    const rows = r.results.slice().sort((a, b) => A.maxCtx(b, hw, "f16") - A.maxCtx(a, hw, "f16") || (b.tps || 0) - (a.tps || 0));
+    const dl = c => `../index.html?${new URLSearchParams({ kind: t.kind, device: t.device, ...(t.config ? { config: t.config } : {}), count: t.count, mem: t.memory_gb || "", ram: t.ram_gb, ramt: t.ram_type, use: "all", ctx: c, sort: "ctx" })}`;
+    sections += `<section class="card" id="long-context"><h2>Long context on this hardware <span class="mut">&middot; up to 1M tokens</span></h2><p class="mut">Largest context whose KV cache still fits next to the weights (same placement as the 16k result, KV types f16 / q8_0 / q4_0). Models are capped at their verified maximum; <b>extended</b> means beyond the native maximum using YaRN, only listed where the model card documents it. Long context needs flash attention (<code>-fa on</code>, already in the commands) and a lot of memory; a quantized KV cache saves memory but can cost accuracy. Speed at depth is an <b>estimate</b> (penalty fitted to measured depth runs up to ${data.depth ? fm(data.depth.max_measured_depth) : "n/a"}).</p>
+      <p>Try it in the advisor: ${[131072, 262144, 524288, 1000000].map(c => `<a href="${dl(c)}">${fm(c)}</a>`).join(" &middot; ")}</p>` + (rows.length ? `<div class="tw"><table class="sortable" data-status="sort-status-${t.slug}"><thead><tr>${th("Model", "text")}${th("Native max", "num")}${th("Max ctx f16", "num")}${th("Max ctx q8_0", "num")}${th("Max ctx q4_0", "num")}${th("Est. tok/s at max f16 ctx", "num")}</tr></thead><tbody>` +
+      rows.map(p => { const c = A.maxCtx(p, hw, "f16"), d = c ? A.depthSpeed(p, c, "f16", data.depth) : null;
+        return `<tr><td data-v="${esc(p.model.name.toLowerCase())}"><a href="${p.model.source_url}" rel="noopener">${esc(p.model.name)}</a> <span class="mut">${esc(p.quantLabel)}</span></td><td class="num" data-v="${p.model.context_max}">${fm(p.model.context_max)}</td>${cell(p, "f16")}${cell(p, "q8_0")}${cell(p, "q4_0")}<td class="num" data-v="${d ? d.tps.toFixed(1) : ""}">${d ? "~" + Math.round(d.tps) + " <span class=\"badge estimated\">estimated</span>" : "&ndash;"}</td></tr>`; }).join("") + `</tbody></table></div>` : `<p class="mut">No model fits this config.</p>`) + `</section>`;
+  }
   const comm = ((data.measured && data.measured.community) || []).filter(c => c.hw_id === t.device);
   if (comm.length) sections += `<section class="card"><h2>Community-submitted benchmarks <span class="badge est">unverified</span></h2><p class="mut">Format-reviewed only; not used in the numbers above.</p><div class="tw"><table><thead><tr><th>Model</th><th>Quant</th><th>Backend</th><th>pp tok/s</th><th>tg tok/s</th><th>Date</th></tr></thead><tbody>${comm.map(c => `<tr><td>${esc(c.model)}</td><td>${esc(c.quant)}</td><td>${esc(c.backend)}</td><td class="num">${c.pp_tps}</td><td class="num">${c.tg_tps}</td><td class="num">${esc(c.date || "")}</td></tr>`).join("")}</tbody></table></div></section>`;
   const nmeas = Object.values(data.measured ? (data.measured.entries[t.device] || []) : []).length;
@@ -50,7 +63,7 @@ ${sections}
 <div class="slot" data-slot="affiliate-upgrade"><span>Affiliate box: &ldquo;cheapest upgrade&rdquo; for ${esc(t.title)}. No affiliate links yet.</span></div>
 <p><a class="btn" href="../index.html?${q}">Open the interactive advisor with this hardware &rarr;</a></p>
 <p class="mut">Speeds marked <span class="badge measured">measured</span> are medians of real runs (short-context generation) from <a href="../data-sources.html">these sources</a>; <span class="badge scaled">scaled from measured</span> means a measurement of a same-size or same-model-different-quant run, scaled by bytes read; <span class="badge estimated">estimated</span> comes from memory bandwidth (spec source: <a href="${hwr.source_url}" rel="noopener">${esc(hwr.source_url)}</a>)${hwr.eff ? ` &times; an efficiency factor of ${hwr.eff.toFixed(2)} ${esc(hwr.effSource)}` : ""}. ${nmeas ? nmeas + " measured data point" + (nmeas > 1 ? "s" : "") + " on file for this hardware" : "No measured data on file for this hardware yet"} &middot; <a href="../submit.html">submit your benchmark</a>. ${t.kind === "apple" || t.kind === "unified" ? "Memory size on this page is an example configuration; check what your machine has. " : "System RAM here is an example (" + t.ram_gb + " GB, " + t.ram_type + "). "}Model data last verified ${data.models.generated}. Ranking = fits and fast enough first, then larger; not a quality benchmark.</p>
-<script src="../hwtable.js?v=20261015b"></script>
+<script src="../hwtable.js?v=20261015c"></script>
 <p class="mut">Page generated ${new Date().toISOString().slice(0, 10)} by tools/generate_pages.js</p></main>` + L.footer("../");
 }
 

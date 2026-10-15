@@ -153,7 +153,10 @@
     "layers": 64,
     "full_layers": 16,
     "full_kv_heads": 4,
-    "full_head_dim": 256
+    "full_head_dim": 256,
+    "linear_layers": 48,
+    "linear_state_gb": 0.1569,
+    "linear_note": "Gated DeltaNet layers keep a fixed-size f32 state (does not grow with context); computed from config.json linear_* dims."
    },
    "gguf_repo": "unsloth/Qwen3.6-27B-GGUF",
    "quants": {
@@ -176,7 +179,16 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3.6-27B",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.6-27B-GGUF",
-   "last_verified": "2026-10-14"
+   "last_verified": "2026-10-14",
+   "context_native": 262144,
+   "context_extended": {
+    "max": 1010000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"262,144 natively and extensible up to 1,010,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
+   }
   },
   {
    "id": "Qwen/Qwen3.6-35B-A3B",
@@ -194,7 +206,10 @@
     "layers": 40,
     "full_layers": 10,
     "full_kv_heads": 2,
-    "full_head_dim": 256
+    "full_head_dim": 256,
+    "linear_layers": 30,
+    "linear_state_gb": 0.0659,
+    "linear_note": "Gated DeltaNet layers keep a fixed-size f32 state (does not grow with context); computed from config.json linear_* dims."
    },
    "gguf_repo": "unsloth/Qwen3.6-35B-A3B-GGUF",
    "quants": {
@@ -219,7 +234,16 @@
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF",
    "last_verified": "2026-10-14",
    "active_params_b": 3,
-   "active_source": "model card text on source_url"
+   "active_source": "model card text on source_url",
+   "context_native": 262144,
+   "context_extended": {
+    "max": 1010000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"262,144 natively and extensible up to 1,010,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
+   }
   },
   {
    "id": "Qwen/Qwen3.5-9B",
@@ -237,7 +261,10 @@
     "layers": 32,
     "full_layers": 8,
     "full_kv_heads": 4,
-    "full_head_dim": 256
+    "full_head_dim": 256,
+    "linear_layers": 24,
+    "linear_state_gb": 0.0527,
+    "linear_note": "Gated DeltaNet layers keep a fixed-size f32 state (does not grow with context); computed from config.json linear_* dims."
    },
    "gguf_repo": "unsloth/Qwen3.5-9B-GGUF",
    "quants": {
@@ -260,7 +287,16 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3.5-9B",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF",
-   "last_verified": "2026-10-14"
+   "last_verified": "2026-10-14",
+   "context_native": 262144,
+   "context_extended": {
+    "max": 1010000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"262,144 natively and extensible up to 1,010,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
+   }
   },
   {
    "id": "Qwen/Qwen3.5-4B",
@@ -277,7 +313,10 @@
     "layers": 32,
     "full_layers": 8,
     "full_kv_heads": 4,
-    "full_head_dim": 256
+    "full_head_dim": 256,
+    "linear_layers": 24,
+    "linear_state_gb": 0.0527,
+    "linear_note": "Gated DeltaNet layers keep a fixed-size f32 state (does not grow with context); computed from config.json linear_* dims."
    },
    "gguf_repo": "unsloth/Qwen3.5-4B-GGUF",
    "quants": {
@@ -300,7 +339,16 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3.5-4B",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF",
-   "last_verified": "2026-10-14"
+   "last_verified": "2026-10-14",
+   "context_native": 262144,
+   "context_extended": {
+    "max": 1010000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"262,144 natively and extensible up to 1,010,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.5-4B",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
+   }
   },
   {
    "id": "openai/gpt-oss-20b",
@@ -436,7 +484,16 @@
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
    "last_verified": "2026-10-14",
    "active_params_b": 3.3,
-   "active_source": "model card text on source_url"
+   "active_source": "model card text on source_url",
+   "context_native": 262144,
+   "context_extended": {
+    "max": 1000000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"native support for 256K tokens, extendable up to 1M tokens using Yarn\"",
+    "source_url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
+   }
   },
   {
    "id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
@@ -514,7 +571,16 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3-VL-8B-Instruct-GGUF",
-   "last_verified": "2026-10-14"
+   "last_verified": "2026-10-14",
+   "context_native": 262144,
+   "context_extended": {
+    "max": 1000000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"Native 256K context, expandable to 1M\"",
+    "source_url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
+   }
   },
   {
    "id": "zai-org/GLM-4.5-Air",
@@ -561,6 +627,15 @@
   }
  ],
  "changelog": [
+  {
+   "date": "2026-10-15",
+   "changes": [
+    "Context choices now go up to 1M tokens (256k, 512k, 1M added) plus a q4_0 KV cache option.",
+    "Contexts beyond a model's native maximum are shown only for models whose own card documents YaRN extension (Qwen3.5, Qwen3.6, Qwen3-Coder, Qwen3-VL) and are flagged \"extended\". All other models are excluded and listed with their real maximum.",
+    "KV cache now includes the fixed-size linear-attention state for Qwen3.5/3.6 hybrid models.",
+    "Speed at long context is an estimate with a depth penalty fitted to measured depth runs (tools/calibrate_depth.py); time-to-first-token is estimated from measured prompt-processing speed."
+   ]
+  },
   {
    "date": "2026-10-14",
    "changes": [

@@ -27,6 +27,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
     await pg.goto(base, { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res");
     const val = id => pg.$eval("#" + id, e => e.value), results = () => pg.$eval("#results", e => e.innerHTML);
     const hit = loc => touch ? loc.tap() : loc.click();
+    const q2 = () => new URLSearchParams(new URL(pg.url()).search);
     async function clickSeg(id, value) { await hit(pg.locator(`#${id} + .seg button[data-value="${value}"]`)); await sleep(60); }
     for (const id of ["kind", "use", "ctx", "kvq"]) {
       const values = await pg.$$eval(`#${id} option`, o => o.map(x => x.value)); assert(values.length >= 2);
@@ -46,6 +47,25 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
       ok(`${id}: all ${values.length} options switch select, show/hide fields, re-render`);
     }
     await clickSeg("kind", "gpu"); await clickSeg("ctx", "4096"); const a = await results(); await clickSeg("ctx", "131072"); assert.notStrictEqual(await results(), a); ok("context change alters results");
+    // ---- long context (up to 1M) ----
+    assert.deepStrictEqual(await pg.$$eval("#ctx option", o => o.map(x => +x.value)), [4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1000000], "context presets up to 1M");
+    assert.deepStrictEqual(await pg.$$eval("#kvq option", o => o.map(x => x.value)), ["f16", "q8_0", "q4_0"]);
+    await pg.goto(base + "index.html?kind=apple&device=m5-ultra&config=studio-m5-ultra-80&mem=512&use=all&ctx=1000000&kvq=f16", { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res");
+    assert.strictEqual(await val("ctx"), "1000000", "?ctx=1000000 restored"); assert.strictEqual(await pg.$eval("#ctx + .seg button.on", b => b.dataset.value), "1000000");
+    const lc = await pg.$$eval("#results .res", a => a.map(c => ({ n: c.querySelector("h3").textContent, t: c.textContent })));
+    assert(lc.length === 6 && lc.every(c => /extended context/.test(c.t) && /estimated/.test(c.t) && /--rope-scale 4/.test(c.t)), "six YaRN-documented models at 1M, all flagged extended + estimated");
+    assert(!lc.some(c => /gpt-oss|Mistral|GLM|Gemma/.test(c.n)), "models capped at their max are not offered at 1M");
+    const ex = await pg.$eval("#excluded", e => e.textContent); assert(/gpt-oss 120B \(max context 128k\)/.test(ex) && /Gemma 4 31B \(max context 256k\)/.test(ex), "excluded models list real max: " + ex);
+    assert(/flash attention/.test(await pg.$eval("#ctxnote", e => e.textContent)), "long-context note");
+    assert(/Beyond 128k the slowdown is extrapolated/.test(lc[0].t) && !/measured ~/.test(lc[0].t.split("At 1M depth")[1] || ""), "no measured claim at depth");
+    await clickSeg("ctx", "262144"); assert.strictEqual(q2().get("ctx"), "262144", "ctx persisted in URL"); assert(/Gemma 4 31B/.test(await results()), "gemma shows at 256k");
+    await pg.selectOption("#v-sort", "ctx"); await sleep(80); assert.strictEqual(q2().get("sort"), "ctx"); await pg.selectOption("#v-sort", "tpsctx"); await sleep(80); assert.strictEqual(q2().get("sort"), "tpsctx");
+    const sp = await pg.$$eval("#results .res .depthline b", a => a.map(b => +/\d+/.exec(b.textContent)[0])); assert(sp.length > 2 && sp.every((x, i) => !i || sp[i - 1] >= x), "sorted by tok/s at full context: " + sp);
+    await pg.goto(base + "index.html?kind=gpu&device=rtx-4090&ctx=999&kvq=bogus", { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res"); assert.strictEqual(await val("ctx"), "16384", "invalid ?ctx ignored"); assert.strictEqual(await val("kvq"), "f16");
+    const ov = await pg.evaluate(() => { const s = document.querySelector("#ctx + .seg"); const r = s.getBoundingClientRect(); return { right: r.right, vw: document.documentElement.clientWidth, docW: document.documentElement.scrollWidth, btns: [...s.children].every(b => { const x = b.getBoundingClientRect(); return x.left >= 0 && x.right <= document.documentElement.clientWidth && x.width > 30; }) }; });
+    assert(ov.btns && ov.docW <= ov.vw + 1, "context buttons fit the viewport without horizontal scroll: " + JSON.stringify(ov));
+    ok("context up to 1M: presets, URL persistence, extended/excluded flags, honest estimated labels, sorting, layout fits");
+    await pg.goto(base, { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res");
     await clickSeg("kind", "apple"); const ap = await pg.$eval("#hwinfo", e => e.textContent); await clickSeg("kind", "gpu"); assert.notStrictEqual(await pg.$eval("#hwinfo", e => e.textContent), ap); ok("apple vs gpu changes hardware summary");
     // Apple device list: grouped by form factor, full descriptive names, memory options follow the device
     await clickSeg("kind", "apple");

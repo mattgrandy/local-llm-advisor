@@ -130,3 +130,6 @@ pre{margin:0;padding:12px 14px;background:var(--code);border:1px solid var(--bd)
 .tw th button.sortbtn{all:unset;cursor:pointer;font:inherit;color:inherit;display:inline-flex;gap:4px;align-items:center}.tw th button.sortbtn:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:4px}
 .tw th[aria-sort=ascending] button::after{content:"\25B2";font-size:.7em}.tw th[aria-sort=descending] button::after{content:"\25BC";font-size:.7em}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ctxnote{margin:8px 0 0;max-width:62ch}.ctxnote:empty{display:none}.ctxwarn,.depthline{line-height:1.5}
+.lbl .seg.small{grid-template-columns:repeat(auto-fit,minmax(72px,1fr))}
+@media (max-width:520px){.lbl .seg.small{grid-template-columns:repeat(3,1fr)}}
