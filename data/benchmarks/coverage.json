@@ -1,0 +1,368 @@
+{
+ "dgx-spark": {
+  "rows": 369,
+  "sources": [
+   "llamacpp-benches-dgx-spark",
+   "llamacpp-benches-nemotron",
+   "llamacpp-discussion-10879-comments",
+   "llamacpp-discussion-10879-scoreboard",
+   "llamacpp-discussion-15013-comments",
+   "llamacpp-discussion-15013-scoreboard",
+   "llamacpp-discussion-16578-comments",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "",
+   "GLM-4.7-Flash",
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Nemotron-3-Nano-4B",
+   "Nemotron-3-Super-120B",
+   "Qwen2.5 14B Instruct",
+   "Qwen2.5-Coder-7B",
+   "Qwen3-Coder-30B-A3B-Instruct",
+   "deepseek2 30B.A3B",
+   "gemma-3-4b-it-qat",
+   "gemma3 4B",
+   "gpt-oss 120B",
+   "gpt-oss 20B",
+   "gpt-oss-120b",
+   "gpt-oss-20b",
+   "llama 7B",
+   "nemotron 120B.A12B",
+   "nemotron 4B",
+   "nemotron_h ?B",
+   "nemotron_h_moe 120B.A12B",
+   "nemotron_h_moe 31B.A3.5B",
+   "qwen2 7B",
+   "qwen35moe 122B.A10B",
+   "qwen35moe 35B.A3B",
+   "qwen3moe 30B.A3B",
+   "qwen3next 80B.A3B",
+   "qwen3vlmoe 235B.A22B"
+  ],
+  "non_llama2_rows": 344
+ },
+ "m3-ultra": {
+  "rows": 17,
+  "sources": [
+   "llamacpp-discussion-10879-comments",
+   "llamacpp-discussion-10879-scoreboard",
+   "llamacpp-discussion-4167-summary",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct",
+   "llama 7B"
+  ],
+  "non_llama2_rows": 8
+ },
+ "m4": {
+  "rows": 22,
+  "sources": [
+   "llamacpp-discussion-4167-comments",
+   "llamacpp-discussion-4167-summary",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct",
+   "llama 1B",
+   "llama 3B",
+   "llama 7B",
+   "qwen2 7B"
+  ],
+  "non_llama2_rows": 18
+ },
+ "m4-max-32": {
+  "rows": 9,
+  "sources": [
+   "llamacpp-discussion-4167-comments",
+   "llamacpp-discussion-4167-summary"
+  ],
+  "models": [
+   "llama 7B"
+  ],
+  "non_llama2_rows": 0
+ },
+ "m4-max-40": {
+  "rows": 3,
+  "sources": [
+   "llamacpp-discussion-4167-summary"
+  ],
+  "models": [],
+  "non_llama2_rows": 0
+ },
+ "m4-pro": {
+  "rows": 23,
+  "sources": [
+   "llamacpp-discussion-4167-summary",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct"
+  ],
+  "non_llama2_rows": 17
+ },
+ "m5": {
+  "rows": 10,
+  "sources": [
+   "llamacpp-discussion-4167-summary",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct"
+  ],
+  "non_llama2_rows": 8
+ },
+ "m5-max-32": {
+  "rows": 0,
+  "sources": [],
+  "models": [],
+  "non_llama2_rows": 0
+ },
+ "m5-max-40": {
+  "rows": 6,
+  "sources": [
+   "llamacpp-discussion-4167-comments",
+   "llamacpp-discussion-4167-summary"
+  ],
+  "models": [
+   "llama 7B"
+  ],
+  "non_llama2_rows": 0
+ },
+ "m5-pro": {
+  "rows": 17,
+  "sources": [
+   "llamacpp-discussion-4167-summary",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct"
+  ],
+  "non_llama2_rows": 11
+ },
+ "rtx-3060-12": {
+  "rows": 7,
+  "sources": [
+   "llamacpp-discussion-15013-comments",
+   "llamacpp-discussion-15013-scoreboard",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct",
+   "llama 7B"
+  ],
+  "non_llama2_rows": 3
+ },
+ "rtx-3090": {
+  "rows": 42,
+  "sources": [
+   "llamacpp-discussion-10879-comments",
+   "llamacpp-discussion-10879-scoreboard",
+   "llamacpp-discussion-15013-comments",
+   "llamacpp-discussion-15013-scoreboard",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct",
+   "llama 7B"
+  ],
+  "non_llama2_rows": 3
+ },
+ "rtx-4060": {
+  "rows": 2,
+  "sources": [
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct"
+  ],
+  "non_llama2_rows": 2
+ },
+ "rtx-4060ti-16": {
+  "rows": 3,
+  "sources": [
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct"
+  ],
+  "non_llama2_rows": 3
+ },
+ "rtx-4070": {
+  "rows": 5,
+  "sources": [
+   "llamacpp-discussion-10879-scoreboard",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct"
+  ],
+  "non_llama2_rows": 3
+ },
+ "rtx-4090": {
+  "rows": 78,
+  "sources": [
+   "llamacpp-discussion-10879-comments",
+   "llamacpp-discussion-10879-scoreboard",
+   "llamacpp-discussion-15013-comments",
+   "llamacpp-discussion-15013-scoreboard",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct",
+   "llama 7B"
+  ],
+  "non_llama2_rows": 7
+ },
+ "rtx-5070": {
+  "rows": 6,
+  "sources": [
+   "llamacpp-discussion-15013-scoreboard",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct"
+  ],
+  "non_llama2_rows": 4
+ },
+ "rtx-5070ti": {
+  "rows": 34,
+  "sources": [
+   "llamacpp-discussion-10879-comments",
+   "llamacpp-discussion-10879-scoreboard",
+   "llamacpp-discussion-15013-comments",
+   "llamacpp-discussion-15013-scoreboard",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct",
+   "llama 7B"
+  ],
+  "non_llama2_rows": 6
+ },
+ "rtx-5090": {
+  "rows": 47,
+  "sources": [
+   "llamacpp-discussion-10879-scoreboard",
+   "llamacpp-discussion-15013-comments",
+   "llamacpp-discussion-15013-scoreboard",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct",
+   "llama 7B"
+  ],
+  "non_llama2_rows": 5
+ },
+ "rtx-pro-6000": {
+  "rows": 27,
+  "sources": [
+   "llamacpp-discussion-15013-comments",
+   "llamacpp-discussion-15013-scoreboard",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct",
+   "llama 7B"
+  ],
+  "non_llama2_rows": 3
+ },
+ "rx-7900xtx": {
+  "rows": 183,
+  "sources": [
+   "llamacpp-discussion-10879-comments",
+   "llamacpp-discussion-10879-scoreboard",
+   "llamacpp-discussion-15021-comments",
+   "llamacpp-discussion-15021-scoreboard",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen2.5 14B Instruct",
+   "gemma3 27B",
+   "gemma4 31B",
+   "glm4moe 106B.A12B",
+   "llama 7B"
+  ],
+  "non_llama2_rows": 15
+ },
+ "strix-halo": {
+  "rows": 201,
+  "sources": [
+   "github-strix-halo-guide-BENCHMARKS",
+   "hf-axjns-strix-halo-inference-bench",
+   "llamacpp-discussion-10879-comments",
+   "llamacpp-discussion-15013-comments",
+   "llamacpp-discussion-15021-comments",
+   "llamacpp-discussion-15021-scoreboard",
+   "llamacpp-discussion-16578-comments",
+   "llamacpp-discussion-23659-body",
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Gemma 4 26B-A4B",
+   "Gemma 4 26B-A4B IT QAT",
+   "LFM2.5 8B-A1B",
+   "Llama 3.1 70B",
+   "Llama 3.2 1B Instruct",
+   "Llama 4 Scout 109B",
+   "Meta Llama 3.1 8B Instruct",
+   "Nemotron 3 Nano 30B-A3B",
+   "Nemotron 3 Super 120B-A12B",
+   "Qwen2.5 14B Instruct",
+   "Qwen3 0.6B",
+   "Qwen3-30B-A3B-Instruct-2507",
+   "Qwen3-Coder 30B-A3B",
+   "Qwen3-Next 80B-A3B",
+   "Qwen3.5 35B-A3B",
+   "Qwen3.6 35B-A3B",
+   "Qwen3.6-27B-Q3_K_M",
+   "Qwen3.6-27B-Q4_0",
+   "Qwen3.6-27B-Q5_K_M",
+   "Qwen3.6-27B-Q6_K",
+   "Qwen3.6-35B-A3B-Q8_0",
+   "Qwen3.6-35B-A3B-UD-Q4_K_M",
+   "Qwen3.8-27B-UD-Q4_K_XL",
+   "Qwen3.8-Flash-Next",
+   "cognitivecomputations_Dolphin-Mistral-24B-Venice-Edition-Q6_K",
+   "gemma-4-31B-it-UD-Q4_K_XL",
+   "gemma4 31B",
+   "gpt-oss ?B",
+   "gpt-oss-120b",
+   "gpt-oss-120b-Q4_K_M"
+  ],
+  "non_llama2_rows": 134
+ }
+}

@@ -1,0 +1,7 @@
+{
+  "_note": "Where submissions go. mode: 'none', 'github_issue' (opens a prefilled new-issue page in the repo below; the user presses Submit on GitHub), or 'endpoint'.",
+  "mode": "github_issue",
+  "github_issue": { "repo": "mattgrandy/local-llm-advisor", "template": "benchmark-submission.yml" },
+  "endpoint_url": "",
+  "contact_note": ""
+}

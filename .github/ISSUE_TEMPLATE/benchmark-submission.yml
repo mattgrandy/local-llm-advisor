@@ -1,0 +1,68 @@
+name: Benchmark submission
+description: Share a llama-bench result (shown as unverified community data after review)
+labels: ["benchmark-submission"]
+title: "Benchmark: "
+body:
+  - type: markdown
+    attributes:
+      value: "Run `llama-bench -m model.gguf -p 512 -n 128 -ngl 99 -fa 1 -r 3`. Easiest: use the form on the site, it opens this issue prefilled."
+  - type: input
+    id: hw
+    attributes: {label: "Hardware id"}
+    validations: {required: true}
+  - type: input
+    id: hwo
+    attributes: {label: "Hardware (if other)"}
+  - type: input
+    id: mem
+    attributes: {label: "Memory (GB)"}
+  - type: input
+    id: model
+    attributes: {label: "Model"}
+    validations: {required: true}
+  - type: input
+    id: quant
+    attributes: {label: "Quantization"}
+    validations: {required: true}
+  - type: input
+    id: backend
+    attributes: {label: "Backend"}
+    validations: {required: true}
+  - type: input
+    id: pp
+    attributes: {label: "Prompt processing (tokens/s)"}
+    validations: {required: true}
+  - type: input
+    id: ppn
+    attributes: {label: "Prompt tokens (pp)"}
+  - type: input
+    id: tg
+    attributes: {label: "Generation (tokens/s)"}
+    validations: {required: true}
+  - type: input
+    id: tgn
+    attributes: {label: "Generated tokens (tg)"}
+  - type: input
+    id: build
+    attributes: {label: "llama.cpp build"}
+    validations: {required: true}
+  - type: input
+    id: os
+    attributes: {label: "Operating system"}
+    validations: {required: true}
+  - type: input
+    id: osd
+    attributes: {label: "OS detail"}
+  - type: input
+    id: fa
+    attributes: {label: "Flash attention"}
+  - type: textarea
+    id: notes
+    attributes: {label: "Notes"}
+  - type: input
+    id: contact
+    attributes: {label: "Contact (optional, never published)"}
+  - type: textarea
+    id: consent
+    attributes: {label: "Consent", value: "I ran this myself and agree it may be published (CC0) as unverified community data."}
+    validations: {required: true}

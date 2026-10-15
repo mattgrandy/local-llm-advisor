@@ -1,0 +1,2960 @@
+{
+ "generated": "2026-10-14",
+ "entries": {
+  "rtx-5090": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 288.98,
+    "pp": 14473.7,
+    "n": 30,
+    "tg_min": 263.63,
+    "tg_max": 315.3,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879"
+     },
+     {
+      "id": "llamacpp-discussion-15013-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013#discussioncomment-14525481"
+     },
+     {
+      "id": "llamacpp-discussion-15013-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
+     }
+    ],
+    "backends": [
+     "CUDA",
+     "Vulkan"
+    ],
+    "latest": "2026-10-10"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 66.33,
+    "pp": 6297.4,
+    "n": 1,
+    "tg_min": 66.33,
+    "tg_max": 66.33,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 41.75,
+    "pp": 3733.9,
+    "n": 2,
+    "tg_min": 37.95,
+    "tg_max": 45.54,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 119.83,
+    "pp": 16759.7,
+    "n": 2,
+    "tg_min": 69.32,
+    "tg_max": 170.33,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "rtx-pro-6000": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 270.86,
+    "pp": 15736.8,
+    "n": 12,
+    "tg_min": 249.18,
+    "tg_max": 281.11,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15013-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013#discussioncomment-14075193"
+     },
+     {
+      "id": "llamacpp-discussion-15013-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-01"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 85.77,
+    "pp": 6345.7,
+    "n": 1,
+    "tg_min": 85.77,
+    "tg_max": 85.77,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 64.05,
+    "pp": 4416.4,
+    "n": 1,
+    "tg_min": 64.05,
+    "tg_max": 64.05,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 191.37,
+    "pp": 20440.0,
+    "n": 1,
+    "tg_min": 191.37,
+    "tg_max": 191.37,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "rtx-4090": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 166.9,
+    "pp": 10830.4,
+    "n": 41,
+    "tg_min": 133.63,
+    "tg_max": 190.1,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-13699168"
+     },
+     {
+      "id": "llamacpp-discussion-10879-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879"
+     },
+     {
+      "id": "llamacpp-discussion-15013-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013#discussioncomment-14234178"
+     },
+     {
+      "id": "llamacpp-discussion-15013-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
+     }
+    ],
+    "backends": [
+     "CUDA",
+     "Vulkan"
+    ],
+    "latest": "2026-10-10"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 105.32,
+    "pp": 7145.5,
+    "n": 2,
+    "tg_min": 91.03,
+    "tg_max": 119.61,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 49.1,
+    "pp": 3506.2,
+    "n": 3,
+    "tg_min": 31.57,
+    "tg_max": 68.84,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 292.02,
+    "pp": 22429.5,
+    "n": 2,
+    "tg_min": 202.31,
+    "tg_max": 381.74,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "rtx-5070ti": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 165.95,
+    "pp": 6911.2,
+    "n": 18,
+    "tg_min": 125.89,
+    "tg_max": 182.43,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-13101529"
+     },
+     {
+      "id": "llamacpp-discussion-10879-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879"
+     },
+     {
+      "id": "llamacpp-discussion-15013-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013#discussioncomment-15183261"
+     },
+     {
+      "id": "llamacpp-discussion-15013-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
+     }
+    ],
+    "backends": [
+     "CUDA",
+     "Vulkan"
+    ],
+    "latest": "2026-10-10"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 50.12,
+    "pp": 3115.7,
+    "n": 2,
+    "tg_min": 34.69,
+    "tg_max": 65.54,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 31.29,
+    "pp": 1993.7,
+    "n": 2,
+    "tg_min": 25.6,
+    "tg_max": 36.97,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 145.25,
+    "pp": 12339.0,
+    "n": 2,
+    "tg_min": 92.78,
+    "tg_max": 197.71,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "rtx-3090": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 151.04,
+    "pp": 4516.9,
+    "n": 35,
+    "tg_min": 39.41,
+    "tg_max": 248.57,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-11772082"
+     },
+     {
+      "id": "llamacpp-discussion-10879-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879"
+     },
+     {
+      "id": "llamacpp-discussion-15013-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013#discussioncomment-13968120"
+     },
+     {
+      "id": "llamacpp-discussion-15013-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
+     }
+    ],
+    "backends": [
+     "CUDA",
+     "ROCm",
+     "Vulkan"
+    ],
+    "latest": "2026-10-10"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 96.28,
+    "pp": 3549.6,
+    "n": 1,
+    "tg_min": 96.28,
+    "tg_max": 96.28,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 56.19,
+    "pp": 1950.0,
+    "n": 1,
+    "tg_min": 56.19,
+    "tg_max": 56.19,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 269.93,
+    "pp": 13482.3,
+    "n": 1,
+    "tg_min": 269.93,
+    "tg_max": 269.93,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "rtx-5070": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 127.88,
+    "pp": 5484.1,
+    "n": 2,
+    "tg_min": 127.54,
+    "tg_max": 128.21,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15013-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-01"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 55.92,
+    "pp": 2927.1,
+    "n": 1,
+    "tg_min": 55.92,
+    "tg_max": 55.92,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 33.25,
+    "pp": 1511.1,
+    "n": 2,
+    "tg_min": 20.82,
+    "tg_max": 45.69,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 100.65,
+    "pp": 8328.4,
+    "n": 1,
+    "tg_min": 100.65,
+    "tg_max": 100.65,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "rtx-3060-12": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 75.57,
+    "pp": 2272.6,
+    "n": 4,
+    "tg_min": 72.09,
+    "tg_max": 76.92,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15013-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013#discussioncomment-18108605"
+     },
+     {
+      "id": "llamacpp-discussion-15013-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-01"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 51.28,
+    "pp": 1482.6,
+    "n": 1,
+    "tg_min": 51.28,
+    "tg_max": 51.28,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 26.58,
+    "pp": 759.5,
+    "n": 1,
+    "tg_min": 26.58,
+    "tg_max": 26.58,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 184.98,
+    "pp": 6042.3,
+    "n": 1,
+    "tg_min": 184.98,
+    "tg_max": 184.98,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "dgx-spark": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 54.65,
+    "pp": 3210.3,
+    "n": 24,
+    "tg_min": 46.61,
+    "tg_max": 60.39,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-15544966"
+     },
+     {
+      "id": "llamacpp-discussion-10879-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879"
+     },
+     {
+      "id": "llamacpp-discussion-15013-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013#discussioncomment-15827423"
+     },
+     {
+      "id": "llamacpp-discussion-15013-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
+     }
+    ],
+    "backends": [
+     "CUDA",
+     "Vulkan"
+    ],
+    "latest": "2026-10-10"
+   },
+   {
+    "model": "nemotron_h_moe 31B.A3.5B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 31.58,
+    "active_b": 3.5,
+    "moe": true,
+    "tg": 63.13,
+    "pp": 1898.7,
+    "n": 2,
+    "tg_min": 61.76,
+    "tg_max": 64.5,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-15524098"
+     }
+    ],
+    "backends": [
+     "CUDA",
+     "Vulkan"
+    ],
+    "latest": "2026-01-17"
+   },
+   {
+    "model": "gpt-oss 120B",
+    "site_id": "openai/gpt-oss-120b",
+    "qclass": "Q4",
+    "params_b": 116.83,
+    "active_b": 5.1,
+    "moe": true,
+    "tg": 56.33,
+    "pp": 2046.7,
+    "n": 5,
+    "tg_min": 45.34,
+    "tg_max": 62.36,
+    "sources": [
+     {
+      "id": "llamacpp-benches-dgx-spark",
+      "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/dgx-spark/dgx-spark.md"
+     },
+     {
+      "id": "llamacpp-discussion-16578-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-14748774"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-03-30"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 86.23,
+    "pp": 4125.3,
+    "n": 6,
+    "tg_min": 83.43,
+    "tg_max": 117.83,
+    "sources": [
+     {
+      "id": "llamacpp-benches-dgx-spark",
+      "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/dgx-spark/dgx-spark.md"
+     },
+     {
+      "id": "llamacpp-discussion-16578-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-14980101"
+     }
+    ],
+    "backends": [
+     "CUDA",
+     "Metal"
+    ],
+    "latest": "2026-03-30"
+   },
+   {
+    "model": "qwen3vlmoe 235B.A22B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 235.09,
+    "active_b": 22.0,
+    "moe": true,
+    "tg": 12.98,
+    "pp": 528.5,
+    "n": 1,
+    "tg_min": 12.98,
+    "tg_max": 12.98,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-16578-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-15033766"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2025-11-21"
+   },
+   {
+    "model": "Qwen3.6 35B-A3B",
+    "site_id": "Qwen/Qwen3.6-35B-A3B",
+    "qclass": "Q8",
+    "params_b": 35.95,
+    "active_b": 3,
+    "moe": true,
+    "tg": 49.22,
+    "pp": 2571.9,
+    "n": 1,
+    "tg_min": 49.22,
+    "tg_max": 49.22,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-16578-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-16099009"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-03-12"
+   },
+   {
+    "model": "qwen3next 80B.A3B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 79.67,
+    "active_b": 3.0,
+    "moe": true,
+    "tg": 49.33,
+    "pp": 1743.0,
+    "n": 1,
+    "tg_min": 49.33,
+    "tg_max": 49.33,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-16578-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-16377832"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-03-30"
+   },
+   {
+    "model": "Qwen3.6 35B-A3B",
+    "site_id": "Qwen/Qwen3.6-35B-A3B",
+    "qclass": "Q4",
+    "params_b": 35.95,
+    "active_b": 3,
+    "moe": true,
+    "tg": 59.98,
+    "pp": 2788.6,
+    "n": 1,
+    "tg_min": 59.98,
+    "tg_max": 59.98,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-16578-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-16377832"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-03-30"
+   },
+   {
+    "model": "qwen35moe 122B.A10B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 122.11,
+    "active_b": 10.0,
+    "moe": true,
+    "tg": 21.33,
+    "pp": 1074.8,
+    "n": 1,
+    "tg_min": 21.33,
+    "tg_max": 21.33,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-16578-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-16377832"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-03-30"
+   },
+   {
+    "model": "nemotron_h_moe 120B.A12B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 120.67,
+    "active_b": 12.0,
+    "moe": true,
+    "tg": 16.58,
+    "pp": 729.6,
+    "n": 1,
+    "tg_min": 16.58,
+    "tg_max": 16.58,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-16578-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/16578#discussioncomment-16377832"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-03-30"
+   },
+   {
+    "model": "Qwen3-Coder 30B-A3B",
+    "site_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "qclass": "Q8",
+    "params_b": 30.53,
+    "active_b": 3.3,
+    "moe": true,
+    "tg": 61.06,
+    "pp": 2987.0,
+    "n": 1,
+    "tg_min": 61.06,
+    "tg_max": 61.06,
+    "sources": [
+     {
+      "id": "llamacpp-benches-dgx-spark",
+      "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/dgx-spark/dgx-spark.md"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-02-05"
+   },
+   {
+    "model": "qwen2 7B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 7.62,
+    "active_b": null,
+    "moe": false,
+    "tg": 29.43,
+    "pp": 2250.3,
+    "n": 1,
+    "tg_min": 29.43,
+    "tg_max": 29.43,
+    "sources": [
+     {
+      "id": "llamacpp-benches-dgx-spark",
+      "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/dgx-spark/dgx-spark.md"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-02-05"
+   },
+   {
+    "model": "gemma3 4B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 3.88,
+    "active_b": null,
+    "moe": false,
+    "tg": 81.05,
+    "pp": 5948.7,
+    "n": 1,
+    "tg_min": 81.05,
+    "tg_max": 81.05,
+    "sources": [
+     {
+      "id": "llamacpp-benches-dgx-spark",
+      "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/dgx-spark/dgx-spark.md"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-02-05"
+   },
+   {
+    "model": "deepseek2 30B.A3B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 29.94,
+    "active_b": 3.0,
+    "moe": true,
+    "tg": 48.68,
+    "pp": 2364.2,
+    "n": 1,
+    "tg_min": 48.68,
+    "tg_max": 48.68,
+    "sources": [
+     {
+      "id": "llamacpp-benches-dgx-spark",
+      "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/dgx-spark/dgx-spark.md"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-02-05"
+   },
+   {
+    "model": "nemotron 120B.A12B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 120.67,
+    "active_b": 12.0,
+    "moe": true,
+    "tg": 19.94,
+    "pp": 768.8,
+    "n": 1,
+    "tg_min": 19.94,
+    "tg_max": 19.94,
+    "sources": [
+     {
+      "id": "llamacpp-benches-nemotron",
+      "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/nemotron/nemotron-dgx-spark.md"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-03-16"
+   },
+   {
+    "model": "nemotron 4B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 3.97,
+    "active_b": null,
+    "moe": false,
+    "tg": 52.85,
+    "pp": 2761.9,
+    "n": 1,
+    "tg_min": 52.85,
+    "tg_max": 52.85,
+    "sources": [
+     {
+      "id": "llamacpp-benches-nemotron",
+      "url": "https://github.com/ggml-org/llama.cpp/blob/master/benches/nemotron/nemotron-dgx-spark.md"
+     }
+    ],
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-03-16"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 34.17,
+    "pp": 1998.1,
+    "n": 2,
+    "tg_min": 33.63,
+    "tg_max": 34.7,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 18.3,
+    "pp": 1092.0,
+    "n": 2,
+    "tg_min": 18.24,
+    "tg_max": 18.37,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 132.26,
+    "pp": 7126.7,
+    "n": 2,
+    "tg_min": 116.07,
+    "tg_max": 148.46,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "strix-halo": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 50.58,
+    "pp": 1111.8,
+    "n": 54,
+    "tg_min": 34.24,
+    "tg_max": 55.32,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-14130537"
+     },
+     {
+      "id": "llamacpp-discussion-15013-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013#discussioncomment-15671492"
+     },
+     {
+      "id": "llamacpp-discussion-15021-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15021#discussioncomment-15089622"
+     },
+     {
+      "id": "llamacpp-discussion-15021-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15021"
+     }
+    ],
+    "backends": [
+     "ROCm",
+     "Vulkan"
+    ],
+    "latest": "2026-10-02"
+   },
+   {
+    "model": "qwen35moe 122B.A10B",
+    "site_id": null,
+    "qclass": "Q6",
+    "params_b": 124.64,
+    "active_b": 10.0,
+    "moe": true,
+    "tg": 18.96,
+    "pp": 145.9,
+    "n": 9,
+    "tg_min": 17.73,
+    "tg_max": 19.21,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-23659-body",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/23659"
+     }
+    ],
+    "backends": [
+     "ROCm"
+    ],
+    "latest": "2026-05-25"
+   },
+   {
+    "model": "Gemma 4 31B",
+    "site_id": "google/gemma-4-31B-it",
+    "qclass": "Q4",
+    "params_b": 31.27,
+    "active_b": null,
+    "moe": false,
+    "tg": 10.48,
+    "pp": null,
+    "n": 4,
+    "tg_min": 10.37,
+    "tg_max": 11.23,
+    "sources": [
+     {
+      "id": "hf-axjns-strix-halo-inference-bench",
+      "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
+     },
+     {
+      "id": "llamacpp-discussion-23659-body",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/23659"
+     }
+    ],
+    "backends": [
+     "ROCm",
+     "Vulkan"
+    ],
+    "latest": "2026-08-17"
+   },
+   {
+    "model": "Qwen3.6 27B",
+    "site_id": "Qwen/Qwen3.6-27B",
+    "qclass": "Q3",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 14.37,
+    "pp": null,
+    "n": 1,
+    "tg_min": 14.37,
+    "tg_max": 14.37,
+    "sources": [
+     {
+      "id": "hf-axjns-strix-halo-inference-bench",
+      "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-08-17"
+   },
+   {
+    "model": "Qwen3.6 27B",
+    "site_id": "Qwen/Qwen3.6-27B",
+    "qclass": "Q4",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 13.36,
+    "pp": null,
+    "n": 1,
+    "tg_min": 13.36,
+    "tg_max": 13.36,
+    "sources": [
+     {
+      "id": "hf-axjns-strix-halo-inference-bench",
+      "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-08-17"
+   },
+   {
+    "model": "Qwen3.6 27B",
+    "site_id": "Qwen/Qwen3.6-27B",
+    "qclass": "Q5",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 11.01,
+    "pp": null,
+    "n": 1,
+    "tg_min": 11.01,
+    "tg_max": 11.01,
+    "sources": [
+     {
+      "id": "hf-axjns-strix-halo-inference-bench",
+      "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-08-17"
+   },
+   {
+    "model": "Qwen3.6 27B",
+    "site_id": "Qwen/Qwen3.6-27B",
+    "qclass": "Q6",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 9.48,
+    "pp": null,
+    "n": 1,
+    "tg_min": 9.48,
+    "tg_max": 9.48,
+    "sources": [
+     {
+      "id": "hf-axjns-strix-halo-inference-bench",
+      "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-08-17"
+   },
+   {
+    "model": "Qwen3.6 35B-A3B",
+    "site_id": "Qwen/Qwen3.6-35B-A3B",
+    "qclass": "Q8",
+    "params_b": 35.95,
+    "active_b": 3,
+    "moe": true,
+    "tg": 53.47,
+    "pp": null,
+    "n": 1,
+    "tg_min": 53.47,
+    "tg_max": 53.47,
+    "sources": [
+     {
+      "id": "hf-axjns-strix-halo-inference-bench",
+      "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-08-17"
+   },
+   {
+    "model": "Qwen3.6 35B-A3B",
+    "site_id": "Qwen/Qwen3.6-35B-A3B",
+    "qclass": "Q4",
+    "params_b": 35.95,
+    "active_b": 3,
+    "moe": true,
+    "tg": 63.41,
+    "pp": 1106.0,
+    "n": 6,
+    "tg_min": 62.21,
+    "tg_max": 81.3,
+    "sources": [
+     {
+      "id": "github-strix-halo-guide-BENCHMARKS",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
+     },
+     {
+      "id": "hf-axjns-strix-halo-inference-bench",
+      "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-03"
+   },
+   {
+    "model": "Qwen3.8-27B-UD-Q4_K_XL",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 27.32,
+    "active_b": null,
+    "moe": false,
+    "tg": 11.88,
+    "pp": null,
+    "n": 1,
+    "tg_min": 11.88,
+    "tg_max": 11.88,
+    "sources": [
+     {
+      "id": "hf-axjns-strix-halo-inference-bench",
+      "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-08-17"
+   },
+   {
+    "model": "cognitivecomputations_Dolphin-Mistral-24B-Venice-Edition-Q6_K",
+    "site_id": null,
+    "qclass": "Q6",
+    "params_b": 23.57,
+    "active_b": null,
+    "moe": false,
+    "tg": 11.53,
+    "pp": null,
+    "n": 1,
+    "tg_min": 11.53,
+    "tg_max": 11.53,
+    "sources": [
+     {
+      "id": "hf-axjns-strix-halo-inference-bench",
+      "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-08-17"
+   },
+   {
+    "model": "gpt-oss 120B",
+    "site_id": "openai/gpt-oss-120b",
+    "qclass": "Q4",
+    "params_b": 116.83,
+    "active_b": 5.1,
+    "moe": true,
+    "tg": 56.39,
+    "pp": 727.0,
+    "n": 2,
+    "tg_min": 55.57,
+    "tg_max": 57.2,
+    "sources": [
+     {
+      "id": "github-strix-halo-guide-BENCHMARKS",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
+     },
+     {
+      "id": "hf-axjns-strix-halo-inference-bench",
+      "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-03"
+   },
+   {
+    "model": "ornith-1.0-35b-Q4_K_M",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 34.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 74.1,
+    "pp": null,
+    "n": 1,
+    "tg_min": 74.1,
+    "tg_max": 74.1,
+    "sources": [
+     {
+      "id": "hf-axjns-strix-halo-inference-bench",
+      "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-08-17"
+   },
+   {
+    "model": "Qwen3-Coder 30B-A3B",
+    "site_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "qclass": "Q4",
+    "params_b": 30.53,
+    "active_b": 3.3,
+    "moe": true,
+    "tg": 96.92,
+    "pp": 1399.0,
+    "n": 18,
+    "tg_min": 87.11,
+    "tg_max": 103.18,
+    "sources": [
+     {
+      "id": "github-strix-halo-guide-BENCHMARKS",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-03"
+   },
+   {
+    "model": "Qwen3-Next 80B-A3B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 80.0,
+    "active_b": 3.0,
+    "moe": true,
+    "tg": 59.06,
+    "pp": 675.8,
+    "n": 3,
+    "tg_min": 54.92,
+    "tg_max": 62.09,
+    "sources": [
+     {
+      "id": "github-strix-halo-guide-BENCHMARKS",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-03"
+   },
+   {
+    "model": "LFM2.5 8B-A1B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.0,
+    "active_b": 1.0,
+    "moe": true,
+    "tg": 171.17,
+    "pp": 3398.0,
+    "n": 3,
+    "tg_min": 168.96,
+    "tg_max": 176.48,
+    "sources": [
+     {
+      "id": "github-strix-halo-guide-BENCHMARKS",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-03"
+   },
+   {
+    "model": "Gemma 4 26B-A4B IT QAT",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 26.0,
+    "active_b": 4.0,
+    "moe": true,
+    "tg": 74.8,
+    "pp": 1432.0,
+    "n": 1,
+    "tg_min": 74.8,
+    "tg_max": 74.8,
+    "sources": [
+     {
+      "id": "github-strix-halo-guide-BENCHMARKS",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-03"
+   },
+   {
+    "model": "Nemotron 3 Super 120B-A12B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 120.0,
+    "active_b": 12.0,
+    "moe": true,
+    "tg": 18.43,
+    "pp": 296.0,
+    "n": 3,
+    "tg_min": 18.24,
+    "tg_max": 18.93,
+    "sources": [
+     {
+      "id": "github-strix-halo-guide-BENCHMARKS",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-03"
+   },
+   {
+    "model": "Nemotron 3 Nano 30B-A3B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 30.0,
+    "active_b": 3.0,
+    "moe": true,
+    "tg": 75.97,
+    "pp": 1312.0,
+    "n": 1,
+    "tg_min": 75.97,
+    "tg_max": 75.97,
+    "sources": [
+     {
+      "id": "github-strix-halo-guide-BENCHMARKS",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-03"
+   },
+   {
+    "model": "Qwen3.5 35B-A3B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 35.0,
+    "active_b": 3.0,
+    "moe": true,
+    "tg": 64.85,
+    "pp": 1080.0,
+    "n": 1,
+    "tg_min": 64.85,
+    "tg_max": 64.85,
+    "sources": [
+     {
+      "id": "github-strix-halo-guide-BENCHMARKS",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-03"
+   },
+   {
+    "model": "Gemma 4 26B-A4B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 26.0,
+    "active_b": 4.0,
+    "moe": true,
+    "tg": 48.46,
+    "pp": 1142.0,
+    "n": 1,
+    "tg_min": 48.46,
+    "tg_max": 48.46,
+    "sources": [
+     {
+      "id": "github-strix-halo-guide-BENCHMARKS",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-03"
+   },
+   {
+    "model": "Llama 4 Scout 109B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 109.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 18.32,
+    "pp": 331.0,
+    "n": 1,
+    "tg_min": 18.32,
+    "tg_max": 18.32,
+    "sources": [
+     {
+      "id": "github-strix-halo-guide-BENCHMARKS",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-03"
+   },
+   {
+    "model": "Llama 3.1 70B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 70.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 4.7,
+    "pp": 22.0,
+    "n": 1,
+    "tg_min": 4.7,
+    "tg_max": 4.7,
+    "sources": [
+     {
+      "id": "github-strix-halo-guide-BENCHMARKS",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-03"
+   },
+   {
+    "model": "Qwen3 0.6B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 0.6,
+    "active_b": null,
+    "moe": false,
+    "tg": 266.0,
+    "pp": 13112.0,
+    "n": 1,
+    "tg_min": 266.0,
+    "tg_max": 266.0,
+    "sources": [
+     {
+      "id": "github-strix-halo-guide-BENCHMARKS",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-03"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 21.38,
+    "pp": 239.6,
+    "n": 3,
+    "tg_min": 21.36,
+    "tg_max": 21.78,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 11.68,
+    "pp": 110.6,
+    "n": 9,
+    "tg_min": 5.65,
+    "tg_max": 11.99,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 107.41,
+    "pp": 1150.3,
+    "n": 8,
+    "tg_min": 48.14,
+    "tg_max": 110.2,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "m4": [
+   {
+    "model": "llama 1B",
+    "site_id": null,
+    "qclass": "F16",
+    "params_b": 1.1,
+    "active_b": null,
+    "moe": false,
+    "tg": 46.21,
+    "pp": 1375.9,
+    "n": 1,
+    "tg_min": 46.21,
+    "tg_max": 46.21,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-4167-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-9491068"
+     }
+    ],
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2024-05-20"
+   },
+   {
+    "model": "llama 1B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 1.1,
+    "active_b": null,
+    "moe": false,
+    "tg": 75.33,
+    "pp": 1333.8,
+    "n": 1,
+    "tg_min": 75.33,
+    "tg_max": 75.33,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-4167-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-9491068"
+     }
+    ],
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2024-05-20"
+   },
+   {
+    "model": "llama 1B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.1,
+    "active_b": null,
+    "moe": false,
+    "tg": 121.2,
+    "pp": 1334.5,
+    "n": 1,
+    "tg_min": 121.2,
+    "tg_max": 121.2,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-4167-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-9491068"
+     }
+    ],
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2024-05-20"
+   },
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 23.29,
+    "pp": 212.1,
+    "n": 1,
+    "tg_min": 23.29,
+    "tg_max": 23.29,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-4167-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-9491068"
+     }
+    ],
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2024-05-20"
+   },
+   {
+    "model": "llama 3B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 3.21,
+    "active_b": null,
+    "moe": false,
+    "tg": 45.95,
+    "pp": 530.0,
+    "n": 1,
+    "tg_min": 45.95,
+    "tg_max": 45.95,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-4167-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-16886673"
+     }
+    ],
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2026-05-12"
+   },
+   {
+    "model": "qwen2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 7.62,
+    "active_b": null,
+    "moe": false,
+    "tg": 22.6,
+    "pp": 239.7,
+    "n": 1,
+    "tg_min": 22.6,
+    "tg_max": 22.6,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-4167-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-16886673"
+     }
+    ],
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2026-05-12"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 16.12,
+    "pp": 157.0,
+    "n": 4,
+    "tg_min": 15.27,
+    "tg_max": 16.9,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 8.79,
+    "pp": 83.3,
+    "n": 4,
+    "tg_min": 7.26,
+    "tg_max": 9.08,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 74.17,
+    "pp": 1027.7,
+    "n": 5,
+    "tg_min": 65.93,
+    "tg_max": 75.97,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "m4-max-32": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "F16",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 25.81,
+    "pp": 769.0,
+    "n": 2,
+    "tg_min": 25.58,
+    "tg_max": 26.05,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-4167-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-13218715"
+     }
+    ],
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2025-05-21"
+   },
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 44.34,
+    "pp": 711.4,
+    "n": 2,
+    "tg_min": 43.8,
+    "tg_max": 44.89,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-4167-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-13218715"
+     }
+    ],
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2025-05-21"
+   },
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 70.75,
+    "pp": 739.3,
+    "n": 2,
+    "tg_min": 69.24,
+    "tg_max": 72.26,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-4167-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-13218715"
+     }
+    ],
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2025-05-21"
+   }
+  ],
+  "m5-max-40": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "F16",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 35.39,
+    "pp": 3189.9,
+    "n": 1,
+    "tg_min": 35.39,
+    "tg_max": 35.39,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-4167-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-17386908"
+     }
+    ],
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2026-06-22"
+   },
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 72.52,
+    "pp": 3219.9,
+    "n": 1,
+    "tg_min": 72.52,
+    "tg_max": 72.52,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-4167-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-17386908"
+     }
+    ],
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2026-06-22"
+   },
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 119.08,
+    "pp": 3347.4,
+    "n": 1,
+    "tg_min": 119.08,
+    "tg_max": 119.08,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-4167-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/4167#discussioncomment-17386908"
+     }
+    ],
+    "backends": [
+     "Metal"
+    ],
+    "latest": "2026-06-22"
+   }
+  ],
+  "rx-7900xtx": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 144.17,
+    "pp": 3098.2,
+    "n": 166,
+    "tg_min": 24.56,
+    "tg_max": 310.91,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-11772341"
+     },
+     {
+      "id": "llamacpp-discussion-10879-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879"
+     },
+     {
+      "id": "llamacpp-discussion-15021-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15021#discussioncomment-13998237"
+     },
+     {
+      "id": "llamacpp-discussion-15021-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15021"
+     }
+    ],
+    "backends": [
+     "ROCm",
+     "Vulkan"
+    ],
+    "latest": "2026-10-10"
+   },
+   {
+    "model": "gemma3 27B",
+    "site_id": null,
+    "qclass": "Q6",
+    "params_b": 27.01,
+    "active_b": null,
+    "moe": false,
+    "tg": 6.93,
+    "pp": 421.0,
+    "n": 2,
+    "tg_min": 6.81,
+    "tg_max": 7.05,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-13222968"
+     }
+    ],
+    "backends": [
+     "ROCm",
+     "Vulkan"
+    ],
+    "latest": "2025-05-21"
+   },
+   {
+    "model": "gemma3 27B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 27.01,
+    "active_b": null,
+    "moe": false,
+    "tg": 33.99,
+    "pp": 754.6,
+    "n": 2,
+    "tg_min": 32.73,
+    "tg_max": 35.25,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-13223671"
+     }
+    ],
+    "backends": [
+     "ROCm",
+     "Vulkan"
+    ],
+    "latest": "2025-05-21"
+   },
+   {
+    "model": "GLM-4.5-Air",
+    "site_id": "zai-org/GLM-4.5-Air",
+    "qclass": "Q3",
+    "params_b": 110.47,
+    "active_b": 12,
+    "moe": true,
+    "tg": 11.98,
+    "pp": 258.3,
+    "n": 2,
+    "tg_min": 10.35,
+    "tg_max": 13.61,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-16241493"
+     }
+    ],
+    "backends": [
+     "ROCm"
+    ],
+    "latest": "2026-03-21"
+   },
+   {
+    "model": "Gemma 4 31B",
+    "site_id": "google/gemma-4-31B-it",
+    "qclass": "Q8",
+    "params_b": 31.27,
+    "active_b": null,
+    "moe": false,
+    "tg": 22.73,
+    "pp": 851.6,
+    "n": 2,
+    "tg_min": 21.03,
+    "tg_max": 24.42,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-18122886"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-08-23"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 42.29,
+    "pp": 874.8,
+    "n": 2,
+    "tg_min": 39.25,
+    "tg_max": 45.33,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 26.77,
+    "pp": 490.5,
+    "n": 2,
+    "tg_min": 25.58,
+    "tg_max": 27.95,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 78.37,
+    "pp": 4089.0,
+    "n": 2,
+    "tg_min": 74.69,
+    "tg_max": 82.04,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "m3-ultra": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 114.55,
+    "pp": 1116.8,
+    "n": 3,
+    "tg_min": 102.28,
+    "tg_max": 115.54,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-comments",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879#discussioncomment-12958536"
+     },
+     {
+      "id": "llamacpp-discussion-10879-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879"
+     }
+    ],
+    "backends": [
+     "Metal",
+     "Vulkan"
+    ],
+    "latest": "2026-10-10"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 62.99,
+    "pp": 1085.8,
+    "n": 2,
+    "tg_min": 62.68,
+    "tg_max": 63.3,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 35.82,
+    "pp": 568.2,
+    "n": 3,
+    "tg_min": 34.44,
+    "tg_max": 36.71,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 177.9,
+    "pp": 4999.5,
+    "n": 3,
+    "tg_min": 172.92,
+    "tg_max": 178.84,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "rtx-4070": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 91.89,
+    "pp": 3736.5,
+    "n": 2,
+    "tg_min": 91.49,
+    "tg_max": 92.29,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-10879-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/10879"
+     }
+    ],
+    "backends": [
+     "Vulkan"
+    ],
+    "latest": "2026-10-10"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 76.35,
+    "pp": 3192.1,
+    "n": 1,
+    "tg_min": 76.35,
+    "tg_max": 76.35,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 37.88,
+    "pp": 1691.6,
+    "n": 1,
+    "tg_min": 37.88,
+    "tg_max": 37.88,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 282.97,
+    "pp": 12717.5,
+    "n": 1,
+    "tg_min": 282.97,
+    "tg_max": 282.97,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "rtx-4060ti-16": [
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 48.32,
+    "pp": 2233.1,
+    "n": 1,
+    "tg_min": 48.32,
+    "tg_max": 48.32,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 25.6,
+    "pp": 1238.6,
+    "n": 1,
+    "tg_min": 25.6,
+    "tg_max": 25.6,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 210.6,
+    "pp": 9225.4,
+    "n": 1,
+    "tg_min": 210.6,
+    "tg_max": 210.6,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "rtx-4060": [
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 38.3,
+    "pp": 1544.2,
+    "n": 1,
+    "tg_min": 38.3,
+    "tg_max": 38.3,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 133.72,
+    "pp": 5352.5,
+    "n": 1,
+    "tg_min": 133.72,
+    "tg_max": 133.72,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "m5-pro": [
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 44.14,
+    "pp": 375.5,
+    "n": 4,
+    "tg_min": 43.16,
+    "tg_max": 44.9,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 23.73,
+    "pp": 215.7,
+    "n": 5,
+    "tg_min": 21.64,
+    "tg_max": 24.2,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 174.95,
+    "pp": 2408.6,
+    "n": 2,
+    "tg_min": 174.56,
+    "tg_max": 175.34,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "m4-pro": [
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 32.53,
+    "pp": 349.4,
+    "n": 5,
+    "tg_min": 29.72,
+    "tg_max": 32.9,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 17.14,
+    "pp": 169.8,
+    "n": 6,
+    "tg_min": 16.1,
+    "tg_max": 18.01,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 111.99,
+    "pp": 1948.1,
+    "n": 6,
+    "tg_min": 105.47,
+    "tg_max": 119.64,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ],
+  "m5": [
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 20.24,
+    "pp": 188.5,
+    "n": 3,
+    "tg_min": 20.01,
+    "tg_max": 21.62,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 10.2,
+    "pp": 95.8,
+    "n": 2,
+    "tg_min": 8.85,
+    "tg_max": 11.54,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 99.06,
+    "pp": 1275.3,
+    "n": 3,
+    "tg_min": 98.18,
+    "tg_max": 99.79,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "backends": [],
+    "latest": "2026-10-14"
+   }
+  ]
+ },
+ "calibration": {
+  "moe_factor": {
+   "value": 0.774,
+   "n": 68,
+   "basis": "measured on unified-memory hardware only (Strix Halo, DGX Spark); EXTRAPOLATED to other hardware, where there is no calibration data, so MoE estimates there are likely optimistic"
+  },
+  "by_hw": {
+   "rtx-5090": {
+    "efficiency": 0.656,
+    "n": 33,
+    "p25": 0.632,
+    "p75": 0.68
+   },
+   "rtx-pro-6000": {
+    "efficiency": 0.615,
+    "n": 14,
+    "p25": 0.586,
+    "p75": 0.629
+   },
+   "rtx-4090": {
+    "efficiency": 0.676,
+    "n": 46,
+    "p25": 0.626,
+    "p75": 0.69
+   },
+   "rtx-5070ti": {
+    "efficiency": 0.733,
+    "n": 22,
+    "p25": 0.578,
+    "p75": 0.803
+   },
+   "rtx-3090": {
+    "efficiency": 0.54,
+    "n": 37,
+    "p25": 0.386,
+    "p75": 0.707
+   },
+   "rtx-5070": {
+    "efficiency": 0.609,
+    "n": 5,
+    "p25": 0.405,
+    "p75": 0.776
+   },
+   "rtx-3060-12": {
+    "efficiency": 0.838,
+    "n": 6,
+    "p25": 0.693,
+    "p75": 0.858
+   },
+   "dgx-spark": {
+    "efficiency": 0.808,
+    "n": 30,
+    "p25": 0.725,
+    "p75": 0.873
+   },
+   "strix-halo": {
+    "efficiency": 0.796,
+    "n": 79,
+    "p25": 0.736,
+    "p75": 0.83
+   },
+   "m4": {
+    "efficiency": 0.674,
+    "n": 10,
+    "p25": 0.626,
+    "p75": 0.686
+   },
+   "m4-max-32": {
+    "efficiency": 0.775,
+    "n": 6,
+    "p25": 0.72,
+    "p75": 0.841
+   },
+   "m5-max-40": {
+    "efficiency": 0.792,
+    "n": 3,
+    "p25": 0.777,
+    "p75": 0.846
+   },
+   "rx-7900xtx": {
+    "efficiency": 0.607,
+    "n": 176,
+    "p25": 0.522,
+    "p75": 0.699
+   },
+   "m3-ultra": {
+    "efficiency": 0.396,
+    "n": 8,
+    "p25": 0.377,
+    "p75": 0.572
+   },
+   "rtx-4070": {
+    "efficiency": 0.74,
+    "n": 4,
+    "p25": 0.737,
+    "p75": 0.748
+   },
+   "m5-pro": {
+    "efficiency": 0.694,
+    "n": 9,
+    "p25": 0.684,
+    "p75": 0.706
+   },
+   "m4-pro": {
+    "efficiency": 0.576,
+    "n": 11,
+    "p25": 0.53,
+    "p75": 0.587
+   },
+   "m5": {
+    "efficiency": 0.641,
+    "n": 5,
+    "p25": 0.634,
+    "p75": 0.673
+   }
+  },
+  "by_kind": {
+   "gpu": {
+    "efficiency": 0.637,
+    "n": 346
+   },
+   "unified": {
+    "efficiency": 0.798,
+    "n": 109
+   },
+   "apple": {
+    "efficiency": 0.641,
+    "n": 52
+   }
+  },
+  "method": "efficiency = measured_tg / (memory_bandwidth_GBps / read_GB); dense models only; read_GB = params*bits_per_weight/8 >= 3.0 GB; single-device; median; per-hardware factor needs >= 3 rows, else per-kind median, else the global assumption.",
+  "clamp": [
+   0.25,
+   0.95
+  ],
+  "global_assumption": 0.55
+ },
+ "community": [],
+ "attribution": [
+  {
+   "name": "LocalScore (Mozilla Builders / cjpais, Apache-2.0)",
+   "url": "https://www.localscore.ai"
+  },
+  {
+   "name": "llama.cpp community benchmark threads (ggml-org/llama.cpp, MIT)",
+   "url": "https://github.com/ggml-org/llama.cpp/discussions"
+  },
+  {
+   "name": "Hugging Face / GitHub open-licensed benchmark repos (see data/benchmarks/README.md)",
+   "url": ""
+  }
+ ],
+ "counts": {
+  "rows_used": 630,
+  "hardware": 20,
+  "points": 119,
+  "community": 0
+ }
+}

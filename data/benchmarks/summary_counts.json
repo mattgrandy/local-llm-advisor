@@ -1,0 +1,153 @@
+{
+ "rows_total": 6550,
+ "dropped_dup_of_scoreboard": 425,
+ "dropped_author_flagged_invalid": 2,
+ "dropped_nonpositive": 0,
+ "counts_by_source_raw": {
+  "discussion-15013-scoreboard-tables": 112,
+  "discussion-15013-comments": 1386,
+  "discussion-4167-scoreboard-tables": 108,
+  "discussion-4167-comments": 256,
+  "discussion-15021-scoreboard-tables": 46,
+  "discussion-15021-comments": 447,
+  "discussion-10879-scoreboard-tables": 234,
+  "discussion-10879-comments": 1446,
+  "discussion-16578-body": 0,
+  "discussion-16578-comments": 318,
+  "discussion-23659-body": 28,
+  "discussion-23659-comments": 0,
+  "repo-benches-dgx-spark": 138,
+  "repo-benches-mac-m2-ultra": 138,
+  "repo-benches-nemotron": 46,
+  "issue-llama.cpp-13565": 4,
+  "issue-llama.cpp-11931": 4,
+  "issue-llama.cpp-29342": 0,
+  "issue-llama.cpp-19480": 8,
+  "issue-ik_llama.cpp-263": 347,
+  "hf-apple-silicon-llm-benchmarks": 34,
+  "hf-llama-cpp-rx7800xt": 16,
+  "hf-strix-halo-inference-bench": 44,
+  "github-strix-halo-guide": 41,
+  "github-apple-silicon-llm-bench": 55,
+  "lmarena-open-models (quality, separate file)": 0
+ },
+ "counts_by_source_final": {
+  "llamacpp-discussion-15013-scoreboard": 112,
+  "llamacpp-discussion-15013-comments": 1283,
+  "llamacpp-discussion-4167-summary": 96,
+  "llamacpp-discussion-4167-m2ultra-history": 12,
+  "llamacpp-discussion-4167-comments": 169,
+  "llamacpp-discussion-15021-scoreboard": 46,
+  "llamacpp-discussion-15021-comments": 408,
+  "llamacpp-discussion-10879-scoreboard": 234,
+  "llamacpp-discussion-10879-comments": 1248,
+  "llamacpp-discussion-16578-comments": 318,
+  "llamacpp-discussion-23659-body": 28,
+  "llamacpp-benches-dgx-spark": 138,
+  "llamacpp-benches-mac-m2-ultra": 138,
+  "llamacpp-benches-nemotron": 46,
+  "github-issue-llama.cpp-13565": 4,
+  "github-issue-llama.cpp-11931": 4,
+  "github-issue-llama.cpp-19480": 8,
+  "github-issue-ik_llama.cpp-263": 347,
+  "hf-RaynarDM-apple-silicon-llm-benchmarks": 34,
+  "hf-NeoAiLabs-llama-cpp-rx7800xt-benchmarks": 16,
+  "hf-axjns-strix-halo-inference-bench": 44,
+  "github-strix-halo-guide-BENCHMARKS": 41,
+  "github-apple-silicon-llm-bench-leaderboard": 55
+ },
+ "notes": {
+  "discussion-15013": {
+   "title": "Performance of llama.cpp on Nvidia CUDA",
+   "comments_total": 233,
+   "replies_included_in_comment_list": 105,
+   "top_level": 128,
+   "comments_with_bench_tables": 137
+  },
+  "discussion-4167": {
+   "title": "Performance of llama.cpp on Apple Silicon M-series",
+   "comments_total": 279,
+   "replies_included_in_comment_list": 182,
+   "top_level": 97,
+   "comments_with_bench_tables": 75
+  },
+  "discussion-15021": {
+   "title": "Performance of llama.cpp on AMD ROCm (HIP)",
+   "comments_total": 217,
+   "replies_included_in_comment_list": 140,
+   "top_level": 77,
+   "comments_with_bench_tables": 100
+  },
+  "discussion-10879": {
+   "title": "Performance of llama.cpp with Vulkan",
+   "comments_total": 787,
+   "replies_included_in_comment_list": 477,
+   "top_level": 310,
+   "comments_with_bench_tables": 391
+  },
+  "discussion-16578": {
+   "title": "Performance of llama.cpp on NVIDIA DGX Spark",
+   "comments_total": 151,
+   "replies_included_in_comment_list": 119,
+   "top_level": 32,
+   "comments_with_bench_tables": 23
+  },
+  "discussion-23659": {
+   "title": "`llama-bench` Strix Halo (gfx1151) ROCm 7.2.3 + Qwen3.5 122B A10B MTP UD-Q6_K_XL",
+   "comments_total": 0,
+   "replies_included_in_comment_list": 0,
+   "top_level": 0,
+   "comments_with_bench_tables": 0
+  },
+  "issue-13565": "Misc. bug: HIP backend performs poorly on AMD Ryzen AI MAX 395 (Strix Halo gfx1151)",
+  "issue-11931": "Enhancement: Improve ROCm performance on various quants (benchmarks included)",
+  "issue-29342": "Vulkan int8-coopmat matmul on RDNA3 (#27952): RX 7900 XTX 27B benchmark data + a small boundary-safety fix",
+  "issue-19480": "Qwen3-Coder-Next (Qwen3-Next-80B) CPU inference ~5x slower than expected \u2014 consumer hardware benchmarks",
+  "issue-263": "Benchmarking DeepSeek R1 - 16x3090",
+  "hf-apple-silicon-llm-benchmarks": {
+   "license": "apache-2.0",
+   "url": "https://huggingface.co/datasets/RaynarDM/apple-silicon-llm-benchmarks",
+   "skipped_non_speed_rows": 6,
+   "hf_last_modified": "2026-09-28"
+  },
+  "hf-llama-cpp-rx7800xt": {
+   "license": "mit",
+   "url": "https://huggingface.co/datasets/NeoAiLabs/llama-cpp-rx7800xt-benchmarks",
+   "hf_last_modified": "2026-06-29"
+  },
+  "hf-strix-halo-inference-bench": {
+   "license": "apache-2.0",
+   "url": "https://huggingface.co/datasets/axjns/strix-halo-inference-bench",
+   "hf_last_modified": "2026-08-17"
+  },
+  "github-strix-halo-guide": {
+   "license": "MIT",
+   "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/BENCHMARKS.md",
+   "pushed_at": "2026-10-03T22:00:58Z"
+  },
+  "github-apple-silicon-llm-bench": {
+   "license": "MIT",
+   "url": "https://github.com/john-rocky/apple-silicon-llm-bench/blob/main/LEADERBOARD.md",
+   "pushed_at": "2026-10-15T02:57:25Z",
+   "scope": "mac sections only; iPhone/Android sections skipped"
+  },
+  "lmarena-open-models (quality, separate file)": {
+   "rows_in_lmarena_open_models_csv": 5758,
+   "distinct_models": 225,
+   "publish_dates": [
+    "2026-10-13"
+   ],
+   "license": "CC-BY-4.0"
+  }
+ },
+ "rows_with_hw_id": 1111,
+ "rows_device_unknown": 738,
+ "generated": "2026-10-14 21:06 MDT",
+ "localscore": {
+  "rows": 1721,
+  "model_page_rows": 1711,
+  "latest_rows": 10,
+  "hw_matched": 128,
+  "retrieved": "2026-10-14"
+ }
+}

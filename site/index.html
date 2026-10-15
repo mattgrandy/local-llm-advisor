@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Local LLM Advisor - which model runs on your hardware?</title>
+<meta name="description" content="Free tool: pick your GPU, Mac or RAM and get local LLM recommendations with memory-fit math (incl. KV cache), estimated speed and copy-paste ollama / llama.cpp commands.">
+<link rel="stylesheet" href="style.css"></head><body><div class="wrap">
+<header><h1>Local LLM Advisor</h1><p>Pick your hardware and use case. Get models that fit (weights + KV cache), an <b>estimated</b> speed, and a command to run it. Free, no sign-up.</p></header>
+<form id="f" class="card">
+ <label>Hardware type<select id="kind"><option value="gpu">NVIDIA / AMD GPU</option><option value="apple">Apple Silicon</option><option value="unified">Unified-memory PC (Strix Halo / DGX Spark)</option><option value="cpu">CPU only</option></select></label>
+ <label id="l-device">Device<select id="device"></select></label>
+ <label id="l-count">GPU count<select id="count"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+ <label id="l-mem">Unified memory (GB)<select id="mem"></select></label>
+ <label id="l-ram">System RAM (GB)<input id="ram" type="number" min="4" max="1024" value="32"></label>
+ <label id="l-ramt">RAM type<select id="ramt"></select></label>
+ <label>Use case<select id="use"><option value="coding">Coding</option><option value="chat" selected>Chat / general</option><option value="vision">Vision (images)</option></select></label>
+ <label>Context length<select id="ctx"><option value="4096">4k</option><option value="8192">8k</option><option value="16384" selected>16k</option><option value="32768">32k</option><option value="65536">64k</option><option value="131072">128k</option></select></label>
+ <label>KV cache type<select id="kvq"><option value="f16">f16 (default)</option><option value="q8_0">q8_0 (half the size)</option></select></label>
+</form>
+<div class="slot" data-slot="sponsor-top">PLACEHOLDER: sponsor slot (no sponsor yet, no link)</div>
+<div id="hwinfo" class="mut"></div>
+<div id="results"></div>
+<div id="community"></div>
+<div class="slot" data-slot="affiliate-upgrade">PLACEHOLDER: affiliate "cheapest upgrade that runs this" box (no affiliate links yet)</div>
+<div class="slot" data-slot="affiliate-cloud">PLACEHOLDER: cloud GPU rental affiliate box (no links yet)</div>
+<section class="card"><h2>How these numbers are made</h2>
+<p class="mut"><b>Fit</b> = GGUF file size (read from Hugging Face) + KV cache (computed from each model's config; sliding-window and linear-attention layers handled) + ~1 GB overhead per GPU. <b>Speed</b> is an <span class="badge est">estimated</span> upper-bound-style figure: memory bandwidth &times; efficiency &divide; bytes read per token. Where we have benchmark data for your hardware, the badge says <span class="badge ok">measured</span> (median of real runs) or <span class="badge est">scaled from measured</span> (a measurement of a same-size or same-model-different-quant run, scaled by bytes read); otherwise it is <span class="badge est">estimated</span> and not a benchmark. Estimated speeds use an efficiency factor calibrated to measured runs. Real results vary with backend, drivers and context. Ranking is "fits and is fast enough first, then bigger", a heuristic, not a quality benchmark. Assumptions are listed in <a href="data/hardware.json">hardware.json</a>.</p></section>
+<section class="card"><h2>Data changelog</h2><div id="changelog" class="mut"></div><p class="mut">Hardware pages: <a href="hardware/index.html">all configs</a> &middot; <a href="submit.html">Submit your benchmark</a> &middot; <a href="data-sources.html">Data sources &amp; attribution</a></p></section>
+<footer>Sponsored/affiliate boxes will be clearly labelled when added. Model facts link to their source and show a last-verified date.</footer>
+</div><script src="advisor.js"></script><script src="app.js"></script></body></html>

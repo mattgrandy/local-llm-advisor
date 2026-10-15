@@ -1,0 +1,18 @@
+{
+ "_note": "Editorial inputs only. Facts (params, layers, GGUF sizes, license) are fetched from Hugging Face by update_models.py. active_b values are copied from the model card text (see active_source).",
+ "models": [
+  {"id":"google/gemma-4-26B-A4B-it","name":"Gemma 4 26B-A4B","gguf":"unsloth/gemma-4-26B-A4B-it-GGUF","active_b":3.8,"moe":true,"tags":["chat","coding"],"vision":true},
+  {"id":"google/gemma-4-31B-it","name":"Gemma 4 31B","gguf":"unsloth/gemma-4-31B-it-GGUF","moe":false,"tags":["chat","coding"],"vision":true},
+  {"id":"google/gemma-4-12B-it","name":"Gemma 4 12B","gguf":"unsloth/gemma-4-12b-it-GGUF","moe":false,"tags":["chat"],"vision":true},
+  {"id":"Qwen/Qwen3.6-27B","name":"Qwen3.6 27B","gguf":"unsloth/Qwen3.6-27B-GGUF","moe":false,"tags":["chat","coding"],"vision":true},
+  {"id":"Qwen/Qwen3.6-35B-A3B","name":"Qwen3.6 35B-A3B","gguf":"unsloth/Qwen3.6-35B-A3B-GGUF","active_b":3,"moe":true,"tags":["chat","coding"],"vision":true},
+  {"id":"Qwen/Qwen3.5-9B","name":"Qwen3.5 9B","gguf":"unsloth/Qwen3.5-9B-GGUF","moe":false,"tags":["chat","coding"],"vision":true},
+  {"id":"Qwen/Qwen3.5-4B","name":"Qwen3.5 4B","gguf":"unsloth/Qwen3.5-4B-GGUF","moe":false,"tags":["chat"],"vision":true},
+  {"id":"openai/gpt-oss-20b","name":"gpt-oss 20B","gguf":"unsloth/gpt-oss-20b-GGUF","active_b":3.6,"moe":true,"tags":["chat","coding"],"vision":false},
+  {"id":"openai/gpt-oss-120b","name":"gpt-oss 120B","gguf":"unsloth/gpt-oss-120b-GGUF","active_b":5.1,"moe":true,"tags":["chat","coding"],"vision":false},
+  {"id":"Qwen/Qwen3-Coder-30B-A3B-Instruct","name":"Qwen3-Coder 30B-A3B","gguf":"unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF","active_b":3.3,"moe":true,"tags":["coding"],"vision":false},
+  {"id":"mistralai/Mistral-Small-3.2-24B-Instruct-2506","name":"Mistral Small 3.2 24B","gguf":"unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF","moe":false,"tags":["chat"],"vision":true},
+  {"id":"Qwen/Qwen3-VL-8B-Instruct","name":"Qwen3-VL 8B","gguf":"unsloth/Qwen3-VL-8B-Instruct-GGUF","moe":false,"tags":[],"vision":true},
+  {"id":"zai-org/GLM-4.5-Air","name":"GLM-4.5-Air","gguf":"unsloth/GLM-4.5-Air-GGUF","active_b":12,"moe":true,"tags":["chat","coding"],"vision":false}
+ ]
+}
