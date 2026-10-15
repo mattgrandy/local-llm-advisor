@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# test stub for nvidia-smi
+a="$*"
+case "$a" in
+  *"query-gpu=name"*) echo "${STUB_GPU_NAME:-NVIDIA GeForce RTX 4060 Ti}";;
+  *"memory.total"*) echo "${STUB_GPU_MIB:-16380}";;
+  *"driver_version"*) echo "575.51.03";;
+  *"power.limit"*) echo "165.00 W, 165.00 W, 2655 MHz, 9001 MHz, 00000000:01:00.0, 95.06.1A.00.01";;
+  *"-l 5"*|*"clocks.sm"*) echo "timestamp, clocks.sm [MHz]"; echo "2024/10/15 10:00:00.000, 2500 MHz";;
+  *"-q"*) echo "stub nvidia-smi -q";;
+  *) echo "stub nvidia-smi";;
+esac

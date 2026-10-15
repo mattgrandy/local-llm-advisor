@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# test stub for llama-bench: emits plausible jsonl for -m/-d/--n-cpu-moe
+if [ "${1:-}" = "--version" ]; then echo "version: 11658 (3e4dfa8f3)"; echo "built with stub"; exit 0; fi
+if [ "${1:-}" = "--list-devices" ]; then echo "Available devices: CUDA0: stub"; exit 0; fi
+m=""; d="0"; n=128; p=512; nc=0; fa=-1; ngl=-1
+while [ $# -gt 0 ]; do case "$1" in -m) m=$2; shift;; -d) d=$2; shift;; --n-cpu-moe) nc=$2; shift;; -p) p=$2; shift;; -n) n=$2; shift;; -fa) fa=$2; shift;; -ngl) ngl=$2; shift;; esac; shift; done
+[ -n "${STUB_BENCH_FAIL:-}" ] && [[ "$m" =~ $STUB_BENCH_FAIL ]] && { echo "stub llama-bench: CUDA out of memory" >&2; exit 1; }
+[ -n "${STUB_BENCH_SLEEP:-}" ] && sleep "$STUB_BENCH_SLEEP"
+IFS=, read -ra ds <<<"$d"
+for dd in "${ds[@]}"; do
+  tg=$(( 100 - nc*2 - dd/1000 )); pp=$(( 3000 - nc*10 - dd/10 ))
+  for t in "pp $p 0 $pp" "tg 0 $n $tg"; do
+    set -- $t
+    printf '{"build_commit": "3e4dfa8f3", "build_number": 11658, "cpu_info": "Stub CPU", "gpu_info": "%s", "backends": "CUDA", "model_filename": "%s", "model_type": "stub 7B Q4_K - Medium", "model_size": 4677120000, "model_n_params": 7615616512, "n_batch": 2048, "n_ubatch": 512, "n_threads": 8, "n_gpu_layers": %s, "n_cpu_moe": %s, "flash_attn": 1, "n_prompt": %s, "n_gen": %s, "n_depth": %s, "test_time": "2026-10-15T20:00:00Z", "avg_ns": 1000, "stddev_ns": 10, "avg_ts": %s.5, "stddev_ts": 0.9, "samples_ts": [%s, %s, %s]}\n' \
+      "${STUB_GPU_NAME:-NVIDIA GeForce RTX 4060 Ti}" "$m" "$ngl" "$nc" "$2" "$3" "$dd" "$4" "$4" "$4" "$4"
+  done
+done

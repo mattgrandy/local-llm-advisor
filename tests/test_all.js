@@ -129,4 +129,18 @@ assert(Sub.issueUrl({ github_issue: { repo: "me/repo" } }, v.clean).startsWith("
   const V = o => ({ ...A.DEFAULT_VIEW, ...o }), byc = A.applyView(r16, V({ sort: "ctx" })); assert(byc.every((p, i) => !i || byc[i - 1].maxCtx >= p.maxCtx) && byc[0].maxCtx > 262144, "ctx sort sees >256k steps");
   const bt = A.applyView(r16, V({ sort: "tpsctx" })); assert(bt.every((p, i) => !i || bt[i - 1].depth.tps >= p.depth.tps)); assert(A.SORTS.tpsctx);
 }
+{ // analytics: every page has exactly one umami tag (id from layout config, DNT) and analytics.js; same cache-bust everywhere
+  const fs2 = require("fs"), path2 = require("path"), L = require("../tools/layout.js"), root = path2.join(__dirname, "..", "site");
+  const pages = [...fs2.readdirSync(root).filter(f => f.endsWith(".html")), ...fs2.readdirSync(path2.join(root, "hardware")).filter(f => f.endsWith(".html")).map(f => "hardware/" + f)];
+  assert(pages.length >= 28, "pages found: " + pages.length);
+  for (const f of pages) {
+    const h = fs2.readFileSync(path2.join(root, f), "utf8");
+    assert.strictEqual((h.match(/cloud\.umami\.is\/script\.js/g) || []).length, 1, "one umami script in " + f);
+    assert(h.includes(`data-website-id="${L.ANALYTICS.websiteId}"`) && h.includes('data-do-not-track="true"'), "umami id + DNT in " + f);
+    assert(/analytics\.js\?v=/.test(h) && h.includes("?v=" + L.VER) && !/\?v=20261015d/.test(h), "analytics.js + cache-bust in " + f);
+    assert(/anonymous, cookie-free analytics/.test(h), "privacy note in " + f);
+  }
+  const src = fs2.readFileSync(path2.join(root, "analytics.js"), "utf8"); assert(!/v-q"\)\.value|\.value\)?\s*\}\);?\s*\/\/ search/.test(src));
+  assert(/window\.umami && typeof window\.umami\.track/.test(src), "track is guarded");
+}
 console.log("ALL TESTS PASSED");

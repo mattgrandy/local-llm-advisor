@@ -1,0 +1,430 @@
+{
+ "generated_from": "site/data/models.json",
+ "hf_checked": "2026-10-15",
+ "entries": [
+  {
+   "model_id": "google/gemma-4-26B-A4B-it",
+   "name": "Gemma 4 26B-A4B",
+   "repo": "unsloth/gemma-4-26B-A4B-it-GGUF",
+   "quant": "Q4_K_M",
+   "label": "UD-Q4_K_M",
+   "moe": true,
+   "params_b": 25.81,
+   "active_b": 3.8,
+   "first_file": "gemma-4-26B-A4B-it-UD-Q4_K_M.gguf",
+   "files": [
+    "gemma-4-26B-A4B-it-UD-Q4_K_M.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 16947541728
+  },
+  {
+   "model_id": "google/gemma-4-26B-A4B-it",
+   "name": "Gemma 4 26B-A4B",
+   "repo": "unsloth/gemma-4-26B-A4B-it-GGUF",
+   "quant": "Q8_0",
+   "label": "Q8_0",
+   "moe": true,
+   "params_b": 25.81,
+   "active_b": 3.8,
+   "first_file": "gemma-4-26B-A4B-it-Q8_0.gguf",
+   "files": [
+    "gemma-4-26B-A4B-it-Q8_0.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 26859861728
+  },
+  {
+   "model_id": "google/gemma-4-31B-it",
+   "name": "Gemma 4 31B",
+   "repo": "unsloth/gemma-4-31B-it-GGUF",
+   "quant": "Q4_K_M",
+   "label": "Q4_K_M",
+   "moe": false,
+   "params_b": 31.27,
+   "active_b": null,
+   "first_file": "gemma-4-31B-it-Q4_K_M.gguf",
+   "files": [
+    "gemma-4-31B-it-Q4_K_M.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 18323733440
+  },
+  {
+   "model_id": "google/gemma-4-31B-it",
+   "name": "Gemma 4 31B",
+   "repo": "unsloth/gemma-4-31B-it-GGUF",
+   "quant": "Q8_0",
+   "label": "Q8_0",
+   "moe": false,
+   "params_b": 31.27,
+   "active_b": null,
+   "first_file": "gemma-4-31B-it-Q8_0.gguf",
+   "files": [
+    "gemma-4-31B-it-Q8_0.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 32635677632
+  },
+  {
+   "model_id": "google/gemma-4-12B-it",
+   "name": "Gemma 4 12B",
+   "repo": "unsloth/gemma-4-12b-it-GGUF",
+   "quant": "Q4_K_M",
+   "label": "Q4_K_M",
+   "moe": false,
+   "params_b": 11.96,
+   "active_b": null,
+   "first_file": "gemma-4-12b-it-Q4_K_M.gguf",
+   "files": [
+    "gemma-4-12b-it-Q4_K_M.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 7121861440
+  },
+  {
+   "model_id": "google/gemma-4-12B-it",
+   "name": "Gemma 4 12B",
+   "repo": "unsloth/gemma-4-12b-it-GGUF",
+   "quant": "Q8_0",
+   "label": "Q8_0",
+   "moe": false,
+   "params_b": 11.96,
+   "active_b": null,
+   "first_file": "gemma-4-12b-it-Q8_0.gguf",
+   "files": [
+    "gemma-4-12b-it-Q8_0.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 12669647680
+  },
+  {
+   "model_id": "Qwen/Qwen3.6-27B",
+   "name": "Qwen3.6 27B",
+   "repo": "unsloth/Qwen3.6-27B-GGUF",
+   "quant": "Q4_K_M",
+   "label": "Q4_K_M",
+   "moe": false,
+   "params_b": 27.78,
+   "active_b": null,
+   "first_file": "Qwen3.6-27B-Q4_K_M.gguf",
+   "files": [
+    "Qwen3.6-27B-Q4_K_M.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 16817244384
+  },
+  {
+   "model_id": "Qwen/Qwen3.6-27B",
+   "name": "Qwen3.6 27B",
+   "repo": "unsloth/Qwen3.6-27B-GGUF",
+   "quant": "Q8_0",
+   "label": "Q8_0",
+   "moe": false,
+   "params_b": 27.78,
+   "active_b": null,
+   "first_file": "Qwen3.6-27B-Q8_0.gguf",
+   "files": [
+    "Qwen3.6-27B-Q8_0.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 28595763424
+  },
+  {
+   "model_id": "Qwen/Qwen3.6-35B-A3B",
+   "name": "Qwen3.6 35B-A3B",
+   "repo": "unsloth/Qwen3.6-35B-A3B-GGUF",
+   "quant": "Q4_K_M",
+   "label": "UD-Q4_K_M",
+   "moe": true,
+   "params_b": 35.95,
+   "active_b": 3,
+   "first_file": "Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+   "files": [
+    "Qwen3.6-35B-A3B-UD-Q4_K_M.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 22134528992
+  },
+  {
+   "model_id": "Qwen/Qwen3.6-35B-A3B",
+   "name": "Qwen3.6 35B-A3B",
+   "repo": "unsloth/Qwen3.6-35B-A3B-GGUF",
+   "quant": "Q8_0",
+   "label": "Q8_0",
+   "moe": true,
+   "params_b": 35.95,
+   "active_b": 3,
+   "first_file": "Qwen3.6-35B-A3B-Q8_0.gguf",
+   "files": [
+    "Qwen3.6-35B-A3B-Q8_0.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 36903140320
+  },
+  {
+   "model_id": "Qwen/Qwen3.5-9B",
+   "name": "Qwen3.5 9B",
+   "repo": "unsloth/Qwen3.5-9B-GGUF",
+   "quant": "Q4_K_M",
+   "label": "Q4_K_M",
+   "moe": false,
+   "params_b": 9.65,
+   "active_b": null,
+   "first_file": "Qwen3.5-9B-Q4_K_M.gguf",
+   "files": [
+    "Qwen3.5-9B-Q4_K_M.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 5680522464
+  },
+  {
+   "model_id": "Qwen/Qwen3.5-9B",
+   "name": "Qwen3.5 9B",
+   "repo": "unsloth/Qwen3.5-9B-GGUF",
+   "quant": "Q8_0",
+   "label": "Q8_0",
+   "moe": false,
+   "params_b": 9.65,
+   "active_b": null,
+   "first_file": "Qwen3.5-9B-Q8_0.gguf",
+   "files": [
+    "Qwen3.5-9B-Q8_0.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 9527502048
+  },
+  {
+   "model_id": "Qwen/Qwen3.5-4B",
+   "name": "Qwen3.5 4B",
+   "repo": "unsloth/Qwen3.5-4B-GGUF",
+   "quant": "Q4_K_M",
+   "label": "Q4_K_M",
+   "moe": false,
+   "params_b": 4.66,
+   "active_b": null,
+   "first_file": "Qwen3.5-4B-Q4_K_M.gguf",
+   "files": [
+    "Qwen3.5-4B-Q4_K_M.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 2740937888
+  },
+  {
+   "model_id": "Qwen/Qwen3.5-4B",
+   "name": "Qwen3.5 4B",
+   "repo": "unsloth/Qwen3.5-4B-GGUF",
+   "quant": "Q8_0",
+   "label": "Q8_0",
+   "moe": false,
+   "params_b": 4.66,
+   "active_b": null,
+   "first_file": "Qwen3.5-4B-Q8_0.gguf",
+   "files": [
+    "Qwen3.5-4B-Q8_0.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 4482403488
+  },
+  {
+   "model_id": "openai/gpt-oss-20b",
+   "name": "gpt-oss 20B",
+   "repo": "unsloth/gpt-oss-20b-GGUF",
+   "quant": "Q4_K_M",
+   "label": "Q4_K_M",
+   "moe": true,
+   "params_b": 20.91,
+   "active_b": 3.6,
+   "first_file": "gpt-oss-20b-Q4_K_M.gguf",
+   "files": [
+    "gpt-oss-20b-Q4_K_M.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 11624759488
+  },
+  {
+   "model_id": "openai/gpt-oss-20b",
+   "name": "gpt-oss 20B",
+   "repo": "unsloth/gpt-oss-20b-GGUF",
+   "quant": "Q8_0",
+   "label": "Q8_0",
+   "moe": true,
+   "params_b": 20.91,
+   "active_b": 3.6,
+   "first_file": "gpt-oss-20b-Q8_0.gguf",
+   "files": [
+    "gpt-oss-20b-Q8_0.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 12109567168
+  },
+  {
+   "model_id": "openai/gpt-oss-120b",
+   "name": "gpt-oss 120B",
+   "repo": "unsloth/gpt-oss-120b-GGUF",
+   "quant": "Q4_K_M",
+   "label": "Q4_K_M",
+   "moe": true,
+   "params_b": 116.83,
+   "active_b": 5.1,
+   "first_file": "Q4_K_M/gpt-oss-120b-Q4_K_M-00001-of-00002.gguf",
+   "files": [
+    "Q4_K_M/gpt-oss-120b-Q4_K_M-00001-of-00002.gguf",
+    "Q4_K_M/gpt-oss-120b-Q4_K_M-00002-of-00002.gguf"
+   ],
+   "n_files": 2,
+   "total_bytes": 62768723552
+  },
+  {
+   "model_id": "openai/gpt-oss-120b",
+   "name": "gpt-oss 120B",
+   "repo": "unsloth/gpt-oss-120b-GGUF",
+   "quant": "Q8_0",
+   "label": "Q8_0",
+   "moe": true,
+   "params_b": 116.83,
+   "active_b": 5.1,
+   "first_file": "Q8_0/gpt-oss-120b-Q8_0-00001-of-00002.gguf",
+   "files": [
+    "Q8_0/gpt-oss-120b-Q8_0-00001-of-00002.gguf",
+    "Q8_0/gpt-oss-120b-Q8_0-00002-of-00002.gguf"
+   ],
+   "n_files": 2,
+   "total_bytes": 63387347520
+  },
+  {
+   "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+   "name": "Qwen3-Coder 30B-A3B",
+   "repo": "unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
+   "quant": "Q4_K_M",
+   "label": "Q4_K_M",
+   "moe": true,
+   "params_b": 30.53,
+   "active_b": 3.3,
+   "first_file": "Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf",
+   "files": [
+    "Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 18556689568
+  },
+  {
+   "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+   "name": "Qwen3-Coder 30B-A3B",
+   "repo": "unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
+   "quant": "Q8_0",
+   "label": "Q8_0",
+   "moe": true,
+   "params_b": 30.53,
+   "active_b": 3.3,
+   "first_file": "Qwen3-Coder-30B-A3B-Instruct-Q8_0.gguf",
+   "files": [
+    "Qwen3-Coder-30B-A3B-Instruct-Q8_0.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 32483935392
+  },
+  {
+   "model_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+   "name": "Mistral Small 3.2 24B",
+   "repo": "unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF",
+   "quant": "Q4_K_M",
+   "label": "Q4_K_M",
+   "moe": false,
+   "params_b": 24.01,
+   "active_b": null,
+   "first_file": "Mistral-Small-3.2-24B-Instruct-2506-Q4_K_M.gguf",
+   "files": [
+    "Mistral-Small-3.2-24B-Instruct-2506-Q4_K_M.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 14333922848
+  },
+  {
+   "model_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+   "name": "Mistral Small 3.2 24B",
+   "repo": "unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF",
+   "quant": "Q8_0",
+   "label": "Q8_0",
+   "moe": false,
+   "params_b": 24.01,
+   "active_b": null,
+   "first_file": "Mistral-Small-3.2-24B-Instruct-2506-Q8_0.gguf",
+   "files": [
+    "Mistral-Small-3.2-24B-Instruct-2506-Q8_0.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 25054793248
+  },
+  {
+   "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+   "name": "Qwen3-VL 8B",
+   "repo": "unsloth/Qwen3-VL-8B-Instruct-GGUF",
+   "quant": "Q4_K_M",
+   "label": "Q4_K_M",
+   "moe": false,
+   "params_b": 8.77,
+   "active_b": null,
+   "first_file": "Qwen3-VL-8B-Instruct-Q4_K_M.gguf",
+   "files": [
+    "Qwen3-VL-8B-Instruct-Q4_K_M.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 5027785568
+  },
+  {
+   "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+   "name": "Qwen3-VL 8B",
+   "repo": "unsloth/Qwen3-VL-8B-Instruct-GGUF",
+   "quant": "Q8_0",
+   "label": "Q8_0",
+   "moe": false,
+   "params_b": 8.77,
+   "active_b": null,
+   "first_file": "Qwen3-VL-8B-Instruct-Q8_0.gguf",
+   "files": [
+    "Qwen3-VL-8B-Instruct-Q8_0.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 8709520224
+  },
+  {
+   "model_id": "zai-org/GLM-4.5-Air",
+   "name": "GLM-4.5-Air",
+   "repo": "unsloth/GLM-4.5-Air-GGUF",
+   "quant": "Q4_K_M",
+   "label": "Q4_K_M",
+   "moe": true,
+   "params_b": 110.47,
+   "active_b": 12,
+   "first_file": "Q4_K_M/GLM-4.5-Air-Q4_K_M-00001-of-00002.gguf",
+   "files": [
+    "Q4_K_M/GLM-4.5-Air-Q4_K_M-00001-of-00002.gguf",
+    "Q4_K_M/GLM-4.5-Air-Q4_K_M-00002-of-00002.gguf"
+   ],
+   "n_files": 2,
+   "total_bytes": 72975748384
+  },
+  {
+   "model_id": "zai-org/GLM-4.5-Air",
+   "name": "GLM-4.5-Air",
+   "repo": "unsloth/GLM-4.5-Air-GGUF",
+   "quant": "Q8_0",
+   "label": "Q8_0",
+   "moe": true,
+   "params_b": 110.47,
+   "active_b": 12,
+   "first_file": "Q8_0/GLM-4.5-Air-Q8_0-00001-of-00003.gguf",
+   "files": [
+    "Q8_0/GLM-4.5-Air-Q8_0-00001-of-00003.gguf",
+    "Q8_0/GLM-4.5-Air-Q8_0-00002-of-00003.gguf",
+    "Q8_0/GLM-4.5-Air-Q8_0-00003-of-00003.gguf"
+   ],
+   "n_files": 3,
+   "total_bytes": 117456506240
+  }
+ ],
+ "warnings": [
+  "google/gemma-4-12B-it Q8_0: HF size 12.67 GB differs from models.json 13.13 GB (>3%)"
+ ]
+}

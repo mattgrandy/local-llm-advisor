@@ -22,11 +22,15 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
   async function suite(browser, name, ctxOpts, touch) {
     console.log(name);
     const ctx = await browser.newContext(ctxOpts); const pg = await ctx.newPage();
+    // Umami is always blocked in tests (offline/ad-blocker case); events are captured by a stubbed window.umami instead.
+    await ctx.route(/umami\.is/, r => r.abort());
+    await ctx.addInitScript(() => { window.__ev = []; window.umami = { track: (n, p) => window.__ev.push([n, p]) }; });
     pg.on("pageerror", e => errors.push(name + ": " + e.message));
-    pg.on("console", m => { if (m.type() === "error" && !/404/.test(m.text())) errors.push(name + ": " + m.text()); });
+    pg.on("console", m => { if (m.type() === "error" && !/404/.test(m.text()) && !/umami/.test(m.location().url + m.text())) errors.push(name + ": " + m.text()); });
     await pg.goto(base, { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res");
     const val = id => pg.$eval("#" + id, e => e.value), results = () => pg.$eval("#results", e => e.innerHTML);
     const hit = loc => touch ? loc.tap() : loc.click();
+    const pick2 = async (id, v) => { await pg.selectOption("#" + id, v); await sleep(60); };
     const q2 = () => new URLSearchParams(new URL(pg.url()).search);
     async function clickSeg(id, value) { await hit(pg.locator(`#${id} + .seg button[data-value="${value}"]`)); await sleep(60); }
     for (const id of ["kind", "use", "ctx", "kvq"]) {
@@ -146,6 +150,39 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
     if (clip !== null) assert.strictEqual(clip, wantTxt, "clipboard contents"); ok("copy button shows Copied" + (clip !== null ? " and clipboard matches" : ""));
     const t0 = await pg.$eval("html", e => e.dataset.theme); await hit(pg.locator("#theme-toggle")); const t1 = await pg.$eval("html", e => e.dataset.theme);
     assert.notStrictEqual(t0, t1); await hit(pg.locator("#theme-toggle")); assert.strictEqual(await pg.$eval("html", e => e.dataset.theme), t0); ok(`theme toggle ${t0} <-> ${t1}`);
+    // ---- analytics events fire into the stubbed window.umami ----
+    {
+      await pg.goto(base, { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res");
+      assert(await pg.$eval('script[src*="cloud.umami.is/script.js"]', s => s.dataset.websiteId && s.dataset.doNotTrack === "true"), "umami script tag with website id + do-not-track");
+      await pg.evaluate(() => { window.__ev.length = 0; });
+      const evs = () => pg.evaluate(() => window.__ev.map(e => e[0] + ":" + JSON.stringify(e[1] || {})));
+      await hit(pg.locator("button.copy").first()); await hit(pg.locator("button.copy").nth(1)); await hit(pg.locator("#v-copy")); await hit(pg.locator("#theme-toggle")); await sleep(80);
+      await clickSeg("kind", "apple"); await clickSeg("use", "coding"); await clickSeg("ctx", "32768");
+      await pg.selectOption("#device", { index: 1 }); await sleep(60);
+      await pick2("v-sort", "tps"); await hit(pg.locator("#v-dir")); await pick2("v-src", "measured"); await pick2("v-fit", "gpu");
+      await pg.fill("#v-q", "secret-search-text"); await sleep(60);
+      await pg.evaluate(() => { const r = document.getElementById("v-min"); r.value = "20"; r.dispatchEvent(new Event("input", { bubbles: true })); });
+      const e1 = await evs(), has = n => e1.some(x => x.startsWith(n + ":"));
+      for (const n of ["hardware_type_selected", "use_case_selected", "context_selected", "device_selected", "sort_changed", "filter_changed", "command_copied", "link_copied", "theme_toggled"]) assert(has(n), "event fired: " + n + " in " + e1.join(" | "));
+      assert(e1.some(x => x === 'hardware_type_selected:{"value":"apple"}') && e1.some(x => x === 'command_copied:{"tool":"llama.cpp"}') && e1.some(x => x === 'command_copied:{"tool":"ollama"}'), "event payloads: " + e1.join(" | "));
+      assert(e1.some(x => x.startsWith("filter_changed:") && /"search"/.test(x)), "search filter reported by name"); assert(!e1.join().includes("secret-search-text"), "search text never sent");
+      await pg.evaluate(() => { window.__ev.length = 0; document.querySelector("#results").insertAdjacentHTML("beforebegin", '<a id="aff" href="#x" data-affiliate="acme" data-slot-id="s1">a</a><a id="spn" href="#x" data-sponsor="corp" data-slot-id="s2">s</a>'); });
+      await hit(pg.locator("#aff")); await hit(pg.locator("#spn")); const e2 = await evs();
+      assert.deepStrictEqual(e2, ['affiliate_click:{"partner":"acme","slot":"s1"}', 'sponsor_click:{"sponsor":"corp","slot":"s2"}']);
+      await pg.goto(base + "submit.html", { waitUntil: "networkidle" }); await pg.evaluate(() => { window.__ev.length = 0; });
+      await pg.evaluate(() => document.getElementById("f").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }))); await sleep(50);
+      assert((await evs()).some(x => x.startsWith("benchmark_submit_clicked:")), "benchmark_submit_clicked on submit page");
+      await pg.goto(base + "data-sources.html", { waitUntil: "networkidle" }); assert(/anonymous, cookie-free analytics/.test(await pg.$eval("#privacy", e => e.textContent)), "privacy note on data-sources");
+      ok("analytics: umami tag present, events fire into stubbed window.umami with no free text, script blocked without errors");
+    }
+    // without any window.umami at all (script blocked, no stub) nothing throws
+    {
+      const c2 = await browser.newContext(ctxOpts), p2 = await c2.newPage(); await c2.route(/umami\.is/, r => r.abort());
+      p2.on("pageerror", e => errors.push(name + " (no umami): " + e.message));
+      await p2.goto(base, { waitUntil: "networkidle" }); await p2.waitForSelector("#results .res");
+      await p2.locator("button.copy").first().click(); await p2.locator("#theme-toggle").click(); await p2.selectOption("#v-sort", "tps"); await sleep(80);
+      assert(await p2.evaluate(() => typeof window.umami === "undefined"), "umami really absent"); ok("page works with the umami script blocked"); await c2.close();
+    }
     await ctx.close();
   }
   let failed = false;

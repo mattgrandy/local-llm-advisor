@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# test stub for `hf download REPO --include PAT --local-dir DIR`
+[ "$1" = download ] || exit 2
+repo=$2; shift 2; inc=""; dir=""
+while [ $# -gt 0 ]; do case "$1" in --include) inc=$2; shift;; --local-dir) dir=$2; shift;; esac; shift; done
+[ -n "${STUB_HF_FAIL:-}" ] && [[ "$repo" =~ $STUB_HF_FAIL ]] && { echo "stub hf: simulated failure" >&2; exit 1; }
+f="${inc//\*/00001}"; mkdir -p "$dir/$(dirname "$f")"; cp "$(dirname "$0")/../fixtures/tiny.gguf" "$dir/$f"; echo "$dir/$f"
