@@ -115,11 +115,13 @@ Extra gap notes: `rtx-4060` (desktop 8GB) has 0 matched rows (17 rows are the *l
 - **Attribution (required on the site)**: "Benchmark data from LocalScore (localscore.ai), a Mozilla Builders project, Apache-2.0." Shown on `site/data-sources.html`. Not affiliated with LocalScore/Mozilla.
 
 ## Own measurements (llm-advisor, llama.cpp b11658)
-Source id `own-measurement`: our own `llama-bench` runs (llama.cpp b11658, CUDA 12.8, FA on, `-p 512 -n 128`, depths 0/4096/16384, 3 reps) on rented Vast.ai single-GPU hosts, 2026-10-16. Attribute as "own measurements (llm-advisor, llama.cpp b11658)". Files: `own/own-measurement__<hw>__2026-10-16.{csv,json}`; raw sweeps in `data/sweeps/<card>/`. Tooling: `tools/sweep/` (run_sweep.sh, ingest_sweep.py).
+Source id `own-measurement`: our own `llama-bench` runs (llama.cpp b11658, CUDA 12.8, FA on, `-p 512 -n 128`, depths 0/4096/16384, 3 reps) on rented Vast.ai single-GPU hosts, 2026-10-16 (3090 and 4090 added the same day). Attribute as "own measurements (llm-advisor, llama.cpp b11658)". Files: `own/own-measurement__<hw>__2026-10-16.{csv,json}`; raw sweeps in `data/sweeps/<card>/`. Tooling: `tools/sweep/` (run_sweep.sh, ingest_sweep.py).
 | hardware | rows | host notes |
 |---|---:|---|
 | RTX 3060 12GB | 37 | Threadripper 1920X, 62 GB RAM |
 | RTX 4060 Ti 16GB | 46 | 62 GB RAM |
 | RTX 4070 12GB | 37 | 125 GB RAM |
 | RTX 5070 12GB | 37 | 125 GB RAM; compute capability 12.0 works with the CUDA 12.8 build |
+| RTX 3090 24GB | 48 | 125 GB RAM (NL host); 16 configs, all fully on GPU, depths 0/4k/16k |
+| RTX 4090 24GB | 48 | 31 GB RAM (GB host); same 16 configs |
 Caveats: MoE-offload rows (`--n-cpu-moe` > 0) depend on the host CPU/RAM and are excluded from site medians. Mistral Small 3.2 24B on the 4060 Ti has no 16k-depth row (KV OOM). LocalScore's 5070 Llama 3.1 8B row (55.9 tg) looks low compared with our 5070 results (about 112 tg on an 8B Q4) and may be a mislabelled device.
