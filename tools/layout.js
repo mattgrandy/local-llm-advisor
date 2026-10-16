@@ -7,7 +7,7 @@ const ICON = {
 };
 // Analytics config: change the website id (or set to "" to disable analytics everywhere) here only.
 const ANALYTICS = { websiteId: "43daf16b-1b1a-4306-93fc-7c1e00fa0db9", src: "https://cloud.umami.is/script.js", doNotTrack: true };
-const VER = "20261016b";
+const VER = "20261016c";
 const analyticsTag = d => `<script defer src="${d}analytics.js?v=${VER}"></script>` + (ANALYTICS.websiteId ? `<script defer src="${ANALYTICS.src}" data-website-id="${ANALYTICS.websiteId}"${ANALYTICS.doNotTrack ? ' data-do-not-track="true"' : ""}></script>` : "");
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 function head(d, title, desc) {

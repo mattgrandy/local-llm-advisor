@@ -39,7 +39,8 @@ Moderation: `tools/ingest_submissions.py` (inbox of `.json`/issue-body `.md` fil
 1. **Add/remove models**: edit `tools/model_manifest.json` (HF model id, unsloth/other GGUF repo, tags, `vision`, and for MoE `active_b` copied from the model card text).
 2. `python3 tools/update_models.py`: refetches params, license, context, attention layout (for KV math), and real GGUF file sizes; stamps `last_verified` and appends a changelog entry for changes. A model that fails to fetch is skipped, never guessed.
 3. **Hardware**: edit `site/data/hardware.json` by hand. Every entry needs `source_url`, `basis`, `last_verified`. GPUs: TechPowerUp spec page (bandwidth = bus width x data rate). Apple/AMD/NVIDIA unified: vendor spec pages. Add new targets under `targets`.
-4. `node tools/generate_pages.js` (set `SITE_URL=https://yourdomain` to also write `sitemap.xml`).
+4. `node tools/generate_pages.js` (SITE_URL defaults to `https://localllmadvisor.com`; also runs `tools/seo.js`: canonical, Open Graph/Twitter, JSON-LD, `sitemap.xml`, `robots.txt`, `CNAME`). Internal links are relative, so the site also works on the old github.io URL.
+4b. **Publish**: `tools/sync_publish.sh [/workspace/publish]` copies `site/` to the publish repo's `site/` and `docs/` (GitHub Pages serves `main:/docs`). **`docs/CNAME` must never be deleted** (the script excludes it from `--delete` and rewrites it); deleting it drops the custom domain. Never `rm -rf docs/` or sync without `--exclude CNAME`.
 5. Add a human-readable line to `changelog` in models.json if something notable changed (e.g. a new model family).
 
 ## Facts vs assumptions
