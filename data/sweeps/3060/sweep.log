@@ -1,0 +1,50 @@
+2026-10-16T03:56:39Z sweep start: GPU='NVIDIA GeForce RTX 3060' x1 (benchmarking GPU 0) VRAM=12.00GiB RAM=62GiB disk_free=100GiB driver=595.91.07 llama.cpp=b11658/cuda12.8 max_hours=2 dry_run=0
+2026-10-16T03:56:39Z installing huggingface_hub into /workspace/sweep_work/venv
+2026-10-16T03:56:45Z hf CLI: /workspace/sweep_work/venv/bin/hf
+11 configs, 113 GB of downloads (vram=12.0 ram=62.0)
+2026-10-16T03:56:45Z installing prebuilt llama.cpp b11658 (CUDA 12.8) from https://github.com/ggml-org/llama.cpp/releases/download/b11658
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 68  164M   68  113M    0     0   122M      0  0:00:01 --:--:--  0:00:01  122M100  164M  100  164M    0     0   137M      0  0:00:01  0:00:01 --:--:--  188M
+<stdin>:8: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+2026-10-16T03:56:49Z plan: 11 configs
+2026-10-16T03:56:49Z == Qwen_Qwen3.5-4B__Q4_K_M mode=gpu size=2.7GB  (time left 119 min)
+2026-10-16T03:57:41Z    ok: 6 result rows
+2026-10-16T03:57:41Z == Qwen_Qwen3.5-4B__Q8_0 mode=gpu size=4.5GB  (time left 118 min)
+2026-10-16T03:58:45Z    ok: 6 result rows
+2026-10-16T03:58:45Z == Qwen_Qwen3-VL-8B-Instruct__Q4_K_M mode=gpu size=5.0GB  (time left 117 min)
+2026-10-16T04:00:06Z    ok: 6 result rows
+2026-10-16T04:00:06Z == Qwen_Qwen3.5-9B__Q4_K_M mode=gpu size=5.7GB  (time left 116 min)
+2026-10-16T04:01:24Z    ok: 6 result rows
+2026-10-16T04:01:24Z == google_gemma-4-12B-it__Q4_K_M mode=gpu size=7.1GB  (time left 115 min)
+2026-10-16T04:03:06Z    ok: 6 result rows
+2026-10-16T04:03:06Z == Qwen_Qwen3-VL-8B-Instruct__Q8_0 mode=gpu size=8.7GB  (time left 113 min)
+2026-10-16T04:04:50Z    ok: 6 result rows
+2026-10-16T04:04:50Z == Qwen_Qwen3.5-9B__Q8_0 mode=gpu size=9.5GB  (time left 111 min)
+2026-10-16T04:06:31Z    ok: 6 result rows
+2026-10-16T04:06:31Z == openai_gpt-oss-20b__Q4_K_M mode=moe-offload size=11.6GB  (time left 110 min)
+2026-10-16T04:07:15Z    n_layers=24; --n-cpu-moe sweep: 6 12 18
+2026-10-16T04:08:14Z    best --n-cpu-moe=6; running depths 4096,16384
+2026-10-16T04:09:04Z    ok: 10 result rows
+2026-10-16T04:09:04Z == google_gemma-4-26B-A4B-it__Q4_K_M mode=moe-offload size=16.9GB  (time left 107 min)
+2026-10-16T04:10:08Z    n_layers=30; --n-cpu-moe sweep: 8 15 22
+2026-10-16T04:10:12Z    (n-cpu-moe=8 failed: likely OOM, continuing)
+2026-10-16T04:10:57Z    best --n-cpu-moe=15; running depths 4096,16384
+2026-10-16T04:12:13Z    ok: 8 result rows
+2026-10-16T04:12:13Z == Qwen_Qwen3-Coder-30B-A3B-Instruct__Q4_K_M mode=moe-offload size=18.6GB  (time left 104 min)
+2026-10-16T04:13:26Z    n_layers=48; --n-cpu-moe sweep: 12 24 36
+2026-10-16T04:13:29Z    (n-cpu-moe=12 failed: likely OOM, continuing)
+2026-10-16T04:14:14Z    best --n-cpu-moe=24; running depths 4096,16384
+2026-10-16T04:15:43Z    ok: 8 result rows
+2026-10-16T04:15:43Z == Qwen_Qwen3.6-35B-A3B__Q4_K_M mode=moe-offload size=22.1GB  (time left 100 min)
+2026-10-16T04:17:09Z    n_layers=40; --n-cpu-moe sweep: 10 20 30
+2026-10-16T04:17:13Z    (n-cpu-moe=10 failed: likely OOM, continuing)
+2026-10-16T04:17:18Z    (n-cpu-moe=20 failed: likely OOM, continuing)
+2026-10-16T04:17:42Z    best --n-cpu-moe=30; running depths 4096,16384
+2026-10-16T04:19:27Z    ok: 6 result rows
+2026-10-16T04:19:27Z sweep complete
+Terminated
+2026-10-16T04:19:27Z finalizing: 11 configs done, 0 failed
+2026-10-16T04:19:27Z results tarball: /workspace/sweep_out.tgz (24K)
+2026-10-16T04:19:27Z no --on-finish given: instance keeps running (and billing). Copy /workspace/sweep_out.tgz off the box and destroy it.

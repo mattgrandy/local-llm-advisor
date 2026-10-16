@@ -279,7 +279,16 @@ run_config() {
   : > "$OUT/raw/$id.jsonl"
   local ok=1
   if [ "$mode" = gpu ]; then
-    bench "$OUT/raw/$id.jsonl" "$logf" "$mpath" -d "$DEPTHS" || ok=0
+    if ! bench "$OUT/raw/$id.jsonl" "$logf" "$mpath" -d "$DEPTHS"; then
+      # fix (first real run, 4060 Ti): a KV-cache OOM at the deepest depth killed ALL depths for a model that is
+      # tight in VRAM. Retry depth by depth; keep whatever fits, and fail only if nothing worked.
+      log "   (multi-depth run failed, retrying per depth)"
+      local d anyok=0
+      for d in ${DEPTHS//,/ }; do
+        bench "$OUT/raw/$id.jsonl" "$logf" "$mpath" -d "$d" && anyok=1 || log "   (depth $d failed: likely OOM)"
+      done
+      [ "$anyok" = 1 ] || ok=0
+    fi
   else
     local nl; nl=$("$PY" "$SCRIPT_DIR/gguf_blocks.py" "$mpath" 2>>"$logf") || { log "FAIL cannot read block_count $id"; ok=0; nl=""; }
     if [ -n "$nl" ]; then

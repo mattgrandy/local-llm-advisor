@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-15",
+ "generated": "2026-10-16",
  "entries": {
   "rtx-5090": [
    {
@@ -1931,6 +1931,174 @@
     "size_gb": null,
     "backends": [],
     "latest": "2026-10-15"
+   },
+   {
+    "model": "Gemma 4 12B",
+    "site_id": "google/gemma-4-12B-it",
+    "qclass": "Q4",
+    "params_b": 11.96,
+    "active_b": null,
+    "moe": false,
+    "tg": 70.13,
+    "pp": 3167.6,
+    "n": 1,
+    "tg_min": 70.13,
+    "tg_max": 70.13,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 7.11,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 111.91,
+    "pp": 4912.1,
+    "n": 1,
+    "tg_min": 111.91,
+    "tg_max": 111.91,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.03,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 72.39,
+    "pp": 5040.9,
+    "n": 1,
+    "tg_min": 72.39,
+    "tg_max": 72.39,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 8.71,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q4",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 154.54,
+    "pp": 7449.3,
+    "n": 1,
+    "tg_min": 154.54,
+    "tg_max": 154.54,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 2.73,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q8",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 115.68,
+    "pp": 7724.0,
+    "n": 1,
+    "tg_min": 115.68,
+    "tg_max": 115.68,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 4.47,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q4",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 101.31,
+    "pp": 4652.3,
+    "n": 1,
+    "tg_min": 101.31,
+    "tg_max": 101.31,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.67,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q8",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 67.58,
+    "pp": 4757.4,
+    "n": 1,
+    "tg_min": 67.58,
+    "tg_max": 67.58,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 9.51,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
    }
   ],
   "rtx-3060-12": [
@@ -2027,6 +2195,174 @@
     "size_gb": null,
     "backends": [],
     "latest": "2026-10-15"
+   },
+   {
+    "model": "Gemma 4 12B",
+    "site_id": "google/gemma-4-12B-it",
+    "qclass": "Q4",
+    "params_b": 11.96,
+    "active_b": null,
+    "moe": false,
+    "tg": 39.71,
+    "pp": 1277.1,
+    "n": 1,
+    "tg_min": 39.71,
+    "tg_max": 39.71,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 7.11,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 61.52,
+    "pp": 1983.0,
+    "n": 1,
+    "tg_min": 61.52,
+    "tg_max": 61.52,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.03,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 39.25,
+    "pp": 2086.6,
+    "n": 1,
+    "tg_min": 39.25,
+    "tg_max": 39.25,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 8.71,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q4",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 85.27,
+    "pp": 2996.7,
+    "n": 1,
+    "tg_min": 85.27,
+    "tg_max": 85.27,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 2.73,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q8",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 62.6,
+    "pp": 3133.4,
+    "n": 1,
+    "tg_min": 62.6,
+    "tg_max": 62.6,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 4.47,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q4",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 55.28,
+    "pp": 1849.3,
+    "n": 1,
+    "tg_min": 55.28,
+    "tg_max": 55.28,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.67,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q8",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 36.6,
+    "pp": 1945.3,
+    "n": 1,
+    "tg_min": 36.6,
+    "tg_max": 36.6,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 9.51,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
    }
   ],
   "dgx-spark": [
@@ -4140,6 +4476,174 @@
     "size_gb": null,
     "backends": [],
     "latest": "2026-10-15"
+   },
+   {
+    "model": "Gemma 4 12B",
+    "site_id": "google/gemma-4-12B-it",
+    "qclass": "Q4",
+    "params_b": 11.96,
+    "active_b": null,
+    "moe": false,
+    "tg": 58.52,
+    "pp": 2928.2,
+    "n": 1,
+    "tg_min": 58.52,
+    "tg_max": 58.52,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 7.11,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 89.69,
+    "pp": 4489.2,
+    "n": 1,
+    "tg_min": 89.69,
+    "tg_max": 89.69,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.03,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 54.99,
+    "pp": 4713.6,
+    "n": 1,
+    "tg_min": 54.99,
+    "tg_max": 54.99,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 8.71,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q4",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 129.52,
+    "pp": 6623.4,
+    "n": 1,
+    "tg_min": 129.52,
+    "tg_max": 129.52,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 2.73,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q8",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 88.97,
+    "pp": 7082.2,
+    "n": 1,
+    "tg_min": 88.97,
+    "tg_max": 88.97,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 4.47,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q4",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 79.8,
+    "pp": 4236.7,
+    "n": 1,
+    "tg_min": 79.8,
+    "tg_max": 79.8,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.67,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q8",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 51.26,
+    "pp": 4417.5,
+    "n": 1,
+    "tg_min": 51.26,
+    "tg_max": 51.26,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 9.51,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
    }
   ],
   "rtx-4060ti-16": [
@@ -4208,6 +4712,270 @@
     "size_gb": null,
     "backends": [],
     "latest": "2026-10-15"
+   },
+   {
+    "model": "Gemma 4 12B",
+    "site_id": "google/gemma-4-12B-it",
+    "qclass": "Q4",
+    "params_b": 11.96,
+    "active_b": null,
+    "moe": false,
+    "tg": 35.43,
+    "pp": 2185.7,
+    "n": 1,
+    "tg_min": 35.43,
+    "tg_max": 35.43,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 7.11,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Gemma 4 12B",
+    "site_id": "google/gemma-4-12B-it",
+    "qclass": "Q8",
+    "params_b": 11.96,
+    "active_b": null,
+    "moe": false,
+    "tg": 20.58,
+    "pp": 2215.5,
+    "n": 1,
+    "tg_min": 20.58,
+    "tg_max": 20.58,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 12.65,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Mistral Small 3.2 24B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 24.01,
+    "active_b": null,
+    "moe": false,
+    "tg": 19.08,
+    "pp": 1205.7,
+    "n": 1,
+    "tg_min": 19.08,
+    "tg_max": 19.08,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 14.32,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 54.23,
+    "pp": 3406.4,
+    "n": 1,
+    "tg_min": 54.23,
+    "tg_max": 54.23,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.03,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 32.52,
+    "pp": 3558.9,
+    "n": 1,
+    "tg_min": 32.52,
+    "tg_max": 32.52,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 8.71,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q4",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 82.35,
+    "pp": 5288.4,
+    "n": 1,
+    "tg_min": 82.35,
+    "tg_max": 82.35,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 2.73,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q8",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 54.29,
+    "pp": 5330.3,
+    "n": 1,
+    "tg_min": 54.29,
+    "tg_max": 54.29,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 4.47,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q4",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 48.3,
+    "pp": 3191.0,
+    "n": 1,
+    "tg_min": 48.3,
+    "tg_max": 48.3,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.67,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q8",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 30.39,
+    "pp": 3359.5,
+    "n": 1,
+    "tg_min": 30.39,
+    "tg_max": 30.39,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 9.51,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 103.72,
+    "pp": 4049.1,
+    "n": 1,
+    "tg_min": 103.72,
+    "tg_max": 103.72,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 11.61,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q8",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 94.43,
+    "pp": 4109.9,
+    "n": 1,
+    "tg_min": 94.43,
+    "tg_max": 94.43,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
    }
   ],
   "rtx-4060": [
@@ -4689,16 +5457,16 @@
     "p75": 0.707
    },
    "rtx-5070": {
-    "efficiency": 0.609,
-    "n": 5,
-    "p25": 0.405,
-    "p75": 0.776
+    "efficiency": 0.78,
+    "n": 11,
+    "p25": 0.609,
+    "p75": 0.885
    },
    "rtx-3060-12": {
-    "efficiency": 0.838,
-    "n": 6,
-    "p25": 0.693,
-    "p75": 0.858
+    "efficiency": 0.859,
+    "n": 12,
+    "p25": 0.818,
+    "p75": 0.909
    },
    "dgx-spark": {
     "efficiency": 0.808,
@@ -4743,10 +5511,16 @@
     "p75": 0.572
    },
    "rtx-4070": {
-    "efficiency": 0.74,
-    "n": 4,
-    "p25": 0.737,
-    "p75": 0.748
+    "efficiency": 0.858,
+    "n": 10,
+    "p25": 0.742,
+    "p75": 0.946
+   },
+   "rtx-4060ti-16": {
+    "efficiency": 0.949,
+    "n": 10,
+    "p25": 0.892,
+    "p75": 1.001
    },
    "m4-max-40": {
     "efficiency": 0.473,
@@ -4775,8 +5549,8 @@
   },
   "by_kind": {
    "gpu": {
-    "efficiency": 0.663,
-    "n": 418
+    "efficiency": 0.677,
+    "n": 444
    },
    "unified": {
     "efficiency": 0.798,
@@ -4796,6 +5570,10 @@
  },
  "community": [],
  "attribution": [
+  {
+   "name": "own measurements (llm-advisor, llama.cpp b11658)",
+   "url": "https://github.com/mattgrandy/local-llm-advisor"
+  },
   {
    "name": "LocalScore (Mozilla Builders / cjpais, Apache-2.0)",
    "url": "https://www.localscore.ai"
@@ -4822,9 +5600,9 @@
   }
  ],
  "counts": {
-  "rows_used": 794,
+  "rows_used": 826,
   "hardware": 24,
-  "points": 190,
+  "points": 222,
   "community": 0
  }
 }

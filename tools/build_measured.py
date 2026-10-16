@@ -132,7 +132,8 @@ def main():
     cp = f'{ROOT}/data/submissions/community_reviewed.json'
     if os.path.exists(cp): comm = json.load(open(cp))
     out = dict(generated=time.strftime('%Y-%m-%d'), entries=entries, calibration=cal, community=comm,
-        attribution=[dict(name='LocalScore (Mozilla Builders / cjpais, Apache-2.0)', url='https://www.localscore.ai'),
+        attribution=[dict(name='own measurements (llm-advisor, llama.cpp b11658)', url='https://github.com/mattgrandy/local-llm-advisor'),
+                     dict(name='LocalScore (Mozilla Builders / cjpais, Apache-2.0)', url='https://www.localscore.ai'),
                      dict(name='llama.cpp community benchmark threads incl. the gpt-oss guide #15396 (ggml-org/llama.cpp, MIT)', url='https://github.com/ggml-org/llama.cpp/discussions'),
                      dict(name='witcheer/rtx-5090-benchmarks (Hugging Face, MIT)', url='https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks'),
                      dict(name='iBlessi/rtx-5080-llm-throughput (Hugging Face, CC-BY-4.0)', url='https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput'),

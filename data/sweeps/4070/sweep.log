@@ -1,0 +1,50 @@
+2026-10-16T05:05:45Z sweep start: GPU='NVIDIA GeForce RTX 4070' x1 (benchmarking GPU 0) VRAM=11.99GiB RAM=125GiB disk_free=100GiB driver=595.91.07 llama.cpp=b11658/cuda12.8 max_hours=2 dry_run=0
+2026-10-16T05:05:45Z installing huggingface_hub into /workspace/sweep_work/venv
+2026-10-16T05:05:52Z hf CLI: /workspace/sweep_work/venv/bin/hf
+11 configs, 113 GB of downloads (vram=11.99 ram=125.0)
+2026-10-16T05:05:52Z installing prebuilt llama.cpp b11658 (CUDA 12.8) from https://github.com/ggml-org/llama.cpp/releases/download/b11658
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 14  164M   14 23.7M    0     0  19.3M      0  0:00:08  0:00:01  0:00:07 19.3M 42  164M   42 70.0M    0     0  30.9M      0  0:00:05  0:00:02  0:00:03 44.9M 66  164M   66  110M    0     0  33.5M      0  0:00:04  0:00:03  0:00:01 42.0M 90  164M   90  149M    0     0  35.3M      0  0:00:04  0:00:04 --:--:-- 41.9M100  164M  100  164M    0     0  35.2M      0  0:00:04  0:00:04 --:--:-- 40.8M
+<stdin>:8: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+2026-10-16T05:06:00Z plan: 11 configs
+2026-10-16T05:06:00Z == Qwen_Qwen3.5-4B__Q4_K_M mode=gpu size=2.7GB  (time left 119 min)
+2026-10-16T05:06:56Z    ok: 6 result rows
+2026-10-16T05:06:56Z == Qwen_Qwen3.5-4B__Q8_0 mode=gpu size=4.5GB  (time left 118 min)
+2026-10-16T05:08:12Z    ok: 6 result rows
+2026-10-16T05:08:12Z == Qwen_Qwen3-VL-8B-Instruct__Q4_K_M mode=gpu size=5.0GB  (time left 117 min)
+2026-10-16T05:10:12Z    ok: 6 result rows
+2026-10-16T05:10:13Z == Qwen_Qwen3.5-9B__Q4_K_M mode=gpu size=5.7GB  (time left 115 min)
+2026-10-16T05:11:45Z    ok: 6 result rows
+2026-10-16T05:11:45Z == google_gemma-4-12B-it__Q4_K_M mode=gpu size=7.1GB  (time left 114 min)
+2026-10-16T05:13:40Z    ok: 6 result rows
+2026-10-16T05:13:41Z == Qwen_Qwen3-VL-8B-Instruct__Q8_0 mode=gpu size=8.7GB  (time left 112 min)
+2026-10-16T05:16:14Z    ok: 6 result rows
+2026-10-16T05:16:15Z == Qwen_Qwen3.5-9B__Q8_0 mode=gpu size=9.5GB  (time left 109 min)
+2026-10-16T05:18:48Z    ok: 6 result rows
+2026-10-16T05:18:49Z == openai_gpt-oss-20b__Q4_K_M mode=moe-offload size=11.6GB  (time left 106 min)
+2026-10-16T05:20:34Z    n_layers=24; --n-cpu-moe sweep: 6 12 18
+2026-10-16T05:21:26Z    best --n-cpu-moe=6; running depths 4096,16384
+2026-10-16T05:22:02Z    ok: 10 result rows
+2026-10-16T05:22:03Z == google_gemma-4-26B-A4B-it__Q4_K_M mode=moe-offload size=16.9GB  (time left 103 min)
+2026-10-16T05:24:57Z    n_layers=30; --n-cpu-moe sweep: 8 15 22
+2026-10-16T05:25:01Z    (n-cpu-moe=8 failed: likely OOM, continuing)
+2026-10-16T05:25:40Z    best --n-cpu-moe=15; running depths 4096,16384
+2026-10-16T05:26:35Z    ok: 8 result rows
+2026-10-16T05:26:37Z == Qwen_Qwen3-Coder-30B-A3B-Instruct__Q4_K_M mode=moe-offload size=18.6GB  (time left 99 min)
+2026-10-16T05:30:05Z    n_layers=48; --n-cpu-moe sweep: 12 24 36
+2026-10-16T05:30:09Z    (n-cpu-moe=12 failed: likely OOM, continuing)
+2026-10-16T05:30:49Z    best --n-cpu-moe=24; running depths 4096,16384
+2026-10-16T05:31:55Z    ok: 8 result rows
+2026-10-16T05:31:57Z == Qwen_Qwen3.6-35B-A3B__Q4_K_M mode=moe-offload size=22.1GB  (time left 93 min)
+2026-10-16T05:35:11Z    n_layers=40; --n-cpu-moe sweep: 10 20 30
+2026-10-16T05:35:15Z    (n-cpu-moe=10 failed: likely OOM, continuing)
+2026-10-16T05:35:20Z    (n-cpu-moe=20 failed: likely OOM, continuing)
+2026-10-16T05:35:41Z    best --n-cpu-moe=30; running depths 4096,16384
+2026-10-16T05:36:59Z    ok: 6 result rows
+2026-10-16T05:37:01Z sweep complete
+Terminated
+2026-10-16T05:37:01Z finalizing: 11 configs done, 0 failed
+2026-10-16T05:37:01Z results tarball: /workspace/sweep_out.tgz (24K)
+2026-10-16T05:37:01Z no --on-finish given: instance keeps running (and billing). Copy /workspace/sweep_out.tgz off the box and destroy it.
