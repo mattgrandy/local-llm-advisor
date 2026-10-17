@@ -137,3 +137,7 @@ pre{margin:0;padding:12px 14px;background:var(--code);border:1px solid var(--bd)
 /* affiliate box */
 .card.aff{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:16px 0}
 .card.aff p{flex-basis:100%;margin:0;font-size:.8rem}
+
+.card.aff.aff-v2{border-color:var(--acc);background:linear-gradient(135deg,var(--glow),transparent 70%),var(--card);padding:16px 18px}
+.card.aff.aff-v2 .btn{font-size:1rem;padding:11px 20px}
+.card.aff.aff-v2 b{font-size:1.05rem}

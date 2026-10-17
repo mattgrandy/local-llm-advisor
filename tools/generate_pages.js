@@ -59,12 +59,12 @@ function page(t) {
   return L.head("../", `${title} | Local LLM Advisor`, desc) + L.nav("../", "hw") + `<main class="wrap">
 <header class="page-hero"><div class="crumbs"><a href="../index.html">Advisor</a> / <a href="index.html">Hardware</a> / ${esc(t.title)}</div><h1>${esc(title)}</h1><p>${esc(hwr.name)}. Memory-fit math with KV cache, speeds labelled by how they were obtained, and commands you can paste.</p></header>
 ${stats}
+${L.affiliateBox(t, AQ)}
 <div class="slot" data-slot="sponsor-top"><span>Sponsor slot. No sponsor yet and no link.</span></div>
 ${sections}
-${L.affiliateBox(t, AQ)}
 <p><a class="btn" href="../index.html?${q}">Open the interactive advisor with this hardware &rarr;</a></p>
 <p class="mut">Speeds marked <span class="badge measured">measured</span> are medians of real runs (short-context generation) from <a href="../data-sources.html">these sources</a>; <span class="badge scaled">scaled from measured</span> means a measurement of a same-size or same-model-different-quant run, scaled by bytes read; <span class="badge estimated">estimated</span> comes from memory bandwidth (spec source: <a href="${hwr.source_url}" rel="noopener">${esc(hwr.source_url)}</a>)${hwr.eff ? ` &times; an efficiency factor of ${hwr.eff.toFixed(2)} ${esc(hwr.effSource)}` : ""}. ${nmeas ? nmeas + " measured data point" + (nmeas > 1 ? "s" : "") + " on file for this hardware" : "No measured data on file for this hardware yet"} &middot; <a href="../submit.html">submit your benchmark</a>. ${t.kind === "apple" || t.kind === "unified" ? "Memory size on this page is an example configuration; check what your machine has. " : "System RAM here is an example (" + t.ram_gb + " GB, " + t.ram_type + "). "}Model data last verified ${data.models.generated}. Ranking = fits and fast enough first, then larger; not a quality benchmark.</p>
-<script src="../hwtable.js?v=20261016e"></script>
+<script src="../hwtable.js?v=20261016f"></script>
 <p class="mut">Page generated ${new Date().toISOString().slice(0, 10)} by tools/generate_pages.js</p></main>` + L.footer("../");
 }
 

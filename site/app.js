@@ -107,12 +107,12 @@
     return `<p class="mut depthline"><span class="badge est">estimated</span> At ${Advisor.fmtCtx(o.ctx)} depth: <b>~${Math.round(d.tps)} tok/s</b> generation (${Math.round(d.ratio * 100)}% of the short-context speed). ${tt}${ex ? ` Beyond ${Advisor.fmtCtx(d.measuredDepthMax)} the slowdown is extrapolated; there are no measurements that deep for this model.` : ` Penalty fitted to measured runs up to ${Advisor.fmtCtx(d.measuredDepthMax)}; no measurement for this exact model and hardware at this depth.`}</p>`;
   }
   function affiliateSlot(input, cfg, hwr) {
-    const el = $("aff-slot"), A = window.LLMA_AFF; if (!el) return;
+    const A = window.LLMA_AFF;
     const key = cfg ? cfg.id : input.device, e = A && A.tag && A.q[key];
-    if (!e) { el.innerHTML = ""; return; }
+    if (!e) return "";
     const q = e.q + (e.mem && input.memory_gb ? " " + input.memory_gb + "GB" : "");
     const url = "https://www.amazon.com/s?k=" + encodeURIComponent(q).replace(/%20/g, "+") + "&tag=" + encodeURIComponent(A.tag);
-    el.innerHTML = `<aside class="card aff" data-slot="affiliate-upgrade"><b>Shopping for ${esc(hwr.name)}?</b> <a class="btn" href="${esc(url)}" target="_blank" rel="sponsored noopener nofollow" data-affiliate="amazon" data-hardware="${esc(key)}" data-slot-id="advisor-results">${e.kind === "gpu" ? "Check price on Amazon" : "Search Amazon for this hardware"} &rarr;</a><p class="mut">Amazon search results for &ldquo;${esc(q)}&rdquo;; prices and stock are shown on Amazon. ${esc(A.disclosure)} <a href="data-sources.html#affiliate-disclosure">Disclosure</a></p></aside>`;
+    return `<aside class="card aff aff-v2" data-slot="affiliate-upgrade" data-placement="v2"><b>Shopping for ${esc(hwr.name)}?</b> <a class="btn" href="${esc(url)}" target="_blank" rel="sponsored noopener nofollow" data-affiliate="amazon" data-hardware="${esc(key)}" data-slot-id="advisor-results">${e.kind === "gpu" ? "Check price on Amazon" : "Search Amazon for this hardware"} &rarr;</a><p class="mut">Amazon search results for &ldquo;${esc(q)}&rdquo;; prices and stock are shown on Amazon. ${esc(A.disclosure)} <a href="data-sources.html#affiliate-disclosure">Disclosure</a></p></aside>`;
   }
   function render() {
     syncSegs();
@@ -128,7 +128,7 @@
       (hwr.frac ? ` (assumes ${Math.round(hwr.frac * 100)}% of unified memory usable)` : "") + `, ${hwr.gpuBw} GB/s memory bandwidth.` +
       (hwr.eff ? ` Estimated speeds use an efficiency factor of ${hwr.eff.toFixed(2)}, ${esc(hwr.effSource)}.` : "");
     const comm = ((measured && measured.community) || []).filter(c => c.hw_id === input.device);
-    affiliateSlot(input, cfg, hwr);
+    const affHtml = affiliateSlot(input, cfg, hwr); $("aff-slot").innerHTML = "";
     $("cfgnote").textContent = cfg && cfg.note ? cfg.note : "";
     $("community").innerHTML = comm.length ? `<section class="card"><h2>Community-submitted benchmarks <span class="badge est">unverified</span></h2>
       <p class="mut">Reviewed for format only; not independently verified and never used in the estimates above.</p><div class="tw"><table><tr><th>Model</th><th>Quant</th><th>Backend</th><th>pp tok/s</th><th>tg tok/s</th><th>llama.cpp build</th><th>Date</th></tr>` +
@@ -145,8 +145,8 @@
     const canToggle = effSort === "rec" && !active && allRes.length > 8;
     $("v-all").hidden = !canToggle; if (canToggle) $("v-all").textContent = view.all ? "Show top 8 only" : `Show all ${allRes.length} models`;
     $("viewbar").hidden = !allRes.length;
-    if (!allRes.length) { $("results").innerHTML = `<div class="card">Nothing in the dataset fits this setup at ${Advisor.fmtCtx(o.ctx)} context. Try a shorter context, a q8_0 or q4_0 KV cache, or more memory.</div>`; return; }
-    if (!results.length) { $("results").innerHTML = `<div class="card">No models match these filters. Use <b>Reset sort &amp; filters</b> above, or loosen a filter (the minimum tokens/sec and speed source are the strictest).</div>`; return; }
+    if (!allRes.length) { $("results").innerHTML = `<div class="card">Nothing in the dataset fits this setup at ${Advisor.fmtCtx(o.ctx)} context. Try a shorter context, a q8_0 or q4_0 KV cache, or more memory.</div>` + affHtml; return; }
+    if (!results.length) { $("results").innerHTML = `<div class="card">No models match these filters. Use <b>Reset sort &amp; filters</b> above, or loosen a filter (the minimum tokens/sec and speed source are the strictest).</div>` + affHtml; return; }
     const total = hwr.pool, ramTot = hwr.cpuOnly ? hwr.pool : (hwr.ramAvail || hwr.pool);
     const meter = (label, used, cap, cls) => { const pct = cap > 0 ? Math.min(100, used / cap * 100) : 0; return `<div class="meter"><div class="row"><span>${label}</span><span><b>${used.toFixed(1)}</b> / ${cap.toFixed(0)} GB &middot; ${Math.round(pct)}%</span></div><div class="bar" role="img" aria-label="${label} ${Math.round(pct)} percent used"><i class="${cls || (pct > 92 ? "warn" : "")}" style="width:${pct}%"></i></div></div>`; };
     $("results").innerHTML = results.map((p, i) => {
@@ -164,7 +164,7 @@
       <div class="code"><div class="top"><span>ollama</span><button class="copy" type="button" data-c="o${i}">Copy</button></div><pre id="o${i}">${esc(p.command.ollama)}</pre></div></div>
       ${p.command.ollamaNote ? `<p class="mut">${esc(p.command.ollamaNote)}</p>` : ""}
       <p class="src">Source: <a href="${safeUrl(m.source_url)}" rel="noopener">${esc(m.id)}</a> &middot; GGUF: <a href="${safeUrl(m.gguf_source_url)}" rel="noopener">${esc(m.gguf_repo)}</a> &middot; last verified ${esc(m.last_verified)}</p></article>`;
-    }).join("");
+    }).map((h, i) => i === 0 ? h + affHtml : h).join(""); // price box directly under the top recommendation
   }
   $("kind").addEventListener("change", () => { fillDevices(); render(); });
   $("device").addEventListener("change", () => { if ($("kind").value === "apple") fillMem(); });

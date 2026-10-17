@@ -149,6 +149,10 @@ assert(Sub.issueUrl({ github_issue: { repo: "me/repo" } }, v.clean).startsWith("
 { const fs3 = require("fs"), r = require("path").join(__dirname, ".."); assert(fs3.existsSync(r + "/site/favicon.svg") && fs3.existsSync(r + "/site/favicon.ico"), "favicon files");
   assert(/Copyright \(c\) 2026 Matt\s*\n/.test(fs3.readFileSync(r + "/LICENSE", "utf8")) && /CC BY 4\.0/.test(fs3.readFileSync(r + "/DATA-LICENSE", "utf8")), "license files");
   assert(/Data: .*Local LLM Advisor \(localllmadvisor\.com\)/.test(fs3.readFileSync(r + "/site/data-sources.html", "utf8")), "data attribution line"); }
+{ const fs4 = require("fs"), rt = require("path").join(__dirname, "..", "site", "hardware"); let n = 0;
+  for (const f of fs4.readdirSync(rt).filter(f => f.endsWith(".html") && f !== "index.html")) { const h = fs4.readFileSync(rt + "/" + f, "utf8"), a = h.indexOf('data-placement="v2"'); if (a < 0) continue; n++;
+    assert(a < h.indexOf('<section class="card"><h2>Best for') && a > h.indexOf('class="stats"') && (h.match(/data-affiliate="amazon"/g) || []).length === 1, "price box after stats, before results, once: " + f); }
+  assert(n >= 20, "boxes on hardware pages: " + n); }
 console.log("ALL TESTS PASSED");
 
 // ---- affiliate links + disclosure (Amazon Associates rules)
