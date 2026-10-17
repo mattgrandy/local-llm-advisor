@@ -28,3 +28,5 @@
 - rtx5070ti instance 56460637
 - rtx5070ti sweep launched Sat Oct 17 16:40:31 MDT 2026
 - 5080 published Sat Oct 17 16:40:35 MDT 2026
+- 5080 published 2d047a1 (msg 'x' by mistake), indexnow submitted
+- 5070ti done+destroyed Sat Oct 17 17:16:28 MDT 2026

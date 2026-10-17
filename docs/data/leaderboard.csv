@@ -161,11 +161,21 @@ rtx-5070,GeForce RTX 5070,Qwen3.5 4B,Q4,4.66,false,154.54,154.54,154.54,7449.3,1
 rtx-5070,GeForce RTX 5070,Qwen3.5 4B,Q8,4.66,false,115.68,115.68,115.68,7724,1,CUDA,true,own-measurement,2026-10-16
 rtx-5070,GeForce RTX 5070,Qwen3.5 9B,Q4,9.65,false,101.31,101.31,101.31,4652.3,1,CUDA,true,own-measurement,2026-10-16
 rtx-5070,GeForce RTX 5070,Qwen3.5 9B,Q8,9.65,false,67.58,67.58,67.58,4757.4,1,CUDA,true,own-measurement,2026-10-16
-rtx-5070ti,GeForce RTX 5070 Ti,gpt-oss 20B,Q4,20.91,true,189.45,189.45,189.46,6332.9,2,CUDA,false,llamacpp-discussion-15396,2025-08-18
+rtx-5070ti,GeForce RTX 5070 Ti,Gemma 4 12B,Q4,11.96,false,89.15,89.15,89.15,4165,1,CUDA,true,own-measurement,2026-10-17
+rtx-5070ti,GeForce RTX 5070 Ti,Gemma 4 12B,Q8,11.96,false,58.41,58.41,58.41,4333.8,1,CUDA,true,own-measurement,2026-10-17
+rtx-5070ti,GeForce RTX 5070 Ti,gpt-oss 20B,Q4,20.91,true,189.46,189.45,236.89,6339.8,3,CUDA,true,llamacpp-discussion-15396;own-measurement,2026-10-17
+rtx-5070ti,GeForce RTX 5070 Ti,gpt-oss 20B,Q8,20.91,true,223.82,223.82,223.82,9839.1,1,CUDA,true,own-measurement,2026-10-17
 rtx-5070ti,GeForce RTX 5070 Ti,Llama 2 7B,Q4,6.74,false,165.95,125.89,182.43,6911.2,18,CUDA+Vulkan,false,llamacpp-discussion-10879-comments;llamacpp-discussion-10879-scoreboard;llamacpp-discussion-15013-comments;llamacpp-discussion-15013-scoreboard,2026-10-10
 rtx-5070ti,GeForce RTX 5070 Ti,Llama 3.2 1B Instruct,Q4,1.5,false,145.25,92.78,197.71,12339,2,,false,localscore-model-pages,2026-10-15
 rtx-5070ti,GeForce RTX 5070 Ti,Meta Llama 3.1 8B Instruct,Q4,8.03,false,50.12,34.69,65.54,3115.7,2,,false,localscore-model-pages,2026-10-15
+rtx-5070ti,GeForce RTX 5070 Ti,Mistral Small 3.2 24B,Q4,24.01,false,52.85,52.85,52.85,2306.7,1,CUDA,true,own-measurement,2026-10-17
 rtx-5070ti,GeForce RTX 5070 Ti,Qwen2.5 14B Instruct,Q4,14.77,false,31.29,25.6,36.97,1993.7,2,,false,localscore-model-pages,2026-10-15
+rtx-5070ti,GeForce RTX 5070 Ti,Qwen3-VL 8B,Q4,8.77,false,139.98,139.98,139.98,5879,1,CUDA,true,own-measurement,2026-10-17
+rtx-5070ti,GeForce RTX 5070 Ti,Qwen3-VL 8B,Q8,8.77,false,93.3,93.3,93.3,6117.6,1,CUDA,true,own-measurement,2026-10-17
+rtx-5070ti,GeForce RTX 5070 Ti,Qwen3.5 4B,Q4,4.66,false,187.62,187.62,187.62,8889.2,1,CUDA,true,own-measurement,2026-10-17
+rtx-5070ti,GeForce RTX 5070 Ti,Qwen3.5 4B,Q8,4.66,false,143.41,143.41,143.41,9400.3,1,CUDA,true,own-measurement,2026-10-17
+rtx-5070ti,GeForce RTX 5070 Ti,Qwen3.5 9B,Q4,9.65,false,126.03,126.03,126.03,5871.6,1,CUDA,true,own-measurement,2026-10-17
+rtx-5070ti,GeForce RTX 5070 Ti,Qwen3.5 9B,Q8,9.65,false,86.39,86.39,86.39,6091.5,1,CUDA,true,own-measurement,2026-10-17
 rtx-5080,GeForce RTX 5080,devstral-24b,Q4,23.6,false,35.61,34.9,36.32,7356.1,2,Ollama(CUDA),false,hf-iBlessi-rtx-5080-llm-throughput,2026-08-26
 rtx-5080,GeForce RTX 5080,Gemma 4 12B,Q4,11.96,false,94.8,94.8,94.8,4597.8,1,CUDA,true,own-measurement,2026-10-17
 rtx-5080,GeForce RTX 5080,Gemma 4 12B,Q8,11.96,false,61.81,61.81,61.81,4712.8,1,CUDA,true,own-measurement,2026-10-17
