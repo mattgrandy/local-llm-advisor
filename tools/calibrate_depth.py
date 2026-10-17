@@ -6,12 +6,17 @@ Wread = weight bytes read per token (active params for MoE). kappa is one global
 whose model maps onto a model in site/data/models.json. Writes site/data/depth_calibration.json."""
 import csv, json, math, collections, re, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-rows = list(csv.DictReader(open(R + '/data/benchmarks/benchmarks_all.csv')))
+rows = [x for x in csv.DictReader(open(R + '/data/benchmarks/benchmarks_all.csv'))
+        if not (x['source'] == 'own-measurement' and 'MoE expert offload' in (x['notes'] or ''))]  # offload-config rows: different --n-cpu-moe per depth, not comparable
 models = {m['id']: m for m in json.load(open(R + '/site/data/models.json'))['models']}
 MAP = [(r'gpt-oss 20B', 'openai/gpt-oss-20b'), (r'gpt-oss 120B', 'openai/gpt-oss-120b'), (r'qwen3moe 30B', 'Qwen/Qwen3-Coder-30B-A3B-Instruct'),
        (r'qwen35moe 35B', 'Qwen/Qwen3.6-35B-A3B'), (r'qwen35 27B', 'Qwen/Qwen3.6-27B'), (r'qwen35 9B', 'Qwen/Qwen3.5-9B'),
        (r'gemma4 26B', 'google/gemma-4-26B-A4B-it'), (r'gemma4 31B', 'google/gemma-4-31B-it'),
-       (r'Qwen3\.6-27B', 'Qwen/Qwen3.6-27B'), (r'Qwen3\.6-35B-A3B', 'Qwen/Qwen3.6-35B-A3B')]
+       (r'Qwen3\.6-27B', 'Qwen/Qwen3.6-27B'), (r'Qwen3\.6-35B-A3B', 'Qwen/Qwen3.6-35B-A3B'),
+       # catalog names as written in our own llama-bench rows (see tools/build_measured.py ALIASES)
+       (r'^Gemma 4 12B', 'google/gemma-4-12B-it'), (r'^Gemma 4 26B-A4B', 'google/gemma-4-26B-A4B-it'), (r'^Gemma 4 31B', 'google/gemma-4-31B-it'),
+       (r'^Qwen3\.6 27B', 'Qwen/Qwen3.6-27B'), (r'^Qwen3\.6 35B-A3B', 'Qwen/Qwen3.6-35B-A3B'), (r'^Qwen3\.5 9B', 'Qwen/Qwen3.5-9B'), (r'^Qwen3\.5 4B', 'Qwen/Qwen3.5-4B'),
+       (r'^Qwen3-Coder 30B-A3B', 'Qwen/Qwen3-Coder-30B-A3B-Instruct'), (r'^Qwen3-VL 8B', 'Qwen/Qwen3-VL-8B-Instruct'), (r'^Mistral Small 3\.2 24B', 'mistralai/Mistral-Small-3.2-24B-Instruct-2506')]
 BPW = {'Q8': 8.5, 'Q6': 6.56, 'Q5': 5.7, 'Q4': 4.85, 'MXFP4': 4.25, 'BF': 16, 'F16': 16, 'Q3': 3.9}
 def kv_read(m, d, bytes_):
     k = m['kv']; full = 2 * k['full_kv_heads'] * k['full_head_dim'] * k['full_layers'] * bytes_ * d

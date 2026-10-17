@@ -1,1 +1,21 @@
-[]
+[
+ "https://localllmadvisor.com/blog/index.html",
+ "https://localllmadvisor.com/blog/state-of-local-llm-hardware-oct-2026.html",
+ "https://localllmadvisor.com/compare/index.html",
+ "https://localllmadvisor.com/compare/rtx-3060-12gb-vs-rtx-4060-8gb.html",
+ "https://localllmadvisor.com/data-sources.html",
+ "https://localllmadvisor.com/hardware/rtx-4060-8gb.html",
+ "https://localllmadvisor.com/leaderboard.html",
+ "https://localllmadvisor.com/models/gemma-4-12b.html",
+ "https://localllmadvisor.com/models/gemma-4-26b-a4b.html",
+ "https://localllmadvisor.com/models/gemma-4-31b.html",
+ "https://localllmadvisor.com/models/gpt-oss-20b.html",
+ "https://localllmadvisor.com/models/mistral-small-3-2-24b.html",
+ "https://localllmadvisor.com/models/qwen3-5-4b.html",
+ "https://localllmadvisor.com/models/qwen3-5-9b.html",
+ "https://localllmadvisor.com/models/qwen3-6-27b.html",
+ "https://localllmadvisor.com/models/qwen3-6-35b-a3b.html",
+ "https://localllmadvisor.com/models/qwen3-coder-30b-a3b.html",
+ "https://localllmadvisor.com/models/qwen3-vl-8b.html",
+ "https://localllmadvisor.com/vram/8gb.html"
+]

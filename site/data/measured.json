@@ -5750,6 +5750,102 @@
     "size_gb": null,
     "backends": [],
     "latest": "2026-10-15"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
+    "qclass": "Q4",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 51.27,
+    "pp": 2444.8,
+    "n": 1,
+    "tg_min": 51.27,
+    "tg_max": 51.27,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.03,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q4",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 77.36,
+    "pp": 3695.1,
+    "n": 1,
+    "tg_min": 77.36,
+    "tg_max": 77.36,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 2.73,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q8",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 51.32,
+    "pp": 3948.3,
+    "n": 1,
+    "tg_min": 51.32,
+    "tg_max": 51.32,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 4.47,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q4",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 45.62,
+    "pp": 2283.0,
+    "n": 1,
+    "tg_min": 45.62,
+    "tg_max": 45.62,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.67,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
    }
   ],
   "m5-max-32": [
@@ -6250,6 +6346,12 @@
     "p25": 0.892,
     "p75": 1.001
    },
+   "rtx-4060": {
+    "efficiency": 0.958,
+    "n": 4,
+    "p25": 0.934,
+    "p75": 1.002
+   },
    "m4-max-40": {
     "efficiency": 0.473,
     "n": 6,
@@ -6278,7 +6380,7 @@
   "by_kind": {
    "gpu": {
     "efficiency": 0.679,
-    "n": 464
+    "n": 467
    },
    "unified": {
     "efficiency": 0.798,
@@ -6328,9 +6430,9 @@
   }
  ],
  "counts": {
-  "rows_used": 858,
+  "rows_used": 862,
   "hardware": 24,
-  "points": 252,
+  "points": 256,
   "community": 0
  }
 }

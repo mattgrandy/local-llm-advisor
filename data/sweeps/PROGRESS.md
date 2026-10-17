@@ -1,0 +1,25 @@
+- Fri Oct 16 00:05:39 MDT 2026 resumed; checking 5070 instance
+- 5070 done, results copied, instance 56206076 destroyed, 0 instances
+- ingested 4 sweeps; sanity: LocalScore 5070 Llama3.1 8B tg 55.9 looks low vs our 5070 111.9 (outlier)
+- merged, rebuilt, tests pass, synced to <workdir>/publish (not pushed)
+- Fri Oct 16 07:55:15 MDT 2026 publish step start
+- pushed bf320dd
+- live verified (measured.json new, browser tests pass). Starting 3090/4090 planning
+- 3090: renting offer 55991276 BC CA 64GB
+- 3090 host 55991276 rejected SSH key; destroyed 56253988
+- 3090 instance ID=56254541 NL running sweep, started Fri Oct 16 08:05:04 MDT 2026
+- 3090 done+destroyed
+- 4090 instance  GB 30GB RAM running, started Fri Oct 16 08:27:33 MDT 2026
+- Fri Oct 16 08:45:29 MDT 2026 resumed; checking 4090
+- 4090 done, destroyed, 0 instances
+- pushed 3090/4090 data
+- Sat Oct 17 15:14:57 MDT 2026 batch start (4060 8GB, 5080, 5070Ti, 5090); credit 4.10, floor 0.75
+- 4060 instance 56451994 Illinois
+- 4060 sweep launched Sat Oct 17 15:18:16 MDT 2026
+- 4060 done+destroyed Sat Oct 17 15:46:10 MDT 2026
+- 5080 instance 56455266
+- 5080 host 52899411 ES unreachable ssh; destroyed 56455266
+- 5080 instance 56455845 DK
+- 5080 DK host rejected key; destroyed 56455845
+- 5080 instance 56456408 QC
+- 5080 sweep launched Sat Oct 17 15:58:47 MDT 2026
