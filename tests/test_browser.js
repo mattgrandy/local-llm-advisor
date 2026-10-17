@@ -4,7 +4,7 @@
 const assert = require("assert"), http = require("http"), fs = require("fs"), path = require("path");
 let pw; try { pw = require(path.join(process.env.PLAYWRIGHT_DIR || "/workspace/pw", "node_modules/playwright-core")); } catch (e) { pw = require("playwright-core"); }
 const SITE = path.join(__dirname, "..", "site");
-const MIME = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".css": "text/css" };
+const MIME = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".css": "text/css", ".svg": "image/svg+xml", ".ico": "image/x-icon" };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 (async () => {
   let base = process.argv[2], server;
@@ -130,6 +130,13 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
     await hit(pg.locator("#v-reset")); await sleep(100);
     assert.strictEqual(await val("v-sort"), "rec"); assert.strictEqual(await val("v-src"), "all"); assert.strictEqual(await val("v-fam"), "all"); assert.strictEqual(await val("v-min"), "0"); assert.strictEqual(await val("v-q"), "");
     assert(!q().has("sort") && !q().has("src") && !q().has("fam") && !q().has("min")); assert.strictEqual(q().get("kind"), "gpu", "reset keeps hardware"); ok("reset clears sort & filters, keeps hardware");
+    for (const bad of ["?kind=zzz", "?device=zzz", "?kind=gpu&device=zzz&count=99&mem=x&ram=abc&ramt=q&use=q", "?kind=apple&device=zzz", "?kind=%3Cimg%20src=x%20onerror=alert(1)%3E&device=%22%3E%3Cscript%3E"]) {
+      await pg.goto(base + "index.html" + bad, { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res");
+      assert(["gpu", "apple", "unified", "cpu"].includes(await val("kind")), "kind valid for " + bad); assert(await pg.$eval("#device", e => e.options.length === 0 || [...e.options].some(o => o.value === e.value)), "device valid for " + bad);
+    }
+    await pg.goto(base + "index.html?kind=zzz&device=zzz", { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res"); assert.strictEqual(await val("kind"), "gpu", "bad kind -> default gpu"); ok("bad ?kind= / ?device= fall back to defaults without errors");
+    const sec = await pg.evaluate(() => ({ csp: (document.querySelector('meta[http-equiv="Content-Security-Policy"]') || {}).content, ref: (document.querySelector('meta[name=referrer]') || {}).content, icon: [...document.querySelectorAll('link[rel=icon]')].map(l => l.getAttribute("href")) }));
+    assert(/script-src 'self' https:\/\/cloud\.umami\.is/.test(sec.csp) && !/script-src[^;]*unsafe/.test(sec.csp), "CSP meta"); assert.strictEqual(sec.ref, "strict-origin-when-cross-origin"); assert(sec.icon.length >= 2, "favicon links"); ok("CSP + referrer meta and favicon links present");
     await pg.goto(base + "index.html?kind=gpu&device=rtx-5090&use=chat&sort=bogus&fit=bogus&min=abc&dir=sideways", { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res"); assert.strictEqual(await val("v-sort"), "rec"); assert.strictEqual(await val("v-fit"), "all"); ok("malformed URL params fall back to defaults");
     await pg.goto(base, { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res");
     await pg.goto(base + "hardware/rtx-5090-32gb.html", { waitUntil: "networkidle" });
@@ -166,9 +173,11 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
       for (const n of ["hardware_type_selected", "use_case_selected", "context_selected", "device_selected", "sort_changed", "filter_changed", "command_copied", "link_copied", "theme_toggled"]) assert(has(n), "event fired: " + n + " in " + e1.join(" | "));
       assert(e1.some(x => x === 'hardware_type_selected:{"value":"apple"}') && e1.some(x => x === 'command_copied:{"tool":"llama.cpp"}') && e1.some(x => x === 'command_copied:{"tool":"ollama"}'), "event payloads: " + e1.join(" | "));
       assert(e1.some(x => x.startsWith("filter_changed:") && /"search"/.test(x)), "search filter reported by name"); assert(!e1.join().includes("secret-search-text"), "search text never sent");
+      await pg.selectOption("#device", { value: "studio-m4-max-40" }); await sleep(100);
+      { const ah = await pg.locator("#aff-slot a[data-affiliate=amazon]").first().getAttribute("href").catch(() => null); assert(ah && /^https:\/\/www\.amazon\.com\/s\?k=.+&tag=localllmadvis-20$/.test(ah), "advisor amazon link: " + ah); assert((await pg.locator("#aff-slot").innerText()).includes("As an Amazon Associate I earn from qualifying purchases."), "disclosure near advisor link"); }
       await pg.evaluate(() => { window.__ev.length = 0; document.querySelector("#results").insertAdjacentHTML("beforebegin", '<a id="aff" href="#x" data-affiliate="acme" data-slot-id="s1">a</a><a id="spn" href="#x" data-sponsor="corp" data-slot-id="s2">s</a>'); });
       await hit(pg.locator("#aff")); await hit(pg.locator("#spn")); const e2 = await evs();
-      assert.deepStrictEqual(e2, ['affiliate_click:{"partner":"acme","slot":"s1"}', 'sponsor_click:{"sponsor":"corp","slot":"s2"}']);
+      assert.deepStrictEqual(e2, ['affiliate_click:{"partner":"acme","merchant":"acme","hardware":"","slot":"s1"}', 'sponsor_click:{"sponsor":"corp","slot":"s2"}']);
       await pg.goto(base + "submit.html", { waitUntil: "networkidle" }); await pg.evaluate(() => { window.__ev.length = 0; });
       await pg.evaluate(() => document.getElementById("f").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }))); await sleep(50);
       assert((await evs()).some(x => x.startsWith("benchmark_submit_clicked:")), "benchmark_submit_clicked on submit page");

@@ -1,9 +1,12 @@
 (async function () {
   const fc = Advisor.fmtCtx;
   const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const num = v => (Number.isFinite(+v) ? +v : "");
+  const safeUrl = u => (/^https?:\/\//i.test(String(u)) ? esc(u) : "#");
   const [hardware, models, measured, quality, depth] = await Promise.all(["data/hardware.json", "data/models.json", "data/measured.json", "data/quality.json", "data/depth_calibration.json"].map(u => fetch(u).then(r => r.ok ? r.json() : null).catch(() => null)));
   const data = { hardware, models, measured, quality, depth };
-  const opt = (v, t) => `<option value="${v}">${t}</option>`;
+  const opt = (v, t) => `<option value="${esc(v)}">${esc(t)}</option>`;
   $("ramt").innerHTML = hardware.ram_types.map(r => opt(r.id, r.name)).join("");
   $("ramt").value = "ddr5-5600";
   const cfgOf = id => (hardware.apple_configs || []).find(c => c.id === id);
@@ -20,7 +23,7 @@
     if (k === "apple") {
       const groups = {};
       hardware.apple_configs.forEach(c => (groups[c.form_factor] = groups[c.form_factor] || []).push(c));
-      $("device").innerHTML = ["Mac Studio", "MacBook Pro", "MacBook Air", "Mac mini", "iMac"].filter(g => groups[g]).map(g => `<optgroup label="${g}">${groups[g].map(c => opt(c.id, c.name)).join("")}</optgroup>`).join("");
+      $("device").innerHTML = ["Mac Studio", "MacBook Pro", "MacBook Air", "Mac mini", "iMac"].filter(g => groups[g]).map(g => `<optgroup label="${esc(g)}">${groups[g].map(c => opt(c.id, c.name)).join("")}</optgroup>`).join("");
       fillMem();
     } else {
       const list = k === "gpu" ? hardware.gpus : k === "unified" ? hardware.unified : [];
@@ -33,7 +36,6 @@
     $("l-mem").hidden = !(k === "apple" || k === "unified");
     $("l-ram").hidden = !(k === "gpu" || k === "cpu"); $("l-ramt").hidden = $("l-ram").hidden;
   }
-  const esc = s => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
   const MODE = { gpu: "Fits fully in GPU/unified memory", "moe-offload": "MoE: experts partly on CPU (--n-cpu-moe)", "dense-offload": "Partial layer offload to CPU (slow)", cpu: "CPU only" };
   // segmented controls: enhance <select data-seg> without changing the select's API
   const segs = [];
@@ -130,7 +132,7 @@
     $("cfgnote").textContent = cfg && cfg.note ? cfg.note : "";
     $("community").innerHTML = comm.length ? `<section class="card"><h2>Community-submitted benchmarks <span class="badge est">unverified</span></h2>
       <p class="mut">Reviewed for format only; not independently verified and never used in the estimates above.</p><div class="tw"><table><tr><th>Model</th><th>Quant</th><th>Backend</th><th>pp tok/s</th><th>tg tok/s</th><th>llama.cpp build</th><th>Date</th></tr>` +
-      comm.map(c => `<tr><td>${esc(c.model)}</td><td>${esc(c.quant)}</td><td>${esc(c.backend)}</td><td>${c.pp_tps}</td><td>${c.tg_tps}</td><td>${esc(c.build || "")}</td><td>${esc(c.date || "")}</td></tr>`).join("") + `</table></div></section>` : "";
+      comm.map(c => `<tr><td>${esc(c.model)}</td><td>${esc(c.quant)}</td><td>${esc(c.backend)}</td><td>${num(c.pp_tps)}</td><td>${num(c.tg_tps)}</td><td>${esc(c.build || "")}</td><td>${esc(c.date || "")}</td></tr>`).join("") + `</table></div></section>` : "";
     const sortOpts = ["rec", "tps", ...(allRes.some(p => p.depth) ? ["tpsctx"] : []), "size", ...(allRes.some(p => p.quality) ? ["quality"] : []), "ctx", "name"];
     const effSort = syncView(sortOpts, Math.max(0, ...allRes.map(p => p.tps || 0)));
     const filtered = Advisor.applyView(allRes, Object.assign({}, view, { sort: effSort }));
@@ -151,38 +153,40 @@
       const m = p.model, si = Advisor.speedInfo(p), bc = si.short === "measured" ? "measured" : si.short === "estimated" ? "estimated" : "scaled";
       return `<article class="card res hov" style="animation-delay:${i * 45}ms"><div class="res-h"><span class="n">#${i + 1}</span><h3>${esc(m.name)}</h3><span class="q">${esc(p.quantLabel)}</span>
       <div class="tps"><b>~${p.tps ? Math.round(p.tps) : "?"}</b><span>tok/s generation${o.ctx >= 8192 && p.depth ? " (short ctx)" : ""}</span></div></div>
-      <div class="badges"><span class="badge ${bc}" title="${esc(si.detail)}">${esc(si.short)}</span><span class="badge ${p.mode === "gpu" ? "ok" : "est"}">${MODE[p.mode]}</span>${p.usable ? "" : '<span class="badge est">likely too slow</span>'}
+      <div class="badges"><span class="badge ${esc(bc)}" title="${esc(si.detail)}">${esc(si.short)}</span><span class="badge ${p.mode === "gpu" ? "ok" : "est"}">${MODE[p.mode]}</span>${p.usable ? "" : '<span class="badge est">likely too slow</span>'}
       <span class="badge plain">${m.moe ? `MoE ${m.params_b}B total / ${m.active_params_b}B active` : m.params_b + "B dense"}</span><span class="badge plain">${esc(m.license || "license: see source")}</span>${p.ctxStatus === "extended" ? '<span class="badge est">extended context (YaRN)</span>' : ""}</div>
       ${hwr.cpuOnly ? "" : meter(hwr.discrete ? "VRAM" : "Unified memory", p.gpuGB, total)}${p.cpuGB > 0.05 || hwr.cpuOnly ? meter("System RAM", p.cpuGB, ramTot, "ram") : ""}
-      <p class="mut q-line">${p.quality ? `LMArena ${p.quality.category} rank #${p.quality.rank} (rating ${p.quality.rating}, ${p.quality.date})` : "LMArena: not rated"} &middot; max context that fits here: ${p.maxCtx ? fc(p.maxCtx) : "under 4k"}${p.maxCtx > m.context_max ? " (extended)" : ""} &middot; model max context ${fc(m.context_max)}${p.limits.extended > m.context_max ? `, ${fc(p.limits.extended)} extended with YaRN` : ""}</p>
+      <p class="mut q-line">${p.quality ? `LMArena ${esc(p.quality.category)} rank #${num(p.quality.rank)} (rating ${num(p.quality.rating)}, ${esc(p.quality.date)})` : "LMArena: not rated"} &middot; max context that fits here: ${p.maxCtx ? fc(p.maxCtx) : "under 4k"}${p.maxCtx > m.context_max ? " (extended)" : ""} &middot; model max context ${fc(m.context_max)}${p.limits.extended > m.context_max ? `, ${fc(p.limits.extended)} extended with YaRN` : ""}</p>
       ${p.ctxStatus === "extended" ? `<p class="mut ctxwarn"><span class="badge est">extended context</span> ${fc(o.ctx)} is beyond this model's native ${fc(m.context_max)}. ${esc(m.context_extended.source)}. ${esc(m.context_extended.caveat)}</p>` : ""}
       ${longBlock(p, o)}
-      <p class="mut">${esc(si.detail)}${p.speed ? " Source: " + p.speed.sources.map(x => `<a href="${x.url}" rel="noopener">${esc(x.id)}</a>`).join(", ") + ", latest " + esc(p.speed.latest) + "." : ""} Memory: weights ${p.weightsGB.toFixed(1)} GB + KV cache ${p.kvGB.toFixed(2)} GB @ ${fc(o.ctx)} ctx (${o.kvq}${m.kv.linear_state_gb ? `, incl. ${m.kv.linear_state_gb.toFixed(2)} GB fixed linear-attention state` : ""}).</p>
+      <p class="mut">${esc(si.detail)}${p.speed ? " Source: " + p.speed.sources.map(x => `<a href="${safeUrl(x.url)}" rel="noopener">${esc(x.id)}</a>`).join(", ") + ", latest " + esc(p.speed.latest) + "." : ""} Memory: weights ${p.weightsGB.toFixed(1)} GB + KV cache ${p.kvGB.toFixed(2)} GB @ ${fc(o.ctx)} ctx (${o.kvq}${m.kv.linear_state_gb ? `, incl. ${m.kv.linear_state_gb.toFixed(2)} GB fixed linear-attention state` : ""}).</p>
       <div class="cmd"><div class="code"><div class="top"><span>llama.cpp</span><button class="copy" type="button" data-c="l${i}">Copy</button></div><pre id="l${i}">${esc(p.command.llama)}</pre></div>
       <div class="code"><div class="top"><span>ollama</span><button class="copy" type="button" data-c="o${i}">Copy</button></div><pre id="o${i}">${esc(p.command.ollama)}</pre></div></div>
       ${p.command.ollamaNote ? `<p class="mut">${esc(p.command.ollamaNote)}</p>` : ""}
-      <p class="src">Source: <a href="${m.source_url}" rel="noopener">${esc(m.id)}</a> &middot; GGUF: <a href="${m.gguf_source_url}" rel="noopener">${esc(m.gguf_repo)}</a> &middot; last verified ${m.last_verified}</p></article>`;
+      <p class="src">Source: <a href="${safeUrl(m.source_url)}" rel="noopener">${esc(m.id)}</a> &middot; GGUF: <a href="${safeUrl(m.gguf_source_url)}" rel="noopener">${esc(m.gguf_repo)}</a> &middot; last verified ${esc(m.last_verified)}</p></article>`;
     }).join("");
   }
   $("kind").addEventListener("change", () => { fillDevices(); render(); });
   $("device").addEventListener("change", () => { if ($("kind").value === "apple") fillMem(); });
   document.querySelectorAll("#f select,#f input").forEach(e => { if (e.id !== "kind" && !e.closest(".seg")) e.addEventListener("change", render); });
   document.querySelectorAll("#f input[type=number]").forEach(e => e.addEventListener("input", render));
+  $("f").addEventListener("submit", ev => ev.preventDefault()); // (was an inline onsubmit; inline handlers are blocked by the CSP)
   // prefill from query string (used by generated pages): ?kind=&device=&count=&mem=&ram=&ramt=&use=
   const q = new URLSearchParams(location.search);
   const setIf = (id, v) => { if (v && [...$(id).options].some(op => op.value === v)) $(id).value = v; };
-  if (q.get("kind")) $("kind").value = q.get("kind");
+  setIf("kind", q.get("kind")); // bad ?kind= falls back to the default
   fillDevices();
   if (q.get("config") && cfgOf(q.get("config")) && $("kind").value === "apple") { $("device").value = q.get("config"); fillMem(); }
   else if ($("kind").value === "apple" && q.get("device")) { const c = hardware.apple_configs.find(c => c.hw === q.get("device")); if (c) { $("device").value = c.id; fillMem(); } }
-  [["mem", "mem"], ["ram", "ram"], ["ramt", "ramt"], ["use", "use"]].forEach(([p, id]) => { if (q.get(p)) $(id).value = q.get(p); });
+  ["mem", "ramt", "use"].forEach(id => setIf(id, q.get(id)));
+  { const r = +q.get("ram"); if (q.get("ram") && Number.isFinite(r) && r >= 4 && r <= 1024) $("ram").value = r; } // ram is a number input: clamp to its range
   setIf("ctx", q.get("ctx")); setIf("kvq", q.get("kvq")); // ignore values that are not an offered option (a bad ?ctx= must not blank the select)
-  if ($("kind").value !== "apple") [["device", "device"], ["count", "count"]].forEach(([p, id]) => { if (q.get(p)) $(id).value = q.get(p); });
+  if ($("kind").value !== "apple") ["device", "count"].forEach(id => setIf(id, q.get(id)));
   if (SORTS[q.get("sort")]) view.sort = q.get("sort");
   view.dir = q.get("dir") === "asc" || q.get("dir") === "desc" ? q.get("dir") : Advisor.NATURAL_DIR[view.sort];
   view.q = q.get("q") || ""; if (["all", "measured", "measured+scaled"].includes(q.get("src"))) view.src = q.get("src");
   if (["all", "gpu", "offload"].includes(q.get("fit"))) view.fit = q.get("fit"); if (["all", "permissive"].includes(q.get("lic"))) view.lic = q.get("lic");
   if (families.includes(q.get("fam"))) view.fam = q.get("fam"); view.min = Math.max(0, +q.get("min") || 0); view.all = q.get("all") === "1";
-  $("changelog").innerHTML = models.changelog.map(c => `<b>${c.date}</b><ul>${c.changes.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`).join("");
+  $("changelog").innerHTML = models.changelog.map(c => `<b>${esc(c.date)}</b><ul>${c.changes.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`).join("");
   render();
 })();

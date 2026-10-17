@@ -1,7 +1,7 @@
 # llm-advisor benchmark data
 
 Generated 2026-10-14 (MT) by `tools/ingest_benchmarks.py` (+ `tools/ingest_extra.py`, `tools/bench_parse.py`, `tools/gh_fetch.py`).
-Rerun: `cd /workspace/llm-advisor && python3 tools/ingest_benchmarks.py` (add `--refresh` to bypass the cache in `raw/`).
+Rerun: `python3 tools/ingest_benchmarks.py` (add `--refresh` to bypass the cache in `raw/`).
 Needs `pandas` + `pyarrow` for the LMArena parquet. Set `GITHUB_TOKEN` (optional) to lift GitHub's 60 req/h unauthenticated limit; the script sleeps through limits and caches every response.
 
 ## Files

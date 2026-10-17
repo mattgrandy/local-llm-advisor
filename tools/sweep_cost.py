@@ -1,7 +1,7 @@
 """Cost model for cloud llama-bench sweeps. Prices from gpuhour.com API snapshot (Vast.ai, 1-GPU offers, as_of 2026-10-15)."""
 import json,statistics as st
 M=json.load(open('site/data/models.json'))['models']
-O=json.load(open('/workspace/gh_all.json'))
+O=json.load(open('<workdir>/gh_all.json'))
 CARDS={ # name: (gpuhour name, vram, ram_needed_ok, speed factor vs 4070 (assumption), provider)
  'RTX 3060 12GB':('RTX 3060',12,1.6),'RTX 4060 Ti 16GB':('RTX 4060 Ti',16,1.3),'RTX 4070':('RTX 4070',12,1.0),
  'RTX 3090 (compare)':('RTX 3090',24,0.8),'RTX 4090 (compare)':('RTX 4090',24,0.5),'RTX 5090 (compare)':('RTX 5090',32,0.4)}
@@ -42,4 +42,4 @@ for name,(g,vram,f) in CARDS.items():
     if '(compare)' not in name: tl+=cost[0];tlk+=cost[1];th+=cost[2]
 for r in rows:print(r)
 print('target-card total (excl compare, excl 4060 8GB proxy)',round(tl,2),round(tlk,2),round(th,2))
-json.dump(rows,open('/workspace/sweep_rows.json','w'))
+json.dump(rows,open('<workdir>/sweep_rows.json','w'))

@@ -3,7 +3,7 @@
 <h1>Which local LLM should you <span class="grad">run on your hardware?</span></h1>
 <p class="sub">Pick your GPU, Mac or RAM. Get models that fit (weights + KV cache), a speed figure labelled <b>measured</b>, <b>scaled</b> or <b>estimated</b>, and a copy-paste command for llama.cpp or Ollama.</p>
 <div class="pills"><span>VRAM fit math</span><span>MoE offload flags</span><span>Real benchmarks</span><span>Open data</span></div></section>
-<form id="f" class="card picker" aria-label="Hardware picker" onsubmit="return false">
+<form id="f" class="card picker" aria-label="Hardware picker">
  <div class="lbl"><span class="t">1 &middot; Hardware type</span>
   <select id="kind" data-seg="4" aria-label="Hardware type"><option value="gpu" data-sub="NVIDIA / AMD">Discrete GPU</option><option value="apple" data-sub="M-series Macs">Apple Silicon</option><option value="unified" data-sub="Strix Halo / DGX Spark">Unified memory PC</option><option value="cpu" data-sub="No GPU">CPU only</option></select></div>
  <div class="fields">
@@ -40,7 +40,7 @@
 <div id="excluded"></div>
 <div id="results"></div>
 <div id="community"></div>
-<div class="slot" data-slot="affiliate-upgrade"><span>Affiliate box: &ldquo;cheapest upgrade that runs this&rdquo;. No affiliate links yet.</span></div>
+<div id="aff-slot"></div>
 <div class="slot" data-slot="affiliate-cloud"><span>Affiliate box: cloud GPU rental. No links yet.</span></div>
 <section class="card"><h2>How these numbers are made</h2>
 <div class="explain">
@@ -52,4 +52,4 @@
 </div></section>
 <section class="card"><h2>Data changelog</h2><div id="changelog" class="mut"></div><p class="mut">Hardware pages: <a href="hardware/index.html">all configs</a> &middot; <a href="submit.html">Submit your benchmark</a> &middot; <a href="data-sources.html">Data sources &amp; attribution</a></p></section>
 </main>
-<script src="advisor.js?v=20261016c"></script><script src="app.js?v=20261016c"></script>
+<script src="affiliate.js?v=20261016d"></script><script src="advisor.js?v=20261016d"></script><script src="app.js?v=20261016d"></script>

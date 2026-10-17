@@ -1,0 +1,17 @@
+Local LLM Advisor data license
+
+Copyright (c) 2026 Matt
+
+Local LLM Advisor's own measurements (data/sweeps/, data/benchmarks/own/) and its curated
+data (site/data/hardware.json, site/data/models.json and derived summaries) are licensed under
+Creative Commons Attribution 4.0 International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+Required attribution: "Data: Local LLM Advisor (localllmadvisor.com)" with a link to
+https://localllmadvisor.com
+
+Third-party rows (llama.cpp discussions, LocalScore, LMArena, Hugging Face datasets and other
+repositories) are NOT covered by this license. They keep their upstream licenses and terms; see
+site/data-sources.html and benchmark-sources.md.
+
+Code is licensed separately under the MIT License (see LICENSE).

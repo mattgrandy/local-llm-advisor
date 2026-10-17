@@ -40,7 +40,7 @@ Moderation: `tools/ingest_submissions.py` (inbox of `.json`/issue-body `.md` fil
 2. `python3 tools/update_models.py`: refetches params, license, context, attention layout (for KV math), and real GGUF file sizes; stamps `last_verified` and appends a changelog entry for changes. A model that fails to fetch is skipped, never guessed.
 3. **Hardware**: edit `site/data/hardware.json` by hand. Every entry needs `source_url`, `basis`, `last_verified`. GPUs: TechPowerUp spec page (bandwidth = bus width x data rate). Apple/AMD/NVIDIA unified: vendor spec pages. Add new targets under `targets`.
 4. `node tools/generate_pages.js` (SITE_URL defaults to `https://localllmadvisor.com`; also runs `tools/seo.js`: canonical, Open Graph/Twitter, JSON-LD, `sitemap.xml`, `robots.txt`, `CNAME`). Internal links are relative, so the site also works on the old github.io URL.
-4b. **Publish**: `tools/sync_publish.sh [/workspace/publish]` copies `site/` to the publish repo's `site/` and `docs/` (GitHub Pages serves `main:/docs`). **`docs/CNAME` must never be deleted** (the script excludes it from `--delete` and rewrites it); deleting it drops the custom domain. Never `rm -rf docs/` or sync without `--exclude CNAME`.
+4b. **Publish**: `tools/sync_publish.sh [<publish-dir>]` copies `site/` to the publish repo's `site/` and `docs/` (GitHub Pages serves `main:/docs`). **`docs/CNAME` must never be deleted** (the script excludes it from `--delete` and rewrites it); deleting it drops the custom domain. Never `rm -rf docs/` or sync without `--exclude CNAME`.
 5. Add a human-readable line to `changelog` in models.json if something notable changed (e.g. a new model family).
 
 ## Facts vs assumptions
@@ -56,4 +56,6 @@ Moderation: `tools/ingest_submissions.py` (inbox of `.json`/issue-body `.md` fil
 
 ## License and data attribution
 
-Code in this repository is MIT licensed (see `LICENSE`). Processed benchmark data in `data/benchmarks/` and `site/data/` is derived from third-party sources (llama.cpp discussions, LocalScore/Mozilla, LMArena CC-BY-4.0, open-licensed GitHub repos and Hugging Face datasets) and remains subject to each source's own terms; see `site/data-sources.html` and `benchmark-sources.md`. Raw caches are not included; rerun the ingest tools to rebuild them.
+- **Code**: MIT (see `LICENSE`).
+- **Our own data**: Local LLM Advisor's own measurements (`data/sweeps/`, `data/benchmarks/own/`) and curated data (hardware and model tables) are CC BY 4.0 (see `DATA-LICENSE`). Attribution: "Data: Local LLM Advisor (localllmadvisor.com)" with a link to https://localllmadvisor.com.
+- **Third-party rows** in `data/benchmarks/` and `site/data/` (llama.cpp discussions, LocalScore/Mozilla, LMArena CC-BY-4.0, open-licensed GitHub repos and Hugging Face datasets) keep their upstream licenses and terms; see `site/data-sources.html` and `benchmark-sources.md`. Raw caches are not included; rerun the ingest tools to rebuild them.

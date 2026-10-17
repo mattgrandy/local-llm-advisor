@@ -1,6 +1,6 @@
 2026-10-16T03:56:39Z sweep start: GPU='NVIDIA GeForce RTX 3060' x1 (benchmarking GPU 0) VRAM=12.00GiB RAM=62GiB disk_free=100GiB driver=595.91.07 llama.cpp=b11658/cuda12.8 max_hours=2 dry_run=0
-2026-10-16T03:56:39Z installing huggingface_hub into /workspace/sweep_work/venv
-2026-10-16T03:56:45Z hf CLI: /workspace/sweep_work/venv/bin/hf
+2026-10-16T03:56:39Z installing huggingface_hub into <workdir>/sweep_work/venv
+2026-10-16T03:56:45Z hf CLI: <workdir>/sweep_work/venv/bin/hf
 11 configs, 113 GB of downloads (vram=12.0 ram=62.0)
 2026-10-16T03:56:45Z installing prebuilt llama.cpp b11658 (CUDA 12.8) from https://github.com/ggml-org/llama.cpp/releases/download/b11658
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -46,5 +46,5 @@
 2026-10-16T04:19:27Z sweep complete
 Terminated
 2026-10-16T04:19:27Z finalizing: 11 configs done, 0 failed
-2026-10-16T04:19:27Z results tarball: /workspace/sweep_out.tgz (24K)
-2026-10-16T04:19:27Z no --on-finish given: instance keeps running (and billing). Copy /workspace/sweep_out.tgz off the box and destroy it.
+2026-10-16T04:19:27Z results tarball: <workdir>/sweep_out.tgz (24K)
+2026-10-16T04:19:27Z no --on-finish given: instance keeps running (and billing). Copy <workdir>/sweep_out.tgz off the box and destroy it.

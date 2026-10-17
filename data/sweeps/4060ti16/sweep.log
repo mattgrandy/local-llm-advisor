@@ -1,6 +1,6 @@
 2026-10-16T04:29:59Z sweep start: GPU='NVIDIA GeForce RTX 4060 Ti' x1 (benchmarking GPU 0) VRAM=16.00GiB RAM=62GiB disk_free=100GiB driver=595.91.07 llama.cpp=b11658/cuda12.8 max_hours=2 dry_run=0
-2026-10-16T04:29:59Z installing huggingface_hub into /workspace/sweep_work/venv
-2026-10-16T04:30:08Z hf CLI: /workspace/sweep_work/venv/bin/hf
+2026-10-16T04:29:59Z installing huggingface_hub into <workdir>/sweep_work/venv
+2026-10-16T04:30:08Z hf CLI: <workdir>/sweep_work/venv/bin/hf
 14 configs, 152 GB of downloads (vram=16.0 ram=62.0)
 2026-10-16T04:30:08Z installing prebuilt llama.cpp b11658 (CUDA 12.8) from https://github.com/ggml-org/llama.cpp/releases/download/b11658
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -30,7 +30,7 @@
 2026-10-16T04:42:52Z == google_gemma-4-12B-it__Q8_0 mode=gpu size=12.7GB  (time left 107 min)
 2026-10-16T04:45:16Z    ok: 6 result rows
 2026-10-16T04:45:16Z == mistralai_Mistral-Small-3.2-24B-Instruct-2506__Q4_K_M mode=gpu size=14.3GB  (time left 104 min)
-2026-10-16T04:47:11Z FAIL bench mistralai_Mistral-Small-3.2-24B-Instruct-2506__Q4_K_M (see /workspace/sweep_out/logs/mistralai_Mistral-Small-3.2-24B-Instruct-2506__Q4_K_M.log)
+2026-10-16T04:47:11Z FAIL bench mistralai_Mistral-Small-3.2-24B-Instruct-2506__Q4_K_M (see <workdir>/sweep_out/logs/mistralai_Mistral-Small-3.2-24B-Instruct-2506__Q4_K_M.log)
 2026-10-16T04:47:11Z == google_gemma-4-26B-A4B-it__Q4_K_M mode=moe-offload size=16.9GB  (time left 102 min)
 2026-10-16T04:48:17Z    n_layers=30; --n-cpu-moe sweep: 8 15 22
 2026-10-16T04:49:20Z    best --n-cpu-moe=8; running depths 4096,16384
@@ -47,5 +47,5 @@
 2026-10-16T04:56:51Z sweep complete
 Terminated
 2026-10-16T04:56:51Z finalizing: 13 configs done, 1 failed
-2026-10-16T04:56:51Z results tarball: /workspace/sweep_out.tgz (28K)
-2026-10-16T04:56:51Z no --on-finish given: instance keeps running (and billing). Copy /workspace/sweep_out.tgz off the box and destroy it.
+2026-10-16T04:56:51Z results tarball: <workdir>/sweep_out.tgz (28K)
+2026-10-16T04:56:51Z no --on-finish given: instance keeps running (and billing). Copy <workdir>/sweep_out.tgz off the box and destroy it.

@@ -1,6 +1,6 @@
 # Benchmark data sources for llm-advisor
 Researched 2026-10-14 (MT). Everything below was fetched live; "not verified" is marked where I could not confirm.
-Samples saved in `/workspace/llm-advisor/data-samples/`.
+Samples saved in the local `data-samples/` folder (not published).
 
 ## Ranked summary
 | # | Source | Data | Access | Reuse stance | Effort |

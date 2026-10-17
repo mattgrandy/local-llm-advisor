@@ -139,8 +139,33 @@ assert(Sub.issueUrl({ github_issue: { repo: "me/repo" } }, v.clean).startsWith("
     assert(h.includes(`data-website-id="${L.ANALYTICS.websiteId}"`) && h.includes('data-do-not-track="true"'), "umami id + DNT in " + f);
     assert(/analytics\.js\?v=/.test(h) && h.includes("?v=" + L.VER) && !/\?v=20261015d/.test(h), "analytics.js + cache-bust in " + f);
     assert(/anonymous, cookie-free analytics/.test(h), "privacy note in " + f);
+    assert(/<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https:\/\/cloud\.umami\.is;/.test(h) && /name="referrer" content="strict-origin-when-cross-origin"/.test(h), "CSP + referrer meta in " + f);
+    assert(/rel="icon" href="(\.\.\/)?favicon\.svg"/.test(h) && /favicon\.ico/.test(h), "favicon links in " + f);
+    assert(!/<script(?![^>]*\bsrc=)(?![^>]*ld\+json)[^>]*>/.test(h) && !/\son[a-z]+="/.test(h), "no inline scripts/handlers (CSP) in " + f);
   }
   const src = fs2.readFileSync(path2.join(root, "analytics.js"), "utf8"); assert(!/v-q"\)\.value|\.value\)?\s*\}\);?\s*\/\/ search/.test(src));
   assert(/window\.umami && typeof window\.umami\.track/.test(src), "track is guarded");
 }
+{ const fs3 = require("fs"), r = require("path").join(__dirname, ".."); assert(fs3.existsSync(r + "/site/favicon.svg") && fs3.existsSync(r + "/site/favicon.ico"), "favicon files");
+  assert(/Copyright \(c\) 2026 Matt\s*\n/.test(fs3.readFileSync(r + "/LICENSE", "utf8")) && /CC BY 4\.0/.test(fs3.readFileSync(r + "/DATA-LICENSE", "utf8")), "license files");
+  assert(/Data: .*Local LLM Advisor \(localllmadvisor\.com\)/.test(fs3.readFileSync(r + "/site/data-sources.html", "utf8")), "data attribution line"); }
 console.log("ALL TESTS PASSED");
+
+// ---- affiliate links + disclosure (Amazon Associates rules)
+{
+  const fs2 = require("fs"), path2 = require("path"), assert2 = require("assert"), Lay = require("../tools/layout.js");
+  const root = path2.join(__dirname, "..", "site"), pages = [...fs2.readdirSync(root).filter(f => f.endsWith(".html")).map(f => path2.join(root, f)), ...fs2.readdirSync(path2.join(root, "hardware")).map(f => path2.join(root, "hardware", f))];
+  let links = 0;
+  for (const f of pages) {
+    const h = fs2.readFileSync(f, "utf8");
+    assert2(h.includes(Lay.AFFILIATE.disclosure), "disclosure missing in " + f);
+    for (const m of h.matchAll(/<a [^>]*data-affiliate="amazon"[^>]*>/g)) {
+      links++; assert2(/href="https:\/\/www\.amazon\.com\/s\?k=[^"]+&amp;tag=localllmadvis-20"/.test(m[0]), "bad amazon href " + m[0]);
+      assert2(/rel="sponsored noopener nofollow"/.test(m[0]) && /target="_blank"/.test(m[0]), "bad rel/target");
+      assert2(!/\/dp\/|\$\d/.test(m[0]), "no ASIN/price allowed");
+    }
+  }
+  assert2(links >= 20, "expected hardware page links, got " + links);
+  for (const s of ["mac-studio-m5-ultra-256gb", "mac-studio-m5-ultra-512gb", "mac-mini-m6-32gb"]) assert2(!/amazon\.com/.test(fs2.readFileSync(path2.join(root, "hardware", s + ".html"), "utf8")), "unreleased hardware must not link: " + s);
+  console.log("affiliate checks ok:", links, "static links");
+}
