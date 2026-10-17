@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-16",
+ "generated": "2026-10-17",
  "entries": {
   "rtx-5090": [
    {
@@ -1393,7 +1393,7 @@
    },
    {
     "model": "Mistral Small 3.2 24B",
-    "site_id": null,
+    "site_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
     "qclass": "Q4",
     "params_b": 24.01,
     "active_b": null,
@@ -1441,7 +1441,7 @@
    },
    {
     "model": "Qwen3-VL 8B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
     "qclass": "Q4",
     "params_b": 8.77,
     "active_b": null,
@@ -1465,7 +1465,7 @@
    },
    {
     "model": "Qwen3-VL 8B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
     "qclass": "Q8",
     "params_b": 8.77,
     "active_b": null,
@@ -1585,7 +1585,7 @@
    },
    {
     "model": "Qwen3.6 27B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3.6-27B",
     "qclass": "Q4",
     "params_b": 27.78,
     "active_b": null,
@@ -2306,7 +2306,7 @@
    },
    {
     "model": "Mistral Small 3.2 24B",
-    "site_id": null,
+    "site_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
     "qclass": "Q4",
     "params_b": 24.01,
     "active_b": null,
@@ -2354,7 +2354,7 @@
    },
    {
     "model": "Qwen3-VL 8B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
     "qclass": "Q4",
     "params_b": 8.77,
     "active_b": null,
@@ -2378,7 +2378,7 @@
    },
    {
     "model": "Qwen3-VL 8B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
     "qclass": "Q8",
     "params_b": 8.77,
     "active_b": null,
@@ -2498,7 +2498,7 @@
    },
    {
     "model": "Qwen3.6 27B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3.6-27B",
     "qclass": "Q4",
     "params_b": 27.78,
     "active_b": null,
@@ -2686,7 +2686,7 @@
    },
    {
     "model": "Qwen3-VL 8B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
     "qclass": "Q4",
     "params_b": 8.77,
     "active_b": null,
@@ -2710,7 +2710,7 @@
    },
    {
     "model": "Qwen3-VL 8B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
     "qclass": "Q8",
     "params_b": 8.77,
     "active_b": null,
@@ -2950,7 +2950,7 @@
    },
    {
     "model": "Qwen3-VL 8B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
     "qclass": "Q4",
     "params_b": 8.77,
     "active_b": null,
@@ -2974,7 +2974,7 @@
    },
    {
     "model": "Qwen3-VL 8B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
     "qclass": "Q8",
     "params_b": 8.77,
     "active_b": null,
@@ -5231,7 +5231,7 @@
    },
    {
     "model": "Qwen3-VL 8B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
     "qclass": "Q4",
     "params_b": 8.77,
     "active_b": null,
@@ -5255,7 +5255,7 @@
    },
    {
     "model": "Qwen3-VL 8B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
     "qclass": "Q8",
     "params_b": 8.77,
     "active_b": null,
@@ -5491,7 +5491,7 @@
    },
    {
     "model": "Mistral Small 3.2 24B",
-    "site_id": null,
+    "site_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
     "qclass": "Q4",
     "params_b": 24.01,
     "active_b": null,
@@ -5515,7 +5515,7 @@
    },
    {
     "model": "Qwen3-VL 8B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
     "qclass": "Q4",
     "params_b": 8.77,
     "active_b": null,
@@ -5539,7 +5539,7 @@
    },
    {
     "model": "Qwen3-VL 8B",
-    "site_id": null,
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
     "qclass": "Q8",
     "params_b": 8.77,
     "active_b": null,
