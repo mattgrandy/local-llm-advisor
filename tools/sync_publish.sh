@@ -12,4 +12,6 @@ mirror "$SRC/site" "$PUB/site"; mirror "$SRC/site" "$PUB/docs"
 touch "$PUB/docs/.nojekyll"
 # CNAME is written by tools/seo.js (from SITE_URL) into site/ and mirrored above; verify it is exactly one line
 test "$(wc -l < "$PUB/docs/CNAME")" = 1 && test -s "$PUB/docs/CNAME"
+# IndexNow: record changed URLs (no network). After push + deploy run: node tools/indexnow.js --submit
+node "$SRC/tools/indexnow.js"
 echo "synced to $PUB (docs/CNAME: $(cat "$PUB/docs/CNAME"))"

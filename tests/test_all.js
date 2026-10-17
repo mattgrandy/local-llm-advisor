@@ -153,6 +153,26 @@ assert(Sub.issueUrl({ github_issue: { repo: "me/repo" } }, v.clean).startsWith("
   for (const f of fs4.readdirSync(rt).filter(f => f.endsWith(".html") && f !== "index.html")) { const h = fs4.readFileSync(rt + "/" + f, "utf8"), a = h.indexOf('data-placement="v2"'); if (a < 0) continue; n++;
     assert(a < h.indexOf('<section class="card"><h2>Best for') && a > h.indexOf('class="stats"') && (h.match(/data-affiliate="amazon"/g) || []).length === 1, "price box after stats, before results, once: " + f); }
   assert(n >= 20, "boxes on hardware pages: " + n); }
+{ // SEO pages: programmatic landing pages, structured data, sitemap lastmod, IndexNow
+  const fs5 = require("fs"), p5 = require("path"), root = p5.join(__dirname, "..", "site"), rd = f => fs5.readFileSync(p5.join(root, f), "utf8");
+  const tiers = [8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256, 512], md = JSON.parse(rd("data/models.json")).models;
+  const types = h => (h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g) || []).map(x => JSON.parse(x.replace(/<[^>]+>/g, "")));
+  const sigs = new Set();
+  for (const n of tiers) { const h = rd(`vram/${n}gb.html`); assert(h.includes("<h1>Best local LLMs for " + n + "GB VRAM</h1>"), "vram h1 " + n); const t = types(h).map(o => o["@type"]); assert(t.includes("BreadcrumbList") && t.includes("FAQPage"), "ld on vram " + n); assert(h.split(/\s+/).length > 600, "vram content " + n); sigs.add(h.match(/<main[\s\S]*<\/main>/)[0].replace(new RegExp(n + "\\s?(GB|gb)", "g"), "N")); }
+  assert(sigs.size === tiers.length, "vram tables are distinct: " + sigs.size);
+  const msig = new Set();
+  for (const m of md) { const slug = m.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""), h = rd(`models/${slug}.html`); assert(h.includes(m.name) && types(h).some(o => o["@type"] === "FAQPage"), "model page " + slug); msig.add(h.match(/<tbody>[\s\S]*?<\/tbody>/)[0]); }
+  assert(msig.size === md.length, "model tables distinct");
+  const lbh = rd("leaderboard.html"), csv = rd("data/leaderboard.csv").trim().split("\n"); assert(types(lbh).some(o => o["@type"] === "Dataset" && o.license && o.distribution[0].contentUrl.endsWith("/data/leaderboard.csv")), "Dataset ld"); assert(csv.length > 200 && /^hardware_id,/.test(csv[0]) && (lbh.match(/<tr>/g) || []).length === csv.length, "leaderboard rows match csv " + csv.length);
+  const home = rd("index.html"), hwp = rd("hardware/rtx-4090-24gb.html");
+  assert(home.includes('href="vram/24gb.html"') && home.includes('href="models/gpt-oss-120b.html"') && home.includes('href="leaderboard.html"') && hwp.includes('href="../vram/24gb.html"') && hwp.includes('href="../models/') && types(hwp).some(o => o["@type"] === "FAQPage") && types(hwp).some(o => o["@type"] === "BreadcrumbList"), "internal links + hardware ld");
+  assert(types(home).filter(o => o["@type"] === "WebSite").length === 1 && types(hwp).filter(o => o["@type"] === "WebSite").length === 0, "WebSite only on home");
+  for (const f of fs5.readdirSync(root, { recursive: true }).filter(f => f.endsWith(".html"))) for (const a of rd(f).match(/<a [^>]*amazon\.com[^>]*>/g) || []) assert(/rel="sponsored noopener nofollow"/.test(a), "amazon link sponsored in " + f);
+  const sm = rd("sitemap.xml"); assert((sm.match(/<loc>/g) || []).length >= 58 && sm.includes("/leaderboard.html") && sm.includes("/vram/24gb.html") && sm.includes("/models/index.html"), "sitemap lists new pages");
+  const key = fs5.readFileSync(p5.join(__dirname, "..", "tools", "indexnow-key.txt"), "utf8").trim(); assert(/^[0-9a-f]{32}$/.test(key) && rd(key + ".txt").trim() === key, "indexnow key file");
+  const cp = require("child_process"), lmf = p5.join(__dirname, "..", "tools", "lastmod.json"), before = fs5.readFileSync(lmf, "utf8"); // regenerate: nothing changed => lastmod map unchanged
+  cp.execFileSync("node", [p5.join(__dirname, "..", "tools", "generate_pages.js")], { stdio: "ignore" }); assert.strictEqual(fs5.readFileSync(lmf, "utf8"), before, "lastmod stable when content is unchanged");
+}
 console.log("ALL TESTS PASSED");
 
 // ---- affiliate links + disclosure (Amazon Associates rules)

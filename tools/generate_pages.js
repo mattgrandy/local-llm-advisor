@@ -14,6 +14,18 @@ const L = require("./layout.js");
 const AQ = L.affiliateQueries(data.hardware);
 const bcls = sh => sh === "measured" ? "measured" : sh === "estimated" ? "estimated" : "scaled";
 const ANAME = {};
+const SEOP = require("./generate_seo_pages.js");
+function related(t, hwr, input) {
+  const r = A.recommend(input, data, { use: "all", ctx: CTX, kvq: "f16" }), fits = r.results.filter(p => p.mode === "gpu"), top = fits.slice().sort((a, b) => (b.tps || 0) - (a.tps || 0)).slice(0, 5);
+  const tier = SEOP.TIERS.reduce((b, n) => Math.abs(n - hwr.vram) < Math.abs(b - hwr.vram) ? n : b, SEOP.TIERS[0]);
+  const idx = data.hardware.targets.findIndex(x => x.slug === t.slug), near = [data.hardware.targets[idx - 1], data.hardware.targets[idx + 1]].filter(Boolean);
+  const big = fits.slice().sort((a, b) => b.model.params_b - a.model.params_b)[0], fastest = top[0];
+  const faq = [[`What is the best local LLM for ${t.title}?`, fastest ? `Of the ${fits.length} models that fit fully at 16k context, ${esc(fastest.model.name)} ${esc(fastest.quantLabel)} is the fastest at ~${fastest.tps ? Math.round(fastest.tps) : "?"} tok/s (${esc(A.speedInfo(fastest).short)}); the largest is ${esc(big.model.name)} ${esc(big.quantLabel)}.` : "No model in the dataset fits fully; see the offload options above."],
+    [`How much memory can ${t.title} use for a model?`, `About ${hwr.pool.toFixed(1)} GB usable for the model and KV cache, with ${hwr.gpuBw} GB/s memory bandwidth.`],
+    [`Can ${t.title} run long contexts?`, "See the long-context table above: it lists the largest context whose KV cache fits next to the weights for every model, up to 1M tokens where the model supports it."]];
+  return `<section class="card" id="related"><h2>Related</h2><p>${top.length ? "Models that fit fully, fastest first: " + top.map(p => `<a href="../models/${SEOP.slugify(p.model.name)}.html">${esc(p.model.name)}</a>`).join(" &middot; ") + "." : ""}</p><p>Other hardware with a similar memory size: <a href="../vram/${tier}gb.html">${tier} GB tier</a>${near.length ? " &middot; " + near.map(n => `<a href="${n.slug}.html">${esc(n.title)}</a>`).join(" &middot; ") : ""} &middot; <a href="index.html">all hardware</a> &middot; <a href="../leaderboard.html">leaderboard</a></p></section>
+<section class="card" id="faq"><h2>FAQ</h2>${faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${a}</p></details>`).join("")}</section>`;
+}
 function page(t) {
   const input = { kind: t.kind, device: t.device, label: t.config ? (data.hardware.apple_configs.find(c => c.id === t.config) || {}).name : undefined, count: t.count, memory_gb: t.memory_gb, ram_gb: t.ram_gb, ram_type: t.ram_type };
   let hwr, sections = "";
@@ -62,9 +74,10 @@ ${stats}
 ${L.affiliateBox(t, AQ)}
 <div class="slot" data-slot="sponsor-top"><span>Sponsor slot. No sponsor yet and no link.</span></div>
 ${sections}
+${related(t, hwr, input)}
 <p><a class="btn" href="../index.html?${q}">Open the interactive advisor with this hardware &rarr;</a></p>
 <p class="mut">Speeds marked <span class="badge measured">measured</span> are medians of real runs (short-context generation) from <a href="../data-sources.html">these sources</a>; <span class="badge scaled">scaled from measured</span> means a measurement of a same-size or same-model-different-quant run, scaled by bytes read; <span class="badge estimated">estimated</span> comes from memory bandwidth (spec source: <a href="${hwr.source_url}" rel="noopener">${esc(hwr.source_url)}</a>)${hwr.eff ? ` &times; an efficiency factor of ${hwr.eff.toFixed(2)} ${esc(hwr.effSource)}` : ""}. ${nmeas ? nmeas + " measured data point" + (nmeas > 1 ? "s" : "") + " on file for this hardware" : "No measured data on file for this hardware yet"} &middot; <a href="../submit.html">submit your benchmark</a>. ${t.kind === "apple" || t.kind === "unified" ? "Memory size on this page is an example configuration; check what your machine has. " : "System RAM here is an example (" + t.ram_gb + " GB, " + t.ram_type + "). "}Model data last verified ${data.models.generated}. Ranking = fits and fast enough first, then larger; not a quality benchmark.</p>
-<script src="../hwtable.js?v=20261016f"></script>
+<script src="../hwtable.js?v=20261016g"></script>
 <p class="mut">Page generated ${new Date().toISOString().slice(0, 10)} by tools/generate_pages.js</p></main>` + L.footer("../");
 }
 
@@ -75,7 +88,7 @@ for (const t of data.hardware.targets) {
   const hwr0 = A.recommend({ kind: t.kind, device: t.device, count: t.count, memory_gb: t.memory_gb, ram_gb: t.ram_gb, ram_type: t.ram_type }, data, { use: "chat", ctx: CTX, kvq: "f16" }).hwr;
   index.push(`<a class="hw" style="animation-delay:${index.length * 35}ms" href="${t.slug}.html"><span class="ic">${L.ICON[t.kind] || L.ICON.gpu}</span><b>${esc(t.title)}</b><span class="badges"><span class="badge plain">${KLABEL[t.kind] || t.kind}</span><span class="badge plain">${hwr0.pool.toFixed(0)} GB usable</span><span class="badge plain">${hwr0.gpuBw} GB/s</span></span><span class="go">See recommendations &rarr;</span></a>`);
 }
-fs.writeFileSync(path.join(out, "index.html"), L.head("../", "Local LLM recommendations by hardware | Local LLM Advisor", "Best local LLMs for popular GPUs, Macs and unified-memory PCs, with memory-fit math and copy-paste commands.") + L.nav("../", "hw") + `<main class="wrap"><header class="page-hero"><div class="crumbs"><a href="../index.html">Advisor</a> / Hardware</div><h1>Local LLM recommendations by hardware</h1><p>${data.hardware.targets.length} popular setups, each with the best models for coding, chat and vision, and commands to run them.</p></header><div class="grid">${index.join("")}</div></main>` + L.footer("../"));
+fs.writeFileSync(path.join(out, "index.html"), L.head("../", "Local LLM recommendations by hardware | Local LLM Advisor", "Best local LLMs for popular GPUs, Macs and unified-memory PCs, with memory-fit math and copy-paste commands.") + L.nav("../", "hw") + `<main class="wrap"><header class="page-hero"><div class="crumbs"><a href="../index.html">Advisor</a> / Hardware</div><h1>Local LLM recommendations by hardware</h1><p>${data.hardware.targets.length} popular setups, each with the best models for coding, chat and vision, and commands to run them.</p></header><div class="grid">${index.join("")}</div><p class="mut">Also: <a href="../vram/index.html">best models by VRAM tier</a> &middot; <a href="../models/index.html">model requirements</a> &middot; <a href="../leaderboard.html">benchmark leaderboard</a></p></main>` + L.footer("../"));
 if (process.env.SITE_URL) {
   const base = process.env.SITE_URL.replace(/\/$/, "");
   const urls = ["/index.html", "/hardware/index.html", ...data.hardware.targets.map(t => `/hardware/${t.slug}.html`)];
@@ -110,6 +123,8 @@ console.log("generated", data.hardware.targets.length, "pages in", out);
   }
 }
 
+const SEOR = SEOP.run({ A, data, L, esc, SITE });
+console.log("seo pages:", SEOR.vram.length, "vram,", SEOR.models.length, "models, leaderboard rows", SEOR.lbRows);
 fs.writeFileSync(path.join(SITE, "affiliate.js"), L.affiliateJs(data.hardware));
 
 // ---- SEO pass (canonical/OG/JSON-LD, sitemap.xml, robots.txt, CNAME); SITE_URL defaults to https://localllmadvisor.com

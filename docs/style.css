@@ -141,3 +141,6 @@ pre{margin:0;padding:12px 14px;background:var(--code);border:1px solid var(--bd)
 .card.aff.aff-v2{border-color:var(--acc);background:linear-gradient(135deg,var(--glow),transparent 70%),var(--card);padding:16px 18px}
 .card.aff.aff-v2 .btn{font-size:1rem;padding:11px 20px}
 .card.aff.aff-v2 b{font-size:1.05rem}
+
+#faq details{border-top:1px solid var(--bd);padding:10px 0}#faq summary{cursor:pointer;font-weight:600}#faq details p{margin:8px 0 0;color:var(--mut)}
+#browse h3{margin:14px 0 4px;font-size:.95rem}#related p{margin:6px 0}

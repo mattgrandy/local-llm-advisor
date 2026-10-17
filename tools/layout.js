@@ -7,7 +7,7 @@ const ICON = {
 };
 // Analytics config: change the website id (or set to "" to disable analytics everywhere) here only.
 const ANALYTICS = { websiteId: "43daf16b-1b1a-4306-93fc-7c1e00fa0db9", src: "https://cloud.umami.is/script.js", doNotTrack: true };
-const VER = "20261016f";
+const VER = "20261016g";
 // Amazon Associates config: change the tracking tag (or set to "" to turn all Amazon links off) here only.
 const AFFILIATE = { amazonTag: "localllmadvis-20", disclosure: "As an Amazon Associate I earn from qualifying purchases." };
 const amazonUrl = q => `https://www.amazon.com/s?k=${encodeURIComponent(q).replace(/%20/g, "+")}&tag=${AFFILIATE.amazonTag}`;
@@ -47,7 +47,7 @@ ${a("hardware/index.html", "Hardware", "hw")}${a("submit.html", "Submit benchmar
 }
 function footer(d) {
   return `<footer class="site"><div class="wrap"><div class="cols"><div><b style="color:var(--fg)">Local LLM Advisor</b><p>Free, no sign-up, no cookies. Sponsored and affiliate links are labelled. ${AFFILIATE.disclosure} <a href="${d}data-sources.html#affiliate-disclosure">Disclosure</a>. Model facts link to their source and show a last-verified date.</p><p class="mut" id="privacy">Privacy: anonymous, cookie-free analytics (Umami) count visits and which options are used. No personal data, no search text, and Do Not Track is respected. <a href="${d}data-sources.html#privacy">Details</a></p></div>
-<div><h4>Explore</h4><ul><li><a href="${d}index.html">Advisor</a></li><li><a href="${d}hardware/index.html">All hardware</a></li></ul></div>
+<div><h4>Explore</h4><ul><li><a href="${d}index.html">Advisor</a></li><li><a href="${d}hardware/index.html">All hardware</a></li><li><a href="${d}vram/index.html">By VRAM</a></li><li><a href="${d}models/index.html">Models</a></li><li><a href="${d}leaderboard.html">Leaderboard</a></li></ul></div>
 <div><h4>Data</h4><ul><li><a href="${d}submit.html">Submit a benchmark</a></li><li><a href="${d}data-sources.html">Sources &amp; attribution</a></li><li><a href="https://github.com/mattgrandy/local-llm-advisor" rel="noopener">GitHub</a></li></ul></div></div></div></footer></body></html>`;
 }
 const slot = text => `<div class="slot" data-slot="${text.slot}"><span>${esc(text.t)}</span></div>`;
