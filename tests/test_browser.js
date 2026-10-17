@@ -186,9 +186,14 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
       assert(e1.some(x => x.startsWith("filter_changed:") && /"search"/.test(x)), "search filter reported by name"); assert(!e1.join().includes("secret-search-text"), "search text never sent");
       await pg.selectOption("#device", { value: "studio-m4-max-40" }); await sleep(100);
       { const ah = await pg.locator("#results aside.aff-v2 a[data-affiliate=amazon]").first().getAttribute("href").catch(() => null); assert(ah && /^https:\/\/www\.amazon\.com\/s\?k=.+&tag=localllmadvis-20$/.test(ah), "advisor amazon link: " + ah); assert((await pg.locator("#results aside.aff-v2").innerText()).includes("As an Amazon Associate I earn from qualifying purchases."), "disclosure near advisor link"); }
+      { const c = pg.locator("#results aside.cloud a[data-sponsor=vast]"); assert(await c.count() === 1 && await pg.locator("#results aside.cloud a[data-sponsor=runpod][href='https://runpod.io?ref=w3uudui6'][rel='sponsored noopener nofollow'][target=_blank]").count() === 1, "one cloud slot (vast + runpod) on advisor results");
+        assert.strictEqual(await c.getAttribute("href"), "https://cloud.vast.ai/?ref_id=749586"); assert(/sponsored noopener nofollow/.test(await c.getAttribute("rel")) && await c.getAttribute("target") === "_blank");
+        assert(await pg.$eval("#results aside.cloud", e => e.previousElementSibling && e.previousElementSibling.matches("aside.aff-v2") && /referral credit if you sign up through these links/.test(e.textContent)), "cloud box directly below Amazon box with disclosure");
+        await pg.evaluate(() => { window.__ev.length = 0; document.querySelector("#results aside.cloud a").addEventListener("click", e => e.preventDefault()); }); await hit(c);
+        assert.deepStrictEqual(await evs(), ['sponsor_click:{"sponsor":"vast","partner":"vast","hardware":"studio-m4-max-40","slot":"advisor-results"}']); }
       await pg.evaluate(() => { window.__ev.length = 0; document.querySelector("#results").insertAdjacentHTML("beforebegin", '<a id="aff" href="#x" data-affiliate="acme" data-slot-id="s1">a</a><a id="spn" href="#x" data-sponsor="corp" data-slot-id="s2">s</a>'); });
       await hit(pg.locator("#aff")); await hit(pg.locator("#spn")); const e2 = await evs();
-      assert.deepStrictEqual(e2, ['affiliate_click:{"partner":"acme","merchant":"acme","hardware":"","slot":"s1","placement":"v1"}', 'sponsor_click:{"sponsor":"corp","slot":"s2"}']);
+      assert.deepStrictEqual(e2, ['affiliate_click:{"partner":"acme","merchant":"acme","hardware":"","slot":"s1","placement":"v1"}', 'sponsor_click:{"sponsor":"corp","partner":"corp","hardware":"","slot":"s2"}']);
       await pg.goto(base + "submit.html", { waitUntil: "networkidle" }); await pg.evaluate(() => { window.__ev.length = 0; });
       await pg.evaluate(() => document.getElementById("f").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }))); await sleep(50);
       assert((await evs()).some(x => x.startsWith("benchmark_submit_clicked:")), "benchmark_submit_clicked on submit page");

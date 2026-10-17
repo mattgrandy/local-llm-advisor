@@ -192,4 +192,94 @@ console.log("ALL TESTS PASSED");
   assert2(links >= 20, "expected hardware page links, got " + links);
   for (const s of ["mac-studio-m5-ultra-256gb", "mac-studio-m5-ultra-512gb", "mac-mini-m6-32gb"]) assert2(!/amazon\.com/.test(fs2.readFileSync(path2.join(root, "hardware", s + ".html"), "utf8")), "unreleased hardware must not link: " + s);
   console.log("affiliate checks ok:", links, "static links");
+  // cloud GPU referral slot (Vast.ai)
+  const walk = d => fs2.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(path2.join(d, e.name)) : e.name.endsWith(".html") ? [path2.join(d, e.name)] : []);
+  const all = walk(root); let cl = 0; const kinds = new Set();
+  const live = Lay.cloudPartners();
+  assert2(live.length === 2 && live[0].id === "vast" && live[0].url === "https://cloud.vast.ai/?ref_id=749586" && live[1].id === "runpod" && live[1].url === "https://runpod.io?ref=w3uudui6", "vast + runpod enabled");
+  for (const f of all) {
+    const h = fs2.readFileSync(f, "utf8");
+    const nv = (h.match(/data-sponsor="vast"/g) || []).length, nr = (h.match(/data-sponsor="runpod"/g) || []).length; assert2(nv === nr, "vast and runpod always shown together in " + f);
+    for (const m of h.matchAll(/<a [^>]*data-sponsor="[^"]*"[^>]*>/g)) {
+      cl++; assert2(/href="https:\/\/cloud\.vast\.ai\/\?ref_id=749586"/.test(m[0]) && /data-sponsor="vast"/.test(m[0]) || /href="https:\/\/runpod\.io\?ref=w3uudui6"/.test(m[0]) && /data-sponsor="runpod"/.test(m[0]), "bad cloud href " + m[0]);
+      assert2(/rel="sponsored noopener nofollow"/.test(m[0]) && /target="_blank"/.test(m[0]) && /data-slot-id="[a-z-]+"/.test(m[0]) && /data-hardware="[^"]+"/.test(m[0]), "bad cloud attrs " + m[0]);
+      assert2(!/\$\d/.test(m[0]), "no price"); kinds.add(/data-slot-id="([a-z-]+)"/.exec(m[0])[1]);
+      assert2(h.includes("We may earn a referral credit if you sign up through these links."), "cloud disclosure near link in " + f);
+    }
+  }
+  for (const k of ["hardware-page", "vram-page", "model-page"]) assert2(kinds.has(k), "missing cloud slot kind " + k);
+  assert2(cl >= 60, "cloud links " + cl);
+  const ds = fs2.readFileSync(path2.join(root, "data-sources.html"), "utf8");
+  assert2(/id="affiliate-disclosure"[\s\S]*Vast\.ai[\s\S]*referral credit/.test(ds) && /id="privacy"[\s\S]*cloud GPU rental link/.test(ds), "data-sources documents cloud referral + privacy");
+  const aj = fs2.readFileSync(path2.join(root, "affiliate.js"), "utf8"); assert2(/"cloud":\{[^}]*"partners":\[\{"id":"vast"/.test(aj) && /"id":"runpod"/.test(aj), "affiliate.js cloud config");
+  console.log("cloud slot checks ok:", cl);
+}
+// no empty sponsor/ad placeholders rendered; slot() config-driven
+{
+  const L2 = require("../tools/layout.js"), fs6 = require("fs"), p6 = require("path");
+  assert.strictEqual(L2.slot("sponsor-top"), "", "empty slot must render nothing");
+  L2.SPONSOR_SLOTS["t"] = { url: "https://example.com/x", text: "Sponsored" }; assert(/data-sponsor="t"/.test(L2.slot("t"))); delete L2.SPONSOR_SLOTS["t"];
+  let n = 0;
+  for (const f of fs6.readdirSync(S, { recursive: true }).filter(f => f.endsWith(".html"))) {
+    const h = fs6.readFileSync(p6.join(S, f), "utf8"); n++;
+    assert(!/class="slot"|No sponsor yet|Sponsor slot|Affiliate box|No links yet|\{\{SLOT/i.test(h), "placeholder in " + f);
+  }
+  console.log("no placeholder slots in", n, "pages");
+}
+
+// ---- growth pages: compare, can-run, blog, embed (all numbers from the data files; no prices; CSP; links)
+{
+  const fs7 = require("fs"), p7 = require("path"), root = S, rd = f => fs7.readFileSync(p7.join(root, f), "utf8");
+  const types = h => (h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g) || []).map(x => JSON.parse(x.replace(/<[^>]+>/g, "")));
+  const sm = rd("sitemap.xml"), inSm = rel => sm.includes("/" + rel + "</loc>");
+  const noindex = h => /<meta name="robots" content="noindex/.test(h);
+  const text = h => h.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<svg[\s\S]*?<\/svg>/g, "").replace(/<[^>]+>/g, " ");
+  // compare
+  const cmp = fs7.readdirSync(p7.join(root, "compare")).filter(f => f !== "index.html"); assert(cmp.length >= 14 && cmp.length <= 20, "compare pages " + cmp.length);
+  const sigs7 = new Set(), hubC = rd("compare/index.html"); let amazonBoxes = 0;
+  for (const f of cmp) {
+    const h = rd("compare/" + f), t = types(h).map(o => o["@type"]); assert(/-vs-/.test(f) && t.includes("BreadcrumbList") && t.includes("FAQPage") && !t.includes("WebSite"), "compare ld " + f);
+    assert(h.includes('<section class="card" id="faq">') && h.includes("Price tier note") && h.includes("Verdict from the numbers") && h.includes('href="index.html"') && hubC.includes(f), "compare sections/hub " + f);
+    assert(h.includes(Lay_AFF()) && /class="badge (measured|scaled|estimated)"/.test(h), "disclosure + labelled speeds " + f);
+    sigs7.add(h.match(/<tbody>[\s\S]*?<\/tbody>/)[0]); amazonBoxes += (h.match(/data-affiliate="amazon"/g) || []).length;
+    assert(!/\$\s?\d/.test(text(h)), "no price claims " + f); assert(inSm("compare/" + f) === !noindex(h), "sitemap matches noindex " + f);
+    assert((h.match(/data-sponsor="vast"/g) || []).length === (h.match(/data-sponsor="runpod"/g) || []).length);
+  }
+  assert(sigs7.size === cmp.length, "compare fit tables are distinct"); assert(amazonBoxes >= cmp.length, "amazon boxes on compare pages " + amazonBoxes);
+  function Lay_AFF() { return require("../tools/layout.js").AFFILIATE.disclosure; }
+  // can-run
+  const cr = fs7.readdirSync(p7.join(root, "can-run")).filter(f => f !== "index.html"); assert(cr.length >= 15 && cr.length <= 20, "can-run cap <= 20: " + cr.length);
+  const csigs = new Set(); for (const f of cr) { const h = rd("can-run/" + f), t = types(h).map(o => o["@type"]); assert(t.includes("BreadcrumbList") && t.includes("FAQPage"), "can-run ld " + f);
+    assert(/<b>[\d.]+<\/b><span>generation tok\/s/.test(h) && /class="badge|Origin/.test(h) || /own measurement|public runs|public/.test(h), "measured data on " + f); assert(inSm("can-run/" + f) === !noindex(h)); assert(!/\$\s?\d/.test(text(h)), "no price " + f); csigs.add(h.match(/<div class="stats">[\s\S]*?<\/div><\/div>/)[0]); }
+  assert(csigs.size === cr.length, "can-run pages carry distinct numbers");
+  { // every can-run page's headline speed is backed by a measured entry or one of our own rows
+    const own = fs7.readdirSync(p7.join(root, "..", "data/benchmarks/own")).filter(f => f.endsWith(".json")).flatMap(f => JSON.parse(fs7.readFileSync(p7.join(root, "..", "data/benchmarks/own", f)))), tgs = new Set(own.map(r => String(Math.round(r.tg_tps * 10) / 10)));
+    for (const e of Object.values(data.measured.entries).flat()) tgs.add(String(Math.round(e.tg * 10) / 10));
+    for (const f of cr) { const v = rd("can-run/" + f).match(/<div class="stat"><b>([\d.]+)<\/b><span>generation tok\/s/)[1]; assert(tgs.has(v) || tgs.has(String(+v)), "headline speed exists in data: " + f + " " + v); } }
+  // blog
+  const post = rd("blog/state-of-local-llm-hardware-oct-2026.html"), bt = types(post); const art = bt.find(o => o["@type"] === "Article");
+  assert(art && art.datePublished === "2026-10-17" && art.author.name === "Matt" && bt.some(o => o["@type"] === "BreadcrumbList") && inSm("blog/state-of-local-llm-hardware-oct-2026.html") && inSm("blog/index.html"), "article ld + sitemap");
+  assert((post.match(/<svg class="chart"/g) || []).length >= 5 && /CC BY 4\.0/.test(post) && /Data: .*Local LLM Advisor \(localllmadvisor\.com\)/.test(post) && /id="methods"/.test(post) && !/\$\s?\d/.test(text(post)), "blog charts/license/methods/no prices");
+  assert(post.includes(`<b>${data.measured.counts.rows_used}</b><span>measured rows used`) && post.includes(`<b>${data.measured.counts.points}</b><span>hardware / model / quant points`), "blog headline numbers equal data counts");
+  assert(rd("blog/index.html").includes("state-of-local-llm-hardware-oct-2026.html"));
+  // embed
+  const hw7 = data.hardware.targets, badge = s => rd("embed/badges/" + s + ".svg");
+  for (const t of hw7) { const b = badge(t.slug); assert(/^<svg /.test(b) && b.includes("Recommended models for " + t.title.replace(/&/g, "&amp;")) && b.includes("Local LLM Advisor") && !/https?:\/\//.test(b.replace("http://www.w3.org/2000/svg", "")), "badge " + t.slug);
+    const c = rd("embed/card/" + t.slug + ".html"); assert(noindex(c) && !/<script/i.test(c) && /default-src 'none'/.test(c) && !/umami|amazon\.com|vast\.ai|runpod/.test(c) && c.includes("https://localllmadvisor.com/hardware/" + t.slug + ".html") && !inSm("embed/card/" + t.slug + ".html"), "card " + t.slug); }
+  const emb = rd("embed/index.html"); assert(inSm("embed/index.html") && emb.includes("https://localllmadvisor.com/embed/badges/rtx-4090-24gb.svg") && emb.includes("&lt;iframe src=") && emb.includes("Data: Local LLM Advisor") && (emb.match(/\/embed\/badges\/[a-z0-9-]+\.svg<\/code>/g) || []).length === hw7.length, "embed page snippets");
+  assert(!/data-affiliate|data-sponsor|amazon\.com/.test(emb.replace(/Some of the pages[^<]*/, "")), "embed page has no affiliate links");
+  // site-wide: CSP present everywhere, scripts only self/umami, nothing third-party loaded, internal links resolve
+  const all = fs7.readdirSync(root, { recursive: true }).filter(f => f.endsWith(".html"));
+  const csp = require("../tools/layout.js"); let links7 = 0;
+  for (const f of all) { const h = rd(f); assert(/Content-Security-Policy/.test(h), "csp " + f);
+    for (const m of h.matchAll(/<script[^>]*\ssrc="([^"]+)"/g)) assert(!/^https?:/.test(m[1]) || /^https:\/\/cloud\.umami\.is\//.test(m[1]), "script src " + m[1] + " in " + f);
+    for (const m of h.matchAll(/<script(?![^>]*(src=|type="application\/(ld\+)?json"))[^>]*>/g)) assert(false, "inline script in " + f);
+    for (const m of h.matchAll(/<(?:img|iframe|link)[^>]*\s(?:src|href)="(https?:[^"]+)"/g)) assert(/^https:\/\/localllmadvisor\.com\//.test(m[1]) || /canonical/.test(m[0]) , "external resource " + m[1] + " in " + f);
+    if (f.startsWith("embed/card/") || f.startsWith("embed/badges")) continue;
+    for (const m of h.matchAll(/<a [^>]*href="([^"#?]+)(?:[#?][^"]*)?"/g)) { if (/^(https?:|mailto:)/.test(m[1])) continue; links7++; const tgt = p7.join(root, p7.dirname(f), m[1]); assert(fs7.existsSync(tgt) || fs7.existsSync(p7.join(tgt, "index.html")), "broken link " + m[1] + " in " + f); } }
+  for (const f of all) { const h = rd(f); if (noindex(h)) assert(!inSm(f), "noindex page in sitemap " + f); }
+  assert(/compare\/index\.html/.test(rd("index.html")) || /compare\/index\.html/.test(rd("hardware/index.html")), "compare linked from hub pages");
+  for (const f of ["index.html", "hardware/rtx-4090-24gb.html", "vram/24gb.html"]) { const h = rd(f); assert(/href="(\.\.\/)?compare\/index\.html"/.test(h) && /href="(\.\.\/)?blog\/index\.html"/.test(h) && /href="(\.\.\/)?embed\/index\.html"/.test(h), "footer links " + f); }
+  assert(/compare\/rtx-3090-24gb-vs-rtx-4090-24gb\.html/.test(rd("hardware/rtx-4090-24gb.html")) && /can-run\/gpt-oss-20b-on-rtx-4090-24gb\.html/.test(rd("hardware/rtx-4090-24gb.html")), "hardware page links to compare + can-run");
+  console.log("growth pages ok: compare", cmp.length, "can-run", cr.length, "badges", hw7.length, "internal links checked", links7);
 }

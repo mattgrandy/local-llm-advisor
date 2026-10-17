@@ -15,6 +15,10 @@ const AQ = L.affiliateQueries(data.hardware);
 const bcls = sh => sh === "measured" ? "measured" : sh === "estimated" ? "estimated" : "scaled";
 const ANAME = {};
 const SEOP = require("./generate_seo_pages.js");
+const EXTRA = require("./generate_extra_pages.js");
+const OWN_DIR = path.join(__dirname, "..", "data", "benchmarks", "own");
+const ownRows = fs.existsSync(OWN_DIR) ? fs.readdirSync(OWN_DIR).filter(f => f.endsWith(".json")).sort().flatMap(f => JSON.parse(fs.readFileSync(path.join(OWN_DIR, f), "utf8"))) : [];
+EXTRA.init({ A, data, esc, L: require("./layout.js"), ownRows });
 function related(t, hwr, input) {
   const r = A.recommend(input, data, { use: "all", ctx: CTX, kvq: "f16" }), fits = r.results.filter(p => p.mode === "gpu"), top = fits.slice().sort((a, b) => (b.tps || 0) - (a.tps || 0)).slice(0, 5);
   const tier = SEOP.TIERS.reduce((b, n) => Math.abs(n - hwr.vram) < Math.abs(b - hwr.vram) ? n : b, SEOP.TIERS[0]);
@@ -23,8 +27,13 @@ function related(t, hwr, input) {
   const faq = [[`What is the best local LLM for ${t.title}?`, fastest ? `Of the ${fits.length} models that fit fully at 16k context, ${esc(fastest.model.name)} ${esc(fastest.quantLabel)} is the fastest at ~${fastest.tps ? Math.round(fastest.tps) : "?"} tok/s (${esc(A.speedInfo(fastest).short)}); the largest is ${esc(big.model.name)} ${esc(big.quantLabel)}.` : "No model in the dataset fits fully; see the offload options above."],
     [`How much memory can ${t.title} use for a model?`, `About ${hwr.pool.toFixed(1)} GB usable for the model and KV cache, with ${hwr.gpuBw} GB/s memory bandwidth.`],
     [`Can ${t.title} run long contexts?`, "See the long-context table above: it lists the largest context whose KV cache fits next to the weights for every model, up to 1M tokens where the model supports it."]];
-  return `<section class="card" id="related"><h2>Related</h2><p>${top.length ? "Models that fit fully, fastest first: " + top.map(p => `<a href="../models/${SEOP.slugify(p.model.name)}.html">${esc(p.model.name)}</a>`).join(" &middot; ") + "." : ""}</p><p>Other hardware with a similar memory size: <a href="../vram/${tier}gb.html">${tier} GB tier</a>${near.length ? " &middot; " + near.map(n => `<a href="${n.slug}.html">${esc(n.title)}</a>`).join(" &middot; ") : ""} &middot; <a href="index.html">all hardware</a> &middot; <a href="../leaderboard.html">leaderboard</a></p></section>
+  return `<section class="card" id="related"><h2>Related</h2><p>${top.length ? "Models that fit fully, fastest first: " + top.map(p => `<a href="../models/${SEOP.slugify(p.model.name)}.html">${esc(p.model.name)}</a>`).join(" &middot; ") + "." : ""}</p><p>Other hardware with a similar memory size: <a href="../vram/${tier}gb.html">${tier} GB tier</a>${near.length ? " &middot; " + near.map(n => `<a href="${n.slug}.html">${esc(n.title)}</a>`).join(" &middot; ") : ""} &middot; <a href="index.html">all hardware</a> &middot; <a href="../leaderboard.html">leaderboard</a></p>${EXTRA.compareLinks(t.slug, "../").length ? `<p>Compare: ${EXTRA.compareLinks(t.slug, "../").join(" &middot; ")}</p>` : ""}${EXTRA.canrunLinks(t.slug, "../").length ? `<p>Measured speed pages: ${EXTRA.canrunLinks(t.slug, "../").join(" &middot; ")} (<a href="../can-run/index.html">all</a>)</p>` : ""}</section>
 <section class="card" id="faq"><h2>FAQ</h2>${faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${a}</p></details>`).join("")}</section>`;
+}
+function cloudNote(t, input, hwr) {
+  const r = A.recommend(input, data, { use: "all", ctx: CTX, kvq: "f16" }), M = data.models.models.length, nf = M - r.results.filter(p => p.mode === "gpu").length;
+  if (nf <= 0) return "";
+  return L.cloudBox({ slot: "hardware-page", hardware: t.slug, d: "../", why: `${nf} of ${M} models in our dataset do not fit ${hwr.name} fully at ${CTX / 1024}k context.` });
 }
 function page(t) {
   const input = { kind: t.kind, device: t.device, label: t.config ? (data.hardware.apple_configs.find(c => c.id === t.config) || {}).name : undefined, count: t.count, memory_gb: t.memory_gb, ram_gb: t.ram_gb, ram_type: t.ram_type };
@@ -72,12 +81,13 @@ function page(t) {
 <header class="page-hero"><div class="crumbs"><a href="../index.html">Advisor</a> / <a href="index.html">Hardware</a> / ${esc(t.title)}</div><h1>${esc(title)}</h1><p>${esc(hwr.name)}. Memory-fit math with KV cache, speeds labelled by how they were obtained, and commands you can paste.</p></header>
 ${stats}
 ${L.affiliateBox(t, AQ)}
-<div class="slot" data-slot="sponsor-top"><span>Sponsor slot. No sponsor yet and no link.</span></div>
+${cloudNote(t, input, hwr)}
+${L.slot("sponsor-top")}
 ${sections}
 ${related(t, hwr, input)}
 <p><a class="btn" href="../index.html?${q}">Open the interactive advisor with this hardware &rarr;</a></p>
 <p class="mut">Speeds marked <span class="badge measured">measured</span> are medians of real runs (short-context generation) from <a href="../data-sources.html">these sources</a>; <span class="badge scaled">scaled from measured</span> means a measurement of a same-size or same-model-different-quant run, scaled by bytes read; <span class="badge estimated">estimated</span> comes from memory bandwidth (spec source: <a href="${hwr.source_url}" rel="noopener">${esc(hwr.source_url)}</a>)${hwr.eff ? ` &times; an efficiency factor of ${hwr.eff.toFixed(2)} ${esc(hwr.effSource)}` : ""}. ${nmeas ? nmeas + " measured data point" + (nmeas > 1 ? "s" : "") + " on file for this hardware" : "No measured data on file for this hardware yet"} &middot; <a href="../submit.html">submit your benchmark</a>. ${t.kind === "apple" || t.kind === "unified" ? "Memory size on this page is an example configuration; check what your machine has. " : "System RAM here is an example (" + t.ram_gb + " GB, " + t.ram_type + "). "}Model data last verified ${data.models.generated}. Ranking = fits and fast enough first, then larger; not a quality benchmark.</p>
-<script src="../hwtable.js?v=20261016g"></script>
+<script src="../hwtable.js?v=20261017a"></script>
 <p class="mut">Page generated ${new Date().toISOString().slice(0, 10)} by tools/generate_pages.js</p></main>` + L.footer("../");
 }
 
@@ -88,7 +98,7 @@ for (const t of data.hardware.targets) {
   const hwr0 = A.recommend({ kind: t.kind, device: t.device, count: t.count, memory_gb: t.memory_gb, ram_gb: t.ram_gb, ram_type: t.ram_type }, data, { use: "chat", ctx: CTX, kvq: "f16" }).hwr;
   index.push(`<a class="hw" style="animation-delay:${index.length * 35}ms" href="${t.slug}.html"><span class="ic">${L.ICON[t.kind] || L.ICON.gpu}</span><b>${esc(t.title)}</b><span class="badges"><span class="badge plain">${KLABEL[t.kind] || t.kind}</span><span class="badge plain">${hwr0.pool.toFixed(0)} GB usable</span><span class="badge plain">${hwr0.gpuBw} GB/s</span></span><span class="go">See recommendations &rarr;</span></a>`);
 }
-fs.writeFileSync(path.join(out, "index.html"), L.head("../", "Local LLM recommendations by hardware | Local LLM Advisor", "Best local LLMs for popular GPUs, Macs and unified-memory PCs, with memory-fit math and copy-paste commands.") + L.nav("../", "hw") + `<main class="wrap"><header class="page-hero"><div class="crumbs"><a href="../index.html">Advisor</a> / Hardware</div><h1>Local LLM recommendations by hardware</h1><p>${data.hardware.targets.length} popular setups, each with the best models for coding, chat and vision, and commands to run them.</p></header><div class="grid">${index.join("")}</div><p class="mut">Also: <a href="../vram/index.html">best models by VRAM tier</a> &middot; <a href="../models/index.html">model requirements</a> &middot; <a href="../leaderboard.html">benchmark leaderboard</a></p></main>` + L.footer("../"));
+fs.writeFileSync(path.join(out, "index.html"), L.head("../", "Local LLM recommendations by hardware | Local LLM Advisor", "Best local LLMs for popular GPUs, Macs and unified-memory PCs, with memory-fit math and copy-paste commands.") + L.nav("../", "hw") + `<main class="wrap"><header class="page-hero"><div class="crumbs"><a href="../index.html">Advisor</a> / Hardware</div><h1>Local LLM recommendations by hardware</h1><p>${data.hardware.targets.length} popular setups, each with the best models for coding, chat and vision, and commands to run them.</p></header><div class="grid">${index.join("")}</div><p class="mut">Also: <a href="../vram/index.html">best models by VRAM tier</a> &middot; <a href="../models/index.html">model requirements</a> &middot; <a href="../leaderboard.html">benchmark leaderboard</a> &middot; <a href="../compare/index.html">compare hardware</a> &middot; <a href="../can-run/index.html">measured model pages</a></p></main>` + L.footer("../"));
 if (process.env.SITE_URL) {
   const base = process.env.SITE_URL.replace(/\/$/, "");
   const urls = ["/index.html", "/hardware/index.html", ...data.hardware.targets.map(t => `/hardware/${t.slug}.html`)];
@@ -109,10 +119,10 @@ console.log("generated", data.hardware.targets.length, "pages in", out);
 <section class="card"><h2>How &ldquo;measured&rdquo; and &ldquo;estimated&rdquo; work</h2><p class="mut">${esc(M.calibration.method)} Global default efficiency before calibration: ${M.calibration.global_assumption}.</p></section>
 <section class="card"><h2>Coverage by hardware</h2><div class="tw"><table><thead><tr><th>Hardware id</th><th>Data points</th><th>Sources</th></tr></thead><tbody>${rows}</tbody></table></div></section>
 <section class="card" id="data-license"><h2>Using our data</h2><p class="mut">Local LLM Advisor\'s own measurements and curated data are licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>. Please attribute as: <b>Data: <a href="https://localllmadvisor.com">Local LLM Advisor (localllmadvisor.com)</a></b>. Third-party rows keep their upstream licenses (see sources above). Code is MIT; see the <a href="https://github.com/mattgrandy/local-llm-advisor" rel="noopener">GitHub repo</a>.</p></section>
-<section class="card" id="affiliate-disclosure"><h2>Affiliate disclosure</h2><p class="mut">${L.AFFILIATE.disclosure} Some hardware links on this site go to Amazon search results and carry our Associates tracking tag; if you buy after clicking, we may earn a small commission at no extra cost to you. Links never change the recommendations, which come only from memory-fit math and benchmark data. We do not show Amazon prices; check the price on Amazon.</p></section>
-<section class="card" id="privacy"><h2>Privacy &amp; analytics</h2><p class="mut">This site uses <a href="https://umami.is" rel="noopener">Umami</a> Cloud for anonymous, cookie-free analytics: page views and which options are chosen (hardware type, device, use case, context length, sort and filter names, whether a command or link was copied, theme, and clicks on submit/sponsor/affiliate links, including which hardware an Amazon link was for). We never record what you type in search or the benchmark form, and no personal data is stored in events. Browsers that send Do Not Track are not counted, and blockers work fine; the site behaves the same either way.</p></section>
+<section class="card" id="affiliate-disclosure"><h2>Affiliate disclosure</h2><p class="mut">${L.AFFILIATE.disclosure} Some pages also show a \u201cRent a cloud GPU\u201d link to Vast.ai${L.cloudPartners().some(p => p.id === "runpod") ? " or RunPod" : ""}; ${L.AFFILIATE.cloud.disclosure.replace("this link", "these links")} These are referral links, it does not cost you extra, and we state no prices for it. Some hardware links on this site go to Amazon search results and carry our Associates tracking tag; if you buy after clicking, we may earn a small commission at no extra cost to you. Links never change the recommendations, which come only from memory-fit math and benchmark data. We do not show Amazon prices; check the price on Amazon.</p></section>
+<section class="card" id="privacy"><h2>Privacy &amp; analytics</h2><p class="mut">This site uses <a href="https://umami.is" rel="noopener">Umami</a> Cloud for anonymous, cookie-free analytics: page views and which options are chosen (hardware type, device, use case, context length, sort and filter names, whether a command or link was copied, theme, and clicks on submit/sponsor/affiliate links, including which hardware an Amazon or cloud GPU rental link was shown for). We never record what you type in search or the benchmark form, and no personal data is stored in events. Browsers that send Do Not Track are not counted, and blockers work fine; the site behaves the same either way.</p></section>
 <section class="card"><h2>Community submissions</h2><p class="mut">${M.counts.community} reviewed submissions, always shown as unverified. <a href="submit.html">Submit yours</a>.</p></section></main>` + L.footer(""));
-    fs.writeFileSync(path.join(SITE, "index.html"), L.head("", "Local LLM Advisor - which local LLM should you run on your hardware?", "Free tool: pick your GPU, Mac or RAM and get local LLM recommendations with memory-fit math (incl. KV cache), measured or estimated speed and copy-paste ollama / llama.cpp commands.") + L.nav("", "home") + fs.readFileSync(path.join(__dirname, "pages", "index.body.html"), "utf8") + L.footer("").replace(/<\/body><\/html>$/, "") + "</body></html>");
+    fs.writeFileSync(path.join(SITE, "index.html"), L.head("", "Local LLM Advisor - which local LLM should you run on your hardware?", "Free tool: pick your GPU, Mac or RAM and get local LLM recommendations with memory-fit math (incl. KV cache), measured or estimated speed and copy-paste ollama / llama.cpp commands.") + L.nav("", "home") + fs.readFileSync(path.join(__dirname, "pages", "index.body.html"), "utf8").replace(/\{\{SLOT:([a-z-]+)\}\}/g, (_, id) => L.slot(id)) + L.footer("").replace(/<\/body><\/html>$/, "") + "</body></html>");
     fs.writeFileSync(path.join(SITE, "submit.html"), L.head("", "Submit your benchmark | Local LLM Advisor", "Share a llama-bench result so others with the same hardware know what to expect.") + L.nav("", "submit") + fs.readFileSync(path.join(__dirname, "pages", "submit.body.html"), "utf8") + L.footer("").replace(/<\/body><\/html>$/, "") + "</body></html>");
   }
   if (process.env.SITE_URL) {
@@ -124,6 +134,8 @@ console.log("generated", data.hardware.targets.length, "pages in", out);
 }
 
 const SEOR = SEOP.run({ A, data, L, esc, SITE });
+const EXR = EXTRA.run(SITE);
+console.log("extra pages:", JSON.stringify(EXR));
 console.log("seo pages:", SEOR.vram.length, "vram,", SEOR.models.length, "models, leaderboard rows", SEOR.lbRows);
 fs.writeFileSync(path.join(SITE, "affiliate.js"), L.affiliateJs(data.hardware));
 
