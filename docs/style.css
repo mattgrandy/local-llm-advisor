@@ -84,7 +84,7 @@ button.copy:hover{border-color:var(--acc);color:var(--acc)}button.copy.done{colo
 .src{font-size:.8rem;color:var(--mut);border-top:1px solid var(--bd);margin-top:14px;padding-top:12px}
 /* slots */
 .slot{display:flex;align-items:center;gap:14px;border:1.5px dashed var(--bd2);border-radius:var(--r);padding:16px 18px;margin:16px 0;color:var(--mut);font-size:.85rem;background:repeating-linear-gradient(135deg,transparent 0 10px,color-mix(in srgb,var(--fg) 3%,transparent) 10px 20px)}
-.slot::before{content:"Placeholder";font:600 .68rem var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--sc);border:1px solid color-mix(in srgb,var(--sc) 45%,transparent);background:var(--scbg);border-radius:6px;padding:3px 8px;flex:none}
+.slot::before{content:"Sponsored";font:600 .68rem var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--sc);border:1px solid color-mix(in srgb,var(--sc) 45%,transparent);background:var(--scbg);border-radius:6px;padding:3px 8px;flex:none}
 /* tables */
 .tw{overflow-x:auto;margin:0 -4px;padding:0 4px}
 table{width:100%;border-collapse:collapse;font-size:.88rem}
