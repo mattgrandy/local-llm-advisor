@@ -23,3 +23,8 @@
 - 5080 DK host rejected key; destroyed 56455845
 - 5080 instance 56456408 QC
 - 5080 sweep launched Sat Oct 17 15:58:47 MDT 2026
+- 4060 published c904d42 Sat Oct 17 15:59:33 MDT 2026
+- 5080 done+destroyed Sat Oct 17 16:36:51 MDT 2026
+- rtx5070ti instance 56460637
+- rtx5070ti sweep launched Sat Oct 17 16:40:31 MDT 2026
+- 5080 published Sat Oct 17 16:40:35 MDT 2026

@@ -1,0 +1,53 @@
+2026-10-17T21:58:28Z sweep start: GPU='NVIDIA GeForce RTX 5080' x1 (benchmarking GPU 0) VRAM=15.92GiB RAM=125GiB disk_free=100GiB driver=595.71.05 llama.cpp=b11658/cuda12.8 max_hours=2 dry_run=0
+2026-10-17T21:58:28Z installing huggingface_hub into /workspace/sweep_work/venv
+2026-10-17T21:58:36Z hf CLI: /workspace/sweep_work/venv/bin/hf
+14 configs, 152 GB of downloads (vram=15.92 ram=125.0)
+2026-10-17T21:58:36Z installing prebuilt llama.cpp b11658 (CUDA 12.8) from https://github.com/ggml-org/llama.cpp/releases/download/b11658
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  8  164M    8 13.9M    0     0  24.4M      0  0:00:06 --:--:--  0:00:06 24.4M 42  164M   42 69.7M    0     0  44.4M      0  0:00:03  0:00:01  0:00:02 55.8M 59  164M   59 97.7M    0     0  38.0M      0  0:00:04  0:00:02  0:00:02 41.9M 76  164M   76  125M    0     0  35.1M      0  0:00:04  0:00:03  0:00:01 37.2M 91  164M   91  150M    0     0  32.8M      0  0:00:05  0:00:04  0:00:01 34.0M100  164M  100  164M    0     0  32.3M      0  0:00:05  0:00:05 --:--:-- 33.3M
+<stdin>:8: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+2026-10-17T21:58:44Z plan: 14 configs
+2026-10-17T21:58:44Z == Qwen_Qwen3.5-4B__Q4_K_M mode=gpu size=2.7GB  (time left 119 min)
+2026-10-17T21:59:23Z    ok: 6 result rows
+2026-10-17T21:59:23Z == Qwen_Qwen3.5-4B__Q8_0 mode=gpu size=4.5GB  (time left 119 min)
+2026-10-17T22:00:13Z    ok: 6 result rows
+2026-10-17T22:00:13Z == Qwen_Qwen3-VL-8B-Instruct__Q4_K_M mode=gpu size=5.0GB  (time left 118 min)
+2026-10-17T22:02:14Z    ok: 6 result rows
+2026-10-17T22:02:14Z == Qwen_Qwen3.5-9B__Q4_K_M mode=gpu size=5.7GB  (time left 116 min)
+2026-10-17T22:03:27Z    ok: 6 result rows
+2026-10-17T22:03:27Z == google_gemma-4-12B-it__Q4_K_M mode=gpu size=7.1GB  (time left 115 min)
+2026-10-17T22:05:20Z    ok: 6 result rows
+2026-10-17T22:05:20Z == Qwen_Qwen3-VL-8B-Instruct__Q8_0 mode=gpu size=8.7GB  (time left 113 min)
+2026-10-17T22:07:59Z    ok: 6 result rows
+2026-10-17T22:07:59Z == Qwen_Qwen3.5-9B__Q8_0 mode=gpu size=9.5GB  (time left 110 min)
+2026-10-17T22:10:49Z    ok: 6 result rows
+2026-10-17T22:10:49Z == openai_gpt-oss-20b__Q4_K_M mode=gpu size=11.6GB  (time left 107 min)
+2026-10-17T22:13:35Z    ok: 6 result rows
+2026-10-17T22:13:35Z == openai_gpt-oss-20b__Q8_0 mode=gpu size=12.1GB  (time left 104 min)
+2026-10-17T22:16:20Z    ok: 6 result rows
+2026-10-17T22:16:20Z == google_gemma-4-12B-it__Q8_0 mode=gpu size=12.7GB  (time left 102 min)
+2026-10-17T22:18:58Z    ok: 6 result rows
+2026-10-17T22:18:58Z == mistralai_Mistral-Small-3.2-24B-Instruct-2506__Q4_K_M mode=gpu size=14.3GB  (time left 99 min)
+2026-10-17T22:22:57Z    (multi-depth run failed, retrying per depth)
+2026-10-17T22:23:35Z    (depth 16384 failed: likely OOM)
+2026-10-17T22:23:35Z    ok: 8 result rows
+2026-10-17T22:23:35Z == google_gemma-4-26B-A4B-it__Q4_K_M mode=moe-offload size=16.9GB  (time left 94 min)
+2026-10-17T22:25:07Z    n_layers=30; --n-cpu-moe sweep: 8 15 22
+2026-10-17T22:26:08Z    best --n-cpu-moe=8; running depths 4096,16384
+2026-10-17T22:26:53Z    ok: 10 result rows
+2026-10-17T22:26:54Z == Qwen_Qwen3-Coder-30B-A3B-Instruct__Q4_K_M mode=moe-offload size=18.6GB  (time left 91 min)
+2026-10-17T22:29:25Z    n_layers=48; --n-cpu-moe sweep: 12 24 36
+2026-10-17T22:30:30Z    best --n-cpu-moe=12; running depths 4096,16384
+2026-10-17T22:31:22Z    ok: 10 result rows
+2026-10-17T22:31:22Z == Qwen_Qwen3.6-35B-A3B__Q4_K_M mode=moe-offload size=22.1GB  (time left 87 min)
+2026-10-17T22:34:38Z    n_layers=40; --n-cpu-moe sweep: 10 20 30
+2026-10-17T22:34:42Z    (n-cpu-moe=10 failed: likely OOM, continuing)
+2026-10-17T22:35:25Z    best --n-cpu-moe=20; running depths 4096,16384
+2026-10-17T22:36:30Z    ok: 8 result rows
+2026-10-17T22:36:30Z sweep complete
+Terminated
+2026-10-17T22:36:30Z finalizing: 14 configs done, 0 failed
+2026-10-17T22:36:31Z results tarball: /workspace/sweep_out.tgz (32K)
+2026-10-17T22:36:31Z no --on-finish given: instance keeps running (and billing). Copy /workspace/sweep_out.tgz off the box and destroy it.
