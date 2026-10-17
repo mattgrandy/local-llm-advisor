@@ -28,7 +28,7 @@
     if (t.closest("#v-copy")) return track("link_copied");
     if (t.closest("#theme-toggle")) return void setTimeout(function () { track("theme_toggled", { theme: d.documentElement.getAttribute("data-theme") }); }, 0);
     if ((b = t.closest("[data-affiliate]"))) return track("affiliate_click", { partner: String(b.getAttribute("data-affiliate")).slice(0, 60), merchant: String(b.getAttribute("data-affiliate")).slice(0, 60), hardware: String(b.getAttribute("data-hardware") || "").slice(0, 80), slot: String(b.getAttribute("data-slot-id") || "").slice(0, 60), placement: String(b.closest("[data-placement]") ? b.closest("[data-placement]").getAttribute("data-placement") : "v1").slice(0, 10) });
-    if ((b = t.closest("[data-sponsor]"))) return track("sponsor_click", { sponsor: String(b.getAttribute("data-sponsor")).slice(0, 60), slot: String(b.getAttribute("data-slot-id") || "").slice(0, 60) });
+    if ((b = t.closest("[data-sponsor]"))) return track("sponsor_click", { sponsor: String(b.getAttribute("data-sponsor")).slice(0, 60), partner: String(b.getAttribute("data-sponsor")).slice(0, 60), hardware: String(b.getAttribute("data-hardware") || "").slice(0, 80), slot: String(b.getAttribute("data-slot-id") || "").slice(0, 60) });
     if ((b = t.closest('a[href$="submit.html"], a[href*="submit.html?"]'))) return track("benchmark_submit_clicked", { where: "link" });
   }, true);
   d.addEventListener("submit", function (e) { if (e.target && e.target.id === "f" && /submit/.test(location.pathname)) track("benchmark_submit_clicked", { where: "form" }); }, true);

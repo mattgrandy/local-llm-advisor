@@ -114,6 +114,18 @@
     const url = "https://www.amazon.com/s?k=" + encodeURIComponent(q).replace(/%20/g, "+") + "&tag=" + encodeURIComponent(A.tag);
     return `<aside class="card aff aff-v2" data-slot="affiliate-upgrade" data-placement="v2"><b>Shopping for ${esc(hwr.name)}?</b> <a class="btn" href="${esc(url)}" target="_blank" rel="sponsored noopener nofollow" data-affiliate="amazon" data-hardware="${esc(key)}" data-slot-id="advisor-results">${e.kind === "gpu" ? "Check price on Amazon" : "Search Amazon for this hardware"} &rarr;</a><p class="mut">Amazon search results for &ldquo;${esc(q)}&rdquo;; prices and stock are shown on Amazon. ${esc(A.disclosure)} <a href="data-sources.html#affiliate-disclosure">Disclosure</a></p></aside>`;
   }
+  // Cloud GPU rental slot (referral). Prominent when the hardware cannot run the top models fully; compact otherwise. No prices.
+  function cloudSlot(input, cfg, hwr, allRes) {
+    const A = window.LLMA_AFF, ps = A && A.cloud && A.cloud.partners || [];
+    if (!ps.length) return "";
+    const total = data.models.models.length, full = allRes.filter(p => p.mode === "gpu").length;
+    const strong = !allRes.length || !allRes[0] || allRes[0].mode !== "gpu" || full < total / 2;
+    const key = cfg ? cfg.id : input.device;
+    const links = ps.map(p => `<a class="btn" href="${esc(p.url)}" target="_blank" rel="sponsored noopener nofollow" data-sponsor="${esc(p.id)}" data-hardware="${esc(key)}" data-slot-id="advisor-results">Rent a cloud GPU on ${esc(p.name)} &rarr;</a>`).join(" ");
+    const why = !allRes.length ? `Nothing in the dataset fits ${esc(hwr.name)} at this setting.` : strong ? `${total - full} of ${total} models do not fit ${esc(hwr.name)} fully at this setting.` : "";
+    const disc = ps.length > 1 ? A.cloud.disclosure.replace("this link", "these links") : A.cloud.disclosure;
+    return `<aside class="card aff cloud${strong ? " cloud-strong" : ""}" data-slot="cloud-gpu"><b>Rent a cloud GPU instead</b> ${links}<p class="mut">${why ? why + " " : ""}Renting by the hour is an option when you want to try a model before buying hardware. Check current rates on the provider's site. ${esc(disc)} <a href="data-sources.html#affiliate-disclosure">Disclosure</a></p></aside>`;
+  }
   function render() {
     syncSegs();
     writeUrl();
@@ -128,7 +140,7 @@
       (hwr.frac ? ` (assumes ${Math.round(hwr.frac * 100)}% of unified memory usable)` : "") + `, ${hwr.gpuBw} GB/s memory bandwidth.` +
       (hwr.eff ? ` Estimated speeds use an efficiency factor of ${hwr.eff.toFixed(2)}, ${esc(hwr.effSource)}.` : "");
     const comm = ((measured && measured.community) || []).filter(c => c.hw_id === input.device);
-    const affHtml = affiliateSlot(input, cfg, hwr); $("aff-slot").innerHTML = "";
+    const affHtml = affiliateSlot(input, cfg, hwr) + cloudSlot(input, cfg, hwr, allRes); $("aff-slot").innerHTML = "";
     $("cfgnote").textContent = cfg && cfg.note ? cfg.note : "";
     $("community").innerHTML = comm.length ? `<section class="card"><h2>Community-submitted benchmarks <span class="badge est">unverified</span></h2>
       <p class="mut">Reviewed for format only; not independently verified and never used in the estimates above.</p><div class="tw"><table><tr><th>Model</th><th>Quant</th><th>Backend</th><th>pp tok/s</th><th>tg tok/s</th><th>llama.cpp build</th><th>Date</th></tr>` +

@@ -144,3 +144,6 @@ pre{margin:0;padding:12px 14px;background:var(--code);border:1px solid var(--bd)
 
 #faq details{border-top:1px solid var(--bd);padding:10px 0}#faq summary{cursor:pointer;font-weight:600}#faq details p{margin:8px 0 0;color:var(--mut)}
 #browse h3{margin:14px 0 4px;font-size:.95rem}#related p{margin:6px 0}
+.card.aff.cloud{margin:12px 0;border-style:dashed}
+.card.aff.cloud.cloud-strong{border-color:var(--acc);border-style:solid}
+.card.aff.cloud b{font-size:1rem}
