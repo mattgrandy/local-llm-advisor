@@ -104,6 +104,14 @@
     const tt = p.ttft != null ? `Time to first token for a full ${Advisor.fmtCtx(o.ctx)} prompt: <b>~${Advisor.fmtDur(p.ttft)}</b> (estimated).` : "Time to first token: not estimated (no prompt-processing data for this hardware, or the model is offloaded).";
     return `<p class="mut depthline"><span class="badge est">estimated</span> At ${Advisor.fmtCtx(o.ctx)} depth: <b>~${Math.round(d.tps)} tok/s</b> generation (${Math.round(d.ratio * 100)}% of the short-context speed). ${tt}${ex ? ` Beyond ${Advisor.fmtCtx(d.measuredDepthMax)} the slowdown is extrapolated; there are no measurements that deep for this model.` : ` Penalty fitted to measured runs up to ${Advisor.fmtCtx(d.measuredDepthMax)}; no measurement for this exact model and hardware at this depth.`}</p>`;
   }
+  function affiliateSlot(input, cfg, hwr) {
+    const el = $("aff-slot"), A = window.LLMA_AFF; if (!el) return;
+    const key = cfg ? cfg.id : input.device, e = A && A.tag && A.q[key];
+    if (!e) { el.innerHTML = ""; return; }
+    const q = e.q + (e.mem && input.memory_gb ? " " + input.memory_gb + "GB" : "");
+    const url = "https://www.amazon.com/s?k=" + encodeURIComponent(q).replace(/%20/g, "+") + "&tag=" + encodeURIComponent(A.tag);
+    el.innerHTML = `<aside class="card aff" data-slot="affiliate-upgrade"><b>Shopping for ${esc(hwr.name)}?</b> <a class="btn" href="${esc(url)}" target="_blank" rel="sponsored noopener nofollow" data-affiliate="amazon" data-hardware="${esc(key)}" data-slot-id="advisor-results">${e.kind === "gpu" ? "Check price on Amazon" : "Search Amazon for this hardware"} &rarr;</a><p class="mut">Amazon search results for &ldquo;${esc(q)}&rdquo;; prices and stock are shown on Amazon. ${esc(A.disclosure)} <a href="data-sources.html#affiliate-disclosure">Disclosure</a></p></aside>`;
+  }
   function render() {
     syncSegs();
     writeUrl();
@@ -118,6 +126,7 @@
       (hwr.frac ? ` (assumes ${Math.round(hwr.frac * 100)}% of unified memory usable)` : "") + `, ${hwr.gpuBw} GB/s memory bandwidth.` +
       (hwr.eff ? ` Estimated speeds use an efficiency factor of ${hwr.eff.toFixed(2)}, ${esc(hwr.effSource)}.` : "");
     const comm = ((measured && measured.community) || []).filter(c => c.hw_id === input.device);
+    affiliateSlot(input, cfg, hwr);
     $("cfgnote").textContent = cfg && cfg.note ? cfg.note : "";
     $("community").innerHTML = comm.length ? `<section class="card"><h2>Community-submitted benchmarks <span class="badge est">unverified</span></h2>
       <p class="mut">Reviewed for format only; not independently verified and never used in the estimates above.</p><div class="tw"><table><tr><th>Model</th><th>Quant</th><th>Backend</th><th>pp tok/s</th><th>tg tok/s</th><th>llama.cpp build</th><th>Date</th></tr>` +

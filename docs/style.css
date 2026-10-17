@@ -134,3 +134,6 @@ pre{margin:0;padding:12px 14px;background:var(--code);border:1px solid var(--bd)
 .lbl .seg.small{grid-template-columns:repeat(auto-fit,minmax(72px,1fr))}
 @media (max-width:520px){.lbl .seg.small{grid-template-columns:repeat(3,1fr)}}
 .ctxnote{text-transform:none;letter-spacing:0;font-weight:400}
+/* affiliate box */
+.card.aff{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:16px 0}
+.card.aff p{flex-basis:100%;margin:0;font-size:.8rem}
