@@ -54,3 +54,9 @@
 - rtx3090long sweep launched Sat Oct 17 19:15:30 MDT 2026
 - 3090long relaunched on host 52272575 OR (CUDA ok) 19:19
 - 3090long done+destroyed Sat Oct 17 19:52:17 MDT 2026
+- 3090long published 72b9ef6, HF 521 rows; credit ~17.52 Sat Oct 17 19:53:18 MDT 2026
+- 4090long start Sat Oct 17 19:53:42 MDT 2026 credit 17.51 offer 8993652 IE
+- rtx4090long instance 56481187
+- rtx4090long sweep launched Sat Oct 17 19:56:40 MDT 2026
+- 4090long running, CUDA ok, launched ~19:55 (ends ~20:31)
+- 4090long done+destroyed Sat Oct 17 20:13:52 MDT 2026

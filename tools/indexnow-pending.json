@@ -1,10 +1,9 @@
 [
  "https://localllmadvisor.com/blog/index.html",
  "https://localllmadvisor.com/blog/state-of-local-llm-hardware-oct-2026.html",
- "https://localllmadvisor.com/can-run/gemma-4-12b-on-rtx-3090-24gb.html",
- "https://localllmadvisor.com/can-run/gpt-oss-20b-on-rtx-3090-24gb.html",
- "https://localllmadvisor.com/can-run/qwen3-6-27b-on-rtx-3090-24gb.html",
- "https://localllmadvisor.com/can-run/qwen3-coder-30b-a3b-on-rtx-3090-24gb.html",
+ "https://localllmadvisor.com/can-run/gpt-oss-20b-on-rtx-4090-24gb.html",
+ "https://localllmadvisor.com/can-run/qwen3-6-27b-on-rtx-4090-24gb.html",
+ "https://localllmadvisor.com/can-run/qwen3-coder-30b-a3b-on-rtx-4090-24gb.html",
  "https://localllmadvisor.com/hardware/dgx-spark-128gb.html",
  "https://localllmadvisor.com/hardware/dual-rtx-3090-48gb.html",
  "https://localllmadvisor.com/hardware/mac-m4-16gb.html",
