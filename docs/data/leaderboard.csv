@@ -197,15 +197,22 @@ rtx-5080,GeForce RTX 5080,Qwen3.5 4B,Q4,4.66,false,200.46,200.46,200.46,10057.3,
 rtx-5080,GeForce RTX 5080,Qwen3.5 4B,Q8,4.66,false,153.35,153.35,153.35,10589.6,1,CUDA,true,own-measurement,2026-10-17
 rtx-5080,GeForce RTX 5080,Qwen3.5 9B,Q4,9.65,false,136.14,136.14,136.14,6543.4,1,CUDA,true,own-measurement,2026-10-17
 rtx-5080,GeForce RTX 5080,Qwen3.5 9B,Q8,9.65,false,92.26,92.26,92.26,6790.2,1,CUDA,true,own-measurement,2026-10-17
+rtx-5090,GeForce RTX 5090,Gemma 4 12B,Q4,11.96,false,152.43,152.43,152.43,8524,1,CUDA,true,own-measurement,2026-10-17
 rtx-5090,GeForce RTX 5090,Gemma 4 12B,Q6,11.96,false,122.3,122.3,122.3,7160.4,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-06-04
-rtx-5090,GeForce RTX 5090,Gemma 4 31B,Q4,31.27,false,76.39,76.39,76.39,4255.3,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
+rtx-5090,GeForce RTX 5090,Gemma 4 12B,Q8,11.96,false,103.67,103.67,103.67,8805.6,1,CUDA,true,own-measurement,2026-10-17
+rtx-5090,GeForce RTX 5090,Gemma 4 26B-A4B,Q4,25.81,true,231.41,231.41,231.41,11431.6,1,CUDA,true,own-measurement,2026-10-17
+rtx-5090,GeForce RTX 5090,Gemma 4 26B-A4B,Q8,25.81,true,217.48,217.48,217.48,11322.2,1,CUDA,true,own-measurement,2026-10-18
+rtx-5090,GeForce RTX 5090,Gemma 4 31B,Q4,31.27,false,73.84,71.3,76.39,4048.2,2,CUDA,true,hf-witcheer-rtx-5090-benchmarks;own-measurement,2026-10-17
 rtx-5090,GeForce RTX 5090,Gemma 4 31B,Q6,31.27,false,55.35,55.35,55.35,3165.4,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
 rtx-5090,GeForce RTX 5090,gpt-oss 120B,Q4,116.83,true,46.48,46.48,46.48,484.4,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
-rtx-5090,GeForce RTX 5090,gpt-oss 20B,Q4,20.91,true,298.34,282.26,367.9,12929.7,5,CUDA,false,hf-witcheer-rtx-5090-benchmarks;llamacpp-discussion-15396,2026-05-28
+rtx-5090,GeForce RTX 5090,gpt-oss 20B,Q4,20.91,true,298.46,282.26,393.3,12965.6,6,CUDA,true,hf-witcheer-rtx-5090-benchmarks;llamacpp-discussion-15396;own-measurement,2026-10-17
+rtx-5090,GeForce RTX 5090,gpt-oss 20B,Q8,20.91,true,374.72,374.72,374.72,18400.2,1,CUDA,true,own-measurement,2026-10-17
 rtx-5090,GeForce RTX 5090,LFM2.5-8B-A1B,Q8,8,true,563.12,563.12,563.12,30680.7,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
 rtx-5090,GeForce RTX 5090,Llama 2 7B,Q4,6.74,false,288.98,263.63,315.3,14473.7,30,CUDA+Vulkan,false,llamacpp-discussion-10879-scoreboard;llamacpp-discussion-15013-comments;llamacpp-discussion-15013-scoreboard,2026-10-10
 rtx-5090,GeForce RTX 5090,Llama 3.2 1B Instruct,Q4,1.5,false,119.83,69.32,170.33,16759.7,2,,false,localscore-model-pages,2026-10-15
 rtx-5090,GeForce RTX 5090,Meta Llama 3.1 8B Instruct,Q4,8.03,false,66.33,66.33,66.33,6297.4,1,,false,localscore-model-pages,2026-10-15
+rtx-5090,GeForce RTX 5090,Mistral Small 3.2 24B,Q4,24.01,false,101.14,101.14,101.14,5184.8,1,CUDA,true,own-measurement,2026-10-17
+rtx-5090,GeForce RTX 5090,Mistral Small 3.2 24B,Q8,24.01,false,63.85,63.85,63.85,5246.3,1,CUDA,true,own-measurement,2026-10-18
 rtx-5090,GeForce RTX 5090,Mistral Small 4 119B,Q4,119,false,35.88,35.88,35.88,243.1,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
 rtx-5090,GeForce RTX 5090,Muse-Glimmer-30B,Q4,30,false,85.71,85.71,85.71,4739.8,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
 rtx-5090,GeForce RTX 5090,Nemotron-3-Nano-30B-A3B,Q4,31.58,true,363.69,363.69,363.69,10674.4,2,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
@@ -219,10 +226,18 @@ rtx-5090,GeForce RTX 5090,Ornith 1.5 9B,Q6,8.95,false,187.71,187.71,187.71,10163
 rtx-5090,GeForce RTX 5090,Qwable-3.6-27B,Q4,27,false,77.57,77.57,77.57,3808.7,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
 rtx-5090,GeForce RTX 5090,Qwable-5-27B-Coder,Q6,27,false,62.9,62.9,62.9,3210.9,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
 rtx-5090,GeForce RTX 5090,Qwen2.5 14B Instruct,Q4,14.77,false,41.75,37.95,45.54,3733.9,2,,false,localscore-model-pages,2026-10-15
+rtx-5090,GeForce RTX 5090,Qwen3-Coder 30B-A3B,Q4,30.53,true,346.27,346.27,346.27,10437,1,CUDA,true,own-measurement,2026-10-17
 rtx-5090,GeForce RTX 5090,Qwen3-Coder-Next,Q2,79.67,false,224.87,224.87,224.87,4447.3,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-05-28
-rtx-5090,GeForce RTX 5090,Qwen3.6 27B,Q4,27.78,false,80.69,77.09,84.3,4620.3,2,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
+rtx-5090,GeForce RTX 5090,Qwen3-VL 8B,Q4,8.77,false,242.38,242.38,242.38,12303,1,CUDA,true,own-measurement,2026-10-17
+rtx-5090,GeForce RTX 5090,Qwen3-VL 8B,Q8,8.77,false,166.54,166.54,166.54,12638.7,1,CUDA,true,own-measurement,2026-10-17
+rtx-5090,GeForce RTX 5090,Qwen3.5 4B,Q4,4.66,false,313.64,313.64,313.64,16035.6,1,CUDA,true,own-measurement,2026-10-17
+rtx-5090,GeForce RTX 5090,Qwen3.5 4B,Q8,4.66,false,244.56,244.56,244.56,17193.3,1,CUDA,true,own-measurement,2026-10-17
+rtx-5090,GeForce RTX 5090,Qwen3.5 9B,Q4,9.65,false,220.46,220.46,220.46,11720.7,1,CUDA,true,own-measurement,2026-10-17
+rtx-5090,GeForce RTX 5090,Qwen3.5 9B,Q8,9.65,false,156.01,156.01,156.01,11960,1,CUDA,true,own-measurement,2026-10-17
+rtx-5090,GeForce RTX 5090,Qwen3.6 27B,Q4,27.78,false,77.61,77.09,84.3,4084.6,3,CUDA,true,hf-witcheer-rtx-5090-benchmarks;own-measurement,2026-10-17
 rtx-5090,GeForce RTX 5090,Qwen3.6 27B,Q6,27.78,false,61.85,61.85,61.85,3222,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
-rtx-5090,GeForce RTX 5090,Qwen3.6 35B-A3B,Q4,35.95,true,270.97,270.97,270.97,9239.9,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-05-28
+rtx-5090,GeForce RTX 5090,Qwen3.6 27B,Q8,27.78,false,52.36,52.36,52.36,4064,1,CUDA,true,own-measurement,2026-10-18
+rtx-5090,GeForce RTX 5090,Qwen3.6 35B-A3B,Q4,35.95,true,263.92,256.87,270.97,9421.1,2,CUDA,true,hf-witcheer-rtx-5090-benchmarks;own-measurement,2026-10-18
 rtx-5090,GeForce RTX 5090,Qwen3.6 35B-A3B,Q6,35.95,true,259.65,259.65,259.65,8321.5,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
 rtx-5090,GeForce RTX 5090,Qwen3.6-27B-MTP,Q4,27.32,false,76.99,76.99,76.99,3835.8,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-05-28
 rtx-5090,GeForce RTX 5090,Qwen3.6-27B-MTP-pi-tune,Q6,27,false,62.9,62.9,62.9,3197.7,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11

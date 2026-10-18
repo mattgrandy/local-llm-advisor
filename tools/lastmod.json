@@ -1,11 +1,11 @@
 {
  "blog/index.html": {
-  "h": "1abd8996d98bd249",
-  "d": "2026-10-17"
+  "h": "721c2209e7ce1b55",
+  "d": "2026-10-18"
  },
  "blog/state-of-local-llm-hardware-oct-2026.html": {
-  "h": "d54e35aaad5eb873",
-  "d": "2026-10-17"
+  "h": "5504710ea8e168ad",
+  "d": "2026-10-18"
  },
  "can-run/gemma-4-12b-on-rtx-3090-24gb.html": {
   "h": "4353027424ee5225",
@@ -52,8 +52,8 @@
   "d": "2026-10-17"
  },
  "can-run/index.html": {
-  "h": "71be708bffffe1c1",
-  "d": "2026-10-17"
+  "h": "948628277d6b3820",
+  "d": "2026-10-18"
  },
  "can-run/qwen3-5-9b-on-rtx-3060-12gb.html": {
   "h": "1f0c61333c300ad0",
@@ -72,8 +72,8 @@
   "d": "2026-10-17"
  },
  "can-run/qwen3-6-27b-on-rtx-5090-32gb.html": {
-  "h": "4dbf052a39aec6b0",
-  "d": "2026-10-17"
+  "h": "53fd2a254e6d8552",
+  "d": "2026-10-18"
  },
  "can-run/qwen3-6-35b-a3b-on-rtx-3090-24gb.html": {
   "h": "2ed795301218f4d3",
@@ -92,16 +92,16 @@
   "d": "2026-10-17"
  },
  "compare/dual-rtx-3090-48gb-vs-rtx-5090-32gb.html": {
-  "h": "d64a377b1d2a9780",
-  "d": "2026-10-17"
+  "h": "b555bbd12c641aa8",
+  "d": "2026-10-18"
  },
  "compare/dual-rtx-3090-48gb-vs-rtx-pro-6000-96gb.html": {
   "h": "3bc9d508f38801b1",
   "d": "2026-10-17"
  },
  "compare/index.html": {
-  "h": "bd540ab80287bfae",
-  "d": "2026-10-17"
+  "h": "779729bbeb1bec0a",
+  "d": "2026-10-18"
  },
  "compare/mac-studio-m3-ultra-96gb-vs-dual-rtx-3090-48gb.html": {
   "h": "39e33b045ac4bb99",
@@ -124,8 +124,8 @@
   "d": "2026-10-17"
  },
  "compare/rtx-3090-24gb-vs-rtx-5090-32gb.html": {
-  "h": "fd021b75b6384438",
-  "d": "2026-10-17"
+  "h": "f6d1c6dd56888909",
+  "d": "2026-10-18"
  },
  "compare/rtx-3090-24gb-vs-rx-7900-xtx-24gb.html": {
   "h": "d0a11d74cf3bdc05",
@@ -136,8 +136,8 @@
   "d": "2026-10-17"
  },
  "compare/rtx-4090-24gb-vs-rtx-5090-32gb.html": {
-  "h": "c23831e0481f067e",
-  "d": "2026-10-17"
+  "h": "0bc3520bb0c6d480",
+  "d": "2026-10-18"
  },
  "compare/rtx-4090-24gb-vs-rx-7900-xtx-24gb.html": {
   "h": "6b39d4088c55de22",
@@ -160,8 +160,8 @@
   "d": "2026-10-17"
  },
  "data-sources.html": {
-  "h": "825b94c080eb2cb7",
-  "d": "2026-10-17"
+  "h": "8ebb8d8ffbcb0517",
+  "d": "2026-10-18"
  },
  "embed/index.html": {
   "h": "072b3b4cda58c60a",
@@ -260,8 +260,8 @@
   "d": "2026-10-17"
  },
  "hardware/rtx-5090-32gb.html": {
-  "h": "ea56d96ca7f70b02",
-  "d": "2026-10-17"
+  "h": "bb16476a086e85c1",
+  "d": "2026-10-18"
  },
  "hardware/rtx-pro-6000-96gb.html": {
   "h": "851176686eeb67e0",
@@ -280,16 +280,16 @@
   "d": "2026-10-17"
  },
  "leaderboard.html": {
-  "h": "00807552ab81eaf7",
-  "d": "2026-10-17"
+  "h": "0253987f395f3589",
+  "d": "2026-10-18"
  },
  "models/gemma-4-12b.html": {
-  "h": "5260d6d2df0f08d8",
-  "d": "2026-10-17"
+  "h": "2e4a76751fd13d8a",
+  "d": "2026-10-18"
  },
  "models/gemma-4-26b-a4b.html": {
-  "h": "5fd3d2a1db72c7f3",
-  "d": "2026-10-17"
+  "h": "cd274408103d5f16",
+  "d": "2026-10-18"
  },
  "models/gemma-4-31b.html": {
   "h": "7469cc27dd177c5e",
@@ -304,40 +304,40 @@
   "d": "2026-10-17"
  },
  "models/gpt-oss-20b.html": {
-  "h": "12d87e28f0961dde",
-  "d": "2026-10-17"
+  "h": "43b06e9e33207397",
+  "d": "2026-10-18"
  },
  "models/index.html": {
   "h": "3f17b7e32e40b9a9",
   "d": "2026-10-17"
  },
  "models/mistral-small-3-2-24b.html": {
-  "h": "a3f48d21a351ce3c",
-  "d": "2026-10-17"
+  "h": "8e03f93547b680c1",
+  "d": "2026-10-18"
  },
  "models/qwen3-5-4b.html": {
-  "h": "3d470060d9de44fe",
-  "d": "2026-10-17"
+  "h": "6643bc30393bfcaf",
+  "d": "2026-10-18"
  },
  "models/qwen3-5-9b.html": {
-  "h": "765132f18f76c9c1",
-  "d": "2026-10-17"
+  "h": "cf0756f8c4476e54",
+  "d": "2026-10-18"
  },
  "models/qwen3-6-27b.html": {
-  "h": "030cb3816623e175",
-  "d": "2026-10-17"
+  "h": "72613ad69b28e6cf",
+  "d": "2026-10-18"
  },
  "models/qwen3-6-35b-a3b.html": {
   "h": "277fb0599f1f919a",
   "d": "2026-10-17"
  },
  "models/qwen3-coder-30b-a3b.html": {
-  "h": "7aaee7ad066bc3fe",
-  "d": "2026-10-17"
+  "h": "467f0ad5d74bac50",
+  "d": "2026-10-18"
  },
  "models/qwen3-vl-8b.html": {
-  "h": "bcc0eb5ee13b5329",
-  "d": "2026-10-17"
+  "h": "e6493d719bc1639d",
+  "d": "2026-10-18"
  },
  "submit.html": {
   "h": "12b6250c89e59c2d",
@@ -368,8 +368,8 @@
   "d": "2026-10-17"
  },
  "vram/32gb.html": {
-  "h": "df3b04842bd71f01",
-  "d": "2026-10-17"
+  "h": "0b8fc450f8254fcb",
+  "d": "2026-10-18"
  },
  "vram/48gb.html": {
   "h": "115f756c49af1267",

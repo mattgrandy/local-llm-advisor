@@ -30,3 +30,8 @@
 - 5080 published Sat Oct 17 16:40:35 MDT 2026
 - 5080 published 2d047a1 (msg 'x' by mistake), indexnow submitted
 - 5070ti done+destroyed Sat Oct 17 17:16:28 MDT 2026
+- rtx5090 instance 56464745
+- rtx5090 sweep launched Sat Oct 17 17:17:27 MDT 2026
+- 5070ti published 5d32c6e; 5090 sweep launched ~17:19 (instance in inst.env)
+- 5090 sweep in progress, Q8 large configs (18:24)
+- 5090 done+destroyed Sat Oct 17 18:25:08 MDT 2026
