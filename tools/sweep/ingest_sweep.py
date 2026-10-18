@@ -82,7 +82,8 @@ def normalise(d):
     meta = json.load(open(os.path.join(d, 'meta.json')))
     pm = plan_map(d)
     today = datetime.date.today().isoformat()
-    mem_gb = round(meta['gpu_mib'] / 1024)
+    n_used = int(meta.get('gpu_count_used') or 1)
+    mem_gb = round(meta['gpu_mib'] / 1024 / n_used)   # per-GPU memory (gpu_mib is the sum when several GPUs are used)
     ovr = meta.get('hw_id_override')
     if ovr and ovr not in HW_IDS:
         raise SystemExit(f'hw_id_override {ovr!r} is not a hardware.json id')
@@ -108,9 +109,11 @@ def normalise(d):
         device, hw = normalize_device(gpu_raw, mem_gb)
         if ovr:
             device = hw = ovr
+        if n_used > 1:   # multi-GPU: never a site hardware id (build_measured only uses device_count == 1)
+            device = hw = f'{n_used}x-{hw or device}'
         notes = [f"own run, llama-bench from llama.cpp {meta['llama_build_tag']} (commit {ref.get('build_commit')}), CUDA {meta['llama_cuda']} build, driver {meta['driver']}, "
                  f"{meta.get('provider') or 'unknown provider'}, CPU {meta.get('cpu')}, RAM {meta.get('ram_gib')} GiB; llama-bench model_type '{ref.get('model_type')}'; "
-                 f"-r {meta.get('reps')}; GPU 0 only"]
+                 f"-r {meta.get('reps')}; " + (f"{n_used} GPUs, llama.cpp layer split (default)" if n_used > 1 else "GPU 0 only")]
         if pr:
             notes.append(f"GGUF {pr['repo']}/{pr['first_file']}")
         for t, nm in ((pp, 'pp'), (tg, 'tg')):
@@ -122,7 +125,7 @@ def normalise(d):
             notes.append(f'MoE expert offload: --n-cpu-moe {ncmoe} (expert tensors of the first {ncmoe} layers in system RAM); excluded from site medians')
         row = {k: '' for k in FIELDS}
         row.update(
-            device=device, device_raw=gpu_raw, hw_id=hw, device_count=1,
+            device=device, device_raw=gpu_raw, hw_id=hw, device_count=n_used,
             backend=(ref.get('backends') or 'CUDA').split(',')[0], model=site['name'] if site else ref.get('model_type', ''),
             quant=pr['quant'] if pr else '', params_b=site['params_b'] if site else round(ref.get('model_n_params', 0) / 1e9, 2),
             size_gib=round(ref['model_size'] / 2 ** 30, 2) if ref.get('model_size') else '', fa=1 if fa else 0, ngl=ngl, threads=ref.get('n_threads', ''),
@@ -159,8 +162,12 @@ def main(argv=None):
     from bench_parse import FIELDS
     hw = sorted({r['device'] for r in rows})[0]
     date = max(r['date'] for r in rows)
-    os.makedirs(os.path.join(a.bench_dir, 'own'), exist_ok=True)
-    base = os.path.join(a.bench_dir, 'own', f'{SOURCE}__{hw}__{date}')
+    sub = 'own-multigpu' if int(meta.get('gpu_count_used') or 1) > 1 else 'own'
+    if sub != 'own' and a.merge:
+        print('multi-GPU run: --merge ignored (rows stay out of benchmarks_all and site medians)', file=sys.stderr)
+        a.merge = False
+    os.makedirs(os.path.join(a.bench_dir, sub), exist_ok=True)
+    base = os.path.join(a.bench_dir, sub, f'{SOURCE}__{hw}__{date}')
     with open(base + '.csv', 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=FIELDS)
         w.writeheader()

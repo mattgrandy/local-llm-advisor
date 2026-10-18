@@ -82,3 +82,6 @@ Own rows now 540 on 11 GPUs (19 new 3090 rows at 32k/64k/128k depth, Q4_K_M, ful
 
 ## Update 2026-10-17 (4090 long-context runs)
 Own rows now 540 on 11 GPUs (19 new 4090 rows at 32k/64k/128k, Q4_K_M, same scope as the 3090). Depth model fit on 457 points, median abs error 2.2%. MoE/dense, 16k retention and Q8 figures and the 928 / 314 / 314-row counts are unchanged.
+
+## Update 2026-10-17 (dual 3090)
+Dual RTX 3090 (layer split, 2 GPUs) sweep: 21 rows, 7 models that need >24 GB (Q8_0 of six 25-37 GB models, plus Llama 3.3 70B Q4_K_M at ~19 tok/s generation, 555 tok/s prompt). The site's measured data only accepts single-device rows, so these are NOT on the site or in the 540-row/leaderboard counts; they are in data/benchmarks/own-multigpu and the Hugging Face dataset (own_measurements_multigpu.csv). Site numbers unchanged.

@@ -99,7 +99,13 @@ detect_hw() {
     mkdir -p "$WORK"; DISK_GIB=$(df -BG --output=avail "$WORK" | tail -1 | tr -dc '0-9')
   fi
   VRAM_GIB=$(awk -v m="$GPU_MIB" 'BEGIN{printf "%.2f", m/1024}')
-  export CUDA_VISIBLE_DEVICES=0         # benchmark ONE card; multi-GPU rows would not be hw-matched anyway
+  if [ "${MULTIGPU:-0}" = 1 ]; then       # MULTIGPU=1: use all GPUs (llama.cpp default layer split); rows are written to data/benchmarks/own-multigpu, never to site medians
+    GPU_USED=$GPU_COUNT
+    [ -n "$FAKE_GPU" ] || GPU_MIB=$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits | awk '{s+=$1} END{print s}')
+    VRAM_GIB=$(awk -v m="$GPU_MIB" 'BEGIN{printf "%.2f", m/1024}')
+  else
+    GPU_USED=1; export CUDA_VISIBLE_DEVICES=0         # benchmark ONE card; multi-GPU rows would not be hw-matched anyway
+  fi
 }
 
 # ---------------------------------------------------------------- llama.cpp install (pinned)
@@ -171,13 +177,13 @@ snapshot_env() {
   build_line=$("$LLAMA_DIR/llama-bench" --version 2>&1 | tr '\n' ' ' || true)
   local gpu_extra
   gpu_extra=$(nvidia-smi --query-gpu=power.limit,power.max_limit,clocks.max.sm,clocks.max.mem,pci.bus_id,vbios_version --format=csv,noheader | head -1 || true)
-  GPU_NAME="$GPU_NAME" GPU_MIB="$GPU_MIB" DRIVER="$DRIVER" RAM_GIB="$RAM_GIB" GPU_COUNT="$GPU_COUNT" PROVIDER="$PROVIDER" \
+  GPU_NAME="$GPU_NAME" GPU_MIB="$GPU_MIB" DRIVER="$DRIVER" RAM_GIB="$RAM_GIB" GPU_COUNT="$GPU_COUNT" GPU_USED="${GPU_USED:-1}" PROVIDER="$PROVIDER" \
   LLAMA_BUILD="$LLAMA_BUILD" LLAMA_CUDA="$LLAMA_CUDA" HW_ID="$HW_ID_OVERRIDE" BUILD_LINE="$build_line" GPU_EXTRA="$gpu_extra" REPS="$REPS" \
   HOST="$(hostname)" CPU="$(lscpu | awk -F: '/Model name/{gsub(/^ +/,"",$2);print $2;exit}')" "$PY" - "$OUT/meta.json" <<'PYEOF'
 import json, os, sys, datetime
 e = os.environ
 json.dump({
-  'gpu_name': e['GPU_NAME'], 'gpu_mib': int(float(e['GPU_MIB'])), 'gpu_count_on_box': int(e['GPU_COUNT']), 'driver': e['DRIVER'],
+  'gpu_name': e['GPU_NAME'], 'gpu_mib': int(float(e['GPU_MIB'])), 'gpu_count_on_box': int(e['GPU_COUNT']), 'gpu_count_used': int(e['GPU_USED']), 'driver': e['DRIVER'],
   'ram_gib': int(e['RAM_GIB']), 'cpu': e['CPU'], 'provider': e['PROVIDER'], 'hw_id_override': e['HW_ID'] or None,
   'llama_build_tag': e['LLAMA_BUILD'], 'llama_cuda': e['LLAMA_CUDA'], 'llama_version_output': e['BUILD_LINE'],
   'gpu_extra_power_limit_maxpower_maxclk_sm_mem_bus_vbios': e['GPU_EXTRA'], 'reps': int(e['REPS']),
@@ -321,7 +327,7 @@ run_config() {
 # ---------------------------------------------------------------- main
 detect_hw
 log "sweep start: GPU='$GPU_NAME' x$GPU_COUNT (benchmarking GPU 0) VRAM=${VRAM_GIB}GiB RAM=${RAM_GIB}GiB disk_free=${DISK_GIB}GiB driver=$DRIVER llama.cpp=$LLAMA_BUILD/cuda$LLAMA_CUDA max_hours=$MAX_HOURS dry_run=$DRY_RUN"
-[ "$GPU_COUNT" -gt 1 ] && log "NOTE: $GPU_COUNT GPUs; only GPU 0 is used so rows stay single-device."
+[ "$GPU_COUNT" -gt 1 ] && [ "${MULTIGPU:-0}" != 1 ] && log "NOTE: $GPU_COUNT GPUs; only GPU 0 is used so rows stay single-device."
 if [ "$LLAMA_CUDA" = "12.8" ] && [ "$DRY_RUN" = 0 ] && [ -z "$FAKE_GPU" ]; then
   major=${DRIVER%%.*}; [ "${major:-0}" -lt 570 ] && { echo "driver $DRIVER too old for CUDA 12.8 build (need >=570); upgrade driver or use LLAMA_CUDA=source" >&2; exit 3; }
 fi

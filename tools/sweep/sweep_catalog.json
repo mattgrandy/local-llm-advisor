@@ -422,6 +422,23 @@
    ],
    "n_files": 3,
    "total_bytes": 117456506240
+  },
+  {
+   "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+   "name": "Llama 3.3 70B",
+   "repo": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+   "quant": "Q4_K_M",
+   "label": "Q4_K_M",
+   "moe": false,
+   "params_b": 70.55,
+   "active_b": null,
+   "first_file": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+   "files": [
+    "Llama-3.3-70B-Instruct-Q4_K_M.gguf"
+   ],
+   "n_files": 1,
+   "total_bytes": 42520398432,
+   "extra_not_in_site_models": true
   }
  ],
  "warnings": [

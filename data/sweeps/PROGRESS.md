@@ -60,3 +60,12 @@
 - rtx4090long sweep launched Sat Oct 17 19:56:40 MDT 2026
 - 4090long running, CUDA ok, launched ~19:55 (ends ~20:31)
 - 4090long done+destroyed Sat Oct 17 20:13:52 MDT 2026
+- 4090long published, HF 540 rows Sat Oct 17 20:14:30 MDT 2026
+- dual3090 start Sat Oct 17 20:15:51 MDT 2026 credit 17.34 offer 54390556 OR 2xGPU, disk 150
+- dual3090 instance 56483536
+- dual3090 host 54390556 rejected key; destroyed 56483536
+- dual3090 instance 56484092
+- dual3090 instance 56484092 SE, sweep launched Sat Oct 17 20:23:54 MDT 2026
+- dual3090 CUDA ok (2 devices), running
+- dual3090 mid-run 20:40
+- dual3090 done+destroyed Sat Oct 17 21:05:24 MDT 2026
