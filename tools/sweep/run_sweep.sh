@@ -23,7 +23,8 @@ MAX_HOURS="${MAX_HOURS:-3}"
 REPS="${REPS:-3}"
 PROMPT_N=512
 GEN_N=128
-DEPTHS="0,4096,16384"
+DEPTHS="${DEPTHS:-0,4096,16384}"          # env override, e.g. DEPTHS=32768,65536,131072 for long-context runs
+LONGCTX_SKIP_OFFLOAD="${LONGCTX_SKIP_OFFLOAD:-0}"   # 1 = skip MoE-offload configs (long-context runs only measure fully-on-GPU models)
 MOE_DEPTHS_REST="4096,16384"
 RUN_TIMEOUT="${RUN_TIMEOUT:-2700}"            # seconds per llama-bench invocation
 DL_TIMEOUT="${DL_TIMEOUT:-5400}"              # seconds per model download
@@ -255,6 +256,7 @@ run_config() {
   local model_id="$1" repo="$2" quant="$3" mode="$4" fracs="$5" first_file="$6" include="$7" total_bytes="$8"
   local id; id="$(cid "$model_id")__$quant"
   local logf="$OUT/logs/$id.log" mpath="$WORK/models/$repo/$first_file"
+  if [ "$LONGCTX_SKIP_OFFLOAD" = 1 ] && [ "$mode" != gpu ]; then log "SKIP (offload config, long-context run) $id"; return; fi
   if [ -e "$OUT/done/$id" ]; then log "SKIP (done) $id"; return; fi
   if [ -e "$OUT/failed/$id" ] && [ "$RETRY_FAILED" = 0 ]; then log "SKIP (failed earlier) $id"; return; fi
   rm -f "$OUT/failed/$id"

@@ -42,3 +42,15 @@
 - PRO6000 sweep running 18:39
 - PRO6000 at gpt-oss-120b 18:51
 - PRO6000 done+destroyed Sat Oct 17 18:55:14 MDT 2026
+- PRO6000 published 928a2e4, HF updated (502 rows), figures rechecked; credit ~17.93 Sat Oct 17 18:56:14 MDT 2026
+- longctx 3090 start Sat Oct 17 18:56:57 MDT 2026 credit 17.90
+- rtx3090long instance 56475311
+- 3090long host 54677606 rejected key; destroyed 56475311
+- rtx3090long instance 56475735
+- rtx3090long sweep launched Sat Oct 17 19:03:27 MDT 2026
+- 3090long sweep launched 19:07 MDT (max 36 min)
+- 3090long host 51372163 CUDA init failed (driver); destroyed 56475735
+- rtx3090long instance 56477220
+- rtx3090long sweep launched Sat Oct 17 19:15:30 MDT 2026
+- 3090long relaunched on host 52272575 OR (CUDA ok) 19:19
+- 3090long done+destroyed Sat Oct 17 19:52:17 MDT 2026

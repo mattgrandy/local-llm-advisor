@@ -1,15 +1,15 @@
 {
  "blog/index.html": {
-  "h": "6ca03fc106ce3687",
+  "h": "5ae19e1c0f29d1a5",
   "d": "2026-10-18"
  },
  "blog/state-of-local-llm-hardware-oct-2026.html": {
-  "h": "51aeeb4c20e1362d",
+  "h": "b17c0b380dbd8ffb",
   "d": "2026-10-18"
  },
  "can-run/gemma-4-12b-on-rtx-3090-24gb.html": {
-  "h": "4353027424ee5225",
-  "d": "2026-10-17"
+  "h": "06922777a96d3b7c",
+  "d": "2026-10-18"
  },
  "can-run/gemma-4-12b-on-rtx-5070-12gb.html": {
   "h": "db8ed8e3bda6cf86",
@@ -40,8 +40,8 @@
   "d": "2026-10-17"
  },
  "can-run/gpt-oss-20b-on-rtx-3090-24gb.html": {
-  "h": "41097a1a2d75aa29",
-  "d": "2026-10-17"
+  "h": "613b06a62c61e7b3",
+  "d": "2026-10-18"
  },
  "can-run/gpt-oss-20b-on-rtx-4060ti-16gb.html": {
   "h": "48cf55df68adf4b7",
@@ -64,8 +64,8 @@
   "d": "2026-10-17"
  },
  "can-run/qwen3-6-27b-on-rtx-3090-24gb.html": {
-  "h": "b99022cd76685ec0",
-  "d": "2026-10-17"
+  "h": "833326e8736613cd",
+  "d": "2026-10-18"
  },
  "can-run/qwen3-6-27b-on-rtx-4090-24gb.html": {
   "h": "ba645dbe78577779",
@@ -84,8 +84,8 @@
   "d": "2026-10-17"
  },
  "can-run/qwen3-coder-30b-a3b-on-rtx-3090-24gb.html": {
-  "h": "07cffd84fa3859a9",
-  "d": "2026-10-17"
+  "h": "92407f3ef8de1a23",
+  "d": "2026-10-18"
  },
  "can-run/qwen3-coder-30b-a3b-on-rtx-4090-24gb.html": {
   "h": "c23f2a09c80678ff",
@@ -168,11 +168,11 @@
   "d": "2026-10-17"
  },
  "hardware/dgx-spark-128gb.html": {
-  "h": "4edd70f8f28522b8",
+  "h": "65d2e50d18748796",
   "d": "2026-10-18"
  },
  "hardware/dual-rtx-3090-48gb.html": {
-  "h": "608f90a08b30722e",
+  "h": "ce301f5a6e7c35d9",
   "d": "2026-10-18"
  },
  "hardware/index.html": {
@@ -180,99 +180,99 @@
   "d": "2026-10-17"
  },
  "hardware/mac-m4-16gb.html": {
-  "h": "7d025e27b99fb3c9",
+  "h": "9530a1858be38c86",
   "d": "2026-10-18"
  },
  "hardware/mac-m4-pro-64gb.html": {
-  "h": "576ae326917a6560",
+  "h": "23791b62f028a77f",
   "d": "2026-10-18"
  },
  "hardware/mac-mini-m6-32gb.html": {
-  "h": "f979491fa5ff7129",
+  "h": "fc5c75db1195230b",
   "d": "2026-10-18"
  },
  "hardware/mac-studio-m3-ultra-96gb.html": {
-  "h": "5c4d37ef95cce2b4",
+  "h": "a762f6ef34088f75",
   "d": "2026-10-18"
  },
  "hardware/mac-studio-m5-max-128gb.html": {
-  "h": "6c35be0747cdae19",
+  "h": "460ad917102f5a1c",
   "d": "2026-10-18"
  },
  "hardware/mac-studio-m5-ultra-256gb.html": {
-  "h": "01146ca7c112028b",
+  "h": "674f3fd6a30c6ff8",
   "d": "2026-10-18"
  },
  "hardware/mac-studio-m5-ultra-512gb.html": {
-  "h": "f82d3c8bfc5ad74f",
+  "h": "c939189bbd5ebf4a",
   "d": "2026-10-18"
  },
  "hardware/macbook-air-m5-32gb.html": {
-  "h": "9e7b52a4fc209f0f",
+  "h": "14a3ae0a514a8777",
   "d": "2026-10-18"
  },
  "hardware/macbook-pro-m4-max-128gb.html": {
-  "h": "3a0c4ae459b317d3",
+  "h": "6a4cd2ad82b37102",
   "d": "2026-10-18"
  },
  "hardware/macbook-pro-m5-max-128gb.html": {
-  "h": "d5ba1d771df798d8",
+  "h": "bf29b2520d4eeba9",
   "d": "2026-10-18"
  },
  "hardware/macbook-pro-m5-pro-48gb.html": {
-  "h": "af9d061a349be102",
+  "h": "df64ab5906546c8d",
   "d": "2026-10-18"
  },
  "hardware/rtx-3060-12gb.html": {
-  "h": "4f2ffc9e6c7828e9",
+  "h": "5ce5fdf5a45bb131",
   "d": "2026-10-18"
  },
  "hardware/rtx-3090-24gb.html": {
-  "h": "cfbb8e935a2789c0",
+  "h": "ecde3941a241c9e2",
   "d": "2026-10-18"
  },
  "hardware/rtx-4060-8gb.html": {
-  "h": "af5df79a6b1fbf80",
+  "h": "501ad385fd92317a",
   "d": "2026-10-18"
  },
  "hardware/rtx-4060ti-16gb.html": {
-  "h": "6f08f0d52f8cf179",
+  "h": "9247205559980df4",
   "d": "2026-10-18"
  },
  "hardware/rtx-4070-12gb.html": {
-  "h": "05a1242f5785a2c2",
+  "h": "33d2bff5335b2801",
   "d": "2026-10-18"
  },
  "hardware/rtx-4090-24gb.html": {
-  "h": "6f55564a9c0868dc",
+  "h": "bde4d6f738533107",
   "d": "2026-10-18"
  },
  "hardware/rtx-5070-12gb.html": {
-  "h": "888d1ae81b995fc8",
+  "h": "9ed986fe61ca7839",
   "d": "2026-10-18"
  },
  "hardware/rtx-5070ti-16gb.html": {
-  "h": "b05335fecbc31b71",
+  "h": "53dc2b5ff723b169",
   "d": "2026-10-18"
  },
  "hardware/rtx-5080-16gb.html": {
-  "h": "6fba73c616d4803b",
+  "h": "e461c0589d310750",
   "d": "2026-10-18"
  },
  "hardware/rtx-5090-32gb.html": {
-  "h": "768ceda41ab19b83",
+  "h": "d83b6ff4fd984ef9",
   "d": "2026-10-18"
  },
  "hardware/rtx-pro-6000-96gb.html": {
-  "h": "5282837cdf78833c",
+  "h": "394d0db523d2618c",
   "d": "2026-10-18"
  },
  "hardware/rx-7900-xtx-24gb.html": {
-  "h": "fe970d5b578f3efa",
+  "h": "db99fceca0b87699",
   "d": "2026-10-18"
  },
  "hardware/strix-halo-128gb.html": {
-  "h": "559bbbb20e1eb59f",
+  "h": "cd9f382e758776aa",
   "d": "2026-10-18"
  },
  "index.html": {
