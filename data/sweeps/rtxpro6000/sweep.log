@@ -1,0 +1,66 @@
+2026-10-18T00:28:34Z sweep start: GPU='NVIDIA RTX PRO 6000 Blackwell Workstation Edition' x1 (benchmarking GPU 0) VRAM=95.59GiB RAM=503GiB disk_free=250GiB driver=595.91.07 llama.cpp=b11658/cuda12.8 max_hours=2 dry_run=0
+2026-10-18T00:28:34Z installing huggingface_hub into /workspace/sweep_work/venv
+2026-10-18T00:28:40Z hf CLI: /workspace/sweep_work/venv/bin/hf
+25 configs, 568 GB of downloads (vram=95.59 ram=503.0)
+2026-10-18T00:28:40Z installing prebuilt llama.cpp b11658 (CUDA 12.8) from https://github.com/ggml-org/llama.cpp/releases/download/b11658
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  1  164M    1 2277k    0     0  5904k      0  0:00:28 --:--:--  0:00:28 5904k 30  164M   30 50.0M    0     0  34.7M      0  0:00:04  0:00:01  0:00:03 45.2M 38  164M   38 63.1M    0     0  26.4M      0  0:00:06  0:00:02  0:00:04 30.4M 59  164M   59 98.4M    0     0  29.0M      0  0:00:05  0:00:03  0:00:02 32.0M 67  164M   67  110M    0     0  25.1M      0  0:00:06  0:00:04  0:00:02 27.0M 81  164M   81  134M    0     0  24.9M      0  0:00:06  0:00:05  0:00:01 26.3M 91  164M   91  150M    0     0  23.2M      0  0:00:07  0:00:06  0:00:01 19.9M100  164M  100  164M    0     0  24.1M      0  0:00:06  0:00:06 --:--:-- 22.8M
+<stdin>:8: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+2026-10-18T00:28:49Z plan: 25 configs
+2026-10-18T00:28:49Z == Qwen_Qwen3.5-4B__Q4_K_M mode=gpu size=2.7GB  (time left 119 min)
+2026-10-18T00:29:14Z    ok: 6 result rows
+2026-10-18T00:29:14Z == Qwen_Qwen3.5-4B__Q8_0 mode=gpu size=4.5GB  (time left 119 min)
+2026-10-18T00:29:42Z    ok: 6 result rows
+2026-10-18T00:29:42Z == Qwen_Qwen3-VL-8B-Instruct__Q4_K_M mode=gpu size=5.0GB  (time left 118 min)
+2026-10-18T00:30:15Z    ok: 6 result rows
+2026-10-18T00:30:15Z == Qwen_Qwen3.5-9B__Q4_K_M mode=gpu size=5.7GB  (time left 118 min)
+2026-10-18T00:30:45Z    ok: 6 result rows
+2026-10-18T00:30:45Z == google_gemma-4-12B-it__Q4_K_M mode=gpu size=7.1GB  (time left 117 min)
+2026-10-18T00:31:23Z    ok: 6 result rows
+2026-10-18T00:31:23Z == Qwen_Qwen3-VL-8B-Instruct__Q8_0 mode=gpu size=8.7GB  (time left 117 min)
+2026-10-18T00:32:05Z    ok: 6 result rows
+2026-10-18T00:32:05Z == Qwen_Qwen3.5-9B__Q8_0 mode=gpu size=9.5GB  (time left 116 min)
+2026-10-18T00:32:43Z    ok: 6 result rows
+2026-10-18T00:32:43Z == openai_gpt-oss-20b__Q4_K_M mode=gpu size=11.6GB  (time left 115 min)
+2026-10-18T00:33:16Z    ok: 6 result rows
+2026-10-18T00:33:17Z == openai_gpt-oss-20b__Q8_0 mode=gpu size=12.1GB  (time left 115 min)
+2026-10-18T00:33:54Z    ok: 6 result rows
+2026-10-18T00:33:54Z == google_gemma-4-12B-it__Q8_0 mode=gpu size=12.7GB  (time left 114 min)
+2026-10-18T00:34:46Z    ok: 6 result rows
+2026-10-18T00:34:46Z == mistralai_Mistral-Small-3.2-24B-Instruct-2506__Q4_K_M mode=gpu size=14.3GB  (time left 113 min)
+2026-10-18T00:35:44Z    ok: 6 result rows
+2026-10-18T00:35:44Z == Qwen_Qwen3.6-27B__Q4_K_M mode=gpu size=16.8GB  (time left 112 min)
+2026-10-18T00:36:43Z    ok: 6 result rows
+2026-10-18T00:36:43Z == google_gemma-4-26B-A4B-it__Q4_K_M mode=gpu size=16.9GB  (time left 111 min)
+2026-10-18T00:37:27Z    ok: 6 result rows
+2026-10-18T00:37:27Z == google_gemma-4-31B-it__Q4_K_M mode=gpu size=18.3GB  (time left 111 min)
+2026-10-18T00:38:35Z    ok: 6 result rows
+2026-10-18T00:38:35Z == Qwen_Qwen3-Coder-30B-A3B-Instruct__Q4_K_M mode=gpu size=18.6GB  (time left 109 min)
+2026-10-18T00:39:25Z    ok: 6 result rows
+2026-10-18T00:39:25Z == Qwen_Qwen3.6-35B-A3B__Q4_K_M mode=gpu size=22.1GB  (time left 109 min)
+2026-10-18T00:40:14Z    ok: 6 result rows
+2026-10-18T00:40:14Z == mistralai_Mistral-Small-3.2-24B-Instruct-2506__Q8_0 mode=gpu size=25.1GB  (time left 108 min)
+2026-10-18T00:41:27Z    ok: 6 result rows
+2026-10-18T00:41:27Z == google_gemma-4-26B-A4B-it__Q8_0 mode=gpu size=26.9GB  (time left 107 min)
+2026-10-18T00:42:57Z    ok: 6 result rows
+2026-10-18T00:42:57Z == Qwen_Qwen3.6-27B__Q8_0 mode=gpu size=28.6GB  (time left 105 min)
+2026-10-18T00:44:47Z    ok: 6 result rows
+2026-10-18T00:44:47Z == Qwen_Qwen3-Coder-30B-A3B-Instruct__Q8_0 mode=gpu size=32.5GB  (time left 103 min)
+2026-10-18T00:45:49Z    ok: 6 result rows
+2026-10-18T00:45:49Z == google_gemma-4-31B-it__Q8_0 mode=gpu size=32.6GB  (time left 102 min)
+2026-10-18T00:47:20Z    ok: 6 result rows
+2026-10-18T00:47:20Z == Qwen_Qwen3.6-35B-A3B__Q8_0 mode=gpu size=36.9GB  (time left 101 min)
+2026-10-18T00:48:21Z    ok: 6 result rows
+2026-10-18T00:48:22Z == openai_gpt-oss-120b__Q4_K_M mode=gpu size=62.8GB  (time left 100 min)
+2026-10-18T00:49:53Z    ok: 6 result rows
+2026-10-18T00:49:54Z == openai_gpt-oss-120b__Q8_0 mode=gpu size=63.4GB  (time left 98 min)
+2026-10-18T00:51:30Z    ok: 6 result rows
+2026-10-18T00:51:30Z == zai-org_GLM-4.5-Air__Q4_K_M mode=gpu size=73.0GB  (time left 97 min)
+2026-10-18T00:53:47Z    ok: 6 result rows
+2026-10-18T00:53:48Z sweep complete
+Terminated
+2026-10-18T00:53:48Z finalizing: 25 configs done, 0 failed
+2026-10-18T00:53:48Z results tarball: /workspace/sweep_out.tgz (36K)
+2026-10-18T00:53:48Z no --on-finish given: instance keeps running (and billing). Copy /workspace/sweep_out.tgz off the box and destroy it.

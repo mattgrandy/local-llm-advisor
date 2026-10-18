@@ -1,12 +1,12 @@
 {
  "generated": "2026-10-17",
- "kappa": 0.75,
- "kappa_pp": 1.53,
- "n_points_pp": 390,
- "pp_median_abs_error_pct": 6.6,
- "pp_p90_abs_error_pct": 31.7,
- "n_points": 371,
- "n_groups": 151,
+ "kappa": 0.74,
+ "kappa_pp": 1.5,
+ "n_points_pp": 438,
+ "pp_median_abs_error_pct": 6.1,
+ "pp_p90_abs_error_pct": 29.7,
+ "n_points": 419,
+ "n_groups": 175,
  "median_abs_error_pct": 2.1,
  "p90_abs_error_pct": 8.3,
  "max_measured_depth": 131072,
@@ -22,18 +22,18 @@
   131072
  ],
  "by_model_bias_ln_mean": {
-  "openai/gpt-oss-20b": 0.016,
-  "Qwen/Qwen3-Coder-30B-A3B-Instruct": -0.005,
-  "openai/gpt-oss-120b": 0.049,
-  "Qwen/Qwen3.6-35B-A3B": -0.014,
-  "Qwen/Qwen3.6-27B": 0.005,
-  "google/gemma-4-26B-A4B-it": -0.035,
-  "google/gemma-4-31B-it": 0.021,
+  "openai/gpt-oss-20b": 0.02,
+  "Qwen/Qwen3-Coder-30B-A3B-Instruct": -0.002,
+  "openai/gpt-oss-120b": 0.051,
+  "Qwen/Qwen3.6-35B-A3B": -0.012,
+  "Qwen/Qwen3.6-27B": 0.006,
+  "google/gemma-4-26B-A4B-it": -0.031,
+  "google/gemma-4-31B-it": 0.019,
   "Qwen/Qwen3.5-9B": 0.013,
   "google/gemma-4-12B-it": 0.011,
   "Qwen/Qwen3-VL-8B-Instruct": 0.05,
-  "Qwen/Qwen3.5-4B": 0.004,
-  "mistralai/Mistral-Small-3.2-24B-Instruct-2506": 0.019
+  "Qwen/Qwen3.5-4B": 0.005,
+  "mistralai/Mistral-Small-3.2-24B-Instruct-2506": 0.021
  },
  "method": "tg(d)=tg(0)/(1+kappa*KVread(d)/Wread). KVread counts f16 KV bytes attended per token (full layers: d tokens, sliding-window layers: window, linear-attention layers: ignored); Wread = weight bytes read per token (active params for MoE). kappa fitted in log space on measured depth rows (llama.cpp discussions/PRs, DGX Spark, Mac M2 Ultra, RTX 4090/5090 data) for models that map onto site models. Prompt processing (prefill) uses the same form with its own constant kappa_pp, applied per chunk and integrated over the prompt. Hardware-independent; real behaviour varies with backend and flash-attention kernels."
 }

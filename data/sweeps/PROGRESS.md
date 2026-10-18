@@ -35,3 +35,10 @@
 - 5070ti published 5d32c6e; 5090 sweep launched ~17:19 (instance in inst.env)
 - 5090 sweep in progress, Q8 large configs (18:24)
 - 5090 done+destroyed Sat Oct 17 18:25:08 MDT 2026
+- 5090 published e220679, HF updated (427 rows), indexnow submitted; credit ~20.11 Sat Oct 17 18:26:41 MDT 2026
+- PRO6000 batch start Sat Oct 17 18:27:16 MDT 2026, credit 20.09, offer 49231571 CZ WS, disk 250
+- rtxpro6000 instance 56472343
+- rtxpro6000 sweep launched Sat Oct 17 18:28:51 MDT 2026
+- PRO6000 sweep running 18:39
+- PRO6000 at gpt-oss-120b 18:51
+- PRO6000 done+destroyed Sat Oct 17 18:55:14 MDT 2026
