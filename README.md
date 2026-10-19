@@ -35,7 +35,7 @@ Moderation: `tools/ingest_submissions.py` (inbox of `.json`/issue-body `.md` fil
 `node tests/test_all.js` (provenance tiers across all pages, multi-GPU exclusion, submit validation, llama-bench parser). Moderation flow tested manually with sample submissions (removed afterwards).
 
 ## Update data (weekly routine)
-0. `python3 tools/ingest_benchmarks.py` (llama.cpp/HF/GitHub), then `python3 tools/ingest_localscore.py --refresh`, then `python3 tools/build_measured.py` (the first script rewrites benchmarks_all, so run LocalScore after it).
+0. `python3 tools/ingest_benchmarks.py` (llama.cpp/HF/GitHub; works from the cache in `data/benchmarks/raw/`, `--refresh` refetches everything and needs hours unauthenticated, so refresh only the threads whose `updated_at` changed), then `python3 tools/ingest_localscore.py --refresh`, `python3 tools/fetch_threads.py`, `python3 tools/ingest_more.py`, then `python3 tools/build_measured.py` (the first script rewrites benchmarks_all, so run the others after it; it re-adds our own sweeps from `data/benchmarks/own/*.json`, so they are never dropped).
 1. **Add/remove models**: edit `tools/model_manifest.json` (HF model id, unsloth/other GGUF repo, tags, `vision`, and for MoE `active_b` copied from the model card text).
 2. `python3 tools/update_models.py`: refetches params, license, context, attention layout (for KV math), and real GGUF file sizes; stamps `last_verified` and appends a changelog entry for changes. A model that fails to fetch is skipped, never guessed.
 3. **Hardware**: edit `site/data/hardware.json` by hand. Every entry needs `source_url`, `basis`, `last_verified`. GPUs: TechPowerUp spec page (bandwidth = bus width x data rate). Apple/AMD/NVIDIA unified: vendor spec pages. Add new targets under `targets`.
@@ -47,7 +47,7 @@ Moderation: `tools/ingest_submissions.py` (inbox of `.json`/issue-body `.md` fil
 - Verified from the web: params, license, context max, layer/KV config, GGUF sizes, GPU/Apple/AMD/NVIDIA memory and bandwidth.
 - **Assumptions** (in `hardware.json -> assumptions`, not facts): 1 GB/GPU overhead, 8 GB OS RAM reserve, 70% (Apple) / 85% (APU) of unified memory usable, experts = 90% of MoE weights, speed efficiency 55% GPU / 60% CPU, "usable" >= 5 tok/s, "comfortable" >= 15 tok/s, RAM bandwidth by RAM type (theoretical). Speed efficiency is now calibrated from measured data (see Calibration); the 55% is only the fallback.
 - Ranking is a heuristic (fits and fast enough first, then size; MoE uses sqrt(total x active)). `tags` (coding/chat) are editorial, not benchmark results.
-- Gemma 4 / Qwen3.5-3.6 KV math: sliding-window and linear-attention layers are handled; K and V are both counted even where a model shares K=V (conservative).
+- Gemma 4 / Qwen3.5-3.8 KV math: sliding-window and linear-attention layers are handled; Nemotron-H (Mamba-2 hybrid) and LFM2 (short-conv) layers count as a fixed-size state computed from config.json; K and V are both counted even where a model shares K=V (conservative). YaRN `context_extended` blocks are editorial (copied from the model card) and live in `tools/model_manifest.json`.
 
 ## Known gaps / not verified
 - Commands were not executed on real hardware. `--n-cpu-moe`, `-fa on`, `-hf repo:quant`, `OLLAMA_CONTEXT_LENGTH` should be re-checked against the current llama.cpp/Ollama docs. Ollama cannot set `--n-cpu-moe`.

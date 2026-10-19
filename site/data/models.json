@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-14",
+ "generated": "2026-10-19",
  "models": [
   {
    "id": "google/gemma-4-26B-A4B-it",
@@ -44,7 +44,7 @@
    },
    "source_url": "https://huggingface.co/google/gemma-4-26B-A4B-it",
    "gguf_source_url": "https://huggingface.co/unsloth/gemma-4-26B-A4B-it-GGUF",
-   "last_verified": "2026-10-14",
+   "last_verified": "2026-10-19",
    "active_params_b": 3.8,
    "active_source": "model card text on source_url"
   },
@@ -91,7 +91,7 @@
    },
    "source_url": "https://huggingface.co/google/gemma-4-31B-it",
    "gguf_source_url": "https://huggingface.co/unsloth/gemma-4-31B-it-GGUF",
-   "last_verified": "2026-10-14"
+   "last_verified": "2026-10-19"
   },
   {
    "id": "google/gemma-4-12B-it",
@@ -135,7 +135,7 @@
    },
    "source_url": "https://huggingface.co/google/gemma-4-12B-it",
    "gguf_source_url": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF",
-   "last_verified": "2026-10-14"
+   "last_verified": "2026-10-19"
   },
   {
    "id": "Qwen/Qwen3.6-27B",
@@ -179,7 +179,7 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3.6-27B",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.6-27B-GGUF",
-   "last_verified": "2026-10-14",
+   "last_verified": "2026-10-19",
    "context_native": 262144,
    "context_extended": {
     "max": 1010000,
@@ -232,9 +232,7 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF",
-   "last_verified": "2026-10-14",
-   "active_params_b": 3,
-   "active_source": "model card text on source_url",
+   "last_verified": "2026-10-19",
    "context_native": 262144,
    "context_extended": {
     "max": 1010000,
@@ -243,7 +241,9 @@
     "source": "Model card: \"262,144 natively and extensible up to 1,010,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section",
     "source_url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
     "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
-   }
+   },
+   "active_params_b": 3,
+   "active_source": "model card text on source_url"
   },
   {
    "id": "Qwen/Qwen3.5-9B",
@@ -287,7 +287,7 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3.5-9B",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF",
-   "last_verified": "2026-10-14",
+   "last_verified": "2026-10-19",
    "context_native": 262144,
    "context_extended": {
     "max": 1010000,
@@ -339,7 +339,7 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3.5-4B",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF",
-   "last_verified": "2026-10-14",
+   "last_verified": "2026-10-19",
    "context_native": 262144,
    "context_extended": {
     "max": 1010000,
@@ -393,7 +393,7 @@
    },
    "source_url": "https://huggingface.co/openai/gpt-oss-20b",
    "gguf_source_url": "https://huggingface.co/unsloth/gpt-oss-20b-GGUF",
-   "last_verified": "2026-10-14",
+   "last_verified": "2026-10-19",
    "active_params_b": 3.6,
    "active_source": "model card text on source_url"
   },
@@ -440,7 +440,7 @@
    },
    "source_url": "https://huggingface.co/openai/gpt-oss-120b",
    "gguf_source_url": "https://huggingface.co/unsloth/gpt-oss-120b-GGUF",
-   "last_verified": "2026-10-14",
+   "last_verified": "2026-10-19",
    "active_params_b": 5.1,
    "active_source": "model card text on source_url"
   },
@@ -482,9 +482,7 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
-   "last_verified": "2026-10-14",
-   "active_params_b": 3.3,
-   "active_source": "model card text on source_url",
+   "last_verified": "2026-10-19",
    "context_native": 262144,
    "context_extended": {
     "max": 1000000,
@@ -493,7 +491,9 @@
     "source": "Model card: \"native support for 256K tokens, extendable up to 1M tokens using Yarn\"",
     "source_url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
     "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
-   }
+   },
+   "active_params_b": 3.3,
+   "active_source": "model card text on source_url"
   },
   {
    "id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
@@ -533,7 +533,7 @@
    },
    "source_url": "https://huggingface.co/mistralai/Mistral-Small-3.2-24B-Instruct-2506",
    "gguf_source_url": "https://huggingface.co/unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF",
-   "last_verified": "2026-10-14"
+   "last_verified": "2026-10-19"
   },
   {
    "id": "Qwen/Qwen3-VL-8B-Instruct",
@@ -571,7 +571,7 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3-VL-8B-Instruct-GGUF",
-   "last_verified": "2026-10-14",
+   "last_verified": "2026-10-19",
    "context_native": 262144,
    "context_extended": {
     "max": 1000000,
@@ -621,12 +621,156 @@
    },
    "source_url": "https://huggingface.co/zai-org/GLM-4.5-Air",
    "gguf_source_url": "https://huggingface.co/unsloth/GLM-4.5-Air-GGUF",
-   "last_verified": "2026-10-14",
+   "last_verified": "2026-10-19",
+   "active_params_b": 12,
+   "active_source": "model card text on source_url"
+  },
+  {
+   "id": "Qwen/Qwen3.8-27B",
+   "name": "Qwen3.8 27B",
+   "params_b": 27.78,
+   "moe": false,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true,
+   "license": "apache-2.0",
+   "context_max": 262144,
+   "kv": {
+    "layers": 64,
+    "full_layers": 16,
+    "full_kv_heads": 4,
+    "full_head_dim": 256,
+    "linear_layers": 48,
+    "linear_state_gb": 0.1569,
+    "linear_note": "Gated DeltaNet layers keep a fixed-size f32 state (does not grow with context); computed from config.json linear_* dims."
+   },
+   "gguf_repo": "unsloth/Qwen3.8-27B-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "UD-Q4_K_M",
+     "gb": 16.46
+    },
+    "Q5_K_M": {
+     "label": "UD-Q5_K_M",
+     "gb": 19.77
+    },
+    "Q6_K": {
+     "label": "UD-Q6_K",
+     "gb": 21.98
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 29.05
+    }
+   },
+   "source_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+   "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+   "last_verified": "2026-10-19",
+   "context_native": 262144,
+   "context_extended": {
+    "max": 1000000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"262,144 natively and extensible up to 1,000,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can reduce quality on shorter texts, so enable it only when you need the length."
+   }
+  },
+  {
+   "id": "LiquidAI/LFM2.5-24B-A2B",
+   "name": "LFM2.5 24B-A2B",
+   "params_b": 23.97,
+   "moe": true,
+   "tags": [
+    "chat"
+   ],
+   "vision": false,
+   "license": "lfm1.0",
+   "context_max": 131072,
+   "kv": {
+    "layers": 40,
+    "full_layers": 10,
+    "full_kv_heads": 8,
+    "full_head_dim": 64,
+    "linear_layers": 30,
+    "linear_state_gb": 0.0007,
+    "linear_note": "Short-convolution (LFM2) layers keep a tiny fixed-size state (does not grow with context); computed from config.json hidden_size and conv_L_cache."
+   },
+   "gguf_repo": "LiquidAI/LFM2.5-24B-A2B-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 14.53
+    },
+    "Q5_K_M": {
+     "label": "Q5_K_M",
+     "gb": 17.03
+    },
+    "Q6_K": {
+     "label": "Q6_K",
+     "gb": 19.69
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 25.49
+    }
+   },
+   "source_url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
+   "gguf_source_url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B-GGUF",
+   "last_verified": "2026-10-19",
+   "active_params_b": 2.45,
+   "active_source": "model card text on source_url"
+  },
+  {
+   "id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+   "name": "Nemotron 3.5 Super VL 120B-A12B",
+   "params_b": 124.45,
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true,
+   "license": "openmdw-1.1",
+   "context_max": 1048576,
+   "kv": {
+    "layers": 88,
+    "full_layers": 8,
+    "full_kv_heads": 2,
+    "full_head_dim": 128,
+    "linear_layers": 40,
+    "linear_state_gb": 0.1727,
+    "linear_note": "Mamba-2 layers keep a fixed-size f32 SSM + conv state (does not grow with context); computed from config.json mamba_* dims."
+   },
+   "gguf_repo": "lmstudio-community/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 70.1
+    }
+   },
+   "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+   "gguf_source_url": "https://huggingface.co/lmstudio-community/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+   "last_verified": "2026-10-19",
    "active_params_b": 12,
    "active_source": "model card text on source_url"
   }
  ],
  "changelog": [
+  {
+   "date": "2026-10-19",
+   "changes": [
+    "Added Qwen3.8 27B (dense, vision, Apache-2.0; 262k native context, up to 1M with YaRN per its model card). Widely used since August and was missing from the catalog.",
+    "Added LFM2.5 24B-A2B (Liquid AI MoE, 24B total / 2.45B active, LFM Open License v1.0, released Oct 13; official LiquidAI GGUF, Q4_K_M 14.5 GB).",
+    "Added Nemotron 3.5 Super VL 120B-A12B (NVIDIA hybrid Mamba-2/Transformer MoE with vision, OpenMDW-1.1, released Oct 15; Q4_K_M GGUF about 70 GB, so it needs a 96 GB GPU or a 128 GB+ unified-memory machine). llama.cpp support merged Oct 15 (ggml-org/llama.cpp PR #30520).",
+    "New hardware: AMD Ryzen AI Max+ PRO 495 (Ryzen AI Halo, announced Oct 12): 192 GB LPDDR5x-8533 on a 256-bit bus = 273 GB/s (computed from AMD's spec page), with its own hardware page.",
+    "KV-cache math now also covers Mamba-2 hybrid layers (Nemotron) and LFM2 short-convolution layers: only the attention layers grow with context; the other layers keep a small fixed-size state.",
+    "Benchmarks refreshed: 12 new rows from the llama.cpp CUDA thread (discussion #15013) and 5 new LocalScore rows. The M5 Max (40-core GPU) speed calibration moved from 0.78 to 0.61 with more data (n=11).",
+    "llama.cpp 0.7.0 (Oct 15) changed llama-server's default port from 8080 to 9931. Our commands do not set a port, so look for the server on 9931 unless you pass --port."
+   ]
+  },
   {
    "date": "2026-10-15",
    "changes": [

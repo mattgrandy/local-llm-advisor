@@ -13,14 +13,41 @@ def get(url, raw=False):
         b = r.read()
     return b.decode() if raw else json.loads(b)
 
+def text_cfg(c):
+    # language-model part of the config: text_config (Gemma/Qwen VLMs), llm_config (Nemotron VL), else the top level
+    return c.get("text_config") or c.get("llm_config") or c
+
 def kv_from_config(c):
-    t = c.get("text_config", c)
-    L = t["num_hidden_layers"]
+    t = text_cfg(c)
+    bt = t.get("layers_block_type")  # Nemotron-H hybrid: one entry per block (mamba / attention / moe / mlp)
     lt = t.get("layer_types")
     kvh = t.get("num_key_value_heads"); hd = t.get("head_dim") or t["hidden_size"] // t["num_attention_heads"]
-    if lt:
+    L = len(bt) if bt else t["num_hidden_layers"]
+    lin_layers, lin_bytes, lin_note = 0, 0, None
+    if bt:
+        full, swa = bt.count("attention"), 0
+        mamba = bt.count("mamba")
+        if mamba:  # Mamba-2: f32 SSM state (heads x head_dim x state) + conv state (conv_dim x (kernel-1)), fixed size
+            nh, hdm, ds = t["mamba_num_heads"], t["mamba_head_dim"], t["ssm_state_size"]
+            conv_dim = nh * hdm + 2 * t["n_groups"] * ds
+            per = nh * hdm * ds * 4 + conv_dim * (t["conv_kernel"] - 1) * 4
+            lin_layers, lin_bytes = mamba, mamba * per
+            lin_note = "Mamba-2 layers keep a fixed-size f32 SSM + conv state (does not grow with context); computed from config.json mamba_* dims."
+    elif lt:
         full = sum(1 for x in lt if x == "full_attention")
         swa = sum(1 for x in lt if x == "sliding_attention")
+        nlin = sum(1 for x in lt if x == "linear_attention")
+        nconv = sum(1 for x in lt if x == "conv")
+        if nlin:  # Gated DeltaNet: f32 state (value heads x key dim x value dim) + conv state
+            nk, nv = t["linear_num_key_heads"], t["linear_num_value_heads"]
+            dk, dv = t["linear_key_head_dim"], t["linear_value_head_dim"]
+            per = nv * dk * dv * 4 + (2 * nk * dk + nv * dv) * (t["linear_conv_kernel_dim"] - 1) * 4
+            lin_layers, lin_bytes = nlin, nlin * per
+            lin_note = "Gated DeltaNet layers keep a fixed-size f32 state (does not grow with context); computed from config.json linear_* dims."
+        elif nconv and t.get("conv_L_cache"):  # LFM2 short-convolution layers: hidden_size x L_cache state (counted as f32)
+            per = t["hidden_size"] * t["conv_L_cache"] * 4
+            lin_layers, lin_bytes = nconv, nconv * per
+            lin_note = "Short-convolution (LFM2) layers keep a tiny fixed-size state (does not grow with context); computed from config.json hidden_size and conv_L_cache."
     else:
         full, swa = L, 0
     out = {"layers": L, "full_layers": full,
@@ -28,8 +55,8 @@ def kv_from_config(c):
            "full_head_dim": t.get("global_head_dim") or hd}
     if swa:
         out.update({"swa_layers": swa, "swa_kv_heads": kvh, "swa_head_dim": hd, "window": t.get("sliding_window")})
-    if t.get("sliding_window") and not lt and t.get("use_sliding_window"):
-        pass  # Qwen-style flag; not used by listed models
+    if lin_layers:
+        out.update({"linear_layers": lin_layers, "linear_state_gb": round(lin_bytes / 1e9, 4), "linear_note": lin_note})
     return out
 
 def gguf_sizes(repo):
@@ -61,22 +88,27 @@ def main():
         except Exception as e:
             print("FAILED", m["id"], e, file=sys.stderr); continue
         total = api.get("safetensors", {}).get("total")
-        lic = (api.get("cardData") or {}).get("license")
+        card = api.get("cardData") or {}
+        lic = card.get("license")
+        if lic == "other" and card.get("license_name"): lic = card["license_name"]  # e.g. openmdw-1.1, lfm1.0
         rec = {"id": m["id"], "name": m["name"],
                "params_b": round(total / 1e9, 2) if total else None,
                "moe": m["moe"], "tags": m["tags"], "vision": m["vision"],
-               "license": lic, "context_max": (cfg.get("text_config", cfg)).get("max_position_embeddings"),
+               "license": lic, "context_max": text_cfg(cfg).get("max_position_embeddings"),
                "kv": kv_from_config(cfg), "gguf_repo": m["gguf"], "quants": q,
                "source_url": f"https://huggingface.co/{m['id']}",
                "gguf_source_url": f"https://huggingface.co/{m['gguf']}",
                "last_verified": TODAY}
+        if m.get("context_extended"):  # editorial: copied from the model card (YaRN), see manifest
+            rec["context_native"] = rec["context_max"]
+            rec["context_extended"] = m["context_extended"]
         if m.get("active_b"):
             rec["active_params_b"] = m["active_b"]
             rec["active_source"] = "model card text on source_url"
         old = prev.get(m["id"])
         if old is None: log.append(f"added {m['name']}")
         else:
-            for k in ("params_b", "license", "quants", "kv"):
+            for k in ("params_b", "license", "quants", "kv", "context_max", "context_extended"):
                 if old.get(k) != rec.get(k): log.append(f"{m['name']}: {k} changed")
         models.append(rec)
     existing = json.load(open(OUT)) if OUT.exists() else {"changelog": []}

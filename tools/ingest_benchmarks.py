@@ -236,6 +236,14 @@ def main():
     except ImportError:
         pass
 
+    # 5. our own llama-bench sweeps (data/benchmarks/own/*.json, written by tools/sweep/ingest_sweep.py). Re-added here so a
+    #    rerun of this script never drops them; multi-GPU runs live in own-multigpu/ and stay out on purpose.
+    import glob
+    own = []
+    for f in sorted(glob.glob(os.path.join(OUT, 'own', '*.json'))):
+        own += json.load(open(f))
+    if own: add('own-measurement', own)
+
     # de-dup comment rows that restate a scoreboard row (same pp & tg numbers & backend)
     sb = {(r['backend'], r['pp_tps'], r['tg_tps']) for r in allrows if 'scoreboard' in r['source'] or 'summary' in r['source']}
     kept = []; dropped = 0

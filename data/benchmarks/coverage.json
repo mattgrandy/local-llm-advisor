@@ -156,20 +156,23 @@
   "non_llama2_rows": 3
  },
  "m5-max-40": {
-  "rows": 12,
+  "rows": 20,
   "sources": [
    "hf-studioburnside-mlx-local-inference-benchmarks",
    "llamacpp-discussion-4167-comments",
    "llamacpp-discussion-4167-summary",
+   "localscore-latest-runs",
    "localscore-model-pages"
   ],
   "models": [
+   "Llama 3.2 1B Instruct",
+   "Meta Llama 3.1 8B Instruct",
    "Qwen2.5 14B Instruct",
    "Qwen3.6-35B-A3B",
    "Tess-4-27B (Qwen3.6-27B fine-tune)",
    "llama 7B"
   ],
-  "non_llama2_rows": 6
+  "non_llama2_rows": 14
  },
  "m5-pro": {
   "rows": 17,
@@ -204,77 +207,124 @@
   "non_llama2_rows": 1
  },
  "rtx-3060-12": {
-  "rows": 7,
+  "rows": 44,
   "sources": [
    "llamacpp-discussion-15013-comments",
    "llamacpp-discussion-15013-scoreboard",
-   "localscore-model-pages"
+   "localscore-model-pages",
+   "own-measurement"
   ],
   "models": [
+   "Gemma 4 12B",
+   "Gemma 4 26B-A4B",
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
    "Qwen2.5 14B Instruct",
+   "Qwen3-Coder 30B-A3B",
+   "Qwen3-VL 8B",
+   "Qwen3.5 4B",
+   "Qwen3.5 9B",
+   "Qwen3.6 35B-A3B",
+   "gpt-oss 20B",
    "llama 7B"
   ],
-  "non_llama2_rows": 3
+  "non_llama2_rows": 40
  },
  "rtx-3090": {
-  "rows": 103,
+  "rows": 170,
   "sources": [
    "llamacpp-discussion-10879-comments",
    "llamacpp-discussion-10879-scoreboard",
    "llamacpp-discussion-15013-comments",
    "llamacpp-discussion-15013-scoreboard",
    "llamacpp-discussion-15396",
-   "localscore-model-pages"
+   "localscore-model-pages",
+   "own-measurement"
   ],
   "models": [
+   "Gemma 4 12B",
+   "Gemma 4 26B-A4B",
+   "Gemma 4 31B",
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
+   "Mistral Small 3.2 24B",
    "Qwen2.5 14B Instruct",
+   "Qwen3-Coder 30B-A3B",
+   "Qwen3-VL 8B",
+   "Qwen3.5 4B",
+   "Qwen3.5 9B",
+   "Qwen3.6 27B",
+   "Qwen3.6 35B-A3B",
    "gpt-oss 20B",
    "llama 7B"
   ],
-  "non_llama2_rows": 64
+  "non_llama2_rows": 131
  },
  "rtx-4060": {
-  "rows": 2,
+  "rows": 27,
   "sources": [
-   "localscore-model-pages"
+   "localscore-model-pages",
+   "own-measurement"
   ],
   "models": [
+   "Gemma 4 26B-A4B",
    "Llama 3.2 1B Instruct",
-   "Meta Llama 3.1 8B Instruct"
+   "Meta Llama 3.1 8B Instruct",
+   "Qwen3-Coder 30B-A3B",
+   "Qwen3-VL 8B",
+   "Qwen3.5 4B",
+   "Qwen3.5 9B",
+   "Qwen3.6 35B-A3B",
+   "gpt-oss 20B"
   ],
-  "non_llama2_rows": 2
+  "non_llama2_rows": 27
  },
  "rtx-4060ti-16": {
-  "rows": 3,
+  "rows": 49,
   "sources": [
-   "localscore-model-pages"
+   "localscore-model-pages",
+   "own-measurement"
   ],
   "models": [
+   "Gemma 4 12B",
+   "Gemma 4 26B-A4B",
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
-   "Qwen2.5 14B Instruct"
+   "Mistral Small 3.2 24B",
+   "Qwen2.5 14B Instruct",
+   "Qwen3-Coder 30B-A3B",
+   "Qwen3-VL 8B",
+   "Qwen3.5 4B",
+   "Qwen3.5 9B",
+   "Qwen3.6 35B-A3B",
+   "gpt-oss 20B"
   ],
-  "non_llama2_rows": 3
+  "non_llama2_rows": 49
  },
  "rtx-4070": {
-  "rows": 5,
+  "rows": 42,
   "sources": [
    "llamacpp-discussion-10879-scoreboard",
-   "localscore-model-pages"
+   "localscore-model-pages",
+   "own-measurement"
   ],
   "models": [
+   "Gemma 4 12B",
+   "Gemma 4 26B-A4B",
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
-   "Qwen2.5 14B Instruct"
+   "Qwen2.5 14B Instruct",
+   "Qwen3-Coder 30B-A3B",
+   "Qwen3-VL 8B",
+   "Qwen3.5 4B",
+   "Qwen3.5 9B",
+   "Qwen3.6 35B-A3B",
+   "gpt-oss 20B"
   ],
-  "non_llama2_rows": 3
+  "non_llama2_rows": 40
  },
  "rtx-4090": {
-  "rows": 105,
+  "rows": 172,
   "sources": [
    "hf-steven0226-speculative-decoding-bench-rtx4090",
    "llamacpp-discussion-10879-comments",
@@ -282,35 +332,55 @@
    "llamacpp-discussion-15013-comments",
    "llamacpp-discussion-15013-scoreboard",
    "llamacpp-discussion-15396",
-   "localscore-model-pages"
+   "localscore-model-pages",
+   "own-measurement"
   ],
   "models": [
+   "Gemma 4 12B",
+   "Gemma 4 26B-A4B",
+   "Gemma 4 31B",
    "Llama 3.1 8B",
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
+   "Mistral Small 3.2 24B",
    "Qwen2.5 14B Instruct",
    "Qwen3-14B",
    "Qwen3-8B",
+   "Qwen3-Coder 30B-A3B",
+   "Qwen3-VL 8B",
+   "Qwen3.5 4B",
+   "Qwen3.5 9B",
+   "Qwen3.6 27B",
+   "Qwen3.6 35B-A3B",
    "gpt-oss 20B",
    "llama 7B"
   ],
-  "non_llama2_rows": 34
+  "non_llama2_rows": 101
  },
  "rtx-5070": {
-  "rows": 6,
+  "rows": 43,
   "sources": [
    "llamacpp-discussion-15013-scoreboard",
-   "localscore-model-pages"
+   "localscore-model-pages",
+   "own-measurement"
   ],
   "models": [
+   "Gemma 4 12B",
+   "Gemma 4 26B-A4B",
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
-   "Qwen2.5 14B Instruct"
+   "Qwen2.5 14B Instruct",
+   "Qwen3-Coder 30B-A3B",
+   "Qwen3-VL 8B",
+   "Qwen3.5 4B",
+   "Qwen3.5 9B",
+   "Qwen3.6 35B-A3B",
+   "gpt-oss 20B"
   ],
-  "non_llama2_rows": 4
+  "non_llama2_rows": 41
  },
  "rtx-5070ti": {
-  "rows": 50,
+  "rows": 96,
   "sources": [
    "llamacpp-discussion-10879-comments",
    "llamacpp-discussion-10879-scoreboard",
@@ -318,19 +388,28 @@
    "llamacpp-discussion-15013-scoreboard",
    "llamacpp-discussion-15396",
    "llamacpp-pr-17906",
-   "localscore-model-pages"
+   "localscore-model-pages",
+   "own-measurement"
   ],
   "models": [
+   "Gemma 4 12B",
+   "Gemma 4 26B-A4B",
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
+   "Mistral Small 3.2 24B",
    "Qwen2.5 14B Instruct",
+   "Qwen3-Coder 30B-A3B",
+   "Qwen3-VL 8B",
+   "Qwen3.5 4B",
+   "Qwen3.5 9B",
+   "Qwen3.6 35B-A3B",
    "gpt-oss 20B",
    "llama 7B"
   ],
-  "non_llama2_rows": 22
+  "non_llama2_rows": 68
  },
  "rtx-5080": {
-  "rows": 86,
+  "rows": 142,
   "sources": [
    "hf-iBlessi-rtx-5080-llm-throughput",
    "llamacpp-discussion-10879-comments",
@@ -338,13 +417,21 @@
    "llamacpp-discussion-15013-comments",
    "llamacpp-discussion-15013-scoreboard",
    "llamacpp-discussion-15396",
-   "localscore-latest-runs",
-   "localscore-model-pages"
+   "localscore-model-pages",
+   "own-measurement"
   ],
   "models": [
+   "Gemma 4 12B",
+   "Gemma 4 26B-A4B",
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
+   "Mistral Small 3.2 24B",
    "Qwen2.5 14B Instruct",
+   "Qwen3-Coder 30B-A3B",
+   "Qwen3-VL 8B",
+   "Qwen3.5 4B",
+   "Qwen3.5 9B",
+   "Qwen3.6 35B-A3B",
    "devstral-24b",
    "gpt-oss 20B",
    "gpt-oss-20b",
@@ -356,10 +443,10 @@
    "qwen2.5-coder-7b",
    "qwen3-coder-30b"
   ],
-  "non_llama2_rows": 50
+  "non_llama2_rows": 94
  },
  "rtx-5090": {
-  "rows": 295,
+  "rows": 352,
   "sources": [
    "hf-witcheer-rtx-5090-benchmarks",
    "llamacpp-discussion-10879-scoreboard",
@@ -370,16 +457,19 @@
    "llamacpp-pr-19375",
    "llamacpp-pr-19769",
    "llamacpp-thread-19081",
-   "localscore-model-pages"
+   "localscore-model-pages",
+   "own-measurement"
   ],
   "models": [
    "Gemma 4 12B",
+   "Gemma 4 26B-A4B",
    "Gemma 4 31B",
    "Gemma 4 31B-it",
    "LFM2.5-8B-A1B",
    "Ling-3.0-flash",
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
+   "Mistral Small 3.2 24B",
    "Mistral Small 4 119B",
    "Muse-Glimmer-30B",
    "NVIDIA-Nemotron-3.5-Lightning-30B-A3B",
@@ -392,39 +482,49 @@
    "Qwable-3.6-27B",
    "Qwable-5-27B-Coder",
    "Qwen2.5 14B Instruct",
+   "Qwen3-Coder 30B-A3B",
    "Qwen3-Coder-Next",
+   "Qwen3-VL 8B",
+   "Qwen3.5 4B",
+   "Qwen3.5 9B",
+   "Qwen3.6 27B",
+   "Qwen3.6 35B-A3B",
    "Qwen3.6-27B",
-   "Qwen3.6-27B-MTP",
-   "Qwen3.6-27B-MTP-pi-tune",
-   "Qwen3.6-28B-REAP-A3B",
-   "Qwen3.6-35B-A3B",
-   "Qwen3.8-27B",
-   "Qwen3.8-Flash-Next",
-   "Qwen3.8-Flash-Next 125B-A10B",
-   "Qwopus3.6-27B-Coder",
-   "Qwopus3.6-27B-Coder-Compat"
+   "Qwen3.6-27B-MTP"
   ],
-  "non_llama2_rows": 253
+  "non_llama2_rows": 310
  },
  "rtx-pro-6000": {
-  "rows": 45,
+  "rows": 120,
   "sources": [
    "llamacpp-discussion-15013-comments",
    "llamacpp-discussion-15013-scoreboard",
    "llamacpp-discussion-15396",
    "llamacpp-pr-17906",
-   "localscore-model-pages"
+   "localscore-model-pages",
+   "own-measurement"
   ],
   "models": [
+   "GLM-4.5-Air",
+   "Gemma 4 12B",
+   "Gemma 4 26B-A4B",
+   "Gemma 4 31B",
    "Llama 3.2 1B Instruct",
    "Meta Llama 3.1 8B Instruct",
+   "Mistral Small 3.2 24B",
    "Qwen2.5 14B Instruct",
+   "Qwen3-Coder 30B-A3B",
+   "Qwen3-VL 8B",
+   "Qwen3.5 4B",
+   "Qwen3.5 9B",
+   "Qwen3.6 27B",
+   "Qwen3.6 35B-A3B",
    "gpt-oss 120B",
    "gpt-oss 20B",
    "gpt-oss ?B",
    "llama 7B"
   ],
-  "non_llama2_rows": 21
+  "non_llama2_rows": 96
  },
  "rx-7900xtx": {
   "rows": 189,
@@ -447,6 +547,12 @@
    "llama 7B"
   ],
   "non_llama2_rows": 21
+ },
+ "ryzen-ai-max-pro-495": {
+  "rows": 0,
+  "sources": [],
+  "models": [],
+  "non_llama2_rows": 0
  },
  "strix-halo": {
   "rows": 227,

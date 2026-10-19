@@ -1,11 +1,11 @@
 {
- "rows_total": 8983,
+ "rows_total": 9540,
  "dropped_dup_of_scoreboard": 425,
  "dropped_author_flagged_invalid": 2,
  "dropped_nonpositive": 0,
  "counts_by_source_raw": {
   "discussion-15013-scoreboard-tables": 112,
-  "discussion-15013-comments": 1386,
+  "discussion-15013-comments": 1398,
   "discussion-4167-scoreboard-tables": 108,
   "discussion-4167-comments": 256,
   "discussion-15021-scoreboard-tables": 46,
@@ -29,11 +29,12 @@
   "hf-strix-halo-inference-bench": 44,
   "github-strix-halo-guide": 41,
   "github-apple-silicon-llm-bench": 55,
-  "lmarena-open-models (quality, separate file)": 0
+  "lmarena-open-models (quality, separate file)": 0,
+  "own-measurement": 540
  },
  "counts_by_source_final": {
   "llamacpp-discussion-15013-scoreboard": 112,
-  "llamacpp-discussion-15013-comments": 1283,
+  "llamacpp-discussion-15013-comments": 1295,
   "llamacpp-discussion-4167-summary": 96,
   "llamacpp-discussion-4167-m2ultra-history": 12,
   "llamacpp-discussion-4167-comments": 169,
@@ -54,15 +55,16 @@
   "hf-NeoAiLabs-llama-cpp-rx7800xt-benchmarks": 16,
   "hf-axjns-strix-halo-inference-bench": 44,
   "github-strix-halo-guide-BENCHMARKS": 41,
-  "github-apple-silicon-llm-bench-leaderboard": 55
+  "github-apple-silicon-llm-bench-leaderboard": 55,
+  "own-measurement": 540
  },
  "notes": {
   "discussion-15013": {
    "title": "Performance of llama.cpp on Nvidia CUDA",
-   "comments_total": 233,
+   "comments_total": 234,
    "replies_included_in_comment_list": 105,
-   "top_level": 128,
-   "comments_with_bench_tables": 137
+   "top_level": 129,
+   "comments_with_bench_tables": 138
   },
   "discussion-4167": {
    "title": "Performance of llama.cpp on Apple Silicon M-series",
@@ -140,18 +142,18 @@
    "license": "CC-BY-4.0"
   }
  },
- "rows_with_hw_id": 1654,
+ "rows_with_hw_id": 2212,
  "rows_device_unknown": 738,
- "generated": "2026-10-14 21:06 MDT",
+ "generated": "2026-10-19 10:06 MDT",
  "localscore": {
-  "rows": 1721,
-  "model_page_rows": 1711,
+  "rows": 1726,
+  "model_page_rows": 1716,
   "latest_rows": 10,
-  "hw_matched": 154,
-  "retrieved": "2026-10-15"
+  "hw_matched": 160,
+  "retrieved": "2026-10-19"
  },
  "pass2": {
-  "date": "2026-10-15",
+  "date": "2026-10-19",
   "new_rows": 2433,
   "by_source": {
    "llamacpp-discussion-15396": 942,
@@ -333,7 +335,7 @@
    "witcheer": {
     "license": "mit",
     "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks",
-    "hf_last_modified": "2026-10-15",
+    "hf_last_modified": "2026-10-19",
     "rows": 192
    },
    "iblessi": {

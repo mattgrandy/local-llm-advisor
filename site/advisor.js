@@ -33,7 +33,8 @@
   function ctxStatus(model, ctx) { // "native" | "extended" | "over"
     const l = ctxLimits(model); return ctx <= l.native ? "native" : ctx <= l.extended ? "extended" : "over";
   }
-  function fmtCtx(n) { return n >= 1e6 ? (n / 1e6) + "M" : n >= 1024 ? Math.round(n / 1024) + "k" : String(n); }
+  // 1,048,576 (a binary "1M", e.g. Nemotron 3.5 config) prints as "1M" like 262,144 prints as "256k"; decimal millions keep up to 2 decimals
+  function fmtCtx(n) { return n >= 1e6 ? (n % 1048576 === 0 ? n / 1048576 : +(n / 1e6).toFixed(2)) + "M" : n >= 1024 ? Math.round(n / 1024) + "k" : String(n); }
 
   // ---- long-context speed (ESTIMATE; constants fitted by tools/calibrate_depth.py, see data/depth_calibration.json) ----
   // Decode: tg(d) = tg0 / (1 + kappa * KVread(d) / Wread).  Prefill: same form per chunk with kappa_pp, integrated over the prompt.

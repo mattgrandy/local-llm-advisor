@@ -69,3 +69,4 @@
 - dual3090 CUDA ok (2 devices), running
 - dual3090 mid-run 20:40
 - dual3090 done+destroyed Sat Oct 17 21:05:24 MDT 2026
+- dual3090 published ce3ab56, HF multigpu config; credit 16.00 Sat Oct 17 21:05:57 MDT 2026

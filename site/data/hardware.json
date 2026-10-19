@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-14",
+ "generated": "2026-10-19",
  "gpus": [
   {
    "id": "rtx-3060-12",
@@ -239,6 +239,17 @@
    "source_url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
    "basis": "NVIDIA page: 273 GB/s, 128 GB unified",
    "last_verified": "2026-10-14"
+  },
+  {
+   "id": "ryzen-ai-max-pro-495",
+   "name": "AMD Ryzen AI Max+ PRO 495 (Ryzen AI Halo)",
+   "bandwidth_gbps": 273.1,
+   "memory_options_gb": [
+    192
+   ],
+   "source_url": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-400-series/amd-ryzen-ai-max-plus-pro-495.html",
+   "basis": "AMD page: 256-bit LPDDR5x-8533, max 192 GB, Radeon 8065S; 256 bit x 8533 MT/s / 8 = 273.1 GB/s (computed). AMD blog 2026-10-12 (https://www.amd.com/en/blogs/2026/meet-the-next-amd-ryzen-ai-halo.html): Ryzen AI Halo with up to 192 GB unified memory, up to 160 GB allocatable to the GPU, orderable from Micro Center.",
+   "last_verified": "2026-10-19"
   }
  ],
  "ram_types": [
@@ -418,6 +429,17 @@
    "ram_gb": 32,
    "ram_type": "ddr5-5600",
    "note": ""
+  },
+  {
+   "slug": "ryzen-ai-halo-495-192gb",
+   "title": "AMD Ryzen AI Max+ PRO 495 (Ryzen AI Halo) 192GB",
+   "kind": "unified",
+   "device": "ryzen-ai-max-pro-495",
+   "count": 1,
+   "memory_gb": 192,
+   "ram_gb": 32,
+   "ram_type": "ddr5-5600",
+   "note": "AMD states up to 160 GB of the 192 GB can be allocated to the GPU; this site's 85% usable-memory assumption gives about 163 GB, so the largest fits are slightly optimistic."
   },
   {
    "slug": "mac-studio-m3-ultra-96gb",
