@@ -26,6 +26,10 @@ const HOT = [["rtx-4090-24gb", "openai/gpt-oss-20b"], ["rtx-4090-24gb", "Qwen/Qw
   ["macbook-air-m5-32gb", "openai/gpt-oss-20b"], ["mac-m4-pro-64gb", "Qwen/Qwen3.6-35B-A3B"], ["mac-m4-16gb", "Qwen/Qwen3.5-9B"], ["macbook-pro-m5-pro-48gb", "Qwen/Qwen3.6-27B"], ["mac-studio-m5-ultra-256gb", "zai-org/GLM-4.5-Air"]];
 // Estimated-only pages are allowed for Apple/unified-memory pairs in HOT when the model fits fully (these searches have no other good answer); never for discrete GPUs.
 const EST_KINDS = new Set(["apple", "unified"]);
+// Day-one release pairs (tools/release_hot.json, written by tools/add_release.js): placed first, may be labelled estimates for any hardware kind,
+// expire after RELEASE_DAYS unless measured data arrives (then they qualify through the normal measured path anyway). They add up to CAP_REL pages on top of CAP_CANRUN.
+const RELEASE_FILE = path.join(__dirname, "release_hot.json"), RELEASE_DAYS = 45, CAP_REL = 8;
+const releasePairs = () => { if (!fs.existsSync(RELEASE_FILE)) return []; const now = Date.now(); return (JSON.parse(fs.readFileSync(RELEASE_FILE, "utf8")).pairs || []).filter(x => !x.added || (now - Date.parse(x.added)) / 864e5 <= RELEASE_DAYS); };
 const med = a => { const s = a.slice().sort((x, y) => x - y), n = s.length; return n ? (n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2) : null; };
 const r1 = x => Math.round(x * 10) / 10;
 
@@ -54,17 +58,20 @@ function init({ A, data, esc, L, ownRows: ownAll }) {
   // One page per (device, usable memory, model): two targets sharing a chip and memory size would carry identical numbers.
   const canrun = [], seen = new Set(), dataKey = new Set(); let nEst = 0;
   const hasDepth = (t, m) => ownFor(t, m).some(r => r.depth > 0 && r.tg_tps > 0);
-  const consider = (slug, mid, allowEst) => {
-    if (canrun.length >= CAP_CANRUN || !T[slug] || !M[mid] || seen.has(slug + "|" + mid)) return;
+  let cap = CAP_CANRUN, nRel = 0;
+  const consider = (slug, mid, allowEst, release) => {
+    if (canrun.length >= cap || !T[slug] || !M[mid] || seen.has(slug + "|" + mid)) return;
     const t = T[slug], m = M[mid], p = res(slug).by[mid];
     if (!p) return; // the advisor must produce a plan for it (fit or offload)
     const dk = t.device + "|" + (t.count || 1) + "|" + res(slug).hwr.pool.toFixed(1) + "|" + mid; if (dataKey.has(dk)) return;
     const own = ownFor(t, m), ent = measuredFor(t, mid).filter(e => e.tg > 0), measured = own.some(r => r.tg_tps > 0) || ent.length > 0;
-    const est = !measured && allowEst && EST_KINDS.has(t.kind) && p.mode === "gpu" && p.tps > 0 && nEst < CAP_EST;
+    const est = !measured && allowEst && (release || EST_KINDS.has(t.kind)) && p.mode === "gpu" && p.tps > 0 && (release || nEst < CAP_EST);
     if (!measured && !est) return; // distinct measured data required (or a labelled estimate for a hot Mac/unified pair)
-    seen.add(slug + "|" + mid); dataKey.add(dk); if (est) nEst++;
-    canrun.push({ slug: `${slugify(m.name)}-on-${slug}`, t, m, own, ent, hwSlug: slug, est });
+    seen.add(slug + "|" + mid); dataKey.add(dk); if (est && !release) nEst++;
+    canrun.push({ slug: `${slugify(m.name)}-on-${slug}`, t, m, own, ent, hwSlug: slug, est, release: !!release });
   };
+  for (const x of releasePairs()) { if (nRel >= CAP_REL) break; const n0 = canrun.length; cap = CAP_CANRUN + nRel + 1; consider(x.hw, x.model, true, true); if (canrun.length > n0) nRel++; }
+  cap = CAP_CANRUN + nRel;
   for (const [s, m] of HOT) consider(s, m, true);
   const all = hw.targets.flatMap(t => data.models.models.map(m => [t, m]));
   for (const [t, m] of all) if (hasDepth(t, m)) consider(t.slug, m.id);

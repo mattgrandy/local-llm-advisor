@@ -250,7 +250,7 @@ console.log("ALL TESTS PASSED");
   assert(sigs7.size === cmp.length, "compare fit tables are distinct"); assert(amazonBoxes >= cmp.length, "amazon boxes on compare pages " + amazonBoxes);
   function Lay_AFF() { return require("../tools/layout.js").AFFILIATE.disclosure; }
   // can-run
-  const cr = fs7.readdirSync(p7.join(root, "can-run")).filter(f => f !== "index.html"); assert(cr.length >= 40 && cr.length <= 80, "can-run 40..80 pages: " + cr.length);
+  const cr = fs7.readdirSync(p7.join(root, "can-run")).filter(f => f !== "index.html"); assert(cr.length >= 40 && cr.length <= 80, "can-run 40..80 pages (72 + up to 8 release pairs): " + cr.length);
   const csigs = new Set(); for (const f of cr) { const h = rd("can-run/" + f), t = types(h).map(o => o["@type"]); assert(t.includes("BreadcrumbList") && t.includes("FAQPage"), "can-run ld " + f);
     assert(/<b>[\d.]+<\/b><span>generation tok\/s/.test(h) && /class="badge|Origin/.test(h) || /own measurement|public runs|public/.test(h), "measured data on " + f); assert(inSm("can-run/" + f) === !noindex(h)); assert(!/\$\s?\d/.test(text(h)), "no price " + f); csigs.add(h.match(/<div class="stats">[\s\S]*?<\/div><\/div>/)[0]); }
   assert(csigs.size === cr.length, "can-run pages carry distinct numbers");
@@ -285,8 +285,8 @@ console.log("ALL TESTS PASSED");
   assert(/compare\/rtx-3090-24gb-vs-rtx-4090-24gb\.html/.test(rd("hardware/rtx-4090-24gb.html")) && /can-run\/gpt-oss-20b-on-rtx-4090-24gb\.html/.test(rd("hardware/rtx-4090-24gb.html")), "hardware page links to compare + can-run");
   { // expanded can-run pages: estimates are labelled and limited to Apple/unified pairs; alternatives + FAQ; model pages link back; sitemap lastmod
     const T7 = Object.fromEntries(data.hardware.targets.map(t => [t.slug, t])), est = cr.filter(f => /<!--estimated-pair-->/.test(rd("can-run/" + f)));
-    assert(est.length <= 8, "estimated pairs capped: " + est.length);
-    for (const f of est) { const h = rd("can-run/" + f), slug = f.replace(/\.html$/, "").split("-on-")[1]; assert(T7[slug] && ["apple", "unified"].includes(T7[slug].kind), "estimates only for Apple/unified: " + f); assert(/tok\/s estimated/.test((h.match(/<title>[\s\S]*?<\/title>/) || [""])[0]) && /estimated, not measured/.test(h) && /submit\.html/.test(h), "estimate labelled: " + f); }
+    assert(est.length <= 16, "estimated pairs capped (8 hot + 8 release): " + est.length);
+    for (const f of est) { const h = rd("can-run/" + f), slug = f.replace(/\.html$/, "").split("-on-")[1]; const rel = (fs7.existsSync(p7.join(__dirname, "..", "tools", "release_hot.json")) ? JSON.parse(fs7.readFileSync(p7.join(__dirname, "..", "tools", "release_hot.json"), "utf8")).pairs : []).some(x => x.hw === slug); assert(T7[slug] && (rel || ["apple", "unified"].includes(T7[slug].kind)), "estimates only for Apple/unified or day-one release pairs: " + f); assert(/tok\/s estimated/.test((h.match(/<title>[\s\S]*?<\/title>/) || [""])[0]) && /estimated, not measured/.test(h) && /submit\.html/.test(h), "estimate labelled: " + f); }
     const sm = fs7.readFileSync(p7.join(root, "sitemap.xml"), "utf8");
     for (const f of cr) { const h = rd("can-run/" + f); assert(/id="alternatives"/.test(h), "alternatives " + f); assert(/measured or estimated\?/.test(h), "provenance FAQ " + f); assert(/<link rel="canonical" href="https:\/\/localllmadvisor\.com\/can-run\//.test(h), "canonical " + f);
       assert(new RegExp("can-run/" + f.replace(/\./g, "\\.") + "</loc><lastmod>\\d{4}-\\d{2}-\\d{2}</lastmod>").test(sm), "sitemap lastmod " + f); }
