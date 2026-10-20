@@ -250,14 +250,14 @@ console.log("ALL TESTS PASSED");
   assert(sigs7.size === cmp.length, "compare fit tables are distinct"); assert(amazonBoxes >= cmp.length, "amazon boxes on compare pages " + amazonBoxes);
   function Lay_AFF() { return require("../tools/layout.js").AFFILIATE.disclosure; }
   // can-run
-  const cr = fs7.readdirSync(p7.join(root, "can-run")).filter(f => f !== "index.html"); assert(cr.length >= 15 && cr.length <= 20, "can-run cap <= 20: " + cr.length);
+  const cr = fs7.readdirSync(p7.join(root, "can-run")).filter(f => f !== "index.html"); assert(cr.length >= 40 && cr.length <= 80, "can-run 40..80 pages: " + cr.length);
   const csigs = new Set(); for (const f of cr) { const h = rd("can-run/" + f), t = types(h).map(o => o["@type"]); assert(t.includes("BreadcrumbList") && t.includes("FAQPage"), "can-run ld " + f);
     assert(/<b>[\d.]+<\/b><span>generation tok\/s/.test(h) && /class="badge|Origin/.test(h) || /own measurement|public runs|public/.test(h), "measured data on " + f); assert(inSm("can-run/" + f) === !noindex(h)); assert(!/\$\s?\d/.test(text(h)), "no price " + f); csigs.add(h.match(/<div class="stats">[\s\S]*?<\/div><\/div>/)[0]); }
   assert(csigs.size === cr.length, "can-run pages carry distinct numbers");
   { // every can-run page's headline speed is backed by a measured entry or one of our own rows
     const own = fs7.readdirSync(p7.join(root, "..", "data/benchmarks/own")).filter(f => f.endsWith(".json")).flatMap(f => JSON.parse(fs7.readFileSync(p7.join(root, "..", "data/benchmarks/own", f)))), tgs = new Set(own.map(r => String(Math.round(r.tg_tps * 10) / 10)));
     for (const e of Object.values(data.measured.entries).flat()) tgs.add(String(Math.round(e.tg * 10) / 10));
-    for (const f of cr) { const v = rd("can-run/" + f).match(/<div class="stat"><b>([\d.]+)<\/b><span>generation tok\/s/)[1]; assert(tgs.has(v) || tgs.has(String(+v)), "headline speed exists in data: " + f + " " + v); } }
+    for (const f of cr) { if (/<!--estimated-pair-->/.test(rd("can-run/" + f))) continue; const v = rd("can-run/" + f).match(/<div class="stat"><b>([\d.]+)<\/b><span>generation tok\/s/)[1]; assert(tgs.has(v) || tgs.has(String(+v)), "headline speed exists in data: " + f + " " + v); } }
   // blog
   const post = rd("blog/state-of-local-llm-hardware-oct-2026.html"), bt = types(post); const art = bt.find(o => o["@type"] === "Article");
   assert(art && art.datePublished === "2026-10-17" && art.author.name === "Matt" && bt.some(o => o["@type"] === "BreadcrumbList") && inSm("blog/state-of-local-llm-hardware-oct-2026.html") && inSm("blog/index.html"), "article ld + sitemap");
@@ -283,5 +283,17 @@ console.log("ALL TESTS PASSED");
   assert(/compare\/index\.html/.test(rd("index.html")) || /compare\/index\.html/.test(rd("hardware/index.html")), "compare linked from hub pages");
   for (const f of ["index.html", "hardware/rtx-4090-24gb.html", "vram/24gb.html"]) { const h = rd(f); assert(/href="(\.\.\/)?compare\/index\.html"/.test(h) && /href="(\.\.\/)?blog\/index\.html"/.test(h) && /href="(\.\.\/)?embed\/index\.html"/.test(h), "footer links " + f); }
   assert(/compare\/rtx-3090-24gb-vs-rtx-4090-24gb\.html/.test(rd("hardware/rtx-4090-24gb.html")) && /can-run\/gpt-oss-20b-on-rtx-4090-24gb\.html/.test(rd("hardware/rtx-4090-24gb.html")), "hardware page links to compare + can-run");
+  { // expanded can-run pages: estimates are labelled and limited to Apple/unified pairs; alternatives + FAQ; model pages link back; sitemap lastmod
+    const T7 = Object.fromEntries(data.hardware.targets.map(t => [t.slug, t])), est = cr.filter(f => /<!--estimated-pair-->/.test(rd("can-run/" + f)));
+    assert(est.length <= 8, "estimated pairs capped: " + est.length);
+    for (const f of est) { const h = rd("can-run/" + f), slug = f.replace(/\.html$/, "").split("-on-")[1]; assert(T7[slug] && ["apple", "unified"].includes(T7[slug].kind), "estimates only for Apple/unified: " + f); assert(/tok\/s estimated/.test((h.match(/<title>[\s\S]*?<\/title>/) || [""])[0]) && /estimated, not measured/.test(h) && /submit\.html/.test(h), "estimate labelled: " + f); }
+    const sm = fs7.readFileSync(p7.join(root, "sitemap.xml"), "utf8");
+    for (const f of cr) { const h = rd("can-run/" + f); assert(/id="alternatives"/.test(h), "alternatives " + f); assert(/measured or estimated\?/.test(h), "provenance FAQ " + f); assert(/<link rel="canonical" href="https:\/\/localllmadvisor\.com\/can-run\//.test(h), "canonical " + f);
+      assert(new RegExp("can-run/" + f.replace(/\./g, "\\.") + "</loc><lastmod>\\d{4}-\\d{2}-\\d{2}</lastmod>").test(sm), "sitemap lastmod " + f); }
+    const keys = new Set(cr.map(f => f.replace(/\.html$/, ""))); assert(keys.size === cr.length);
+    assert(/can-run\/qwen3-6-27b-on-rtx-3090-24gb\.html/.test(rd("models/qwen3-6-27b.html")), "model page links to can-run");
+    assert(!cr.includes("gpt-oss-120b-on-mac-studio-m5-max-128gb.html") || !cr.includes("gpt-oss-120b-on-macbook-pro-m5-max-128gb.html"), "same chip+memory deduped");
+    const d3090 = rd("can-run/qwen3-6-27b-on-rtx-3090-24gb.html"); assert(/with 16k tokens already in context/.test(d3090) && /at 64k/.test(d3090), "depth 16k + long-context summary");
+  }
   console.log("growth pages ok: compare", cmp.length, "can-run", cr.length, "badges", hw7.length, "internal links checked", links7);
 }
