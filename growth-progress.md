@@ -3,3 +3,4 @@
 - 23:08: can-run expanded to 72 pages (64 measured, 8 labelled Mac/unified estimates), alternatives+depth summary+FAQ, model-page links, tests updated; all tests pass. Next: publish.
 - 23:09: published 9997cfc (72 can-run pages). Next: release playbook + helper.
 - 23:10: release fast path done: tools/add_release.js (model|gpu|apple|unified|pairs), tools/release_hot.json support in generator (CAP_REL 8, 45-day expiry), release-playbook.md. Sandbox-tested gpu + apple paths end-to-end (copy deleted).
+- 23:12: pushed cf4a08a; live sitemap has 73 can-run URLs; IndexNow HTTP 200 for 117 URLs. Done.
