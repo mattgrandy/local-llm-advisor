@@ -13,5 +13,8 @@ touch "$PUB/docs/.nojekyll"
 # CNAME is written by tools/seo.js (from SITE_URL) into site/ and mirrored above; verify it is exactly one line
 test "$(wc -l < "$PUB/docs/CNAME")" = 1 && test -s "$PUB/docs/CNAME"
 # IndexNow: record changed URLs (no network). After push + deploy run: node tools/indexnow.js --submit
+# Internal planning notes and drafts stay out of the public repo: remove them from the publish copy and keep them git-ignored there.
+INTERNAL="growth-progress.md launch-posts.md awesome-pr-drafts.md seo-plan.md cloud-gpu-referrals.md next-benchmarks-plan.md vast-launch-plan.md benchmark-sweep-plan.md release-playbook.md earnings-log.md"
+for f in $INTERNAL; do rm -f "$PUB/$f"; grep -qxF "/$f" "$PUB/.gitignore" 2>/dev/null || echo "/$f" >> "$PUB/.gitignore"; done
 node "$SRC/tools/indexnow.js"
 echo "synced to $PUB (docs/CNAME: $(cat "$PUB/docs/CNAME"))"
