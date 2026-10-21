@@ -80,3 +80,4 @@
 - 5060ti16 sweep running 08:37
 - 5060ti16 at Qwen3-Coder-30B (8:48); instance 57066276 still UP. hardware.json/bench_parse/compare pairs already edited (uncommitted). Next: fin.sh rtx5060ti16, ingest_sweep --merge, build_measured, calibrate_depth, generate_pages, tests, HF (/workspace/hfds/build_hf.py), publish
 - 5060ti16 done+destroyed Wed Oct 21 08:54:42 MDT 2026
+- 5060ti16 published 6efa957, HF 586 rows, indexnow submitted; credit 15.44 Wed Oct 21 08:58:28 MDT 2026
