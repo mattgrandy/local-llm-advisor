@@ -76,16 +76,16 @@
   "d": "2026-10-20"
  },
  "can-run/gpt-oss-120b-on-mac-studio-m3-ultra-96gb.html": {
-  "h": "6607977a5f57c2b5",
-  "d": "2026-10-20"
+  "h": "a1ce8400715aa3fc",
+  "d": "2026-10-21"
  },
  "can-run/gpt-oss-120b-on-macbook-pro-m4-max-128gb.html": {
-  "h": "768ebf152a813c25",
-  "d": "2026-10-20"
+  "h": "791360aed2ec734a",
+  "d": "2026-10-21"
  },
  "can-run/gpt-oss-120b-on-macbook-pro-m5-max-128gb.html": {
-  "h": "2ee115fd3663a792",
-  "d": "2026-10-20"
+  "h": "26b629c1e824e0a8",
+  "d": "2026-10-21"
  },
  "can-run/gpt-oss-120b-on-rtx-pro-6000-96gb.html": {
   "h": "9be0d636d551063c",
@@ -96,8 +96,8 @@
   "d": "2026-10-20"
  },
  "can-run/gpt-oss-20b-on-macbook-air-m5-32gb.html": {
-  "h": "4c008c0c6dd27b59",
-  "d": "2026-10-20"
+  "h": "2be1f02c43c96c8e",
+  "d": "2026-10-21"
  },
  "can-run/gpt-oss-20b-on-rtx-3090-24gb.html": {
   "h": "322a9d016a47a4a7",
@@ -180,8 +180,8 @@
   "d": "2026-10-20"
  },
  "can-run/qwen3-5-9b-on-mac-m4-16gb.html": {
-  "h": "e75078f2fb25bad3",
-  "d": "2026-10-20"
+  "h": "31234662e0141578",
+  "d": "2026-10-21"
  },
  "can-run/qwen3-5-9b-on-rtx-3060-12gb.html": {
   "h": "5d13668f883c44c3",
@@ -220,8 +220,8 @@
   "d": "2026-10-20"
  },
  "can-run/qwen3-6-27b-on-macbook-pro-m5-pro-48gb.html": {
-  "h": "fa436d658fa5abce",
-  "d": "2026-10-20"
+  "h": "a8c01ded9888f91e",
+  "d": "2026-10-21"
  },
  "can-run/qwen3-6-27b-on-rtx-3090-24gb.html": {
   "h": "dfb0db2fae32d1ec",
@@ -236,8 +236,8 @@
   "d": "2026-10-20"
  },
  "can-run/qwen3-6-35b-a3b-on-mac-m4-pro-64gb.html": {
-  "h": "4344fd785b7b9bfc",
-  "d": "2026-10-20"
+  "h": "902096bbfaac867d",
+  "d": "2026-10-21"
  },
  "can-run/qwen3-6-35b-a3b-on-rtx-3090-24gb.html": {
   "h": "c7aad0351a50b8ed",
@@ -368,8 +368,8 @@
   "d": "2026-10-20"
  },
  "data-sources.html": {
-  "h": "f040fdd06421f93c",
-  "d": "2026-10-19"
+  "h": "ecc4e7d07a670269",
+  "d": "2026-10-21"
  },
  "embed/index.html": {
   "h": "a908f7252d8f226d",
@@ -388,48 +388,48 @@
   "d": "2026-10-20"
  },
  "hardware/mac-m4-16gb.html": {
-  "h": "bf54d3b2fbf35dcf",
-  "d": "2026-10-20"
+  "h": "80ea6c8f3919bf71",
+  "d": "2026-10-21"
  },
  "hardware/mac-m4-pro-64gb.html": {
-  "h": "74d10deb70bc0d89",
-  "d": "2026-10-20"
+  "h": "63f3709f0433c8ec",
+  "d": "2026-10-21"
  },
  "hardware/mac-mini-m6-32gb.html": {
-  "h": "514cea41d709bab3",
-  "d": "2026-10-19"
+  "h": "53bd1bd07036903c",
+  "d": "2026-10-21"
  },
  "hardware/mac-studio-m3-ultra-96gb.html": {
-  "h": "be05f47685b4e6bb",
-  "d": "2026-10-20"
+  "h": "7ff04f834f0c0f72",
+  "d": "2026-10-21"
  },
  "hardware/mac-studio-m5-max-128gb.html": {
-  "h": "1e929a361869eb52",
-  "d": "2026-10-19"
+  "h": "a489b9e8628f97ce",
+  "d": "2026-10-21"
  },
  "hardware/mac-studio-m5-ultra-256gb.html": {
-  "h": "87801a07820593da",
-  "d": "2026-10-20"
+  "h": "961f49c6152a400e",
+  "d": "2026-10-21"
  },
  "hardware/mac-studio-m5-ultra-512gb.html": {
-  "h": "c465bd03e3077f6c",
-  "d": "2026-10-19"
+  "h": "d27c28d5e6ec234d",
+  "d": "2026-10-21"
  },
  "hardware/macbook-air-m5-32gb.html": {
-  "h": "17d4ed11ba97a856",
-  "d": "2026-10-20"
+  "h": "337b08c9d22ea8e3",
+  "d": "2026-10-21"
  },
  "hardware/macbook-pro-m4-max-128gb.html": {
-  "h": "c3d70e824c616798",
-  "d": "2026-10-20"
+  "h": "f253b30895848ea1",
+  "d": "2026-10-21"
  },
  "hardware/macbook-pro-m5-max-128gb.html": {
-  "h": "9a4c070e5e9ad490",
-  "d": "2026-10-20"
+  "h": "7a280c8c8f7fae03",
+  "d": "2026-10-21"
  },
  "hardware/macbook-pro-m5-pro-48gb.html": {
-  "h": "66cf4ca2eb0a82b1",
-  "d": "2026-10-20"
+  "h": "8b38148bed3e71b1",
+  "d": "2026-10-21"
  },
  "hardware/rtx-3060-12gb.html": {
   "h": "e0eb30278e927c64",
@@ -496,72 +496,72 @@
   "d": "2026-10-19"
  },
  "models/gemma-4-12b.html": {
-  "h": "722ea5e41effa4a8",
-  "d": "2026-10-20"
+  "h": "ee5bb547196fe496",
+  "d": "2026-10-21"
  },
  "models/gemma-4-26b-a4b.html": {
-  "h": "22a78ded6a5e304e",
-  "d": "2026-10-20"
+  "h": "09289555552d9dd8",
+  "d": "2026-10-21"
  },
  "models/gemma-4-31b.html": {
-  "h": "8e75415327d0607a",
-  "d": "2026-10-20"
+  "h": "3942530d79d4254b",
+  "d": "2026-10-21"
  },
  "models/glm-4-5-air.html": {
-  "h": "a878be5117812f3e",
-  "d": "2026-10-20"
+  "h": "cf79979e27fd0a78",
+  "d": "2026-10-21"
  },
  "models/gpt-oss-120b.html": {
-  "h": "9305ee2b1aba368e",
-  "d": "2026-10-20"
+  "h": "df2b339c7373c3d2",
+  "d": "2026-10-21"
  },
  "models/gpt-oss-20b.html": {
-  "h": "9a8b2c2daf5ec8e3",
-  "d": "2026-10-20"
+  "h": "33a1b3fdac443d0e",
+  "d": "2026-10-21"
  },
  "models/index.html": {
   "h": "1a105b930fdbb25e",
   "d": "2026-10-19"
  },
  "models/lfm2-5-24b-a2b.html": {
-  "h": "00b2fbdd90dd8412",
-  "d": "2026-10-20"
+  "h": "6c25904020182a0d",
+  "d": "2026-10-21"
  },
  "models/mistral-small-3-2-24b.html": {
-  "h": "ad08159b77789f12",
-  "d": "2026-10-20"
+  "h": "d2d3afc19b39e3a0",
+  "d": "2026-10-21"
  },
  "models/nemotron-3-5-super-vl-120b-a12b.html": {
-  "h": "85e9f3164792d511",
-  "d": "2026-10-20"
+  "h": "2c09fe815de78aab",
+  "d": "2026-10-21"
  },
  "models/qwen3-5-4b.html": {
-  "h": "53bc89466df7f476",
-  "d": "2026-10-20"
+  "h": "3a09d5b598bad319",
+  "d": "2026-10-21"
  },
  "models/qwen3-5-9b.html": {
-  "h": "d92e6ad15d77d788",
-  "d": "2026-10-20"
+  "h": "58c4c0e867f73ef0",
+  "d": "2026-10-21"
  },
  "models/qwen3-6-27b.html": {
-  "h": "6caa78913ee04917",
-  "d": "2026-10-20"
+  "h": "0a2b8926d77e13b0",
+  "d": "2026-10-21"
  },
  "models/qwen3-6-35b-a3b.html": {
-  "h": "eb3c932d5fd098d1",
-  "d": "2026-10-20"
+  "h": "ee01bf5a5ec09cfb",
+  "d": "2026-10-21"
  },
  "models/qwen3-8-27b.html": {
-  "h": "a6d311379725e416",
-  "d": "2026-10-20"
+  "h": "aa6a0a7d558f1b7e",
+  "d": "2026-10-21"
  },
  "models/qwen3-coder-30b-a3b.html": {
-  "h": "05641796cd81bd1a",
-  "d": "2026-10-20"
+  "h": "ca42939258d3b9ac",
+  "d": "2026-10-21"
  },
  "models/qwen3-vl-8b.html": {
-  "h": "b4538145f6256b87",
-  "d": "2026-10-20"
+  "h": "b4a1f5e6e816ecb9",
+  "d": "2026-10-21"
  },
  "submit.html": {
   "h": "12b6250c89e59c2d",

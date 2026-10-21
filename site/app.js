@@ -175,6 +175,7 @@
       <div class="cmd"><div class="code"><div class="top"><span>llama.cpp</span><button class="copy" type="button" data-c="l${i}">Copy</button></div><pre id="l${i}">${esc(p.command.llama)}</pre></div>
       <div class="code"><div class="top"><span>ollama</span><button class="copy" type="button" data-c="o${i}">Copy</button></div><pre id="o${i}">${esc(p.command.ollama)}</pre></div></div>
       ${p.command.ollamaNote ? `<p class="mut">${esc(p.command.ollamaNote)}</p>` : ""}
+      ${Advisor.mlxHtml(p.mlx, esc, "x" + i, true)}
       <p class="src">Source: <a href="${safeUrl(m.source_url)}" rel="noopener">${esc(m.id)}</a> &middot; GGUF: <a href="${safeUrl(m.gguf_source_url)}" rel="noopener">${esc(m.gguf_repo)}</a> &middot; last verified ${esc(m.last_verified)}</p></article>`;
     }).map((h, i) => i === 0 ? h + affHtml : h).join(""); // price box directly under the top recommendation
   }

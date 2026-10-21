@@ -27,6 +27,17 @@ const SITE = path.join(__dirname, "..", "site"), MIME = { ".html": "text/html", 
   await pg.setViewportSize({ width: 390, height: 844 }); await pg.goto(base + "/can-run/qwen3-6-27b-on-rtx-3090-24gb.html", { waitUntil: "networkidle" });
   assert(await pg.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), "no horizontal overflow on mobile"); await pg.setViewportSize({ width: 1100, height: 900 });
   console.log("  ok can-run alternatives, faq, estimate label, mobile");
+  // MLX: Apple selections show an MLX block with a copy button; NVIDIA selections never do
+  await pg.goto(base + "/index.html?kind=apple&device=m5-ultra&config=studio-m5-ultra-80&mem=512&use=all", { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res");
+  const mx = pg.locator("#results .cmd.mlx"); assert(await mx.count() >= 3, "MLX blocks on Apple results"); const mt = await mx.first().locator("pre").textContent();
+  assert(/^pip install -U mlx-(lm|vlm)\nmlx_(lm|vlm)\.generate --model mlx-community\//.test(mt) && /mlx_(lm|vlm)\.server --model mlx-community\//.test(mt), "MLX command text: " + mt);
+  assert(await mx.first().locator("button.copy").count() === 1, "MLX copy button");
+  assert(await pg.locator("#results .mlx-none").count() >= 1, "models without a conversion say so");
+  await pg.goto(base + "/index.html?kind=gpu&device=rtx-4090&use=all", { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res");
+  assert.strictEqual(await pg.locator("#results [data-mlx]").count(), 0, "no MLX on NVIDIA");
+  await pg.goto(base + "/hardware/macbook-pro-m5-max-128gb.html", { waitUntil: "networkidle" }); assert(await pg.locator(".cmd.mlx").count() >= 1 && await pg.locator("#mlx").isVisible(), "MLX on Mac hardware page");
+  await pg.goto(base + "/hardware/rtx-5090-32gb.html", { waitUntil: "networkidle" }); assert.strictEqual(await pg.locator("[data-mlx], #mlx").count(), 0, "no MLX on GPU hardware page");
+  console.log("  ok MLX blocks: Apple only, copyable, missing conversions stated");
   await pg.goto(base + "/embed/index.html", { waitUntil: "networkidle" });
   assert((await pg.locator("#emb-html").textContent()).includes("rtx-4090-24gb.svg"));
   await pg.selectOption("#emb-hw", "mac-m4-16gb"); assert((await pg.locator("#emb-html").textContent()).includes("mac-m4-16gb.svg") && (await pg.locator("#emb-iframe").textContent()).includes("/embed/card/mac-m4-16gb.html") && (await pg.locator("#emb-badge-prev img").getAttribute("src")).includes("mac-m4-16gb.svg"));

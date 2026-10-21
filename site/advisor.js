@@ -147,6 +147,28 @@
                   (p.mode === "dense-offload" || p.mode === "cpu") ? "Ollama picks its own layer split; use llama.cpp for explicit control." : "" };
   }
 
+  // MLX (Apple Silicon only). Repos come from models.json mlx.repos (verified by tools/mlx_repos.py); never invented.
+  // Picks the bit class matching the GGUF pick (Q6/Q8/F16 -> 8-bit, else 4-bit) if it fits next to the KV cache, else the largest that fits.
+  // Command syntax from the mlx-lm README / SERVER.md and the mlx-vlm README; each repo's own card says which package converted it.
+  function mlxCommand(p, opts, hwr) {
+    if (!hwr || hwr.kind !== "apple") return null;
+    const repos = ((p.model.mlx || {}).repos || []).slice();
+    if (!repos.length) return { none: "no-conversion" };
+    const want = /^(UD-)?(Q6|Q8|F16|BF16)/.test(p.quantLabel) ? 8 : 4, kv = p.kvGB || 0, fit = r => r.gb + kv <= hwr.pool;
+    const r = repos.find(x => x.bits === want && fit(x)) || repos.filter(fit).sort((a, b) => b.bits - a.bits)[0];
+    if (!r) return { none: "no-fit", repos };
+    const mod = r.tool === "mlx-vlm" ? "mlx_vlm" : "mlx_lm";
+    return { repo: r.repo, label: r.label, bits: r.bits, gb: r.gb, tool: r.tool, url: r.url, repos,
+      text: `pip install -U ${r.tool}\n${mod}.generate --model ${r.repo} --prompt "Hello" --max-tokens 256\n${mod}.server --model ${r.repo}${r.tool === "mlx-lm" ? " --port 8080" : ""}` };
+  }
+  // shared HTML for the MLX block (main tool, Mac hardware pages, Mac can-run pages). esc = HTML escaper; id = <pre> id for copy buttons.
+  function mlxHtml(mx, esc, id, copy) {
+    if (!mx) return "";
+    if (mx.none === "no-conversion") return `<p class="mut mlx-none" data-mlx="none">MLX: no MLX conversion yet for this model (none verified in mlx-community), so use llama.cpp or ollama above.</p>`;
+    if (mx.none === "no-fit") return `<p class="mut mlx-none" data-mlx="nofit">MLX: the mlx-community conversions (${mx.repos.map(r => esc(r.label) + " " + r.gb + " GB").join(", ")}) do not fit next to the KV cache in this memory.</p>`;
+    return `<div class="cmd mlx" data-mlx="${esc(mx.repo)}"><div class="code"><div class="top"><span>MLX &middot; ${esc(mx.tool)} &middot; ${esc(mx.label)}, ${mx.gb} GB</span>${copy ? `<button class="copy" type="button" data-c="${id}">Copy</button>` : ""}</div><pre${id ? ` id="${id}"` : ""}>${esc(mx.text)}</pre></div></div><p class="mut">MLX runs on Apple Silicon only. Repo: <a href="https://huggingface.co/${esc(mx.repo)}" rel="noopener">${esc(mx.repo)}</a> (converted with ${esc(mx.tool)}, per its model card). These commands use MLX's default context handling; there is no MLX speed on this site yet.</p>`;
+  }
+
   // size proxy for ranking: MoE uses geometric mean of total and active. HEURISTIC, not a benchmark.
   function capacity(m) { return m.moe && m.active_params_b ? Math.sqrt(m.params_b * m.active_params_b) : m.params_b; }
 
@@ -276,6 +298,7 @@
       p.rank = (p.usable ? 1000 : 0) + (p.comfortable ? 500 : 0) + (p.mode === "gpu" ? 200 : 0) - (cs === "extended" ? 20 : 0) + capacity(m) * 3 +
                (opts.use === "coding" && m.tags.length === 1 && m.tags[0] === "coding" ? 15 : 0);
       p.command = command(p, opts, hwr);
+      p.mlx = mlxCommand(p, opts, hwr);
       p.family = familyOf(m); p.maxCtx = maxCtx(p, hwr, opts.kvq);
       p.quality = qualityOf(data.quality, m, opts.use);
       out.push(p);
@@ -295,6 +318,6 @@
     return { cls: "est", short: "scaled from measured", text: "scaled from measured ~" + v + " tok/s",
       detail: "Not measured directly: scaled by bytes read from a measurement of " + how + " (" + runs + "). Treat as an estimate." };
   }
-  const api = { ctxLimits, ctxStatus, fmtCtx, fmtDur, kvAttnGB, depthSpeed, ttftSeconds, KV_BYTES, applyView, viewActive, familyOf, maxCtx, SORTS, NATURAL_DIR, DEFAULT_VIEW, CTX_STEPS, speedInfo, makeLookup, calibratedEff, kvGB, resolveHardware, recommend, command, plan };
+  const api = { ctxLimits, ctxStatus, fmtCtx, fmtDur, kvAttnGB, depthSpeed, ttftSeconds, KV_BYTES, applyView, viewActive, familyOf, maxCtx, SORTS, NATURAL_DIR, DEFAULT_VIEW, CTX_STEPS, speedInfo, makeLookup, mlxCommand, mlxHtml, calibratedEff, kvGB, resolveHardware, recommend, command, plan };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else root.Advisor = api;
 })(typeof window !== "undefined" ? window : globalThis);

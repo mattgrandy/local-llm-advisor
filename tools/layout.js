@@ -7,7 +7,7 @@ const ICON = {
 };
 // Analytics config: change the website id (or set to "" to disable analytics everywhere) here only.
 const ANALYTICS = { websiteId: "43daf16b-1b1a-4306-93fc-7c1e00fa0db9", src: "https://cloud.umami.is/script.js", doNotTrack: true };
-const VER = "20261017b";
+const VER = "20261020a";
 // Amazon Associates config: change the tracking tag (or set to "" to turn all Amazon links off) here only.
 const AFFILIATE = {
   amazonTag: "localllmadvis-20", disclosure: "As an Amazon Associate I earn from qualifying purchases.",
@@ -72,4 +72,24 @@ function footer(d) {
 // To re-enable: SPONSOR_SLOTS["sponsor-top"] = { url: "https://...", text: "Sponsored by X" }
 const SPONSOR_SLOTS = {};
 const slot = id => { const c = SPONSOR_SLOTS[id]; return c && /^https:\/\//.test(c.url || "") ? `<aside class="slot" data-slot="${esc(id)}"><a href="${esc(c.url)}" target="_blank" rel="sponsored noopener nofollow" data-sponsor="${esc(id)}" data-slot-id="${esc(id)}">${esc(c.text || c.url)}</a></aside>` : ""; };
-module.exports = { AFFILIATE, cloudPartners, cloudBox, amazonUrl, affiliateQueries, affiliateBox, affiliateJs, ANALYTICS, VER, head, nav, footer, esc, ICON, slot, SPONSOR_SLOTS };
+// ---- MLX explainer (Apple Silicon). Only sourced facts; MLX speeds are not shown on the site yet.
+const MLX_SRC = {
+  mlxQuant: "https://ml-explore.github.io/mlx/build/html/python/_autosummary/mlx.core.quantize.html",
+  ggufBpw: "https://github.com/ggml-org/llama.cpp/blob/master/tools/quantize/README.md",
+  kquants: "https://github.com/ggml-org/llama.cpp/pull/1684",
+  mlxLm: "https://github.com/ml-explore/mlx-lm",
+  mlxVlm: "https://github.com/Blaizzy/mlx-vlm",
+  study1: "https://arxiv.org/abs/2511.05502",
+  study2: "https://arxiv.org/abs/2601.19139"
+};
+function mlxExplainer(d, opts) {
+  const o = opts || {}, short = !!o.short;
+  const facts = `<ul>
+<li><b>File size.</b> MLX's default quantization is affine with a group size of 64, and every group stores a scale and a bias (<a href="${MLX_SRC.mlxQuant}" rel="noopener">MLX docs</a>). With 16-bit scales and biases that works out to about 4.5 bits per weight at 4-bit and 8.5 at 8-bit. llama.cpp lists Q4_K_M at about 4.89 and Q8_0 at about 8.50 bits per weight (<a href="${MLX_SRC.ggufBpw}" rel="noopener">llama.cpp quantize README</a>). So an MLX 4-bit repo is usually a little smaller than Q4_K_M and MLX 8-bit is about the same size as Q8_0. Real repos differ because some layers (embeddings, vision towers, MoE experts in MXFP4 for gpt-oss) are stored differently, so we show each repo's actual size.</li>
+<li><b>Quality.</b> They are different schemes. MLX 4-bit applies one bit width with per-group scale and bias, while Q4_K_M is a K-quant mix that keeps some tensors at higher precision (<a href="${MLX_SRC.kquants}" rel="noopener">llama.cpp k-quants PR</a>). We have not found a rigorous like-for-like quality comparison, so we only pair them by bit class: MLX 4-bit with Q4-class GGUF and MLX 8-bit with Q8_0.</li>
+<li><b>Speed.</b> MLX speeds are not shown on this site yet. Published comparisons often find MLX faster than llama.cpp on Macs: an M2 Ultra study measured about 230 tok/s for MLX against about 150 for llama.cpp (short context) on Qwen-2.5 models (<a href="${MLX_SRC.study1}" rel="noopener">arXiv 2511.05502</a>), and an M4 Max table shows mlx-lm ahead of llama.cpp on most 4-bit text models but behind on Gemma 3 4B (<a href="${MLX_SRC.study2}" rel="noopener">arXiv 2601.19139</a>). So MLX may well run faster than the llama.cpp numbers shown here, but not for every model, and we do not estimate by how much.</li>
+<li><b>Which package.</b> Text-only conversions run with <a href="${MLX_SRC.mlxLm}" rel="noopener">mlx-lm</a>. Many recent mlx-community repos (Gemma 4, Qwen3.5/3.6/3.8, Qwen3-VL) were converted with <a href="${MLX_SRC.mlxVlm}" rel="noopener">mlx-vlm</a> and their model cards say to run them with it, so the command we show follows each repo's card.</li></ul>`;
+  if (short) return `<section class="card" id="mlx"><h2>MLX on this Mac</h2><p class="mut">MLX is Apple's machine-learning framework for Apple Silicon. Where an mlx-community conversion exists, the commands above include an MLX block next to llama.cpp and ollama.</p>${facts}<p class="mut">Repos are checked against the Hugging Face API (<a href="${d}data-sources.html#mlx">how</a>).</p></section>`;
+  return `<section class="card" id="mlx"><h2>MLX conversions (Apple Silicon)</h2><p class="mut">On Apple hardware the advisor also shows an MLX command when a verified mlx-community conversion exists. Each repo id is found and checked through the Hugging Face API by <code>tools/mlx_repos.py</code>: the repo must exist, ship .safetensors weights and name the original model as its base. Models without a match say "no MLX conversion yet". MLX commands never appear for NVIDIA, AMD or CPU setups.</p>${facts}${o.table || ""}</section>`;
+}
+module.exports = { mlxExplainer, MLX_SRC, AFFILIATE, cloudPartners, cloudBox, amazonUrl, affiliateQueries, affiliateBox, affiliateJs, ANALYTICS, VER, head, nav, footer, esc, ICON, slot, SPONSOR_SLOTS };

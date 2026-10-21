@@ -6,6 +6,7 @@
 //   node tools/add_release.js apple --chip m6-max-40 --chip-name "Apple M6 Max (40-core GPU)" --bw 700 --source URL --config mbp-m6-max-40 --form "MacBook Pro"
 //        --config-name "MacBook Pro 14/16 — M6 Max (40-core GPU)" --mem 36,64,128 --target-mem 128 [--title "MacBook Pro 14/16 M6 Max 128GB"] [--pairs ...]
 //   node tools/add_release.js pairs --hw <target-slug> --models id,id     (just add day-one pairs for existing entries)
+// model: update_models.py also runs mlx_repos.py, so verified mlx-community 4/8-bit repos are picked up (or 'no MLX conversion yet').
 // Common flags: --dry (print the change, write nothing), --no-build (skip regenerate + tests).
 const fs = require("fs"), path = require("path"), cp = require("child_process");
 const ROOT = path.join(__dirname, ".."), HWF = path.join(ROOT, "site/data/hardware.json"), MAN = path.join(__dirname, "model_manifest.json"), REL = path.join(__dirname, "release_hot.json");

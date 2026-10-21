@@ -106,6 +106,7 @@ def main():
             rec["active_params_b"] = m["active_b"]
             rec["active_source"] = "model card text on source_url"
         old = prev.get(m["id"])
+        if old and old.get("mlx"): rec["mlx"] = old["mlx"]  # refreshed below by mlx_repos.py
         if old is None: log.append(f"added {m['name']}")
         else:
             for k in ("params_b", "license", "quants", "kv", "context_max", "context_extended"):
@@ -117,4 +118,6 @@ def main():
         changelog.insert(0, {"date": TODAY, "changes": log or ["initial data"]})
     json.dump({"generated": TODAY, "models": models, "changelog": changelog}, open(OUT, "w"), indent=1)
     print("wrote", OUT, len(models), "models")
+    if "--no-mlx" not in sys.argv:  # find/verify mlx-community conversions for every model (new models included)
+        import subprocess; subprocess.run([sys.executable, str(HERE / "mlx_repos.py")], check=False)
 main()

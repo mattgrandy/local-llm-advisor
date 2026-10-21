@@ -297,3 +297,47 @@ console.log("ALL TESTS PASSED");
   }
   console.log("growth pages ok: compare", cmp.length, "can-run", cr.length, "badges", hw7.length, "internal links checked", links7);
 }
+// ---- MLX (Apple Silicon only): repo ids come from the verified cache list; blocks render only for Apple
+{
+  const fs8 = require("fs"), p8 = require("path"), root = S, rdh = f => fs8.readFileSync(p8.join(root, f), "utf8");
+  const cache = JSON.parse(fs8.readFileSync(p8.join(__dirname, "..", "tools", "mlx_verified.json"), "utf8"));
+  let withMlx = 0;
+  for (const m of data.models.models) {
+    assert(m.mlx && Array.isArray(m.mlx.repos) && m.mlx.source && m.mlx.checked, "mlx block with source: " + m.name);
+    if (m.mlx.repos.length) withMlx++;
+    for (const r of m.mlx.repos) {
+      assert(cache.repos[r.repo] && cache.repos[r.repo].exists === true && cache.repos[r.repo].for === m.id, "MLX repo in verified cache list: " + r.repo);
+      assert(/^mlx-community\//.test(r.repo) && [4, 8].includes(r.bits) && ["mlx-lm", "mlx-vlm"].includes(r.tool) && r.gb > 0 && r.url === "https://huggingface.co/" + r.repo, "MLX repo fields " + r.repo);
+    }
+  }
+  assert(withMlx >= 10, "most models have an MLX repo: " + withMlx);
+  const T8 = data.hardware.targets, inp = t => ({ kind: t.kind, device: t.device, label: t.config ? (data.hardware.apple_configs.find(c => c.id === t.config) || {}).name : undefined, count: t.count, memory_gb: t.memory_gb, ram_gb: t.ram_gb, ram_type: t.ram_type });
+  let appleCmds = 0;
+  for (const t of T8) {
+    const r = A.recommend(inp(t), data, { use: "all", ctx: 16384, kvq: "f16" });
+    for (const p of r.results) {
+      if (t.kind !== "apple") { assert.strictEqual(p.mlx, null, "no MLX for non-Apple: " + t.slug + " " + p.model.name); continue; }
+      assert(p.mlx, "Apple result has an MLX decision: " + t.slug);
+      if (!p.model.mlx.repos.length) assert.strictEqual(p.mlx.none, "no-conversion");
+      else if (p.mlx.repo) { appleCmds++; const mod = p.mlx.tool.replace("-", "_");
+        assert(p.mlx.text.startsWith(`pip install -U ${p.mlx.tool}\n${mod}.generate --model ${p.mlx.repo} --prompt `) && p.mlx.text.includes(`\n${mod}.server --model ${p.mlx.repo}`), "MLX command syntax " + p.mlx.repo);
+        assert(p.model.mlx.repos.some(x => x.repo === p.mlx.repo) && p.mlx.gb + p.kvGB <= r.hwr.pool, "MLX pick is a listed repo that fits"); }
+    }
+  }
+  assert(appleCmds > 20, "MLX commands on Apple: " + appleCmds);
+  const html = A.mlxHtml(A.mlxCommand({ model: { mlx: { repos: [] } }, quantLabel: "Q4_K_M", kvGB: 1 }, {}, { kind: "apple", pool: 50 }), s => s);
+  assert(/no MLX conversion yet/.test(html), "missing conversion is stated, not invented");
+  for (const t of T8) {
+    const h = rdh("hardware/" + t.slug + ".html");
+    assert.strictEqual(/data-mlx=/.test(h), t.kind === "apple", "MLX block only on Apple hardware pages: " + t.slug);
+    assert.strictEqual(/id="mlx"/.test(h), t.kind === "apple", "MLX explainer only on Apple hardware pages: " + t.slug);
+  }
+  for (const f of fs8.readdirSync(p8.join(root, "can-run")).filter(f => f !== "index.html")) {
+    const h = rdh("can-run/" + f), t = T8.find(x => f.endsWith("-on-" + x.slug + ".html"));
+    assert.strictEqual(/data-mlx=/.test(h), t.kind === "apple", "MLX only on Apple can-run pages: " + f);
+  }
+  for (const m of data.models.models) { const h = rdh("models/" + require("../tools/generate_seo_pages.js").slugify(m.name) + ".html"); assert(/id="mlx-repos"/.test(h) && !/data-mlx=/.test(h)); for (const r of m.mlx.repos) assert(h.includes(r.repo)); if (!m.mlx.repos.length) assert(/No MLX conversion yet/.test(h)); }
+  const ds = rdh("data-sources.html"); assert(/id="mlx"/.test(ds) && /arxiv\.org\/abs\/2511\.05502/.test(ds) && /mlx\.core\.quantize/.test(ds), "MLX explainer with sources on data-sources");
+  for (const h of [rdh("hardware/macbook-pro-m5-max-128gb.html"), ds]) assert(!/MLX[^.]{0,60}\d+(\.\d+)? tok\/s/.test(h.replace(/<[^>]+>/g, " ").replace(/about 230 tok\/s for MLX|about 150 for llama/g, "")), "no MLX speed numbers of our own");
+  console.log("mlx ok:", withMlx, "of", data.models.models.length, "models with repos;", appleCmds, "Apple MLX commands");
+}

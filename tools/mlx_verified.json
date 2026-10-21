@@ -1,0 +1,543 @@
+{
+ "repos": {
+  "mlx-community/gemma-4-26b-a4b-it-4bit": {
+   "exists": true,
+   "sha": "0d77464eeb233a2da68ebf9d7dc4edaac7db956d",
+   "checked": "2026-10-20",
+   "for": "google/gemma-4-26B-A4B-it",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/gemma-4-26b-a4b-it-8bit": {
+   "exists": true,
+   "sha": "33c6d23798a0af159529890f79329206dbfbd73c",
+   "checked": "2026-10-20",
+   "for": "google/gemma-4-26B-A4B-it",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/gemma-4-31b-it-4bit": {
+   "exists": true,
+   "sha": "696d436c404745a59f30e4939a658162b0a9e57f",
+   "checked": "2026-10-20",
+   "for": "google/gemma-4-31B-it",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/gemma-4-31b-it-8bit": {
+   "exists": true,
+   "sha": "f5f3dc92ab4af76724c36c21eb6bedadb3a851be",
+   "checked": "2026-10-20",
+   "for": "google/gemma-4-31B-it",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/Qwen3.6-27B-4bit": {
+   "exists": true,
+   "sha": "c000ac2c2057d94be3fa931000c31723aac53282",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3.6-27B",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/Qwen3.6-27B-8bit": {
+   "exists": true,
+   "sha": "c5a593c1475a746e43a543b0a02bd2b357e5745f",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3.6-27B",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/Qwen3.6-35B-A3B-4bit": {
+   "exists": true,
+   "sha": "38740b847e4cb78f352aba30aa41c76e08e6eb46",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3.6-35B-A3B",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/Qwen3.6-35B-A3B-8bit": {
+   "exists": true,
+   "sha": "e06a74e6236a60c8367e1a3214e83d8b61b637b0",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3.6-35B-A3B",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/Qwen3.5-9B-4bit": {
+   "exists": true,
+   "sha": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3.5-9B",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/Qwen3.5-9B-8bit": {
+   "exists": true,
+   "sha": "16daa4818c54ce5f5436f929d52542eb65bbed9d",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3.5-9B",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/Qwen3.5-4B-MLX-4bit": {
+   "exists": true,
+   "sha": "32f3e8ecf65426fc3306969496342d504bfa13f3",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3.5-4B",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/Qwen3.5-4B-MLX-8bit": {
+   "exists": true,
+   "sha": "5319bbbe4f1cbe6c0b3c80f4f7de4f0338c3906d",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3.5-4B",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/gpt-oss-20b-MXFP4-Q4": {
+   "exists": true,
+   "sha": "f356f2747216d7e98fee755df25987459fc19089",
+   "checked": "2026-10-20",
+   "for": "openai/gpt-oss-20b",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/gpt-oss-20b-MXFP4-Q8": {
+   "exists": true,
+   "sha": "773a7da77e569019bb0fd17a554b263738d669a3",
+   "checked": "2026-10-20",
+   "for": "openai/gpt-oss-20b",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/gpt-oss-120b-MXFP4-Q4": {
+   "exists": true,
+   "sha": "bce781bef0f2fc85ed4e575af74054f5aad73ddd",
+   "checked": "2026-10-20",
+   "for": "openai/gpt-oss-120b",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/gpt-oss-120b-MXFP4-Q8": {
+   "exists": true,
+   "sha": "81e5ac3ad0af6efb1298a8e8c7a10ed2990c137b",
+   "checked": "2026-10-20",
+   "for": "openai/gpt-oss-120b",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit": {
+   "exists": true,
+   "sha": "6e302ea604ad9ab206367e2c501d1571023e7b6d",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/Qwen3-Coder-30B-A3B-Instruct-8bit": {
+   "exists": true,
+   "sha": "7c6ee1bbb5ee3051c4b3bc6553f24bdc2d01393a",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/Mistral-Small-3.2-24B-Instruct-2506-4bit": {
+   "exists": true,
+   "sha": "2a1d5eabfc504747bdc24178394821a1efc0edde",
+   "checked": "2026-10-20",
+   "for": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/Mistral-Small-3.2-24B-Instruct-2506-8bit": {
+   "exists": true,
+   "sha": "1db835463eb0f953019af1048077b90403b70424",
+   "checked": "2026-10-20",
+   "for": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/Qwen3-VL-8B-Instruct-4bit": {
+   "exists": true,
+   "sha": "defcdea7cc7a4b0858fea563cbbce171d328e457",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3-VL-8B-Instruct",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/Qwen3-VL-8B-Instruct-8bit": {
+   "exists": true,
+   "sha": "a0093b9b5fda6f76ddd4a462c6830ae7c4fe47ec",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3-VL-8B-Instruct",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/GLM-4.5-Air-4bit": {
+   "exists": true,
+   "sha": "60837794f3caafc4682dd1a9188a82c55a9100ef",
+   "checked": "2026-10-20",
+   "for": "zai-org/GLM-4.5-Air",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/GLM-4.5-Air-8bit": {
+   "exists": true,
+   "sha": "ca44c769a97034e91466f2a524b6ef2c28eb3c1f",
+   "checked": "2026-10-20",
+   "for": "zai-org/GLM-4.5-Air",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/Qwen3.8-27B-4bit": {
+   "exists": true,
+   "sha": "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3.8-27B",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/Qwen3.8-27B-8bit": {
+   "exists": true,
+   "sha": "815b83c0df8ffd1d1b5244cf75fd6ef14fca9ef9",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3.8-27B",
+   "tool": "mlx-vlm"
+  }
+ },
+ "models": {
+  "google/gemma-4-26B-A4B-it": {
+   "repos": [
+    {
+     "repo": "mlx-community/gemma-4-26b-a4b-it-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 15.3,
+     "tool": "mlx-vlm",
+     "sha": "0d77464eeb233a2da68ebf9d7dc4edaac7db956d",
+     "last_modified": "2026-07-05T23:03:15.000Z",
+     "url": "https://huggingface.co/mlx-community/gemma-4-26b-a4b-it-4bit"
+    },
+    {
+     "repo": "mlx-community/gemma-4-26b-a4b-it-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 28.0,
+     "tool": "mlx-vlm",
+     "sha": "33c6d23798a0af159529890f79329206dbfbd73c",
+     "last_modified": "2026-07-05T23:07:49.000Z",
+     "url": "https://huggingface.co/mlx-community/gemma-4-26b-a4b-it-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name google/gemma-4-26B-A4B-it as its base model"
+  },
+  "google/gemma-4-31B-it": {
+   "repos": [
+    {
+     "repo": "mlx-community/gemma-4-31b-it-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 18.4,
+     "tool": "mlx-vlm",
+     "sha": "696d436c404745a59f30e4939a658162b0a9e57f",
+     "last_modified": "2026-07-05T23:27:34.000Z",
+     "url": "https://huggingface.co/mlx-community/gemma-4-31b-it-4bit"
+    },
+    {
+     "repo": "mlx-community/gemma-4-31b-it-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 33.8,
+     "tool": "mlx-vlm",
+     "sha": "f5f3dc92ab4af76724c36c21eb6bedadb3a851be",
+     "last_modified": "2026-07-05T23:32:16.000Z",
+     "url": "https://huggingface.co/mlx-community/gemma-4-31b-it-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name google/gemma-4-31B-it as its base model"
+  },
+  "google/gemma-4-12B-it": {
+   "repos": [],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name google/gemma-4-12B-it as its base model"
+  },
+  "Qwen/Qwen3.6-27B": {
+   "repos": [
+    {
+     "repo": "mlx-community/Qwen3.6-27B-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 16.1,
+     "tool": "mlx-vlm",
+     "sha": "c000ac2c2057d94be3fa931000c31723aac53282",
+     "last_modified": "2026-04-22T15:19:35.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3.6-27B-4bit"
+    },
+    {
+     "repo": "mlx-community/Qwen3.6-27B-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 29.5,
+     "tool": "mlx-vlm",
+     "sha": "c5a593c1475a746e43a543b0a02bd2b357e5745f",
+     "last_modified": "2026-04-22T15:30:08.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3.6-27B-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3.6-27B as its base model"
+  },
+  "Qwen/Qwen3.6-35B-A3B": {
+   "repos": [
+    {
+     "repo": "mlx-community/Qwen3.6-35B-A3B-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 20.4,
+     "tool": "mlx-vlm",
+     "sha": "38740b847e4cb78f352aba30aa41c76e08e6eb46",
+     "last_modified": "2026-04-16T16:32:41.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3.6-35B-A3B-4bit"
+    },
+    {
+     "repo": "mlx-community/Qwen3.6-35B-A3B-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 37.7,
+     "tool": "mlx-vlm",
+     "sha": "e06a74e6236a60c8367e1a3214e83d8b61b637b0",
+     "last_modified": "2026-04-16T16:43:13.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3.6-35B-A3B-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3.6-35B-A3B as its base model"
+  },
+  "Qwen/Qwen3.5-9B": {
+   "repos": [
+    {
+     "repo": "mlx-community/Qwen3.5-9B-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 6.0,
+     "tool": "mlx-vlm",
+     "sha": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+     "last_modified": "2026-03-02T16:42:26.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3.5-9B-4bit"
+    },
+    {
+     "repo": "mlx-community/Qwen3.5-9B-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 10.4,
+     "tool": "mlx-vlm",
+     "sha": "16daa4818c54ce5f5436f929d52542eb65bbed9d",
+     "last_modified": "2026-03-02T22:23:51.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3.5-9B-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3.5-9B as its base model"
+  },
+  "Qwen/Qwen3.5-4B": {
+   "repos": [
+    {
+     "repo": "mlx-community/Qwen3.5-4B-MLX-4bit",
+     "bits": 4,
+     "label": "MLX-4bit",
+     "gb": 3.0,
+     "tool": "mlx-vlm",
+     "sha": "32f3e8ecf65426fc3306969496342d504bfa13f3",
+     "last_modified": "2026-03-02T15:00:30.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3.5-4B-MLX-4bit"
+    },
+    {
+     "repo": "mlx-community/Qwen3.5-4B-MLX-8bit",
+     "bits": 8,
+     "label": "MLX-8bit",
+     "gb": 5.1,
+     "tool": "mlx-vlm",
+     "sha": "5319bbbe4f1cbe6c0b3c80f4f7de4f0338c3906d",
+     "last_modified": "2026-03-02T14:19:14.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3.5-4B-MLX-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3.5-4B as its base model"
+  },
+  "openai/gpt-oss-20b": {
+   "repos": [
+    {
+     "repo": "mlx-community/gpt-oss-20b-MXFP4-Q4",
+     "bits": 4,
+     "label": "MXFP4-Q4",
+     "gb": 11.2,
+     "tool": "mlx-lm",
+     "sha": "f356f2747216d7e98fee755df25987459fc19089",
+     "last_modified": "2025-08-29T17:55:49.000Z",
+     "url": "https://huggingface.co/mlx-community/gpt-oss-20b-MXFP4-Q4"
+    },
+    {
+     "repo": "mlx-community/gpt-oss-20b-MXFP4-Q8",
+     "bits": 8,
+     "label": "MXFP4-Q8",
+     "gb": 12.1,
+     "tool": "mlx-lm",
+     "sha": "773a7da77e569019bb0fd17a554b263738d669a3",
+     "last_modified": "2026-03-19T10:30:16.000Z",
+     "url": "https://huggingface.co/mlx-community/gpt-oss-20b-MXFP4-Q8"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name openai/gpt-oss-20b as its base model"
+  },
+  "openai/gpt-oss-120b": {
+   "repos": [
+    {
+     "repo": "mlx-community/gpt-oss-120b-MXFP4-Q4",
+     "bits": 4,
+     "label": "MXFP4-Q4",
+     "gb": 62.3,
+     "tool": "mlx-lm",
+     "sha": "bce781bef0f2fc85ed4e575af74054f5aad73ddd",
+     "last_modified": "2025-08-29T23:39:09.000Z",
+     "url": "https://huggingface.co/mlx-community/gpt-oss-120b-MXFP4-Q4"
+    },
+    {
+     "repo": "mlx-community/gpt-oss-120b-MXFP4-Q8",
+     "bits": 8,
+     "label": "MXFP4-Q8",
+     "gb": 63.4,
+     "tool": "mlx-lm",
+     "sha": "81e5ac3ad0af6efb1298a8e8c7a10ed2990c137b",
+     "last_modified": "2025-08-30T00:22:39.000Z",
+     "url": "https://huggingface.co/mlx-community/gpt-oss-120b-MXFP4-Q8"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name openai/gpt-oss-120b as its base model"
+  },
+  "Qwen/Qwen3-Coder-30B-A3B-Instruct": {
+   "repos": [
+    {
+     "repo": "mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 17.2,
+     "tool": "mlx-lm",
+     "sha": "6e302ea604ad9ab206367e2c501d1571023e7b6d",
+     "last_modified": "2025-08-06T13:45:30.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit"
+    },
+    {
+     "repo": "mlx-community/Qwen3-Coder-30B-A3B-Instruct-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 32.4,
+     "tool": "mlx-lm",
+     "sha": "7c6ee1bbb5ee3051c4b3bc6553f24bdc2d01393a",
+     "last_modified": "2025-07-31T16:21:57.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3-Coder-30B-A3B-Instruct-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3-Coder-30B-A3B-Instruct as its base model"
+  },
+  "mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
+   "repos": [
+    {
+     "repo": "mlx-community/Mistral-Small-3.2-24B-Instruct-2506-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 13.3,
+     "tool": "mlx-lm",
+     "sha": "2a1d5eabfc504747bdc24178394821a1efc0edde",
+     "last_modified": "2025-06-21T23:23:56.000Z",
+     "url": "https://huggingface.co/mlx-community/Mistral-Small-3.2-24B-Instruct-2506-4bit"
+    },
+    {
+     "repo": "mlx-community/Mistral-Small-3.2-24B-Instruct-2506-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 25.0,
+     "tool": "mlx-lm",
+     "sha": "1db835463eb0f953019af1048077b90403b70424",
+     "last_modified": "2025-06-22T22:14:45.000Z",
+     "url": "https://huggingface.co/mlx-community/Mistral-Small-3.2-24B-Instruct-2506-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name mistralai/Mistral-Small-3.2-24B-Instruct-2506 as its base model"
+  },
+  "Qwen/Qwen3-VL-8B-Instruct": {
+   "repos": [
+    {
+     "repo": "mlx-community/Qwen3-VL-8B-Instruct-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 5.8,
+     "tool": "mlx-vlm",
+     "sha": "defcdea7cc7a4b0858fea563cbbce171d328e457",
+     "last_modified": "2025-10-14T18:11:53.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3-VL-8B-Instruct-4bit"
+    },
+    {
+     "repo": "mlx-community/Qwen3-VL-8B-Instruct-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 9.9,
+     "tool": "mlx-vlm",
+     "sha": "a0093b9b5fda6f76ddd4a462c6830ae7c4fe47ec",
+     "last_modified": "2025-10-14T18:24:02.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3-VL-8B-Instruct-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3-VL-8B-Instruct as its base model"
+  },
+  "zai-org/GLM-4.5-Air": {
+   "repos": [
+    {
+     "repo": "mlx-community/GLM-4.5-Air-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 60.1,
+     "tool": "mlx-lm",
+     "sha": "60837794f3caafc4682dd1a9188a82c55a9100ef",
+     "last_modified": "2025-07-28T13:34:57.000Z",
+     "url": "https://huggingface.co/mlx-community/GLM-4.5-Air-4bit"
+    },
+    {
+     "repo": "mlx-community/GLM-4.5-Air-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 113.6,
+     "tool": "mlx-lm",
+     "sha": "ca44c769a97034e91466f2a524b6ef2c28eb3c1f",
+     "last_modified": "2025-07-29T09:23:07.000Z",
+     "url": "https://huggingface.co/mlx-community/GLM-4.5-Air-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name zai-org/GLM-4.5-Air as its base model"
+  },
+  "Qwen/Qwen3.8-27B": {
+   "repos": [
+    {
+     "repo": "mlx-community/Qwen3.8-27B-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 16.1,
+     "tool": "mlx-vlm",
+     "sha": "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+     "last_modified": "2026-09-14T12:37:43.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3.8-27B-4bit"
+    },
+    {
+     "repo": "mlx-community/Qwen3.8-27B-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 29.5,
+     "tool": "mlx-vlm",
+     "sha": "815b83c0df8ffd1d1b5244cf75fd6ef14fca9ef9",
+     "last_modified": "2026-08-14T16:16:16.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3.8-27B-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3.8-27B as its base model"
+  },
+  "LiquidAI/LFM2.5-24B-A2B": {
+   "repos": [],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name LiquidAI/LFM2.5-24B-A2B as its base model"
+  },
+  "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16": {
+   "repos": [],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16 as its base model"
+  }
+ },
+ "generated": "2026-10-20",
+ "_note": "Written by tools/mlx_repos.py. repos = every MLX repo id the site may show, with the HF API result; tests require each shown id to be here."
+}
