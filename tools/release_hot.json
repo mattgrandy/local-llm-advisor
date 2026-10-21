@@ -1,0 +1,35 @@
+{
+  "_note": "Day-one pairs for tools/generate_extra_pages.js; expire after 45 days. Written by tools/add_release.js.",
+  "pairs": [
+    {
+      "hw": "rtx-5060ti-16gb",
+      "model": "openai/gpt-oss-20b",
+      "added": "2026-10-21"
+    },
+    {
+      "hw": "rtx-5060ti-16gb",
+      "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "added": "2026-10-21"
+    },
+    {
+      "hw": "rtx-5060ti-16gb",
+      "model": "google/gemma-4-12B-it",
+      "added": "2026-10-21"
+    },
+    {
+      "hw": "rtx-5060ti-16gb",
+      "model": "Qwen/Qwen3.5-9B",
+      "added": "2026-10-21"
+    },
+    {
+      "hw": "rtx-5060ti-16gb",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "added": "2026-10-21"
+    },
+    {
+      "hw": "rtx-5060ti-16gb",
+      "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "added": "2026-10-21"
+    }
+  ]
+}

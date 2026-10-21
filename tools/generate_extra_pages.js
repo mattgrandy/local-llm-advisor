@@ -8,7 +8,7 @@ const CTX = 16384, CAP_CANRUN = 72, CAP_EST = 8, HF_URL = "https://huggingface.c
 // Curated pairings (target slugs). Only pairs whose pages differ in fit or speed are kept (checked in plan()).
 const PAIR_SLUGS = [
   ["rtx-3090-24gb", "rtx-4090-24gb"], ["rtx-4090-24gb", "rtx-5090-32gb"], ["rtx-3090-24gb", "rtx-5090-32gb"], ["rtx-4090-24gb", "rx-7900-xtx-24gb"],
-  ["rtx-3090-24gb", "rx-7900-xtx-24gb"], ["rtx-5080-16gb", "rtx-4090-24gb"], ["rtx-5070ti-16gb", "rtx-4060ti-16gb"], ["rtx-4070-12gb", "rtx-5070-12gb"],
+  ["rtx-3090-24gb", "rx-7900-xtx-24gb"], ["rtx-5080-16gb", "rtx-4090-24gb"], ["rtx-5070ti-16gb", "rtx-4060ti-16gb"], ["rtx-5060ti-16gb", "rtx-4060ti-16gb"], ["rtx-5060ti-16gb", "rtx-5070ti-16gb"], ["rtx-4070-12gb", "rtx-5070-12gb"],
   ["rtx-3060-12gb", "rtx-4060-8gb"], ["dual-rtx-3090-48gb", "rtx-5090-32gb"], ["dual-rtx-3090-48gb", "rtx-pro-6000-96gb"], ["strix-halo-128gb", "dgx-spark-128gb"],
   ["macbook-pro-m4-max-128gb", "rtx-4090-24gb"], ["macbook-pro-m5-max-128gb", "macbook-pro-m4-max-128gb"], ["strix-halo-128gb", "macbook-pro-m4-max-128gb"], ["mac-studio-m3-ultra-96gb", "dual-rtx-3090-48gb"],
 ];

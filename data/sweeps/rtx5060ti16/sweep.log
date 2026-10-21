@@ -1,0 +1,53 @@
+2026-10-21T14:23:22Z sweep start: GPU='NVIDIA GeForce RTX 5060 Ti' x1 (benchmarking GPU 0) VRAM=15.93GiB RAM=251GiB disk_free=100GiB driver=595.84 llama.cpp=b11658/cuda12.8 max_hours=2 dry_run=0
+2026-10-21T14:23:22Z installing huggingface_hub into /workspace/sweep_work/venv
+2026-10-21T14:23:30Z hf CLI: /workspace/sweep_work/venv/bin/hf
+14 configs, 152 GB of downloads (vram=15.93 ram=251.0)
+2026-10-21T14:23:30Z installing prebuilt llama.cpp b11658 (CUDA 12.8) from https://github.com/ggml-org/llama.cpp/releases/download/b11658
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 82  164M   82  135M    0     0   159M      0  0:00:01 --:--:--  0:00:01  159M100  164M  100  164M    0     0   176M      0 --:--:-- --:--:-- --:--:--  357M
+<stdin>:8: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+2026-10-21T14:23:34Z plan: 14 configs
+2026-10-21T14:23:34Z == Qwen_Qwen3.5-4B__Q4_K_M mode=gpu size=2.7GB  (time left 119 min)
+2026-10-21T14:24:14Z    ok: 6 result rows
+2026-10-21T14:24:14Z == Qwen_Qwen3.5-4B__Q8_0 mode=gpu size=4.5GB  (time left 119 min)
+2026-10-21T14:25:01Z    ok: 6 result rows
+2026-10-21T14:25:01Z == Qwen_Qwen3-VL-8B-Instruct__Q4_K_M mode=gpu size=5.0GB  (time left 118 min)
+2026-10-21T14:25:59Z    ok: 6 result rows
+2026-10-21T14:25:59Z == Qwen_Qwen3.5-9B__Q4_K_M mode=gpu size=5.7GB  (time left 117 min)
+2026-10-21T14:26:52Z    ok: 6 result rows
+2026-10-21T14:26:52Z == google_gemma-4-12B-it__Q4_K_M mode=gpu size=7.1GB  (time left 116 min)
+2026-10-21T14:28:01Z    ok: 6 result rows
+2026-10-21T14:28:01Z == Qwen_Qwen3-VL-8B-Instruct__Q8_0 mode=gpu size=8.7GB  (time left 115 min)
+2026-10-21T14:29:15Z    ok: 6 result rows
+2026-10-21T14:29:16Z == Qwen_Qwen3.5-9B__Q8_0 mode=gpu size=9.5GB  (time left 114 min)
+2026-10-21T14:30:25Z    ok: 6 result rows
+2026-10-21T14:30:25Z == openai_gpt-oss-20b__Q4_K_M mode=gpu size=11.6GB  (time left 112 min)
+2026-10-21T14:31:17Z    ok: 6 result rows
+2026-10-21T14:31:17Z == openai_gpt-oss-20b__Q8_0 mode=gpu size=12.1GB  (time left 112 min)
+2026-10-21T14:32:08Z    ok: 6 result rows
+2026-10-21T14:32:09Z == google_gemma-4-12B-it__Q8_0 mode=gpu size=12.7GB  (time left 111 min)
+2026-10-21T14:33:45Z    ok: 6 result rows
+2026-10-21T14:33:45Z == mistralai_Mistral-Small-3.2-24B-Instruct-2506__Q4_K_M mode=gpu size=14.3GB  (time left 109 min)
+2026-10-21T14:35:01Z    (multi-depth run failed, retrying per depth)
+2026-10-21T14:36:00Z    (depth 16384 failed: likely OOM)
+2026-10-21T14:36:00Z    ok: 8 result rows
+2026-10-21T14:36:00Z == google_gemma-4-26B-A4B-it__Q4_K_M mode=moe-offload size=16.9GB  (time left 107 min)
+2026-10-21T14:36:27Z    n_layers=30; --n-cpu-moe sweep: 8 15 22
+2026-10-21T14:39:39Z    best --n-cpu-moe=8; running depths 4096,16384
+2026-10-21T14:41:23Z    ok: 10 result rows
+2026-10-21T14:41:23Z == Qwen_Qwen3-Coder-30B-A3B-Instruct__Q4_K_M mode=moe-offload size=18.6GB  (time left 101 min)
+2026-10-21T14:41:54Z    n_layers=48; --n-cpu-moe sweep: 12 24 36
+2026-10-21T14:45:50Z    best --n-cpu-moe=12; running depths 4096,16384
+2026-10-21T14:48:03Z    ok: 10 result rows
+2026-10-21T14:48:03Z == Qwen_Qwen3.6-35B-A3B__Q4_K_M mode=moe-offload size=22.1GB  (time left 95 min)
+2026-10-21T14:48:45Z    n_layers=40; --n-cpu-moe sweep: 10 20 30
+2026-10-21T14:48:51Z    (n-cpu-moe=10 failed: likely OOM, continuing)
+2026-10-21T14:51:26Z    best --n-cpu-moe=20; running depths 4096,16384
+2026-10-21T14:54:23Z    ok: 8 result rows
+2026-10-21T14:54:23Z sweep complete
+Terminated
+2026-10-21T14:54:23Z finalizing: 14 configs done, 0 failed
+2026-10-21T14:54:23Z results tarball: /workspace/sweep_out.tgz (28K)
+2026-10-21T14:54:23Z no --on-finish given: instance keeps running (and billing). Copy /workspace/sweep_out.tgz off the box and destroy it.

@@ -1,907 +1,928 @@
 {
- "generated": "2026-10-19",
- "gpus": [
-  {
-   "id": "rtx-3060-12",
-   "name": "GeForce RTX 3060 12GB",
-   "vendor": "NVIDIA",
-   "vram_gb": 12,
-   "bandwidth_gbps": 360,
-   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-3060-12-gb.c3682",
-   "basis": "memory bus x data rate from TechPowerUp listing",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "rtx-3090",
-   "name": "GeForce RTX 3090",
-   "vendor": "NVIDIA",
-   "vram_gb": 24,
-   "bandwidth_gbps": 936,
-   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-3090.c3622",
-   "basis": "memory bus x data rate from TechPowerUp listing",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "rtx-4060",
-   "name": "GeForce RTX 4060",
-   "vendor": "NVIDIA",
-   "vram_gb": 8,
-   "bandwidth_gbps": 272,
-   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4060.c4107",
-   "basis": "memory bus x data rate from TechPowerUp listing",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "rtx-4060ti-16",
-   "name": "GeForce RTX 4060 Ti 16GB",
-   "vendor": "NVIDIA",
-   "vram_gb": 16,
-   "bandwidth_gbps": 288,
-   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4060-ti-16-gb.c4155",
-   "basis": "memory bus x data rate from TechPowerUp listing",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "rtx-4070",
-   "name": "GeForce RTX 4070 12GB",
-   "vendor": "NVIDIA",
-   "vram_gb": 12,
-   "bandwidth_gbps": 504,
-   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4070.c3924",
-   "basis": "memory bus x data rate from TechPowerUp listing",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "rtx-4090",
-   "name": "GeForce RTX 4090",
-   "vendor": "NVIDIA",
-   "vram_gb": 24,
-   "bandwidth_gbps": 1008,
-   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4090.c3889",
-   "basis": "memory bus x data rate from TechPowerUp listing",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "rtx-5070",
-   "name": "GeForce RTX 5070",
-   "vendor": "NVIDIA",
-   "vram_gb": 12,
-   "bandwidth_gbps": 672,
-   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5070.c4218",
-   "basis": "memory bus x data rate from TechPowerUp listing",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "rtx-5070ti",
-   "name": "GeForce RTX 5070 Ti",
-   "vendor": "NVIDIA",
-   "vram_gb": 16,
-   "bandwidth_gbps": 896,
-   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5070-ti.c4243",
-   "basis": "memory bus x data rate from TechPowerUp listing",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "rtx-5080",
-   "name": "GeForce RTX 5080",
-   "vendor": "NVIDIA",
-   "vram_gb": 16,
-   "bandwidth_gbps": 960,
-   "source_url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
-   "basis": "NVIDIA GeForce compare page: 16 GB GDDR7, 256-bit, 960 GB/sec (also NVIDIA RTX Blackwell architecture whitepaper: 30 Gbps GDDR7)",
-   "last_verified": "2026-10-15"
-  },
-  {
-   "id": "rtx-5090",
-   "name": "GeForce RTX 5090",
-   "vendor": "NVIDIA",
-   "vram_gb": 32,
-   "bandwidth_gbps": 1792,
-   "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216",
-   "basis": "memory bus x data rate from TechPowerUp listing",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "rx-7900xtx",
-   "name": "Radeon RX 7900 XTX",
-   "vendor": "AMD",
-   "vram_gb": 24,
-   "bandwidth_gbps": 960,
-   "source_url": "https://www.techpowerup.com/gpu-specs/radeon-rx-7900-xtx.c3941",
-   "basis": "memory bus x data rate from TechPowerUp listing",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "rtx-pro-6000",
-   "name": "RTX PRO 6000 Blackwell Workstation",
-   "vendor": "NVIDIA",
-   "vram_gb": 96,
-   "bandwidth_gbps": 1792,
-   "source_url": "https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell.c4272",
-   "basis": "memory bus x data rate from TechPowerUp listing",
-   "last_verified": "2026-10-14"
-  }
- ],
- "apple": [
-  {
-   "id": "m4",
-   "name": "Apple M4",
-   "bandwidth_gbps": 120,
-   "source_url": "https://support.apple.com/en-us/121555",
-   "basis": "Apple tech specs (Mac mini 2024, iMac): 120GB/s",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "m4-pro",
-   "name": "Apple M4 Pro",
-   "bandwidth_gbps": 273,
-   "source_url": "https://support.apple.com/en-us/121555",
-   "basis": "Apple tech specs (Mac mini 2024): 273GB/s",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "m4-max-32",
-   "name": "Apple M4 Max (32-core GPU)",
-   "bandwidth_gbps": 410,
-   "source_url": "https://support.apple.com/en-us/122211",
-   "basis": "Apple tech specs: 410GB/s",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "m4-max-40",
-   "name": "Apple M4 Max (40-core GPU)",
-   "bandwidth_gbps": 546,
-   "source_url": "https://support.apple.com/en-us/122211",
-   "basis": "Apple tech specs: 546GB/s",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "m3-ultra",
-   "name": "Apple M3 Ultra",
-   "bandwidth_gbps": 819,
-   "source_url": "https://support.apple.com/en-us/122211",
-   "basis": "Apple tech specs: 819GB/s",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "m5",
-   "name": "Apple M5",
-   "bandwidth_gbps": 153,
-   "source_url": "https://support.apple.com/en-us/126320",
-   "basis": "Apple tech specs (MacBook Air / MacBook Pro 14): 153GB/s",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "m5-pro",
-   "name": "Apple M5 Pro",
-   "bandwidth_gbps": 307,
-   "source_url": "https://support.apple.com/en-us/126318",
-   "basis": "Apple tech specs: 307GB/s",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "m5-max-32",
-   "name": "Apple M5 Max (32-core GPU)",
-   "bandwidth_gbps": 460,
-   "source_url": "https://support.apple.com/en-us/128107",
-   "basis": "Apple tech specs: 460GB/s",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "m5-max-40",
-   "name": "Apple M5 Max (40-core GPU)",
-   "bandwidth_gbps": 614,
-   "source_url": "https://support.apple.com/en-us/128107",
-   "basis": "Apple tech specs: 614GB/s",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "m5-ultra",
-   "name": "Apple M5 Ultra",
-   "bandwidth_gbps": 1200,
-   "source_url": "https://support.apple.com/en-us/128107",
-   "basis": "Apple tech specs: 1.2TB/s (Apple states a rounded figure; 64-core and 80-core GPU variants both listed at 1.2TB/s)",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "m6",
-   "name": "Apple M6",
-   "bandwidth_gbps": 153,
-   "source_url": "https://support.apple.com/en-us/128108",
-   "basis": "Apple tech specs (Mac mini): 153GB/s with 16GB, 170GB/s with 24GB/32GB",
-   "last_verified": "2026-10-14",
-   "bandwidth_by_mem_gb": {
-    "16": 153,
-    "24": 170,
-    "32": 170
-   }
-  }
- ],
- "unified": [
-  {
-   "id": "strix-halo",
-   "name": "AMD Ryzen AI Max+ 395 (Strix Halo)",
-   "bandwidth_gbps": 256,
-   "memory_options_gb": [
-    128
-   ],
-   "source_url": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-max-plus-395.html",
-   "basis": "AMD page: 256-bit LPDDR5x-8000, max 128 GB; 256 bit x 8000 MT/s = 256 GB/s (computed)",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "dgx-spark",
-   "name": "NVIDIA DGX Spark",
-   "bandwidth_gbps": 273,
-   "memory_options_gb": [
-    128
-   ],
-   "source_url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
-   "basis": "NVIDIA page: 273 GB/s, 128 GB unified",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "ryzen-ai-max-pro-495",
-   "name": "AMD Ryzen AI Max+ PRO 495 (Ryzen AI Halo)",
-   "bandwidth_gbps": 273.1,
-   "memory_options_gb": [
-    192
-   ],
-   "source_url": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-400-series/amd-ryzen-ai-max-plus-pro-495.html",
-   "basis": "AMD page: 256-bit LPDDR5x-8533, max 192 GB, Radeon 8065S; 256 bit x 8533 MT/s / 8 = 273.1 GB/s (computed). AMD blog 2026-10-12 (https://www.amd.com/en/blogs/2026/meet-the-next-amd-ryzen-ai-halo.html): Ryzen AI Halo with up to 192 GB unified memory, up to 160 GB allocatable to the GPU, orderable from Micro Center.",
-   "last_verified": "2026-10-19"
-  }
- ],
- "ram_types": [
-  {
-   "id": "ddr4-3200",
-   "name": "DDR4-3200 dual channel",
-   "bandwidth_gbps": 51.2,
-   "basis": "computed: 2 x 64-bit x 3200 MT/s (theoretical)"
-  },
-  {
-   "id": "ddr5-5600",
-   "name": "DDR5-5600 dual channel",
-   "bandwidth_gbps": 89.6,
-   "basis": "computed: 2 x 64-bit x 5600 MT/s (theoretical)"
-  },
-  {
-   "id": "ddr5-6400",
-   "name": "DDR5-6400 dual channel",
-   "bandwidth_gbps": 102.4,
-   "basis": "computed: 2 x 64-bit x 6400 MT/s (theoretical)"
-  }
- ],
- "assumptions": {
-  "_note": "ASSUMPTIONS, not verified specs. Editable; shown in the UI.",
-  "gpu_overhead_gb": 1.0,
-  "os_reserve_ram_gb": 8,
-  "unified_usable_fraction": {
-   "apple": 0.7,
-   "unified": 0.85
-  },
-  "expert_weight_fraction_moe": 0.9,
-  "speed_efficiency": 0.55,
-  "cpu_speed_efficiency": 0.6,
-  "min_usable_tps": 5,
-  "comfortable_tps": 15
- },
- "targets": [
-  {
-   "slug": "rtx-3090-24gb",
-   "title": "RTX 3090 24GB",
-   "kind": "gpu",
-   "device": "rtx-3090",
-   "count": 1,
-   "memory_gb": null,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "rtx-4090-24gb",
-   "title": "RTX 4090 24GB",
-   "kind": "gpu",
-   "device": "rtx-4090",
-   "count": 1,
-   "memory_gb": null,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "rtx-5090-32gb",
-   "title": "RTX 5090 32GB",
-   "kind": "gpu",
-   "device": "rtx-5090",
-   "count": 1,
-   "memory_gb": null,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "rtx-3060-12gb",
-   "title": "RTX 3060 12GB (32GB RAM)",
-   "kind": "gpu",
-   "device": "rtx-3060-12",
-   "count": 1,
-   "memory_gb": null,
-   "ram_gb": 32,
-   "ram_type": "ddr4-3200",
-   "note": ""
-  },
-  {
-   "slug": "rtx-4060-8gb",
-   "title": "8GB VRAM class (RTX 4060 8GB, 32GB RAM)",
-   "kind": "gpu",
-   "device": "rtx-4060",
-   "count": 1,
-   "memory_gb": null,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "rtx-4060ti-16gb",
-   "title": "16GB VRAM class (RTX 4060 Ti 16GB, 32GB RAM)",
-   "kind": "gpu",
-   "device": "rtx-4060ti-16",
-   "count": 1,
-   "memory_gb": null,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "rtx-5070-12gb",
-   "title": "RTX 5070 12GB",
-   "kind": "gpu",
-   "device": "rtx-5070",
-   "count": 1,
-   "memory_gb": null,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "rtx-4070-12gb",
-   "title": "RTX 4070 12GB",
-   "kind": "gpu",
-   "device": "rtx-4070",
-   "count": 1,
-   "memory_gb": null,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "rtx-5070ti-16gb",
-   "title": "RTX 5070 Ti 16GB",
-   "kind": "gpu",
-   "device": "rtx-5070ti",
-   "count": 1,
-   "memory_gb": null,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "rtx-5080-16gb",
-   "title": "RTX 5080 16GB",
-   "kind": "gpu",
-   "device": "rtx-5080",
-   "count": 1,
-   "memory_gb": null,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "rx-7900-xtx-24gb",
-   "title": "AMD RX 7900 XTX 24GB",
-   "kind": "gpu",
-   "device": "rx-7900xtx",
-   "count": 1,
-   "memory_gb": null,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "strix-halo-128gb",
-   "title": "AMD Ryzen AI Max+ 395 (Strix Halo) 128GB",
-   "kind": "unified",
-   "device": "strix-halo",
-   "count": 1,
-   "memory_gb": 128,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "dgx-spark-128gb",
-   "title": "NVIDIA DGX Spark 128GB",
-   "kind": "unified",
-   "device": "dgx-spark",
-   "count": 1,
-   "memory_gb": 128,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "ryzen-ai-halo-495-192gb",
-   "title": "AMD Ryzen AI Max+ PRO 495 (Ryzen AI Halo) 192GB",
-   "kind": "unified",
-   "device": "ryzen-ai-max-pro-495",
-   "count": 1,
-   "memory_gb": 192,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": "AMD states up to 160 GB of the 192 GB can be allocated to the GPU; this site's 85% usable-memory assumption gives about 163 GB, so the largest fits are slightly optimistic."
-  },
-  {
-   "slug": "mac-studio-m3-ultra-96gb",
-   "title": "Mac Studio (2025) M3 Ultra 96GB",
-   "kind": "apple",
-   "device": "m3-ultra",
-   "count": 1,
-   "memory_gb": 96,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": "",
-   "config": "studio-m3-ultra-60"
-  },
-  {
-   "slug": "macbook-pro-m4-max-128gb",
-   "title": "MacBook Pro 14/16 (2024) M4 Max 128GB",
-   "kind": "apple",
-   "device": "m4-max-40",
-   "count": 1,
-   "memory_gb": 128,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": "",
-   "config": "mbp-m4-max-40"
-  },
-  {
-   "slug": "mac-m4-16gb",
-   "title": "Mac mini / iMac M4 16GB",
-   "kind": "apple",
-   "device": "m4",
-   "count": 1,
-   "memory_gb": 16,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": "",
-   "config": "mini-m4"
-  },
-  {
-   "slug": "mac-m4-pro-64gb",
-   "title": "Mac mini (2024) M4 Pro 64GB",
-   "kind": "apple",
-   "device": "m4-pro",
-   "count": 1,
-   "memory_gb": 64,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": "",
-   "config": "mini-m4-pro"
-  },
-  {
-   "slug": "dual-rtx-3090-48gb",
-   "title": "2x RTX 3090 (48GB total)",
-   "kind": "gpu",
-   "device": "rtx-3090",
-   "count": 2,
-   "memory_gb": null,
-   "ram_gb": 64,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "rtx-pro-6000-96gb",
-   "title": "RTX PRO 6000 96GB",
-   "kind": "gpu",
-   "device": "rtx-pro-6000",
-   "count": 1,
-   "memory_gb": null,
-   "ram_gb": 64,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "mac-studio-m5-ultra-256gb",
-   "title": "Mac Studio M5 Ultra 256GB",
-   "kind": "apple",
-   "device": "m5-ultra",
-   "config": "studio-m5-ultra-80",
-   "count": 1,
-   "memory_gb": 256,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "mac-studio-m5-ultra-512gb",
-   "title": "Mac Studio M5 Ultra 512GB (ships late Oct 2026)",
-   "kind": "apple",
-   "device": "m5-ultra",
-   "config": "studio-m5-ultra-80",
-   "count": 1,
-   "memory_gb": 512,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "mac-studio-m5-max-128gb",
-   "title": "Mac Studio M5 Max 128GB",
-   "kind": "apple",
-   "device": "m5-max-40",
-   "config": "studio-m5-max-40",
-   "count": 1,
-   "memory_gb": 128,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "macbook-pro-m5-max-128gb",
-   "title": "MacBook Pro 14/16 M5 Max 128GB",
-   "kind": "apple",
-   "device": "m5-max-40",
-   "config": "mbp-m5-max-40",
-   "count": 1,
-   "memory_gb": 128,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "macbook-pro-m5-pro-48gb",
-   "title": "MacBook Pro 14/16 M5 Pro 48GB",
-   "kind": "apple",
-   "device": "m5-pro",
-   "config": "mbp-m5-pro-20",
-   "count": 1,
-   "memory_gb": 48,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "mac-mini-m6-32gb",
-   "title": "Mac mini M6 32GB",
-   "kind": "apple",
-   "device": "m6",
-   "config": "mini-m6",
-   "count": 1,
-   "memory_gb": 32,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  },
-  {
-   "slug": "macbook-air-m5-32gb",
-   "title": "MacBook Air M5 32GB",
-   "kind": "apple",
-   "device": "m5",
-   "config": "air-m5-13",
-   "count": 1,
-   "memory_gb": 32,
-   "ram_gb": 32,
-   "ram_type": "ddr5-5600",
-   "note": ""
-  }
- ],
- "target_note": "Target list is judgment-based, not measured demand. Mac memory sizes are example configurations within Apple's official options.",
- "apple_configs": [
-  {
-   "id": "studio-m5-ultra-80",
-   "hw": "m5-ultra",
-   "form_factor": "Mac Studio",
-   "name": "Mac Studio \u2014 M5 Ultra (80-core GPU)",
-   "memory_options_gb": [
-    256,
-    512
-   ],
-   "source_url": "https://support.apple.com/en-us/128107",
-   "note": "Announced Aug 25 2026, shipping since Sep 22 2026; 512GB option ships late October 2026 per Apple.",
-   "memory_notes": {
-    "512": "ships late Oct 2026"
-   },
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "studio-m5-ultra-64",
-   "hw": "m5-ultra",
-   "form_factor": "Mac Studio",
-   "name": "Mac Studio \u2014 M5 Ultra (64-core GPU)",
-   "memory_options_gb": [
-    96
-   ],
-   "source_url": "https://support.apple.com/en-us/128107",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "studio-m5-max-40",
-   "hw": "m5-max-40",
-   "form_factor": "Mac Studio",
-   "name": "Mac Studio \u2014 M5 Max (40-core GPU)",
-   "memory_options_gb": [
-    48,
-    64,
-    128
-   ],
-   "source_url": "https://support.apple.com/en-us/128107",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "studio-m5-max-32",
-   "hw": "m5-max-32",
-   "form_factor": "Mac Studio",
-   "name": "Mac Studio \u2014 M5 Max (32-core GPU)",
-   "memory_options_gb": [
-    36
-   ],
-   "source_url": "https://support.apple.com/en-us/128107",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "studio-m4-max-40",
-   "hw": "m4-max-40",
-   "form_factor": "Mac Studio",
-   "name": "Mac Studio (2025) \u2014 M4 Max (40-core GPU)",
-   "memory_options_gb": [
-    48,
-    64,
-    128
-   ],
-   "source_url": "https://support.apple.com/en-us/122211",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "studio-m4-max-32",
-   "hw": "m4-max-32",
-   "form_factor": "Mac Studio",
-   "name": "Mac Studio (2025) \u2014 M4 Max (32-core GPU)",
-   "memory_options_gb": [
-    36
-   ],
-   "source_url": "https://support.apple.com/en-us/122211",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "studio-m3-ultra-80",
-   "hw": "m3-ultra",
-   "form_factor": "Mac Studio",
-   "name": "Mac Studio (2025) \u2014 M3 Ultra (80-core GPU)",
-   "memory_options_gb": [
-    256
-   ],
-   "source_url": "https://support.apple.com/en-us/122211",
-   "note": "Apple tech-specs page lists 256GB for this config.",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "studio-m3-ultra-60",
-   "hw": "m3-ultra",
-   "form_factor": "Mac Studio",
-   "name": "Mac Studio (2025) \u2014 M3 Ultra (60-core GPU)",
-   "memory_options_gb": [
-    96
-   ],
-   "source_url": "https://support.apple.com/en-us/122211",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "mbp-m5-max-40",
-   "hw": "m5-max-40",
-   "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14/16 \u2014 M5 Max (40-core GPU)",
-   "memory_options_gb": [
-    48,
-    64,
-    128
-   ],
-   "source_url": "https://support.apple.com/en-us/126318",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "mbp-m5-max-32",
-   "hw": "m5-max-32",
-   "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14/16 \u2014 M5 Max (32-core GPU)",
-   "memory_options_gb": [
-    36
-   ],
-   "source_url": "https://support.apple.com/en-us/126318",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "mbp-m5-pro-20",
-   "hw": "m5-pro",
-   "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14/16 \u2014 M5 Pro (20-core GPU)",
-   "memory_options_gb": [
-    24,
-    48,
-    64
-   ],
-   "source_url": "https://support.apple.com/en-us/126318",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "mbp-m5-pro-16",
-   "hw": "m5-pro",
-   "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14 \u2014 M5 Pro (16-core GPU)",
-   "memory_options_gb": [
-    24,
-    48
-   ],
-   "source_url": "https://support.apple.com/en-us/126318",
-   "note": "14-inch only. Apple lists 64GB only for the 20-core GPU M5 Pro.",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "mbp-m5",
-   "hw": "m5",
-   "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14 \u2014 M5 (10-core GPU)",
-   "memory_options_gb": [
-    16,
-    24,
-    32
-   ],
-   "source_url": "https://support.apple.com/en-us/125405",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "mbp-m4-max-40",
-   "hw": "m4-max-40",
-   "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14/16 (2024) \u2014 M4 Max (40-core GPU)",
-   "memory_options_gb": [
-    48,
-    64,
-    128
-   ],
-   "source_url": "https://support.apple.com/en-us/121554",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "mbp-m4-max-32",
-   "hw": "m4-max-32",
-   "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14/16 (2024) \u2014 M4 Max (32-core GPU)",
-   "memory_options_gb": [
-    36
-   ],
-   "source_url": "https://support.apple.com/en-us/121554",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "mbp-m4-pro",
-   "hw": "m4-pro",
-   "form_factor": "MacBook Pro",
-   "name": "MacBook Pro 14/16 (2024) \u2014 M4 Pro",
-   "memory_options_gb": [
-    24,
-    48
-   ],
-   "source_url": "https://support.apple.com/en-us/121554",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "air-m5-13",
-   "hw": "m5",
-   "form_factor": "MacBook Air",
-   "name": "MacBook Air 13 \u2014 M5",
-   "memory_options_gb": [
-    16,
-    24,
-    32
-   ],
-   "source_url": "https://support.apple.com/en-us/126320",
-   "note": "8-core or 10-core GPU; same memory bandwidth.",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "air-m5-15",
-   "hw": "m5",
-   "form_factor": "MacBook Air",
-   "name": "MacBook Air 15 \u2014 M5 (10-core GPU)",
-   "memory_options_gb": [
-    16,
-    24,
-    32
-   ],
-   "source_url": "https://support.apple.com/en-us/126321",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "mini-m5-pro-20",
-   "hw": "m5-pro",
-   "form_factor": "Mac mini",
-   "name": "Mac mini \u2014 M5 Pro (20-core GPU)",
-   "memory_options_gb": [
-    48,
-    64
-   ],
-   "source_url": "https://support.apple.com/en-us/128108",
-   "note": "Apple lists 48GB / 64GB as the configure-to-order options for the 18-core CPU / 20-core GPU model.",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "mini-m5-pro-16",
-   "hw": "m5-pro",
-   "form_factor": "Mac mini",
-   "name": "Mac mini \u2014 M5 Pro (16-core GPU)",
-   "memory_options_gb": [
-    24
-   ],
-   "source_url": "https://support.apple.com/en-us/128108",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "mini-m6",
-   "hw": "m6",
-   "form_factor": "Mac mini",
-   "name": "Mac mini \u2014 M6",
-   "memory_options_gb": [
-    16,
-    24,
-    32
-   ],
-   "source_url": "https://support.apple.com/en-us/128108",
-   "note": "Bandwidth is 153GB/s with 16GB and 170GB/s with 24GB/32GB (Apple).",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "mini-m4-pro",
-   "hw": "m4-pro",
-   "form_factor": "Mac mini",
-   "name": "Mac mini (2024) \u2014 M4 Pro",
-   "memory_options_gb": [
-    24,
-    48,
-    64
-   ],
-   "source_url": "https://support.apple.com/en-us/121555",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "mini-m4",
-   "hw": "m4",
-   "form_factor": "Mac mini",
-   "name": "Mac mini (2024) \u2014 M4",
-   "memory_options_gb": [
-    16,
-    24,
-    32
-   ],
-   "source_url": "https://support.apple.com/en-us/121555",
-   "last_verified": "2026-10-14"
-  },
-  {
-   "id": "imac-m4",
-   "hw": "m4",
-   "form_factor": "iMac",
-   "name": "iMac 24 \u2014 M4",
-   "memory_options_gb": [
-    16,
-    24,
-    32
-   ],
-   "source_url": "https://www.apple.com/imac/specs/",
-   "last_verified": "2026-10-14"
-  }
- ],
- "apple_not_listed": [
-  "M4/M5 MacBook Air older than M5, MacBook Pro 14 M4 (base), iMac M5 (does not exist as of 2026-10-14), Mac Pro (M2 Ultra; discontinued Mar 2026): not verified against Apple pages in this pass."
- ],
- "apple_note": "Apple Mac configs verified against Apple support tech-spec pages on 2026-10-14. M5 Ultra: announced 2026-08-25, shipping 2026-09-22 (512GB option late Oct 2026). No M4 Ultra exists."
+  "generated": "2026-10-21",
+  "gpus": [
+    {
+      "id": "rtx-3060-12",
+      "name": "GeForce RTX 3060 12GB",
+      "vendor": "NVIDIA",
+      "vram_gb": 12,
+      "bandwidth_gbps": 360,
+      "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-3060-12-gb.c3682",
+      "basis": "memory bus x data rate from TechPowerUp listing",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "rtx-3090",
+      "name": "GeForce RTX 3090",
+      "vendor": "NVIDIA",
+      "vram_gb": 24,
+      "bandwidth_gbps": 936,
+      "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-3090.c3622",
+      "basis": "memory bus x data rate from TechPowerUp listing",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "rtx-4060",
+      "name": "GeForce RTX 4060",
+      "vendor": "NVIDIA",
+      "vram_gb": 8,
+      "bandwidth_gbps": 272,
+      "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4060.c4107",
+      "basis": "memory bus x data rate from TechPowerUp listing",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "rtx-4060ti-16",
+      "name": "GeForce RTX 4060 Ti 16GB",
+      "vendor": "NVIDIA",
+      "vram_gb": 16,
+      "bandwidth_gbps": 288,
+      "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4060-ti-16-gb.c4155",
+      "basis": "memory bus x data rate from TechPowerUp listing",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "rtx-4070",
+      "name": "GeForce RTX 4070 12GB",
+      "vendor": "NVIDIA",
+      "vram_gb": 12,
+      "bandwidth_gbps": 504,
+      "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4070.c3924",
+      "basis": "memory bus x data rate from TechPowerUp listing",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "rtx-4090",
+      "name": "GeForce RTX 4090",
+      "vendor": "NVIDIA",
+      "vram_gb": 24,
+      "bandwidth_gbps": 1008,
+      "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4090.c3889",
+      "basis": "memory bus x data rate from TechPowerUp listing",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "rtx-5070",
+      "name": "GeForce RTX 5070",
+      "vendor": "NVIDIA",
+      "vram_gb": 12,
+      "bandwidth_gbps": 672,
+      "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5070.c4218",
+      "basis": "memory bus x data rate from TechPowerUp listing",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "rtx-5070ti",
+      "name": "GeForce RTX 5070 Ti",
+      "vendor": "NVIDIA",
+      "vram_gb": 16,
+      "bandwidth_gbps": 896,
+      "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5070-ti.c4243",
+      "basis": "memory bus x data rate from TechPowerUp listing",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "rtx-5080",
+      "name": "GeForce RTX 5080",
+      "vendor": "NVIDIA",
+      "vram_gb": 16,
+      "bandwidth_gbps": 960,
+      "source_url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+      "basis": "NVIDIA GeForce compare page: 16 GB GDDR7, 256-bit, 960 GB/sec (also NVIDIA RTX Blackwell architecture whitepaper: 30 Gbps GDDR7)",
+      "last_verified": "2026-10-15"
+    },
+    {
+      "id": "rtx-5090",
+      "name": "GeForce RTX 5090",
+      "vendor": "NVIDIA",
+      "vram_gb": 32,
+      "bandwidth_gbps": 1792,
+      "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216",
+      "basis": "memory bus x data rate from TechPowerUp listing",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "rx-7900xtx",
+      "name": "Radeon RX 7900 XTX",
+      "vendor": "AMD",
+      "vram_gb": 24,
+      "bandwidth_gbps": 960,
+      "source_url": "https://www.techpowerup.com/gpu-specs/radeon-rx-7900-xtx.c3941",
+      "basis": "memory bus x data rate from TechPowerUp listing",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "rtx-pro-6000",
+      "name": "RTX PRO 6000 Blackwell Workstation",
+      "vendor": "NVIDIA",
+      "vram_gb": 96,
+      "bandwidth_gbps": 1792,
+      "source_url": "https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell.c4272",
+      "basis": "memory bus x data rate from TechPowerUp listing",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "rtx-5060ti-16",
+      "name": "GeForce RTX 5060 Ti 16GB",
+      "vendor": "NVIDIA",
+      "vram_gb": 16,
+      "bandwidth_gbps": 448,
+      "source_url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5060-ti-16-gb.c4292",
+      "basis": "memory bus x data rate from TechPowerUp listing (128-bit, 28 Gbps GDDR7)",
+      "last_verified": "2026-10-21"
+    }
+  ],
+  "apple": [
+    {
+      "id": "m4",
+      "name": "Apple M4",
+      "bandwidth_gbps": 120,
+      "source_url": "https://support.apple.com/en-us/121555",
+      "basis": "Apple tech specs (Mac mini 2024, iMac): 120GB/s",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "m4-pro",
+      "name": "Apple M4 Pro",
+      "bandwidth_gbps": 273,
+      "source_url": "https://support.apple.com/en-us/121555",
+      "basis": "Apple tech specs (Mac mini 2024): 273GB/s",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "m4-max-32",
+      "name": "Apple M4 Max (32-core GPU)",
+      "bandwidth_gbps": 410,
+      "source_url": "https://support.apple.com/en-us/122211",
+      "basis": "Apple tech specs: 410GB/s",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "m4-max-40",
+      "name": "Apple M4 Max (40-core GPU)",
+      "bandwidth_gbps": 546,
+      "source_url": "https://support.apple.com/en-us/122211",
+      "basis": "Apple tech specs: 546GB/s",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "m3-ultra",
+      "name": "Apple M3 Ultra",
+      "bandwidth_gbps": 819,
+      "source_url": "https://support.apple.com/en-us/122211",
+      "basis": "Apple tech specs: 819GB/s",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "m5",
+      "name": "Apple M5",
+      "bandwidth_gbps": 153,
+      "source_url": "https://support.apple.com/en-us/126320",
+      "basis": "Apple tech specs (MacBook Air / MacBook Pro 14): 153GB/s",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "m5-pro",
+      "name": "Apple M5 Pro",
+      "bandwidth_gbps": 307,
+      "source_url": "https://support.apple.com/en-us/126318",
+      "basis": "Apple tech specs: 307GB/s",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "m5-max-32",
+      "name": "Apple M5 Max (32-core GPU)",
+      "bandwidth_gbps": 460,
+      "source_url": "https://support.apple.com/en-us/128107",
+      "basis": "Apple tech specs: 460GB/s",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "m5-max-40",
+      "name": "Apple M5 Max (40-core GPU)",
+      "bandwidth_gbps": 614,
+      "source_url": "https://support.apple.com/en-us/128107",
+      "basis": "Apple tech specs: 614GB/s",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "m5-ultra",
+      "name": "Apple M5 Ultra",
+      "bandwidth_gbps": 1200,
+      "source_url": "https://support.apple.com/en-us/128107",
+      "basis": "Apple tech specs: 1.2TB/s (Apple states a rounded figure; 64-core and 80-core GPU variants both listed at 1.2TB/s)",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "m6",
+      "name": "Apple M6",
+      "bandwidth_gbps": 153,
+      "source_url": "https://support.apple.com/en-us/128108",
+      "basis": "Apple tech specs (Mac mini): 153GB/s with 16GB, 170GB/s with 24GB/32GB",
+      "last_verified": "2026-10-14",
+      "bandwidth_by_mem_gb": {
+        "16": 153,
+        "24": 170,
+        "32": 170
+      }
+    }
+  ],
+  "unified": [
+    {
+      "id": "strix-halo",
+      "name": "AMD Ryzen AI Max+ 395 (Strix Halo)",
+      "bandwidth_gbps": 256,
+      "memory_options_gb": [
+        128
+      ],
+      "source_url": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-max-plus-395.html",
+      "basis": "AMD page: 256-bit LPDDR5x-8000, max 128 GB; 256 bit x 8000 MT/s = 256 GB/s (computed)",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "dgx-spark",
+      "name": "NVIDIA DGX Spark",
+      "bandwidth_gbps": 273,
+      "memory_options_gb": [
+        128
+      ],
+      "source_url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "basis": "NVIDIA page: 273 GB/s, 128 GB unified",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "ryzen-ai-max-pro-495",
+      "name": "AMD Ryzen AI Max+ PRO 495 (Ryzen AI Halo)",
+      "bandwidth_gbps": 273.1,
+      "memory_options_gb": [
+        192
+      ],
+      "source_url": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-400-series/amd-ryzen-ai-max-plus-pro-495.html",
+      "basis": "AMD page: 256-bit LPDDR5x-8533, max 192 GB, Radeon 8065S; 256 bit x 8533 MT/s / 8 = 273.1 GB/s (computed). AMD blog 2026-10-12 (https://www.amd.com/en/blogs/2026/meet-the-next-amd-ryzen-ai-halo.html): Ryzen AI Halo with up to 192 GB unified memory, up to 160 GB allocatable to the GPU, orderable from Micro Center.",
+      "last_verified": "2026-10-19"
+    }
+  ],
+  "ram_types": [
+    {
+      "id": "ddr4-3200",
+      "name": "DDR4-3200 dual channel",
+      "bandwidth_gbps": 51.2,
+      "basis": "computed: 2 x 64-bit x 3200 MT/s (theoretical)"
+    },
+    {
+      "id": "ddr5-5600",
+      "name": "DDR5-5600 dual channel",
+      "bandwidth_gbps": 89.6,
+      "basis": "computed: 2 x 64-bit x 5600 MT/s (theoretical)"
+    },
+    {
+      "id": "ddr5-6400",
+      "name": "DDR5-6400 dual channel",
+      "bandwidth_gbps": 102.4,
+      "basis": "computed: 2 x 64-bit x 6400 MT/s (theoretical)"
+    }
+  ],
+  "assumptions": {
+    "_note": "ASSUMPTIONS, not verified specs. Editable; shown in the UI.",
+    "gpu_overhead_gb": 1,
+    "os_reserve_ram_gb": 8,
+    "unified_usable_fraction": {
+      "apple": 0.7,
+      "unified": 0.85
+    },
+    "expert_weight_fraction_moe": 0.9,
+    "speed_efficiency": 0.55,
+    "cpu_speed_efficiency": 0.6,
+    "min_usable_tps": 5,
+    "comfortable_tps": 15
+  },
+  "targets": [
+    {
+      "slug": "rtx-3090-24gb",
+      "title": "RTX 3090 24GB",
+      "kind": "gpu",
+      "device": "rtx-3090",
+      "count": 1,
+      "memory_gb": null,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "rtx-4090-24gb",
+      "title": "RTX 4090 24GB",
+      "kind": "gpu",
+      "device": "rtx-4090",
+      "count": 1,
+      "memory_gb": null,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "rtx-5090-32gb",
+      "title": "RTX 5090 32GB",
+      "kind": "gpu",
+      "device": "rtx-5090",
+      "count": 1,
+      "memory_gb": null,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "rtx-3060-12gb",
+      "title": "RTX 3060 12GB (32GB RAM)",
+      "kind": "gpu",
+      "device": "rtx-3060-12",
+      "count": 1,
+      "memory_gb": null,
+      "ram_gb": 32,
+      "ram_type": "ddr4-3200",
+      "note": ""
+    },
+    {
+      "slug": "rtx-4060-8gb",
+      "title": "8GB VRAM class (RTX 4060 8GB, 32GB RAM)",
+      "kind": "gpu",
+      "device": "rtx-4060",
+      "count": 1,
+      "memory_gb": null,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "rtx-4060ti-16gb",
+      "title": "16GB VRAM class (RTX 4060 Ti 16GB, 32GB RAM)",
+      "kind": "gpu",
+      "device": "rtx-4060ti-16",
+      "count": 1,
+      "memory_gb": null,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "rtx-5070-12gb",
+      "title": "RTX 5070 12GB",
+      "kind": "gpu",
+      "device": "rtx-5070",
+      "count": 1,
+      "memory_gb": null,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "rtx-4070-12gb",
+      "title": "RTX 4070 12GB",
+      "kind": "gpu",
+      "device": "rtx-4070",
+      "count": 1,
+      "memory_gb": null,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "rtx-5070ti-16gb",
+      "title": "RTX 5070 Ti 16GB",
+      "kind": "gpu",
+      "device": "rtx-5070ti",
+      "count": 1,
+      "memory_gb": null,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "rtx-5080-16gb",
+      "title": "RTX 5080 16GB",
+      "kind": "gpu",
+      "device": "rtx-5080",
+      "count": 1,
+      "memory_gb": null,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "rx-7900-xtx-24gb",
+      "title": "AMD RX 7900 XTX 24GB",
+      "kind": "gpu",
+      "device": "rx-7900xtx",
+      "count": 1,
+      "memory_gb": null,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "strix-halo-128gb",
+      "title": "AMD Ryzen AI Max+ 395 (Strix Halo) 128GB",
+      "kind": "unified",
+      "device": "strix-halo",
+      "count": 1,
+      "memory_gb": 128,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "dgx-spark-128gb",
+      "title": "NVIDIA DGX Spark 128GB",
+      "kind": "unified",
+      "device": "dgx-spark",
+      "count": 1,
+      "memory_gb": 128,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "ryzen-ai-halo-495-192gb",
+      "title": "AMD Ryzen AI Max+ PRO 495 (Ryzen AI Halo) 192GB",
+      "kind": "unified",
+      "device": "ryzen-ai-max-pro-495",
+      "count": 1,
+      "memory_gb": 192,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": "AMD states up to 160 GB of the 192 GB can be allocated to the GPU; this site's 85% usable-memory assumption gives about 163 GB, so the largest fits are slightly optimistic."
+    },
+    {
+      "slug": "mac-studio-m3-ultra-96gb",
+      "title": "Mac Studio (2025) M3 Ultra 96GB",
+      "kind": "apple",
+      "device": "m3-ultra",
+      "count": 1,
+      "memory_gb": 96,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": "",
+      "config": "studio-m3-ultra-60"
+    },
+    {
+      "slug": "macbook-pro-m4-max-128gb",
+      "title": "MacBook Pro 14/16 (2024) M4 Max 128GB",
+      "kind": "apple",
+      "device": "m4-max-40",
+      "count": 1,
+      "memory_gb": 128,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": "",
+      "config": "mbp-m4-max-40"
+    },
+    {
+      "slug": "mac-m4-16gb",
+      "title": "Mac mini / iMac M4 16GB",
+      "kind": "apple",
+      "device": "m4",
+      "count": 1,
+      "memory_gb": 16,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": "",
+      "config": "mini-m4"
+    },
+    {
+      "slug": "mac-m4-pro-64gb",
+      "title": "Mac mini (2024) M4 Pro 64GB",
+      "kind": "apple",
+      "device": "m4-pro",
+      "count": 1,
+      "memory_gb": 64,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": "",
+      "config": "mini-m4-pro"
+    },
+    {
+      "slug": "dual-rtx-3090-48gb",
+      "title": "2x RTX 3090 (48GB total)",
+      "kind": "gpu",
+      "device": "rtx-3090",
+      "count": 2,
+      "memory_gb": null,
+      "ram_gb": 64,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "rtx-pro-6000-96gb",
+      "title": "RTX PRO 6000 96GB",
+      "kind": "gpu",
+      "device": "rtx-pro-6000",
+      "count": 1,
+      "memory_gb": null,
+      "ram_gb": 64,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "mac-studio-m5-ultra-256gb",
+      "title": "Mac Studio M5 Ultra 256GB",
+      "kind": "apple",
+      "device": "m5-ultra",
+      "config": "studio-m5-ultra-80",
+      "count": 1,
+      "memory_gb": 256,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "mac-studio-m5-ultra-512gb",
+      "title": "Mac Studio M5 Ultra 512GB (ships late Oct 2026)",
+      "kind": "apple",
+      "device": "m5-ultra",
+      "config": "studio-m5-ultra-80",
+      "count": 1,
+      "memory_gb": 512,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "mac-studio-m5-max-128gb",
+      "title": "Mac Studio M5 Max 128GB",
+      "kind": "apple",
+      "device": "m5-max-40",
+      "config": "studio-m5-max-40",
+      "count": 1,
+      "memory_gb": 128,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "macbook-pro-m5-max-128gb",
+      "title": "MacBook Pro 14/16 M5 Max 128GB",
+      "kind": "apple",
+      "device": "m5-max-40",
+      "config": "mbp-m5-max-40",
+      "count": 1,
+      "memory_gb": 128,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "macbook-pro-m5-pro-48gb",
+      "title": "MacBook Pro 14/16 M5 Pro 48GB",
+      "kind": "apple",
+      "device": "m5-pro",
+      "config": "mbp-m5-pro-20",
+      "count": 1,
+      "memory_gb": 48,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "mac-mini-m6-32gb",
+      "title": "Mac mini M6 32GB",
+      "kind": "apple",
+      "device": "m6",
+      "config": "mini-m6",
+      "count": 1,
+      "memory_gb": 32,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "macbook-air-m5-32gb",
+      "title": "MacBook Air M5 32GB",
+      "kind": "apple",
+      "device": "m5",
+      "config": "air-m5-13",
+      "count": 1,
+      "memory_gb": 32,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "rtx-5060ti-16gb",
+      "title": "RTX 5060 Ti 16GB",
+      "kind": "gpu",
+      "device": "rtx-5060ti-16",
+      "count": 1,
+      "memory_gb": null,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    }
+  ],
+  "target_note": "Target list is judgment-based, not measured demand. Mac memory sizes are example configurations within Apple's official options.",
+  "apple_configs": [
+    {
+      "id": "studio-m5-ultra-80",
+      "hw": "m5-ultra",
+      "form_factor": "Mac Studio",
+      "name": "Mac Studio — M5 Ultra (80-core GPU)",
+      "memory_options_gb": [
+        256,
+        512
+      ],
+      "source_url": "https://support.apple.com/en-us/128107",
+      "note": "Announced Aug 25 2026, shipping since Sep 22 2026; 512GB option ships late October 2026 per Apple.",
+      "memory_notes": {
+        "512": "ships late Oct 2026"
+      },
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "studio-m5-ultra-64",
+      "hw": "m5-ultra",
+      "form_factor": "Mac Studio",
+      "name": "Mac Studio — M5 Ultra (64-core GPU)",
+      "memory_options_gb": [
+        96
+      ],
+      "source_url": "https://support.apple.com/en-us/128107",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "studio-m5-max-40",
+      "hw": "m5-max-40",
+      "form_factor": "Mac Studio",
+      "name": "Mac Studio — M5 Max (40-core GPU)",
+      "memory_options_gb": [
+        48,
+        64,
+        128
+      ],
+      "source_url": "https://support.apple.com/en-us/128107",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "studio-m5-max-32",
+      "hw": "m5-max-32",
+      "form_factor": "Mac Studio",
+      "name": "Mac Studio — M5 Max (32-core GPU)",
+      "memory_options_gb": [
+        36
+      ],
+      "source_url": "https://support.apple.com/en-us/128107",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "studio-m4-max-40",
+      "hw": "m4-max-40",
+      "form_factor": "Mac Studio",
+      "name": "Mac Studio (2025) — M4 Max (40-core GPU)",
+      "memory_options_gb": [
+        48,
+        64,
+        128
+      ],
+      "source_url": "https://support.apple.com/en-us/122211",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "studio-m4-max-32",
+      "hw": "m4-max-32",
+      "form_factor": "Mac Studio",
+      "name": "Mac Studio (2025) — M4 Max (32-core GPU)",
+      "memory_options_gb": [
+        36
+      ],
+      "source_url": "https://support.apple.com/en-us/122211",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "studio-m3-ultra-80",
+      "hw": "m3-ultra",
+      "form_factor": "Mac Studio",
+      "name": "Mac Studio (2025) — M3 Ultra (80-core GPU)",
+      "memory_options_gb": [
+        256
+      ],
+      "source_url": "https://support.apple.com/en-us/122211",
+      "note": "Apple tech-specs page lists 256GB for this config.",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "studio-m3-ultra-60",
+      "hw": "m3-ultra",
+      "form_factor": "Mac Studio",
+      "name": "Mac Studio (2025) — M3 Ultra (60-core GPU)",
+      "memory_options_gb": [
+        96
+      ],
+      "source_url": "https://support.apple.com/en-us/122211",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "mbp-m5-max-40",
+      "hw": "m5-max-40",
+      "form_factor": "MacBook Pro",
+      "name": "MacBook Pro 14/16 — M5 Max (40-core GPU)",
+      "memory_options_gb": [
+        48,
+        64,
+        128
+      ],
+      "source_url": "https://support.apple.com/en-us/126318",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "mbp-m5-max-32",
+      "hw": "m5-max-32",
+      "form_factor": "MacBook Pro",
+      "name": "MacBook Pro 14/16 — M5 Max (32-core GPU)",
+      "memory_options_gb": [
+        36
+      ],
+      "source_url": "https://support.apple.com/en-us/126318",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "mbp-m5-pro-20",
+      "hw": "m5-pro",
+      "form_factor": "MacBook Pro",
+      "name": "MacBook Pro 14/16 — M5 Pro (20-core GPU)",
+      "memory_options_gb": [
+        24,
+        48,
+        64
+      ],
+      "source_url": "https://support.apple.com/en-us/126318",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "mbp-m5-pro-16",
+      "hw": "m5-pro",
+      "form_factor": "MacBook Pro",
+      "name": "MacBook Pro 14 — M5 Pro (16-core GPU)",
+      "memory_options_gb": [
+        24,
+        48
+      ],
+      "source_url": "https://support.apple.com/en-us/126318",
+      "note": "14-inch only. Apple lists 64GB only for the 20-core GPU M5 Pro.",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "mbp-m5",
+      "hw": "m5",
+      "form_factor": "MacBook Pro",
+      "name": "MacBook Pro 14 — M5 (10-core GPU)",
+      "memory_options_gb": [
+        16,
+        24,
+        32
+      ],
+      "source_url": "https://support.apple.com/en-us/125405",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "mbp-m4-max-40",
+      "hw": "m4-max-40",
+      "form_factor": "MacBook Pro",
+      "name": "MacBook Pro 14/16 (2024) — M4 Max (40-core GPU)",
+      "memory_options_gb": [
+        48,
+        64,
+        128
+      ],
+      "source_url": "https://support.apple.com/en-us/121554",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "mbp-m4-max-32",
+      "hw": "m4-max-32",
+      "form_factor": "MacBook Pro",
+      "name": "MacBook Pro 14/16 (2024) — M4 Max (32-core GPU)",
+      "memory_options_gb": [
+        36
+      ],
+      "source_url": "https://support.apple.com/en-us/121554",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "mbp-m4-pro",
+      "hw": "m4-pro",
+      "form_factor": "MacBook Pro",
+      "name": "MacBook Pro 14/16 (2024) — M4 Pro",
+      "memory_options_gb": [
+        24,
+        48
+      ],
+      "source_url": "https://support.apple.com/en-us/121554",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "air-m5-13",
+      "hw": "m5",
+      "form_factor": "MacBook Air",
+      "name": "MacBook Air 13 — M5",
+      "memory_options_gb": [
+        16,
+        24,
+        32
+      ],
+      "source_url": "https://support.apple.com/en-us/126320",
+      "note": "8-core or 10-core GPU; same memory bandwidth.",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "air-m5-15",
+      "hw": "m5",
+      "form_factor": "MacBook Air",
+      "name": "MacBook Air 15 — M5 (10-core GPU)",
+      "memory_options_gb": [
+        16,
+        24,
+        32
+      ],
+      "source_url": "https://support.apple.com/en-us/126321",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "mini-m5-pro-20",
+      "hw": "m5-pro",
+      "form_factor": "Mac mini",
+      "name": "Mac mini — M5 Pro (20-core GPU)",
+      "memory_options_gb": [
+        48,
+        64
+      ],
+      "source_url": "https://support.apple.com/en-us/128108",
+      "note": "Apple lists 48GB / 64GB as the configure-to-order options for the 18-core CPU / 20-core GPU model.",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "mini-m5-pro-16",
+      "hw": "m5-pro",
+      "form_factor": "Mac mini",
+      "name": "Mac mini — M5 Pro (16-core GPU)",
+      "memory_options_gb": [
+        24
+      ],
+      "source_url": "https://support.apple.com/en-us/128108",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "mini-m6",
+      "hw": "m6",
+      "form_factor": "Mac mini",
+      "name": "Mac mini — M6",
+      "memory_options_gb": [
+        16,
+        24,
+        32
+      ],
+      "source_url": "https://support.apple.com/en-us/128108",
+      "note": "Bandwidth is 153GB/s with 16GB and 170GB/s with 24GB/32GB (Apple).",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "mini-m4-pro",
+      "hw": "m4-pro",
+      "form_factor": "Mac mini",
+      "name": "Mac mini (2024) — M4 Pro",
+      "memory_options_gb": [
+        24,
+        48,
+        64
+      ],
+      "source_url": "https://support.apple.com/en-us/121555",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "mini-m4",
+      "hw": "m4",
+      "form_factor": "Mac mini",
+      "name": "Mac mini (2024) — M4",
+      "memory_options_gb": [
+        16,
+        24,
+        32
+      ],
+      "source_url": "https://support.apple.com/en-us/121555",
+      "last_verified": "2026-10-14"
+    },
+    {
+      "id": "imac-m4",
+      "hw": "m4",
+      "form_factor": "iMac",
+      "name": "iMac 24 — M4",
+      "memory_options_gb": [
+        16,
+        24,
+        32
+      ],
+      "source_url": "https://www.apple.com/imac/specs/",
+      "last_verified": "2026-10-14"
+    }
+  ],
+  "apple_not_listed": [
+    "M4/M5 MacBook Air older than M5, MacBook Pro 14 M4 (base), iMac M5 (does not exist as of 2026-10-14), Mac Pro (M2 Ultra; discontinued Mar 2026): not verified against Apple pages in this pass."
+  ],
+  "apple_note": "Apple Mac configs verified against Apple support tech-spec pages on 2026-10-14. M5 Ultra: announced 2026-08-25, shipping 2026-09-22 (512GB option late Oct 2026). No M4 Ultra exists."
 }

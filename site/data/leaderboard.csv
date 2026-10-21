@@ -152,6 +152,17 @@ rtx-4090,GeForce RTX 4090,Qwen3.5 9B,Q4,9.65,false,141.55,141.55,141.55,9761.8,1
 rtx-4090,GeForce RTX 4090,Qwen3.5 9B,Q8,9.65,false,95.08,95.08,95.08,9849.6,1,CUDA,true,own-measurement,2026-10-16
 rtx-4090,GeForce RTX 4090,Qwen3.6 27B,Q4,27.78,false,48.38,48.38,48.38,2795.4,1,CUDA,true,own-measurement,2026-10-16
 rtx-4090,GeForce RTX 4090,Qwen3.6 35B-A3B,Q4,35.95,true,190.49,190.49,190.49,7962.1,1,CUDA,true,own-measurement,2026-10-16
+rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,Gemma 4 12B,Q4,11.96,false,49.05,49.05,49.05,1981,1,CUDA,true,own-measurement,2026-10-21
+rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,Gemma 4 12B,Q8,11.96,false,30.99,30.99,30.99,2054.9,1,CUDA,true,own-measurement,2026-10-21
+rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,gpt-oss 20B,Q4,20.91,true,134.09,134.09,134.09,5143.6,1,CUDA,true,own-measurement,2026-10-21
+rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,gpt-oss 20B,Q8,20.91,true,125.31,125.31,125.31,5237,1,CUDA,true,own-measurement,2026-10-21
+rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,Mistral Small 3.2 24B,Q4,24.01,false,27.88,27.88,27.88,1103.9,1,CUDA,true,own-measurement,2026-10-21
+rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,Qwen3-VL 8B,Q4,8.77,false,77.69,77.69,77.69,3060.6,1,CUDA,true,own-measurement,2026-10-21
+rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,Qwen3-VL 8B,Q8,8.77,false,49.09,49.09,49.09,3189.4,1,CUDA,true,own-measurement,2026-10-21
+rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,Qwen3.5 4B,Q4,4.66,false,107.64,107.64,107.64,4775.9,1,CUDA,true,own-measurement,2026-10-21
+rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,Qwen3.5 4B,Q8,4.66,false,79.64,79.64,79.64,4979.8,1,CUDA,true,own-measurement,2026-10-21
+rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,Qwen3.5 9B,Q4,9.65,false,70.02,70.02,70.02,2955.1,1,CUDA,true,own-measurement,2026-10-21
+rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,Qwen3.5 9B,Q8,9.65,false,45.91,45.91,45.91,3078.2,1,CUDA,true,own-measurement,2026-10-21
 rtx-5070,GeForce RTX 5070,Gemma 4 12B,Q4,11.96,false,70.13,70.13,70.13,3167.6,1,CUDA,true,own-measurement,2026-10-16
 rtx-5070,GeForce RTX 5070,Llama 2 7B,Q4,6.74,false,127.88,127.54,128.21,5484.1,2,CUDA,false,llamacpp-discussion-15013-scoreboard,2026-10-16
 rtx-5070,GeForce RTX 5070,Llama 3.2 1B Instruct,Q4,1.5,false,100.65,100.65,100.65,8328.4,1,,false,localscore-model-pages,2026-10-19

@@ -70,3 +70,13 @@
 - dual3090 mid-run 20:40
 - dual3090 done+destroyed Sat Oct 17 21:05:24 MDT 2026
 - dual3090 published ce3ab56, HF multigpu config; credit 16.00 Sat Oct 17 21:05:57 MDT 2026
+- 5060ti16 batch start Wed Oct 21 08:14:31 MDT 2026, offer 56408200 ES
+- rtx5060ti16 instance 57065385
+- 5060ti16 ES host rejected key; destroyed 57065385
+- 5060ti16 NJ host stuck loading 12min; destroyed 57065748
+- rtx5060ti16 instance 57066276
+- rtx5060ti16 sweep launched Wed Oct 21 08:23:41 MDT 2026
+- 5060ti16 instance 57066276 CT host, CUDA ok, sweep launched Wed Oct 21 08:25:25 MDT 2026
+- 5060ti16 sweep running 08:37
+- 5060ti16 at Qwen3-Coder-30B (8:48); instance 57066276 still UP. hardware.json/bench_parse/compare pairs already edited (uncommitted). Next: fin.sh rtx5060ti16, ingest_sweep --merge, build_measured, calibrate_depth, generate_pages, tests, HF (/workspace/hfds/build_hf.py), publish
+- 5060ti16 done+destroyed Wed Oct 21 08:54:42 MDT 2026

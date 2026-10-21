@@ -50,6 +50,9 @@ def normalize_device(raw, mem_gb=None, gpu_cores=None):
         if re.search(r'rtx 4070(?! ti| super)', l): return ('rtx-4070', 'rtx-4070')
         if re.search(r'rtx 5080', l): return ('rtx-5080', 'rtx-5080')
         if re.search(r'rtx 5070 ti', l): return ('rtx-5070ti', 'rtx-5070ti')
+        if re.search(r'rtx 5060 ti', l):
+            if mem == 16 or '16' in l: return ('rtx-5060ti-16', 'rtx-5060ti-16')
+            return ('rtx-5060-ti', '')
         if re.search(r'rtx 5070(?! ti)', l): return ('rtx-5070', 'rtx-5070')
         if re.search(r'rx 7900 xtx', l): return ('rx-7900xtx', 'rx-7900xtx')
         if re.search(r'rtx pro 6000', l) and not re.search(r'server', l): return ('rtx-pro-6000', 'rtx-pro-6000')

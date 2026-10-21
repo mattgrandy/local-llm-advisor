@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20",
+ "generated": "2026-10-21",
  "entries": {
   "rtx-5090": [
    {
@@ -7733,6 +7733,272 @@
     "backends": [],
     "latest": "2026-10-19"
    }
+  ],
+  "rtx-5060ti-16": [
+   {
+    "model": "Gemma 4 12B",
+    "site_id": "google/gemma-4-12B-it",
+    "qclass": "Q4",
+    "params_b": 11.96,
+    "active_b": null,
+    "moe": false,
+    "tg": 49.05,
+    "pp": 1981.0,
+    "n": 1,
+    "tg_min": 49.05,
+    "tg_max": 49.05,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 7.11,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Gemma 4 12B",
+    "site_id": "google/gemma-4-12B-it",
+    "qclass": "Q8",
+    "params_b": 11.96,
+    "active_b": null,
+    "moe": false,
+    "tg": 30.99,
+    "pp": 2054.9,
+    "n": 1,
+    "tg_min": 30.99,
+    "tg_max": 30.99,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 12.65,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Mistral Small 3.2 24B",
+    "site_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "qclass": "Q4",
+    "params_b": 24.01,
+    "active_b": null,
+    "moe": false,
+    "tg": 27.88,
+    "pp": 1103.9,
+    "n": 1,
+    "tg_min": 27.88,
+    "tg_max": 27.88,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 14.32,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
+    "qclass": "Q4",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 77.69,
+    "pp": 3060.6,
+    "n": 1,
+    "tg_min": 77.69,
+    "tg_max": 77.69,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.03,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
+    "qclass": "Q8",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 49.09,
+    "pp": 3189.4,
+    "n": 1,
+    "tg_min": 49.09,
+    "tg_max": 49.09,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 8.71,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q4",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 107.64,
+    "pp": 4775.9,
+    "n": 1,
+    "tg_min": 107.64,
+    "tg_max": 107.64,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 2.73,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q8",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 79.64,
+    "pp": 4979.8,
+    "n": 1,
+    "tg_min": 79.64,
+    "tg_max": 79.64,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 4.47,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q4",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 70.02,
+    "pp": 2955.1,
+    "n": 1,
+    "tg_min": 70.02,
+    "tg_max": 70.02,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.67,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q8",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 45.91,
+    "pp": 3078.2,
+    "n": 1,
+    "tg_min": 45.91,
+    "tg_max": 45.91,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 9.51,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 134.09,
+    "pp": 5143.6,
+    "n": 1,
+    "tg_min": 134.09,
+    "tg_max": 134.09,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 11.61,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q8",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 125.31,
+    "pp": 5237.0,
+    "n": 1,
+    "tg_min": 125.31,
+    "tg_max": 125.31,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   }
   ]
  },
  "calibration": {
@@ -7873,12 +8139,18 @@
     "n": 5,
     "p25": 0.637,
     "p75": 0.675
+   },
+   "rtx-5060ti-16": {
+    "efficiency": 0.91,
+    "n": 8,
+    "p25": 0.88,
+    "p75": 1.021
    }
   },
   "by_kind": {
    "gpu": {
-    "efficiency": 0.688,
-    "n": 513
+    "efficiency": 0.689,
+    "n": 521
    },
    "unified": {
     "efficiency": 0.798,
@@ -7928,9 +8200,9 @@
   }
  ],
  "counts": {
-  "rows_used": 941,
-  "hardware": 24,
-  "points": 317,
+  "rows_used": 952,
+  "hardware": 25,
+  "points": 328,
   "community": 0
  }
 }
