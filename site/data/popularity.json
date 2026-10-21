@@ -1,0 +1,1840 @@
+{
+ "generated": "2026-10-20",
+ "method": "Score = Hugging Face downloads over the last 30 days for the original repo plus its plain GGUF conversions from unsloth, bartowski, ggml-org, lmstudio-community and the model maker's own GGUF repo. Likes and Ollama library downloads (all-time, per model family) are shown for context and are not part of the score.",
+ "sources": [
+  "https://huggingface.co/docs/hub/api",
+  "https://huggingface.co/docs/hub/models-download-stats",
+  "https://ollama.com/library"
+ ],
+ "models": [
+  {
+   "id": "Qwen/Qwen3.8-27B",
+   "name": "Qwen3.8 27B",
+   "on_site": true,
+   "score_30d": 17667328,
+   "base": {
+    "repo": "Qwen/Qwen3.8-27B",
+    "downloads_30d": 7586857,
+    "likes": 18075,
+    "params": 27781427952,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/Qwen/Qwen3.8-27B"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/Qwen3.8-27B-GGUF",
+     "downloads_30d": 6408192,
+     "likes": 5229,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "repo": "bartowski/Qwen3.8-27B-GGUF",
+     "downloads_30d": 294020,
+     "likes": 211,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/Qwen3.8-27B-GGUF"
+    },
+    {
+     "repo": "ggml-org/Qwen3.8-27B-GGUF",
+     "downloads_30d": 2248081,
+     "likes": 131,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/Qwen3.8-27B-GGUF",
+     "downloads_30d": 1130178,
+     "likes": 72,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/Qwen3.8-27B-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "qwen3.8",
+    "downloads_all_time": 4500000,
+    "shown": "4.5M",
+    "url": "https://ollama.com/library/qwen3.8"
+   },
+   "params_b": 27.8,
+   "rank": 1
+  },
+  {
+   "id": "google/gemma-4-26B-A4B-it",
+   "name": "Gemma 4 26B-A4B",
+   "on_site": true,
+   "score_30d": 11434183,
+   "base": {
+    "repo": "google/gemma-4-26B-A4B-it",
+    "downloads_30d": 10065405,
+    "likes": 1688,
+    "params": 25805936206,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/google/gemma-4-26B-A4B-it"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/gemma-4-26B-A4B-it-GGUF",
+     "downloads_30d": 919606,
+     "likes": 1233,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/gemma-4-26B-A4B-it-GGUF"
+    },
+    {
+     "repo": "bartowski/google_gemma-4-26B-A4B-it-GGUF",
+     "downloads_30d": 65542,
+     "likes": 165,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/google_gemma-4-26B-A4B-it-GGUF"
+    },
+    {
+     "repo": "ggml-org/gemma-4-26B-A4B-it-GGUF",
+     "downloads_30d": 342111,
+     "likes": 95,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/ggml-org/gemma-4-26B-A4B-it-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/gemma-4-26B-A4B-it-GGUF",
+     "downloads_30d": 41519,
+     "likes": 31,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/gemma-4-26B-A4B-it-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "gemma4",
+    "downloads_all_time": 27400000,
+    "shown": "27.4M",
+    "url": "https://ollama.com/library/gemma4"
+   },
+   "params_b": 25.8,
+   "rank": 2
+  },
+  {
+   "id": "Qwen/Qwen3.5-4B",
+   "name": "Qwen3.5 4B",
+   "on_site": true,
+   "score_30d": 9362239,
+   "base": {
+    "repo": "Qwen/Qwen3.5-4B",
+    "downloads_30d": 7832237,
+    "likes": 1097,
+    "params": 4659865088,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/Qwen/Qwen3.5-4B"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/Qwen3.5-4B-GGUF",
+     "downloads_30d": 1250699,
+     "likes": 498,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF"
+    },
+    {
+     "repo": "bartowski/Qwen_Qwen3.5-4B-GGUF",
+     "downloads_30d": 126509,
+     "likes": 69,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/Qwen_Qwen3.5-4B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/Qwen3.5-4B-GGUF",
+     "downloads_30d": 152794,
+     "likes": 31,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/Qwen3.5-4B-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "qwen3.5",
+    "downloads_all_time": 22900000,
+    "shown": "22.9M",
+    "url": "https://ollama.com/library/qwen3.5"
+   },
+   "params_b": 4.7,
+   "rank": 3
+  },
+  {
+   "id": "google/gemma-4-31B-it",
+   "name": "Gemma 4 31B",
+   "on_site": true,
+   "score_30d": 9281317,
+   "base": {
+    "repo": "google/gemma-4-31B-it",
+    "downloads_30d": 8894902,
+    "likes": 4166,
+    "params": 31273088876,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/google/gemma-4-31B-it"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/gemma-4-31B-it-GGUF",
+     "downloads_30d": 280000,
+     "likes": 645,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/gemma-4-31B-it-GGUF"
+    },
+    {
+     "repo": "bartowski/google_gemma-4-31B-it-GGUF",
+     "downloads_30d": 34513,
+     "likes": 95,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/google_gemma-4-31B-it-GGUF"
+    },
+    {
+     "repo": "ggml-org/gemma-4-31B-it-GGUF",
+     "downloads_30d": 35266,
+     "likes": 47,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/ggml-org/gemma-4-31B-it-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/gemma-4-31B-it-GGUF",
+     "downloads_30d": 36636,
+     "likes": 29,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/gemma-4-31B-it-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "gemma4",
+    "downloads_all_time": 27400000,
+    "shown": "27.4M",
+    "url": "https://ollama.com/library/gemma4"
+   },
+   "params_b": 31.3,
+   "rank": 4
+  },
+  {
+   "id": "Qwen/Qwen3.5-9B",
+   "name": "Qwen3.5 9B",
+   "on_site": true,
+   "score_30d": 9241872,
+   "base": {
+    "repo": "Qwen/Qwen3.5-9B",
+    "downloads_30d": 7266088,
+    "likes": 2213,
+    "params": 9653104368,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/Qwen/Qwen3.5-9B"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/Qwen3.5-9B-GGUF",
+     "downloads_30d": 1329922,
+     "likes": 1016,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "repo": "bartowski/Qwen_Qwen3.5-9B-GGUF",
+     "downloads_30d": 163441,
+     "likes": 117,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/Qwen_Qwen3.5-9B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/Qwen3.5-9B-GGUF",
+     "downloads_30d": 482421,
+     "likes": 73,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/Qwen3.5-9B-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "qwen3.5",
+    "downloads_all_time": 22900000,
+    "shown": "22.9M",
+    "url": "https://ollama.com/library/qwen3.5"
+   },
+   "params_b": 9.7,
+   "rank": 5
+  },
+  {
+   "id": "zai-org/GLM-5.3-Flash",
+   "name": null,
+   "on_site": false,
+   "score_30d": 7490047,
+   "base": {
+    "repo": "zai-org/GLM-5.3-Flash",
+    "downloads_30d": 6548525,
+    "likes": 2901,
+    "params": 321323031390,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/zai-org/GLM-5.3-Flash"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/GLM-5.3-Flash-GGUF",
+     "downloads_30d": 934656,
+     "likes": 490,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/unsloth/GLM-5.3-Flash-GGUF"
+    },
+    {
+     "repo": "ggml-org/GLM-5.3-Flash-GGUF",
+     "downloads_30d": 6866,
+     "likes": 7,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/ggml-org/GLM-5.3-Flash-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "glm-5.3-flash",
+    "downloads_all_time": 190400,
+    "shown": "190.4K",
+    "url": "https://ollama.com/library/glm-5.3-flash"
+   },
+   "params_b": 321.3,
+   "rank": 6
+  },
+  {
+   "id": "openai/gpt-oss-20b",
+   "name": "gpt-oss 20B",
+   "on_site": true,
+   "score_30d": 6793515,
+   "base": {
+    "repo": "openai/gpt-oss-20b",
+    "downloads_30d": 5933604,
+    "likes": 5195,
+    "params": 20914757184,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/openai/gpt-oss-20b"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/gpt-oss-20b-GGUF",
+     "downloads_30d": 536088,
+     "likes": 883,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/unsloth/gpt-oss-20b-GGUF"
+    },
+    {
+     "repo": "bartowski/openai_gpt-oss-20b-GGUF",
+     "downloads_30d": 12819,
+     "likes": 39,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/openai_gpt-oss-20b-GGUF"
+    },
+    {
+     "repo": "ggml-org/gpt-oss-20b-GGUF",
+     "downloads_30d": 217304,
+     "likes": 184,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/ggml-org/gpt-oss-20b-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/gpt-oss-20b-GGUF",
+     "downloads_30d": 93700,
+     "likes": 89,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/gpt-oss-20b-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "gpt-oss",
+    "downloads_all_time": 14000000,
+    "shown": "14M",
+    "url": "https://ollama.com/library/gpt-oss"
+   },
+   "params_b": 20.9,
+   "rank": 7
+  },
+  {
+   "id": "Qwen/Qwen3-VL-8B-Instruct",
+   "name": "Qwen3-VL 8B",
+   "on_site": true,
+   "score_30d": 6590416,
+   "base": {
+    "repo": "Qwen/Qwen3-VL-8B-Instruct",
+    "downloads_30d": 5385736,
+    "likes": 1214,
+    "params": 8767123696,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/Qwen3-VL-8B-Instruct-GGUF",
+     "downloads_30d": 207573,
+     "likes": 99,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/Qwen3-VL-8B-Instruct-GGUF"
+    },
+    {
+     "repo": "bartowski/Qwen_Qwen3-VL-8B-Instruct-GGUF",
+     "downloads_30d": 24446,
+     "likes": 11,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/Qwen_Qwen3-VL-8B-Instruct-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/Qwen3-VL-8B-Instruct-GGUF",
+     "downloads_30d": 56170,
+     "likes": 6,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/Qwen3-VL-8B-Instruct-GGUF"
+    },
+    {
+     "repo": "Qwen/Qwen3-VL-8B-Instruct-GGUF",
+     "downloads_30d": 916491,
+     "likes": 181,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "qwen3-vl",
+    "downloads_all_time": 6800000,
+    "shown": "6.8M",
+    "url": "https://ollama.com/library/qwen3-vl"
+   },
+   "params_b": 8.8,
+   "rank": 8
+  },
+  {
+   "id": "ornith-ai/Ornith-1.5-9B",
+   "name": "Ornith 1.5 9B",
+   "on_site": true,
+   "score_30d": 5461833,
+   "base": {
+    "repo": "ornith-ai/Ornith-1.5-9B",
+    "downloads_30d": 448355,
+    "likes": 386,
+    "params": 9653104368,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/ornith-ai/Ornith-1.5-9B"
+   },
+   "gguf": [
+    {
+     "repo": "bartowski/Ornith-1.5-9B-GGUF",
+     "downloads_30d": 21652,
+     "likes": 13,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/Ornith-1.5-9B-GGUF"
+    },
+    {
+     "repo": "ornith-ai/Ornith-1.5-9B-GGUF",
+     "downloads_30d": 4991826,
+     "likes": 568,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/ornith-ai/Ornith-1.5-9B-GGUF"
+    }
+   ],
+   "ollama": null,
+   "params_b": 9.7,
+   "rank": 9
+  },
+  {
+   "id": "Qwen/Qwen3.6-35B-A3B",
+   "name": "Qwen3.6 35B-A3B",
+   "on_site": true,
+   "score_30d": 5336157,
+   "base": {
+    "repo": "Qwen/Qwen3.6-35B-A3B",
+    "downloads_30d": 3641803,
+    "likes": 3012,
+    "params": 35951822704,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF",
+     "downloads_30d": 1263771,
+     "likes": 1706,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "repo": "bartowski/Qwen_Qwen3.6-35B-A3B-GGUF",
+     "downloads_30d": 179994,
+     "likes": 167,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/Qwen_Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "repo": "ggml-org/Qwen3.6-35B-A3B-GGUF",
+     "downloads_30d": 120849,
+     "likes": 28,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/ggml-org/Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/Qwen3.6-35B-A3B-GGUF",
+     "downloads_30d": 129740,
+     "likes": 32,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/Qwen3.6-35B-A3B-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "qwen3.6",
+    "downloads_all_time": 7200000,
+    "shown": "7.2M",
+    "url": "https://ollama.com/library/qwen3.6"
+   },
+   "params_b": 36.0,
+   "rank": 10
+  },
+  {
+   "id": "google/gemma-4-E4B-it",
+   "name": "Gemma 4 E4B",
+   "on_site": true,
+   "score_30d": 5310418,
+   "base": {
+    "repo": "google/gemma-4-E4B-it",
+    "downloads_30d": 4106524,
+    "likes": 1751,
+    "params": 7996156490,
+    "pipeline": "any-to-any",
+    "url": "https://huggingface.co/google/gemma-4-E4B-it"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/gemma-4-E4B-it-GGUF",
+     "downloads_30d": 610632,
+     "likes": 661,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/gemma-4-E4B-it-GGUF"
+    },
+    {
+     "repo": "bartowski/google_gemma-4-E4B-it-GGUF",
+     "downloads_30d": 38274,
+     "likes": 85,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/google_gemma-4-E4B-it-GGUF"
+    },
+    {
+     "repo": "ggml-org/gemma-4-E4B-it-GGUF",
+     "downloads_30d": 123095,
+     "likes": 100,
+     "params": null,
+     "pipeline": "any-to-any",
+     "url": "https://huggingface.co/ggml-org/gemma-4-E4B-it-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/gemma-4-E4B-it-GGUF",
+     "downloads_30d": 431893,
+     "likes": 72,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/gemma-4-E4B-it-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "gemma4",
+    "downloads_all_time": 27400000,
+    "shown": "27.4M",
+    "url": "https://ollama.com/library/gemma4"
+   },
+   "params_b": 8.0,
+   "rank": 11
+  },
+  {
+   "id": "ornith-ai/Ornith-1.5-35B-A3B",
+   "name": "Ornith 1.5 35B-A3B",
+   "on_site": true,
+   "score_30d": 4144673,
+   "base": {
+    "repo": "ornith-ai/Ornith-1.5-35B-A3B",
+    "downloads_30d": 257122,
+    "likes": 744,
+    "params": 35951822704,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B"
+   },
+   "gguf": [
+    {
+     "repo": "bartowski/Ornith-1.5-35B-A3B-GGUF",
+     "downloads_30d": 47528,
+     "likes": 49,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/Ornith-1.5-35B-A3B-GGUF"
+    },
+    {
+     "repo": "ornith-ai/Ornith-1.5-35B-A3B-GGUF",
+     "downloads_30d": 3840023,
+     "likes": 531,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B-GGUF"
+    }
+   ],
+   "ollama": null,
+   "params_b": 36.0,
+   "rank": 12
+  },
+  {
+   "id": "Qwen/Qwen3.8-Flash-Next",
+   "name": "Qwen3.8 Flash Next",
+   "on_site": true,
+   "score_30d": 3756879,
+   "base": {
+    "repo": "Qwen/Qwen3.8-Flash-Next",
+    "downloads_30d": 2530599,
+    "likes": 6364,
+    "params": 179999981459,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/Qwen3.8-Flash-Next-GGUF",
+     "downloads_30d": 1100582,
+     "likes": 1244,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF"
+    },
+    {
+     "repo": "bartowski/Qwen3.8-Flash-Next-GGUF",
+     "downloads_30d": 69275,
+     "likes": 43,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/Qwen3.8-Flash-Next-GGUF"
+    },
+    {
+     "repo": "ggml-org/Qwen3.8-Flash-Next-GGUF",
+     "downloads_30d": 44365,
+     "likes": 34,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/ggml-org/Qwen3.8-Flash-Next-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/Qwen3.8-Flash-Next-GGUF",
+     "downloads_30d": 12058,
+     "likes": 6,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/Qwen3.8-Flash-Next-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "qwen3.8",
+    "downloads_all_time": 4500000,
+    "shown": "4.5M",
+    "url": "https://ollama.com/library/qwen3.8"
+   },
+   "params_b": 180.0,
+   "rank": 13
+  },
+  {
+   "id": "google/gemma-4-12B-it",
+   "name": "Gemma 4 12B",
+   "on_site": true,
+   "score_30d": 3489923,
+   "base": {
+    "repo": "google/gemma-4-12B-it",
+    "downloads_30d": 1692786,
+    "likes": 1675,
+    "params": 11959730224,
+    "pipeline": "any-to-any",
+    "url": "https://huggingface.co/google/gemma-4-12B-it"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/gemma-4-12b-it-GGUF",
+     "downloads_30d": 1585580,
+     "likes": 922,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF"
+    },
+    {
+     "repo": "bartowski/gemma-4-12B-it-GGUF",
+     "downloads_30d": 38551,
+     "likes": 51,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/gemma-4-12B-it-GGUF"
+    },
+    {
+     "repo": "ggml-org/gemma-4-12B-it-GGUF",
+     "downloads_30d": 62506,
+     "likes": 94,
+     "params": null,
+     "pipeline": "any-to-any",
+     "url": "https://huggingface.co/ggml-org/gemma-4-12B-it-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/gemma-4-12B-it-GGUF",
+     "downloads_30d": 110500,
+     "likes": 34,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/gemma-4-12B-it-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "gemma4",
+    "downloads_all_time": 27400000,
+    "shown": "27.4M",
+    "url": "https://ollama.com/library/gemma4"
+   },
+   "params_b": 12.0,
+   "rank": 14
+  },
+  {
+   "id": "openai/gpt-oss-120b",
+   "name": "gpt-oss 120B",
+   "on_site": true,
+   "score_30d": 3442983,
+   "base": {
+    "repo": "openai/gpt-oss-120b",
+    "downloads_30d": 3141375,
+    "likes": 5427,
+    "params": 116829156672,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/openai/gpt-oss-120b"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/gpt-oss-120b-GGUF",
+     "downloads_30d": 78560,
+     "likes": 296,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/unsloth/gpt-oss-120b-GGUF"
+    },
+    {
+     "repo": "bartowski/openai_gpt-oss-120b-GGUF",
+     "downloads_30d": 4912,
+     "likes": 13,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/openai_gpt-oss-120b-GGUF"
+    },
+    {
+     "repo": "ggml-org/gpt-oss-120b-GGUF",
+     "downloads_30d": 198937,
+     "likes": 81,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/ggml-org/gpt-oss-120b-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/gpt-oss-120b-GGUF",
+     "downloads_30d": 19199,
+     "likes": 19,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/gpt-oss-120b-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "gpt-oss",
+    "downloads_all_time": 14000000,
+    "shown": "14M",
+    "url": "https://ollama.com/library/gpt-oss"
+   },
+   "params_b": 116.8,
+   "rank": 15
+  },
+  {
+   "id": "Qwen/Qwen3.6-27B",
+   "name": "Qwen3.6 27B",
+   "on_site": true,
+   "score_30d": 2939845,
+   "base": {
+    "repo": "Qwen/Qwen3.6-27B",
+    "downloads_30d": 2326396,
+    "likes": 2331,
+    "params": 27781427952,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/Qwen/Qwen3.6-27B"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/Qwen3.6-27B-GGUF",
+     "downloads_30d": 430219,
+     "likes": 967,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/Qwen3.6-27B-GGUF"
+    },
+    {
+     "repo": "bartowski/Qwen_Qwen3.6-27B-GGUF",
+     "downloads_30d": 41618,
+     "likes": 89,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/Qwen_Qwen3.6-27B-GGUF"
+    },
+    {
+     "repo": "ggml-org/Qwen3.6-27B-GGUF",
+     "downloads_30d": 78686,
+     "likes": 27,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/ggml-org/Qwen3.6-27B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/Qwen3.6-27B-GGUF",
+     "downloads_30d": 62926,
+     "likes": 32,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/Qwen3.6-27B-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "qwen3.6",
+    "downloads_all_time": 7200000,
+    "shown": "7.2M",
+    "url": "https://ollama.com/library/qwen3.6"
+   },
+   "params_b": 27.8,
+   "rank": 16
+  },
+  {
+   "id": "Qwen/Qwen3.5-35B-A3B",
+   "name": null,
+   "on_site": false,
+   "score_30d": 2463064,
+   "base": {
+    "repo": "Qwen/Qwen3.5-35B-A3B",
+    "downloads_30d": 1406009,
+    "likes": 1540,
+    "params": 35951822704,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/Qwen3.5-35B-A3B-GGUF",
+     "downloads_30d": 959487,
+     "likes": 875,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/Qwen3.5-35B-A3B-GGUF"
+    },
+    {
+     "repo": "bartowski/Qwen_Qwen3.5-35B-A3B-GGUF",
+     "downloads_30d": 40986,
+     "likes": 69,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/Qwen_Qwen3.5-35B-A3B-GGUF"
+    },
+    {
+     "repo": "ggml-org/Qwen3.5-35B-A3B-GGUF",
+     "downloads_30d": 5451,
+     "likes": 5,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/ggml-org/Qwen3.5-35B-A3B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/Qwen3.5-35B-A3B-GGUF",
+     "downloads_30d": 51131,
+     "likes": 26,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/Qwen3.5-35B-A3B-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "qwen3.5",
+    "downloads_all_time": 22900000,
+    "shown": "22.9M",
+    "url": "https://ollama.com/library/qwen3.5"
+   },
+   "params_b": 36.0,
+   "rank": 17
+  },
+  {
+   "id": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+   "name": "Nemotron 3 Nano 4B",
+   "on_site": true,
+   "score_30d": 1777104,
+   "base": {
+    "repo": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+    "downloads_30d": 1713512,
+    "likes": 138,
+    "params": 3973556832,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/NVIDIA-Nemotron-3-Nano-4B-GGUF",
+     "downloads_30d": 6882,
+     "likes": 82,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Nano-4B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/NVIDIA-Nemotron-3-Nano-4B-GGUF",
+     "downloads_30d": 42369,
+     "likes": 8,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/NVIDIA-Nemotron-3-Nano-4B-GGUF"
+    },
+    {
+     "repo": "nvidia/NVIDIA-Nemotron-3-Nano-4B-GGUF",
+     "downloads_30d": 14341,
+     "likes": 221,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "nemotron-3-nano",
+    "downloads_all_time": 929900,
+    "shown": "929.9K",
+    "url": "https://ollama.com/library/nemotron-3-nano"
+   },
+   "params_b": 4.0,
+   "rank": 18
+  },
+  {
+   "id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+   "name": "Qwen3-Coder 30B-A3B",
+   "on_site": true,
+   "score_30d": 1743171,
+   "base": {
+    "repo": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "downloads_30d": 552103,
+    "likes": 1297,
+    "params": 30532122624,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
+     "downloads_30d": 1114165,
+     "likes": 1162,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/Qwen3-Coder-30B-A3B-Instruct-GGUF",
+     "downloads_30d": 76903,
+     "likes": 44,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/lmstudio-community/Qwen3-Coder-30B-A3B-Instruct-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "qwen3-coder",
+    "downloads_all_time": 10200000,
+    "shown": "10.2M",
+    "url": "https://ollama.com/library/qwen3-coder"
+   },
+   "params_b": 30.5,
+   "rank": 19
+  },
+  {
+   "id": "thinkingmachines/Inkling-Small",
+   "name": null,
+   "on_site": false,
+   "score_30d": 1536236,
+   "base": {
+    "repo": "thinkingmachines/Inkling-Small",
+    "downloads_30d": 786170,
+    "likes": 423,
+    "params": 265956439090,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/thinkingmachines/Inkling-Small"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/Inkling-Small-GGUF",
+     "downloads_30d": 750066,
+     "likes": 98,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/Inkling-Small-GGUF"
+    }
+   ],
+   "ollama": null,
+   "params_b": 266.0,
+   "rank": 20
+  },
+  {
+   "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+   "name": null,
+   "on_site": false,
+   "score_30d": 1431582,
+   "base": {
+    "repo": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "downloads_30d": 1431582,
+    "likes": 4676,
+    "params": 763205315794,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
+   },
+   "gguf": [],
+   "ollama": null,
+   "params_b": 763.2,
+   "rank": 21
+  },
+  {
+   "id": "zai-org/GLM-4.7-Flash",
+   "name": "GLM-4.7-Flash",
+   "on_site": true,
+   "score_30d": 1404383,
+   "base": {
+    "repo": "zai-org/GLM-4.7-Flash",
+    "downloads_30d": 1085125,
+    "likes": 1880,
+    "params": 31221488576,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/zai-org/GLM-4.7-Flash"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/GLM-4.7-Flash-GGUF",
+     "downloads_30d": 230934,
+     "likes": 728,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/unsloth/GLM-4.7-Flash-GGUF"
+    },
+    {
+     "repo": "bartowski/zai-org_GLM-4.7-Flash-GGUF",
+     "downloads_30d": 29394,
+     "likes": 57,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/zai-org_GLM-4.7-Flash-GGUF"
+    },
+    {
+     "repo": "ggml-org/GLM-4.7-Flash-GGUF",
+     "downloads_30d": 29839,
+     "likes": 16,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/ggml-org/GLM-4.7-Flash-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/GLM-4.7-Flash-GGUF",
+     "downloads_30d": 29091,
+     "likes": 6,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/GLM-4.7-Flash-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "glm-4.7-flash",
+    "downloads_all_time": 2100000,
+    "shown": "2.1M",
+    "url": "https://ollama.com/library/glm-4.7-flash"
+   },
+   "params_b": 31.2,
+   "rank": 22
+  },
+  {
+   "id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+   "name": "Nemotron 3 Nano 30B-A3B",
+   "on_site": true,
+   "score_30d": 1210981,
+   "base": {
+    "repo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+    "downloads_30d": 1201209,
+    "likes": 831,
+    "params": 31577937344,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16"
+   },
+   "gguf": [
+    {
+     "repo": "ggml-org/NVIDIA-Nemotron-3-Nano-30B-A3B-GGUF",
+     "downloads_30d": 5390,
+     "likes": 4,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/ggml-org/NVIDIA-Nemotron-3-Nano-30B-A3B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/NVIDIA-Nemotron-3-Nano-30B-A3B-GGUF",
+     "downloads_30d": 4382,
+     "likes": 23,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/NVIDIA-Nemotron-3-Nano-30B-A3B-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "nemotron-3-nano",
+    "downloads_all_time": 929900,
+    "shown": "929.9K",
+    "url": "https://ollama.com/library/nemotron-3-nano"
+   },
+   "params_b": 31.6,
+   "rank": 23
+  },
+  {
+   "id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+   "name": "Nemotron 3.5 Lightning 30B-A3B",
+   "on_site": true,
+   "score_30d": 961357,
+   "base": {
+    "repo": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+    "downloads_30d": 695209,
+    "likes": 243,
+    "params": 31577937344,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+     "downloads_30d": 45766,
+     "likes": 120,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF"
+    },
+    {
+     "repo": "bartowski/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+     "downloads_30d": 31448,
+     "likes": 28,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF"
+    },
+    {
+     "repo": "ggml-org/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+     "downloads_30d": 186601,
+     "likes": 36,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/ggml-org/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+     "downloads_30d": 2333,
+     "likes": 4,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF"
+    }
+   ],
+   "ollama": null,
+   "params_b": 31.6,
+   "rank": 24
+  },
+  {
+   "id": "zai-org/GLM-4.5-Air",
+   "name": "GLM-4.5-Air",
+   "on_site": true,
+   "score_30d": 793205,
+   "base": {
+    "repo": "zai-org/GLM-4.5-Air",
+    "downloads_30d": 764275,
+    "likes": 646,
+    "params": 110468824832,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/zai-org/GLM-4.5-Air"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/GLM-4.5-Air-GGUF",
+     "downloads_30d": 23669,
+     "likes": 189,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/unsloth/GLM-4.5-Air-GGUF"
+    },
+    {
+     "repo": "bartowski/zai-org_GLM-4.5-Air-GGUF",
+     "downloads_30d": 3816,
+     "likes": 21,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/zai-org_GLM-4.5-Air-GGUF"
+    },
+    {
+     "repo": "ggml-org/GLM-4.5-Air-GGUF",
+     "downloads_30d": 718,
+     "likes": 5,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/ggml-org/GLM-4.5-Air-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/GLM-4.5-Air-GGUF",
+     "downloads_30d": 727,
+     "likes": 3,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/lmstudio-community/GLM-4.5-Air-GGUF"
+    }
+   ],
+   "ollama": null,
+   "params_b": 110.5,
+   "rank": 25
+  },
+  {
+   "id": "poolside/Laguna-XS-2.1",
+   "name": "Laguna XS 2.1",
+   "on_site": true,
+   "score_30d": 650269,
+   "base": {
+    "repo": "poolside/Laguna-XS-2.1",
+    "downloads_30d": 440897,
+    "likes": 257,
+    "params": 33442617088,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/poolside/Laguna-XS-2.1"
+   },
+   "gguf": [
+    {
+     "repo": "bartowski/Laguna-XS-2.1-GGUF",
+     "downloads_30d": 7173,
+     "likes": 20,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/Laguna-XS-2.1-GGUF"
+    },
+    {
+     "repo": "ggml-org/Laguna-XS-2.1-GGUF",
+     "downloads_30d": 2366,
+     "likes": 4,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/ggml-org/Laguna-XS-2.1-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/Laguna-XS-2.1-GGUF",
+     "downloads_30d": 1337,
+     "likes": 5,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/Laguna-XS-2.1-GGUF"
+    },
+    {
+     "repo": "poolside/Laguna-XS-2.1-GGUF",
+     "downloads_30d": 198496,
+     "likes": 100,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/poolside/Laguna-XS-2.1-GGUF"
+    }
+   ],
+   "ollama": null,
+   "params_b": 33.4,
+   "rank": 26
+  },
+  {
+   "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+   "name": "DeepSeek R1 Distill Qwen 7B",
+   "on_site": true,
+   "score_30d": 554077,
+   "base": {
+    "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "downloads_30d": 386007,
+    "likes": 936,
+    "params": 7615616512,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/DeepSeek-R1-Distill-Qwen-7B-GGUF",
+     "downloads_30d": 47572,
+     "likes": 110,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/unsloth/DeepSeek-R1-Distill-Qwen-7B-GGUF"
+    },
+    {
+     "repo": "bartowski/DeepSeek-R1-Distill-Qwen-7B-GGUF",
+     "downloads_30d": 107190,
+     "likes": 149,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-7B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF",
+     "downloads_30d": 13308,
+     "likes": 90,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "deepseek-r1",
+    "downloads_all_time": 93900000,
+    "shown": "93.9M",
+    "url": "https://ollama.com/library/deepseek-r1"
+   },
+   "params_b": 7.6,
+   "rank": 27
+  },
+  {
+   "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+   "name": "DeepSeek R1 Distill Qwen 32B",
+   "on_site": true,
+   "score_30d": 450810,
+   "base": {
+    "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+    "downloads_30d": 363261,
+    "likes": 1657,
+    "params": 32763876352,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/DeepSeek-R1-Distill-Qwen-32B-GGUF",
+     "downloads_30d": 23827,
+     "likes": 170,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/unsloth/DeepSeek-R1-Distill-Qwen-32B-GGUF"
+    },
+    {
+     "repo": "bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF",
+     "downloads_30d": 55128,
+     "likes": 331,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/DeepSeek-R1-Distill-Qwen-32B-GGUF",
+     "downloads_30d": 8594,
+     "likes": 40,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/lmstudio-community/DeepSeek-R1-Distill-Qwen-32B-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "deepseek-r1",
+    "downloads_all_time": 93900000,
+    "shown": "93.9M",
+    "url": "https://ollama.com/library/deepseek-r1"
+   },
+   "params_b": 32.8,
+   "rank": 28
+  },
+  {
+   "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+   "name": null,
+   "on_site": false,
+   "score_30d": 434967,
+   "base": {
+    "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+    "downloads_30d": 327978,
+    "likes": 721,
+    "params": 14770033664,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-14B"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/DeepSeek-R1-Distill-Qwen-14B-GGUF",
+     "downloads_30d": 33121,
+     "likes": 141,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/unsloth/DeepSeek-R1-Distill-Qwen-14B-GGUF"
+    },
+    {
+     "repo": "bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF",
+     "downloads_30d": 48926,
+     "likes": 256,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/DeepSeek-R1-Distill-Qwen-14B-GGUF",
+     "downloads_30d": 24942,
+     "likes": 50,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/lmstudio-community/DeepSeek-R1-Distill-Qwen-14B-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "deepseek-r1",
+    "downloads_all_time": 93900000,
+    "shown": "93.9M",
+    "url": "https://ollama.com/library/deepseek-r1"
+   },
+   "params_b": 14.8,
+   "rank": 29
+  },
+  {
+   "id": "microsoft/phi-4",
+   "name": null,
+   "on_site": false,
+   "score_30d": 411169,
+   "base": {
+    "repo": "microsoft/phi-4",
+    "downloads_30d": 372960,
+    "likes": 2326,
+    "params": 14659507200,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/microsoft/phi-4"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/phi-4-GGUF",
+     "downloads_30d": 9706,
+     "likes": 193,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/unsloth/phi-4-GGUF"
+    },
+    {
+     "repo": "bartowski/phi-4-GGUF",
+     "downloads_30d": 9648,
+     "likes": 65,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/phi-4-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/phi-4-GGUF",
+     "downloads_30d": 8822,
+     "likes": 56,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/lmstudio-community/phi-4-GGUF"
+    },
+    {
+     "repo": "microsoft/phi-4-gguf",
+     "downloads_30d": 10033,
+     "likes": 206,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/microsoft/phi-4-gguf"
+    }
+   ],
+   "ollama": {
+    "slug": "phi4",
+    "downloads_all_time": 7800000,
+    "shown": "7.8M",
+    "url": "https://ollama.com/library/phi4"
+   },
+   "params_b": 14.7,
+   "rank": 30
+  },
+  {
+   "id": "mistralai/Devstral-Small-2-24B-Instruct-2512",
+   "name": null,
+   "on_site": false,
+   "score_30d": 381149,
+   "base": {
+    "repo": "mistralai/Devstral-Small-2-24B-Instruct-2512",
+    "downloads_30d": 253230,
+    "likes": 702,
+    "params": 24011361840,
+    "pipeline": null,
+    "url": "https://huggingface.co/mistralai/Devstral-Small-2-24B-Instruct-2512"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF",
+     "downloads_30d": 62396,
+     "likes": 188,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF"
+    },
+    {
+     "repo": "bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF",
+     "downloads_30d": 22998,
+     "likes": 56,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF"
+    },
+    {
+     "repo": "ggml-org/Devstral-Small-2-24B-Instruct-2512-GGUF",
+     "downloads_30d": 1964,
+     "likes": 7,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/ggml-org/Devstral-Small-2-24B-Instruct-2512-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/Devstral-Small-2-24B-Instruct-2512-GGUF",
+     "downloads_30d": 40561,
+     "likes": 7,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/Devstral-Small-2-24B-Instruct-2512-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "devstral-small-2",
+    "downloads_all_time": 2000000,
+    "shown": "2M",
+    "url": "https://ollama.com/library/devstral-small-2"
+   },
+   "params_b": 24.0,
+   "rank": 31
+  },
+  {
+   "id": "meta-llama/Llama-3.3-70B-Instruct",
+   "name": "Llama 3.3 70B",
+   "on_site": true,
+   "score_30d": 323734,
+   "base": {
+    "repo": "meta-llama/Llama-3.3-70B-Instruct",
+    "downloads_30d": 233922,
+    "likes": 3148,
+    "params": 70553706496,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+     "downloads_30d": 33532,
+     "likes": 128,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/unsloth/Llama-3.3-70B-Instruct-GGUF"
+    },
+    {
+     "repo": "bartowski/Llama-3.3-70B-Instruct-GGUF",
+     "downloads_30d": 41364,
+     "likes": 76,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/Llama-3.3-70B-Instruct-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/Llama-3.3-70B-Instruct-GGUF",
+     "downloads_30d": 14916,
+     "likes": 56,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/lmstudio-community/Llama-3.3-70B-Instruct-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "llama3.3",
+    "downloads_all_time": 4300000,
+    "shown": "4.3M",
+    "url": "https://ollama.com/library/llama3.3"
+   },
+   "params_b": 70.6,
+   "rank": 32
+  },
+  {
+   "id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+   "name": "Mistral Small 3.2 24B",
+   "on_site": true,
+   "score_30d": 297301,
+   "base": {
+    "repo": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "downloads_30d": 207288,
+    "likes": 638,
+    "params": 24011361280,
+    "pipeline": null,
+    "url": "https://huggingface.co/mistralai/Mistral-Small-3.2-24B-Instruct-2506"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF",
+     "downloads_30d": 57121,
+     "likes": 197,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF"
+    },
+    {
+     "repo": "bartowski/mistralai_Mistral-Small-3.2-24B-Instruct-2506-GGUF",
+     "downloads_30d": 26669,
+     "likes": 42,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/bartowski/mistralai_Mistral-Small-3.2-24B-Instruct-2506-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/Mistral-Small-3.2-24B-Instruct-2506-GGUF",
+     "downloads_30d": 6223,
+     "likes": 8,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/lmstudio-community/Mistral-Small-3.2-24B-Instruct-2506-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "mistral-small3.2",
+    "downloads_all_time": 2500000,
+    "shown": "2.5M",
+    "url": "https://ollama.com/library/mistral-small3.2"
+   },
+   "params_b": 24.0,
+   "rank": 33
+  },
+  {
+   "id": "Kwaipilot/KAT-Coder-V2.5-Dev",
+   "name": null,
+   "on_site": false,
+   "score_30d": 269334,
+   "base": {
+    "repo": "Kwaipilot/KAT-Coder-V2.5-Dev",
+    "downloads_30d": 11874,
+    "likes": 669,
+    "params": 34660610688,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/Kwaipilot/KAT-Coder-V2.5-Dev"
+   },
+   "gguf": [
+    {
+     "repo": "bartowski/Kwaipilot_KAT-Coder-V2.5-Dev-GGUF",
+     "downloads_30d": 257460,
+     "likes": 141,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/Kwaipilot_KAT-Coder-V2.5-Dev-GGUF"
+    }
+   ],
+   "ollama": null,
+   "params_b": 34.7,
+   "rank": 34
+  },
+  {
+   "id": "LiquidAI/LFM2.5-24B-A2B",
+   "name": "LFM2.5 24B-A2B",
+   "on_site": true,
+   "score_30d": 204836,
+   "base": {
+    "repo": "LiquidAI/LFM2.5-24B-A2B",
+    "downloads_30d": 15410,
+    "likes": 524,
+    "params": 23971585280,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/LFM2.5-24B-A2B-GGUF",
+     "downloads_30d": 50006,
+     "likes": 95,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/unsloth/LFM2.5-24B-A2B-GGUF"
+    },
+    {
+     "repo": "bartowski/LiquidAI_LFM2.5-24B-A2B-GGUF",
+     "downloads_30d": 5358,
+     "likes": 2,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/LiquidAI_LFM2.5-24B-A2B-GGUF"
+    },
+    {
+     "repo": "ggml-org/LFM2.5-24B-A2B-GGUF",
+     "downloads_30d": 1214,
+     "likes": 3,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/ggml-org/LFM2.5-24B-A2B-GGUF"
+    },
+    {
+     "repo": "LiquidAI/LFM2.5-24B-A2B-GGUF",
+     "downloads_30d": 132848,
+     "likes": 227,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B-GGUF"
+    }
+   ],
+   "ollama": null,
+   "params_b": 24.0,
+   "rank": 35
+  },
+  {
+   "id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+   "name": null,
+   "on_site": false,
+   "score_30d": 186260,
+   "base": {
+    "repo": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+    "downloads_30d": 127510,
+    "likes": 911,
+    "params": 8030261248,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/DeepSeek-R1-Distill-Llama-8B-GGUF",
+     "downloads_30d": 42849,
+     "likes": 313,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/unsloth/DeepSeek-R1-Distill-Llama-8B-GGUF"
+    },
+    {
+     "repo": "bartowski/DeepSeek-R1-Distill-Llama-8B-GGUF",
+     "downloads_30d": 10740,
+     "likes": 53,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Llama-8B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/DeepSeek-R1-Distill-Llama-8B-GGUF",
+     "downloads_30d": 5161,
+     "likes": 48,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/lmstudio-community/DeepSeek-R1-Distill-Llama-8B-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "deepseek-r1",
+    "downloads_all_time": 93900000,
+    "shown": "93.9M",
+    "url": "https://ollama.com/library/deepseek-r1"
+   },
+   "params_b": 8.0,
+   "rank": 36
+  },
+  {
+   "id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+   "name": "Nemotron 3.5 Super VL 120B-A12B",
+   "on_site": true,
+   "score_30d": 91048,
+   "base": {
+    "repo": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+    "downloads_30d": 18759,
+    "likes": 82,
+    "params": 124453395976,
+    "pipeline": "image-text-to-text",
+    "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+     "downloads_30d": 13555,
+     "likes": 49,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+    },
+    {
+     "repo": "ggml-org/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+     "downloads_30d": 31763,
+     "likes": 9,
+     "params": null,
+     "pipeline": "image-text-to-text",
+     "url": "https://huggingface.co/ggml-org/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+     "downloads_30d": 26971,
+     "likes": 2,
+     "params": null,
+     "pipeline": null,
+     "url": "https://huggingface.co/lmstudio-community/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+    }
+   ],
+   "ollama": null,
+   "params_b": 124.5,
+   "rank": 37
+  },
+  {
+   "id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+   "name": null,
+   "on_site": false,
+   "score_30d": 90383,
+   "base": {
+    "repo": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+    "downloads_30d": 43241,
+    "likes": 819,
+    "params": 70553706496,
+    "pipeline": "text-generation",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+   },
+   "gguf": [
+    {
+     "repo": "unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF",
+     "downloads_30d": 32686,
+     "likes": 121,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF"
+    },
+    {
+     "repo": "bartowski/DeepSeek-R1-Distill-Llama-70B-GGUF",
+     "downloads_30d": 10530,
+     "likes": 45,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Llama-70B-GGUF"
+    },
+    {
+     "repo": "lmstudio-community/DeepSeek-R1-Distill-Llama-70B-GGUF",
+     "downloads_30d": 3926,
+     "likes": 5,
+     "params": null,
+     "pipeline": "text-generation",
+     "url": "https://huggingface.co/lmstudio-community/DeepSeek-R1-Distill-Llama-70B-GGUF"
+    }
+   ],
+   "ollama": {
+    "slug": "deepseek-r1",
+    "downloads_all_time": 93900000,
+    "shown": "93.9M",
+    "url": "https://ollama.com/library/deepseek-r1"
+   },
+   "params_b": 70.6,
+   "rank": 38
+  }
+ ]
+}

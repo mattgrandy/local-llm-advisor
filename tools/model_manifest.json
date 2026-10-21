@@ -1,21 +1,377 @@
 {
  "_note": "Editorial inputs only. Facts (params, layers, GGUF sizes, license) are fetched from Hugging Face by update_models.py. active_b values are copied from the model card text (see active_source). context_extended blocks are copied from the model card (YaRN section); see its source/source_url.",
  "models": [
-  {"id":"google/gemma-4-26B-A4B-it","name":"Gemma 4 26B-A4B","gguf":"unsloth/gemma-4-26B-A4B-it-GGUF","active_b":3.8,"moe":true,"tags":["chat","coding"],"vision":true},
-  {"id":"google/gemma-4-31B-it","name":"Gemma 4 31B","gguf":"unsloth/gemma-4-31B-it-GGUF","moe":false,"tags":["chat","coding"],"vision":true},
-  {"id":"google/gemma-4-12B-it","name":"Gemma 4 12B","gguf":"unsloth/gemma-4-12b-it-GGUF","moe":false,"tags":["chat"],"vision":true},
-  {"id":"Qwen/Qwen3.6-27B","name":"Qwen3.6 27B","gguf":"unsloth/Qwen3.6-27B-GGUF","moe":false,"tags":["chat","coding"],"vision":true,"context_extended":{"max":1010000,"method":"yarn","yarn_orig_ctx":262144,"source":"Model card: \"262,144 natively and extensible up to 1,010,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section","source_url":"https://huggingface.co/Qwen/Qwen3.6-27B","caveat":"Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."}},
-  {"id":"Qwen/Qwen3.6-35B-A3B","name":"Qwen3.6 35B-A3B","gguf":"unsloth/Qwen3.6-35B-A3B-GGUF","active_b":3,"moe":true,"tags":["chat","coding"],"vision":true,"context_extended":{"max":1010000,"method":"yarn","yarn_orig_ctx":262144,"source":"Model card: \"262,144 natively and extensible up to 1,010,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section","source_url":"https://huggingface.co/Qwen/Qwen3.6-35B-A3B","caveat":"Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."}},
-  {"id":"Qwen/Qwen3.5-9B","name":"Qwen3.5 9B","gguf":"unsloth/Qwen3.5-9B-GGUF","moe":false,"tags":["chat","coding"],"vision":true,"context_extended":{"max":1010000,"method":"yarn","yarn_orig_ctx":262144,"source":"Model card: \"262,144 natively and extensible up to 1,010,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section","source_url":"https://huggingface.co/Qwen/Qwen3.5-9B","caveat":"Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."}},
-  {"id":"Qwen/Qwen3.5-4B","name":"Qwen3.5 4B","gguf":"unsloth/Qwen3.5-4B-GGUF","moe":false,"tags":["chat"],"vision":true,"context_extended":{"max":1010000,"method":"yarn","yarn_orig_ctx":262144,"source":"Model card: \"262,144 natively and extensible up to 1,010,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section","source_url":"https://huggingface.co/Qwen/Qwen3.5-4B","caveat":"Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."}},
-  {"id":"openai/gpt-oss-20b","name":"gpt-oss 20B","gguf":"unsloth/gpt-oss-20b-GGUF","active_b":3.6,"moe":true,"tags":["chat","coding"],"vision":false},
-  {"id":"openai/gpt-oss-120b","name":"gpt-oss 120B","gguf":"unsloth/gpt-oss-120b-GGUF","active_b":5.1,"moe":true,"tags":["chat","coding"],"vision":false},
-  {"id":"Qwen/Qwen3-Coder-30B-A3B-Instruct","name":"Qwen3-Coder 30B-A3B","gguf":"unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF","active_b":3.3,"moe":true,"tags":["coding"],"vision":false,"context_extended":{"max":1000000,"method":"yarn","yarn_orig_ctx":262144,"source":"Model card: \"native support for 256K tokens, extendable up to 1M tokens using Yarn\"","source_url":"https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct","caveat":"Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."}},
-  {"id":"mistralai/Mistral-Small-3.2-24B-Instruct-2506","name":"Mistral Small 3.2 24B","gguf":"unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF","moe":false,"tags":["chat"],"vision":true},
-  {"id":"Qwen/Qwen3-VL-8B-Instruct","name":"Qwen3-VL 8B","gguf":"unsloth/Qwen3-VL-8B-Instruct-GGUF","moe":false,"tags":[],"vision":true,"context_extended":{"max":1000000,"method":"yarn","yarn_orig_ctx":262144,"source":"Model card: \"Native 256K context, expandable to 1M\"","source_url":"https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct","caveat":"Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."}},
-  {"id":"zai-org/GLM-4.5-Air","name":"GLM-4.5-Air","gguf":"unsloth/GLM-4.5-Air-GGUF","active_b":12,"moe":true,"tags":["chat","coding"],"vision":false},
-  {"id":"Qwen/Qwen3.8-27B","name":"Qwen3.8 27B","gguf":"unsloth/Qwen3.8-27B-GGUF","moe":false,"tags":["chat","coding"],"vision":true,"context_extended":{"max":1000000,"method":"yarn","yarn_orig_ctx":262144,"source":"Model card: \"262,144 natively and extensible up to 1,000,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section","source_url":"https://huggingface.co/Qwen/Qwen3.8-27B","caveat":"Extended with static YaRN RoPE scaling; the card warns this can reduce quality on shorter texts, so enable it only when you need the length."}},
-  {"id":"LiquidAI/LFM2.5-24B-A2B","name":"LFM2.5 24B-A2B","gguf":"LiquidAI/LFM2.5-24B-A2B-GGUF","active_b":2.45,"moe":true,"tags":["chat"],"vision":false},
-  {"id":"nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16","name":"Nemotron 3.5 Super VL 120B-A12B","gguf":"lmstudio-community/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF","active_b":12,"moe":true,"tags":["chat","coding"],"vision":true}
+  {
+   "id": "google/gemma-4-26B-A4B-it",
+   "name": "Gemma 4 26B-A4B",
+   "gguf": "unsloth/gemma-4-26B-A4B-it-GGUF",
+   "active_b": 3.8,
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true
+  },
+  {
+   "id": "google/gemma-4-31B-it",
+   "name": "Gemma 4 31B",
+   "gguf": "unsloth/gemma-4-31B-it-GGUF",
+   "moe": false,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true
+  },
+  {
+   "id": "google/gemma-4-12B-it",
+   "name": "Gemma 4 12B",
+   "gguf": "unsloth/gemma-4-12b-it-GGUF",
+   "moe": false,
+   "tags": [
+    "chat"
+   ],
+   "vision": true
+  },
+  {
+   "id": "Qwen/Qwen3.6-27B",
+   "name": "Qwen3.6 27B",
+   "gguf": "unsloth/Qwen3.6-27B-GGUF",
+   "moe": false,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true,
+   "context_extended": {
+    "max": 1010000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"262,144 natively and extensible up to 1,010,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
+   }
+  },
+  {
+   "id": "Qwen/Qwen3.6-35B-A3B",
+   "name": "Qwen3.6 35B-A3B",
+   "gguf": "unsloth/Qwen3.6-35B-A3B-GGUF",
+   "active_b": 3,
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true,
+   "context_extended": {
+    "max": 1010000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"262,144 natively and extensible up to 1,010,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
+   }
+  },
+  {
+   "id": "Qwen/Qwen3.5-9B",
+   "name": "Qwen3.5 9B",
+   "gguf": "unsloth/Qwen3.5-9B-GGUF",
+   "moe": false,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true,
+   "context_extended": {
+    "max": 1010000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"262,144 natively and extensible up to 1,010,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
+   }
+  },
+  {
+   "id": "Qwen/Qwen3.5-4B",
+   "name": "Qwen3.5 4B",
+   "gguf": "unsloth/Qwen3.5-4B-GGUF",
+   "moe": false,
+   "tags": [
+    "chat"
+   ],
+   "vision": true,
+   "context_extended": {
+    "max": 1010000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"262,144 natively and extensible up to 1,010,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.5-4B",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
+   }
+  },
+  {
+   "id": "openai/gpt-oss-20b",
+   "name": "gpt-oss 20B",
+   "gguf": "unsloth/gpt-oss-20b-GGUF",
+   "active_b": 3.6,
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": false
+  },
+  {
+   "id": "openai/gpt-oss-120b",
+   "name": "gpt-oss 120B",
+   "gguf": "unsloth/gpt-oss-120b-GGUF",
+   "active_b": 5.1,
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": false
+  },
+  {
+   "id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+   "name": "Qwen3-Coder 30B-A3B",
+   "gguf": "unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
+   "active_b": 3.3,
+   "moe": true,
+   "tags": [
+    "coding"
+   ],
+   "vision": false,
+   "context_extended": {
+    "max": 1000000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"native support for 256K tokens, extendable up to 1M tokens using Yarn\"",
+    "source_url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
+   }
+  },
+  {
+   "id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+   "name": "Mistral Small 3.2 24B",
+   "gguf": "unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF",
+   "moe": false,
+   "tags": [
+    "chat"
+   ],
+   "vision": true
+  },
+  {
+   "id": "Qwen/Qwen3-VL-8B-Instruct",
+   "name": "Qwen3-VL 8B",
+   "gguf": "unsloth/Qwen3-VL-8B-Instruct-GGUF",
+   "moe": false,
+   "tags": [],
+   "vision": true,
+   "context_extended": {
+    "max": 1000000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"Native 256K context, expandable to 1M\"",
+    "source_url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can slightly reduce quality on short texts, so enable it only when you need the length."
+   }
+  },
+  {
+   "id": "zai-org/GLM-4.5-Air",
+   "name": "GLM-4.5-Air",
+   "gguf": "unsloth/GLM-4.5-Air-GGUF",
+   "active_b": 12,
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": false
+  },
+  {
+   "id": "Qwen/Qwen3.8-27B",
+   "name": "Qwen3.8 27B",
+   "gguf": "unsloth/Qwen3.8-27B-GGUF",
+   "moe": false,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true,
+   "context_extended": {
+    "max": 1000000,
+    "method": "yarn",
+    "yarn_orig_ctx": 262144,
+    "source": "Model card: \"262,144 natively and extensible up to 1,000,000 tokens\"; YaRN (factor 4.0, original_max_position_embeddings 262144) documented in its \"Processing Ultra-Long Texts\" section",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+    "caveat": "Extended with static YaRN RoPE scaling; the card warns this can reduce quality on shorter texts, so enable it only when you need the length."
+   }
+  },
+  {
+   "id": "LiquidAI/LFM2.5-24B-A2B",
+   "name": "LFM2.5 24B-A2B",
+   "gguf": "LiquidAI/LFM2.5-24B-A2B-GGUF",
+   "active_b": 2.45,
+   "moe": true,
+   "tags": [
+    "chat"
+   ],
+   "vision": false
+  },
+  {
+   "id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+   "name": "Nemotron 3.5 Super VL 120B-A12B",
+   "gguf": "lmstudio-community/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+   "active_b": 12,
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true
+  },
+  {
+   "id": "google/gemma-4-E4B-it",
+   "name": "Gemma 4 E4B",
+   "gguf": "unsloth/gemma-4-E4B-it-GGUF",
+   "moe": false,
+   "tags": [
+    "chat"
+   ],
+   "vision": false
+  },
+  {
+   "id": "Qwen/Qwen3.8-Flash-Next",
+   "name": "Qwen3.8 Flash Next",
+   "gguf": "unsloth/Qwen3.8-Flash-Next-GGUF",
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": true,
+   "active_b": 6,
+   "active_source": "model card text: \"125B with 6B activated\""
+  },
+  {
+   "id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+   "name": "Nemotron 3 Nano 30B-A3B",
+   "gguf": "bartowski/nvidia_Nemotron-3-Nano-30B-A3B-GGUF",
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": false,
+   "active_b": 3.5,
+   "active_source": "model card text: \"3.5B active parameters and 30B parameters in total\""
+  },
+  {
+   "id": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+   "name": "Nemotron 3 Nano 4B",
+   "gguf": "unsloth/NVIDIA-Nemotron-3-Nano-4B-GGUF",
+   "moe": false,
+   "tags": [
+    "chat"
+   ],
+   "vision": false
+  },
+  {
+   "id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+   "name": "Nemotron 3.5 Lightning 30B-A3B",
+   "gguf": "unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": false,
+   "active_b": 3,
+   "active_source": "model card text: \"3B active\" / \"30B-A3B\" / \"~3B activated\""
+  },
+  {
+   "id": "zai-org/GLM-4.7-Flash",
+   "name": "GLM-4.7-Flash",
+   "gguf": "unsloth/GLM-4.7-Flash-GGUF",
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": false,
+   "active_b": 3,
+   "active_source": "model card text: \"3B active\" / \"30B-A3B\" / \"~3B activated\""
+  },
+  {
+   "id": "ornith-ai/Ornith-1.5-9B",
+   "name": "Ornith 1.5 9B",
+   "gguf": "bartowski/Ornith-1.5-9B-GGUF",
+   "moe": false,
+   "tags": [
+    "chat"
+   ],
+   "vision": false
+  },
+  {
+   "id": "ornith-ai/Ornith-1.5-35B-A3B",
+   "name": "Ornith 1.5 35B-A3B",
+   "gguf": "bartowski/Ornith-1.5-35B-A3B-GGUF",
+   "moe": true,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": false,
+   "active_b": 3,
+   "active_source": "model card text: \"3B active\" / \"30B-A3B\" / \"~3B activated\""
+  },
+  {
+   "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+   "name": "DeepSeek R1 Distill Qwen 7B",
+   "gguf": "unsloth/DeepSeek-R1-Distill-Qwen-7B-GGUF",
+   "moe": false,
+   "tags": [
+    "chat"
+   ],
+   "vision": false
+  },
+  {
+   "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+   "name": "DeepSeek R1 Distill Qwen 32B",
+   "gguf": "unsloth/DeepSeek-R1-Distill-Qwen-32B-GGUF",
+   "moe": false,
+   "tags": [
+    "chat",
+    "coding"
+   ],
+   "vision": false
+  },
+  {
+   "id": "poolside/Laguna-XS-2.1",
+   "name": "Laguna XS 2.1",
+   "gguf": "bartowski/Laguna-XS-2.1-GGUF",
+   "moe": true,
+   "tags": [
+    "coding"
+   ],
+   "vision": false,
+   "active_b": 3,
+   "active_source": "model card text: \"3B active\" / \"30B-A3B\" / \"~3B activated\""
+  },
+  {
+   "id": "meta-llama/Llama-3.3-70B-Instruct",
+   "name": "Llama 3.3 70B",
+   "gguf": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+   "moe": false,
+   "tags": [
+    "chat"
+   ],
+   "vision": false,
+   "config_repo": "unsloth/Llama-3.3-70B-Instruct",
+   "config_note": "meta-llama repo is gated; config.json read from the ungated unsloth mirror of the same weights"
+  }
  ]
 }

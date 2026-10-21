@@ -40,6 +40,17 @@ ALIASES = [
     (r'qwen3-?vl[ -]?8b', 'Qwen/Qwen3-VL-8B-Instruct'), (r'mistral[ -]?small[ -]?3\.2[ -]?24b', 'mistralai/Mistral-Small-3.2-24B-Instruct-2506'),
     (r'qwen3\.5[ -]?9b', 'Qwen/Qwen3.5-9B'), (r'qwen3\.5[ -]?4b', 'Qwen/Qwen3.5-4B'),
 ]
+# exact names of site models whose names would otherwise trip VARIANT (checked first)
+EXACT = [
+    (r'ornith[ -]?1\.5[ -]?35b', 'ornith-ai/Ornith-1.5-35B-A3B'), (r'ornith[ -]?1\.5[ -]?9b', 'ornith-ai/Ornith-1.5-9B'),
+    (r'^qwen3\.8[ -]?flash[ -]?next$', 'Qwen/Qwen3.8-Flash-Next'),
+]
+ALIASES += [
+    (r'nemotron[ -]?3\.5[ -]?lightning[ -]?30b', 'nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16'),
+    (r'^(nvidia-)?nemotron[ -]?3[ -]?nano[ -]?30b', 'nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16'), (r'^(nvidia-)?nemotron[ -]?3[ -]?nano[ -]?4b', 'nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16'),
+    (r'glm[ -]?4\.7[ -]?flash', 'zai-org/GLM-4.7-Flash'), (r'gemma[ -]?4[ -]?e4b', 'google/gemma-4-E4B-it'),
+    (r'laguna[ -]?xs[ -.]?2\.1', 'poolside/Laguna-XS-2.1'), (r'llama[ -]?3\.3[ -]?70b', 'meta-llama/Llama-3.3-70B-Instruct'),
+]
 SITE = {m['id']: m for m in MODELS}
 # fine-tunes / spec-decode / pruned / re-quantised variants must NOT inherit the base model's identity
 VARIANT = re.compile(r'mtp|reap|tune|qwopus|qwable|escha|compat|flash-next|heretic|abliter|uncensored|distill|ornith|muse', re.I)
@@ -48,7 +59,7 @@ def canon(model, params_b):
     """-> (canonical name, site_id|None, total_b, active_b|None, moe)"""
     s = (model or '').strip(); l = s.lower()
     if not s: return None
-    sid = None if VARIANT.search(l) else next((i for pat, i in ALIASES if re.search(pat, l)), None)
+    sid = next((i for pat, i in EXACT if re.search(pat, l)), None) or (None if VARIANT.search(l) else next((i for pat, i in ALIASES if re.search(pat, l)), None))
     if sid:
         m = SITE[sid]; return (m['name'], sid, m['params_b'], m.get('active_params_b') if m['moe'] else None, bool(m['moe']))
     if 'llama 7b' in l or 'llama 2' in l: return ('Llama 2 7B', None, 6.74, None, False)

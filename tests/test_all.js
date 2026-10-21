@@ -341,3 +341,42 @@ console.log("ALL TESTS PASSED");
   for (const h of [rdh("hardware/macbook-pro-m5-max-128gb.html"), ds]) assert(!/MLX[^.]{0,60}\d+(\.\d+)? tok\/s/.test(h.replace(/<[^>]+>/g, " ").replace(/about 230 tok\/s for MLX|about 150 for llama/g, "")), "no MLX speed numbers of our own");
   console.log("mlx ok:", withMlx, "of", data.models.models.length, "models with repos;", appleCmds, "Apple MLX commands");
 }
+
+// model list growth: every model is sourced, memory math is sane, popularity ranking is sourced and dated
+{
+  const fsP = require("fs"), pP = require("path"), S2 = pP.join(__dirname, "..", "site"), rdP = f => fsP.readFileSync(pP.join(S2, f), "utf8");
+  const ms = data.models.models, slugify = require("../tools/generate_seo_pages.js").slugify;
+  assert(ms.length >= 25 && ms.length <= 32, "model list is 25-32 models: " + ms.length);
+  assert.strictEqual(new Set(ms.map(m => m.id)).size, ms.length, "no duplicate model ids");
+  for (const m of ms) {
+    for (const k of ["source_url", "gguf_source_url", "license", "gguf_repo"]) assert(m[k], m.name + " has " + k);
+    assert(/^https:\/\/huggingface\.co\//.test(m.source_url) && /^https:\/\/huggingface\.co\//.test(m.gguf_source_url), m.name + " sources are HF links");
+    assert(m.params_b > 0.5 && m.params_b <= 260, m.name + " params in local range");
+    if (m.moe) assert(m.active_params_b > 0 && m.active_params_b < m.params_b, m.name + " MoE active < total");
+    const q = Object.entries(m.quants).map(([k, v]) => [k, typeof v === "object" ? v.gb : v]);
+    assert(q.length >= 1 && q.some(([k]) => k === "Q4_K_M"), m.name + " has Q4_K_M");
+    for (let i = 1; i < q.length; i++) assert(q[i][1] >= q[i - 1][1] - 0.01, m.name + " quant sizes non-decreasing");
+    for (const [k, gb] of q) { const bpw = gb * 8 / m.params_b; assert(bpw > 2.5 && bpw < 9.5, `${m.name} ${k} ${gb} GB = ${bpw.toFixed(2)} bpw`); }
+    if (A.kvGB) { const k = A.kvGB(m, 32768, "f16"); assert(k > 0 && k < 40, `${m.name} KV at 32k f16 = ${k} GB`); }
+    assert(m.kv && m.kv.layers > 0, m.name + " has KV geometry");
+    assert(fsP.existsSync(pP.join(S2, "models", slugify(m.name) + ".html")), m.name + " has a model page");
+  }
+  // KV spot checks against hand math (f16, 32k ctx): Llama 3.3 70B = 80 layers x 8 kv heads x 128 dim x 2 x 2 bytes
+  const llama = ms.find(m => m.id === "meta-llama/Llama-3.3-70B-Instruct");
+  assert(llama && llama.kv.layers === 80 && llama.kv.full_kv_heads === 8 && llama.kv.full_head_dim === 128, "Llama 3.3 70B KV geometry");
+  if (A.kvGB) assert(Math.abs(A.kvGB(llama, 32768, "f16") - 80 * 8 * 128 * 2 * 2 * 32768 / 1e9) < 0.3, "Llama 3.3 70B KV at 32k matches hand math (~10.7 GB)");
+  const pop = JSON.parse(rdP("data/popularity.json"));
+  assert(/^\d{4}-\d{2}-\d{2}/.test(pop.generated) && pop.method && pop.sources.length >= 2, "popularity has date, method, sources");
+  for (const m of ms) { const r = pop.models.find(x => x.id === m.id); assert(r && r.on_site && r.rank > 0, "popularity covers " + m.name);
+    assert(/^https:\/\/huggingface\.co\//.test(r.base.url), m.name + " popularity base number links to HF");
+    for (const g of r.gguf) assert(/^https:\/\/huggingface\.co\//.test(g.url) && g.downloads_30d >= 0, m.name + " GGUF number links to HF");
+    if (r.ollama && r.ollama.shown) assert(/^https:\/\/ollama\.com\/library\//.test(r.ollama.url), m.name + " Ollama number links to ollama.com"); }
+  const ranks = pop.models.map(x => x.rank); assert.deepStrictEqual(ranks, ranks.slice().sort((a, b) => a - b), "ranks ascending");
+  for (let i = 1; i < pop.models.length; i++) assert(pop.models[i].score_30d <= pop.models[i - 1].score_30d, "ranked by score");
+  const ph = rdP("models/popular.html");
+  assert(/huggingface\.co\/docs\/hub\/models-download-stats/.test(ph) && /ollama\.com\/library/.test(ph) && ph.includes(pop.generated), "popular page cites method, sources, date");
+  assert(rdP("sitemap.xml").includes("/models/popular.html"), "popular page in sitemap");
+  const hub = rdP("models/index.html"); assert(/Popularity/.test(hub) && /popular\.html/.test(hub), "hub has popularity column");
+  for (const m of ms) assert(hub.includes(">" + m.name.replace(/&/g, "&amp;") + "<"), "hub lists " + m.name);
+  console.log("models ok:", ms.length, "models; popularity", pop.models.length, "ranked, fetched", pop.generated);
+}

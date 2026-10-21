@@ -181,6 +181,104 @@
    "checked": "2026-10-20",
    "for": "Qwen/Qwen3.8-27B",
    "tool": "mlx-vlm"
+  },
+  "mlx-community/gemma-4-e4b-it-4bit": {
+   "exists": true,
+   "sha": "475b9088d29754a3379866cf5aeb6b41acd313c2",
+   "checked": "2026-10-20",
+   "for": "google/gemma-4-E4B-it",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/gemma-4-e4b-it-8bit": {
+   "exists": true,
+   "sha": "4255b21bd9a9d3fc807ef7abd80373f5e3a52a73",
+   "checked": "2026-10-20",
+   "for": "google/gemma-4-E4B-it",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/Qwen3.8-Flash-Next-4bit": {
+   "exists": true,
+   "sha": "07b5dc6c54600a359b87f1e53e7adf6351c72a2c",
+   "checked": "2026-10-20",
+   "for": "Qwen/Qwen3.8-Flash-Next",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/GLM-4.7-Flash-4bit": {
+   "exists": true,
+   "sha": "1454cffb1a21737e162f508e5bc70be9def89276",
+   "checked": "2026-10-20",
+   "for": "zai-org/GLM-4.7-Flash",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/GLM-4.7-Flash-8bit": {
+   "exists": true,
+   "sha": "b3a202c6df57f7297fb351486938952352dcd25a",
+   "checked": "2026-10-20",
+   "for": "zai-org/GLM-4.7-Flash",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/Ornith-1.5-35B-A3B-8bit": {
+   "exists": true,
+   "sha": "f791ccf138009693e7854ff5efb7d022b983f0aa",
+   "checked": "2026-10-20",
+   "for": "ornith-ai/Ornith-1.5-35B-A3B",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit": {
+   "exists": true,
+   "sha": "21848dbf533d2518a1ef895104820d5ee51317ea",
+   "checked": "2026-10-20",
+   "for": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/DeepSeek-R1-Distill-Qwen-7B-8bit": {
+   "exists": true,
+   "sha": "e16f33910798366569bd763abb4edf246fba4922",
+   "checked": "2026-10-20",
+   "for": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit": {
+   "exists": true,
+   "sha": "4e0d3848a0ad8f9fb54638891e4928f04fcca978",
+   "checked": "2026-10-20",
+   "for": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/DeepSeek-R1-Distill-Qwen-32B-MLX-8Bit": {
+   "exists": true,
+   "sha": "cbb640fd22cd78c4d1ef3113f53f5a9bafe1a355",
+   "checked": "2026-10-20",
+   "for": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/Laguna-XS-2.1-4bit": {
+   "exists": true,
+   "sha": "c42e0a8f8d504ceacde015a535dcb286d65c8799",
+   "checked": "2026-10-20",
+   "for": "poolside/Laguna-XS-2.1",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/Laguna-XS-2.1-8bit": {
+   "exists": true,
+   "sha": "b4d85d00f3aaf9f91364e9773548776fcf3885ad",
+   "checked": "2026-10-20",
+   "for": "poolside/Laguna-XS-2.1",
+   "tool": "mlx-vlm"
+  },
+  "mlx-community/Llama-3.3-70B-Instruct-4bit": {
+   "exists": true,
+   "sha": "de2dfaf56839b7d0e834157d2401dee02726874d",
+   "checked": "2026-10-20",
+   "for": "meta-llama/Llama-3.3-70B-Instruct",
+   "tool": "mlx-lm"
+  },
+  "mlx-community/Llama-3.3-70B-Instruct-8bit": {
+   "exists": true,
+   "sha": "c5bfd839cd4cda0e5a39a97e00218d9c56e468af",
+   "checked": "2026-10-20",
+   "for": "meta-llama/Llama-3.3-70B-Instruct",
+   "tool": "mlx-lm"
   }
  },
  "models": {
@@ -536,6 +634,214 @@
    "repos": [],
    "checked": "2026-10-20",
    "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16 as its base model"
+  },
+  "google/gemma-4-E4B-it": {
+   "repos": [
+    {
+     "repo": "mlx-community/gemma-4-e4b-it-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 5.1,
+     "tool": "mlx-vlm",
+     "sha": "475b9088d29754a3379866cf5aeb6b41acd313c2",
+     "last_modified": "2026-07-06T01:11:51.000Z",
+     "url": "https://huggingface.co/mlx-community/gemma-4-e4b-it-4bit"
+    },
+    {
+     "repo": "mlx-community/gemma-4-e4b-it-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 8.9,
+     "tool": "mlx-vlm",
+     "sha": "4255b21bd9a9d3fc807ef7abd80373f5e3a52a73",
+     "last_modified": "2026-07-06T01:25:56.000Z",
+     "url": "https://huggingface.co/mlx-community/gemma-4-e4b-it-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name google/gemma-4-E4B-it as its base model"
+  },
+  "Qwen/Qwen3.8-Flash-Next": {
+   "repos": [
+    {
+     "repo": "mlx-community/Qwen3.8-Flash-Next-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 111.5,
+     "tool": "mlx-vlm",
+     "sha": "07b5dc6c54600a359b87f1e53e7adf6351c72a2c",
+     "last_modified": "2026-09-02T12:24:16.000Z",
+     "url": "https://huggingface.co/mlx-community/Qwen3.8-Flash-Next-4bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3.8-Flash-Next as its base model"
+  },
+  "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16": {
+   "repos": [],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16 as its base model"
+  },
+  "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16": {
+   "repos": [],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16 as its base model"
+  },
+  "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16": {
+   "repos": [],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16 as its base model"
+  },
+  "zai-org/GLM-4.7-Flash": {
+   "repos": [
+    {
+     "repo": "mlx-community/GLM-4.7-Flash-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 16.9,
+     "tool": "mlx-lm",
+     "sha": "1454cffb1a21737e162f508e5bc70be9def89276",
+     "last_modified": "2026-01-25T16:40:15.000Z",
+     "url": "https://huggingface.co/mlx-community/GLM-4.7-Flash-4bit"
+    },
+    {
+     "repo": "mlx-community/GLM-4.7-Flash-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 31.8,
+     "tool": "mlx-lm",
+     "sha": "b3a202c6df57f7297fb351486938952352dcd25a",
+     "last_modified": "2026-01-25T16:58:41.000Z",
+     "url": "https://huggingface.co/mlx-community/GLM-4.7-Flash-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name zai-org/GLM-4.7-Flash as its base model"
+  },
+  "ornith-ai/Ornith-1.5-9B": {
+   "repos": [],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name ornith-ai/Ornith-1.5-9B as its base model"
+  },
+  "ornith-ai/Ornith-1.5-35B-A3B": {
+   "repos": [
+    {
+     "repo": "mlx-community/Ornith-1.5-35B-A3B-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 37.7,
+     "tool": "mlx-lm",
+     "sha": "f791ccf138009693e7854ff5efb7d022b983f0aa",
+     "last_modified": "2026-08-21T08:43:06.000Z",
+     "url": "https://huggingface.co/mlx-community/Ornith-1.5-35B-A3B-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name ornith-ai/Ornith-1.5-35B-A3B as its base model"
+  },
+  "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B": {
+   "repos": [
+    {
+     "repo": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 4.3,
+     "tool": "mlx-lm",
+     "sha": "21848dbf533d2518a1ef895104820d5ee51317ea",
+     "last_modified": "2025-02-26T17:39:23.000Z",
+     "url": "https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit"
+    },
+    {
+     "repo": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 8.1,
+     "tool": "mlx-lm",
+     "sha": "e16f33910798366569bd763abb4edf246fba4922",
+     "last_modified": "2025-02-26T17:39:10.000Z",
+     "url": "https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-7B-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name deepseek-ai/DeepSeek-R1-Distill-Qwen-7B as its base model"
+  },
+  "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B": {
+   "repos": [
+    {
+     "repo": "mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 18.4,
+     "tool": "mlx-lm",
+     "sha": "4e0d3848a0ad8f9fb54638891e4928f04fcca978",
+     "last_modified": "2025-02-26T17:40:53.000Z",
+     "url": "https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit"
+    },
+    {
+     "repo": "mlx-community/DeepSeek-R1-Distill-Qwen-32B-MLX-8Bit",
+     "bits": 8,
+     "label": "MLX-8bit",
+     "gb": 34.8,
+     "tool": "mlx-lm",
+     "sha": "cbb640fd22cd78c4d1ef3113f53f5a9bafe1a355",
+     "last_modified": "2025-02-26T17:41:25.000Z",
+     "url": "https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-32B-MLX-8Bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name deepseek-ai/DeepSeek-R1-Distill-Qwen-32B as its base model"
+  },
+  "poolside/Laguna-XS-2.1": {
+   "repos": [
+    {
+     "repo": "mlx-community/Laguna-XS-2.1-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 18.8,
+     "tool": "mlx-vlm",
+     "sha": "c42e0a8f8d504ceacde015a535dcb286d65c8799",
+     "last_modified": "2026-07-03T00:51:05.000Z",
+     "url": "https://huggingface.co/mlx-community/Laguna-XS-2.1-4bit"
+    },
+    {
+     "repo": "mlx-community/Laguna-XS-2.1-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 35.5,
+     "tool": "mlx-vlm",
+     "sha": "b4d85d00f3aaf9f91364e9773548776fcf3885ad",
+     "last_modified": "2026-07-03T00:53:27.000Z",
+     "url": "https://huggingface.co/mlx-community/Laguna-XS-2.1-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name poolside/Laguna-XS-2.1 as its base model"
+  },
+  "meta-llama/Llama-3.3-70B-Instruct": {
+   "repos": [
+    {
+     "repo": "mlx-community/Llama-3.3-70B-Instruct-4bit",
+     "bits": 4,
+     "label": "4bit",
+     "gb": 39.7,
+     "tool": "mlx-lm",
+     "sha": "de2dfaf56839b7d0e834157d2401dee02726874d",
+     "last_modified": "2024-12-06T20:48:37.000Z",
+     "url": "https://huggingface.co/mlx-community/Llama-3.3-70B-Instruct-4bit"
+    },
+    {
+     "repo": "mlx-community/Llama-3.3-70B-Instruct-8bit",
+     "bits": 8,
+     "label": "8bit",
+     "gb": 75.0,
+     "tool": "mlx-lm",
+     "sha": "c5bfd839cd4cda0e5a39a97e00218d9c56e468af",
+     "last_modified": "2024-12-06T21:54:14.000Z",
+     "url": "https://huggingface.co/mlx-community/Llama-3.3-70B-Instruct-8bit"
+    }
+   ],
+   "checked": "2026-10-20",
+   "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name meta-llama/Llama-3.3-70B-Instruct as its base model"
   }
  },
  "generated": "2026-10-20",

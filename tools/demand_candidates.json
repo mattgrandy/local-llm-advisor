@@ -1,0 +1,28 @@
+{
+ "_note": "Candidate open-weight models for the demand ranking (tools/demand_rank.py). 'id' = original HF repo; 'ollama' = ollama.com library slug (family-level, all-time downloads) or null. Site models are added automatically from tools/model_manifest.json.",
+ "candidates": [
+  {"id": "Qwen/Qwen3.8-Flash-Next", "ollama": "qwen3.8"},
+  {"id": "zai-org/GLM-5.3-Flash", "ollama": "glm-5.3-flash"},
+  {"id": "zai-org/GLM-4.7-Flash", "ollama": "glm-4.7-flash"},
+  {"id": "google/gemma-4-E4B-it", "ollama": "gemma4"},
+  {"id": "deepseek-ai/DeepSeek-V4.1-Flash", "ollama": null},
+  {"id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16", "ollama": "nemotron-3-nano"},
+  {"id": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16", "ollama": "nemotron-3-nano"},
+  {"id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16", "ollama": null},
+  {"id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B", "ollama": "deepseek-r1"},
+  {"id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B", "ollama": "deepseek-r1"},
+  {"id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B", "ollama": "deepseek-r1"},
+  {"id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B", "ollama": "deepseek-r1"},
+  {"id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B", "ollama": "deepseek-r1"},
+  {"id": "meta-llama/Llama-3.3-70B-Instruct", "ollama": "llama3.3"},
+  {"id": "thinkingmachines/Inkling-Small", "ollama": null},
+  {"id": "poolside/Laguna-XS-2.1", "ollama": null},
+  {"id": "Kwaipilot/KAT-Coder-V2.5-Dev", "ollama": null},
+  {"id": "Qwen/Qwen3.5-35B-A3B", "ollama": "qwen3.5"},
+  {"id": "mistralai/Devstral-Small-2-24B-Instruct-2512", "ollama": "devstral-small-2"},
+  {"id": "microsoft/phi-4", "ollama": "phi4"},
+  {"id": "ornith-ai/Ornith-1.5-9B", "ollama": null},
+  {"id": "ornith-ai/Ornith-1.5-35B-A3B", "ollama": null}
+ ],
+ "site_ollama": {"google/gemma-4-26B-A4B-it": "gemma4", "google/gemma-4-31B-it": "gemma4", "google/gemma-4-12B-it": "gemma4", "Qwen/Qwen3.6-27B": "qwen3.6", "Qwen/Qwen3.6-35B-A3B": "qwen3.6", "Qwen/Qwen3.5-9B": "qwen3.5", "Qwen/Qwen3.5-4B": "qwen3.5", "openai/gpt-oss-20b": "gpt-oss", "openai/gpt-oss-120b": "gpt-oss", "Qwen/Qwen3-Coder-30B-A3B-Instruct": "qwen3-coder", "mistralai/Mistral-Small-3.2-24B-Instruct-2506": "mistral-small3.2", "Qwen/Qwen3-VL-8B-Instruct": "qwen3-vl", "zai-org/GLM-4.5-Air": null, "Qwen/Qwen3.8-27B": "qwen3.8", "LiquidAI/LFM2.5-24B-A2B": null, "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16": null}
+}
