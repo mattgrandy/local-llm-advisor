@@ -133,7 +133,10 @@
 
   function command(p, opts, hwr) {
     const repo = p.model.gguf_repo, tag = p.quantLabel;
-    const ollama = `OLLAMA_CONTEXT_LENGTH=${opts.ctx} ollama run hf.co/${repo}:${tag}`;
+    // Ollama reads context length and KV cache type from the SERVER's environment (default KV f16), not from `ollama run`;
+    // a quantized KV cache also needs flash attention. https://github.com/ollama/ollama/blob/main/docs/faq.mdx
+    const kvEnv = (opts.kvq === "q8_0" || opts.kvq === "q4_0") ? `OLLAMA_FLASH_ATTENTION=1 OLLAMA_KV_CACHE_TYPE=${opts.kvq} ` : "";
+    const ollama = `${kvEnv}OLLAMA_CONTEXT_LENGTH=${opts.ctx} ollama serve\nollama run hf.co/${repo}:${tag}`;
     let flags = [`-hf ${repo}:${tag}`, `-c ${opts.ctx}`, "-fa on", "--jinja"];
     if (opts.kvq === "q8_0" || opts.kvq === "q4_0") flags.push(`-ctk ${opts.kvq} -ctv ${opts.kvq}`);
     const ext = ctxStatus(p.model, opts.ctx) === "extended";
@@ -142,9 +145,10 @@
     else if (p.mode === "moe-offload") flags.push("-ngl 99", `--n-cpu-moe ${p.ncpumoe}`);
     else if (p.mode === "dense-offload") flags.push(`-ngl ${p.ngl}`);
     else if (p.mode === "cpu") flags.push("-ngl 0");
-    return { ollama, llama: "llama-server " + flags.join(" "),
-      ollamaNote: ext ? "Beyond the native context this needs YaRN rope scaling, which only the llama.cpp command sets; Ollama's context setting alone does not enable it." : p.mode === "moe-offload" ? "Ollama cannot set --n-cpu-moe; it chooses its own GPU/CPU split, so use the llama.cpp command for MoE offload control." :
-                  (p.mode === "dense-offload" || p.mode === "cpu") ? "Ollama picks its own layer split; use llama.cpp for explicit control." : "" };
+    const serveNote = "Context length" + (kvEnv ? " and the " + opts.kvq + " KV cache are" : " is") + " an Ollama server setting: quit the Ollama app or stop the service first, or set " + (kvEnv ? "these variables" : "it") + " in its environment (launchctl on Mac, systemctl on Linux)." + (kvEnv ? " Without them Ollama uses an f16 KV cache, which needs more memory than shown here." : "");
+    const other = ext ? "Beyond the native context this needs YaRN rope scaling, which only the llama.cpp command sets; Ollama's context setting alone does not enable it." : p.mode === "moe-offload" ? "Ollama cannot set --n-cpu-moe; it chooses its own GPU/CPU split, so use the llama.cpp command for MoE offload control." :
+                  (p.mode === "dense-offload" || p.mode === "cpu") ? "Ollama picks its own layer split; use llama.cpp for explicit control." : "";
+    return { ollama, llama: "llama-server " + flags.join(" "), ollamaNote: (serveNote + (other ? " " + other : "")) };
   }
 
   // MLX (Apple Silicon only). Repos come from models.json mlx.repos (verified by tools/mlx_repos.py); never invented.

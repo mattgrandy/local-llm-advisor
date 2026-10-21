@@ -106,6 +106,11 @@ assert(Sub.issueUrl({ github_issue: { repo: "me/repo" } }, v.clean).startsWith("
   assert(A.kvGB(h, 1e6, "q4_0") < A.kvGB(h, 1e6, "q8_0") && A.kvGB(h, 1e6, "q8_0") < A.kvGB(h, 1e6, "f16"));
   console.log("KV @1M f16 GB:", Object.fromEntries(data.models.models.map(m => [m.name, +A.kvGB(m, 1e6, "f16").toFixed(1)])));
   assert(A.command({ model: h, quantLabel: "Q4_K_M", mode: "gpu" }, { ctx: 1e6, kvq: "q4_0" }, {}).llama.includes("-ctk q4_0 -ctv q4_0"));
+  { // Ollama: KV type and context are server env vars (default KV f16), so the command must set them on `ollama serve`
+    const c4 = A.command({ model: h, quantLabel: "Q4_K_M", mode: "gpu" }, { ctx: 131072, kvq: "q4_0" }, {}), cf = A.command({ model: h, quantLabel: "Q4_K_M", mode: "gpu" }, { ctx: 16384, kvq: "f16" }, {});
+    assert(/^OLLAMA_FLASH_ATTENTION=1 OLLAMA_KV_CACHE_TYPE=q4_0 OLLAMA_CONTEXT_LENGTH=131072 ollama serve\nollama run hf\.co\//.test(c4.ollama), c4.ollama);
+    assert(/^OLLAMA_CONTEXT_LENGTH=16384 ollama serve\nollama run /.test(cf.ollama) && !/KV_CACHE_TYPE/.test(cf.ollama), cf.ollama);
+    assert(/f16 KV cache/.test(c4.ollamaNote) && !/f16 KV cache/.test(cf.ollamaNote)); }
   // 6c. memory gating: a 24GB card cannot take 1M of Qwen3.5-9B at f16 but the 512GB Mac can
   const g24 = A.recommend({ kind: "gpu", device: "rtx-4090", count: 1, ram_gb: 64, ram_type: "ddr5-5600" }, dd, { use: "all", ctx: 1000000, kvq: "f16" });
   assert(!g24.results.some(p => p.model.id === "Qwen/Qwen3.5-9B" && p.mode === "gpu"), "4090 can't hold 1M f16 KV for a 9B in VRAM");
