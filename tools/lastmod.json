@@ -1,10 +1,10 @@
 {
  "blog/index.html": {
-  "h": "f50b779b4557b31e",
+  "h": "4c574f89f4cf687f",
   "d": "2026-10-26"
  },
  "blog/state-of-local-llm-hardware-oct-2026.html": {
-  "h": "4dd0b0864d1761be",
+  "h": "47898b2ad085f7fe",
   "d": "2026-10-26"
  },
  "can-run/gemma-4-12b-on-rtx-3060-12gb.html": {
@@ -132,7 +132,7 @@
   "d": "2026-10-21"
  },
  "can-run/index.html": {
-  "h": "833410f65d4ac77f",
+  "h": "e75ef79fa07b4cdb",
   "d": "2026-10-26"
  },
  "can-run/mistral-small-3-2-24b-on-rtx-3090-24gb.html": {
@@ -280,7 +280,7 @@
   "d": "2026-10-26"
  },
  "can-run/qwen3-8-27b-on-rtx-5090-32gb.html": {
-  "h": "d0e06bbd5f51fc9b",
+  "h": "7888bbaebb4eb912",
   "d": "2026-10-26"
  },
  "can-run/qwen3-coder-30b-a3b-on-rtx-3090-24gb.html": {
@@ -332,7 +332,7 @@
   "d": "2026-10-21"
  },
  "compare/dual-rtx-3090-48gb-vs-rtx-5090-32gb.html": {
-  "h": "94abee0b6b10de99",
+  "h": "38f12a5ce2aeb35d",
   "d": "2026-10-26"
  },
  "compare/dual-rtx-3090-48gb-vs-rtx-pro-6000-96gb.html": {
@@ -340,7 +340,7 @@
   "d": "2026-10-26"
  },
  "compare/index.html": {
-  "h": "69a8a72d8786defb",
+  "h": "03e769c8466a241a",
   "d": "2026-10-26"
  },
  "compare/mac-studio-m3-ultra-96gb-vs-dual-rtx-3090-48gb.html": {
@@ -364,7 +364,7 @@
   "d": "2026-10-26"
  },
  "compare/rtx-3090-24gb-vs-rtx-5090-32gb.html": {
-  "h": "05b64b4ab1065ff4",
+  "h": "6471241b075394ae",
   "d": "2026-10-26"
  },
  "compare/rtx-3090-24gb-vs-rx-7900-xtx-24gb.html": {
@@ -376,7 +376,7 @@
   "d": "2026-10-21"
  },
  "compare/rtx-4090-24gb-vs-rtx-5090-32gb.html": {
-  "h": "43bf4de512c753e3",
+  "h": "94e4e933e74acd4e",
   "d": "2026-10-26"
  },
  "compare/rtx-4090-24gb-vs-rx-7900-xtx-24gb.html": {
@@ -408,7 +408,7 @@
   "d": "2026-10-26"
  },
  "data-sources.html": {
-  "h": "5acf5afb4223b612",
+  "h": "bcd4fdcd9acac428",
   "d": "2026-10-26"
  },
  "embed/index.html": {
@@ -512,7 +512,7 @@
   "d": "2026-10-21"
  },
  "hardware/rtx-5090-32gb.html": {
-  "h": "458ac76fc37c8f54",
+  "h": "07c6ac0ee707ddd4",
   "d": "2026-10-26"
  },
  "hardware/rtx-pro-6000-96gb.html": {
@@ -536,7 +536,7 @@
   "d": "2026-10-20"
  },
  "leaderboard.html": {
-  "h": "ed7bc56a32347c73",
+  "h": "bf4d868a6b3fb382",
   "d": "2026-10-26"
  },
  "models/deepseek-r1-distill-qwen-32b.html": {
@@ -644,7 +644,7 @@
   "d": "2026-10-26"
  },
  "models/qwen3-8-27b.html": {
-  "h": "ba37232a98717132",
+  "h": "ccea1494e7ad5394",
   "d": "2026-10-26"
  },
  "models/qwen3-8-flash-next.html": {
@@ -688,7 +688,7 @@
   "d": "2026-10-21"
  },
  "vram/32gb.html": {
-  "h": "9b6c848e82a5a638",
+  "h": "c35a142e5067b1af",
   "d": "2026-10-26"
  },
  "vram/48gb.html": {

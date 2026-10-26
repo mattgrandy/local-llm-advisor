@@ -776,22 +776,26 @@
     "params_b": 27.78,
     "active_b": null,
     "moe": false,
-    "tg": 77.58,
-    "pp": 3859.5,
-    "n": 2,
+    "tg": 78.94,
+    "pp": 3881.3,
+    "n": 3,
     "tg_min": 76.22,
-    "tg_max": 78.94,
+    "tg_max": 82.51,
     "sources": [
      {
       "id": "hf-witcheer-rtx-5090-benchmarks",
       "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     },
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
      }
     ],
-    "size_gb": 17.5,
+    "size_gb": 17.09,
     "backends": [
      "CUDA"
     ],
-    "latest": "2026-08-15"
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen3.8 27B",
@@ -824,22 +828,26 @@
     "params_b": 27.78,
     "active_b": null,
     "moe": false,
-    "tg": 53.07,
-    "pp": 3834.0,
-    "n": 1,
-    "tg_min": 53.07,
+    "tg": 53.02,
+    "pp": 4106.1,
+    "n": 2,
+    "tg_min": 52.98,
     "tg_max": 53.07,
     "sources": [
      {
       "id": "hf-witcheer-rtx-5090-benchmarks",
       "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     },
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
      }
     ],
     "size_gb": 29.03,
     "backends": [
      "CUDA"
     ],
-    "latest": "2026-08-15"
+    "latest": "2026-10-26"
    },
    {
     "model": "Ornith 1.5 35B-A3B",
@@ -8105,9 +8113,9 @@
   },
   "by_hw": {
    "rtx-5090": {
-    "efficiency": 0.709,
-    "n": 71,
-    "p25": 0.653,
+    "efficiency": 0.712,
+    "n": 73,
+    "p25": 0.656,
     "p75": 0.777
    },
    "rtx-pro-6000": {
@@ -8246,7 +8254,7 @@
   "by_kind": {
    "gpu": {
     "efficiency": 0.69,
-    "n": 525
+    "n": 527
    },
    "unified": {
     "efficiency": 0.798,
@@ -8296,7 +8304,7 @@
   }
  ],
  "counts": {
-  "rows_used": 956,
+  "rows_used": 958,
   "hardware": 25,
   "points": 332,
   "community": 0

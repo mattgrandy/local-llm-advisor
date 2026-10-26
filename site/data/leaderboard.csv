@@ -261,9 +261,9 @@ rtx-5090,GeForce RTX 5090,Qwen3.6-27B-MTP-pi-tune,Q6,27,false,62.9,62.9,62.9,319
 rtx-5090,GeForce RTX 5090,Qwen3.6-28B-REAP-A3B,Q6,28,false,246.62,246.62,246.62,8226.9,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
 rtx-5090,GeForce RTX 5090,Qwen3.8 27B,Q2,27.78,false,108.95,103.3,114.61,3620.7,2,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
 rtx-5090,GeForce RTX 5090,Qwen3.8 27B,Q3,27.78,false,96.23,96.23,96.23,3944.1,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
-rtx-5090,GeForce RTX 5090,Qwen3.8 27B,Q4,27.78,false,77.58,76.22,78.94,3859.5,2,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
+rtx-5090,GeForce RTX 5090,Qwen3.8 27B,Q4,27.78,false,78.94,76.22,82.51,3881.3,3,CUDA,true,hf-witcheer-rtx-5090-benchmarks;own-measurement,2026-10-26
 rtx-5090,GeForce RTX 5090,Qwen3.8 27B,Q6,27.78,false,63.08,63.08,63.08,3223.3,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
-rtx-5090,GeForce RTX 5090,Qwen3.8 27B,Q8,27.78,false,53.07,53.07,53.07,3834,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
+rtx-5090,GeForce RTX 5090,Qwen3.8 27B,Q8,27.78,false,53.02,52.98,53.07,4106.1,2,CUDA,true,hf-witcheer-rtx-5090-benchmarks;own-measurement,2026-10-26
 rtx-5090,GeForce RTX 5090,Qwopus3.6-27B-Coder,Q5,27,false,70.52,70.52,70.52,3760.8,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
 rtx-5090,GeForce RTX 5090,Qwopus3.6-27B-Coder-Compat,Q6,27,false,62.91,62.91,62.91,3210.9,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
 rtx-5090,GeForce RTX 5090,Qwopus3.8-27B-Flash,Q6,27.32,false,62.96,62.96,62.96,3148,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-09-07

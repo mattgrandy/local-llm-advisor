@@ -92,3 +92,7 @@
 - rtx4090q38 instance 57819478
 - rtx4090q38 sweep launched Mon Oct 26 07:24:08 MDT 2026
 - 4090 Qwen3.8 done Mon Oct 26 07:34:27 MDT 2026, destroyed, 0 instances
+- 5090 Qwen3.8 start 2026-10-26 07:40 MDT offer 49161362 NY
+- rtx5090q38 instance 57821457
+- rtx5090q38 sweep launched Mon Oct 26 07:41:32 MDT 2026
+- 5090 Qwen3.8 done 2026-10-26 07:55 MDT, destroyed, 0 instances
