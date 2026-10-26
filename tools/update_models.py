@@ -119,6 +119,9 @@ def main():
         if m.get("active_b"):
             rec["active_params_b"] = m["active_b"]
             rec["active_source"] = "model card text on source_url"
+        if m.get("params_breakdown"):  # editorial: card counts vs stored total (e.g. n-gram embedding / MTP params)
+            rec["params_breakdown"] = m["params_breakdown"]
+            rec["active_source"] = "model card text on source_url (" + m["params_breakdown"]["note"].split(". ")[0] + ")"
         old = prev.get(m["id"])
         if old and old.get("mlx"): rec["mlx"] = old["mlx"]  # refreshed below by mlx_repos.py
         if old is None: log.append(f"added {m['name']}")

@@ -2590,6 +2590,54 @@
      "CUDA"
     ],
     "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.8 27B",
+    "site_id": "Qwen/Qwen3.8-27B",
+    "qclass": "Q4",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 50.71,
+    "pp": 3417.1,
+    "n": 1,
+    "tg_min": 50.71,
+    "tg_max": 50.71,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 16.45,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen3.8 27B",
+    "site_id": "Qwen/Qwen3.8-27B",
+    "qclass": "Q6",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 39.72,
+    "pp": 2995.7,
+    "n": 1,
+    "tg_min": 39.72,
+    "tg_max": 39.72,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 21.97,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-26"
    }
   ],
   "rtx-5080": [
@@ -8070,9 +8118,9 @@
    },
    "rtx-4090": {
     "efficiency": 0.679,
-    "n": 61,
+    "n": 63,
     "p25": 0.646,
-    "p75": 0.75
+    "p75": 0.762
    },
    "rtx-5080": {
     "efficiency": 0.812,
@@ -8198,7 +8246,7 @@
   "by_kind": {
    "gpu": {
     "efficiency": 0.69,
-    "n": 523
+    "n": 525
    },
    "unified": {
     "efficiency": 0.798,
@@ -8248,9 +8296,9 @@
   }
  ],
  "counts": {
-  "rows_used": 954,
+  "rows_used": 956,
   "hardware": 25,
-  "points": 330,
+  "points": 332,
   "community": 0
  }
 }

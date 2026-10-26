@@ -154,6 +154,8 @@ rtx-4090,GeForce RTX 4090,Qwen3.5 9B,Q4,9.65,false,141.55,141.55,141.55,9761.8,1
 rtx-4090,GeForce RTX 4090,Qwen3.5 9B,Q8,9.65,false,95.08,95.08,95.08,9849.6,1,CUDA,true,own-measurement,2026-10-16
 rtx-4090,GeForce RTX 4090,Qwen3.6 27B,Q4,27.78,false,48.38,48.38,48.38,2795.4,1,CUDA,true,own-measurement,2026-10-16
 rtx-4090,GeForce RTX 4090,Qwen3.6 35B-A3B,Q4,35.95,true,190.49,190.49,190.49,7962.1,1,CUDA,true,own-measurement,2026-10-16
+rtx-4090,GeForce RTX 4090,Qwen3.8 27B,Q4,27.78,false,50.71,50.71,50.71,3417.1,1,CUDA,true,own-measurement,2026-10-26
+rtx-4090,GeForce RTX 4090,Qwen3.8 27B,Q6,27.78,false,39.72,39.72,39.72,2995.7,1,CUDA,true,own-measurement,2026-10-26
 rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,Gemma 4 12B,Q4,11.96,false,49.05,49.05,49.05,1981,1,CUDA,true,own-measurement,2026-10-21
 rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,Gemma 4 12B,Q8,11.96,false,30.99,30.99,30.99,2054.9,1,CUDA,true,own-measurement,2026-10-21
 rtx-5060ti-16,GeForce RTX 5060 Ti 16GB,gpt-oss 20B,Q4,20.91,true,134.09,134.09,134.09,5143.6,1,CUDA,true,own-measurement,2026-10-21

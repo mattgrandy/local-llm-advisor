@@ -254,7 +254,7 @@
    ],
    "vision": true,
    "active_b": 6,
-   "active_source": "model card text: \"125B with 6B activated\""
+   "active_source": "model card text: \"125B with 6B activated, plus 51B n-gram embedding and 4B MTP\" (180B stored in total)", "params_breakdown": {"total_b": 180.0, "language_model_b": 125, "ngram_embedding_b": 51, "mtp_b": 4, "active_b": 6, "note": "180B stored = 125B language model (6B active per token) + 51B n-gram embedding + 4B MTP layer. The GGUF/MLX files hold all 180B, so memory uses 180B; per-token reads use the 6B active.", "source": "Model card \"Number of Parameters: 125B with 6B activated, plus 51B n-gram embedding and 4B MTP\"; HF safetensors total 179,999,981,459", "source_url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"}
   },
   {
    "id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",

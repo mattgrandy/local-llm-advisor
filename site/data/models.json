@@ -1221,7 +1221,7 @@
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
    "last_verified": "2026-10-20",
    "active_params_b": 6,
-   "active_source": "model card text on source_url",
+   "active_source": "model card text on source_url (180B stored = 125B language model (6B active per token) + 51B n-gram embedding + 4B MTP layer)",
    "mlx": {
     "repos": [
      {
@@ -1237,6 +1237,16 @@
     ],
     "checked": "2026-10-20",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3.8-Flash-Next as its base model"
+   },
+   "params_breakdown": {
+    "total_b": 180.0,
+    "language_model_b": 125,
+    "ngram_embedding_b": 51,
+    "mtp_b": 4,
+    "active_b": 6,
+    "note": "180B stored = 125B language model (6B active per token) + 51B n-gram embedding + 4B MTP layer. The GGUF/MLX files hold all 180B, so memory uses 180B; per-token reads use the 6B active.",
+    "source": "Model card \"Number of Parameters: 125B with 6B activated, plus 51B n-gram embedding and 4B MTP\"; HF safetensors total 179,999,981,459",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
    }
   },
   {

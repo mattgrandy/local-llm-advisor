@@ -1,0 +1,18 @@
+2026-10-26T13:23:49Z sweep start: GPU='NVIDIA GeForce RTX 4090' x1 (benchmarking GPU 0) VRAM=23.99GiB RAM=62GiB disk_free=60GiB driver=580.159.03 llama.cpp=b11658/cuda12.8 max_hours=0.9 dry_run=0
+2026-10-26T13:23:49Z installing huggingface_hub into /workspace/sweep_work/venv
+2026-10-26T13:23:55Z hf CLI: /workspace/sweep_work/venv/bin/hf
+33 configs, 419 GB of downloads (vram=23.99 ram=62.0)
+2026-10-26T13:23:55Z installing prebuilt llama.cpp b11658 (CUDA 12.8) from https://github.com/ggml-org/llama.cpp/releases/download/b11658
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 15  164M   15 26.2M    0     0  33.3M      0  0:00:04 --:--:--  0:00:04 33.3M 46  164M   46 76.7M    0     0  42.9M      0  0:00:03  0:00:01  0:00:02 50.5M 95  164M   95  157M    0     0  56.3M      0  0:00:02  0:00:02 --:--:-- 65.4M100  164M  100  164M    0     0  56.7M      0  0:00:02  0:00:02 --:--:-- 65.4M
+<stdin>:8: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+2026-10-26T13:24:00Z plan: 1 configs
+2026-10-26T13:24:00Z == Qwen_Qwen3.8-27B__Q4_K_M mode=gpu size=16.5GB  (time left 53 min)
+2026-10-26T13:29:07Z    ok: 10 result rows
+2026-10-26T13:29:07Z sweep complete
+Terminated
+2026-10-26T13:29:07Z finalizing: 1 configs done, 0 failed
+2026-10-26T13:29:07Z results tarball: /workspace/sweep_out.tgz (12K)
+2026-10-26T13:29:07Z no --on-finish given: instance keeps running (and billing). Copy /workspace/sweep_out.tgz off the box and destroy it.

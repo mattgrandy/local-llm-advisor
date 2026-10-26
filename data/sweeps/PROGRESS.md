@@ -13,7 +13,7 @@
 - Fri Oct 16 08:45:29 MDT 2026 resumed; checking 4090
 - 4090 done, destroyed, 0 instances
 - pushed 3090/4090 data
-- Sat Oct 17 15:14:57 MDT 2026 batch start (4060 8GB, 5080, 5070Ti, 5090); credit 4.10, floor 0.75
+- Sat Oct 17 15:14:57 MDT 2026 batch start (4060 8GB, 5080, 5070Ti, 5090)
 - 4060 instance 56451994 Illinois
 - 4060 sweep launched Sat Oct 17 15:18:16 MDT 2026
 - 4060 done+destroyed Sat Oct 17 15:46:10 MDT 2026
@@ -35,15 +35,15 @@
 - 5070ti published 5d32c6e; 5090 sweep launched ~17:19 (instance in inst.env)
 - 5090 sweep in progress, Q8 large configs (18:24)
 - 5090 done+destroyed Sat Oct 17 18:25:08 MDT 2026
-- 5090 published e220679, HF updated (427 rows), indexnow submitted; credit ~20.11 Sat Oct 17 18:26:41 MDT 2026
-- PRO6000 batch start Sat Oct 17 18:27:16 MDT 2026, credit 20.09, offer 49231571 CZ WS, disk 250
+- 5090 published e220679, HF updated (427 rows), indexnow submitted Sat Oct 17 18:26:41 MDT 2026
+- PRO6000 batch start Sat Oct 17 18:27:16 MDT 2026, offer 49231571 CZ WS, disk 250
 - rtxpro6000 instance 56472343
 - rtxpro6000 sweep launched Sat Oct 17 18:28:51 MDT 2026
 - PRO6000 sweep running 18:39
 - PRO6000 at gpt-oss-120b 18:51
 - PRO6000 done+destroyed Sat Oct 17 18:55:14 MDT 2026
-- PRO6000 published 928a2e4, HF updated (502 rows), figures rechecked; credit ~17.93 Sat Oct 17 18:56:14 MDT 2026
-- longctx 3090 start Sat Oct 17 18:56:57 MDT 2026 credit 17.90
+- PRO6000 published 928a2e4, HF updated (502 rows), figures rechecked Sat Oct 17 18:56:14 MDT 2026
+- longctx 3090 start Sat Oct 17 18:56:57 MDT 2026
 - rtx3090long instance 56475311
 - 3090long host 54677606 rejected key; destroyed 56475311
 - rtx3090long instance 56475735
@@ -54,14 +54,14 @@
 - rtx3090long sweep launched Sat Oct 17 19:15:30 MDT 2026
 - 3090long relaunched on host 52272575 OR (CUDA ok) 19:19
 - 3090long done+destroyed Sat Oct 17 19:52:17 MDT 2026
-- 3090long published 72b9ef6, HF 521 rows; credit ~17.52 Sat Oct 17 19:53:18 MDT 2026
-- 4090long start Sat Oct 17 19:53:42 MDT 2026 credit 17.51 offer 8993652 IE
+- 3090long published 72b9ef6, HF 521 rows Sat Oct 17 19:53:18 MDT 2026
+- 4090long start Sat Oct 17 19:53:42 MDT 2026 offer 8993652 IE
 - rtx4090long instance 56481187
 - rtx4090long sweep launched Sat Oct 17 19:56:40 MDT 2026
 - 4090long running, CUDA ok, launched ~19:55 (ends ~20:31)
 - 4090long done+destroyed Sat Oct 17 20:13:52 MDT 2026
 - 4090long published, HF 540 rows Sat Oct 17 20:14:30 MDT 2026
-- dual3090 start Sat Oct 17 20:15:51 MDT 2026 credit 17.34 offer 54390556 OR 2xGPU, disk 150
+- dual3090 start Sat Oct 17 20:15:51 MDT 2026 offer 54390556 OR 2xGPU, disk 150
 - dual3090 instance 56483536
 - dual3090 host 54390556 rejected key; destroyed 56483536
 - dual3090 instance 56484092
@@ -69,7 +69,7 @@
 - dual3090 CUDA ok (2 devices), running
 - dual3090 mid-run 20:40
 - dual3090 done+destroyed Sat Oct 17 21:05:24 MDT 2026
-- dual3090 published ce3ab56, HF multigpu config; credit 16.00 Sat Oct 17 21:05:57 MDT 2026
+- dual3090 published ce3ab56, HF multigpu config Sat Oct 17 21:05:57 MDT 2026
 - 5060ti16 batch start Wed Oct 21 08:14:31 MDT 2026, offer 56408200 ES
 - rtx5060ti16 instance 57065385
 - 5060ti16 ES host rejected key; destroyed 57065385
@@ -80,8 +80,15 @@
 - 5060ti16 sweep running 08:37
 - 5060ti16 at Qwen3-Coder-30B (8:48); instance 57066276 still UP. hardware.json/bench_parse/compare pairs already edited (uncommitted). Next: fin.sh rtx5060ti16, ingest_sweep --merge, build_measured, calibrate_depth, generate_pages, tests, HF (/workspace/hfds/build_hf.py), publish
 - 5060ti16 done+destroyed Wed Oct 21 08:54:42 MDT 2026
-- 5060ti16 published 6efa957, HF 586 rows, indexnow submitted; credit 15.44 Wed Oct 21 08:58:28 MDT 2026
-- 3090 Qwen3.8 start Mon Oct 26 07:02:54 MDT 2026 credit 15.43 offer 56714066 CZ
+- 5060ti16 published 6efa957, HF 586 rows, indexnow submitted Wed Oct 21 08:58:28 MDT 2026
+- 3090 Qwen3.8 start Mon Oct 26 07:02:54 MDT 2026 offer 56714066 CZ
 - rtx3090q38 instance 57816919
 - rtx3090q38 sweep launched Mon Oct 26 07:03:58 MDT 2026
-- 3090 Qwen3.8 done Mon Oct 26 07:13:27 MDT 2026, destroyed, 0 instances, credit 15.34
+- 3090 Qwen3.8 done Mon Oct 26 07:13:27 MDT 2026, destroyed, 0 instances
+- 07:20 Qwen3.8 27B 3090 published dfbc446, HF updated, IndexNow 63 URLs. Next: 4090/5090 via GO=go_q38.sh (5090: Q38_Q2=Q8_0)
+- 4090 Qwen3.8 start Mon Oct 26 07:21:49 MDT 2026 offer 50026577 NC
+- rtx4090q38 instance 57816919
+- 4090 offer 50026577 gone (no instance created); retry 54044395 WA 07:23
+- rtx4090q38 instance 57819478
+- rtx4090q38 sweep launched Mon Oct 26 07:24:08 MDT 2026
+- 4090 Qwen3.8 done Mon Oct 26 07:34:27 MDT 2026, destroyed, 0 instances
