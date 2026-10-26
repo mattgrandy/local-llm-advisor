@@ -254,7 +254,17 @@
    ],
    "vision": true,
    "active_b": 6,
-   "active_source": "model card text: \"125B with 6B activated, plus 51B n-gram embedding and 4B MTP\" (180B stored in total)", "params_breakdown": {"total_b": 180.0, "language_model_b": 125, "ngram_embedding_b": 51, "mtp_b": 4, "active_b": 6, "note": "180B stored = 125B language model (6B active per token) + 51B n-gram embedding + 4B MTP layer. The GGUF/MLX files hold all 180B, so memory uses 180B; per-token reads use the 6B active.", "source": "Model card \"Number of Parameters: 125B with 6B activated, plus 51B n-gram embedding and 4B MTP\"; HF safetensors total 179,999,981,459", "source_url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"}
+   "active_source": "model card text: \"125B with 6B activated, plus 51B n-gram embedding and 4B MTP\" (180B stored in total)",
+   "params_breakdown": {
+    "total_b": 180,
+    "language_model_b": 125,
+    "ngram_embedding_b": 51,
+    "mtp_b": 4,
+    "active_b": 6,
+    "note": "180B stored = 125B language model (6B active per token) + 51B n-gram embedding + 4B MTP layer. The GGUF/MLX files hold all 180B, so memory uses 180B; per-token reads use the 6B active.",
+    "source": "Model card \"Number of Parameters: 125B with 6B activated, plus 51B n-gram embedding and 4B MTP\"; HF safetensors total 179,999,981,459",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+   }
   },
   {
    "id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
@@ -372,6 +382,30 @@
    "vision": false,
    "config_repo": "unsloth/Llama-3.3-70B-Instruct",
    "config_note": "meta-llama repo is gated; config.json read from the ungated unsloth mirror of the same weights"
+  },
+  {
+   "id": "RecursiveSI/flint",
+   "name": "Flint 40B-A2.5B",
+   "gguf": "unsloth/flint-GGUF",
+   "active_b": 2.5,
+   "moe": true,
+   "tags": [
+    "coding",
+    "chat"
+   ],
+   "vision": false,
+   "active_source": "model card text: \"approximately 2.5B active per token, including the output head\" (39.8B total)"
+  },
+  {
+   "id": "Nanbeige/Nanbeige4.3-33B",
+   "name": "Nanbeige4.3 33B",
+   "gguf": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF",
+   "moe": false,
+   "tags": [
+    "coding",
+    "chat"
+   ],
+   "vision": false
   }
  ]
 }

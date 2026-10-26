@@ -33,73 +33,427 @@
      "CUDA",
      "Vulkan"
     ],
-    "latest": "2026-10-16"
+    "latest": "2026-10-25"
    },
    {
-    "model": "Meta Llama 3.1 8B Instruct",
-    "site_id": null,
+    "model": "Gemma 4 12B",
+    "site_id": "google/gemma-4-12B-it",
     "qclass": "Q4",
-    "params_b": 8.03,
+    "params_b": 11.96,
     "active_b": null,
     "moe": false,
-    "tg": 66.33,
-    "pp": 6297.4,
+    "tg": 152.43,
+    "pp": 8524.0,
     "n": 1,
-    "tg_min": 66.33,
-    "tg_max": 66.33,
+    "tg_min": 152.43,
+    "tg_max": 152.43,
     "sources": [
      {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/1"
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
      }
     ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
+    "size_gb": 7.11,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
    },
    {
-    "model": "Qwen2.5 14B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 14.77,
+    "model": "Gemma 4 12B",
+    "site_id": "google/gemma-4-12B-it",
+    "qclass": "Q8",
+    "params_b": 11.96,
     "active_b": null,
     "moe": false,
-    "tg": 41.75,
-    "pp": 3733.9,
-    "n": 2,
-    "tg_min": 37.95,
-    "tg_max": 45.54,
+    "tg": 103.67,
+    "pp": 8805.6,
+    "n": 1,
+    "tg_min": 103.67,
+    "tg_max": 103.67,
     "sources": [
      {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/2"
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
      }
     ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
+    "size_gb": 12.65,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
    },
    {
-    "model": "Llama 3.2 1B Instruct",
-    "site_id": null,
+    "model": "Gemma 4 26B-A4B",
+    "site_id": "google/gemma-4-26B-A4B-it",
     "qclass": "Q4",
-    "params_b": 1.5,
-    "active_b": null,
-    "moe": false,
-    "tg": 119.83,
-    "pp": 16759.7,
-    "n": 2,
-    "tg_min": 69.32,
-    "tg_max": 170.33,
+    "params_b": 25.81,
+    "active_b": 3.8,
+    "moe": true,
+    "tg": 231.41,
+    "pp": 11431.6,
+    "n": 1,
+    "tg_min": 231.41,
+    "tg_max": 231.41,
     "sources": [
      {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/3"
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
      }
     ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
+    "size_gb": 16.93,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Gemma 4 26B-A4B",
+    "site_id": "google/gemma-4-26B-A4B-it",
+    "qclass": "Q8",
+    "params_b": 25.81,
+    "active_b": 3.8,
+    "moe": true,
+    "tg": 217.48,
+    "pp": 11322.2,
+    "n": 1,
+    "tg_min": 217.48,
+    "tg_max": 217.48,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 26.84,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-18"
+   },
+   {
+    "model": "Gemma 4 31B",
+    "site_id": "google/gemma-4-31B-it",
+    "qclass": "Q4",
+    "params_b": 31.27,
+    "active_b": null,
+    "moe": false,
+    "tg": 73.84,
+    "pp": 4048.2,
+    "n": 2,
+    "tg_min": 71.3,
+    "tg_max": 76.39,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     },
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 17.98,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Mistral Small 3.2 24B",
+    "site_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "qclass": "Q4",
+    "params_b": 24.01,
+    "active_b": null,
+    "moe": false,
+    "tg": 101.14,
+    "pp": 5184.8,
+    "n": 1,
+    "tg_min": 101.14,
+    "tg_max": 101.14,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 14.32,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Mistral Small 3.2 24B",
+    "site_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "qclass": "Q8",
+    "params_b": 24.01,
+    "active_b": null,
+    "moe": false,
+    "tg": 63.85,
+    "pp": 5246.3,
+    "n": 1,
+    "tg_min": 63.85,
+    "tg_max": 63.85,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 25.05,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-18"
+   },
+   {
+    "model": "Qwen3-Coder 30B-A3B",
+    "site_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "qclass": "Q4",
+    "params_b": 30.53,
+    "active_b": 3.3,
+    "moe": true,
+    "tg": 346.27,
+    "pp": 10437.0,
+    "n": 1,
+    "tg_min": 346.27,
+    "tg_max": 346.27,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 18.55,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
+    "qclass": "Q4",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 242.38,
+    "pp": 12303.0,
+    "n": 1,
+    "tg_min": 242.38,
+    "tg_max": 242.38,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.03,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
+    "qclass": "Q8",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 166.54,
+    "pp": 12638.7,
+    "n": 1,
+    "tg_min": 166.54,
+    "tg_max": 166.54,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 8.71,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q4",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 313.64,
+    "pp": 16035.6,
+    "n": 1,
+    "tg_min": 313.64,
+    "tg_max": 313.64,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 2.73,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q8",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 244.56,
+    "pp": 17193.3,
+    "n": 1,
+    "tg_min": 244.56,
+    "tg_max": 244.56,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 4.47,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q4",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 220.46,
+    "pp": 11720.7,
+    "n": 1,
+    "tg_min": 220.46,
+    "tg_max": 220.46,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.67,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q8",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 156.01,
+    "pp": 11960.0,
+    "n": 1,
+    "tg_min": 156.01,
+    "tg_max": 156.01,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 9.51,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3.6 27B",
+    "site_id": "Qwen/Qwen3.6-27B",
+    "qclass": "Q4",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 77.61,
+    "pp": 4084.6,
+    "n": 3,
+    "tg_min": 77.09,
+    "tg_max": 84.3,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     },
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 16.8,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3.6 27B",
+    "site_id": "Qwen/Qwen3.6-27B",
+    "qclass": "Q8",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 52.36,
+    "pp": 4064.0,
+    "n": 1,
+    "tg_min": 52.36,
+    "tg_max": 52.36,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 28.58,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-18"
+   },
+   {
+    "model": "Qwen3.6 35B-A3B",
+    "site_id": "Qwen/Qwen3.6-35B-A3B",
+    "qclass": "Q4",
+    "params_b": 35.95,
+    "active_b": 3,
+    "moe": true,
+    "tg": 263.92,
+    "pp": 9421.1,
+    "n": 2,
+    "tg_min": 256.87,
+    "tg_max": 270.97,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     },
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 22.12,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-18"
    },
    {
     "model": "gpt-oss 20B",
@@ -134,60 +488,150 @@
     "latest": "2026-10-17"
    },
    {
-    "model": "Qwen3.6 35B-A3B",
-    "site_id": "Qwen/Qwen3.6-35B-A3B",
-    "qclass": "Q4",
-    "params_b": 35.95,
-    "active_b": 3,
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q8",
+    "params_b": 20.91,
+    "active_b": 3.6,
     "moe": true,
-    "tg": 263.92,
-    "pp": 9421.1,
-    "n": 2,
-    "tg_min": 256.87,
-    "tg_max": 270.97,
+    "tg": 374.72,
+    "pp": 18400.2,
+    "n": 1,
+    "tg_min": 374.72,
+    "tg_max": 374.72,
     "sources": [
-     {
-      "id": "hf-witcheer-rtx-5090-benchmarks",
-      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
-     },
      {
       "id": "own-measurement",
       "url": "https://github.com/mattgrandy/local-llm-advisor"
      }
     ],
-    "size_gb": 22.12,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-18"
-   },
-   {
-    "model": "Qwen3.6 27B",
-    "site_id": "Qwen/Qwen3.6-27B",
-    "qclass": "Q4",
-    "params_b": 27.78,
-    "active_b": null,
-    "moe": false,
-    "tg": 77.61,
-    "pp": 4084.6,
-    "n": 3,
-    "tg_min": 77.09,
-    "tg_max": 84.3,
-    "sources": [
-     {
-      "id": "hf-witcheer-rtx-5090-benchmarks",
-      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
-     },
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 16.8,
+    "size_gb": 12.1,
     "backends": [
      "CUDA"
     ],
     "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3.8 27B",
+    "site_id": "Qwen/Qwen3.8-27B",
+    "qclass": "Q4",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 78.94,
+    "pp": 3881.3,
+    "n": 3,
+    "tg_min": 76.22,
+    "tg_max": 82.51,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     },
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 17.09,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen3.8 27B",
+    "site_id": "Qwen/Qwen3.8-27B",
+    "qclass": "Q8",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 53.02,
+    "pp": 4106.1,
+    "n": 2,
+    "tg_min": 52.98,
+    "tg_max": 53.07,
+    "sources": [
+     {
+      "id": "hf-witcheer-rtx-5090-benchmarks",
+      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
+     },
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 29.03,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 66.33,
+    "pp": 6297.4,
+    "n": 1,
+    "tg_min": 66.33,
+    "tg_max": 66.33,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 41.75,
+    "pp": 3733.9,
+    "n": 2,
+    "tg_min": 37.95,
+    "tg_max": 45.54,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 119.83,
+    "pp": 16759.7,
+    "n": 2,
+    "tg_min": 69.32,
+    "tg_max": 170.33,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
    },
    {
     "model": "Nemotron 3 Nano 30B-A3B",
@@ -308,34 +752,6 @@
      "CUDA"
     ],
     "latest": "2026-08-11"
-   },
-   {
-    "model": "Gemma 4 31B",
-    "site_id": "google/gemma-4-31B-it",
-    "qclass": "Q4",
-    "params_b": 31.27,
-    "active_b": null,
-    "moe": false,
-    "tg": 73.84,
-    "pp": 4048.2,
-    "n": 2,
-    "tg_min": 71.3,
-    "tg_max": 76.39,
-    "sources": [
-     {
-      "id": "hf-witcheer-rtx-5090-benchmarks",
-      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
-     },
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 17.98,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
    },
    {
     "model": "gpt-oss 120B",
@@ -772,34 +1188,6 @@
    {
     "model": "Qwen3.8 27B",
     "site_id": "Qwen/Qwen3.8-27B",
-    "qclass": "Q4",
-    "params_b": 27.78,
-    "active_b": null,
-    "moe": false,
-    "tg": 78.94,
-    "pp": 3881.3,
-    "n": 3,
-    "tg_min": 76.22,
-    "tg_max": 82.51,
-    "sources": [
-     {
-      "id": "hf-witcheer-rtx-5090-benchmarks",
-      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
-     },
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 17.09,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-26"
-   },
-   {
-    "model": "Qwen3.8 27B",
-    "site_id": "Qwen/Qwen3.8-27B",
     "qclass": "Q6",
     "params_b": 27.78,
     "active_b": null,
@@ -820,34 +1208,6 @@
      "CUDA"
     ],
     "latest": "2026-08-15"
-   },
-   {
-    "model": "Qwen3.8 27B",
-    "site_id": "Qwen/Qwen3.8-27B",
-    "qclass": "Q8",
-    "params_b": 27.78,
-    "active_b": null,
-    "moe": false,
-    "tg": 53.02,
-    "pp": 4106.1,
-    "n": 2,
-    "tg_min": 52.98,
-    "tg_max": 53.07,
-    "sources": [
-     {
-      "id": "hf-witcheer-rtx-5090-benchmarks",
-      "url": "https://huggingface.co/datasets/witcheer/rtx-5090-benchmarks"
-     },
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 29.03,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-26"
    },
    {
     "model": "Ornith 1.5 35B-A3B",
@@ -944,366 +1304,6 @@
      "CUDA"
     ],
     "latest": "2026-09-07"
-   },
-   {
-    "model": "Gemma 4 12B",
-    "site_id": "google/gemma-4-12B-it",
-    "qclass": "Q4",
-    "params_b": 11.96,
-    "active_b": null,
-    "moe": false,
-    "tg": 152.43,
-    "pp": 8524.0,
-    "n": 1,
-    "tg_min": 152.43,
-    "tg_max": 152.43,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 7.11,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Gemma 4 12B",
-    "site_id": "google/gemma-4-12B-it",
-    "qclass": "Q8",
-    "params_b": 11.96,
-    "active_b": null,
-    "moe": false,
-    "tg": 103.67,
-    "pp": 8805.6,
-    "n": 1,
-    "tg_min": 103.67,
-    "tg_max": 103.67,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 12.65,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Gemma 4 26B-A4B",
-    "site_id": "google/gemma-4-26B-A4B-it",
-    "qclass": "Q4",
-    "params_b": 25.81,
-    "active_b": 3.8,
-    "moe": true,
-    "tg": 231.41,
-    "pp": 11431.6,
-    "n": 1,
-    "tg_min": 231.41,
-    "tg_max": 231.41,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 16.93,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Gemma 4 26B-A4B",
-    "site_id": "google/gemma-4-26B-A4B-it",
-    "qclass": "Q8",
-    "params_b": 25.81,
-    "active_b": 3.8,
-    "moe": true,
-    "tg": 217.48,
-    "pp": 11322.2,
-    "n": 1,
-    "tg_min": 217.48,
-    "tg_max": 217.48,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 26.84,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-18"
-   },
-   {
-    "model": "Mistral Small 3.2 24B",
-    "site_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-    "qclass": "Q4",
-    "params_b": 24.01,
-    "active_b": null,
-    "moe": false,
-    "tg": 101.14,
-    "pp": 5184.8,
-    "n": 1,
-    "tg_min": 101.14,
-    "tg_max": 101.14,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 14.32,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Mistral Small 3.2 24B",
-    "site_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-    "qclass": "Q8",
-    "params_b": 24.01,
-    "active_b": null,
-    "moe": false,
-    "tg": 63.85,
-    "pp": 5246.3,
-    "n": 1,
-    "tg_min": 63.85,
-    "tg_max": 63.85,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 25.05,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-18"
-   },
-   {
-    "model": "Qwen3-Coder 30B-A3B",
-    "site_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-    "qclass": "Q4",
-    "params_b": 30.53,
-    "active_b": 3.3,
-    "moe": true,
-    "tg": 346.27,
-    "pp": 10437.0,
-    "n": 1,
-    "tg_min": 346.27,
-    "tg_max": 346.27,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 18.55,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Qwen3-VL 8B",
-    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
-    "qclass": "Q4",
-    "params_b": 8.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 242.38,
-    "pp": 12303.0,
-    "n": 1,
-    "tg_min": 242.38,
-    "tg_max": 242.38,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 5.03,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Qwen3-VL 8B",
-    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
-    "qclass": "Q8",
-    "params_b": 8.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 166.54,
-    "pp": 12638.7,
-    "n": 1,
-    "tg_min": 166.54,
-    "tg_max": 166.54,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 8.71,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Qwen3.5 4B",
-    "site_id": "Qwen/Qwen3.5-4B",
-    "qclass": "Q4",
-    "params_b": 4.66,
-    "active_b": null,
-    "moe": false,
-    "tg": 313.64,
-    "pp": 16035.6,
-    "n": 1,
-    "tg_min": 313.64,
-    "tg_max": 313.64,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 2.73,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Qwen3.5 4B",
-    "site_id": "Qwen/Qwen3.5-4B",
-    "qclass": "Q8",
-    "params_b": 4.66,
-    "active_b": null,
-    "moe": false,
-    "tg": 244.56,
-    "pp": 17193.3,
-    "n": 1,
-    "tg_min": 244.56,
-    "tg_max": 244.56,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 4.47,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Qwen3.5 9B",
-    "site_id": "Qwen/Qwen3.5-9B",
-    "qclass": "Q4",
-    "params_b": 9.65,
-    "active_b": null,
-    "moe": false,
-    "tg": 220.46,
-    "pp": 11720.7,
-    "n": 1,
-    "tg_min": 220.46,
-    "tg_max": 220.46,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 5.67,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Qwen3.5 9B",
-    "site_id": "Qwen/Qwen3.5-9B",
-    "qclass": "Q8",
-    "params_b": 9.65,
-    "active_b": null,
-    "moe": false,
-    "tg": 156.01,
-    "pp": 11960.0,
-    "n": 1,
-    "tg_min": 156.01,
-    "tg_max": 156.01,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 9.51,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Qwen3.6 27B",
-    "site_id": "Qwen/Qwen3.6-27B",
-    "qclass": "Q8",
-    "params_b": 27.78,
-    "active_b": null,
-    "moe": false,
-    "tg": 52.36,
-    "pp": 4064.0,
-    "n": 1,
-    "tg_min": 52.36,
-    "tg_max": 52.36,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 28.58,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-18"
-   },
-   {
-    "model": "gpt-oss 20B",
-    "site_id": "openai/gpt-oss-20b",
-    "qclass": "Q8",
-    "params_b": 20.91,
-    "active_b": 3.6,
-    "moe": true,
-    "tg": 374.72,
-    "pp": 18400.2,
-    "n": 1,
-    "tg_min": 374.72,
-    "tg_max": 374.72,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 12.1,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
    }
   ],
   "rtx-pro-6000": [
@@ -1334,128 +1334,6 @@
      "CUDA"
     ],
     "latest": "2026-10-16"
-   },
-   {
-    "model": "Meta Llama 3.1 8B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 8.03,
-    "active_b": null,
-    "moe": false,
-    "tg": 85.77,
-    "pp": 6345.7,
-    "n": 1,
-    "tg_min": 85.77,
-    "tg_max": 85.77,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/1"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Qwen2.5 14B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 14.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 64.05,
-    "pp": 4416.4,
-    "n": 1,
-    "tg_min": 64.05,
-    "tg_max": 64.05,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/2"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Llama 3.2 1B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 1.5,
-    "active_b": null,
-    "moe": false,
-    "tg": 191.37,
-    "pp": 20440.0,
-    "n": 1,
-    "tg_min": 191.37,
-    "tg_max": 191.37,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/3"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "gpt-oss 20B",
-    "site_id": "openai/gpt-oss-20b",
-    "qclass": "Q4",
-    "params_b": 20.91,
-    "active_b": 3.6,
-    "moe": true,
-    "tg": 341.45,
-    "pp": 15541.0,
-    "n": 2,
-    "tg_min": 286.91,
-    "tg_max": 395.98,
-    "sources": [
-     {
-      "id": "llamacpp-discussion-15396",
-      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
-     },
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 11.85,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-18"
-   },
-   {
-    "model": "gpt-oss 120B",
-    "site_id": "openai/gpt-oss-120b",
-    "qclass": "Q4",
-    "params_b": 116.83,
-    "active_b": 5.1,
-    "moe": true,
-    "tg": 236.62,
-    "pp": 7267.5,
-    "n": 2,
-    "tg_min": 196.31,
-    "tg_max": 276.94,
-    "sources": [
-     {
-      "id": "llamacpp-discussion-15396",
-      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
-     },
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 63.07,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-18"
    },
    {
     "model": "GLM-4.5-Air",
@@ -1964,6 +1842,34 @@
    {
     "model": "gpt-oss 120B",
     "site_id": "openai/gpt-oss-120b",
+    "qclass": "Q4",
+    "params_b": 116.83,
+    "active_b": 5.1,
+    "moe": true,
+    "tg": 236.62,
+    "pp": 7267.5,
+    "n": 2,
+    "tg_min": 196.31,
+    "tg_max": 276.94,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     },
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 63.07,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-18"
+   },
+   {
+    "model": "gpt-oss 120B",
+    "site_id": "openai/gpt-oss-120b",
     "qclass": "Q8",
     "params_b": 116.83,
     "active_b": 5.1,
@@ -1980,6 +1886,34 @@
      }
     ],
     "size_gb": 63.37,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-18"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 341.45,
+    "pp": 15541.0,
+    "n": 2,
+    "tg_min": 286.91,
+    "tg_max": 395.98,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     },
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 11.85,
     "backends": [
      "CUDA"
     ],
@@ -2008,6 +1942,72 @@
      "CUDA"
     ],
     "latest": "2026-10-18"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 85.77,
+    "pp": 6345.7,
+    "n": 1,
+    "tg_min": 85.77,
+    "tg_max": 85.77,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 64.05,
+    "pp": 4416.4,
+    "n": 1,
+    "tg_min": 64.05,
+    "tg_max": 64.05,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 191.37,
+    "pp": 20440.0,
+    "n": 1,
+    "tg_min": 191.37,
+    "tg_max": 191.37,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
    }
   ],
   "rtx-4090": [
@@ -2046,198 +2046,7 @@
      "CUDA",
      "Vulkan"
     ],
-    "latest": "2026-10-16"
-   },
-   {
-    "model": "Meta Llama 3.1 8B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 8.03,
-    "active_b": null,
-    "moe": false,
-    "tg": 105.32,
-    "pp": 7145.5,
-    "n": 2,
-    "tg_min": 91.03,
-    "tg_max": 119.61,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/1"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Qwen2.5 14B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 14.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 49.1,
-    "pp": 3506.2,
-    "n": 3,
-    "tg_min": 31.57,
-    "tg_max": 68.84,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/2"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Llama 3.2 1B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 1.5,
-    "active_b": null,
-    "moe": false,
-    "tg": 292.02,
-    "pp": 22429.5,
-    "n": 2,
-    "tg_min": 202.31,
-    "tg_max": 381.74,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/3"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "gpt-oss 20B",
-    "site_id": "openai/gpt-oss-20b",
-    "qclass": "Q4",
-    "params_b": 20.91,
-    "active_b": 3.6,
-    "moe": true,
-    "tg": 254.07,
-    "pp": 10346.0,
-    "n": 11,
-    "tg_min": 221.95,
-    "tg_max": 277.95,
-    "sources": [
-     {
-      "id": "llamacpp-discussion-15396",
-      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
-     },
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 12.1,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-16"
-   },
-   {
-    "model": "Llama 3.1 8B",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 8.03,
-    "active_b": null,
-    "moe": false,
-    "tg": 150.85,
-    "pp": null,
-    "n": 1,
-    "tg_min": 150.85,
-    "tg_max": 150.85,
-    "sources": [
-     {
-      "id": "hf-steven0226-speculative-decoding-bench-rtx4090",
-      "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090"
-     }
-    ],
-    "size_gb": null,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-07-13"
-   },
-   {
-    "model": "Qwen3-14B",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 14.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 83.89,
-    "pp": null,
-    "n": 1,
-    "tg_min": 83.89,
-    "tg_max": 83.89,
-    "sources": [
-     {
-      "id": "hf-steven0226-speculative-decoding-bench-rtx4090",
-      "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090"
-     }
-    ],
-    "size_gb": null,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-07-13"
-   },
-   {
-    "model": "Qwen3-8B",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 8.19,
-    "active_b": null,
-    "moe": false,
-    "tg": 133.34,
-    "pp": null,
-    "n": 2,
-    "tg_min": 126.3,
-    "tg_max": 140.38,
-    "sources": [
-     {
-      "id": "hf-steven0226-speculative-decoding-bench-rtx4090",
-      "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090"
-     }
-    ],
-    "size_gb": null,
-    "backends": [
-     "CUDA",
-     "LM Studio(CUDA)"
-    ],
-    "latest": "2026-07-13"
-   },
-   {
-    "model": "Qwen3-8B",
-    "site_id": null,
-    "qclass": "Q8",
-    "params_b": 8.19,
-    "active_b": null,
-    "moe": false,
-    "tg": 90.08,
-    "pp": null,
-    "n": 1,
-    "tg_min": 90.08,
-    "tg_max": 90.08,
-    "sources": [
-     {
-      "id": "hf-steven0226-speculative-decoding-bench-rtx4090",
-      "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090"
-     }
-    ],
-    "size_gb": null,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-07-13"
+    "latest": "2026-10-25"
    },
    {
     "model": "Gemma 4 12B",
@@ -2578,6 +2387,34 @@
    {
     "model": "gpt-oss 20B",
     "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 254.07,
+    "pp": 10346.0,
+    "n": 11,
+    "tg_min": 221.95,
+    "tg_max": 277.95,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     },
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
     "qclass": "Q8",
     "params_b": 20.91,
     "active_b": 3.6,
@@ -2646,6 +2483,169 @@
      "CUDA"
     ],
     "latest": "2026-10-26"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 105.32,
+    "pp": 7145.5,
+    "n": 2,
+    "tg_min": 91.03,
+    "tg_max": 119.61,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 49.1,
+    "pp": 3506.2,
+    "n": 3,
+    "tg_min": 31.57,
+    "tg_max": 68.84,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 292.02,
+    "pp": 22429.5,
+    "n": 2,
+    "tg_min": 202.31,
+    "tg_max": 381.74,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Llama 3.1 8B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 150.85,
+    "pp": null,
+    "n": 1,
+    "tg_min": 150.85,
+    "tg_max": 150.85,
+    "sources": [
+     {
+      "id": "hf-steven0226-speculative-decoding-bench-rtx4090",
+      "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-07-13"
+   },
+   {
+    "model": "Qwen3-14B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 83.89,
+    "pp": null,
+    "n": 1,
+    "tg_min": 83.89,
+    "tg_max": 83.89,
+    "sources": [
+     {
+      "id": "hf-steven0226-speculative-decoding-bench-rtx4090",
+      "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-07-13"
+   },
+   {
+    "model": "Qwen3-8B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.19,
+    "active_b": null,
+    "moe": false,
+    "tg": 133.34,
+    "pp": null,
+    "n": 2,
+    "tg_min": 126.3,
+    "tg_max": 140.38,
+    "sources": [
+     {
+      "id": "hf-steven0226-speculative-decoding-bench-rtx4090",
+      "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "CUDA",
+     "LM Studio(CUDA)"
+    ],
+    "latest": "2026-07-13"
+   },
+   {
+    "model": "Qwen3-8B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 8.19,
+    "active_b": null,
+    "moe": false,
+    "tg": 90.08,
+    "pp": null,
+    "n": 1,
+    "tg_min": 90.08,
+    "tg_max": 90.08,
+    "sources": [
+     {
+      "id": "hf-steven0226-speculative-decoding-bench-rtx4090",
+      "url": "https://huggingface.co/datasets/steven0226/speculative-decoding-bench-rtx4090"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-07-13"
    }
   ],
   "rtx-5080": [
@@ -2684,250 +2684,7 @@
      "CUDA",
      "Vulkan"
     ],
-    "latest": "2026-10-16"
-   },
-   {
-    "model": "Meta Llama 3.1 8B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 8.03,
-    "active_b": null,
-    "moe": false,
-    "tg": 35.51,
-    "pp": 4045.2,
-    "n": 2,
-    "tg_min": 26.11,
-    "tg_max": 44.91,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/1"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Qwen2.5 14B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 14.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 29.29,
-    "pp": 2256.4,
-    "n": 2,
-    "tg_min": 25.52,
-    "tg_max": 33.06,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/2"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Llama 3.2 1B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 1.5,
-    "active_b": null,
-    "moe": false,
-    "tg": 139.96,
-    "pp": 13260.5,
-    "n": 2,
-    "tg_min": 83.13,
-    "tg_max": 196.79,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/3"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "gpt-oss 20B",
-    "site_id": "openai/gpt-oss-20b",
-    "qclass": "Q4",
-    "params_b": 20.91,
-    "active_b": 3.6,
-    "moe": true,
-    "tg": 187.73,
-    "pp": 9607.5,
-    "n": 11,
-    "tg_min": 178.34,
-    "tg_max": 253.49,
-    "sources": [
-     {
-      "id": "hf-iBlessi-rtx-5080-llm-throughput",
-      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
-     },
-     {
-      "id": "llamacpp-discussion-15396",
-      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
-     },
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 12.1,
-    "backends": [
-     "CUDA",
-     "Ollama(CUDA)"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "qwen2.5-14b",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 14.8,
-    "active_b": null,
-    "moe": false,
-    "tg": 95.62,
-    "pp": 5039.3,
-    "n": 4,
-    "tg_min": 94.48,
-    "tg_max": 97.02,
-    "sources": [
-     {
-      "id": "hf-iBlessi-rtx-5080-llm-throughput",
-      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
-     }
-    ],
-    "size_gb": null,
-    "backends": [
-     "Ollama(CUDA)"
-    ],
-    "latest": "2026-08-12"
-   },
-   {
-    "model": "llama3.2-3b",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 3.2,
-    "active_b": null,
-    "moe": false,
-    "tg": 305.27,
-    "pp": 18041.1,
-    "n": 4,
-    "tg_min": 298.21,
-    "tg_max": 312.89,
-    "sources": [
-     {
-      "id": "hf-iBlessi-rtx-5080-llm-throughput",
-      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
-     }
-    ],
-    "size_gb": null,
-    "backends": [
-     "Ollama(CUDA)"
-    ],
-    "latest": "2026-08-12"
-   },
-   {
-    "model": "qwen2.5-7b",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 7.6,
-    "active_b": null,
-    "moe": false,
-    "tg": 178.22,
-    "pp": 10058.7,
-    "n": 4,
-    "tg_min": 176.61,
-    "tg_max": 180.02,
-    "sources": [
-     {
-      "id": "hf-iBlessi-rtx-5080-llm-throughput",
-      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
-     }
-    ],
-    "size_gb": null,
-    "backends": [
-     "Ollama(CUDA)"
-    ],
-    "latest": "2026-08-12"
-   },
-   {
-    "model": "qwen2.5-coder-7b",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 7.6,
-    "active_b": null,
-    "moe": false,
-    "tg": 172.73,
-    "pp": 9579.2,
-    "n": 4,
-    "tg_min": 171.41,
-    "tg_max": 174.58,
-    "sources": [
-     {
-      "id": "hf-iBlessi-rtx-5080-llm-throughput",
-      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
-     }
-    ],
-    "size_gb": null,
-    "backends": [
-     "Ollama(CUDA)"
-    ],
-    "latest": "2026-08-26"
-   },
-   {
-    "model": "qwen2.5-coder-14b",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 14.8,
-    "active_b": null,
-    "moe": false,
-    "tg": 94.14,
-    "pp": 4925.8,
-    "n": 4,
-    "tg_min": 93.41,
-    "tg_max": 94.89,
-    "sources": [
-     {
-      "id": "hf-iBlessi-rtx-5080-llm-throughput",
-      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
-     }
-    ],
-    "size_gb": null,
-    "backends": [
-     "Ollama(CUDA)"
-    ],
-    "latest": "2026-08-26"
-   },
-   {
-    "model": "devstral-24b",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 23.6,
-    "active_b": null,
-    "moe": false,
-    "tg": 35.61,
-    "pp": 7356.1,
-    "n": 2,
-    "tg_min": 34.9,
-    "tg_max": 36.32,
-    "sources": [
-     {
-      "id": "hf-iBlessi-rtx-5080-llm-throughput",
-      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
-     }
-    ],
-    "size_gb": null,
-    "backends": [
-     "Ollama(CUDA)"
-    ],
-    "latest": "2026-08-26"
+    "latest": "2026-10-25"
    },
    {
     "model": "Gemma 4 12B",
@@ -3148,6 +2905,39 @@
    {
     "model": "gpt-oss 20B",
     "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 187.73,
+    "pp": 9607.5,
+    "n": 11,
+    "tg_min": 178.34,
+    "tg_max": 253.49,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     },
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     },
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "CUDA",
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
     "qclass": "Q8",
     "params_b": 20.91,
     "active_b": 3.6,
@@ -3168,6 +2958,216 @@
      "CUDA"
     ],
     "latest": "2026-10-17"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 43.95,
+    "pp": 4195.2,
+    "n": 2,
+    "tg_min": 43.0,
+    "tg_max": 44.91,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 29.29,
+    "pp": 2256.4,
+    "n": 2,
+    "tg_min": 25.52,
+    "tg_max": 33.06,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 145.76,
+    "pp": 13613.7,
+    "n": 2,
+    "tg_min": 94.73,
+    "tg_max": 196.79,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "qwen2.5-14b",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.8,
+    "active_b": null,
+    "moe": false,
+    "tg": 95.62,
+    "pp": 5039.3,
+    "n": 4,
+    "tg_min": 94.48,
+    "tg_max": 97.02,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-08-12"
+   },
+   {
+    "model": "llama3.2-3b",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 3.2,
+    "active_b": null,
+    "moe": false,
+    "tg": 305.27,
+    "pp": 18041.1,
+    "n": 4,
+    "tg_min": 298.21,
+    "tg_max": 312.89,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-08-12"
+   },
+   {
+    "model": "qwen2.5-7b",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 7.6,
+    "active_b": null,
+    "moe": false,
+    "tg": 178.22,
+    "pp": 10058.7,
+    "n": 4,
+    "tg_min": 176.61,
+    "tg_max": 180.02,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-08-12"
+   },
+   {
+    "model": "qwen2.5-coder-7b",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 7.6,
+    "active_b": null,
+    "moe": false,
+    "tg": 172.73,
+    "pp": 9579.2,
+    "n": 4,
+    "tg_min": 171.41,
+    "tg_max": 174.58,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-08-26"
+   },
+   {
+    "model": "qwen2.5-coder-14b",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.8,
+    "active_b": null,
+    "moe": false,
+    "tg": 94.14,
+    "pp": 4925.8,
+    "n": 4,
+    "tg_min": 93.41,
+    "tg_max": 94.89,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-08-26"
+   },
+   {
+    "model": "devstral-24b",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 23.6,
+    "active_b": null,
+    "moe": false,
+    "tg": 35.61,
+    "pp": 7356.1,
+    "n": 2,
+    "tg_min": 34.9,
+    "tg_max": 36.32,
+    "sources": [
+     {
+      "id": "hf-iBlessi-rtx-5080-llm-throughput",
+      "url": "https://huggingface.co/datasets/iBlessi/rtx-5080-llm-throughput"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Ollama(CUDA)"
+    ],
+    "latest": "2026-08-26"
    }
   ],
   "rtx-5070ti": [
@@ -3206,101 +3206,7 @@
      "CUDA",
      "Vulkan"
     ],
-    "latest": "2026-10-16"
-   },
-   {
-    "model": "Meta Llama 3.1 8B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 8.03,
-    "active_b": null,
-    "moe": false,
-    "tg": 50.12,
-    "pp": 3115.7,
-    "n": 2,
-    "tg_min": 34.69,
-    "tg_max": 65.54,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/1"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Qwen2.5 14B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 14.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 31.29,
-    "pp": 1993.7,
-    "n": 2,
-    "tg_min": 25.6,
-    "tg_max": 36.97,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/2"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Llama 3.2 1B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 1.5,
-    "active_b": null,
-    "moe": false,
-    "tg": 145.25,
-    "pp": 12339.0,
-    "n": 2,
-    "tg_min": 92.78,
-    "tg_max": 197.71,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/3"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "gpt-oss 20B",
-    "site_id": "openai/gpt-oss-20b",
-    "qclass": "Q4",
-    "params_b": 20.91,
-    "active_b": 3.6,
-    "moe": true,
-    "tg": 189.46,
-    "pp": 6339.8,
-    "n": 3,
-    "tg_min": 189.45,
-    "tg_max": 236.89,
-    "sources": [
-     {
-      "id": "llamacpp-discussion-15396",
-      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
-     },
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 12.1,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
+    "latest": "2026-10-25"
    },
    {
     "model": "Gemma 4 12B",
@@ -3521,6 +3427,34 @@
    {
     "model": "gpt-oss 20B",
     "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 189.46,
+    "pp": 6339.8,
+    "n": 3,
+    "tg_min": 189.45,
+    "tg_max": 236.89,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     },
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
     "qclass": "Q8",
     "params_b": 20.91,
     "active_b": 3.6,
@@ -3541,6 +3475,72 @@
      "CUDA"
     ],
     "latest": "2026-10-17"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 50.12,
+    "pp": 3115.7,
+    "n": 2,
+    "tg_min": 34.69,
+    "tg_max": 65.54,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 31.29,
+    "pp": 1993.7,
+    "n": 2,
+    "tg_min": 25.6,
+    "tg_max": 36.97,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 145.25,
+    "pp": 12339.0,
+    "n": 2,
+    "tg_min": 92.78,
+    "tg_max": 197.71,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
    }
   ],
   "rtx-3090": [
@@ -3580,101 +3580,7 @@
      "ROCm",
      "Vulkan"
     ],
-    "latest": "2026-10-16"
-   },
-   {
-    "model": "Meta Llama 3.1 8B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 8.03,
-    "active_b": null,
-    "moe": false,
-    "tg": 96.28,
-    "pp": 3549.6,
-    "n": 1,
-    "tg_min": 96.28,
-    "tg_max": 96.28,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/1"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Qwen2.5 14B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 14.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 56.19,
-    "pp": 1950.0,
-    "n": 1,
-    "tg_min": 56.19,
-    "tg_max": 56.19,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/2"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Llama 3.2 1B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 1.5,
-    "active_b": null,
-    "moe": false,
-    "tg": 269.93,
-    "pp": 13482.3,
-    "n": 1,
-    "tg_min": 269.93,
-    "tg_max": 269.93,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/3"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "gpt-oss 20B",
-    "site_id": "openai/gpt-oss-20b",
-    "qclass": "Q4",
-    "params_b": 20.91,
-    "active_b": 3.6,
-    "moe": true,
-    "tg": 189.45,
-    "pp": 6091.6,
-    "n": 16,
-    "tg_min": 111.51,
-    "tg_max": 282.51,
-    "sources": [
-     {
-      "id": "llamacpp-discussion-15396",
-      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
-     },
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 12.1,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-16"
+    "latest": "2026-10-25"
    },
    {
     "model": "Gemma 4 12B",
@@ -4015,6 +3921,34 @@
    {
     "model": "gpt-oss 20B",
     "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 189.45,
+    "pp": 6091.6,
+    "n": 16,
+    "tg_min": 111.51,
+    "tg_max": 282.51,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15396",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15396"
+     },
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
     "qclass": "Q8",
     "params_b": 20.91,
     "active_b": 3.6,
@@ -4083,6 +4017,72 @@
      "CUDA"
     ],
     "latest": "2026-10-26"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 96.28,
+    "pp": 3549.6,
+    "n": 1,
+    "tg_min": 96.28,
+    "tg_max": 96.28,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 56.24,
+    "pp": 1950.0,
+    "n": 1,
+    "tg_min": 56.24,
+    "tg_max": 56.24,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 269.93,
+    "pp": 13482.3,
+    "n": 1,
+    "tg_min": 269.93,
+    "tg_max": 269.93,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
    }
   ],
   "rtx-5070": [
@@ -4109,72 +4109,6 @@
      "CUDA"
     ],
     "latest": "2026-10-16"
-   },
-   {
-    "model": "Meta Llama 3.1 8B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 8.03,
-    "active_b": null,
-    "moe": false,
-    "tg": 55.92,
-    "pp": 2927.1,
-    "n": 1,
-    "tg_min": 55.92,
-    "tg_max": 55.92,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/1"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Qwen2.5 14B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 14.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 33.25,
-    "pp": 1511.1,
-    "n": 2,
-    "tg_min": 20.82,
-    "tg_max": 45.69,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/2"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Llama 3.2 1B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 1.5,
-    "active_b": null,
-    "moe": false,
-    "tg": 100.65,
-    "pp": 8328.4,
-    "n": 1,
-    "tg_min": 100.65,
-    "tg_max": 100.65,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/3"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
    },
    {
     "model": "Gemma 4 12B",
@@ -4343,6 +4277,428 @@
      "CUDA"
     ],
     "latest": "2026-10-16"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 55.92,
+    "pp": 2927.1,
+    "n": 1,
+    "tg_min": 55.92,
+    "tg_max": 55.92,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 33.25,
+    "pp": 1511.1,
+    "n": 2,
+    "tg_min": 20.82,
+    "tg_max": 45.69,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 100.65,
+    "pp": 8328.4,
+    "n": 1,
+    "tg_min": 100.65,
+    "tg_max": 100.65,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   }
+  ],
+  "rtx-5060ti-16": [
+   {
+    "model": "Llama 2 7B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 6.74,
+    "active_b": null,
+    "moe": false,
+    "tg": 92.2,
+    "pp": 3966.4,
+    "n": 2,
+    "tg_min": 90.94,
+    "tg_max": 93.46,
+    "sources": [
+     {
+      "id": "llamacpp-discussion-15013-scoreboard",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/15013"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-16"
+   },
+   {
+    "model": "Gemma 4 12B",
+    "site_id": "google/gemma-4-12B-it",
+    "qclass": "Q4",
+    "params_b": 11.96,
+    "active_b": null,
+    "moe": false,
+    "tg": 49.05,
+    "pp": 1981.0,
+    "n": 1,
+    "tg_min": 49.05,
+    "tg_max": 49.05,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 7.11,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Gemma 4 12B",
+    "site_id": "google/gemma-4-12B-it",
+    "qclass": "Q8",
+    "params_b": 11.96,
+    "active_b": null,
+    "moe": false,
+    "tg": 30.99,
+    "pp": 2054.9,
+    "n": 1,
+    "tg_min": 30.99,
+    "tg_max": 30.99,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 12.65,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Mistral Small 3.2 24B",
+    "site_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "qclass": "Q4",
+    "params_b": 24.01,
+    "active_b": null,
+    "moe": false,
+    "tg": 27.88,
+    "pp": 1103.9,
+    "n": 1,
+    "tg_min": 27.88,
+    "tg_max": 27.88,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 14.32,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
+    "qclass": "Q4",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 77.69,
+    "pp": 3060.6,
+    "n": 1,
+    "tg_min": 77.69,
+    "tg_max": 77.69,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.03,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
+    "qclass": "Q8",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 49.09,
+    "pp": 3189.4,
+    "n": 1,
+    "tg_min": 49.09,
+    "tg_max": 49.09,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 8.71,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q4",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 107.64,
+    "pp": 4775.9,
+    "n": 1,
+    "tg_min": 107.64,
+    "tg_max": 107.64,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 2.73,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q8",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 79.64,
+    "pp": 4979.8,
+    "n": 1,
+    "tg_min": 79.64,
+    "tg_max": 79.64,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 4.47,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q4",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 70.02,
+    "pp": 2955.1,
+    "n": 1,
+    "tg_min": 70.02,
+    "tg_max": 70.02,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.67,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q8",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 45.91,
+    "pp": 3078.2,
+    "n": 1,
+    "tg_min": 45.91,
+    "tg_max": 45.91,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 9.51,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 134.09,
+    "pp": 5143.6,
+    "n": 1,
+    "tg_min": 134.09,
+    "tg_max": 134.09,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 11.61,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q8",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 125.31,
+    "pp": 5237.0,
+    "n": 1,
+    "tg_min": 125.31,
+    "tg_max": 125.31,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 12.1,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-21"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 51.2,
+    "pp": 2313.6,
+    "n": 1,
+    "tg_min": 51.2,
+    "tg_max": 51.2,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 22.55,
+    "pp": 1283.8,
+    "n": 1,
+    "tg_min": 22.55,
+    "tg_max": 22.55,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 125.93,
+    "pp": 8192.9,
+    "n": 1,
+    "tg_min": 125.93,
+    "tg_max": 125.93,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
    }
   ],
   "rtx-3060-12": [
@@ -4373,72 +4729,6 @@
      "CUDA"
     ],
     "latest": "2026-10-16"
-   },
-   {
-    "model": "Meta Llama 3.1 8B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 8.03,
-    "active_b": null,
-    "moe": false,
-    "tg": 51.28,
-    "pp": 1482.6,
-    "n": 1,
-    "tg_min": 51.28,
-    "tg_max": 51.28,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/1"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Qwen2.5 14B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 14.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 26.58,
-    "pp": 759.5,
-    "n": 1,
-    "tg_min": 26.58,
-    "tg_max": 26.58,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/2"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Llama 3.2 1B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 1.5,
-    "active_b": null,
-    "moe": false,
-    "tg": 184.98,
-    "pp": 6042.3,
-    "n": 1,
-    "tg_min": 184.98,
-    "tg_max": 184.98,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/3"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
    },
    {
     "model": "Gemma 4 12B",
@@ -4607,6 +4897,72 @@
      "CUDA"
     ],
     "latest": "2026-10-16"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 51.28,
+    "pp": 1482.6,
+    "n": 1,
+    "tg_min": 51.28,
+    "tg_max": 51.28,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 26.58,
+    "pp": 759.5,
+    "n": 1,
+    "tg_min": 26.58,
+    "tg_max": 26.58,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 184.98,
+    "pp": 6042.3,
+    "n": 1,
+    "tg_min": 184.98,
+    "tg_max": 184.98,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
    }
   ],
   "dgx-spark": [
@@ -4645,7 +5001,7 @@
      "CUDA",
      "Vulkan"
     ],
-    "latest": "2026-10-16"
+    "latest": "2026-10-25"
    },
    {
     "model": "nemotron_h_moe 31B.A3.5B",
@@ -5045,7 +5401,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -5067,7 +5423,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -5089,7 +5445,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    }
   ],
   "strix-halo": [
@@ -5128,7 +5484,7 @@
      "ROCm",
      "Vulkan"
     ],
-    "latest": "2026-10-02"
+    "latest": "2026-10-25"
    },
    {
     "model": "qwen35moe 122B.A10B",
@@ -5715,7 +6071,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -5737,7 +6093,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -5759,7 +6115,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    }
   ],
   "m4": [
@@ -5927,7 +6283,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -5949,7 +6305,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -5971,7 +6327,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    }
   ],
   "m4-max-32": [
@@ -6067,7 +6423,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -6089,7 +6445,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -6111,7 +6467,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "gpt-oss 20B",
@@ -6220,24 +6576,18 @@
     "moe": false,
     "tg": 71.25,
     "pp": 718.4,
-    "n": 3,
-    "tg_min": 67.37,
-    "tg_max": 75.12,
+    "n": 1,
+    "tg_min": 71.25,
+    "tg_max": 71.25,
     "sources": [
-     {
-      "id": "localscore-latest-runs",
-      "url": "https://www.localscore.ai/latest"
-     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/1"
      }
     ],
     "size_gb": null,
-    "backends": [
-     "llamafile"
-    ],
-    "latest": "2026-10-19"
+    "backends": [],
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -6246,26 +6596,20 @@
     "params_b": 14.77,
     "active_b": null,
     "moe": false,
-    "tg": 41.94,
-    "pp": 422.3,
-    "n": 3,
+    "tg": 39.48,
+    "pp": 391.8,
+    "n": 2,
     "tg_min": 36.87,
     "tg_max": 42.1,
     "sources": [
-     {
-      "id": "localscore-latest-runs",
-      "url": "https://www.localscore.ai/latest"
-     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/2"
      }
     ],
     "size_gb": null,
-    "backends": [
-     "llamafile"
-    ],
-    "latest": "2026-10-19"
+    "backends": [],
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -6276,24 +6620,18 @@
     "moe": false,
     "tg": 261.6,
     "pp": 4307.3,
-    "n": 4,
+    "n": 2,
     "tg_min": 260.52,
     "tg_max": 262.67,
     "sources": [
-     {
-      "id": "localscore-latest-runs",
-      "url": "https://www.localscore.ai/latest"
-     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/3"
      }
     ],
     "size_gb": null,
-    "backends": [
-     "llamafile"
-    ],
-    "latest": "2026-10-19"
+    "backends": [],
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen3.6 35B-A3B",
@@ -6428,7 +6766,7 @@
      "ROCm",
      "Vulkan"
     ],
-    "latest": "2026-10-10"
+    "latest": "2026-10-25"
    },
    {
     "model": "gemma3 27B",
@@ -6548,7 +6886,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -6570,7 +6908,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -6592,7 +6930,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    }
   ],
   "m3-ultra": [
@@ -6623,7 +6961,7 @@
      "Metal",
      "Vulkan"
     ],
-    "latest": "2026-10-10"
+    "latest": "2026-10-25"
    },
    {
     "model": "Meta Llama 3.1 8B Instruct",
@@ -6645,7 +6983,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -6667,7 +7005,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -6689,7 +7027,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "gpt-oss 20B",
@@ -6739,73 +7077,7 @@
     "backends": [
      "Vulkan"
     ],
-    "latest": "2026-10-10"
-   },
-   {
-    "model": "Meta Llama 3.1 8B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 8.03,
-    "active_b": null,
-    "moe": false,
-    "tg": 76.35,
-    "pp": 3192.1,
-    "n": 1,
-    "tg_min": 76.35,
-    "tg_max": 76.35,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/1"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Qwen2.5 14B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 14.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 37.88,
-    "pp": 1691.6,
-    "n": 1,
-    "tg_min": 37.88,
-    "tg_max": 37.88,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/2"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Llama 3.2 1B Instruct",
-    "site_id": null,
-    "qclass": "Q4",
-    "params_b": 1.5,
-    "active_b": null,
-    "moe": false,
-    "tg": 282.97,
-    "pp": 12717.5,
-    "n": 1,
-    "tg_min": 282.97,
-    "tg_max": 282.97,
-    "sources": [
-     {
-      "id": "localscore-model-pages",
-      "url": "https://www.localscore.ai/model/3"
-     }
-    ],
-    "size_gb": null,
-    "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-25"
    },
    {
     "model": "Gemma 4 12B",
@@ -6974,9 +7246,7 @@
      "CUDA"
     ],
     "latest": "2026-10-16"
-   }
-  ],
-  "rtx-4060ti-16": [
+   },
    {
     "model": "Meta Llama 3.1 8B Instruct",
     "site_id": null,
@@ -6984,11 +7254,11 @@
     "params_b": 8.03,
     "active_b": null,
     "moe": false,
-    "tg": 48.32,
-    "pp": 2233.1,
+    "tg": 76.35,
+    "pp": 3192.1,
     "n": 1,
-    "tg_min": 48.32,
-    "tg_max": 48.32,
+    "tg_min": 76.35,
+    "tg_max": 76.35,
     "sources": [
      {
       "id": "localscore-model-pages",
@@ -6997,7 +7267,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -7006,11 +7276,11 @@
     "params_b": 14.77,
     "active_b": null,
     "moe": false,
-    "tg": 25.6,
-    "pp": 1238.6,
+    "tg": 37.88,
+    "pp": 1691.6,
     "n": 1,
-    "tg_min": 25.6,
-    "tg_max": 25.6,
+    "tg_min": 37.88,
+    "tg_max": 37.88,
     "sources": [
      {
       "id": "localscore-model-pages",
@@ -7019,7 +7289,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7028,11 +7298,11 @@
     "params_b": 1.5,
     "active_b": null,
     "moe": false,
-    "tg": 210.6,
-    "pp": 9225.4,
+    "tg": 282.97,
+    "pp": 12717.5,
     "n": 1,
-    "tg_min": 210.6,
-    "tg_max": 210.6,
+    "tg_min": 282.97,
+    "tg_max": 282.97,
     "sources": [
      {
       "id": "localscore-model-pages",
@@ -7041,8 +7311,152 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
+   }
+  ],
+  "rtx-4060": [
+   {
+    "model": "Qwen3-VL 8B",
+    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
+    "qclass": "Q4",
+    "params_b": 8.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 51.27,
+    "pp": 2444.8,
+    "n": 1,
+    "tg_min": 51.27,
+    "tg_max": 51.27,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.03,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
    },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q4",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 77.36,
+    "pp": 3695.1,
+    "n": 1,
+    "tg_min": 77.36,
+    "tg_max": 77.36,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 2.73,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3.5 4B",
+    "site_id": "Qwen/Qwen3.5-4B",
+    "qclass": "Q8",
+    "params_b": 4.66,
+    "active_b": null,
+    "moe": false,
+    "tg": 51.32,
+    "pp": 3948.3,
+    "n": 1,
+    "tg_min": 51.32,
+    "tg_max": 51.32,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 4.47,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Qwen3.5 9B",
+    "site_id": "Qwen/Qwen3.5-9B",
+    "qclass": "Q4",
+    "params_b": 9.65,
+    "active_b": null,
+    "moe": false,
+    "tg": 45.62,
+    "pp": 2283.0,
+    "n": 1,
+    "tg_min": 45.62,
+    "tg_max": 45.62,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 5.67,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-17"
+   },
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 38.3,
+    "pp": 1544.2,
+    "n": 1,
+    "tg_min": 38.3,
+    "tg_max": 38.3,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 133.72,
+    "pp": 5352.5,
+    "n": 1,
+    "tg_min": 133.72,
+    "tg_max": 133.72,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
+   }
+  ],
+  "rtx-4060ti-16": [
    {
     "model": "Gemma 4 12B",
     "site_id": "google/gemma-4-12B-it",
@@ -7306,9 +7720,7 @@
      "CUDA"
     ],
     "latest": "2026-10-16"
-   }
-  ],
-  "rtx-4060": [
+   },
    {
     "model": "Meta Llama 3.1 8B Instruct",
     "site_id": null,
@@ -7316,11 +7728,11 @@
     "params_b": 8.03,
     "active_b": null,
     "moe": false,
-    "tg": 38.3,
-    "pp": 1544.2,
+    "tg": 48.32,
+    "pp": 2233.1,
     "n": 1,
-    "tg_min": 38.3,
-    "tg_max": 38.3,
+    "tg_min": 48.32,
+    "tg_max": 48.32,
     "sources": [
      {
       "id": "localscore-model-pages",
@@ -7329,7 +7741,29 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 25.6,
+    "pp": 1238.6,
+    "n": 1,
+    "tg_min": 25.6,
+    "tg_max": 25.6,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7338,11 +7772,11 @@
     "params_b": 1.5,
     "active_b": null,
     "moe": false,
-    "tg": 133.72,
-    "pp": 5352.5,
+    "tg": 210.6,
+    "pp": 9225.4,
     "n": 1,
-    "tg_min": 133.72,
-    "tg_max": 133.72,
+    "tg_min": 210.6,
+    "tg_max": 210.6,
     "sources": [
      {
       "id": "localscore-model-pages",
@@ -7351,103 +7785,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
-   },
-   {
-    "model": "Qwen3-VL 8B",
-    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
-    "qclass": "Q4",
-    "params_b": 8.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 51.27,
-    "pp": 2444.8,
-    "n": 1,
-    "tg_min": 51.27,
-    "tg_max": 51.27,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 5.03,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Qwen3.5 4B",
-    "site_id": "Qwen/Qwen3.5-4B",
-    "qclass": "Q4",
-    "params_b": 4.66,
-    "active_b": null,
-    "moe": false,
-    "tg": 77.36,
-    "pp": 3695.1,
-    "n": 1,
-    "tg_min": 77.36,
-    "tg_max": 77.36,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 2.73,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Qwen3.5 4B",
-    "site_id": "Qwen/Qwen3.5-4B",
-    "qclass": "Q8",
-    "params_b": 4.66,
-    "active_b": null,
-    "moe": false,
-    "tg": 51.32,
-    "pp": 3948.3,
-    "n": 1,
-    "tg_min": 51.32,
-    "tg_max": 51.32,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 4.47,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
-   },
-   {
-    "model": "Qwen3.5 9B",
-    "site_id": "Qwen/Qwen3.5-9B",
-    "qclass": "Q4",
-    "params_b": 9.65,
-    "active_b": null,
-    "moe": false,
-    "tg": 45.62,
-    "pp": 2283.0,
-    "n": 1,
-    "tg_min": 45.62,
-    "tg_max": 45.62,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 5.67,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-17"
+    "latest": "2026-10-26"
    }
   ],
   "m5-max-32": [
@@ -7471,7 +7809,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -7493,7 +7831,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7515,7 +7853,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    }
   ],
   "m4-max-40": [
@@ -7539,7 +7877,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -7561,7 +7899,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7583,7 +7921,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "minicpm-v47 35B-A3B",
@@ -7631,7 +7969,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -7653,7 +7991,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7675,7 +8013,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    }
   ],
   "m4-pro": [
@@ -7699,7 +8037,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -7721,7 +8059,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7743,7 +8081,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    }
   ],
   "m6": [
@@ -7767,7 +8105,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    }
   ],
   "m5": [
@@ -7791,7 +8129,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -7813,7 +8151,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
+    "latest": "2026-10-26"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7835,273 +8173,7 @@
     ],
     "size_gb": null,
     "backends": [],
-    "latest": "2026-10-19"
-   }
-  ],
-  "rtx-5060ti-16": [
-   {
-    "model": "Gemma 4 12B",
-    "site_id": "google/gemma-4-12B-it",
-    "qclass": "Q4",
-    "params_b": 11.96,
-    "active_b": null,
-    "moe": false,
-    "tg": 49.05,
-    "pp": 1981.0,
-    "n": 1,
-    "tg_min": 49.05,
-    "tg_max": 49.05,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 7.11,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-21"
-   },
-   {
-    "model": "Gemma 4 12B",
-    "site_id": "google/gemma-4-12B-it",
-    "qclass": "Q8",
-    "params_b": 11.96,
-    "active_b": null,
-    "moe": false,
-    "tg": 30.99,
-    "pp": 2054.9,
-    "n": 1,
-    "tg_min": 30.99,
-    "tg_max": 30.99,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 12.65,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-21"
-   },
-   {
-    "model": "Mistral Small 3.2 24B",
-    "site_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-    "qclass": "Q4",
-    "params_b": 24.01,
-    "active_b": null,
-    "moe": false,
-    "tg": 27.88,
-    "pp": 1103.9,
-    "n": 1,
-    "tg_min": 27.88,
-    "tg_max": 27.88,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 14.32,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-21"
-   },
-   {
-    "model": "Qwen3-VL 8B",
-    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
-    "qclass": "Q4",
-    "params_b": 8.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 77.69,
-    "pp": 3060.6,
-    "n": 1,
-    "tg_min": 77.69,
-    "tg_max": 77.69,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 5.03,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-21"
-   },
-   {
-    "model": "Qwen3-VL 8B",
-    "site_id": "Qwen/Qwen3-VL-8B-Instruct",
-    "qclass": "Q8",
-    "params_b": 8.77,
-    "active_b": null,
-    "moe": false,
-    "tg": 49.09,
-    "pp": 3189.4,
-    "n": 1,
-    "tg_min": 49.09,
-    "tg_max": 49.09,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 8.71,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-21"
-   },
-   {
-    "model": "Qwen3.5 4B",
-    "site_id": "Qwen/Qwen3.5-4B",
-    "qclass": "Q4",
-    "params_b": 4.66,
-    "active_b": null,
-    "moe": false,
-    "tg": 107.64,
-    "pp": 4775.9,
-    "n": 1,
-    "tg_min": 107.64,
-    "tg_max": 107.64,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 2.73,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-21"
-   },
-   {
-    "model": "Qwen3.5 4B",
-    "site_id": "Qwen/Qwen3.5-4B",
-    "qclass": "Q8",
-    "params_b": 4.66,
-    "active_b": null,
-    "moe": false,
-    "tg": 79.64,
-    "pp": 4979.8,
-    "n": 1,
-    "tg_min": 79.64,
-    "tg_max": 79.64,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 4.47,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-21"
-   },
-   {
-    "model": "Qwen3.5 9B",
-    "site_id": "Qwen/Qwen3.5-9B",
-    "qclass": "Q4",
-    "params_b": 9.65,
-    "active_b": null,
-    "moe": false,
-    "tg": 70.02,
-    "pp": 2955.1,
-    "n": 1,
-    "tg_min": 70.02,
-    "tg_max": 70.02,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 5.67,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-21"
-   },
-   {
-    "model": "Qwen3.5 9B",
-    "site_id": "Qwen/Qwen3.5-9B",
-    "qclass": "Q8",
-    "params_b": 9.65,
-    "active_b": null,
-    "moe": false,
-    "tg": 45.91,
-    "pp": 3078.2,
-    "n": 1,
-    "tg_min": 45.91,
-    "tg_max": 45.91,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 9.51,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-21"
-   },
-   {
-    "model": "gpt-oss 20B",
-    "site_id": "openai/gpt-oss-20b",
-    "qclass": "Q4",
-    "params_b": 20.91,
-    "active_b": 3.6,
-    "moe": true,
-    "tg": 134.09,
-    "pp": 5143.6,
-    "n": 1,
-    "tg_min": 134.09,
-    "tg_max": 134.09,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 11.61,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-21"
-   },
-   {
-    "model": "gpt-oss 20B",
-    "site_id": "openai/gpt-oss-20b",
-    "qclass": "Q8",
-    "params_b": 20.91,
-    "active_b": 3.6,
-    "moe": true,
-    "tg": 125.31,
-    "pp": 5237.0,
-    "n": 1,
-    "tg_min": 125.31,
-    "tg_max": 125.31,
-    "sources": [
-     {
-      "id": "own-measurement",
-      "url": "https://github.com/mattgrandy/local-llm-advisor"
-     }
-    ],
-    "size_gb": 12.1,
-    "backends": [
-     "CUDA"
-    ],
-    "latest": "2026-10-21"
+    "latest": "2026-10-26"
    }
   ]
  },
@@ -8154,6 +8226,12 @@
     "p25": 0.609,
     "p75": 0.885
    },
+   "rtx-5060ti-16": {
+    "efficiency": 0.88,
+    "n": 12,
+    "p25": 0.829,
+    "p75": 0.922
+   },
    "rtx-3060-12": {
     "efficiency": 0.859,
     "n": 12,
@@ -8185,10 +8263,10 @@
     "p75": 0.841
    },
    "m5-max-40": {
-    "efficiency": 0.614,
-    "n": 11,
-    "p25": 0.565,
-    "p75": 0.792
+    "efficiency": 0.766,
+    "n": 8,
+    "p25": 0.614,
+    "p75": 0.808
    },
    "rx-7900xtx": {
     "efficiency": 0.607,
@@ -8208,17 +8286,17 @@
     "p25": 0.742,
     "p75": 0.946
    },
-   "rtx-4060ti-16": {
-    "efficiency": 0.949,
-    "n": 10,
-    "p25": 0.892,
-    "p75": 1.001
-   },
    "rtx-4060": {
     "efficiency": 0.958,
     "n": 4,
     "p25": 0.934,
     "p75": 1.002
+   },
+   "rtx-4060ti-16": {
+    "efficiency": 0.949,
+    "n": 10,
+    "p25": 0.892,
+    "p75": 1.001
    },
    "m4-max-40": {
     "efficiency": 0.473,
@@ -8243,26 +8321,20 @@
     "n": 5,
     "p25": 0.637,
     "p75": 0.675
-   },
-   "rtx-5060ti-16": {
-    "efficiency": 0.91,
-    "n": 8,
-    "p25": 0.88,
-    "p75": 1.021
    }
   },
   "by_kind": {
    "gpu": {
     "efficiency": 0.69,
-    "n": 527
+    "n": 531
    },
    "unified": {
     "efficiency": 0.798,
     "n": 109
    },
    "apple": {
-    "efficiency": 0.619,
-    "n": 71
+    "efficiency": 0.629,
+    "n": 68
    }
   },
   "method": "efficiency = measured_tg / (memory_bandwidth_GBps / read_GB); dense models only; read_GB = params*bits_per_weight/8 >= 3.0 GB; single-device; median; per-hardware factor needs >= 3 rows, else per-kind median, else the global assumption.",
@@ -8306,7 +8378,7 @@
  "counts": {
   "rows_used": 958,
   "hardware": 25,
-  "points": 332,
+  "points": 336,
   "community": 0
  }
 }

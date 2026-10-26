@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20",
+ "generated": "2026-10-26",
  "models": [
   {
    "id": "google/gemma-4-26B-A4B-it",
@@ -44,7 +44,7 @@
    },
    "source_url": "https://huggingface.co/google/gemma-4-26B-A4B-it",
    "gguf_source_url": "https://huggingface.co/unsloth/gemma-4-26B-A4B-it-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "active_params_b": 3.8,
    "active_source": "model card text on source_url",
    "mlx": {
@@ -70,7 +70,7 @@
       "url": "https://huggingface.co/mlx-community/gemma-4-26b-a4b-it-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name google/gemma-4-26B-A4B-it as its base model"
    }
   },
@@ -117,7 +117,7 @@
    },
    "source_url": "https://huggingface.co/google/gemma-4-31B-it",
    "gguf_source_url": "https://huggingface.co/unsloth/gemma-4-31B-it-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "mlx": {
     "repos": [
      {
@@ -141,7 +141,7 @@
       "url": "https://huggingface.co/mlx-community/gemma-4-31b-it-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name google/gemma-4-31B-it as its base model"
    }
   },
@@ -187,10 +187,10 @@
    },
    "source_url": "https://huggingface.co/google/gemma-4-12B-it",
    "gguf_source_url": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "mlx": {
     "repos": [],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name google/gemma-4-12B-it as its base model"
    }
   },
@@ -236,7 +236,7 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3.6-27B",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.6-27B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "context_native": 262144,
    "context_extended": {
     "max": 1010000,
@@ -269,7 +269,7 @@
       "url": "https://huggingface.co/mlx-community/Qwen3.6-27B-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3.6-27B as its base model"
    }
   },
@@ -315,7 +315,7 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "context_native": 262144,
    "context_extended": {
     "max": 1010000,
@@ -350,7 +350,7 @@
       "url": "https://huggingface.co/mlx-community/Qwen3.6-35B-A3B-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3.6-35B-A3B as its base model"
    }
   },
@@ -396,7 +396,7 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3.5-9B",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "context_native": 262144,
    "context_extended": {
     "max": 1010000,
@@ -429,7 +429,7 @@
       "url": "https://huggingface.co/mlx-community/Qwen3.5-9B-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3.5-9B as its base model"
    }
   },
@@ -474,7 +474,7 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3.5-4B",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "context_native": 262144,
    "context_extended": {
     "max": 1010000,
@@ -507,7 +507,7 @@
       "url": "https://huggingface.co/mlx-community/Qwen3.5-4B-MLX-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3.5-4B as its base model"
    }
   },
@@ -554,7 +554,7 @@
    },
    "source_url": "https://huggingface.co/openai/gpt-oss-20b",
    "gguf_source_url": "https://huggingface.co/unsloth/gpt-oss-20b-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "active_params_b": 3.6,
    "active_source": "model card text on source_url",
    "mlx": {
@@ -580,7 +580,7 @@
       "url": "https://huggingface.co/mlx-community/gpt-oss-20b-MXFP4-Q8"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name openai/gpt-oss-20b as its base model"
    }
   },
@@ -627,7 +627,7 @@
    },
    "source_url": "https://huggingface.co/openai/gpt-oss-120b",
    "gguf_source_url": "https://huggingface.co/unsloth/gpt-oss-120b-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "active_params_b": 5.1,
    "active_source": "model card text on source_url",
    "mlx": {
@@ -653,7 +653,7 @@
       "url": "https://huggingface.co/mlx-community/gpt-oss-120b-MXFP4-Q8"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name openai/gpt-oss-120b as its base model"
    }
   },
@@ -695,7 +695,7 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "context_native": 262144,
    "context_extended": {
     "max": 1000000,
@@ -730,7 +730,7 @@
       "url": "https://huggingface.co/mlx-community/Qwen3-Coder-30B-A3B-Instruct-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3-Coder-30B-A3B-Instruct as its base model"
    }
   },
@@ -772,7 +772,7 @@
    },
    "source_url": "https://huggingface.co/mistralai/Mistral-Small-3.2-24B-Instruct-2506",
    "gguf_source_url": "https://huggingface.co/unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "mlx": {
     "repos": [
      {
@@ -796,7 +796,7 @@
       "url": "https://huggingface.co/mlx-community/Mistral-Small-3.2-24B-Instruct-2506-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name mistralai/Mistral-Small-3.2-24B-Instruct-2506 as its base model"
    }
   },
@@ -836,7 +836,7 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3-VL-8B-Instruct-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "context_native": 262144,
    "context_extended": {
     "max": 1000000,
@@ -869,7 +869,7 @@
       "url": "https://huggingface.co/mlx-community/Qwen3-VL-8B-Instruct-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3-VL-8B-Instruct as its base model"
    }
   },
@@ -912,7 +912,7 @@
    },
    "source_url": "https://huggingface.co/zai-org/GLM-4.5-Air",
    "gguf_source_url": "https://huggingface.co/unsloth/GLM-4.5-Air-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "active_params_b": 12,
    "active_source": "model card text on source_url",
    "mlx": {
@@ -938,7 +938,7 @@
       "url": "https://huggingface.co/mlx-community/GLM-4.5-Air-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name zai-org/GLM-4.5-Air as its base model"
    }
   },
@@ -984,7 +984,7 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "context_native": 262144,
    "context_extended": {
     "max": 1000000,
@@ -1017,7 +1017,7 @@
       "url": "https://huggingface.co/mlx-community/Qwen3.8-27B-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3.8-27B as its base model"
    }
   },
@@ -1062,12 +1062,12 @@
    },
    "source_url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
    "gguf_source_url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "active_params_b": 2.45,
    "active_source": "model card text on source_url",
    "mlx": {
     "repos": [],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name LiquidAI/LFM2.5-24B-A2B as its base model"
    }
   },
@@ -1101,12 +1101,12 @@
    },
    "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
    "gguf_source_url": "https://huggingface.co/lmstudio-community/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "active_params_b": 12,
    "active_source": "model card text on source_url",
    "mlx": {
     "repos": [],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16 as its base model"
    }
   },
@@ -1153,7 +1153,7 @@
    },
    "source_url": "https://huggingface.co/google/gemma-4-E4B-it",
    "gguf_source_url": "https://huggingface.co/unsloth/gemma-4-E4B-it-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "mlx": {
     "repos": [
      {
@@ -1177,7 +1177,7 @@
       "url": "https://huggingface.co/mlx-community/gemma-4-e4b-it-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name google/gemma-4-E4B-it as its base model"
    }
   },
@@ -1219,9 +1219,19 @@
    },
    "source_url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
    "gguf_source_url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "active_params_b": 6,
    "active_source": "model card text on source_url (180B stored = 125B language model (6B active per token) + 51B n-gram embedding + 4B MTP layer)",
+   "params_breakdown": {
+    "total_b": 180,
+    "language_model_b": 125,
+    "ngram_embedding_b": 51,
+    "mtp_b": 4,
+    "active_b": 6,
+    "note": "180B stored = 125B language model (6B active per token) + 51B n-gram embedding + 4B MTP layer. The GGUF/MLX files hold all 180B, so memory uses 180B; per-token reads use the 6B active.",
+    "source": "Model card \"Number of Parameters: 125B with 6B activated, plus 51B n-gram embedding and 4B MTP\"; HF safetensors total 179,999,981,459",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+   },
    "mlx": {
     "repos": [
      {
@@ -1235,18 +1245,8 @@
       "url": "https://huggingface.co/mlx-community/Qwen3.8-Flash-Next-4bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Qwen/Qwen3.8-Flash-Next as its base model"
-   },
-   "params_breakdown": {
-    "total_b": 180.0,
-    "language_model_b": 125,
-    "ngram_embedding_b": 51,
-    "mtp_b": 4,
-    "active_b": 6,
-    "note": "180B stored = 125B language model (6B active per token) + 51B n-gram embedding + 4B MTP layer. The GGUF/MLX files hold all 180B, so memory uses 180B; per-token reads use the 6B active.",
-    "source": "Model card \"Number of Parameters: 125B with 6B activated, plus 51B n-gram embedding and 4B MTP\"; HF safetensors total 179,999,981,459",
-    "source_url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
    }
   },
   {
@@ -1291,12 +1291,12 @@
    },
    "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
    "gguf_source_url": "https://huggingface.co/bartowski/nvidia_Nemotron-3-Nano-30B-A3B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "active_params_b": 3.5,
    "active_source": "model card text on source_url",
    "mlx": {
     "repos": [],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16 as its base model"
    }
   },
@@ -1341,10 +1341,10 @@
    },
    "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
    "gguf_source_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Nano-4B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "mlx": {
     "repos": [],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16 as its base model"
    }
   },
@@ -1386,12 +1386,12 @@
    },
    "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
    "gguf_source_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "active_params_b": 3,
    "active_source": "model card text on source_url",
    "mlx": {
     "repos": [],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16 as its base model"
    }
   },
@@ -1435,7 +1435,7 @@
    },
    "source_url": "https://huggingface.co/zai-org/GLM-4.7-Flash",
    "gguf_source_url": "https://huggingface.co/unsloth/GLM-4.7-Flash-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "active_params_b": 3,
    "active_source": "model card text on source_url",
    "mlx": {
@@ -1461,7 +1461,7 @@
       "url": "https://huggingface.co/mlx-community/GLM-4.7-Flash-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name zai-org/GLM-4.7-Flash as its base model"
    }
   },
@@ -1506,10 +1506,10 @@
    },
    "source_url": "https://huggingface.co/ornith-ai/Ornith-1.5-9B",
    "gguf_source_url": "https://huggingface.co/bartowski/Ornith-1.5-9B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "mlx": {
     "repos": [],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name ornith-ai/Ornith-1.5-9B as its base model"
    }
   },
@@ -1555,7 +1555,7 @@
    },
    "source_url": "https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B",
    "gguf_source_url": "https://huggingface.co/bartowski/Ornith-1.5-35B-A3B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "active_params_b": 3,
    "active_source": "model card text on source_url",
    "mlx": {
@@ -1571,7 +1571,7 @@
       "url": "https://huggingface.co/mlx-community/Ornith-1.5-35B-A3B-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name ornith-ai/Ornith-1.5-35B-A3B as its base model"
    }
   },
@@ -1613,7 +1613,7 @@
    },
    "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
    "gguf_source_url": "https://huggingface.co/unsloth/DeepSeek-R1-Distill-Qwen-7B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "mlx": {
     "repos": [
      {
@@ -1637,7 +1637,7 @@
       "url": "https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-7B-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name deepseek-ai/DeepSeek-R1-Distill-Qwen-7B as its base model"
    }
   },
@@ -1680,7 +1680,7 @@
    },
    "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
    "gguf_source_url": "https://huggingface.co/unsloth/DeepSeek-R1-Distill-Qwen-32B-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "mlx": {
     "repos": [
      {
@@ -1704,7 +1704,7 @@
       "url": "https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-32B-MLX-8Bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name deepseek-ai/DeepSeek-R1-Distill-Qwen-32B as its base model"
    }
   },
@@ -1750,7 +1750,7 @@
    },
    "source_url": "https://huggingface.co/poolside/Laguna-XS-2.1",
    "gguf_source_url": "https://huggingface.co/bartowski/Laguna-XS-2.1-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "active_params_b": 3,
    "active_source": "model card text on source_url",
    "mlx": {
@@ -1776,7 +1776,7 @@
       "url": "https://huggingface.co/mlx-community/Laguna-XS-2.1-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name poolside/Laguna-XS-2.1 as its base model"
    }
   },
@@ -1818,7 +1818,7 @@
    },
    "source_url": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct",
    "gguf_source_url": "https://huggingface.co/unsloth/Llama-3.3-70B-Instruct-GGUF",
-   "last_verified": "2026-10-20",
+   "last_verified": "2026-10-26",
    "mlx": {
     "repos": [
      {
@@ -1842,12 +1842,115 @@
       "url": "https://huggingface.co/mlx-community/Llama-3.3-70B-Instruct-8bit"
      }
     ],
-    "checked": "2026-10-20",
+    "checked": "2026-10-26",
     "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name meta-llama/Llama-3.3-70B-Instruct as its base model"
+   }
+  },
+  {
+   "id": "RecursiveSI/flint",
+   "name": "Flint 40B-A2.5B",
+   "params_b": 39.79,
+   "moe": true,
+   "tags": [
+    "coding",
+    "chat"
+   ],
+   "vision": false,
+   "license": "apache-2.0",
+   "context_max": 262144,
+   "kv": {
+    "layers": 49,
+    "full_layers": 14,
+    "full_kv_heads": 4,
+    "full_head_dim": 128,
+    "swa_layers": 35,
+    "swa_kv_heads": 4,
+    "swa_head_dim": 128,
+    "window": 513
+   },
+   "gguf_repo": "unsloth/flint-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "UD-Q4_K_XL",
+     "gb": 25.05
+    },
+    "Q5_K_M": {
+     "label": "UD-Q5_K_XL",
+     "gb": 29.92
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 42.3
+    }
+   },
+   "source_url": "https://huggingface.co/RecursiveSI/flint",
+   "gguf_source_url": "https://huggingface.co/unsloth/flint-GGUF",
+   "last_verified": "2026-10-26",
+   "active_params_b": 2.5,
+   "active_source": "model card text on source_url",
+   "mlx": {
+    "repos": [],
+    "checked": "2026-10-26",
+    "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name RecursiveSI/flint as its base model"
+   }
+  },
+  {
+   "id": "Nanbeige/Nanbeige4.3-33B",
+   "name": "Nanbeige4.3 33B",
+   "params_b": 33.12,
+   "moe": false,
+   "tags": [
+    "coding",
+    "chat"
+   ],
+   "vision": false,
+   "license": "apache-2.0",
+   "context_max": 524288,
+   "kv": {
+    "layers": 52,
+    "full_layers": 52,
+    "full_kv_heads": 8,
+    "full_head_dim": 128
+   },
+   "gguf_repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF",
+   "quants": {
+    "Q4_K_M": {
+     "label": "Q4_K_M",
+     "gb": 20.79
+    },
+    "Q5_K_M": {
+     "label": "Q5_K_M",
+     "gb": 25.07
+    },
+    "Q6_K": {
+     "label": "Q6_K",
+     "gb": 29.02
+    },
+    "Q8_0": {
+     "label": "Q8_0",
+     "gb": 35.2
+    }
+   },
+   "source_url": "https://huggingface.co/Nanbeige/Nanbeige4.3-33B",
+   "gguf_source_url": "https://huggingface.co/bartowski/Nanbeige_Nanbeige4.3-33B-GGUF",
+   "last_verified": "2026-10-26",
+   "mlx": {
+    "repos": [],
+    "checked": "2026-10-26",
+    "source": "Hugging Face API search of the mlx-community organisation; each repo verified to exist, ship .safetensors weights and name Nanbeige/Nanbeige4.3-33B as its base model"
    }
   }
  ],
  "changelog": [
+  {
+   "date": "2026-10-26",
+   "changes": [
+    "added Flint 40B-A2.5B (Recursive; MoE, 39.8B total, about 2.5B active per the model card; Apache-2.0; 262k context; coding-agent model; GGUF from unsloth)",
+    "added Nanbeige4.3 33B (dense 33.1B; Apache-2.0; 512k context; GGUF from bartowski)",
+    "hardware: added NVIDIA RTX Spark N1X 128GB (6144-core Blackwell GPU, 128 GB LPDDR5X unified memory, 256-bit, 300 GB/s per NVIDIA's spec page and porting guide)",
+    "weekly measured-data refresh: LocalScore re-pulled, llama.cpp ROCm/Vulkan scoreboards and active performance threads re-fetched (336 measured points, was 332)"
+   ]
+  },
   {
    "date": "2026-10-20",
    "changes": [

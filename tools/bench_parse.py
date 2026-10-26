@@ -34,6 +34,7 @@ def normalize_device(raw, mem_gb=None, gpu_cores=None):
         else: hid = base
         return (hid, hid if hid in HW_IDS else '')
     if re.search(r'gb10|dgx spark', l): return ('dgx-spark', 'dgx-spark')
+    if re.search(r'\bn1x\b|rtx spark', l): return ('rtx-spark-n1x', 'rtx-spark-n1x')
     if re.search(r'8060s|ai max\+? ?(pro )?395|strix halo', l): return ('strix-halo', 'strix-halo')
     if not mob:
         mem = float(mem_gb) if mem_gb else None

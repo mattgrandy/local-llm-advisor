@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-21",
+  "generated": "2026-10-26",
   "gpus": [
     {
       "id": "rtx-3060-12",
@@ -260,6 +260,17 @@
       "source_url": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-400-series/amd-ryzen-ai-max-plus-pro-495.html",
       "basis": "AMD page: 256-bit LPDDR5x-8533, max 192 GB, Radeon 8065S; 256 bit x 8533 MT/s / 8 = 273.1 GB/s (computed). AMD blog 2026-10-12 (https://www.amd.com/en/blogs/2026/meet-the-next-amd-ryzen-ai-halo.html): Ryzen AI Halo with up to 192 GB unified memory, up to 160 GB allocatable to the GPU, orderable from Micro Center.",
       "last_verified": "2026-10-19"
+    },
+    {
+      "id": "rtx-spark-n1x",
+      "name": "NVIDIA RTX Spark N1X (6144-core GPU)",
+      "bandwidth_gbps": 300,
+      "memory_options_gb": [
+        128
+      ],
+      "source_url": "https://docs.nvidia.com/rtx-spark/rtx-spark-porting-guide/latest/overview.html",
+      "basis": "NVIDIA RTX Spark porting guide: up to 128 GB LPDDR5X, 256-bit, 300 GB/s; spec page https://www.nvidia.com/en-us/products/rtx-spark/specifications/ lists the 6144-core N1X laptop/desktop with up to 128GB",
+      "last_verified": "2026-10-26"
     }
   ],
   "ram_types": [
@@ -612,6 +623,17 @@
       "device": "rtx-5060ti-16",
       "count": 1,
       "memory_gb": null,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
+      "slug": "rtx-spark-n1x-128gb",
+      "title": "NVIDIA RTX Spark N1X 128GB",
+      "kind": "unified",
+      "device": "rtx-spark-n1x",
+      "count": 1,
+      "memory_gb": 128,
       "ram_gb": 32,
       "ram_type": "ddr5-5600",
       "note": ""

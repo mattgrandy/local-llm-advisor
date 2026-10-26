@@ -257,7 +257,7 @@ console.log("ALL TESTS PASSED");
   // can-run
   const cr = fs7.readdirSync(p7.join(root, "can-run")).filter(f => f !== "index.html"); assert(cr.length >= 40 && cr.length <= 80, "can-run 40..80 pages (72 + up to 8 release pairs): " + cr.length);
   const csigs = new Set(); for (const f of cr) { const h = rd("can-run/" + f), t = types(h).map(o => o["@type"]); assert(t.includes("BreadcrumbList") && t.includes("FAQPage"), "can-run ld " + f);
-    assert(/<b>[\d.]+<\/b><span>generation tok\/s/.test(h) && /class="badge|Origin/.test(h) || /own measurement|public runs|public/.test(h), "measured data on " + f); assert(inSm("can-run/" + f) === !noindex(h)); assert(!/\$\s?\d/.test(text(h)), "no price " + f); csigs.add(h.match(/<div class="stats">[\s\S]*?<\/div><\/div>/)[0]); }
+    assert(/<b>[\d.]+<\/b><span>generation tok\/s/.test(h) && /class="badge|Origin/.test(h) || /own measurement|public runs|public/.test(h) || /<!--estimated-pair-->/.test(h), "measured data (or a labelled estimate, checked below) on " + f); assert(inSm("can-run/" + f) === !noindex(h)); assert(!/\$\s?\d/.test(text(h)), "no price " + f); csigs.add(h.match(/<div class="stats">[\s\S]*?<\/div><\/div>/)[0]); }
   assert(csigs.size === cr.length, "can-run pages carry distinct numbers");
   { // every can-run page's headline speed is backed by a measured entry or one of our own rows
     const own = fs7.readdirSync(p7.join(root, "..", "data/benchmarks/own")).filter(f => f.endsWith(".json")).flatMap(f => JSON.parse(fs7.readFileSync(p7.join(root, "..", "data/benchmarks/own", f)))), tgs = new Set(own.map(r => String(Math.round(r.tg_tps * 10) / 10)));

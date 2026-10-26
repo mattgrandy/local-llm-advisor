@@ -30,6 +30,66 @@
       "hw": "rtx-5060ti-16gb",
       "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
       "added": "2026-10-21"
+    },
+    {
+      "hw": "rtx-4090-24gb",
+      "model": "RecursiveSI/flint",
+      "added": "2026-10-26"
+    },
+    {
+      "hw": "rtx-3090-24gb",
+      "model": "RecursiveSI/flint",
+      "added": "2026-10-26"
+    },
+    {
+      "hw": "rtx-5090-32gb",
+      "model": "RecursiveSI/flint",
+      "added": "2026-10-26"
+    },
+    {
+      "hw": "macbook-pro-m5-max-128gb",
+      "model": "RecursiveSI/flint",
+      "added": "2026-10-26"
+    },
+    {
+      "hw": "rtx-4090-24gb",
+      "model": "Nanbeige/Nanbeige4.3-33B",
+      "added": "2026-10-26"
+    },
+    {
+      "hw": "rtx-3090-24gb",
+      "model": "Nanbeige/Nanbeige4.3-33B",
+      "added": "2026-10-26"
+    },
+    {
+      "hw": "rtx-5090-32gb",
+      "model": "Nanbeige/Nanbeige4.3-33B",
+      "added": "2026-10-26"
+    },
+    {
+      "hw": "rtx-spark-n1x-128gb",
+      "model": "openai/gpt-oss-120b",
+      "added": "2026-10-26"
+    },
+    {
+      "hw": "rtx-spark-n1x-128gb",
+      "model": "Qwen/Qwen3.6-35B-A3B",
+      "added": "2026-10-26"
+    },
+    {
+      "hw": "rtx-spark-n1x-128gb",
+      "model": "RecursiveSI/flint",
+      "added": "2026-10-26"
+    },
+    {
+      "hw": "rtx-spark-n1x-128gb",
+      "model": "google/gemma-4-31B-it",
+      "added": "2026-10-26"
+    },
+    {
+      "hw": "rtx-spark-n1x-128gb",
+      "model": "openai/gpt-oss-20b",
+      "added": "2026-10-26"
     }
   ]
 }
