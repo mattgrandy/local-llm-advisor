@@ -34,7 +34,7 @@ ALIASES = [
     (r'gpt-oss[ -]?20b', 'openai/gpt-oss-20b'), (r'gpt-oss[ -]?120b', 'openai/gpt-oss-120b'),
     (r'qwen3-?coder.*30b', 'Qwen/Qwen3-Coder-30B-A3B-Instruct'), (r'qwen3moe 30b', 'Qwen/Qwen3-Coder-30B-A3B-Instruct'),
     (r'qwen3-30b-a3b', 'Qwen/Qwen3-Coder-30B-A3B-Instruct'),
-    (r'qwen3\.6[ -]?35b|qwen35moe 35b', 'Qwen/Qwen3.6-35B-A3B'), (r'qwen3\.6[ -]?27b', 'Qwen/Qwen3.6-27B'),
+    (r'qwen3\.6[ -]?35b|qwen35moe 35b', 'Qwen/Qwen3.6-35B-A3B'), (r'qwen3\.6[ -]?27b', 'Qwen/Qwen3.6-27B'), (r'^qwen3\.8[ -]?27b', 'Qwen/Qwen3.8-27B'),
     (r'gemma[ -]?4[ -]?31b', 'google/gemma-4-31B-it'), (r'gemma[ -]?4[ -]?26b', 'google/gemma-4-26B-A4B-it'), (r'gemma[ -]?4[ -]?12b', 'google/gemma-4-12B-it'),
     (r'glm4moe 106b|glm-4\.5-air', 'zai-org/GLM-4.5-Air'),
     (r'qwen3-?vl[ -]?8b', 'Qwen/Qwen3-VL-8B-Instruct'), (r'mistral[ -]?small[ -]?3\.2[ -]?24b', 'mistralai/Mistral-Small-3.2-24B-Instruct-2506'),

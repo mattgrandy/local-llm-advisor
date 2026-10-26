@@ -1,0 +1,12 @@
+2026-10-26T13:07:46Z sweep start: GPU='NVIDIA GeForce RTX 3090' x1 (benchmarking GPU 0) VRAM=24.00GiB RAM=251GiB disk_free=60GiB driver=615.71.10 llama.cpp=b11658/cuda12.8 max_hours=0.9 dry_run=0
+2026-10-26T13:07:46Z hf CLI: /workspace/sweep_work/venv/bin/hf
+33 configs, 419 GB of downloads (vram=24.0 ram=251.0)
+2026-10-26T13:07:46Z llama.cpp b11658 already installed at /workspace/sweep_work/llama-b11658-cuda12.8
+<stdin>:8: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+2026-10-26T13:07:47Z plan: 1 configs
+2026-10-26T13:07:47Z == Qwen_Qwen3.8-27B__Q6_K mode=gpu size=22.0GB  (time left 53 min)
+2026-10-26T13:11:04Z    ok: 8 result rows
+2026-10-26T13:11:04Z sweep complete
+2026-10-26T13:11:04Z finalizing: 2 configs done, 0 failed
+2026-10-26T13:11:04Z results tarball: /workspace/sweep_out.tgz (16K)
+2026-10-26T13:11:04Z no --on-finish given: instance keeps running (and billing). Copy /workspace/sweep_out.tgz off the box and destroy it.

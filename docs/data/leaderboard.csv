@@ -97,6 +97,8 @@ rtx-3090,GeForce RTX 3090,Qwen3.5 9B,Q4,9.65,false,122.08,122.08,122.08,4632.1,1
 rtx-3090,GeForce RTX 3090,Qwen3.5 9B,Q8,9.65,false,85.66,85.66,85.66,4788.3,1,CUDA,true,own-measurement,2026-10-16
 rtx-3090,GeForce RTX 3090,Qwen3.6 27B,Q4,27.78,false,42.18,42.18,42.18,1515.8,1,CUDA,true,own-measurement,2026-10-16
 rtx-3090,GeForce RTX 3090,Qwen3.6 35B-A3B,Q4,35.95,true,158.97,158.97,158.97,4053.3,1,CUDA,true,own-measurement,2026-10-16
+rtx-3090,GeForce RTX 3090,Qwen3.8 27B,Q4,27.78,false,42.9,42.9,42.9,1506.7,1,CUDA,true,own-measurement,2026-10-26
+rtx-3090,GeForce RTX 3090,Qwen3.8 27B,Q6,27.78,false,33.94,33.94,33.94,1360.2,1,CUDA,true,own-measurement,2026-10-26
 rtx-4060,GeForce RTX 4060,Llama 3.2 1B Instruct,Q4,1.5,false,133.72,133.72,133.72,5352.5,1,,false,localscore-model-pages,2026-10-19
 rtx-4060,GeForce RTX 4060,Meta Llama 3.1 8B Instruct,Q4,8.03,false,38.3,38.3,38.3,1544.2,1,,false,localscore-model-pages,2026-10-19
 rtx-4060,GeForce RTX 4060,Qwen3-VL 8B,Q4,8.77,false,51.27,51.27,51.27,2444.8,1,CUDA,true,own-measurement,2026-10-17
@@ -255,11 +257,11 @@ rtx-5090,GeForce RTX 5090,Qwen3.6 35B-A3B,Q6,35.95,true,259.65,259.65,259.65,832
 rtx-5090,GeForce RTX 5090,Qwen3.6-27B-MTP,Q4,27.32,false,76.99,76.99,76.99,3835.8,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-05-28
 rtx-5090,GeForce RTX 5090,Qwen3.6-27B-MTP-pi-tune,Q6,27,false,62.9,62.9,62.9,3197.7,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
 rtx-5090,GeForce RTX 5090,Qwen3.6-28B-REAP-A3B,Q6,28,false,246.62,246.62,246.62,8226.9,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
-rtx-5090,GeForce RTX 5090,Qwen3.8-27B,Q2,27.32,false,108.95,103.3,114.61,3620.7,2,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
-rtx-5090,GeForce RTX 5090,Qwen3.8-27B,Q3,27.32,false,96.23,96.23,96.23,3944.1,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
-rtx-5090,GeForce RTX 5090,Qwen3.8-27B,Q4,27.32,false,77.58,76.22,78.94,3859.5,2,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
-rtx-5090,GeForce RTX 5090,Qwen3.8-27B,Q6,27.32,false,63.08,63.08,63.08,3223.3,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
-rtx-5090,GeForce RTX 5090,Qwen3.8-27B,Q8,27.32,false,53.07,53.07,53.07,3834,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
+rtx-5090,GeForce RTX 5090,Qwen3.8 27B,Q2,27.78,false,108.95,103.3,114.61,3620.7,2,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
+rtx-5090,GeForce RTX 5090,Qwen3.8 27B,Q3,27.78,false,96.23,96.23,96.23,3944.1,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
+rtx-5090,GeForce RTX 5090,Qwen3.8 27B,Q4,27.78,false,77.58,76.22,78.94,3859.5,2,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
+rtx-5090,GeForce RTX 5090,Qwen3.8 27B,Q6,27.78,false,63.08,63.08,63.08,3223.3,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
+rtx-5090,GeForce RTX 5090,Qwen3.8 27B,Q8,27.78,false,53.07,53.07,53.07,3834,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-15
 rtx-5090,GeForce RTX 5090,Qwopus3.6-27B-Coder,Q5,27,false,70.52,70.52,70.52,3760.8,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
 rtx-5090,GeForce RTX 5090,Qwopus3.6-27B-Coder-Compat,Q6,27,false,62.91,62.91,62.91,3210.9,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-08-11
 rtx-5090,GeForce RTX 5090,Qwopus3.8-27B-Flash,Q6,27.32,false,62.96,62.96,62.96,3148,1,CUDA,false,hf-witcheer-rtx-5090-benchmarks,2026-09-07
@@ -324,6 +326,6 @@ strix-halo,AMD Ryzen AI Max+ 395 (Strix Halo),Qwen3.6 27B,Q5,27.78,false,11.01,1
 strix-halo,AMD Ryzen AI Max+ 395 (Strix Halo),Qwen3.6 27B,Q6,27.78,false,9.48,9.48,9.48,,1,Vulkan,false,hf-axjns-strix-halo-inference-bench,2026-08-17
 strix-halo,AMD Ryzen AI Max+ 395 (Strix Halo),Qwen3.6 35B-A3B,Q4,35.95,true,63.41,62.21,81.3,1106,6,Vulkan,false,github-strix-halo-guide-BENCHMARKS;hf-axjns-strix-halo-inference-bench,2026-10-03
 strix-halo,AMD Ryzen AI Max+ 395 (Strix Halo),Qwen3.6 35B-A3B,Q8,35.95,true,53.47,53.47,53.47,,1,Vulkan,false,hf-axjns-strix-halo-inference-bench,2026-08-17
+strix-halo,AMD Ryzen AI Max+ 395 (Strix Halo),Qwen3.8 27B,Q4,27.78,false,11.88,11.88,11.88,,1,Vulkan,false,hf-axjns-strix-halo-inference-bench,2026-08-17
 strix-halo,AMD Ryzen AI Max+ 395 (Strix Halo),Qwen3.8 Flash Next,Q4,180,true,27.16,27.16,27.16,394.7,1,Vulkan,false,github-strix-halo-guide-BENCHMARKS,2026-10-03
-strix-halo,AMD Ryzen AI Max+ 395 (Strix Halo),Qwen3.8-27B-UD-Q4_K_XL,Q4,27.32,false,11.88,11.88,11.88,,1,Vulkan,false,hf-axjns-strix-halo-inference-bench,2026-08-17
 strix-halo,AMD Ryzen AI Max+ 395 (Strix Halo),qwen35moe 122B.A10B,Q6,124.64,true,18.96,17.73,19.21,145.9,9,ROCm,false,llamacpp-discussion-23659-body,2026-05-25

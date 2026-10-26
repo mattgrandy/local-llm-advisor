@@ -19,6 +19,9 @@ ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 MODELS = os.path.join(ROOT, 'site', 'data', 'models.json')
 CATALOG = os.path.join(HERE, 'sweep_catalog.json')
 QUANTS = ('Q4_K_M', 'Q8_0')
+# Extra quants per model for targeted runs, e.g. the largest that fits a 24 GB card when Q8_0 does not
+# (a dense 27B at Q8_0 is ~29 GB). Only models listed here get the extra entries; the default sweep is unchanged.
+EXTRA_QUANTS = {'Qwen/Qwen3.8-27B': ('Q6_K',)}
 DEPTHS = '0,4096,16384'
 GB = 1e9
 GIB = 2 ** 30
@@ -81,7 +84,7 @@ def build_catalog(models, fetch=hf_tree):
             except Exception as e:  # network/404
                 cat['warnings'].append(f'{repo}: HF tree fetch failed: {e}')
                 cache[repo] = []
-        for q in QUANTS:
+        for q in QUANTS + EXTRA_QUANTS.get(m['id'], ()):
             qi = m['quants'].get(q)
             if not qi:
                 cat['warnings'].append(f"{m['id']} {q}: not in models.json")

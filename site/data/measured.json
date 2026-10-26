@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-21",
+ "generated": "2026-10-26",
  "entries": {
   "rtx-5090": [
    {
@@ -722,10 +722,10 @@
     "latest": "2026-08-13"
    },
    {
-    "model": "Qwen3.8-27B",
-    "site_id": null,
+    "model": "Qwen3.8 27B",
+    "site_id": "Qwen/Qwen3.8-27B",
     "qclass": "Q2",
-    "params_b": 27.32,
+    "params_b": 27.78,
     "active_b": null,
     "moe": false,
     "tg": 108.95,
@@ -746,10 +746,10 @@
     "latest": "2026-08-15"
    },
    {
-    "model": "Qwen3.8-27B",
-    "site_id": null,
+    "model": "Qwen3.8 27B",
+    "site_id": "Qwen/Qwen3.8-27B",
     "qclass": "Q3",
-    "params_b": 27.32,
+    "params_b": 27.78,
     "active_b": null,
     "moe": false,
     "tg": 96.23,
@@ -770,10 +770,10 @@
     "latest": "2026-08-15"
    },
    {
-    "model": "Qwen3.8-27B",
-    "site_id": null,
+    "model": "Qwen3.8 27B",
+    "site_id": "Qwen/Qwen3.8-27B",
     "qclass": "Q4",
-    "params_b": 27.32,
+    "params_b": 27.78,
     "active_b": null,
     "moe": false,
     "tg": 77.58,
@@ -794,10 +794,10 @@
     "latest": "2026-08-15"
    },
    {
-    "model": "Qwen3.8-27B",
-    "site_id": null,
+    "model": "Qwen3.8 27B",
+    "site_id": "Qwen/Qwen3.8-27B",
     "qclass": "Q6",
-    "params_b": 27.32,
+    "params_b": 27.78,
     "active_b": null,
     "moe": false,
     "tg": 63.08,
@@ -818,10 +818,10 @@
     "latest": "2026-08-15"
    },
    {
-    "model": "Qwen3.8-27B",
-    "site_id": null,
+    "model": "Qwen3.8 27B",
+    "site_id": "Qwen/Qwen3.8-27B",
     "qclass": "Q8",
-    "params_b": 27.32,
+    "params_b": 27.78,
     "active_b": null,
     "moe": false,
     "tg": 53.07,
@@ -3979,6 +3979,54 @@
      "CUDA"
     ],
     "latest": "2026-10-16"
+   },
+   {
+    "model": "Qwen3.8 27B",
+    "site_id": "Qwen/Qwen3.8-27B",
+    "qclass": "Q4",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 42.9,
+    "pp": 1506.7,
+    "n": 1,
+    "tg_min": 42.9,
+    "tg_max": 42.9,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 16.45,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen3.8 27B",
+    "site_id": "Qwen/Qwen3.8-27B",
+    "qclass": "Q6",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 33.94,
+    "pp": 1360.2,
+    "n": 1,
+    "tg_min": 33.94,
+    "tg_max": 33.94,
+    "sources": [
+     {
+      "id": "own-measurement",
+      "url": "https://github.com/mattgrandy/local-llm-advisor"
+     }
+    ],
+    "size_gb": 21.97,
+    "backends": [
+     "CUDA"
+    ],
+    "latest": "2026-10-26"
    }
   ],
   "rtx-5070": [
@@ -5228,10 +5276,10 @@
     "latest": "2026-10-03"
    },
    {
-    "model": "Qwen3.8-27B-UD-Q4_K_XL",
-    "site_id": null,
+    "model": "Qwen3.8 27B",
+    "site_id": "Qwen/Qwen3.8-27B",
     "qclass": "Q4",
-    "params_b": 27.32,
+    "params_b": 27.78,
     "active_b": null,
     "moe": false,
     "tg": 11.88,
@@ -8009,7 +8057,7 @@
   },
   "by_hw": {
    "rtx-5090": {
-    "efficiency": 0.704,
+    "efficiency": 0.709,
     "n": 71,
     "p25": 0.653,
     "p75": 0.777
@@ -8039,10 +8087,10 @@
     "p75": 0.823
    },
    "rtx-3090": {
-    "efficiency": 0.684,
-    "n": 47,
-    "p25": 0.417,
-    "p75": 0.759
+    "efficiency": 0.689,
+    "n": 49,
+    "p25": 0.469,
+    "p75": 0.763
    },
    "rtx-5070": {
     "efficiency": 0.78,
@@ -8149,8 +8197,8 @@
   },
   "by_kind": {
    "gpu": {
-    "efficiency": 0.689,
-    "n": 521
+    "efficiency": 0.69,
+    "n": 523
    },
    "unified": {
     "efficiency": 0.798,
@@ -8200,9 +8248,9 @@
   }
  ],
  "counts": {
-  "rows_used": 952,
+  "rows_used": 954,
   "hardware": 25,
-  "points": 328,
+  "points": 330,
   "community": 0
  }
 }

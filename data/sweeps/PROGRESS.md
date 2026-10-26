@@ -81,3 +81,7 @@
 - 5060ti16 at Qwen3-Coder-30B (8:48); instance 57066276 still UP. hardware.json/bench_parse/compare pairs already edited (uncommitted). Next: fin.sh rtx5060ti16, ingest_sweep --merge, build_measured, calibrate_depth, generate_pages, tests, HF (/workspace/hfds/build_hf.py), publish
 - 5060ti16 done+destroyed Wed Oct 21 08:54:42 MDT 2026
 - 5060ti16 published 6efa957, HF 586 rows, indexnow submitted; credit 15.44 Wed Oct 21 08:58:28 MDT 2026
+- 3090 Qwen3.8 start Mon Oct 26 07:02:54 MDT 2026 credit 15.43 offer 56714066 CZ
+- rtx3090q38 instance 57816919
+- rtx3090q38 sweep launched Mon Oct 26 07:03:58 MDT 2026
+- 3090 Qwen3.8 done Mon Oct 26 07:13:27 MDT 2026, destroyed, 0 instances, credit 15.34

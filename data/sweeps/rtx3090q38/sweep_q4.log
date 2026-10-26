@@ -1,0 +1,17 @@
+2026-10-26T13:03:40Z sweep start: GPU='NVIDIA GeForce RTX 3090' x1 (benchmarking GPU 0) VRAM=24.00GiB RAM=251GiB disk_free=60GiB driver=615.71.10 llama.cpp=b11658/cuda12.8 max_hours=0.9 dry_run=0
+2026-10-26T13:03:40Z installing huggingface_hub into /workspace/sweep_work/venv
+2026-10-26T13:03:47Z hf CLI: /workspace/sweep_work/venv/bin/hf
+33 configs, 419 GB of downloads (vram=24.0 ram=251.0)
+2026-10-26T13:03:47Z installing prebuilt llama.cpp b11658 (CUDA 12.8) from https://github.com/ggml-org/llama.cpp/releases/download/b11658
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  6  164M    6 10.0M    0     0  11.1M      0  0:00:14 --:--:--  0:00:14 11.1M 26  164M   26 43.1M    0     0  24.1M      0  0:00:06  0:00:01  0:00:05 37.2M 40  164M   40 66.8M    0     0  23.6M      0  0:00:06  0:00:02  0:00:04 29.3M 55  164M   55 90.6M    0     0  24.1M      0  0:00:06  0:00:03  0:00:03 28.1M 72  164M   72  119M    0     0  25.0M      0  0:00:06  0:00:04  0:00:02 28.2M 88  164M   88  145M    0     0  25.0M      0  0:00:06  0:00:05  0:00:01 27.6M100  164M  100  164M    0     0  26.4M      0  0:00:06  0:00:06 --:--:-- 27.3M
+<stdin>:8: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+2026-10-26T13:03:56Z plan: 1 configs
+2026-10-26T13:03:56Z == Qwen_Qwen3.8-27B__Q4_K_M mode=gpu size=16.5GB  (time left 53 min)
+2026-10-26T13:07:45Z    ok: 10 result rows
+2026-10-26T13:07:45Z sweep complete
+2026-10-26T13:07:45Z finalizing: 1 configs done, 0 failed
+2026-10-26T13:07:45Z results tarball: /workspace/sweep_out.tgz (12K)
+2026-10-26T13:07:45Z no --on-finish given: instance keeps running (and billing). Copy /workspace/sweep_out.tgz off the box and destroy it.
