@@ -1,0 +1,156 @@
++ R=/workspace/res
++ mkdir -p /workspace/res
++ cd /workspace
++ nvidia-smi
+Wed Oct 28 15:21:11 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 595.58.03              Driver Version: 595.58.03      CUDA Version: 13.2     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 3090        On  |   00000000:81:00.0 Off |                  N/A |
+|  0%   36C    P8             20W /  260W |       1MiB /  24576MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
++ free -g
+               total        used        free      shared  buff/cache   available
+Mem:             503          57         212           0         236         445
+Swap:             47           0          47
++ nproc
+256
++ df -h /workspace
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         300G  1.5M  300G   1% /
++ U=http://127.0.0.1:8080
++ export PATH=/root/.local/bin:/opt/instance-tools/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ PATH=/root/.local/bin:/opt/instance-tools/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ curl -fsSL https://github.com/Niko1221/Strata/releases/latest/download/install.sh -o install.sh
++ sh install.sh
+Strata Terminal installer
+  This computer: Linux x86_64 (linux-x86_64), graphics: NVIDIA NVIDIA GeForce RTX 3090
+  Release folder: https://github.com/Niko1221/Strata/releases/latest/download
+  Terminal 0.1.53 (94 MB)
+Downloading…
+  Checksum ok.
+Checking the release's signature…
+  Signature ok.
+Installed. Run: strata launch
++ export PATH=/root/.local/bin:/root/.strata/bin:/root/.local/bin:/opt/instance-tools/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ PATH=/root/.local/bin:/root/.strata/bin:/root/.local/bin:/opt/instance-tools/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ hash -r
++ which strata
+/root/.local/bin/strata
++ strata --version
++ B='python3 /workspace/sbench.py http://127.0.0.1:8080'
++ run_strata qwen36 ud-q4_k_xl q36
++ fam=qwen36
++ m=ud-q4_k_xl
++ tag=q36
++ shift 3
++ strata launch --plan --family qwen36 --model ud-q4_k_xl --context 64k
++ timeout 2400 strata launch --family qwen36 --model ud-q4_k_xl --context 64k --port 8080 --no-api-key --yes --no-tui
++ wait_up
+++ seq 1 180
++ for i in $(seq 1 180)
++ curl -sf http://127.0.0.1:8080/v1/models
++ return 0
++ strata launch --status
++ nvidia-smi --query-gpu=memory.used --format=csv
++ curl -s http://127.0.0.1:8080/v1/status
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36 0 1
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36 0 3
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36 4096 2
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36 32768 2
++ curl -s http://127.0.0.1:8080/v1/status
++ strata launch --stop
+Stopped ud-q4_k_xl-64k.
++ sleep 5
++ timeout 900 strata launch --family qwen36 --model ud-q4_k_xl --context 64k --port 8080 --no-api-key --yes --no-tui --mtp off
++ wait_up
+++ seq 1 180
++ for i in $(seq 1 180)
++ curl -sf http://127.0.0.1:8080/v1/models
++ return 0
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36_nomtp 0 1
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36_nomtp 0 3
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36_nomtp 32768 1
++ strata launch --stop
+Stopped ud-q4_k_xl-64k.
++ sleep 5
++ echo STAGE q36 done
+STAGE q36 done
++ L=/workspace/llama
++ mkdir -p /workspace/llama
++ b=https://github.com/ggml-org/llama.cpp/releases/download/b11658
++ curl -fsL https://github.com/ggml-org/llama.cpp/releases/download/b11658/llama-b11658-bin-ubuntu-cuda-12.8-x64.tar.gz
++ tar xz -C /workspace/llama --strip-components=1
++ ldconfig -p
++ grep -q libcudart.so.12
++ export LD_LIBRARY_PATH=/workspace/llama:/usr/local/cuda/lib64
++ LD_LIBRARY_PATH=/workspace/llama:/usr/local/cuda/lib64
++ /workspace/llama/llama-bench --version
+++ find / -xdev -iname '*Qwen3.6-35B-A3B*Q4_K_XL*.gguf'
+++ grep -v mmproj
+++ sort
+++ head -1
++ F=/root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf
++ echo 'FILE /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf'
++ ls -la /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf
++ timeout 900 /workspace/llama/llama-bench -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 4096 -n 128 -d 0,32768 -r 2 -o jsonl
++ timeout 600 /workspace/llama/llama-bench -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 4096 -n 128 -d 0 -r 2 --n-cpu-moe 20 -o jsonl
++ echo STAGE llama done
+STAGE llama done
++ run_strata qwen q2_0 fn
++ fam=qwen
++ m=q2_0
++ tag=fn
++ shift 3
++ strata launch --plan --family qwen --model q2_0 --context 64k
++ timeout 2400 strata launch --family qwen --model q2_0 --context 64k --port 8080 --no-api-key --yes --no-tui
++ wait_up
+++ seq 1 180
++ for i in $(seq 1 180)
++ curl -sf http://127.0.0.1:8080/v1/models
++ return 0
++ strata launch --status
++ nvidia-smi --query-gpu=memory.used --format=csv
++ curl -s http://127.0.0.1:8080/v1/status
++ python3 /workspace/sbench.py http://127.0.0.1:8080 fn 0 1
++ python3 /workspace/sbench.py http://127.0.0.1:8080 fn 0 3
++ python3 /workspace/sbench.py http://127.0.0.1:8080 fn 4096 2
++ python3 /workspace/sbench.py http://127.0.0.1:8080 fn 32768 2
++ curl -s http://127.0.0.1:8080/v1/status
++ strata launch --stop
+Stopped q2_0-64k.
++ sleep 5
++ timeout 900 strata launch --family qwen --model q2_0 --context 64k --port 8080 --no-api-key --yes --no-tui --mtp off
++ wait_up
+++ seq 1 180
++ for i in $(seq 1 180)
++ curl -sf http://127.0.0.1:8080/v1/models
++ return 0
++ python3 /workspace/sbench.py http://127.0.0.1:8080 fn_nomtp 0 1
++ python3 /workspace/sbench.py http://127.0.0.1:8080 fn_nomtp 0 3
++ python3 /workspace/sbench.py http://127.0.0.1:8080 fn_nomtp 32768 1
++ strata launch --stop
+Stopped q2_0-64k.
++ sleep 5
++ echo STAGE fn done
+STAGE fn done
++ free -g
++ cat /proc/cpuinfo
++ grep 'model name'
++ head -1
++ tar czf /workspace/strata_res.tgz -C /workspace res strata_run.log
++ echo ALLDONE
+ALLDONE

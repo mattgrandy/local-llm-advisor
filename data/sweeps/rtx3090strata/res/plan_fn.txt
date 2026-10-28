@@ -1,0 +1,8 @@
+Plan for 'Q2_0 64K':
+  model     Qwen3.8-Flash-Next Q2_0, 66 GB
+  context   64K    pictures on (the reader runs on the graphics card)    parallel fit to your card
+  download  About 72.5 GB to download: the model (66.4 GB), the draft layer (5.2 GB) and the picture reader (0.9 GB). To skip the picture reader (the model then answers text only), add --vision off; or put its mmproj file next to your model files. To skip the draft layer (a little slower, less memory), add --mtp off.
+  drafting  MTP
+  tuning    skip    access This computer only, port 8080
+  same as   strata launch --model q2_0 --context 64k --vision gpu --tune skip --access local --port 8080
+Nothing was changed.

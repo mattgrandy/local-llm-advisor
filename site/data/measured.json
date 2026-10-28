@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26",
+ "generated": "2026-10-28",
  "entries": {
   "rtx-5090": [
    {
@@ -33,6 +33,7 @@
      "CUDA",
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-25"
    },
    {
@@ -57,6 +58,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -81,6 +83,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -105,6 +108,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -129,6 +133,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -157,6 +162,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -181,6 +187,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -205,6 +212,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -229,6 +237,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -253,6 +262,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -277,6 +287,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -301,6 +312,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -325,6 +337,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -349,6 +362,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -373,6 +387,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -401,6 +416,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -425,6 +441,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -453,6 +470,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -485,6 +503,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -509,6 +528,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -537,6 +557,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -565,6 +586,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -587,6 +609,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -609,6 +632,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -631,6 +655,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -655,6 +680,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -679,6 +705,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-05-28"
    },
    {
@@ -703,6 +730,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-05-28"
    },
    {
@@ -727,6 +755,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-06-04"
    },
    {
@@ -751,6 +780,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -775,6 +805,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -799,6 +830,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -823,6 +855,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -847,6 +880,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -871,6 +905,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -895,6 +930,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -919,6 +955,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -943,6 +980,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -967,6 +1005,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -991,6 +1030,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -1015,6 +1055,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -1039,6 +1080,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-11"
    },
    {
@@ -1063,6 +1105,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-12"
    },
    {
@@ -1087,6 +1130,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-13"
    },
    {
@@ -1111,6 +1155,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-13"
    },
    {
@@ -1135,6 +1180,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-13"
    },
    {
@@ -1159,6 +1205,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-15"
    },
    {
@@ -1183,6 +1230,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-15"
    },
    {
@@ -1207,6 +1255,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-15"
    },
    {
@@ -1231,6 +1280,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-21"
    },
    {
@@ -1255,6 +1305,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-23"
    },
    {
@@ -1279,6 +1330,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-23"
    },
    {
@@ -1303,6 +1355,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-09-07"
    }
   ],
@@ -1333,6 +1386,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -1357,6 +1411,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1381,6 +1436,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1405,6 +1461,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1429,6 +1486,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1453,6 +1511,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1477,6 +1536,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1501,6 +1561,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1525,6 +1586,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1549,6 +1611,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1573,6 +1636,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1597,6 +1661,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1621,6 +1686,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1645,6 +1711,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1669,6 +1736,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1693,6 +1761,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1717,6 +1786,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1741,6 +1811,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1765,6 +1836,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1789,6 +1861,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1813,6 +1886,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1837,6 +1911,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1865,6 +1940,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1889,6 +1965,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1917,6 +1994,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1941,6 +2019,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-18"
    },
    {
@@ -1963,6 +2042,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -1985,6 +2065,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -2007,6 +2088,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -2046,6 +2128,7 @@
      "CUDA",
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-25"
    },
    {
@@ -2070,6 +2153,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2094,6 +2178,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2118,6 +2203,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2142,6 +2228,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2166,6 +2253,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2190,6 +2278,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2214,6 +2303,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2238,6 +2328,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2262,6 +2353,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2286,6 +2378,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2310,6 +2403,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2334,6 +2428,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2358,6 +2453,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2382,6 +2478,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2410,6 +2507,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2434,6 +2532,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -2458,6 +2557,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -2482,6 +2582,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -2504,6 +2605,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -2526,6 +2628,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -2548,6 +2651,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -2572,6 +2676,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-07-13"
    },
    {
@@ -2596,6 +2701,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-07-13"
    },
    {
@@ -2621,6 +2727,7 @@
      "CUDA",
      "LM Studio(CUDA)"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-07-13"
    },
    {
@@ -2645,6 +2752,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-07-13"
    }
   ],
@@ -2684,6 +2792,7 @@
      "CUDA",
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-25"
    },
    {
@@ -2708,6 +2817,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -2732,6 +2842,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -2756,6 +2867,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -2780,6 +2892,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -2804,6 +2917,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -2828,6 +2942,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -2852,6 +2967,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -2876,6 +2992,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -2900,6 +3017,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -2933,6 +3051,7 @@
      "CUDA",
      "Ollama(CUDA)"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -2957,6 +3076,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -2979,6 +3099,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -3001,6 +3122,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -3023,6 +3145,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -3047,6 +3170,7 @@
     "backends": [
      "Ollama(CUDA)"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-12"
    },
    {
@@ -3071,6 +3195,7 @@
     "backends": [
      "Ollama(CUDA)"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-12"
    },
    {
@@ -3095,6 +3220,7 @@
     "backends": [
      "Ollama(CUDA)"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-12"
    },
    {
@@ -3119,6 +3245,7 @@
     "backends": [
      "Ollama(CUDA)"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-26"
    },
    {
@@ -3143,6 +3270,7 @@
     "backends": [
      "Ollama(CUDA)"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-26"
    },
    {
@@ -3167,6 +3295,7 @@
     "backends": [
      "Ollama(CUDA)"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-26"
    }
   ],
@@ -3206,6 +3335,7 @@
      "CUDA",
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-25"
    },
    {
@@ -3230,6 +3360,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -3254,6 +3385,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -3278,6 +3410,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -3302,6 +3435,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -3326,6 +3460,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -3350,6 +3485,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -3374,6 +3510,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -3398,6 +3535,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -3422,6 +3560,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -3450,6 +3589,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -3474,6 +3614,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -3496,6 +3637,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -3518,6 +3660,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -3540,6 +3683,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -3580,6 +3724,7 @@
      "ROCm",
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-25"
    },
    {
@@ -3604,6 +3749,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3628,6 +3774,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3652,6 +3799,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3676,6 +3824,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3700,6 +3849,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3724,6 +3874,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3748,6 +3899,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3772,6 +3924,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3796,6 +3949,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3820,6 +3974,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3844,6 +3999,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3868,6 +4024,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3892,6 +4049,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3901,10 +4059,10 @@
     "params_b": 35.95,
     "active_b": 3,
     "moe": true,
-    "tg": 158.97,
-    "pp": 4053.3,
-    "n": 1,
-    "tg_min": 158.97,
+    "tg": 153.57,
+    "pp": 3845.6,
+    "n": 2,
+    "tg_min": 148.17,
     "tg_max": 158.97,
     "sources": [
      {
@@ -3912,11 +4070,12 @@
       "url": "https://github.com/mattgrandy/local-llm-advisor"
      }
     ],
-    "size_gb": 22.12,
+    "size_gb": 22.48,
     "backends": [
      "CUDA"
     ],
-    "latest": "2026-10-16"
+    "engine": "llama.cpp",
+    "latest": "2026-10-28"
    },
    {
     "model": "gpt-oss 20B",
@@ -3944,6 +4103,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3968,6 +4128,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -3992,6 +4153,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -4016,6 +4178,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -4038,6 +4201,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -4060,6 +4224,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -4082,6 +4247,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -4108,6 +4274,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4132,6 +4299,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4156,6 +4324,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4180,6 +4349,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4204,6 +4374,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4228,6 +4399,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4252,6 +4424,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4276,6 +4449,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4298,6 +4472,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -4320,6 +4495,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -4342,6 +4518,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -4368,6 +4545,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4392,6 +4570,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-21"
    },
    {
@@ -4416,6 +4595,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-21"
    },
    {
@@ -4440,6 +4620,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-21"
    },
    {
@@ -4464,6 +4645,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-21"
    },
    {
@@ -4488,6 +4670,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-21"
    },
    {
@@ -4512,6 +4695,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-21"
    },
    {
@@ -4536,6 +4720,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-21"
    },
    {
@@ -4560,6 +4745,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-21"
    },
    {
@@ -4584,6 +4770,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-21"
    },
    {
@@ -4608,6 +4795,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-21"
    },
    {
@@ -4632,6 +4820,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-21"
    },
    {
@@ -4654,6 +4843,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -4676,6 +4866,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -4698,6 +4889,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -4728,6 +4920,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4752,6 +4945,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4776,6 +4970,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4800,6 +4995,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4824,6 +5020,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4848,6 +5045,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4872,6 +5070,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4896,6 +5095,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -4918,6 +5118,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -4940,6 +5141,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -4962,6 +5164,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -5001,6 +5204,7 @@
      "CUDA",
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-25"
    },
    {
@@ -5026,6 +5230,7 @@
      "CUDA",
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-01-17"
    },
    {
@@ -5058,6 +5263,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-03-30"
    },
    {
@@ -5091,6 +5297,7 @@
      "CUDA",
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-03-30"
    },
    {
@@ -5115,6 +5322,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2025-11-21"
    },
    {
@@ -5139,6 +5347,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-03-12"
    },
    {
@@ -5163,6 +5372,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-03-30"
    },
    {
@@ -5187,6 +5397,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-03-30"
    },
    {
@@ -5211,6 +5422,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-03-30"
    },
    {
@@ -5235,6 +5447,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-03-30"
    },
    {
@@ -5259,6 +5472,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-02-05"
    },
    {
@@ -5283,6 +5497,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-02-05"
    },
    {
@@ -5307,6 +5522,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-02-05"
    },
    {
@@ -5331,6 +5547,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-02-05"
    },
    {
@@ -5355,6 +5572,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-03-16"
    },
    {
@@ -5379,6 +5597,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-03-16"
    },
    {
@@ -5401,6 +5620,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -5423,6 +5643,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -5445,6 +5666,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -5484,6 +5706,7 @@
      "ROCm",
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-25"
    },
    {
@@ -5508,6 +5731,7 @@
     "backends": [
      "ROCm"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-05-25"
    },
    {
@@ -5537,6 +5761,7 @@
      "ROCm",
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-17"
    },
    {
@@ -5561,6 +5786,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-17"
    },
    {
@@ -5585,6 +5811,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-17"
    },
    {
@@ -5609,6 +5836,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-17"
    },
    {
@@ -5633,6 +5861,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-17"
    },
    {
@@ -5657,6 +5886,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-17"
    },
    {
@@ -5685,6 +5915,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-03"
    },
    {
@@ -5709,6 +5940,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-17"
    },
    {
@@ -5733,6 +5965,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-17"
    },
    {
@@ -5761,6 +5994,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-03"
    },
    {
@@ -5785,6 +6019,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-17"
    },
    {
@@ -5809,6 +6044,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-03"
    },
    {
@@ -5833,6 +6069,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-03"
    },
    {
@@ -5857,6 +6094,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-03"
    },
    {
@@ -5881,6 +6119,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-03"
    },
    {
@@ -5905,6 +6144,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-03"
    },
    {
@@ -5929,6 +6169,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-03"
    },
    {
@@ -5953,6 +6194,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-03"
    },
    {
@@ -5977,6 +6219,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-03"
    },
    {
@@ -6001,6 +6244,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-03"
    },
    {
@@ -6025,6 +6269,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-03"
    },
    {
@@ -6049,6 +6294,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-03"
    },
    {
@@ -6071,6 +6317,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -6093,6 +6340,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -6115,6 +6363,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -6141,6 +6390,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2024-05-20"
    },
    {
@@ -6165,6 +6415,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2024-05-20"
    },
    {
@@ -6189,6 +6440,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2024-05-20"
    },
    {
@@ -6213,6 +6465,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2024-05-20"
    },
    {
@@ -6237,6 +6490,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-05-12"
    },
    {
@@ -6261,6 +6515,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-05-12"
    },
    {
@@ -6283,6 +6538,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -6305,6 +6561,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -6327,6 +6584,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -6353,6 +6611,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2025-05-21"
    },
    {
@@ -6377,6 +6636,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2025-05-21"
    },
    {
@@ -6401,6 +6661,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2025-05-21"
    },
    {
@@ -6423,6 +6684,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -6445,6 +6707,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -6467,6 +6730,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -6491,6 +6755,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2025-08-18"
    }
   ],
@@ -6517,6 +6782,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-06-22"
    },
    {
@@ -6541,6 +6807,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-06-22"
    },
    {
@@ -6565,6 +6832,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-06-22"
    },
    {
@@ -6587,6 +6855,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -6609,6 +6878,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -6631,6 +6901,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -6655,6 +6926,7 @@
     "backends": [
      "MLX"
     ],
+    "engine": "mlx",
     "latest": "2026-07-10"
    },
    {
@@ -6679,6 +6951,7 @@
     "backends": [
      "MLX"
     ],
+    "engine": "mlx",
     "latest": "2026-07-10"
    },
    {
@@ -6703,6 +6976,7 @@
     "backends": [
      "MLX"
     ],
+    "engine": "mlx",
     "latest": "2026-07-10"
    },
    {
@@ -6727,6 +7001,7 @@
     "backends": [
      "MLX"
     ],
+    "engine": "mlx",
     "latest": "2026-07-10"
    }
   ],
@@ -6766,6 +7041,7 @@
      "ROCm",
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-25"
    },
    {
@@ -6791,6 +7067,7 @@
      "ROCm",
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2025-05-21"
    },
    {
@@ -6816,6 +7093,7 @@
      "ROCm",
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2025-05-21"
    },
    {
@@ -6840,6 +7118,7 @@
     "backends": [
      "ROCm"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-03-21"
    },
    {
@@ -6864,6 +7143,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-08-23"
    },
    {
@@ -6886,6 +7166,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -6908,6 +7189,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -6930,6 +7212,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -6961,6 +7244,7 @@
      "Metal",
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-25"
    },
    {
@@ -6983,6 +7267,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7005,6 +7290,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7027,6 +7313,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7051,6 +7338,7 @@
     "backends": [
      "Metal"
     ],
+    "engine": "llama.cpp",
     "latest": "2025-08-18"
    }
   ],
@@ -7077,6 +7365,7 @@
     "backends": [
      "Vulkan"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-25"
    },
    {
@@ -7101,6 +7390,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7125,6 +7415,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7149,6 +7440,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7173,6 +7465,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7197,6 +7490,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7221,6 +7515,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7245,6 +7540,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7267,6 +7563,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7289,6 +7586,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7311,6 +7609,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -7337,6 +7636,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -7361,6 +7661,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -7385,6 +7686,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -7409,6 +7711,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-17"
    },
    {
@@ -7431,6 +7734,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7453,6 +7757,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -7479,6 +7784,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7503,6 +7809,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7527,6 +7834,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7551,6 +7859,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7575,6 +7884,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7599,6 +7909,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7623,6 +7934,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7647,6 +7959,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7671,6 +7984,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7695,6 +8009,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7719,6 +8034,7 @@
     "backends": [
      "CUDA"
     ],
+    "engine": "llama.cpp",
     "latest": "2026-10-16"
    },
    {
@@ -7741,6 +8057,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7763,6 +8080,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7785,6 +8103,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -7809,6 +8128,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7831,6 +8151,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7853,6 +8174,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -7877,6 +8199,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7899,6 +8222,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7921,6 +8245,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7945,6 +8270,7 @@
     "backends": [
      "MLX(mlx-serve)"
     ],
+    "engine": "mlx",
     "latest": "2026-10-13"
    }
   ],
@@ -7969,6 +8295,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -7991,6 +8318,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -8013,6 +8341,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -8037,6 +8366,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -8059,6 +8389,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -8081,6 +8412,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -8105,6 +8437,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ],
@@ -8129,6 +8462,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -8151,6 +8485,7 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    },
    {
@@ -8173,10 +8508,243 @@
     ],
     "size_gb": null,
     "backends": [],
+    "engine": "llama.cpp",
     "latest": "2026-10-26"
    }
   ]
  },
+ "strata": [
+  {
+   "engine": "strata",
+   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
+   "model": "Qwen3.8 Flash Next",
+   "quant": "Q2_0",
+   "gguf": "ISTA-DASLab Qwen3.8-Flash-Next GSQ-RCO-Q2_0 (2 parts) + MTP pack",
+   "mtp": "on",
+   "prompt_tokens": 29,
+   "tg_tps": 120.6,
+   "pp_tps": "",
+   "mtp_accept": 0.582,
+   "n_samples": 3,
+   "flags": "strata launch --family qwen --model q2_0 --context 64k | engine: --expert-profile --expert-cache auto --prefill auto --spec 4 --spec-min-p 0.5 --mtp <pack>/mtp/rt --max-context 65536 --kv int8 --ple-io ram --kv-resident 32768 --vram-reserve-mib 700 --batch 3",
+   "date": "2026-10-28",
+   "source": "own-measurement-strata",
+   "source_url": "https://github.com/mattgrandy/local-llm-advisor",
+   "notes": "Strata OpenAI server, 256-token completions, temp 0.6, thinking off; tg = median predicted_per_second; pp = best cold-cache (cache_n=0) prompt_per_second",
+   "hw_id": "rtx-3090",
+   "device_raw": "NVIDIA GeForce RTX 3090",
+   "host_ram_gib": 241.8,
+   "cpu": "AMD EPYC 7713 (container limit 241.8 GiB RAM)",
+   "site_id": "Qwen/Qwen3.8-Flash-Next"
+  },
+  {
+   "engine": "strata",
+   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
+   "model": "Qwen3.8 Flash Next",
+   "quant": "Q2_0",
+   "gguf": "ISTA-DASLab Qwen3.8-Flash-Next GSQ-RCO-Q2_0 (2 parts) + MTP pack",
+   "mtp": "on",
+   "prompt_tokens": 4497,
+   "tg_tps": 118.5,
+   "pp_tps": 1755.1,
+   "mtp_accept": 0.539,
+   "n_samples": 2,
+   "flags": "strata launch --family qwen --model q2_0 --context 64k | engine: --expert-profile --expert-cache auto --prefill auto --spec 4 --spec-min-p 0.5 --mtp <pack>/mtp/rt --max-context 65536 --kv int8 --ple-io ram --kv-resident 32768 --vram-reserve-mib 700 --batch 3",
+   "date": "2026-10-28",
+   "source": "own-measurement-strata",
+   "source_url": "https://github.com/mattgrandy/local-llm-advisor",
+   "notes": "Strata OpenAI server, 256-token completions, temp 0.6, thinking off; tg = median predicted_per_second; pp = best cold-cache (cache_n=0) prompt_per_second",
+   "hw_id": "rtx-3090",
+   "device_raw": "NVIDIA GeForce RTX 3090",
+   "host_ram_gib": 241.8,
+   "cpu": "AMD EPYC 7713 (container limit 241.8 GiB RAM)",
+   "site_id": "Qwen/Qwen3.8-Flash-Next"
+  },
+  {
+   "engine": "strata",
+   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
+   "model": "Qwen3.8 Flash Next",
+   "quant": "Q2_0",
+   "gguf": "ISTA-DASLab Qwen3.8-Flash-Next GSQ-RCO-Q2_0 (2 parts) + MTP pack",
+   "mtp": "on",
+   "prompt_tokens": 35769,
+   "tg_tps": 124.6,
+   "pp_tps": 2278.2,
+   "mtp_accept": 0.646,
+   "n_samples": 2,
+   "flags": "strata launch --family qwen --model q2_0 --context 64k | engine: --expert-profile --expert-cache auto --prefill auto --spec 4 --spec-min-p 0.5 --mtp <pack>/mtp/rt --max-context 65536 --kv int8 --ple-io ram --kv-resident 32768 --vram-reserve-mib 700 --batch 3",
+   "date": "2026-10-28",
+   "source": "own-measurement-strata",
+   "source_url": "https://github.com/mattgrandy/local-llm-advisor",
+   "notes": "Strata OpenAI server, 256-token completions, temp 0.6, thinking off; tg = median predicted_per_second; pp = best cold-cache (cache_n=0) prompt_per_second",
+   "hw_id": "rtx-3090",
+   "device_raw": "NVIDIA GeForce RTX 3090",
+   "host_ram_gib": 241.8,
+   "cpu": "AMD EPYC 7713 (container limit 241.8 GiB RAM)",
+   "site_id": "Qwen/Qwen3.8-Flash-Next"
+  },
+  {
+   "engine": "strata",
+   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
+   "model": "Qwen3.8 Flash Next",
+   "quant": "Q2_0",
+   "gguf": "ISTA-DASLab Qwen3.8-Flash-Next GSQ-RCO-Q2_0 (2 parts) + MTP pack",
+   "mtp": "off",
+   "prompt_tokens": 29,
+   "tg_tps": 92.9,
+   "pp_tps": "",
+   "mtp_accept": "",
+   "n_samples": 3,
+   "flags": "strata launch --family qwen --model q2_0 --context 64k --mtp off | engine: --expert-profile --expert-cache auto --prefill auto --spec 4 --spec-min-p 0.5 --mtp <pack>/mtp/rt --max-context 65536 --kv int8 --ple-io ram --kv-resident 32768 --vram-reserve-mib 700 --batch 3",
+   "date": "2026-10-28",
+   "source": "own-measurement-strata",
+   "source_url": "https://github.com/mattgrandy/local-llm-advisor",
+   "notes": "Strata OpenAI server, 256-token completions, temp 0.6, thinking off; tg = median predicted_per_second; pp = best cold-cache (cache_n=0) prompt_per_second",
+   "hw_id": "rtx-3090",
+   "device_raw": "NVIDIA GeForce RTX 3090",
+   "host_ram_gib": 241.8,
+   "cpu": "AMD EPYC 7713 (container limit 241.8 GiB RAM)",
+   "site_id": "Qwen/Qwen3.8-Flash-Next"
+  },
+  {
+   "engine": "strata",
+   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
+   "model": "Qwen3.8 Flash Next",
+   "quant": "Q2_0",
+   "gguf": "ISTA-DASLab Qwen3.8-Flash-Next GSQ-RCO-Q2_0 (2 parts) + MTP pack",
+   "mtp": "off",
+   "prompt_tokens": 35769,
+   "tg_tps": 89.2,
+   "pp_tps": 2462.8,
+   "mtp_accept": "",
+   "n_samples": 1,
+   "flags": "strata launch --family qwen --model q2_0 --context 64k --mtp off | engine: --expert-profile --expert-cache auto --prefill auto --spec 4 --spec-min-p 0.5 --mtp <pack>/mtp/rt --max-context 65536 --kv int8 --ple-io ram --kv-resident 32768 --vram-reserve-mib 700 --batch 3",
+   "date": "2026-10-28",
+   "source": "own-measurement-strata",
+   "source_url": "https://github.com/mattgrandy/local-llm-advisor",
+   "notes": "Strata OpenAI server, 256-token completions, temp 0.6, thinking off; tg = median predicted_per_second; pp = best cold-cache (cache_n=0) prompt_per_second",
+   "hw_id": "rtx-3090",
+   "device_raw": "NVIDIA GeForce RTX 3090",
+   "host_ram_gib": 241.8,
+   "cpu": "AMD EPYC 7713 (container limit 241.8 GiB RAM)",
+   "site_id": "Qwen/Qwen3.8-Flash-Next"
+  },
+  {
+   "engine": "strata",
+   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
+   "model": "Qwen3.6 35B-A3B",
+   "quant": "UD-Q4_K_XL",
+   "gguf": "unsloth/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf",
+   "mtp": "on",
+   "prompt_tokens": 29,
+   "tg_tps": 100.2,
+   "pp_tps": "",
+   "mtp_accept": "",
+   "n_samples": 3,
+   "flags": "strata launch --family qwen36 --model ud-q4_k_xl --context 64k | engine: --max-context 65536 --prefill auto --mtp 2 --batch 3",
+   "date": "2026-10-28",
+   "source": "own-measurement-strata",
+   "source_url": "https://github.com/mattgrandy/local-llm-advisor",
+   "notes": "Strata OpenAI server, 256-token completions, temp 0.6, thinking off; tg = median predicted_per_second; pp = best cold-cache (cache_n=0) prompt_per_second; MTP drafts never engaged (draft_n=0) on this build",
+   "hw_id": "rtx-3090",
+   "device_raw": "NVIDIA GeForce RTX 3090",
+   "host_ram_gib": 241.8,
+   "cpu": "AMD EPYC 7713 (container limit 241.8 GiB RAM)",
+   "site_id": "Qwen/Qwen3.6-35B-A3B"
+  },
+  {
+   "engine": "strata",
+   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
+   "model": "Qwen3.6 35B-A3B",
+   "quant": "UD-Q4_K_XL",
+   "gguf": "unsloth/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf",
+   "mtp": "on",
+   "prompt_tokens": 4497,
+   "tg_tps": 62.4,
+   "pp_tps": 603.6,
+   "mtp_accept": "",
+   "n_samples": 2,
+   "flags": "strata launch --family qwen36 --model ud-q4_k_xl --context 64k | engine: --max-context 65536 --prefill auto --mtp 2 --batch 3",
+   "date": "2026-10-28",
+   "source": "own-measurement-strata",
+   "source_url": "https://github.com/mattgrandy/local-llm-advisor",
+   "notes": "Strata OpenAI server, 256-token completions, temp 0.6, thinking off; tg = median predicted_per_second; pp = best cold-cache (cache_n=0) prompt_per_second; MTP drafts never engaged (draft_n=0) on this build",
+   "hw_id": "rtx-3090",
+   "device_raw": "NVIDIA GeForce RTX 3090",
+   "host_ram_gib": 241.8,
+   "cpu": "AMD EPYC 7713 (container limit 241.8 GiB RAM)",
+   "site_id": "Qwen/Qwen3.6-35B-A3B"
+  },
+  {
+   "engine": "strata",
+   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
+   "model": "Qwen3.6 35B-A3B",
+   "quant": "UD-Q4_K_XL",
+   "gguf": "unsloth/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf",
+   "mtp": "on",
+   "prompt_tokens": 35769,
+   "tg_tps": 19.8,
+   "pp_tps": 618.9,
+   "mtp_accept": "",
+   "n_samples": 2,
+   "flags": "strata launch --family qwen36 --model ud-q4_k_xl --context 64k | engine: --max-context 65536 --prefill auto --mtp 2 --batch 3",
+   "date": "2026-10-28",
+   "source": "own-measurement-strata",
+   "source_url": "https://github.com/mattgrandy/local-llm-advisor",
+   "notes": "Strata OpenAI server, 256-token completions, temp 0.6, thinking off; tg = median predicted_per_second; pp = best cold-cache (cache_n=0) prompt_per_second; MTP drafts never engaged (draft_n=0) on this build",
+   "hw_id": "rtx-3090",
+   "device_raw": "NVIDIA GeForce RTX 3090",
+   "host_ram_gib": 241.8,
+   "cpu": "AMD EPYC 7713 (container limit 241.8 GiB RAM)",
+   "site_id": "Qwen/Qwen3.6-35B-A3B"
+  },
+  {
+   "engine": "strata",
+   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
+   "model": "Qwen3.6 35B-A3B",
+   "quant": "UD-Q4_K_XL",
+   "gguf": "unsloth/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf",
+   "mtp": "off",
+   "prompt_tokens": 29,
+   "tg_tps": 102.5,
+   "pp_tps": "",
+   "mtp_accept": "",
+   "n_samples": 3,
+   "flags": "strata launch --family qwen36 --model ud-q4_k_xl --context 64k --mtp off | engine: --max-context 65536 --prefill auto --mtp 2 --batch 3",
+   "date": "2026-10-28",
+   "source": "own-measurement-strata",
+   "source_url": "https://github.com/mattgrandy/local-llm-advisor",
+   "notes": "Strata OpenAI server, 256-token completions, temp 0.6, thinking off; tg = median predicted_per_second; pp = best cold-cache (cache_n=0) prompt_per_second",
+   "hw_id": "rtx-3090",
+   "device_raw": "NVIDIA GeForce RTX 3090",
+   "host_ram_gib": 241.8,
+   "cpu": "AMD EPYC 7713 (container limit 241.8 GiB RAM)",
+   "site_id": "Qwen/Qwen3.6-35B-A3B"
+  },
+  {
+   "engine": "strata",
+   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
+   "model": "Qwen3.6 35B-A3B",
+   "quant": "UD-Q4_K_XL",
+   "gguf": "unsloth/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf",
+   "mtp": "off",
+   "prompt_tokens": 35769,
+   "tg_tps": 20.6,
+   "pp_tps": 679.6,
+   "mtp_accept": "",
+   "n_samples": 1,
+   "flags": "strata launch --family qwen36 --model ud-q4_k_xl --context 64k --mtp off | engine: --max-context 65536 --prefill auto --mtp 2 --batch 3",
+   "date": "2026-10-28",
+   "source": "own-measurement-strata",
+   "source_url": "https://github.com/mattgrandy/local-llm-advisor",
+   "notes": "Strata OpenAI server, 256-token completions, temp 0.6, thinking off; tg = median predicted_per_second; pp = best cold-cache (cache_n=0) prompt_per_second",
+   "hw_id": "rtx-3090",
+   "device_raw": "NVIDIA GeForce RTX 3090",
+   "host_ram_gib": 241.8,
+   "cpu": "AMD EPYC 7713 (container limit 241.8 GiB RAM)",
+   "site_id": "Qwen/Qwen3.6-35B-A3B"
+  }
+ ],
  "calibration": {
   "moe_factor": {
    "value": 0.789,
@@ -8376,7 +8944,7 @@
   }
  ],
  "counts": {
-  "rows_used": 958,
+  "rows_used": 959,
   "hardware": 25,
   "points": 336,
   "community": 0

@@ -96,3 +96,4 @@
 - rtx5090q38 instance 57821457
 - rtx5090q38 sweep launched Mon Oct 26 07:41:32 MDT 2026
 - 5090 Qwen3.8 done 2026-10-26 07:55 MDT, destroyed, 0 instances
+- 3090 Strata run 2026-10-28 (Vast, Slovakia, 241.8 GiB container RAM): strata 0.2.7 (build 0.1.53) Qwen3.6 35B-A3B UD-Q4_K_XL + Qwen3.8 Flash Next Q2_0, MTP on/off, empty/4K/32K prompts; llama.cpp b11658 comparison on the same Qwen3.6 GGUF. Ingested with tools/sweep/ingest_strata.py (Strata rows -> data/benchmarks/own-strata, engine='strata', kept out of medians). Destroyed, 0 instances.

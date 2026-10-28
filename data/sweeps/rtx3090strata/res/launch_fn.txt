@@ -1,0 +1,37 @@
+    Checking the engine for this computer…
+    Engine 0.1.52 (cuda) is installed.
+    Getting qwen Q2_0 ready (a download may be large; it continues where it stopped if interrupted)…
+    Getting your model ready
+    Checking your computer
+    Getting the helper packages ready
+    Checking the engine for this PC
+    Downloading the model files: 7.9 of 67.3 GB
+    Downloading the model files: 14.5 of 67.3 GB
+    Downloading the model files: 21.4 of 67.3 GB
+    Downloading the model files: 28.0 of 67.3 GB
+    Downloading the model files: 34.8 of 67.3 GB
+    Checking that the model files are complete (a few minutes for a big model; nothing is downloaded): 25.4 of 37.6 GB
+    Checking that the model files are complete (a few minutes for a big model; nothing is downloaded): 30.5 of 37.6 GB
+    Checking that the model files are complete (a few minutes for a big model; nothing is downloaded): 35.6 of 37.6 GB
+    Preparing your model for Strata (one time)
+    Preparing the model data for the engine (one time)
+    Preparing the draft layer
+    Downloading the draft layer (about 5 GB; it makes answers about twice as fast)
+    Saving the model's settings
+    qwen Q2_0 is ready.
+    Writing this launch's settings…
+    Settings are saved.
+    Starting the engine and loading the model. The first start can take a few minutes.
+    Loading the model… 15 s
+    Loading the model… 30 s
+    The model is loaded and answering.
+    Ready: http://127.0.0.1:8080
+    Strata is serving.
+
+Strata is serving.
+  This computer  http://127.0.0.1:8080/v1
+  Anthropic apps http://127.0.0.1:8080   (Claude Code: ANTHROPIC_BASE_URL, no /v1 at the end)
+  Engine log     /root/.local/state/strata/launch/q2_0-64k.engine.log   (follow it: strata logs --follow)
+  Watch it:    strata monitor --url http://127.0.0.1:8080
+  Connect an app:  strata connect opencode      Stop:  strata launch --stop
+  To keep these settings for next time, add --save-preset NAME.

@@ -11,7 +11,7 @@ Filters (documented, deliberate):
     exclude llamacpp-discussion-4167-summary (pinned to a 2023 build -> numbers far below current builds).
   * community submissions are kept in a separate list (`community`) and ALWAYS flagged unverified in the UI.
 """
-import os, sys, re, json, csv, statistics as st, time, collections
+import glob, os, sys, re, json, csv, statistics as st, time, collections
 ROOT = os.path.join(os.path.dirname(__file__), '..')
 HW = json.load(open(f'{ROOT}/site/data/hardware.json'))
 MODELS = json.load(open(f'{ROOT}/site/data/models.json'))['models']
@@ -93,6 +93,23 @@ def load_rows():
         out.append(dict(r=r, c=c, qc=qc, tg=tg, pp=num(r['pp_tps'])))
     return out
 
+def engine_of(r):
+    """Inference engine of a benchmark row. Everything in benchmarks_all is llama.cpp-family unless marked (MLX rows by backend)."""
+    if r.get('engine'): return r['engine']
+    return 'mlx' if 'mlx' in (r.get('backend') or '').lower() else 'llama.cpp'
+
+
+def load_strata():
+    """engine='strata' rows from data/benchmarks/own-strata/*.json. Kept OUT of entries/medians/calibration:
+    different engine, different method (server timings, not llama-bench)."""
+    out = []
+    for f in sorted(glob.glob(f'{ROOT}/data/benchmarks/own-strata/*.json')):
+        for r in json.load(open(f)):
+            c = canon(r['model'], None)
+            out.append(dict(r, engine='strata', site_id=c[1] if c else None))
+    return out
+
+
 def main():
     rows = load_rows()
     g = collections.defaultdict(list)
@@ -109,6 +126,7 @@ def main():
             sources=[dict(id=k, url=v) for k, v in sorted(srcs.items())],
             size_gb=(round(st.median(sz) * 1.073741824, 2) if (sz := [num(x['r']['size_gib']) for x in xs if num(x['r']['size_gib'])]) else None),
             backends=sorted({x['r']['backend'] for x in xs if x['r']['backend']}),
+            engine=('/'.join(sorted({engine_of(x['r']) for x in xs}))),
             latest=max((x['r']['date'] or '') for x in xs)))
     # ---- calibration: efficiency = tg / (bandwidth / read_GB), dense models, read >= MIN_CAL_READ_GB
     per = collections.defaultdict(list)
@@ -143,7 +161,7 @@ def main():
     comm = []
     cp = f'{ROOT}/data/submissions/community_reviewed.json'
     if os.path.exists(cp): comm = json.load(open(cp))
-    out = dict(generated=time.strftime('%Y-%m-%d'), entries=entries, calibration=cal, community=comm,
+    out = dict(generated=time.strftime('%Y-%m-%d'), entries=entries, strata=load_strata(), calibration=cal, community=comm,
         attribution=[dict(name='own measurements (llm-advisor, llama.cpp b11658)', url='https://github.com/mattgrandy/local-llm-advisor'),
                      dict(name='LocalScore (Mozilla Builders / cjpais, Apache-2.0)', url='https://www.localscore.ai'),
                      dict(name='llama.cpp community benchmark threads incl. the gpt-oss guide #15396 (ggml-org/llama.cpp, MIT)', url='https://github.com/ggml-org/llama.cpp/discussions'),

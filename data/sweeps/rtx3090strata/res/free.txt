@@ -1,0 +1,4 @@
+               total        used        free      shared  buff/cache   available
+Mem:             503          59         161           0         287         444
+Swap:             47           0          47
+model name	: AMD EPYC 7713 64-Core Processor

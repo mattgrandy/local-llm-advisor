@@ -1,11 +1,11 @@
 {
  "blog/index.html": {
-  "h": "4c574f89f4cf687f",
-  "d": "2026-10-26"
+  "h": "dce63ce7b9e5f50b",
+  "d": "2026-10-28"
  },
  "blog/state-of-local-llm-hardware-oct-2026.html": {
-  "h": "58ab3220c9bbb15d",
-  "d": "2026-10-26"
+  "h": "1478e39c9b6a48de",
+  "d": "2026-10-28"
  },
  "can-run/flint-40b-a2-5b-on-macbook-pro-m5-max-128gb.html": {
   "h": "f0f88a1d065e4ee5",
@@ -60,8 +60,8 @@
   "d": "2026-10-26"
  },
  "can-run/gemma-4-31b-on-rtx-3090-24gb.html": {
-  "h": "52db5cc73ff87e83",
-  "d": "2026-10-26"
+  "h": "ec9cffe66fba8c5b",
+  "d": "2026-10-28"
  },
  "can-run/gemma-4-31b-on-rtx-4090-24gb.html": {
   "h": "12cacf7762cd547d",
@@ -252,24 +252,24 @@
   "d": "2026-10-26"
  },
  "can-run/qwen3-6-35b-a3b-on-mac-m4-pro-64gb.html": {
-  "h": "516bc8123bc435ba",
-  "d": "2026-10-26"
+  "h": "6348bfa3ee4e4cea",
+  "d": "2026-10-28"
  },
  "can-run/qwen3-6-35b-a3b-on-rtx-3090-24gb.html": {
-  "h": "9658bfd0c612289f",
-  "d": "2026-10-26"
+  "h": "66aef4ba6a239016",
+  "d": "2026-10-28"
  },
  "can-run/qwen3-6-35b-a3b-on-rtx-4090-24gb.html": {
   "h": "e164fe63897cc1b4",
   "d": "2026-10-26"
  },
  "can-run/qwen3-6-35b-a3b-on-rtx-5090-32gb.html": {
-  "h": "c213c743fd1fe470",
-  "d": "2026-10-26"
+  "h": "72f50600dfb80102",
+  "d": "2026-10-28"
  },
  "can-run/qwen3-6-35b-a3b-on-strix-halo-128gb.html": {
-  "h": "af4c36a170dd6bca",
-  "d": "2026-10-26"
+  "h": "642732096b330550",
+  "d": "2026-10-28"
  },
  "can-run/qwen3-8-27b-on-rtx-3090-24gb.html": {
   "h": "f1b4b9d1924a2cee",
@@ -284,8 +284,8 @@
   "d": "2026-10-26"
  },
  "can-run/qwen3-coder-30b-a3b-on-rtx-3090-24gb.html": {
-  "h": "4a9bf0db92a7774a",
-  "d": "2026-10-26"
+  "h": "6c045a58afd058ff",
+  "d": "2026-10-28"
  },
  "can-run/qwen3-coder-30b-a3b-on-rtx-4090-24gb.html": {
   "h": "b17fbed5f394c39a",
@@ -340,8 +340,8 @@
   "d": "2026-10-26"
  },
  "compare/index.html": {
-  "h": "76cb0bdd8976f4c0",
-  "d": "2026-10-26"
+  "h": "43c88b2bbfcea818",
+  "d": "2026-10-28"
  },
  "compare/mac-studio-m3-ultra-96gb-vs-dual-rtx-3090-48gb.html": {
   "h": "9f2fe64daef132a7",
@@ -360,16 +360,16 @@
   "d": "2026-10-26"
  },
  "compare/rtx-3090-24gb-vs-rtx-4090-24gb.html": {
-  "h": "aa6bcdcd2bac8575",
-  "d": "2026-10-26"
+  "h": "cb1c4000d14bc708",
+  "d": "2026-10-28"
  },
  "compare/rtx-3090-24gb-vs-rtx-5090-32gb.html": {
-  "h": "c651951df7cebc85",
-  "d": "2026-10-26"
+  "h": "bcd5fb6fd6c777db",
+  "d": "2026-10-28"
  },
  "compare/rtx-3090-24gb-vs-rx-7900-xtx-24gb.html": {
-  "h": "4e2366e629f6b754",
-  "d": "2026-10-26"
+  "h": "82e9aad893b3f175",
+  "d": "2026-10-28"
  },
  "compare/rtx-4070-12gb-vs-rtx-5070-12gb.html": {
   "h": "33670e558e64d8ac",
@@ -408,8 +408,8 @@
   "d": "2026-10-26"
  },
  "data-sources.html": {
-  "h": "369f3a9caf9f004a",
-  "d": "2026-10-26"
+  "h": "da176ba1742f2f4f",
+  "d": "2026-10-28"
  },
  "embed/index.html": {
   "h": "0ce8977392bb279e",
@@ -476,8 +476,8 @@
   "d": "2026-10-26"
  },
  "hardware/rtx-3090-24gb.html": {
-  "h": "bbf5990847be85b3",
-  "d": "2026-10-26"
+  "h": "02d26b01444fb95f",
+  "d": "2026-10-28"
  },
  "hardware/rtx-4060-8gb.html": {
   "h": "cf856e1f64621218",
@@ -540,136 +540,136 @@
   "d": "2026-10-20"
  },
  "leaderboard.html": {
-  "h": "cee47c1a4c866723",
-  "d": "2026-10-26"
+  "h": "88beedae5bfff649",
+  "d": "2026-10-28"
  },
  "models/deepseek-r1-distill-qwen-32b.html": {
-  "h": "e500871fdcb75044",
-  "d": "2026-10-26"
+  "h": "a1dc0726eef0dd05",
+  "d": "2026-10-28"
  },
  "models/deepseek-r1-distill-qwen-7b.html": {
-  "h": "a18b17d6285a901b",
-  "d": "2026-10-26"
+  "h": "6088fee888bd0f0d",
+  "d": "2026-10-28"
  },
  "models/flint-40b-a2-5b.html": {
-  "h": "fa253016ed84dae6",
-  "d": "2026-10-26"
+  "h": "6dd10adbf3ee834f",
+  "d": "2026-10-28"
  },
  "models/gemma-4-12b.html": {
-  "h": "45c2c427f544b13e",
-  "d": "2026-10-26"
+  "h": "db1ef8be6d5c0a2b",
+  "d": "2026-10-28"
  },
  "models/gemma-4-26b-a4b.html": {
-  "h": "c1ed69cd5abb7f6f",
-  "d": "2026-10-26"
+  "h": "479ab5ba82613d5f",
+  "d": "2026-10-28"
  },
  "models/gemma-4-31b.html": {
-  "h": "b21181bcbd438b12",
-  "d": "2026-10-26"
+  "h": "9c35d704caa3f69a",
+  "d": "2026-10-28"
  },
  "models/gemma-4-e4b.html": {
-  "h": "76ec41d0177ebe02",
-  "d": "2026-10-26"
+  "h": "db5528399947be53",
+  "d": "2026-10-28"
  },
  "models/glm-4-5-air.html": {
-  "h": "df1ea28e596c69b7",
-  "d": "2026-10-26"
+  "h": "6e866cb3a57d723c",
+  "d": "2026-10-28"
  },
  "models/glm-4-7-flash.html": {
-  "h": "63d64719703d072c",
-  "d": "2026-10-26"
+  "h": "c2b5da063b257278",
+  "d": "2026-10-28"
  },
  "models/gpt-oss-120b.html": {
-  "h": "1401327eb549053f",
-  "d": "2026-10-26"
+  "h": "2e1b65a352eedca9",
+  "d": "2026-10-28"
  },
  "models/gpt-oss-20b.html": {
-  "h": "cd02d5ca6a6560ff",
-  "d": "2026-10-26"
+  "h": "915a2162a852a315",
+  "d": "2026-10-28"
  },
  "models/index.html": {
   "h": "e029820a48bbe794",
   "d": "2026-10-26"
  },
  "models/laguna-xs-2-1.html": {
-  "h": "2e7f3cf992d8bcc5",
-  "d": "2026-10-26"
+  "h": "8d0a05460a53276c",
+  "d": "2026-10-28"
  },
  "models/lfm2-5-24b-a2b.html": {
-  "h": "6b71112e222b7fa0",
-  "d": "2026-10-26"
+  "h": "182401cde4389fc5",
+  "d": "2026-10-28"
  },
  "models/llama-3-3-70b.html": {
-  "h": "dbeceaf20010c1ff",
-  "d": "2026-10-26"
+  "h": "c3cad4e47911fa02",
+  "d": "2026-10-28"
  },
  "models/mistral-small-3-2-24b.html": {
-  "h": "4e25370f9e0d4516",
-  "d": "2026-10-26"
+  "h": "46b07b9936128b22",
+  "d": "2026-10-28"
  },
  "models/nanbeige4-3-33b.html": {
-  "h": "fbdf8c06b7659fde",
-  "d": "2026-10-26"
+  "h": "ac854bd605f2a629",
+  "d": "2026-10-28"
  },
  "models/nemotron-3-5-lightning-30b-a3b.html": {
-  "h": "4a149e7a1ba31c6b",
-  "d": "2026-10-26"
+  "h": "0397377370ccd79e",
+  "d": "2026-10-28"
  },
  "models/nemotron-3-5-super-vl-120b-a12b.html": {
-  "h": "33837afd995627e7",
-  "d": "2026-10-26"
+  "h": "e7cf81bd39757188",
+  "d": "2026-10-28"
  },
  "models/nemotron-3-nano-30b-a3b.html": {
-  "h": "a76371af9ca9b1b5",
-  "d": "2026-10-26"
+  "h": "f15718b8c8b772c2",
+  "d": "2026-10-28"
  },
  "models/nemotron-3-nano-4b.html": {
-  "h": "f7a46e5ed991194a",
-  "d": "2026-10-26"
+  "h": "fa00af6c1bc5fa7a",
+  "d": "2026-10-28"
  },
  "models/ornith-1-5-35b-a3b.html": {
-  "h": "82950b9c87787735",
-  "d": "2026-10-26"
+  "h": "c5c1c7d9a34e9957",
+  "d": "2026-10-28"
  },
  "models/ornith-1-5-9b.html": {
-  "h": "28f51ed2728820dd",
-  "d": "2026-10-26"
+  "h": "e15a2b308c069ce0",
+  "d": "2026-10-28"
  },
  "models/popular.html": {
   "h": "c2c4605713c1fdcc",
   "d": "2026-10-26"
  },
  "models/qwen3-5-4b.html": {
-  "h": "723b95245a2c2cf7",
-  "d": "2026-10-26"
+  "h": "d6b17fc81d139b1b",
+  "d": "2026-10-28"
  },
  "models/qwen3-5-9b.html": {
-  "h": "f75d6ef998a1114b",
-  "d": "2026-10-26"
+  "h": "014a88a2c01ed11b",
+  "d": "2026-10-28"
  },
  "models/qwen3-6-27b.html": {
-  "h": "f3011d5af6b91363",
-  "d": "2026-10-26"
+  "h": "e4ae3b29dbad92ad",
+  "d": "2026-10-28"
  },
  "models/qwen3-6-35b-a3b.html": {
-  "h": "53e743502d2ed1b6",
-  "d": "2026-10-26"
+  "h": "4a3628364b9992ef",
+  "d": "2026-10-28"
  },
  "models/qwen3-8-27b.html": {
-  "h": "dd3f286fa4ba2155",
-  "d": "2026-10-26"
+  "h": "b1835400d5d1a0cd",
+  "d": "2026-10-28"
  },
  "models/qwen3-8-flash-next.html": {
-  "h": "6f736bf8a36b7013",
-  "d": "2026-10-26"
+  "h": "31334562295ba088",
+  "d": "2026-10-28"
  },
  "models/qwen3-coder-30b-a3b.html": {
-  "h": "9b399e0a2b5d51b0",
-  "d": "2026-10-26"
+  "h": "d65394fe6f77b908",
+  "d": "2026-10-28"
  },
  "models/qwen3-vl-8b.html": {
-  "h": "d709487669a02d9e",
-  "d": "2026-10-26"
+  "h": "e9fdcfae47b9d3af",
+  "d": "2026-10-28"
  },
  "submit.html": {
   "h": "12b6250c89e59c2d",
