@@ -408,6 +408,6 @@ console.log("ALL TESTS PASSED");
   }
   assert(!fs.readFileSync(path.join(S, "models", "gpt-oss-20b.html"), "utf8").includes('id="strata"'), "no strata section without data");
   assert(st.some(r => r.hw_id === "rtx-3060") && (data.measured.strata_ref || []).some(r => r.hw_id === "rtx-3060" && r.n_cpu_moe > 0), "3060 strata + llama.cpp offload comparison rows");
-  { const h = fs.readFileSync(path.join(S, "models", "qwen3-6-35b-a3b.html"), "utf8"); assert(h.includes("RTX 3060 12GB") && h.includes("--n-cpu-moe 22"), "3060 strata comparison on model page"); assert(h.includes("RTX 5060 Ti") && h.includes("llama-server, <code>--n-cpu-moe 14") && h.includes("busy shared host"), "5060 Ti strata + llama-server comparison"); }
+  { const h = fs.readFileSync(path.join(S, "models", "qwen3-6-35b-a3b.html"), "utf8"); assert(h.includes("RTX 3060 12GB") && h.includes("--n-cpu-moe 22"), "3060 strata comparison on model page"); assert(h.includes("RTX 5060 Ti") && h.includes("llama-server, <code>--n-cpu-moe 13") && !h.includes("llama-server, <code>--n-cpu-moe 14") && h.includes("rerun on a less loaded host"), "5060 Ti strata + llama-server comparison"); assert(fs.readFileSync(path.join(S, "models", "qwen3-8-flash-next.html"), "utf8").includes("load average about 12"), "5060 Ti flash-next load note"); }
   console.log("strata rows:", st.length);
 }

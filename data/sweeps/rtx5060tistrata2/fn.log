@@ -1,0 +1,175 @@
++ R=/workspace/res
++ mkdir -p /workspace/res
++ cd /workspace
++ export PATH=/root/.local/bin:/root/.strata/bin:/opt/instance-tools/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ PATH=/root/.local/bin:/root/.strata/bin:/opt/instance-tools/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ B='python3 /workspace/sbench.py '
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ sleep 15
++ '[' '!' -f /workspace/llama.done ']'
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ sleep 15
++ pgrep -f '[s]etup.py'
++ start qwen iq3_s fn
++ fam=qwen
++ m=iq3_s
++ tag=fn
++ shift 3
++ strata launch --plan --family qwen --model iq3_s --context 64k --vision off
++ timeout 2400 strata launch --family qwen --model iq3_s --context 64k --vision off --port 8080 --no-api-key --yes --no-tui
++ wait_up
+++ seq 1 240
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5
++ for i in $(seq 1 240)
++ curl -sf /v1/models
++ sleep 5

@@ -1,0 +1,15 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 15849 MiB):
+  Device 0: NVIDIA GeForce RTX 5060 Ti, compute capability 12.0, VMM: yes, VRAM: 15849 MiB
+load_backend: loaded CUDA backend from /workspace/llama/libggml-cuda.so
+load_backend: loaded RPC backend from /workspace/llama/libggml-rpc.so
+load_backend: loaded CPU backend from /workspace/llama/libggml-cpu-haswell.so
+ggml_backend_cuda_buffer_type_alloc_buffer: allocating 501.00 MiB on device 0: cudaMalloc failed: out of memory
+ggml_gallocr_reserve_n_impl: failed to allocate CUDA0 buffer of size 525340800
+graph_reserve: failed to allocate compute buffers
+llama_init_from_model: failed to initialize the context: failed to allocate compute pp buffers
+llama_bench: error: failed to create context with model '/workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf'
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 15849 MiB):
+  Device 0: NVIDIA GeForce RTX 5060 Ti, compute capability 12.0, VMM: yes, VRAM: 15849 MiB
+load_backend: loaded CUDA backend from /workspace/llama/libggml-cuda.so
+load_backend: loaded RPC backend from /workspace/llama/libggml-rpc.so
+load_backend: loaded CPU backend from /workspace/llama/libggml-cpu-haswell.so

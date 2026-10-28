@@ -1,0 +1,1 @@
+llama-server --n-cpu-moe 13 -fa on -c 16384 --jinja

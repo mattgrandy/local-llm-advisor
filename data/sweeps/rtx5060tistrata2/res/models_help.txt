@@ -1,0 +1,12 @@
+usage: strata models [-h] {list,inspect,import,move} ...
+
+positional arguments:
+  {list,inspect,import,move}
+    list                list local installed-model config candidates
+    inspect             inspect a local model run config and its components
+    import              preview an existing GGUF file set without adopting it
+    move                move the model files (models, packs, mtp) to another
+                        folder: copied, checked, then the old copies removed
+
+options:
+  -h, --help            show this help message and exit

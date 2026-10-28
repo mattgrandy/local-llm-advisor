@@ -1,0 +1,41 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 15849 MiB):
+  Device 0: NVIDIA GeForce RTX 5060 Ti, compute capability 12.0, VMM: yes, VRAM: 15849 MiB
+load_backend: loaded CUDA backend from /workspace/llama/libggml-cuda.so
+load_backend: loaded RPC backend from /workspace/llama/libggml-rpc.so
+load_backend: loaded CPU backend from /workspace/llama/libggml-cpu-haswell.so
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 15849 MiB):
+  Device 0: NVIDIA GeForce RTX 5060 Ti, compute capability 12.0, VMM: yes, VRAM: 15849 MiB
+load_backend: loaded CUDA backend from /workspace/llama/libggml-cuda.so
+load_backend: loaded RPC backend from /workspace/llama/libggml-rpc.so
+load_backend: loaded CPU backend from /workspace/llama/libggml-cpu-haswell.so
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 15849 MiB):
+  Device 0: NVIDIA GeForce RTX 5060 Ti, compute capability 12.0, VMM: yes, VRAM: 15849 MiB
+load_backend: loaded CUDA backend from /workspace/llama/libggml-cuda.so
+load_backend: loaded RPC backend from /workspace/llama/libggml-rpc.so
+load_backend: loaded CPU backend from /workspace/llama/libggml-cpu-haswell.so
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 15849 MiB):
+  Device 0: NVIDIA GeForce RTX 5060 Ti, compute capability 12.0, VMM: yes, VRAM: 15849 MiB
+load_backend: loaded CUDA backend from /workspace/llama/libggml-cuda.so
+load_backend: loaded RPC backend from /workspace/llama/libggml-rpc.so
+load_backend: loaded CPU backend from /workspace/llama/libggml-cpu-haswell.so
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 15849 MiB):
+  Device 0: NVIDIA GeForce RTX 5060 Ti, compute capability 12.0, VMM: yes, VRAM: 15849 MiB
+load_backend: loaded CUDA backend from /workspace/llama/libggml-cuda.so
+load_backend: loaded RPC backend from /workspace/llama/libggml-rpc.so
+load_backend: loaded CPU backend from /workspace/llama/libggml-cpu-haswell.so
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 15849 MiB):
+  Device 0: NVIDIA GeForce RTX 5060 Ti, compute capability 12.0, VMM: yes, VRAM: 15849 MiB
+load_backend: loaded CUDA backend from /workspace/llama/libggml-cuda.so
+load_backend: loaded RPC backend from /workspace/llama/libggml-rpc.so
+load_backend: loaded CPU backend from /workspace/llama/libggml-cpu-haswell.so
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 15849 MiB):
+  Device 0: NVIDIA GeForce RTX 5060 Ti, compute capability 12.0, VMM: yes, VRAM: 15849 MiB
+load_backend: loaded CUDA backend from /workspace/llama/libggml-cuda.so
+load_backend: loaded RPC backend from /workspace/llama/libggml-rpc.so
+load_backend: loaded CPU backend from /workspace/llama/libggml-cpu-haswell.so
+CUDA error: out of memory
+  current device: 0, in function ggml_cuda_kernel_can_use_pdl at /__w/llama.cpp/llama.cpp/ggml/src/ggml-cuda/common.cuh:1679
+  cudaFuncGetAttributes(&attr, kernel)
+/__w/llama.cpp/llama.cpp/ggml/src/ggml-cuda/ggml-cuda.cu:109: CUDA error
+ncmoe 12 failed
+BEST 13

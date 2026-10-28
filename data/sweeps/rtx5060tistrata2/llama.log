@@ -1,0 +1,146 @@
++ R=/workspace/res
++ L=/workspace/llama
++ export LD_LIBRARY_PATH=/workspace/llama
++ LD_LIBRARY_PATH=/workspace/llama
++ F=/workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf
++ cd /workspace
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ sleep 5
++ '[' '!' -f /workspace/q36.done ']'
++ echo 'FILE /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf'
++ ls -la /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf
++ for n in 24 20 18 16 14 13 12 11 10
++ timeout 300 /workspace/llama/llama-bench -m /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 24 -o jsonl
++ grep -h '^{' /workspace/res/sw_24.jsonl
++ grep -q '^{' /workspace/res/sw_24.jsonl
++ for n in 24 20 18 16 14 13 12 11 10
++ timeout 300 /workspace/llama/llama-bench -m /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 20 -o jsonl
++ grep -h '^{' /workspace/res/sw_20.jsonl
++ grep -q '^{' /workspace/res/sw_20.jsonl
++ for n in 24 20 18 16 14 13 12 11 10
++ timeout 300 /workspace/llama/llama-bench -m /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 18 -o jsonl
++ grep -h '^{' /workspace/res/sw_18.jsonl
++ grep -q '^{' /workspace/res/sw_18.jsonl
++ for n in 24 20 18 16 14 13 12 11 10
++ timeout 300 /workspace/llama/llama-bench -m /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 16 -o jsonl
++ grep -h '^{' /workspace/res/sw_16.jsonl
++ grep -q '^{' /workspace/res/sw_16.jsonl
++ for n in 24 20 18 16 14 13 12 11 10
++ timeout 300 /workspace/llama/llama-bench -m /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 14 -o jsonl
++ grep -h '^{' /workspace/res/sw_14.jsonl
++ grep -q '^{' /workspace/res/sw_14.jsonl
++ for n in 24 20 18 16 14 13 12 11 10
++ timeout 300 /workspace/llama/llama-bench -m /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 13 -o jsonl
++ grep -h '^{' /workspace/res/sw_13.jsonl
++ grep -q '^{' /workspace/res/sw_13.jsonl
++ for n in 24 20 18 16 14 13 12 11 10
++ timeout 300 /workspace/llama/llama-bench -m /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 12 -o jsonl
+s_llama.sh: line 5:   977 Aborted                 timeout 300 $L/llama-bench -m $F -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe $n -o jsonl > $R/sw_$n.jsonl 2>> $R/llama_sweep.err
++ grep -h '^{' /workspace/res/sw_12.jsonl
++ grep -q '^{' /workspace/res/sw_12.jsonl
++ echo 'ncmoe 12 failed'
++ break
+++ python3 -c '
+import json;r=[json.loads(l) for l in open('\''/workspace/res/llama_sweep.jsonl'\'') if l.startswith('\''{'\'')];t=[x for x in r if x['\''n_gen'\'']>0]
+print(max(t,key=lambda x:x['\''avg_ts'\''])['\''n_cpu_moe'\''])'
++ BEST=13
++ '[' -n 13 ']'
++ echo 'BEST 13'
++ echo 13
++ uptime
++ timeout 600 /workspace/llama/llama-bench -m /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 4096 -n 128 -d 0,4096 -r 2 --n-cpu-moe 13 -o jsonl
++ echo STAGE llama_best done
+STAGE llama_best done
++ for n in $BEST $((BEST+2)) $((BEST+4)) $((BEST+6)) $((BEST+10))
++ timeout 500 /workspace/llama/llama-bench -m /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 4096 -n 128 -d 32768 -r 1 --n-cpu-moe 13 -o jsonl
++ grep -q '^{' /workspace/res/llama_q36_d32k_ncmoe13.jsonl
++ rm -f /workspace/res/llama_q36_d32k_ncmoe13.jsonl
++ for n in $BEST $((BEST+2)) $((BEST+4)) $((BEST+6)) $((BEST+10))
++ timeout 500 /workspace/llama/llama-bench -m /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 4096 -n 128 -d 32768 -r 1 --n-cpu-moe 15 -o jsonl
++ grep -q '^{' /workspace/res/llama_q36_d32k_ncmoe15.jsonl
++ break
++ echo STAGE llama_32k done
+STAGE llama_32k done
++ uptime
++ LS=1157
++ /workspace/llama/llama-server -m /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa on --n-cpu-moe 13 -c 16384 --port 8081 --jinja
+++ seq 1 60
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ break
++ echo 'llama-server --n-cpu-moe 13 -fa on -c 16384 --jinja'
++ python3 sbench.py http://127.0.0.1:8081 llama_srv 0 1
++ python3 sbench.py http://127.0.0.1:8081 llama_srv 0 3
++ python3 sbench.py http://127.0.0.1:8081 llama_srv 1 3
++ kill 1157
++ sleep 3
++ echo STAGE llama_srv done
+STAGE llama_srv done
++ touch /workspace/llama.done

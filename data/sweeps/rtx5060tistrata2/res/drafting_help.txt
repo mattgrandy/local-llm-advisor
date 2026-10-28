@@ -1,0 +1,10 @@
+usage: strata drafting [-h] {plan,fetch} ...
+
+positional arguments:
+  {plan,fetch}
+    plan        say what fetching would download; nothing is changed
+    fetch       download the drafter (pinned, checked) and pack it for the
+                engine
+
+options:
+  -h, --help    show this help message and exit

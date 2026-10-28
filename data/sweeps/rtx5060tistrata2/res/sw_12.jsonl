@@ -1,0 +1,26 @@
+[New LWP 982]
+[New LWP 981]
+[New LWP 980]
+[New LWP 979]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/usr/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x000076e720a2d913 in wait4 () from /usr/lib/x86_64-linux-gnu/libc.so.6
+#0  0x000076e720a2d913 in wait4 () from /usr/lib/x86_64-linux-gnu/libc.so.6
+#1  0x000076e71ff1fbd3 in ggml_print_backtrace () from /workspace/llama/libggml-base.so.0
+#2  0x000076e71ff1fd7b in ggml_abort () from /workspace/llama/libggml-base.so.0
+#3  0x000076e71539a197 in ggml_cuda_error(char const*, char const*, char const*, int, char const*) () from /workspace/llama/libggml-cuda.so
+#4  0x000076e715529191 in ggml_cuda_kernel_can_use_pdl(void const*) () from /workspace/llama/libggml-cuda.so
+#5  0x000076e71552cdb9 in rms_norm_mul_f32_cuda(float const*, float const*, float const*, float*, int, int, int, int, long, long, long, long, long, long, unsigned int, unsigned int, unsigned int, unsigned int, long, long, long, unsigned int, unsigned int, unsigned int, unsigned int, float, CUstream_st*) () from /workspace/llama/libggml-cuda.so
+#6  0x000076e71552ea8d in ggml_cuda_op_rms_norm_fused(ggml_backend_cuda_context&, ggml_tensor*, ggml_tensor*) () from /workspace/llama/libggml-cuda.so
+#7  0x000076e7153a0e78 in ggml_cuda_try_fuse(ggml_backend_cuda_context*, ggml_cgraph*, int) () from /workspace/llama/libggml-cuda.so
+#8  0x000076e7153b1638 in ggml_backend_cuda_graph_compute(ggml_backend*, ggml_cgraph*) () from /workspace/llama/libggml-cuda.so
+#9  0x000076e71ff3e4d4 in ggml_backend_sched_graph_compute_async () from /workspace/llama/libggml-base.so.0
+#10 0x000076e720217e6b in llama_context::graph_compute(ggml_cgraph*, bool) () from /workspace/llama/libllama.so.0
+#11 0x000076e72021bb06 in llama_context::process_ubatch(llama_ubatch const&, llm_graph_type, llama_memory_context_i*, ggml_status&) () from /workspace/llama/libllama.so.0
+#12 0x000076e720224e16 in llama_context::decode(llama_batch_ext const&) () from /workspace/llama/libllama.so.0
+#13 0x000076e720e04473 in test_prompt(llama_context*, int, int, int) () from /workspace/llama/libllama-bench-impl.so
+#14 0x000076e720e138d8 in llama_bench(int, char**) () from /workspace/llama/libllama-bench-impl.so
+#15 0x000076e7209471ca in ?? () from /usr/lib/x86_64-linux-gnu/libc.so.6
+#16 0x000076e72094728b in __libc_start_main () from /usr/lib/x86_64-linux-gnu/libc.so.6
+#17 0x0000617d63b302a5 in _start ()
+[Inferior 1 (process 978) detached]

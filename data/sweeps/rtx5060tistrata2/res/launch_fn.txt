@@ -1,0 +1,36 @@
+    Checking the engine for this computer…
+    No engine is installed yet. Getting the one for your graphics card…
+    Reading the signed update feed
+    Downloading engine 0.1.52 linux-x86_64-cuda-cuda13 (646 MB)
+    Downloading the engine… 14%
+    Downloading the engine… 24%
+    Downloading the engine… 38%
+    Downloading the engine… 48%
+    Downloading the engine… 60%
+    Downloading the engine… 73%
+    Downloading the engine… 86%
+    Downloading the engine… 100%
+    Unpacking 0.1.52 linux-x86_64-cuda-cuda13
+    Checking the package signature and every file
+    Test-starting engine 0.1.52 linux-x86_64-cuda-cuda13 before switching to it
+    Switching to engine 0.1.52 linux-x86_64-cuda-cuda13
+    Engine 0.1.52 is installed and will be used on the next start
+    The engine is installed.
+    qwen IQ3_S is already installed with these choices.
+    Writing this launch's settings…
+    Settings are saved.
+    Starting the engine and loading the model. The first start can take a few minutes.
+    Loading the model… 15 s
+    Loading the model… 30 s
+    Loading the model… 45 s
+    The model is loaded and answering.
+    Ready: http://127.0.0.1:8080
+    Strata is serving.
+
+Strata is serving.
+  This computer  http://127.0.0.1:8080/v1
+  Anthropic apps http://127.0.0.1:8080   (Claude Code: ANTHROPIC_BASE_URL, no /v1 at the end)
+  Engine log     /root/.local/state/strata/launch/iq3_s-64k.engine.log   (follow it: strata logs --follow)
+  Watch it:    strata monitor --url http://127.0.0.1:8080
+  Connect an app:  strata connect opencode      Stop:  strata launch --stop
+  To keep these settings for next time, add --save-preset NAME.

@@ -1,0 +1,255 @@
+Strata - Qwen3.8-Flash-Next on a normal PC (a GPU + system RAM + CPU)
+
+=== Step 1: checking your PC ===
+  [ok] GPU: NVIDIA GeForce RTX 5060 Ti, 15.9 GB VRAM, compute capability 12.0, driver 595.84
+  [ok] RAM: 504 GB
+  [ok] CPU: Intel(R) Xeon(R) CPU E5-2695 v4 @ 2.10GHz (AVX2)
+  [ok] PCIe: 3.0 x8 (the card supports 5.0, the board 3.0) - up to ~8 GB/s to the GPU: long prompts are read slower than on a PCIe 4.0 x16 PC (their experts are copied over it); the engine measures the link at start for the output speed
+  [!]  the GPU's PCIe link reads 8 of its 16 lanes right now (some cards narrow it when idle); if it stays narrow under load: is it in the right slot (the one wired x16), fully seated, and not sharing lanes with an M.2 drive? (the BIOS can say)
+
+=== Step 2: your choices ===
+  [ok] model: Qwen3.8-Flash-Next
+
+  1) Q2_0     2-bit, the fastest; download 66 GB, uses ~34 GB of RAM
+  2) IQ2_XS   2-bit i-quant, a little better quality, close in speed; download 68 GB, uses ~36 GB of RAM
+  3) IQ3_XXS  3-bit i-quant, better quality, slower (more CPU work per token); download 76 GB, uses ~43 GB of RAM
+  4) IQ3_S    (recommended) 3.5-bit i-quant, the best quality (matches the full model), the slowest; needs a 64 GB PC with little else running; download 84 GB, uses ~50 GB of RAM
+  [ok] size: IQ3_S
+
+  Context length = how much text the model can see at once (your chat, files, tool output).
+  Longer needs more VRAM for it, so fewer experts fit on the GPU:
+  1) 8K tokens
+  2) 32K tokens
+  3) 64K tokens   (recommended for your GPU)
+  4) 128K tokens
+  5) 200K tokens
+  6) 256K tokens
+  7) 384K tokens   (experimental: setup adds rope scaling)
+  8) 512K tokens   (experimental: setup adds rope scaling)
+  [ok] context: 65536 tokens
+  [ok] KV cache: 8-bit
+
+  Images: the model can also read pictures (screenshots, photos, scanned pages). This adds a 0.9 GB
+  download. On a card under 24 GB the encoder runs on the CPU (a few seconds per picture, nothing taken
+  from the GPU, pictures read at up to 300 tokens; --vision-tokens 1024 for more detail): the GPU
+  encoder keeps ~1.4 GB of VRAM free, which costs 3-5% of text speed on 16 GB cards (measured) and
+  more on some PCs. --vision gpu if you want pictures in under a second.
+  [ok] images: on (encoder on the CPU)
+
+  EXPERIMENTAL - speed projection: a small control vector applied while the model runs (layers 4-44).
+  It changes how the model answers: its package describes it as a refusal-direction projection (the
+  model declines far fewer requests). Off unless you choose it; when on, the web app can switch it off
+  per chat. Details: data/experimental-speed-projection/README.md
+  [ok] experimental speed projection: off
+
+=== Step 3: Python packages ===
+  [ok] numpy, jinja2, regex, pyyaml, tqdm, requests, pillow, psutil, textual (the screens): bundled with the app
+
+=== Step 4: the Strata engine ===
+  llama.cpp source:   0.01 / 0.04 GB (21%)   
+  [ok] llama.cpp source downloaded
+  [ok] llama.cpp 3cf0325 (gguf-py for the preparation tools)
+  [!]  no engine is installed for this PC yet (No engine for this PC was found in /root/.local/share/strata/components: the component folder holds no engine package. The app never downloads an engine while it starts or serves. Download the engine for your GPU with Update engine in the app's Settings, or with `strata update` (or `strata install`) in the Terminal, or copy an engine package into the component folder.). The model is downloaded and prepared now; install the engine component for your GPU (the app's Settings, or the Terminal) before loading it
+  [!]  this engine component has no image encoder (strata-vision): images off for this model
+  [ok] engine: the engine component (looked up when the model loads)
+
+=== Step 5: downloading Qwen3.8-Flash-Next IQ3_S ===
+  The model files go in /root/.local/share/strata/Strata-data/models/IQ3_S
+  Files you already have: put them here with their original names (Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf, Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf), or use --gguf-dir <their folder>.
+  Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   1.54 / 54.82 GB (3%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   6.00 / 54.82 GB (11%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   9.34 / 54.82 GB (17%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  12.35 / 54.82 GB (23%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  18.77 / 54.82 GB (34%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  33.65 / 54.82 GB (61%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  50.00 / 54.82 GB (91%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  54.82 / 54.82 GB (100%)   
+  checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf (SHA-256, 54.8 GB) ...
+  checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   0.02 / 54.82 GB (0%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   0.50 / 54.82 GB (0%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   1.26 / 54.82 GB (2%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   2.00 / 54.82 GB (3%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   2.72 / 54.82 GB (4%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   3.47 / 54.82 GB (6%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   4.23 / 54.82 GB (7%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   4.97 / 54.82 GB (9%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   5.70 / 54.82 GB (10%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   6.48 / 54.82 GB (11%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   7.20 / 54.82 GB (13%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   7.92 / 54.82 GB (14%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   8.69 / 54.82 GB (15%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:   9.45 / 54.82 GB (17%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  10.18 / 54.82 GB (18%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  10.96 / 54.82 GB (19%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  11.73 / 54.82 GB (21%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  12.45 / 54.82 GB (22%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  13.19 / 54.82 GB (24%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  13.94 / 54.82 GB (25%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  14.55 / 54.82 GB (26%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  15.02 / 54.82 GB (27%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  15.52 / 54.82 GB (28%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  15.99 / 54.82 GB (29%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  16.48 / 54.82 GB (30%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  17.15 / 54.82 GB (31%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  17.87 / 54.82 GB (32%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  18.57 / 54.82 GB (33%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  19.31 / 54.82 GB (35%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  20.05 / 54.82 GB (36%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  20.74 / 54.82 GB (37%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  21.42 / 54.82 GB (39%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  22.06 / 54.82 GB (40%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  22.68 / 54.82 GB (41%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  23.30 / 54.82 GB (42%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  23.97 / 54.82 GB (43%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  24.63 / 54.82 GB (44%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  25.27 / 54.82 GB (46%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  25.85 / 54.82 GB (47%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  26.42 / 54.82 GB (48%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  27.01 / 54.82 GB (49%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  27.62 / 54.82 GB (50%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  28.22 / 54.82 GB (51%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  28.81 / 54.82 GB (52%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  29.18 / 54.82 GB (53%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  29.58 / 54.82 GB (53%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  29.98 / 54.82 GB (54%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  30.40 / 54.82 GB (55%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  30.82 / 54.82 GB (56%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  31.42 / 54.82 GB (57%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  32.03 / 54.82 GB (58%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  32.63 / 54.82 GB (59%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  33.24 / 54.82 GB (60%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  33.84 / 54.82 GB (61%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  34.43 / 54.82 GB (62%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  35.03 / 54.82 GB (63%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  35.63 / 54.82 GB (65%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  36.24 / 54.82 GB (66%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  36.84 / 54.82 GB (67%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  37.45 / 54.82 GB (68%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  38.05 / 54.82 GB (69%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  38.65 / 54.82 GB (70%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  39.24 / 54.82 GB (71%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  39.83 / 54.82 GB (72%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  40.42 / 54.82 GB (73%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  41.02 / 54.82 GB (74%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  41.62 / 54.82 GB (75%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  42.21 / 54.82 GB (77%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  42.82 / 54.82 GB (78%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  43.42 / 54.82 GB (79%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  44.02 / 54.82 GB (80%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  44.63 / 54.82 GB (81%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  45.23 / 54.82 GB (82%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  45.84 / 54.82 GB (83%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  46.44 / 54.82 GB (84%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  47.04 / 54.82 GB (85%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  47.65 / 54.82 GB (86%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  48.25 / 54.82 GB (88%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  48.86 / 54.82 GB (89%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  49.46 / 54.82 GB (90%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  50.06 / 54.82 GB (91%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  50.67 / 54.82 GB (92%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  51.27 / 54.82 GB (93%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  51.88 / 54.82 GB (94%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  52.48 / 54.82 GB (95%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  53.08 / 54.82 GB (96%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  53.69 / 54.82 GB (97%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf:  54.29 / 54.82 GB (99%)   
+  [ok] Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf downloaded
+  Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   0.70 / 28.80 GB (2%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   1.38 / 28.80 GB (5%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   2.41 / 28.80 GB (8%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   3.88 / 28.80 GB (13%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   5.66 / 28.80 GB (20%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   8.10 / 28.80 GB (28%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  12.87 / 28.80 GB (45%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  17.89 / 28.80 GB (62%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  24.79 / 28.80 GB (86%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  28.75 / 28.80 GB (100%)     Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  28.80 / 28.80 GB (100%)   
+  checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf (SHA-256, 28.8 GB) ...
+  checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   0.02 / 28.80 GB (0%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   0.37 / 28.80 GB (1%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   0.70 / 28.80 GB (2%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   1.09 / 28.80 GB (3%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   1.53 / 28.80 GB (5%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   1.93 / 28.80 GB (6%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   2.33 / 28.80 GB (8%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   2.73 / 28.80 GB (9%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   3.14 / 28.80 GB (10%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   3.56 / 28.80 GB (12%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   4.01 / 28.80 GB (13%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   4.40 / 28.80 GB (15%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   4.85 / 28.80 GB (16%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   5.32 / 28.80 GB (18%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   5.67 / 28.80 GB (19%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   6.06 / 28.80 GB (21%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   6.49 / 28.80 GB (22%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   6.93 / 28.80 GB (24%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   7.35 / 28.80 GB (25%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   7.77 / 28.80 GB (26%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   8.15 / 28.80 GB (28%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   8.56 / 28.80 GB (29%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   8.91 / 28.80 GB (30%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   9.31 / 28.80 GB (32%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:   9.70 / 28.80 GB (33%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  10.18 / 28.80 GB (35%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  10.57 / 28.80 GB (36%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  10.96 / 28.80 GB (38%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  11.31 / 28.80 GB (39%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  11.64 / 28.80 GB (40%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  12.06 / 28.80 GB (41%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  12.47 / 28.80 GB (43%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  12.88 / 28.80 GB (44%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  13.24 / 28.80 GB (45%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  13.64 / 28.80 GB (47%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  14.01 / 28.80 GB (48%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  14.41 / 28.80 GB (50%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  14.93 / 28.80 GB (51%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  15.32 / 28.80 GB (53%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  15.70 / 28.80 GB (54%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  16.07 / 28.80 GB (55%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  16.44 / 28.80 GB (57%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  16.81 / 28.80 GB (58%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  17.23 / 28.80 GB (59%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  17.65 / 28.80 GB (61%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  18.05 / 28.80 GB (62%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  18.47 / 28.80 GB (64%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  18.89 / 28.80 GB (65%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  19.28 / 28.80 GB (66%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  19.75 / 28.80 GB (68%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  20.37 / 28.80 GB (70%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  21.04 / 28.80 GB (73%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  21.71 / 28.80 GB (75%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  22.35 / 28.80 GB (77%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  23.00 / 28.80 GB (79%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  23.67 / 28.80 GB (82%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  24.29 / 28.80 GB (84%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  24.95 / 28.80 GB (86%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  25.62 / 28.80 GB (88%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  26.29 / 28.80 GB (91%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  26.91 / 28.80 GB (93%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  27.56 / 28.80 GB (95%)     checking Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf:  28.24 / 28.80 GB (98%)   
+  [ok] Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf downloaded
+  [ok] model files present
+
+=== Step 6: preparing the model for Strata ===
+  > /root/.local/share/strata/terminal/0.1.53/python/bin/python3.12 /root/.local/share/strata/terminal/0.1.53/tools/iq_pack.py --gguf /root/.local/share/strata/Strata-data/models/IQ3_S/Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf --out /root/.local/share/strata/Strata-data/packs/iq3_s
+model shards: Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf, Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf
+index.txt: 1079 tensors, 302 served natively, 0 in extra.bin, arena 1.43 GiB
+tokenizer/: vocab 248320, merges 247587, pre qwen35, specials {'tokenizer.ggml.eos_token_id': 248046, 'tokenizer.ggml.padding_token_id': 248044, 'tokenizer.ggml.bos_token_id': 248044}
+  [ok] model prepared: /root/.local/share/strata/Strata-data/packs/iq3_s
+  The MTP draft layer (speculative decoding, ~2x faster output) comes from the original Qwen checkpoint:
+  only its ~5 GB of MTP tensors are downloaded.
+  > /root/.local/share/strata/terminal/0.1.53/python/bin/python3.12 /root/.local/share/strata/terminal/0.1.53/tools/mtp_fetch.py fetch --out /root/.local/share/strata/Strata-data/mtp
+# MTP block in the BF16 checkpoint
+
+31 tensors, 5.214 GB, in 28 shards.
+
+| tensor | dtype | shape | MB |
+|---|---|---|---:|
+| `mtp.fc_embedding.weight` | BF16 | 2560x2560 | 13.1 |
+| `mtp.fc_hidden.weight` | BF16 | 2560x2560 | 13.1 |
+| `mtp.hyper_connection_mixer.hc_norm.weight` | BF16 | 10240 | 0.0 |
+| `mtp.hyper_connection_mixer.input_mix_weight_down.weight` | BF16 | 320x10240 | 6.6 |
+| `mtp.hyper_connection_mixer.input_mix_weight_up.weight` | BF16 | 10240x320 | 6.6 |
+| `mtp.layers.0.attn_hyper_connection.block_inject_weight.weight` | BF16 | 4x10240 | 0.1 |
+| `mtp.layers.0.attn_hyper_connection.hc_norm.weight` | BF16 | 10240 | 0.0 |
+| `mtp.layers.0.attn_hyper_connection.input_mix_weight_down.weight` | BF16 | 320x10240 | 6.6 |
+| `mtp.layers.0.attn_hyper_connection.input_mix_weight_up.weight` | BF16 | 10240x320 | 6.6 |
+| `mtp.layers.0.mlp.experts.down_proj` | BF16 | 512x2560x640 | 1677.7 |
+| `mtp.layers.0.mlp.experts.gate_up_proj` | BF16 | 512x1280x2560 | 3355.4 |
+| `mtp.layers.0.mlp.gate.weight` | BF16 | 512x2560 | 2.6 |
+| `mtp.layers.0.mlp.shared_expert.down_proj.weight` | BF16 | 2560x640 | 3.3 |
+| `mtp.layers.0.mlp.shared_expert.gate_proj.weight` | BF16 | 640x2560 | 3.3 |
+| `mtp.layers.0.mlp.shared_expert.up_proj.weight` | BF16 | 640x2560 | 3.3 |
+| `mtp.layers.0.mlp.shared_expert_gate.weight` | BF16 | 1x2560 | 0.0 |
+| `mtp.layers.0.mlp_hyper_connection.block_inject_weight.weight` | BF16 | 4x10240 | 0.1 |
+| `mtp.layers.0.mlp_hyper_connection.hc_norm.weight` | BF16 | 10240 | 0.0 |
+| `mtp.layers.0.mlp_hyper_connection.input_mix_weight_down.weight` | BF16 | 320x10240 | 6.6 |
+| `mtp.layers.0.mlp_hyper_connection.input_mix_weight_up.weight` | BF16 | 10240x320 | 6.6 |
+| `mtp.layers.0.self_attn.indexer.index_qk_proj.weight` | BF16 | 640x2560 | 3.3 |
+| `mtp.layers.0.self_attn.indexer.k_layernorm.weight` | BF16 | 128 | 0.0 |
+| `mtp.layers.0.self_attn.indexer.q_layernorm.weight` | BF16 | 128 | 0.0 |
+| `mtp.layers.0.self_attn.k_norm.weight` | BF16 | 256 | 0.0 |
+| `mtp.layers.0.self_attn.k_proj.weight` | BF16 | 512x2560 | 2.6 |
+| `mtp.layers.0.self_attn.o_proj.weight` | BF16 | 2560x6144 | 31.5 |
+| `mtp.layers.0.self_attn.q_norm.weight` | BF16 | 256 | 0.0 |
+| `mtp.layers.0.self_attn.q_proj.weight` | BF16 | 12288x2560 | 62.9 |
+| `mtp.layers.0.self_attn.v_proj.weight` | BF16 | 512x2560 | 2.6 |
+| `mtp.pre_fc_norm_embedding.weight` | BF16 | 2560 | 0.0 |
+| `mtp.pre_fc_norm_hidden.weight` | BF16 | 10240 | 0.0 |
+
+  MTP draft layer:   0.00 / 5.21 GB (0%)
+mtp.fc_embedding.weight done
+mtp.fc_hidden.weight done
+mtp.hyper_connection_mixer.hc_norm.weight done
+  MTP draft layer:   0.03 / 5.21 GB (0%)
+mtp.hyper_connection_mixer.input_mix_weight_down.weight done
+mtp.hyper_connection_mixer.input_mix_weight_up.weight done
+mtp.layers.0.attn_hyper_connection.block_inject_weight.weight done
+mtp.layers.0.attn_hyper_connection.hc_norm.weight done
+  MTP draft layer:   0.05 / 5.21 GB (0%)
+mtp.layers.0.attn_hyper_connection.input_mix_weight_down.weight done
+mtp.layers.0.attn_hyper_connection.input_mix_weight_up.weight done
+  MTP draft layer:   0.10 / 5.21 GB (1%)
+  MTP draft layer:   0.62 / 5.21 GB (11%)
+  MTP draft layer:   1.53 / 5.21 GB (29%)
+mtp.layers.0.mlp.experts.down_proj done
+  MTP draft layer:   1.75 / 5.21 GB (33%)
+  MTP draft layer:   2.07 / 5.21 GB (39%)
+  MTP draft layer:   2.67 / 5.21 GB (51%)
+  MTP draft layer:   3.17 / 5.21 GB (60%)
+  MTP draft layer:   3.56 / 5.21 GB (68%)
+  MTP draft layer:   3.71 / 5.21 GB (71%)
+  MTP draft layer:   4.33 / 5.21 GB (83%)
+  MTP draft layer:   4.73 / 5.21 GB (90%)
+mtp.layers.0.mlp.experts.gate_up_proj done
+  MTP draft layer:   5.09 / 5.21 GB (97%)
+mtp.layers.0.mlp.gate.weight done
+mtp.layers.0.mlp.shared_expert.down_proj.weight done
+mtp.layers.0.mlp.shared_expert.gate_proj.weight done
+mtp.layers.0.mlp.shared_expert.up_proj.weight done
+  MTP draft layer:   5.10 / 5.21 GB (97%)
+mtp.layers.0.mlp.shared_expert_gate.weight done
+mtp.layers.0.mlp_hyper_connection.block_inject_weight.weight done
+mtp.layers.0.mlp_hyper_connection.hc_norm.weight done
+mtp.layers.0.mlp_hyper_connection.input_mix_weight_down.weight done
+  MTP draft layer:   5.11 / 5.21 GB (98%)
+mtp.layers.0.mlp_hyper_connection.input_mix_weight_up.weight done
+mtp.layers.0.self_attn.indexer.index_qk_proj.weight done
+mtp.layers.0.self_attn.indexer.k_layernorm.weight done
+mtp.layers.0.self_attn.indexer.q_layernorm.weight done
+mtp.layers.0.self_attn.k_norm.weight done
+  MTP draft layer:   5.12 / 5.21 GB (98%)
+mtp.layers.0.self_attn.k_proj.weight done
+mtp.layers.0.self_attn.o_proj.weight done
+mtp.layers.0.self_attn.q_norm.weight done
+  MTP draft layer:   5.17 / 5.21 GB (99%)
+mtp.layers.0.self_attn.q_proj.weight done
+mtp.layers.0.self_attn.v_proj.weight done
+mtp.pre_fc_norm_embedding.weight done
+mtp.pre_fc_norm_hidden.weight done
+  MTP draft layer:   5.21 / 5.21 GB (100%)
+  > /root/.local/share/strata/terminal/0.1.53/python/bin/python3.12 /root/.local/share/strata/terminal/0.1.53/tools/mtp_pack.py --src /root/.local/share/strata/Strata-data/mtp --experts q2_0 --out /root/.local/share/strata/Strata-data/mtp/mtp-q2_0.gguf
+mtp.fc_embedding.weight: BF16 13.1 MB
+mtp.fc_hidden.weight: BF16 13.1 MB
+mtp.hyper_connection_mixer.hc_norm.weight: F32 0.0 MB
+mtp.hyper_connection_mixer.input_mix_weight_down.weight: BF16 6.6 MB
+mtp.hyper_connection_mixer.input_mix_weight_up.weight: BF16 6.6 MB
+mtp.layers.0.attn_hyper_connection.block_inject_weight.weight: BF16 0.1 MB
+mtp.layers.0.attn_hyper_connection.hc_norm.weight: F32 0.0 MB
+mtp.layers.0.attn_hyper_connection.input_mix_weight_down.weight: BF16 6.6 MB
+mtp.layers.0.attn_hyper_connection.input_mix_weight_up.weight: BF16 6.6 MB
+mtp.layers.0.mlp.experts.down_proj: q2_0 235.9 MB
+mtp.layers.0.mlp.experts.gate_up_proj: q2_0 471.9 MB
+mtp.layers.0.mlp.gate.weight: BF16 2.6 MB
+mtp.layers.0.mlp.shared_expert.down_proj.weight: BF16 3.3 MB
+mtp.layers.0.mlp.shared_expert.gate_proj.weight: BF16 3.3 MB
+mtp.layers.0.mlp.shared_expert.up_proj.weight: BF16 3.3 MB
+mtp.layers.0.mlp.shared_expert_gate.weight: BF16 0.0 MB
+mtp.layers.0.mlp_hyper_connection.block_inject_weight.weight: BF16 0.1 MB
+mtp.layers.0.mlp_hyper_connection.hc_norm.weight: F32 0.0 MB
+mtp.layers.0.mlp_hyper_connection.input_mix_weight_down.weight: BF16 6.6 MB
+mtp.layers.0.mlp_hyper_connection.input_mix_weight_up.weight: BF16 6.6 MB
+mtp.layers.0.self_attn.indexer.index_qk_proj.weight: BF16 3.3 MB
+mtp.layers.0.self_attn.indexer.k_layernorm.weight: F32 0.0 MB
+mtp.layers.0.self_attn.indexer.q_layernorm.weight: F32 0.0 MB
+mtp.layers.0.self_attn.k_norm.weight: F32 0.0 MB
+mtp.layers.0.self_attn.k_proj.weight: BF16 2.6 MB
+mtp.layers.0.self_attn.o_proj.weight: BF16 31.5 MB
+mtp.layers.0.self_attn.q_norm.weight: F32 0.0 MB
+mtp.layers.0.self_attn.q_proj.weight: BF16 62.9 MB
+mtp.layers.0.self_attn.v_proj.weight: BF16 2.6 MB
+mtp.pre_fc_norm_embedding.weight: F32 0.0 MB
+mtp.pre_fc_norm_hidden.weight: F32 0.0 MB
+wrote /root/.local/share/strata/Strata-data/mtp/mtp-q2_0.gguf: 0.889 GB of tensor data
+  > /root/.local/share/strata/terminal/0.1.53/python/bin/python3.12 /root/.local/share/strata/terminal/0.1.53/tools/mtp_rt.py --gguf /root/.local/share/strata/Strata-data/mtp/mtp-q2_0.gguf --out /root/.local/share/strata/Strata-data/mtp/rt
+experts.bin 707788800 B, dense.bin 116099072 B, 29 tensors -> /root/.local/share/strata/Strata-data/mtp/rt
+  fc_embedding.weight q8_0 2560 2560 0 6963200
+  fc_hidden.weight q8_0 2560 2560 6963200 6963200
+  hyper_connection_mixer.hc_norm.weight f32 1 10240 13926400 40960
+  hyper_connection_mixer.input_mix_weight_down.weight bf16 320 10240 13967360 6553600
+  hyper_connection_mixer.input_mix_weight_up.weight bf16 10240 320 20520960 6553600
+  attn_hyper_connection.block_inject_weight.weight bf16 4 10240 27074560 81920
+  attn_hyper_connection.hc_norm.weight f32 1 10240 27156480 40960
+  attn_hyper_connection.input_mix_weight_down.weight bf16 320 10240 27197440 6553600
+  attn_hyper_connection.input_mix_weight_up.weight bf16 10240 320 33751040 6553600
+  mlp.gate.weight bf16 512 2560 40304640 2621440
+  mlp.shared_expert.down_proj.weight q8_0 2560 640 42926080 1740800
+  mlp.shared_expert.gate_proj.weight q8_0 640 2560 44666880 1740800
+  mlp.shared_expert.up_proj.weight q8_0 640 2560 46407680 1740800
+  mlp.shared_expert_gate.weight bf16 1 2560 48148480 5120
+  mlp_hyper_connection.block_inject_weight.weight bf16 4 10240 48153600 81920
+  mlp_hyper_connection.hc_norm.weight f32 1 10240 48235520 40960
+  mlp_hyper_connection.input_mix_weight_down.weight bf16 320 10240 48276480 6553600
+  mlp_hyper_connection.input_mix_weight_up.weight bf16 10240 320 54830080 6553600
+  self_attn.indexer.index_qk_proj.weight q8_0 640 2560 61383680 1740800
+  self_attn.indexer.k_layernorm.weight f32 1 128 63124480 512
+  self_attn.indexer.q_layernorm.weight f32 1 128 63124992 512
+  self_attn.k_norm.weight f32 1 256 63125504 1024
+  self_attn.k_proj.weight q8_0 512 2560 63126528 1392640
+  self_attn.o_proj.weight q8_0 2560 6144 64519168 16711680
+  self_attn.q_norm.weight f32 1 256 81230848 1024
+  self_attn.q_proj.weight q8_0 12288 2560 81231872 33423360
+  self_attn.v_proj.weight q8_0 512 2560 114655232 1392640
+  pre_fc_norm_embedding.weight f32 1 2560 116047872 10240
+  pre_fc_norm_hidden.weight f32 1 10240 116058112 40960
+  [ok] MTP draft layer: /root/.local/share/strata/Strata-data/mtp/rt
+
+=== Step 7: writing the start script ===
+  [ok] 504 GB of RAM: the 29 GB n-gram table is kept in RAM (--ple-io ram), so a new prompt does not wait for its rows from the SSD (a 4K prompt about 18% sooner on a fast card); remove --ple-io ram from the config's args to read it from the SSD instead
+  [ok] KV streaming on: the context's KV cache lives in RAM (0.9 GB), more experts fit in VRAM
+  tip: this PC has 2 CPU sockets of 18 cores. Expert workers on the other socket have been measured slower than fewer, local ones (35 vs 17-18 on 2-socket Xeons): try --pool-workers 17 in the config's args (START-HERE --calibrate measures it on this PC)
+  tip: with 504 GB of RAM, --prefill auto:32768 in the config's args read prompts 21-35% faster in community benchmarks (#433 #440 #834); not set, nothing changes
+  [ok] start script: run-iq3_s.sh
+
+All set.
+  API (OpenAI):     http://127.0.0.1:8080/v1   (any API key; model name: anything)
+  API (Anthropic):  http://127.0.0.1:8080/v1/messages
+  Next time:        just run ./setup.sh (or run-iq3_s.sh) - it starts right away
+  Several requests at once: left at one at a time - parallel N reduces waiting for several users but costs about 10-25% speed per request on this card (docs/BATCHING.md).
+  [ok] GPU: GPU 0 (NVIDIA GeForce RTX 5060 Ti, 16 GB)
+
+  ----------------------------------------------------------------------------------------------------
+  Starting qwen3.8-flash-next-iq3_s: it loads about 55 GB into RAM and locks part of it for the GPU.
+  While it does, YOUR PC CAN BE SLOW OR STOP RESPONDING FOR 1-3 MINUTES (longer the first time after a
+  restart). That is normal: please wait and don't close this window - the browser opens when it is ready.
+  Later, closing this window stops the model.
+  ----------------------------------------------------------------------------------------------------
+  Settings (strata-iq3_s.json): --expert-cache auto --prefill auto --spec 4 --spec-min-p 0.5
+    --max-context 65536 --kv int8 --ple-io ram --kv-resident 32768; server 127.0.0.1:8080, gpu 0
+[strata] No engine for this PC was found in /root/.local/share/strata/components: the component folder holds no engine package. The app never downloads an engine while it starts or serves. Download the engine for your GPU with Update engine in the app's Settings, or with `strata update` (or `strata install`) in the Terminal, or copy an engine package into the component folder.

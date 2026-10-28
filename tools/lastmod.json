@@ -1,10 +1,10 @@
 {
  "blog/index.html": {
-  "h": "67f2b01612c0276d",
+  "h": "938d0376966e256d",
   "d": "2026-10-28"
  },
  "blog/state-of-local-llm-hardware-oct-2026.html": {
-  "h": "c581b6c8f430cfde",
+  "h": "eacde4585572ca42",
   "d": "2026-10-28"
  },
  "can-run/flint-40b-a2-5b-on-macbook-pro-m5-max-128gb.html": {
@@ -652,7 +652,7 @@
   "d": "2026-10-28"
  },
  "models/qwen3-6-35b-a3b.html": {
-  "h": "63760d2b70bd08fa",
+  "h": "520406349039c062",
   "d": "2026-10-28"
  },
  "models/qwen3-8-27b.html": {
@@ -660,7 +660,7 @@
   "d": "2026-10-28"
  },
  "models/qwen3-8-flash-next.html": {
-  "h": "e4c4ab1fe6d69415",
+  "h": "af55328839e4c8c4",
   "d": "2026-10-28"
  },
  "models/qwen3-coder-30b-a3b.html": {

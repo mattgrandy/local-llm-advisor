@@ -1,0 +1,42 @@
++ R=/workspace/res
++ mkdir -p /workspace/res /workspace/models
++ cd /workspace
++ uptime
++ nproc
++ free -g
++ cat /sys/fs/cgroup/memory.max
++ grep 'model name' /proc/cpuinfo
++ head -1
++ nvidia-smi
++ curl -fsSL https://github.com/Niko1221/Strata/releases/latest/download/install.sh -o install.sh
++ curl -fsSL -C - -o /workspace/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF/resolve/main/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf
++ sh install.sh
+Strata Terminal installer
+  This computer: Linux x86_64 (linux-x86_64), graphics: NVIDIA NVIDIA GeForce RTX 5060 Ti
+  Release folder: https://github.com/Niko1221/Strata/releases/latest/download
+  Terminal 0.1.53 (94 MB)
+Downloading…
+  Checksum ok.
+Checking the release's signature…
+  Signature ok.
+Installed. Run: /root/.local/bin/strata launch
+  (To type just 'strata', add this line to your shell profile: export PATH="/root/.local/bin:$PATH")
++ export PATH=/root/.local/bin:/root/.strata/bin:/opt/instance-tools/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ PATH=/root/.local/bin:/root/.strata/bin:/opt/instance-tools/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ hash -r
++ strata --version
++ strata install --help
++ strata drafting --help
++ strata models --help
++ L=/workspace/llama
++ mkdir -p /workspace/llama
++ b=https://github.com/ggml-org/llama.cpp/releases/download/b11658
++ curl -fsL https://github.com/ggml-org/llama.cpp/releases/download/b11658/llama-b11658-bin-ubuntu-cuda-12.8-x64.tar.gz
++ tar xz -C /workspace/llama --strip-components=1
++ ldconfig -p
++ grep -q libcudart.so.12
++ LD_LIBRARY_PATH=/workspace/llama
++ /workspace/llama/llama-bench --version
++ echo SETUP_DONE
+SETUP_DONE
++ echo Q36DL_OK

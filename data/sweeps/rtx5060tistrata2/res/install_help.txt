@@ -1,0 +1,10 @@
+usage: strata install [-h] [--update] ...
+
+positional arguments:
+  setup_args  options passed to setup.py, e.g. --family qwen --model Q2_0
+              --yes
+
+options:
+  -h, --help  show this help message and exit
+  --update    update an existing install (what UPDATE.bat / update.sh run)
+              instead of setting one up
