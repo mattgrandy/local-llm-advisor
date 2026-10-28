@@ -255,7 +255,14 @@ console.log("ALL TESTS PASSED");
   assert(sigs7.size === cmp.length, "compare fit tables are distinct"); assert(amazonBoxes >= cmp.length, "amazon boxes on compare pages " + amazonBoxes);
   function Lay_AFF() { return require("../tools/layout.js").AFFILIATE.disclosure; }
   // can-run
-  const cr = fs7.readdirSync(p7.join(root, "can-run")).filter(f => f !== "index.html"); assert(cr.length >= 40 && cr.length <= 80, "can-run 40..80 pages (72 + up to 8 release pairs): " + cr.length);
+  const crAll = fs7.readdirSync(p7.join(root, "can-run")).filter(f => f !== "index.html"), isStub = f => rd("can-run/" + f).includes("<!--canrun-redirect-->");
+  { // evicted can-run URLs: every previously published slug still resolves (page or noindex redirect stub to a live page), stubs not in sitemap
+    const pub = JSON.parse(fs7.readFileSync(p7.join(root, "..", "data", "canrun_published.json"), "utf8")); assert(pub.length >= 83, "published can-run slug list kept");
+    for (const s of pub) { assert(fs7.existsSync(p7.join(root, "can-run", s + ".html")), "published can-run URL still exists " + s); }
+    for (const f of crAll.filter(isStub)) { const h = rd("can-run/" + f), u = h.match(/url=\.\.\/([^"]+)"/)[1];
+      assert(/noindex/.test(h) && /rel="canonical"/.test(h) && /redirect\.js" data-to=/.test(h) && fs7.existsSync(p7.join(root, u)) && !u.startsWith("can-run/" + f), "redirect stub ok " + f); assert(!inSm("can-run/" + f), "stub not in sitemap " + f); }
+    for (const s of ["gemma-4-12b-on-rtx-5070ti-16gb", "qwen3-5-4b-on-rtx-5070ti-16gb", "qwen3-5-9b-on-rtx-5070ti-16gb"]) assert(fs7.existsSync(p7.join(root, "can-run", s + ".html")), "5070 Ti evicted URL resolves " + s); }
+  const cr = crAll.filter(f => !isStub(f)); assert(cr.length >= 40 && cr.length <= 80, "can-run 40..80 pages (72 + up to 8 release pairs): " + cr.length);
   const csigs = new Set(); for (const f of cr) { const h = rd("can-run/" + f), t = types(h).map(o => o["@type"]); assert(t.includes("BreadcrumbList") && t.includes("FAQPage"), "can-run ld " + f);
     assert(/<b>[\d.]+<\/b><span>generation tok\/s/.test(h) && /class="badge|Origin/.test(h) || /own measurement|public runs|public/.test(h) || /<!--estimated-pair-->/.test(h), "measured data (or a labelled estimate, checked below) on " + f); assert(inSm("can-run/" + f) === !noindex(h)); assert(!/\$\s?\d/.test(text(h)), "no price " + f); csigs.add(h.match(/<div class="stats">[\s\S]*?<\/div><\/div>/)[0]); }
   assert(csigs.size === cr.length, "can-run pages carry distinct numbers");
