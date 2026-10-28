@@ -1,0 +1,550 @@
++ set -x
++ R=/workspace/res
++ mkdir -p /workspace/res
++ cd /workspace
++ nvidia-smi
+Wed Oct 28 16:46:50 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 615.71.09              KMD Version: 615.71.09     CUDA UMD Version: 13.4     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5060 Ti     On  |   00000000:D5:00.0 Off |                  N/A |
+|  0%   32C    P8              6W /  180W |       0MiB /  16311MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
++ free -g
+               total        used        free      shared  buff/cache   available
+Mem:            2975         941        1517         165         694        2033
+Swap:              0           0           0
++ nproc
+112
++ df -h /workspace
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         180G   25M  180G   1% /
++ U=http://127.0.0.1:8080
++ export PATH=/root/.local/bin:/opt/instance-tools/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ PATH=/root/.local/bin:/opt/instance-tools/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ curl -fsSL https://github.com/Niko1221/Strata/releases/latest/download/install.sh -o install.sh
++ sh install.sh
+Strata Terminal installer
+  This computer: Linux x86_64 (linux-x86_64), graphics: NVIDIA NVIDIA GeForce RTX 5060 Ti
+  Release folder: https://github.com/Niko1221/Strata/releases/latest/download
+  Terminal 0.1.53 (94 MB)
+Downloading…
+  Checksum ok.
+Checking the release's signature…
+  Signature ok.
+Installed. Run: strata launch
++ export PATH=/root/.local/bin:/root/.strata/bin:/root/.local/bin:/opt/instance-tools/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ PATH=/root/.local/bin:/root/.strata/bin:/root/.local/bin:/opt/instance-tools/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ hash -r
++ strata --version
++ strata launch --help
++ strata --help
++ echo STAGE installed
+STAGE installed
++ B='python3 /workspace/sbench.py http://127.0.0.1:8080'
++ start qwen36 ud-q4_k_xl q36
++ fam=qwen36
++ m=ud-q4_k_xl
++ tag=q36
++ shift 3
++ strata launch --plan --family qwen36 --model ud-q4_k_xl --context 64k --vision off
++ timeout 2400 strata launch --family qwen36 --model ud-q4_k_xl --context 64k --vision off --port 8080 --no-api-key --yes --no-tui
++ wait_up
+++ seq 1 240
++ for i in $(seq 1 240)
++ curl -sf http://127.0.0.1:8080/v1/models
++ return 0
++ strata launch --status
++ nvidia-smi --query-gpu=memory.used --format=csv
++ curl -s http://127.0.0.1:8080/v1/status
++ ps aux
++ grep -v grep
++ grep -o 'strata-engine.*\|--native.*'
++ head -2
++ bench q36 1
++ tag=q36
++ long=1
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36 0 1
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36 0 3
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36 1 3
++ '[' 1 = 1 ']'
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36 4096 1
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36 32768 1
++ curl -s http://127.0.0.1:8080/v1/status
++ stop
++ strata launch --stop
+Stopped ud-q4_k_xl-64k.
++ sleep 5
++ pkill -f strata-engine
++ sleep 2
++ echo STAGE q36 done
+STAGE q36 done
++ start qwen36 ud-q4_k_xl q36_nomtp --mtp off
++ fam=qwen36
++ m=ud-q4_k_xl
++ tag=q36_nomtp
++ shift 3
++ strata launch --plan --family qwen36 --model ud-q4_k_xl --context 64k --vision off --mtp off
++ timeout 2400 strata launch --family qwen36 --model ud-q4_k_xl --context 64k --vision off --port 8080 --no-api-key --yes --no-tui --mtp off
++ wait_up
+++ seq 1 240
++ for i in $(seq 1 240)
++ curl -sf http://127.0.0.1:8080/v1/models
++ return 0
++ strata launch --status
++ nvidia-smi --query-gpu=memory.used --format=csv
++ curl -s http://127.0.0.1:8080/v1/status
++ ps aux
++ grep -o 'strata-engine.*\|--native.*'
++ grep -v grep
++ head -2
++ bench q36_nomtp 1
++ tag=q36_nomtp
++ long=1
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36_nomtp 0 1
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36_nomtp 0 3
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36_nomtp 1 3
++ '[' 1 = 1 ']'
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36_nomtp 4096 1
++ python3 /workspace/sbench.py http://127.0.0.1:8080 q36_nomtp 32768 1
++ curl -s http://127.0.0.1:8080/v1/status
++ stop
++ strata launch --stop
+Stopped ud-q4_k_xl-64k.
++ sleep 5
++ pkill -f strata-engine
++ sleep 2
++ echo STAGE q36 variants done
+STAGE q36 variants done
++ L=/workspace/llama
++ mkdir -p /workspace/llama
++ b=https://github.com/ggml-org/llama.cpp/releases/download/b11658
++ curl -fsL https://github.com/ggml-org/llama.cpp/releases/download/b11658/llama-b11658-bin-ubuntu-cuda-12.8-x64.tar.gz
++ tar xz -C /workspace/llama --strip-components=1
++ ldconfig -p
++ grep -q libcudart.so.12
++ export LD_LIBRARY_PATH=/workspace/llama:/usr/local/cuda/lib64
++ LD_LIBRARY_PATH=/workspace/llama:/usr/local/cuda/lib64
++ /workspace/llama/llama-bench --version
+++ find / -xdev -iname '*Qwen3.6-35B-A3B*Q4_K_XL*.gguf'
+++ grep -v mmproj
+++ sort
+++ head -1
++ F=/root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf
++ echo 'FILE /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf'
++ ls -la /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf
++ for n in 32 26 22 18 16 14 12
++ timeout 300 /workspace/llama/llama-bench -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 32 -o jsonl
++ for n in 32 26 22 18 16 14 12
++ timeout 300 /workspace/llama/llama-bench -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 26 -o jsonl
++ for n in 32 26 22 18 16 14 12
++ timeout 300 /workspace/llama/llama-bench -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 22 -o jsonl
++ for n in 32 26 22 18 16 14 12
++ timeout 300 /workspace/llama/llama-bench -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 18 -o jsonl
++ for n in 32 26 22 18 16 14 12
++ timeout 300 /workspace/llama/llama-bench -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 16 -o jsonl
++ for n in 32 26 22 18 16 14 12
++ timeout 300 /workspace/llama/llama-bench -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 14 -o jsonl
++ for n in 32 26 22 18 16 14 12
++ timeout 300 /workspace/llama/llama-bench -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe 12 -o jsonl
+remote5060.sh: line 40:  1529 Aborted                 timeout 300 $L/llama-bench -m "$F" -ngl 99 -fa 1 -p 512 -n 64 -r 1 --n-cpu-moe $n -o jsonl >> $R/llama_sweep.jsonl 2>> $R/llama_sweep.err
++ echo 'ncmoe 12 failed'
+++ python3 -c '
+import json;r=[json.loads(l) for l in open('\''/workspace/res/llama_sweep.jsonl'\'')];t=[x for x in r if x['\''n_gen'\'']>0]
+print(max(t,key=lambda x:x['\''avg_ts'\''])['\''n_cpu_moe'\''])'
+Traceback (most recent call last):
+  File "<string>", line 2, in <module>
+  File "/usr/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 2 (char 1)
++ BEST=
++ echo 'BEST '
++ timeout 900 /workspace/llama/llama-bench -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 4096 -n 128 -d 0,32768 -r 2 --n-cpu-moe -o jsonl
++ for n in $BEST $((BEST+2)) $((BEST+4)) $((BEST+6))
++ timeout 600 /workspace/llama/llama-bench -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 4096 -n 128 -d 32768 -r 1 --n-cpu-moe 2 -o jsonl
++ rm -f /workspace/res/llama_q36_d32k_ncmoe2.jsonl
++ for n in $BEST $((BEST+2)) $((BEST+4)) $((BEST+6))
++ timeout 600 /workspace/llama/llama-bench -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 4096 -n 128 -d 32768 -r 1 --n-cpu-moe 4 -o jsonl
++ rm -f /workspace/res/llama_q36_d32k_ncmoe4.jsonl
++ for n in $BEST $((BEST+2)) $((BEST+4)) $((BEST+6))
++ timeout 600 /workspace/llama/llama-bench -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa 1 -p 4096 -n 128 -d 32768 -r 1 --n-cpu-moe 6 -o jsonl
++ rm -f /workspace/res/llama_q36_d32k_ncmoe6.jsonl
++ echo STAGE llama done
+STAGE llama done
++ LS=1572
++ /workspace/llama/llama-server -m /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf -ngl 99 -fa on --n-cpu-moe -c 16384 --port 8081 --jinja
+++ seq 1 60
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ for i in $(seq 1 60)
++ curl -sf http://127.0.0.1:8081/health
++ sleep 3
++ echo 'llama-server --n-cpu-moe  -fa on -c 16384 --jinja'
++ python3 /workspace/sbench.py http://127.0.0.1:8081 llama_srv 0 1
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/usr/lib/python3.12/http/client.py", line 1365, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1411, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1360, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1120, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1064, in send
+    self.connect()
+  File "/usr/lib/python3.12/http/client.py", line 1030, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/sbench.py", line 35, in <module>
+    for s in range(reps): one(s+1)
+                          ^^^^^^^^
+  File "/workspace/sbench.py", line 19, in one
+    with urllib.request.urlopen(r,timeout=1800) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
++ python3 /workspace/sbench.py http://127.0.0.1:8081 llama_srv 0 3
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/usr/lib/python3.12/http/client.py", line 1365, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1411, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1360, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1120, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1064, in send
+    self.connect()
+  File "/usr/lib/python3.12/http/client.py", line 1030, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/sbench.py", line 35, in <module>
+    for s in range(reps): one(s+1)
+                          ^^^^^^^^
+  File "/workspace/sbench.py", line 19, in one
+    with urllib.request.urlopen(r,timeout=1800) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
++ python3 /workspace/sbench.py http://127.0.0.1:8081 llama_srv 1 3
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/usr/lib/python3.12/http/client.py", line 1365, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1411, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1360, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1120, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1064, in send
+    self.connect()
+  File "/usr/lib/python3.12/http/client.py", line 1030, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/sbench.py", line 35, in <module>
+    for s in range(reps): one(s+1)
+                          ^^^^^^^^
+  File "/workspace/sbench.py", line 19, in one
+    with urllib.request.urlopen(r,timeout=1800) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
++ kill 1572
+remote5060.sh: line 55: kill: (1572) - No such process
++ sleep 3
++ echo STAGE llama_srv done
+STAGE llama_srv done
++ FM=q2_0
+++ free -g
+++ awk '/Mem/{print $2}'
++ RAMG=2975
+++ cat /sys/fs/cgroup/memory.max
+++ grep -v max
++ CG=1428
++ strata launch --plan --family qwen --model iq3_s --context 64k --vision off
++ '[' 1428 -ge 90 ']'
++ '[' 2975 -ge 90 ']'
++ FM=iq3_s
++ echo 'FM iq3_s ram 2975 cg 1428'
++ start qwen iq3_s fn
++ fam=qwen
++ m=iq3_s
++ tag=fn
++ shift 3
++ strata launch --plan --family qwen --model iq3_s --context 64k --vision off
++ timeout 2400 strata launch --family qwen --model iq3_s --context 64k --vision off --port 8080 --no-api-key --yes --no-tui

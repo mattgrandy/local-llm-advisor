@@ -1,0 +1,24 @@
+    Checking the engine for this computer…
+    Engine 0.1.52 (cuda) is installed.
+    Getting qwen IQ3_S ready (a download may be large; it continues where it stopped if interrupted)…
+    Getting your model ready
+    Checking your computer
+    Getting the helper packages ready
+    Checking the engine for this PC
+    Downloading the model files: 9.6 of 83.6 GB
+    Downloading the model files: 19.7 of 83.6 GB
+    Downloading the model files: 32.3 of 83.6 GB
+    Downloading the model files: 47.0 of 83.6 GB
+    Checking that the model files are complete (a few minutes for a big model; nothing is downloaded): 36.3 of 54.8 GB
+    Checking that the model files are complete (a few minutes for a big model; nothing is downloaded): 41.8 of 54.8 GB
+    Checking that the model files are complete (a few minutes for a big model; nothing is downloaded): 47.2 of 54.8 GB
+    Checking that the model files are complete (a few minutes for a big model; nothing is downloaded): 52.7 of 54.8 GB
+    Preparing your model for Strata (one time)
+    Preparing the model data for the engine (one time)
+    Preparing the draft layer
+    Downloading the draft layer (about 5 GB; it makes answers about twice as fast)
+    Saving the model's settings
+    qwen IQ3_S is ready.
+    Writing this launch's settings…
+    Settings are saved.
+    Starting the engine and loading the model. The first start can take a few minutes.

@@ -395,7 +395,7 @@ console.log("ALL TESTS PASSED");
 // Strata engine rows: separate list, never in llama.cpp medians; model pages show a Strata section
 {
   const st = data.measured.strata || [];
-  assert(st.length >= 10 && st.every(r => r.engine === "strata" && ["rtx-3090", "rtx-3060"].includes(r.hw_id) && r.tg_tps > 0 && r.flags && r.engine_version && r.host_ram_gib > 0), "strata rows with engine/version/flags/RAM");
+  assert(st.length >= 10 && st.every(r => r.engine === "strata" && ["rtx-3090", "rtx-3060", "rtx-5060ti-16"].includes(r.hw_id) && r.tg_tps > 0 && r.flags && r.engine_version && r.host_ram_gib > 0), "strata rows with engine/version/flags/RAM");
   assert(Object.values(data.measured.entries).every(es => es.every(e => e.engine && !/strata/.test(e.engine))), "every entry has a non-strata engine");
   assert(!Object.values(data.measured.entries).some(es => es.some(e => e.sources.some(s => /strata/.test(s.id)))), "no Strata rows inside llama.cpp medians");
   const q36 = data.measured.entries["rtx-3090"].find(e => e.site_id === "Qwen/Qwen3.6-35B-A3B" && e.qclass === "Q4");
@@ -408,6 +408,6 @@ console.log("ALL TESTS PASSED");
   }
   assert(!fs.readFileSync(path.join(S, "models", "gpt-oss-20b.html"), "utf8").includes('id="strata"'), "no strata section without data");
   assert(st.some(r => r.hw_id === "rtx-3060") && (data.measured.strata_ref || []).some(r => r.hw_id === "rtx-3060" && r.n_cpu_moe > 0), "3060 strata + llama.cpp offload comparison rows");
-  { const h = fs.readFileSync(path.join(S, "models", "qwen3-6-35b-a3b.html"), "utf8"); assert(h.includes("RTX 3060 12GB") && h.includes("--n-cpu-moe 22"), "3060 strata comparison on model page"); }
+  { const h = fs.readFileSync(path.join(S, "models", "qwen3-6-35b-a3b.html"), "utf8"); assert(h.includes("RTX 3060 12GB") && h.includes("--n-cpu-moe 22"), "3060 strata comparison on model page"); assert(h.includes("RTX 5060 Ti") && h.includes("llama-server, <code>--n-cpu-moe 14") && h.includes("busy shared host"), "5060 Ti strata + llama-server comparison"); }
   console.log("strata rows:", st.length);
 }

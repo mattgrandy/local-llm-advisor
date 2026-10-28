@@ -1,0 +1,1 @@
+--native /root/.local/share/strata/Strata-data/models/qwen36-UD-Q4_K_XL/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf --max-context 65536 --prefill auto

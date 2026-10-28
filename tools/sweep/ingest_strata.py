@@ -29,7 +29,12 @@ CARDS = {
                               '--expert-profile --expert-cache auto --prefill auto --spec 4 --spec-min-p 0.5 --mtp <pack>/mtp/rt --max-context 65536 --kv int8 --ple-io ram --kv-resident 32768'),
                               q36=('Qwen3.6 35B-A3B', 'UD-Q4_K_XL', 'unsloth/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf', True,
                                    'strata launch --family qwen36 --model ud-q4_k_xl --context 64k', '--max-context 65536 --prefill auto --mtp 2'))),
+    'rtx5060tistrata': dict(hw=dict(hw_id='rtx-5060ti-16', device_raw='NVIDIA GeForce RTX 5060 Ti 16GB', host_ram_gib=761.0, cpu='Intel Xeon Platinum 8273CL (busy shared host)'),
+                            llama=(('llama_q36_ncmoe14.jsonl', 14, None),), server=('llama_server.jsonl', 14), driver='', reps=1, busy=True,
+                            ver='strata 0.2.7 (build 0.1.53, engine 0.1.52)', run=dict(RUN, q36=('Qwen3.6 35B-A3B', 'UD-Q4_K_XL', 'unsloth/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf', True,
+                                   'strata launch --family qwen36 --model ud-q4_k_xl --context 64k', '--max-context 65536 --prefill auto --mtp 2'))),
 }
+BUSY = '; busy shared host (load average 90-150 from other tenants during the run), which mostly slows CPU-side expert work'
 HW = None
 DATE, VER = '2026-10-28', 'strata 0.2.7 (build 0.1.53, engine 0.1.52)'
 URL = 'https://github.com/mattgrandy/local-llm-advisor'
@@ -57,7 +62,7 @@ def strata_rows(res):
                             mtp_accept=round(da / dn, 3) if dn else '', n_samples=len(g),
                             flags=cmd + (' --mtp off' if not mtp else '') + ' | engine: ' + flags, date=DATE, source='own-measurement-strata', source_url=URL,
                             notes='Strata OpenAI server, ' + ('768-token completions to 3 realistic ~100-token chat prompts' if kind else '256-token completions') + ', temp 0.6, thinking off; tg = median predicted_per_second; pp = best cold-cache (cache_n=0) prompt_per_second'
-                            + ('; MTP drafts never engaged (draft_n=0) on this build' if mtp and not dn else '') + ('; --mtp off still leaves Strata n-gram drafting (--spec 4) on' if not mtp and dn else '') + ('; variant ' + variant if variant else ''), **HW))
+                            + ('; MTP drafts never engaged (draft_n=0) on this build' if mtp and not dn else '') + ('; --mtp off still leaves Strata n-gram drafting (--spec 4) on' if not mtp and dn else '') + ('; variant ' + variant if variant else '') + (BUSY if CFG.get('busy') else ''), **HW))
     return out
 
 
@@ -70,12 +75,19 @@ def llama_rows(res):
             tg = next(r for r in recs if r.get('n_depth', 0) == d and r['n_gen'] > 0)
             notes = (f'own run, llama-bench from llama.cpp b11658 (commit 3e4dfa8f3), engine llama.cpp, ' + (f"driver {CFG['driver']}, " if CFG['driver'] else '') + f"vast.ai, CPU {HW['cpu'].split(' (')[0]}, RAM {HW['host_ram_gib']} GiB; "
                      f'GGUF unsloth/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf; -fa 1 -ngl 99 -r {CFG["reps"] or len(tg.get("samples_ts", [])) or 3}; Strata comparison run')
+            if CFG.get('busy'): notes += BUSY
             if nc: notes += f'; MoE expert offload --n-cpu-moe {nc}' + (' (lowest that fits at this depth)' if 'd32k' in f else '') + '; excluded from site medians'
             rows.append(dict(device=HW['hw_id'], device_raw=HW['device_raw'], hw_id=HW['hw_id'], device_count=1, backend='CUDA', model='Qwen3.6 35B-A3B',
                              quant='UD-Q4_K_XL', params_b=round(tg['model_n_params'] / 1e9, 2), size_gib=round(tg['model_size'] / 2**30, 2), fa=1, ngl=99,
                              threads=tg['n_threads'], ubatch=tg['n_ubatch'], depth=d, pp_n=pp['n_prompt'], pp_tps=round(pp['avg_ts'], 2), tg_n=tg['n_gen'],
                              tg_tps=round(tg['avg_ts'], 2), build='3e4dfa8f3', build_num=11658, source='own-measurement', source_url=URL,
                              author='Local LLM Advisor (own measurement)', date=DATE, notes=notes, ttft_ms='', n_samples=CFG['reps'] or len(tg.get('samples_ts', [])) or 3, perf_score='', rank='', retrieved=DATE))
+    if CFG.get('server'):  # llama-server, same 3 chat prompts / 768-token replies as Strata, timings from the server
+        f, nc = CFG['server']; recs = [json.loads(l) for l in open(os.path.join(res, f))]; g = [r for r in recs if r['target_prompt'] == 1]
+        tg = statistics.median(r['timings']['predicted_per_second'] for r in g); pp = statistics.median(r['timings']['prompt_per_second'] for r in g)
+        b = rows[0]
+        rows.append(dict(b, depth=0, pp_n=g[0]['prompt_tokens'], pp_tps=round(pp, 2), tg_n=768, tg_tps=round(tg, 2), n_samples=len(g),
+                         notes=f'own run, llama-server from llama.cpp b11658 (commit 3e4dfa8f3), -fa on -ngl 99 -c 16384 --jinja, 3 realistic ~100-token chat prompts with 768-token replies (same as Strata), median of server timings; vast.ai, CPU {HW["cpu"].split(" (")[0]}; Strata comparison run; llama-server chat' + (BUSY if CFG.get('busy') else '') + f'; MoE expert offload --n-cpu-moe {nc}; excluded from site medians'))
     return rows
 
 

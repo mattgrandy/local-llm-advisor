@@ -97,3 +97,4 @@
 - rtx5090q38 sweep launched Mon Oct 26 07:41:32 MDT 2026
 - 5090 Qwen3.8 done 2026-10-26 07:55 MDT, destroyed, 0 instances
 - 3090 Strata run 2026-10-28 (Vast, Slovakia, 241.8 GiB container RAM): strata 0.2.7 (build 0.1.53) Qwen3.6 35B-A3B UD-Q4_K_XL + Qwen3.8 Flash Next Q2_0, MTP on/off, empty/4K/32K prompts; llama.cpp b11658 comparison on the same Qwen3.6 GGUF. Ingested with tools/sweep/ingest_strata.py (Strata rows -> data/benchmarks/own-strata, engine='strata', kept out of medians). Destroyed, 0 instances.
+- 2026-10-28 RTX 5060 Ti 16GB Strata run (Vast, busy shared host): Qwen3.6 UD-Q4_K_XL Strata MTP on/off at short/chat/4K/35K, llama.cpp --n-cpu-moe 14 sweep row + llama-server chat. Flash-Next IQ3_S not measured: Strata's MTP draft-layer download stalled; llama-bench 4K/32K at best ncmoe not run (time cap). Instance destroyed.

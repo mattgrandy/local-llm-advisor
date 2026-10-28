@@ -118,7 +118,7 @@ def load_strata_ref():
             if 'Strata comparison run' not in (r.get('notes') or ''): continue
             c = canon(r['model'], None); m = re.search(r'--n-cpu-moe (\d+)', r['notes'])
             out.append(dict(engine='llama.cpp', site_id=c[1] if c else None, hw_id=r['hw_id'], device_raw=r['device_raw'], quant=r['quant'], depth=int(r['depth']),
-                            pp_n=r['pp_n'], pp_tps=r['pp_tps'], tg_tps=r['tg_tps'], n_cpu_moe=int(m.group(1)) if m else 0, date=r['date']))
+                            pp_n=r['pp_n'], pp_tps=r['pp_tps'], tg_tps=r['tg_tps'], n_cpu_moe=int(m.group(1)) if m else 0, date=r['date'], server='llama-server chat' in r['notes'], busy='busy shared host' in r['notes']))
     return out
 
 
