@@ -1,0 +1,8 @@
+Plan for 'IQ3_S 64K':
+  model     Qwen3.8-Flash-Next IQ3_S, 84 GB
+  context   64K    pictures off    parallel fit to your card
+  download  About 88.8 GB to download: the model (83.6 GB) and the draft layer (5.2 GB). To skip the draft layer (a little slower, less memory), add --mtp off.
+  drafting  MTP
+  tuning    skip    access This computer only, port 8080
+  same as   strata launch --model iq3_s --context 64k --vision off --tune skip --access local --port 8080
+Nothing was changed.

@@ -1,6 +1,9 @@
 [
  {
   "engine": "strata",
+  "ram_used_gib": "",
+  "variant": "",
+  "prompt_kind": "",
   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
   "model": "Qwen3.8 Flash Next",
   "quant": "Q2_0",
@@ -23,6 +26,9 @@
  },
  {
   "engine": "strata",
+  "ram_used_gib": "",
+  "variant": "",
+  "prompt_kind": "",
   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
   "model": "Qwen3.8 Flash Next",
   "quant": "Q2_0",
@@ -45,6 +51,9 @@
  },
  {
   "engine": "strata",
+  "ram_used_gib": "",
+  "variant": "",
+  "prompt_kind": "",
   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
   "model": "Qwen3.8 Flash Next",
   "quant": "Q2_0",
@@ -67,6 +76,9 @@
  },
  {
   "engine": "strata",
+  "ram_used_gib": "",
+  "variant": "",
+  "prompt_kind": "",
   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
   "model": "Qwen3.8 Flash Next",
   "quant": "Q2_0",
@@ -89,6 +101,9 @@
  },
  {
   "engine": "strata",
+  "ram_used_gib": "",
+  "variant": "",
+  "prompt_kind": "",
   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
   "model": "Qwen3.8 Flash Next",
   "quant": "Q2_0",
@@ -111,6 +126,9 @@
  },
  {
   "engine": "strata",
+  "ram_used_gib": "",
+  "variant": "",
+  "prompt_kind": "",
   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
   "model": "Qwen3.6 35B-A3B",
   "quant": "UD-Q4_K_XL",
@@ -133,6 +151,9 @@
  },
  {
   "engine": "strata",
+  "ram_used_gib": "",
+  "variant": "",
+  "prompt_kind": "",
   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
   "model": "Qwen3.6 35B-A3B",
   "quant": "UD-Q4_K_XL",
@@ -155,6 +176,9 @@
  },
  {
   "engine": "strata",
+  "ram_used_gib": "",
+  "variant": "",
+  "prompt_kind": "",
   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
   "model": "Qwen3.6 35B-A3B",
   "quant": "UD-Q4_K_XL",
@@ -177,6 +201,9 @@
  },
  {
   "engine": "strata",
+  "ram_used_gib": "",
+  "variant": "",
+  "prompt_kind": "",
   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
   "model": "Qwen3.6 35B-A3B",
   "quant": "UD-Q4_K_XL",
@@ -199,6 +226,9 @@
  },
  {
   "engine": "strata",
+  "ram_used_gib": "",
+  "variant": "",
+  "prompt_kind": "",
   "engine_version": "strata 0.2.7 (build 0.1.53, engine 0.1.52 cuda13)",
   "model": "Qwen3.6 35B-A3B",
   "quant": "UD-Q4_K_XL",

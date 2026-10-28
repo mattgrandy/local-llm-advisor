@@ -1,0 +1,7 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 11911 MiB):
+  Device 0: NVIDIA GeForce RTX 3060, compute capability 8.6, VMM: yes, VRAM: 11911 MiB
+load_backend: loaded CUDA backend from /workspace/llama/libggml-cuda.so
+load_backend: loaded RPC backend from /workspace/llama/libggml-rpc.so
+load_backend: loaded CPU backend from /workspace/llama/libggml-cpu-cascadelake.so
+version: 0.6.0-dev (build 11658, commit 3e4dfa8f3)
+built with GNU 13.3.0 for Linux x86_64

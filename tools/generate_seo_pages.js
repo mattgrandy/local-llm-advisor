@@ -5,20 +5,34 @@ const fs = require("fs"), path = require("path");
 
 // ---------- Strata (engine='strata') measured rows: separate engine, never mixed into llama.cpp medians ----------
 const STRATA_URL = "https://github.com/Niko1221/Strata";
-function strataPick(rows, mtp, small) { return rows.find(r => r.mtp === mtp && (small ? r.prompt_tokens < 1000 : r.prompt_tokens > 30000)); }
+const gpuName = r => String(r.device_raw || r.hw_id).replace(/^NVIDIA GeForce /, "");
+function strataPick(rows, mtp, small) { return rows.find(r => r.mtp === mtp && !r.variant && !r.prompt_kind && (small ? r.prompt_tokens < 1000 : r.prompt_tokens > 30000)); }
+function strataByHw(rows) { const g = {}; rows.filter(r => !r.variant).forEach(r => (g[r.hw_id] = g[r.hw_id] || []).push(r)); return Object.values(g).sort((a, b) => (b[0].hw_id === "rtx-3090") - (a[0].hw_id === "rtx-3090")); }
 function strataLead(m, rows, measuredN) {
-  const on = strataPick(rows, "on", true), long = strataPick(rows, "on", false), hw = rows[0];
-  const s = on ? `Measured with Strata on an RTX 3090 (${Math.round(hw.host_ram_gib)} GB host RAM, ${hw.quant}): ${on.tg_tps.toFixed(0)} tok/s decode${long ? `, ${long.tg_tps.toFixed(0)} tok/s at ${Math.round(long.prompt_tokens / 1024)}K context` : ""}.` : "";
+  const s = strataByHw(rows).map(hr => {
+    const on = strataPick(hr, "on", true), long = strataPick(hr, "on", false), hw = hr[0];
+    return on ? `Measured with Strata on an ${gpuName(hw)} (${hw.ram_used_gib ? `about ${Math.round(hw.ram_used_gib)} GB of system RAM in use` : `${Math.round(hw.host_ram_gib)} GB host RAM`}, ${hw.quant}): ${on.tg_tps.toFixed(0)} tok/s decode${long ? `, ${long.tg_tps.toFixed(0)} tok/s at ${Math.round(long.prompt_tokens / 1024)}K context` : ""}.` : "";
+  }).join(" ");
   return measuredN ? s : s + " llama.cpp speeds below are estimates.";
 }
-function strataSection(m, rows) {
+function strataSection(m, rows, refs) {
   if (!rows.length) return "";
   const e = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-  const r0 = rows[0], cmd = r0.flags.split(" | ")[0];
-  const ctx = n => n < 1000 ? "empty (" + n + " tok)" : Math.round(n / 1024) + "K (" + n + " tok)";
-  const body = rows.slice().sort((a, b) => (a.mtp < b.mtp ? 1 : a.mtp > b.mtp ? -1 : a.prompt_tokens - b.prompt_tokens)).map(r => `<tr><td>${ctx(r.prompt_tokens)}</td><td>${r.mtp}</td><td class="num">${r.tg_tps.toFixed(1)}</td><td class="num">${r.pp_tps === "" ? "-" : Math.round(r.pp_tps)}</td><td class="num">${r.mtp_accept === "" ? "-" : Math.round(r.mtp_accept * 100) + "%"}</td></tr>`).join("");
-  return `<section class="card" id="strata"><h2>Run it with Strata <span class="mut">&middot; measured on RTX 3090</span></h2><p><a href="${STRATA_URL}" rel="noopener">Strata</a> is an inference engine for big MoE models on one consumer GPU: it streams the routed experts from system RAM and caches the hot ones in VRAM. Install and launch:</p><pre><code>curl -fsSL ${STRATA_URL}/releases/latest/download/install.sh | sh
-${e(cmd)} --port 8080</code></pre><p class="mut">Engine: <b>strata</b> (${e(r0.engine_version)}), not llama.cpp, so these numbers are kept out of the llama.cpp medians used elsewhere on the site. ${e(r0.device_raw)}, ${e(r0.cpu)}, quant ${e(r0.quant)}, measured ${e(r0.date)}. Decode = median generation speed over 256-token replies; prompt = cold-cache prompt processing. Engine flags: <code>${e(r0.flags.split(" | engine: ")[1] || "")}</code>.</p><div class="tw"><table><thead><tr><th>Context</th><th>MTP</th><th>Decode tok/s</th><th>Prompt tok/s</th><th>MTP accepted</th></tr></thead><tbody>${body}</tbody></table></div>${rows.some(r => /never engaged/.test(r.notes)) ? `<p class="mut">On this Strata build MTP drafts did not engage for ${e(m.name)} (0 drafts), so MTP on and off measure the same thing.</p>` : ""}<p class="mut">Raw results: <a href="https://huggingface.co/datasets/LocalLLMAdvisor/local-llm-advisor-benchmarks" rel="noopener">benchmark dataset</a>.</p></section>`;
+  const groups = strataByHw(rows), r0 = groups[0][0], cmd = r0.flags.split(" | ")[0];
+  const ctx = r => r.prompt_kind === "mixed" ? "short chat (~100 tok prompt, 768-tok replies)" : r.prompt_tokens < 1000 ? "empty (" + r.prompt_tokens + " tok)" : Math.round(r.prompt_tokens / 1024) + "K (" + r.prompt_tokens + " tok)";
+  const order = r => r.prompt_kind === "mixed" ? 1 : r.prompt_tokens < 1000 ? 0 : r.prompt_tokens;
+  const tables = groups.map(hr => {
+    const h = hr[0];
+    const body = hr.slice().sort((a, b) => (a.mtp < b.mtp ? 1 : a.mtp > b.mtp ? -1 : order(a) - order(b))).map(r => `<tr><td>${ctx(r)}</td><td>${r.mtp}</td><td class="num">${r.tg_tps.toFixed(1)}</td><td class="num">${r.pp_tps === "" ? "-" : Math.round(r.pp_tps)}</td><td class="num">${r.mtp_accept === "" ? "-" : Math.round(r.mtp_accept * 100) + "%"}</td></tr>`).join("");
+    const ref = (refs || []).filter(x => x.hw_id === h.hw_id && x.quant === h.quant).sort((a, b) => a.depth - b.depth || a.n_cpu_moe - b.n_cpu_moe);
+    const refT = ref.length ? `<p>Same card, same GGUF, llama.cpp (llama-bench b11658, flash attention on)${ref.some(x => x.n_cpu_moe) ? ", with MoE experts offloaded to system RAM where the model does not fit in VRAM" : ""}:</p><div class="tw"><table><thead><tr><th>Context</th><th>Setup</th><th>Decode tok/s</th><th>Prompt tok/s</th></tr></thead><tbody>${ref.map(x => `<tr><td>${x.depth ? Math.round(x.depth / 1024) + "K" : "empty"}</td><td>${x.n_cpu_moe ? "<code>--n-cpu-moe " + x.n_cpu_moe + "</code>" : "all on GPU"}</td><td class="num">${(+x.tg_tps).toFixed(1)}</td><td class="num">${Math.round(x.pp_tps)} (pp${x.pp_n})</td></tr>`).join("")}</tbody></table></div><p class="mut">llama.cpp offload rows are left out of the site's llama.cpp averages because the offload setting differs per row.</p>` : "";
+    const noMtp = hr.some(r => /never engaged/.test(r.notes)) ? `<p class="mut">On this Strata build MTP drafts did not engage for ${e(m.name)} on the ${e(gpuName(h))} (0 drafts), so the &ldquo;on&rdquo; rows ran without drafting; on this card turning MTP off was faster.</p>` : "";
+    const ngram = hr.some(r => /n-gram drafting/.test(r.notes)) ? `<p class="mut">With MTP off, Strata's own n-gram drafting stays on, so a few drafts are still accepted.</p>` : "";
+    return `<h3>${e(gpuName(h))} <span class="mut">&middot; ${Math.round(h.host_ram_gib)} GB host RAM${h.ram_used_gib ? ` (about ${Math.round(h.ram_used_gib)} GB in use by Strata)` : ""}, ${e(h.cpu.split(" (")[0])}, quant ${e(h.quant)}</span></h3><p class="mut">Launch: <code>${e(h.flags.split(" | ")[0])}</code>. Engine flags: <code>${e(h.flags.split(" | engine: ")[1] || "")}</code>. Measured ${e(h.date)}.</p><div class="tw"><table><thead><tr><th>Context</th><th>MTP</th><th>Decode tok/s</th><th>Prompt tok/s</th><th>MTP accepted</th></tr></thead><tbody>${body}</tbody></table></div>${noMtp}${ngram}${refT}`;
+  }).join("");
+  const label = groups.map(g => gpuName(g[0])).join(" and ");
+  return `<section class="card" id="strata"><h2>Run it with Strata <span class="mut">&middot; measured on ${e(label)}</span></h2><p><a href="${STRATA_URL}" rel="noopener">Strata</a> is an inference engine for big MoE models on one consumer GPU: it streams the routed experts from system RAM and caches the hot ones in VRAM. Install and launch:</p><pre><code>curl -fsSL ${STRATA_URL}/releases/latest/download/install.sh | sh
+${e(cmd)} --port 8080</code></pre><p class="mut">Engine: <b>strata</b> (${e(r0.engine_version)}), not llama.cpp, so these numbers are kept out of the llama.cpp medians used elsewhere on the site. Decode = median generation speed; prompt = cold-cache prompt processing.</p>${tables}<p class="mut">Raw results: <a href="https://huggingface.co/datasets/LocalLLMAdvisor/local-llm-advisor-benchmarks" rel="noopener">benchmark dataset</a>.</p></section>`;
 }
 const TIERS = [8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256, 512];
 const REP = { 8: "rtx-4060", 12: "rtx-4070", 16: "rtx-5070ti", 24: "rtx-4090", 32: "rtx-5090", 48: "rtx-pro-6000", 64: "rtx-pro-6000", 96: "rtx-pro-6000", 128: "rtx-pro-6000", 192: "rtx-pro-6000", 256: "rtx-pro-6000", 512: "rtx-pro-6000" };
@@ -86,7 +100,7 @@ ${faq([[`What is the best local LLM for ${N}GB VRAM?`, topFull[0] ? `By size, ${
     const runs = hwRows.filter(x => x.p && x.p.mode === "gpu"), offl = hwRows.filter(x => x.p && x.p.mode !== "gpu"), no = hwRows.filter(x => !x.p);
     const minMem = Math.min(...qs.map(([, v]) => v.gb)), measuredN = Object.values(data.measured ? data.measured.entries : {}).reduce((n, es) => n + es.filter(e => e.site_id === m.id).length, 0);
     const best = runs[0];
-    const strata = ((data.measured && data.measured.strata) || []).filter(r => r.site_id === m.id), strataSec = strataSection(m, strata);
+    const strata = ((data.measured && data.measured.strata) || []).filter(r => r.site_id === m.id), strataSec = strataSection(m, strata, ((data.measured && data.measured.strata_ref) || []).filter(r => r.site_id === m.id));
     const title = `${m.name}: VRAM requirements, context limits & tokens/sec | Local LLM Advisor`;
     const desc = `How much VRAM does ${m.name} need? ${qs.length} quants from ${minMem} GB, KV cache cost up to ${fm(lim.extended)} context, and which of ${hw.targets.length} GPUs/Macs run it fully (${runs.length}) or with offload (${offl.length}).`;
     const lead = `${esc(m.name)} (${m.params_b}B ${m.moe ? `MoE${m.params_breakdown ? ` = ${m.params_breakdown.language_model_b}B language model + ${m.params_breakdown.ngram_embedding_b}B n-gram embedding + ${m.params_breakdown.mtp_b}B MTP` : ""}, ${m.active_params_b}B active` : "dense"}, ${esc(m.license || "see source")}). Native context ${fm(lim.native)}${lim.extended > lim.native ? `, ${fm(lim.extended)} with YaRN` : ""}. Smallest GGUF: ${minMem} GB.${strata.length ? ` ${strataLead(m, strata, measuredN)}` : ""}`;

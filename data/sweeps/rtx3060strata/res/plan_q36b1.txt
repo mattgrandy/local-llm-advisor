@@ -1,0 +1,8 @@
+Plan for 'UD-Q4_K_XL 64K':
+  model     qwen36 UD-Q4_K_XL
+  context   64K    pictures off    parallel 1
+  download  Nothing to download: the model is already on this computer.
+  drafting  MTP
+  tuning    skip    access This computer only, port 8080
+  same as   strata launch --model ud-q4_k_xl --family qwen36 --context 64k --vision off --parallel 1 --tune skip --access local --port 8080
+Nothing was changed.

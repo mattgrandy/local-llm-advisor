@@ -110,6 +110,18 @@ def load_strata():
     return out
 
 
+def load_strata_ref():
+    """llama.cpp rows from the Strata comparison runs (incl. off-average --n-cpu-moe configs), for the side-by-side on model pages only."""
+    out = []
+    for f in sorted(glob.glob(f'{ROOT}/data/benchmarks/own/own-measurement__*.json')):
+        for r in json.load(open(f)):
+            if 'Strata comparison run' not in (r.get('notes') or ''): continue
+            c = canon(r['model'], None); m = re.search(r'--n-cpu-moe (\d+)', r['notes'])
+            out.append(dict(engine='llama.cpp', site_id=c[1] if c else None, hw_id=r['hw_id'], device_raw=r['device_raw'], quant=r['quant'], depth=int(r['depth']),
+                            pp_n=r['pp_n'], pp_tps=r['pp_tps'], tg_tps=r['tg_tps'], n_cpu_moe=int(m.group(1)) if m else 0, date=r['date']))
+    return out
+
+
 def main():
     rows = load_rows()
     g = collections.defaultdict(list)
@@ -161,7 +173,7 @@ def main():
     comm = []
     cp = f'{ROOT}/data/submissions/community_reviewed.json'
     if os.path.exists(cp): comm = json.load(open(cp))
-    out = dict(generated=time.strftime('%Y-%m-%d'), entries=entries, strata=load_strata(), calibration=cal, community=comm,
+    out = dict(generated=time.strftime('%Y-%m-%d'), entries=entries, strata=load_strata(), strata_ref=load_strata_ref(), calibration=cal, community=comm,
         attribution=[dict(name='own measurements (llm-advisor, llama.cpp b11658)', url='https://github.com/mattgrandy/local-llm-advisor'),
                      dict(name='LocalScore (Mozilla Builders / cjpais, Apache-2.0)', url='https://www.localscore.ai'),
                      dict(name='llama.cpp community benchmark threads incl. the gpt-oss guide #15396 (ggml-org/llama.cpp, MIT)', url='https://github.com/ggml-org/llama.cpp/discussions'),

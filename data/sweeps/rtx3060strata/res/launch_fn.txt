@@ -1,0 +1,43 @@
+    Checking the engine for this computer…
+    Engine 0.1.52 (cuda) is installed.
+    Getting qwen IQ3_S ready (a download may be large; it continues where it stopped if interrupted)…
+    Getting your model ready
+    Checking your computer
+    Getting the helper packages ready
+    Checking the engine for this PC
+    Downloading the model files: 9.3 of 83.6 GB
+    Downloading the model files: 17.6 of 83.6 GB
+    Downloading the model files: 25.9 of 83.6 GB
+    Downloading the model files: 34.4 of 83.6 GB
+    Downloading the model files: 43.0 of 83.6 GB
+    Downloading the model files: 51.3 of 83.6 GB
+    Checking that the model files are complete (a few minutes for a big model; nothing is downloaded): 39.3 of 54.8 GB
+    Checking that the model files are complete (a few minutes for a big model; nothing is downloaded): 44.6 of 54.8 GB
+    Checking that the model files are complete (a few minutes for a big model; nothing is downloaded): 49.9 of 54.8 GB
+    Preparing your model for Strata (one time)
+    Preparing the model data for the engine (one time)
+    Preparing the draft layer
+    Downloading the draft layer (about 5 GB; it makes answers about twice as fast)
+    Saving the model's settings
+    qwen IQ3_S is ready.
+    Writing this launch's settings…
+    Settings are saved.
+    Starting the engine and loading the model. The first start can take a few minutes.
+    Loading the model… 15 s
+    Loading the model… 30 s
+    Loading the model… 45 s
+    Loading the model… 60 s
+    Loading the model… 75 s
+    Loading the model… 90 s
+    Loading the model… 105 s
+    The model is loaded and answering.
+    Ready: http://127.0.0.1:8080
+    Strata is serving.
+
+Strata is serving.
+  This computer  http://127.0.0.1:8080/v1
+  Anthropic apps http://127.0.0.1:8080   (Claude Code: ANTHROPIC_BASE_URL, no /v1 at the end)
+  Engine log     /root/.local/state/strata/launch/iq3_s-64k.engine.log   (follow it: strata logs --follow)
+  Watch it:    strata monitor --url http://127.0.0.1:8080
+  Connect an app:  strata connect opencode      Stop:  strata launch --stop
+  To keep these settings for next time, add --save-preset NAME.

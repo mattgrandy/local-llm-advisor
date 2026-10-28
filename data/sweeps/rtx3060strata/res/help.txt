@@ -1,0 +1,52 @@
+usage: strata [-h] [--version]
+              {serve,profile,repair-access,doctor,components,update,models,drafting,engine,install,runtime,ops,bench,timeskip,tune,presets,launch,connect,status,monitor,logs,connection,config,code}
+              ...
+
+Strata serving and terminal clients
+
+positional arguments:
+  {serve,profile,repair-access,doctor,components,update,models,drafting,engine,install,runtime,ops,bench,timeskip,tune,presets,launch,connect,status,monitor,logs,connection,config,code}
+    serve               start the existing Strata inference server in the
+                        foreground
+    profile             edit saved serving overrides outside setup's run
+                        config
+    repair-access       give you back Strata files that a run as administrator
+                        locked (Windows)
+    doctor              read-only check of installed engine components
+    components          read-only installed component inventory
+    update              download and install the engine for this PC (and
+                        Control) from the signed feed; switches only after a
+                        test start
+    models              inspect setup-written local model run configs
+    drafting            the DFlash2 drafter file: what it would download, and
+                        fetch it
+    engine              engine tuning and component actions
+    install             the explicit installer: engine, models, Python
+                        packages (starting and serving never do this)
+    runtime             manage an owned local Strata server instance
+    ops                 edit and run typed local operator recipes
+    bench               explicit serving benchmark with local JSON evidence
+    timeskip            retain a good result, try a bounded improvement, check
+                        it and decide
+    tune                bounded engine-configuration search with retained
+                        evidence
+    presets             saved tuning presets: list, apply, rename, delete,
+                        undo, re-check
+    launch              guided setup, serve and monitor (the screens), or the
+                        same with flags
+    connect             print (or write) the setup for an app that uses the
+                        running server
+    status              one read-only telemetry snapshot
+    monitor             read-only terminal monitor: seven views (Overview ...
+                        Logs, Connect), the same as the one strata launch
+                        opens
+    logs                bounded redacted request activity (read only)
+    connection          save monitor endpoints without storing credential
+                        values
+    config              inspect effective client connection settings
+    code                coding client for the shared Desktop harness
+
+options:
+  -h, --help            show this help message and exit
+  --version             print the version and the interpreter this terminal
+                        runs on
