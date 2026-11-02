@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26",
+  "generated": "2026-11-02",
   "gpus": [
     {
       "id": "rtx-3060-12",
@@ -218,8 +218,8 @@
       "name": "Apple M6",
       "bandwidth_gbps": 153,
       "source_url": "https://support.apple.com/en-us/128108",
-      "basis": "Apple tech specs (Mac mini): 153GB/s with 16GB, 170GB/s with 24GB/32GB",
-      "last_verified": "2026-10-14",
+      "basis": "Apple tech specs (Mac mini, MacBook Pro 14 M6): 153GB/s with 16GB, 170GB/s with 24GB/32GB",
+      "last_verified": "2026-11-02",
       "bandwidth_by_mem_gb": {
         "16": 153,
         "24": 170,
@@ -244,11 +244,12 @@
       "name": "NVIDIA DGX Spark",
       "bandwidth_gbps": 273,
       "memory_options_gb": [
+        64,
         128
       ],
       "source_url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
-      "basis": "NVIDIA page: 273 GB/s, 128 GB unified",
-      "last_verified": "2026-10-14"
+      "basis": "NVIDIA page: 273 GB/s, 256-bit LPDDR5X, 64 GB or 128 GB unified (64GB OEM systems available from Oct 23 2026)",
+      "last_verified": "2026-11-02"
     },
     {
       "id": "ryzen-ai-max-pro-495",
@@ -452,6 +453,17 @@
       "note": ""
     },
     {
+      "slug": "dgx-spark-64gb",
+      "title": "NVIDIA DGX Spark 64GB",
+      "kind": "unified",
+      "device": "dgx-spark",
+      "count": 1,
+      "memory_gb": 64,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
+    },
+    {
       "slug": "ryzen-ai-halo-495-192gb",
       "title": "AMD Ryzen AI Max+ PRO 495 (Ryzen AI Halo) 192GB",
       "kind": "unified",
@@ -546,7 +558,7 @@
     },
     {
       "slug": "mac-studio-m5-ultra-512gb",
-      "title": "Mac Studio M5 Ultra 512GB (ships late Oct 2026)",
+      "title": "Mac Studio M5 Ultra 512GB (orderable since Oct 28 2026)",
       "kind": "apple",
       "device": "m5-ultra",
       "config": "studio-m5-ultra-80",
@@ -637,6 +649,18 @@
       "ram_gb": 32,
       "ram_type": "ddr5-5600",
       "note": ""
+    },
+    {
+      "slug": "macbook-pro-m6-32gb",
+      "title": "MacBook Pro 14 M6 32GB (ships Nov 6 2026)",
+      "kind": "apple",
+      "device": "m6",
+      "config": "mbp-m6",
+      "count": 1,
+      "memory_gb": 32,
+      "ram_gb": 32,
+      "ram_type": "ddr5-5600",
+      "note": ""
     }
   ],
   "target_note": "Target list is judgment-based, not measured demand. Mac memory sizes are example configurations within Apple's official options.",
@@ -651,11 +675,11 @@
         512
       ],
       "source_url": "https://support.apple.com/en-us/128107",
-      "note": "Announced Aug 25 2026, shipping since Sep 22 2026; 512GB option ships late October 2026 per Apple.",
+      "note": "Announced Aug 25 2026, shipping since Sep 22 2026; 512GB option orderable since Oct 28 2026.",
       "memory_notes": {
-        "512": "ships late Oct 2026"
+        "512": "orderable since Oct 28 2026"
       },
-      "last_verified": "2026-10-14"
+      "last_verified": "2026-11-02"
     },
     {
       "id": "studio-m5-ultra-64",
@@ -750,7 +774,8 @@
         128
       ],
       "source_url": "https://support.apple.com/en-us/126318",
-      "last_verified": "2026-10-14"
+      "last_verified": "2026-11-02",
+      "note": "Same chip and memory options in the MacBook Pro with PROLED XDR Display (ships Nov 6 2026, per Apple specs)."
     },
     {
       "id": "mbp-m5-max-32",
@@ -761,7 +786,8 @@
         36
       ],
       "source_url": "https://support.apple.com/en-us/126318",
-      "last_verified": "2026-10-14"
+      "last_verified": "2026-11-02",
+      "note": "Same chip and memory options in the MacBook Pro with PROLED XDR Display (ships Nov 6 2026, per Apple specs)."
     },
     {
       "id": "mbp-m5-pro-20",
@@ -774,7 +800,8 @@
         64
       ],
       "source_url": "https://support.apple.com/en-us/126318",
-      "last_verified": "2026-10-14"
+      "last_verified": "2026-11-02",
+      "note": "Same chip and memory options in the MacBook Pro with PROLED XDR Display (ships Nov 6 2026, per Apple specs)."
     },
     {
       "id": "mbp-m5-pro-16",
@@ -786,8 +813,8 @@
         48
       ],
       "source_url": "https://support.apple.com/en-us/126318",
-      "note": "14-inch only. Apple lists 64GB only for the 20-core GPU M5 Pro.",
-      "last_verified": "2026-10-14"
+      "note": "14-inch only. Apple lists 64GB only for the 20-core GPU M5 Pro. Same chip and memory options in the MacBook Pro with PROLED XDR Display (ships Nov 6 2026, per Apple specs).",
+      "last_verified": "2026-11-02"
     },
     {
       "id": "mbp-m5",
@@ -941,6 +968,34 @@
       ],
       "source_url": "https://www.apple.com/imac/specs/",
       "last_verified": "2026-10-14"
+    },
+    {
+      "id": "imac-m6",
+      "hw": "m6",
+      "form_factor": "iMac",
+      "name": "iMac 24 — M6",
+      "memory_options_gb": [
+        16,
+        24,
+        32
+      ],
+      "source_url": "https://www.apple.com/imac/specs/",
+      "note": "Ships Nov 6 2026 (pre-order from Oct 28). The 10-core GPU model tops out at 24GB; 32GB needs the 12-core GPU model. Apple lists only \"up to 170GB/s\" for iMac; per-memory bandwidth follows the M6 figures on the Mac mini and MacBook Pro spec pages.",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "mbp-m6",
+      "hw": "m6",
+      "form_factor": "MacBook Pro",
+      "name": "MacBook Pro 14 — M6 (12-core GPU)",
+      "memory_options_gb": [
+        16,
+        24,
+        32
+      ],
+      "source_url": "https://www.apple.com/macbook-pro/liquid-retina-xdr-display/specs/",
+      "last_verified": "2026-11-02",
+      "note": "Ships Nov 6 2026 (pre-order from Oct 28). Bandwidth is 153GB/s with 16GB and 170GB/s with 24GB/32GB (Apple)."
     }
   ],
   "apple_not_listed": [

@@ -24,7 +24,7 @@ const cloudPartners = () => AFFILIATE.cloud.partners.filter(p => p.url && /^http
 const amazonUrl = q => `https://www.amazon.com/s?k=${encodeURIComponent(q).replace(/%20/g, "+")}&tag=${AFFILIATE.amazonTag}`;
 // Base Amazon search phrase per hardware id (GPU id, Apple config id, unified id). Missing id => no link (unreleased, cloud-only, not sold as a unit).
 function affiliateQueries(hw) {
-  const m = {}, skip = /^(studio-m5-ultra|mini-m6)/;
+  const m = {}, skip = /^(studio-m5-ultra|mini-m6|mbp-m6|imac-m6)/;
   for (const g of hw.gpus) m[g.id] = { q: (/^rx-/.test(g.id) ? "AMD " : /^rtx-pro/.test(g.id) ? "NVIDIA " : "NVIDIA ") + g.name.replace(/ Workstation$/, "") + " graphics card" + (/12GB|16GB/.test(g.name) ? "" : ""), kind: "gpu" };
   for (const c of hw.apple_configs) if (!skip.test(c.id)) m[c.id] = { q: c.name.replace(/ — /g, " ").replace(/\s*\(\d+-core GPU\)/, "").replace(/14\/16 /, ""), kind: "apple", mem: true };
   m["strix-halo"] = { q: "AMD Ryzen AI Max+ 395 mini PC 128GB", kind: "unified" };

@@ -27,9 +27,9 @@ const HOT = [["rtx-4090-24gb", "openai/gpt-oss-20b"], ["rtx-4090-24gb", "Qwen/Qw
 // Estimated-only pages are allowed for Apple/unified-memory pairs in HOT when the model fits fully (these searches have no other good answer); never for discrete GPUs.
 const EST_KINDS = new Set(["apple", "unified"]);
 // Day-one release pairs (tools/release_hot.json, written by tools/add_release.js): placed first, may be labelled estimates for any hardware kind,
-// expire after RELEASE_DAYS unless measured data arrives (then they qualify through the normal measured path anyway). They add up to CAP_REL pages on top of CAP_CANRUN.
+// expire after RELEASE_DAYS unless measured data arrives; newest first (then they qualify through the normal measured path anyway). They add up to CAP_REL pages on top of CAP_CANRUN.
 const RELEASE_FILE = path.join(__dirname, "release_hot.json"), RELEASE_DAYS = 45, CAP_REL = 8;
-const releasePairs = () => { if (!fs.existsSync(RELEASE_FILE)) return []; const now = Date.now(); return (JSON.parse(fs.readFileSync(RELEASE_FILE, "utf8")).pairs || []).filter(x => !x.added || (now - Date.parse(x.added)) / 864e5 <= RELEASE_DAYS); };
+const releasePairs = () => { if (!fs.existsSync(RELEASE_FILE)) return []; const now = Date.now(); return (JSON.parse(fs.readFileSync(RELEASE_FILE, "utf8")).pairs || []).filter(x => !x.added || (now - Date.parse(x.added)) / 864e5 <= RELEASE_DAYS).sort((a, b) => (b.added || "").localeCompare(a.added || "")); }; // newest releases first (stable within a day), so a new release is never starved by older day-one pairs
 const med = a => { const s = a.slice().sort((x, y) => x - y), n = s.length; return n ? (n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2) : null; };
 const r1 = x => Math.round(x * 10) / 10;
 

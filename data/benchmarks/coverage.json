@@ -118,9 +118,10 @@
   "non_llama2_rows": 12
  },
  "m4-pro": {
-  "rows": 23,
+  "rows": 24,
   "sources": [
    "llamacpp-discussion-4167-summary",
+   "localscore-latest-runs",
    "localscore-model-pages"
   ],
   "models": [
@@ -128,12 +129,13 @@
    "Meta Llama 3.1 8B Instruct",
    "Qwen2.5 14B Instruct"
   ],
-  "non_llama2_rows": 17
+  "non_llama2_rows": 18
  },
  "m5": {
-  "rows": 10,
+  "rows": 13,
   "sources": [
    "llamacpp-discussion-4167-summary",
+   "localscore-latest-runs",
    "localscore-model-pages"
   ],
   "models": [
@@ -141,11 +143,12 @@
    "Meta Llama 3.1 8B Instruct",
    "Qwen2.5 14B Instruct"
   ],
-  "non_llama2_rows": 8
+  "non_llama2_rows": 11
  },
  "m5-max-32": {
-  "rows": 3,
+  "rows": 4,
   "sources": [
+   "localscore-latest-runs",
    "localscore-model-pages"
   ],
   "models": [
@@ -153,7 +156,7 @@
    "Meta Llama 3.1 8B Instruct",
    "Qwen2.5 14B Instruct"
   ],
-  "non_llama2_rows": 3
+  "non_llama2_rows": 4
  },
  "m5-max-40": {
   "rows": 15,
@@ -230,7 +233,7 @@
   "non_llama2_rows": 40
  },
  "rtx-3090": {
-  "rows": 179,
+  "rows": 182,
   "sources": [
    "llamacpp-discussion-10879-comments",
    "llamacpp-discussion-10879-scoreboard",
@@ -258,7 +261,7 @@
    "gpt-oss 20B",
    "llama 7B"
   ],
-  "non_llama2_rows": 140
+  "non_llama2_rows": 143
  },
  "rtx-4060": {
   "rows": 27,
@@ -359,7 +362,7 @@
   "non_llama2_rows": 110
  },
  "rtx-5060ti-16": {
-  "rows": 51,
+  "rows": 57,
   "sources": [
    "llamacpp-discussion-15013-scoreboard",
    "localscore-model-pages",
@@ -379,7 +382,7 @@
    "Qwen3.6 35B-A3B",
    "gpt-oss 20B"
   ],
-  "non_llama2_rows": 49
+  "non_llama2_rows": 55
  },
  "rtx-5070": {
   "rows": 43,
@@ -549,6 +552,12 @@
    "llama 7B"
   ],
   "non_llama2_rows": 96
+ },
+ "rtx-spark-n1x": {
+  "rows": 0,
+  "sources": [],
+  "models": [],
+  "non_llama2_rows": 0
  },
  "rx-7900xtx": {
   "rows": 189,

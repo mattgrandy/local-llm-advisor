@@ -53,7 +53,7 @@ def kv_from_config(c):
         elif nconv and t.get("conv_L_cache"):  # LFM2 short-convolution layers: hidden_size x L_cache state (counted as f32)
             per = t["hidden_size"] * t["conv_L_cache"] * 4
             lin_layers, lin_bytes = nconv, nconv * per
-            lin_note = "Short-convolution (LFM2) layers keep a tiny fixed-size state (does not grow with context); computed from config.json hidden_size and conv_L_cache."
+            lin_note = "Short-convolution (LFM2/LFM3) layers keep a tiny fixed-size state (does not grow with context); computed from config.json hidden_size and conv_L_cache."
     else:
         full, swa = L, 0
     out = {"layers": L, "full_layers": full,

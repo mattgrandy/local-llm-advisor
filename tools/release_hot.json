@@ -90,6 +90,36 @@
       "hw": "rtx-spark-n1x-128gb",
       "model": "openai/gpt-oss-20b",
       "added": "2026-10-26"
+    },
+    {
+      "hw": "macbook-pro-m6-32gb",
+      "model": "openai/gpt-oss-20b",
+      "added": "2026-11-02"
+    },
+    {
+      "hw": "macbook-pro-m6-32gb",
+      "model": "Qwen/Qwen3.5-9B",
+      "added": "2026-11-02"
+    },
+    {
+      "hw": "dgx-spark-64gb",
+      "model": "openai/gpt-oss-20b",
+      "added": "2026-11-02"
+    },
+    {
+      "hw": "dgx-spark-64gb",
+      "model": "Qwen/Qwen3.6-35B-A3B",
+      "added": "2026-11-02"
+    },
+    {
+      "hw": "rtx-4060-8gb",
+      "model": "LiquidAI/LFM3-1.7B",
+      "added": "2026-11-02"
+    },
+    {
+      "hw": "mac-m4-16gb",
+      "model": "LiquidAI/LFM3-1.7B",
+      "added": "2026-11-02"
     }
   ]
 }

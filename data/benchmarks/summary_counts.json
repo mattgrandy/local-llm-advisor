@@ -1,5 +1,5 @@
 {
- "rows_total": 9635,
+ "rows_total": 9662,
  "dropped_dup_of_scoreboard": 425,
  "dropped_author_flagged_invalid": 2,
  "dropped_nonpositive": 0,
@@ -30,7 +30,7 @@
   "github-strix-halo-guide": 41,
   "github-apple-silicon-llm-bench": 55,
   "lmarena-open-models (quality, separate file)": 0,
-  "own-measurement": 613
+  "own-measurement": 624
  },
  "counts_by_source_final": {
   "llamacpp-discussion-15013-scoreboard": 112,
@@ -56,7 +56,7 @@
   "hf-axjns-strix-halo-inference-bench": 44,
   "github-strix-halo-guide-BENCHMARKS": 41,
   "github-apple-silicon-llm-bench-leaderboard": 55,
-  "own-measurement": 613
+  "own-measurement": 624
  },
  "notes": {
   "discussion-15013": {
@@ -68,9 +68,9 @@
   },
   "discussion-4167": {
    "title": "Performance of llama.cpp on Apple Silicon M-series",
-   "comments_total": 279,
+   "comments_total": 280,
    "replies_included_in_comment_list": 182,
-   "top_level": 97,
+   "top_level": 98,
    "comments_with_bench_tables": 75
   },
   "discussion-15021": {
@@ -142,18 +142,18 @@
    "license": "CC-BY-4.0"
   }
  },
- "rows_with_hw_id": 2285,
+ "rows_with_hw_id": 2301,
  "rows_device_unknown": 738,
- "generated": "2026-10-26 09:36 MDT",
+ "generated": "2026-11-02 09:24 MST",
  "localscore": {
-  "rows": 1740,
-  "model_page_rows": 1730,
+  "rows": 1756,
+  "model_page_rows": 1746,
   "latest_rows": 10,
-  "hw_matched": 158,
-  "retrieved": "2026-10-26"
+  "hw_matched": 163,
+  "retrieved": "2026-11-02"
  },
  "pass2": {
-  "date": "2026-10-26",
+  "date": "2026-11-02",
   "new_rows": 2433,
   "by_source": {
    "llamacpp-discussion-15396": 942,
