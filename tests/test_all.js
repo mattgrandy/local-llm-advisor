@@ -87,9 +87,9 @@ assert(Sub.issueUrl({ github_issue: { repo: "me/repo" } }, v.clean).startsWith("
   }
   const at1m = A.recommend(big, dd, { use: "all", ctx: 1000000, kvq: "f16" });
   const ids1m = at1m.results.map(p => p.model.id).sort(); console.log("models at 1M on M5 Ultra 512GB:", ids1m.join(", "));
-  assert.deepStrictEqual(ids1m, ["Qwen/Qwen3-Coder-30B-A3B-Instruct", "Qwen/Qwen3-VL-8B-Instruct", "Qwen/Qwen3.5-4B", "Qwen/Qwen3.5-9B", "Qwen/Qwen3.6-27B", "Qwen/Qwen3.6-35B-A3B", "Qwen/Qwen3.8-27B", "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"]);
+  assert.deepStrictEqual(ids1m, ["Qwen/Qwen3-Coder-30B-A3B-Instruct", "Qwen/Qwen3-VL-8B-Instruct", "Qwen/Qwen3.5-4B", "Qwen/Qwen3.5-9B", "Qwen/Qwen3.6-27B", "Qwen/Qwen3.6-35B-A3B", "Qwen/Qwen3.8-27B", "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16", "ricursiveAI/Ripple-65B-Preview"]);
   assert(at1m.excluded.some(e => e.model.id === "openai/gpt-oss-120b" && e.native === 131072) && at1m.excluded.every(e => !e.model.context_extended));
-  // 1M is beyond the native window of every model except those whose own config allows >= 1M (Nemotron 3.5 Super VL: 1,048,576): those run native, no YaRN
+  // 1M is beyond the native window of every model except those whose own config allows >= 1M (Nemotron 3.5 Super VL: 1,048,576; Ripple 65B Preview: 2,097,152 in config, card says 1M): those run native, no YaRN
   assert(at1m.results.every(p => p.model.context_max >= 1000000 ? p.ctxStatus === "native" && !/rope-scaling/.test(p.command.llama) : p.ctxStatus === "extended" && p.command.llama.includes("--rope-scale 4")));
   assert(at1m.results.some(p => p.ctxStatus === "native") && at1m.results.filter(p => p.ctxStatus === "extended").length === 7);
   const at512 = A.recommend(big, dd, { use: "all", ctx: 524288, kvq: "f16" }); assert(at512.results.every(p => p.model.context_max >= 524288 ? p.ctxStatus === "native" && !/rope-scaling/.test(p.command.llama) : /--rope-scale 2 /.test(p.command.llama)));
@@ -319,7 +319,7 @@ console.log("ALL TESTS PASSED");
     if (m.mlx.repos.length) withMlx++;
     for (const r of m.mlx.repos) {
       assert(cache.repos[r.repo] && cache.repos[r.repo].exists === true && cache.repos[r.repo].for === m.id, "MLX repo in verified cache list: " + r.repo);
-      assert(/^mlx-community\//.test(r.repo) && [4, 8].includes(r.bits) && ["mlx-lm", "mlx-vlm"].includes(r.tool) && r.gb > 0 && r.url === "https://huggingface.co/" + r.repo, "MLX repo fields " + r.repo);
+      assert((/^mlx-community\//.test(r.repo) || r.repo.startsWith(m.id.split("/")[0] + "/")) && [4, 8].includes(r.bits) && ["mlx-lm", "mlx-vlm"].includes(r.tool) && r.gb > 0 && r.url === "https://huggingface.co/" + r.repo, "MLX repo fields " + r.repo);
     }
   }
   assert(withMlx >= 10, "most models have an MLX repo: " + withMlx);
@@ -346,6 +346,7 @@ console.log("ALL TESTS PASSED");
   }
   for (const f of fs8.readdirSync(p8.join(root, "can-run")).filter(f => f !== "index.html")) {
     const h = rdh("can-run/" + f), t = T8.find(x => f.endsWith("-on-" + x.slug + ".html"));
+    if (h.includes("<!--canrun-redirect-->")) { assert(!/data-mlx=/.test(h), "redirect stub has no MLX block: " + f); continue; } // displaced page -> redirect stub
     assert.strictEqual(/data-mlx=/.test(h), t.kind === "apple", "MLX only on Apple can-run pages: " + f);
   }
   for (const m of data.models.models) { const h = rdh("models/" + require("../tools/generate_seo_pages.js").slugify(m.name) + ".html"); assert(/id="mlx-repos"/.test(h) && !/data-mlx=/.test(h)); for (const r of m.mlx.repos) assert(h.includes(r.repo)); if (!m.mlx.repos.length) assert(/No MLX conversion yet/.test(h)); }

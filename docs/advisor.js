@@ -168,8 +168,8 @@
   // shared HTML for the MLX block (main tool, Mac hardware pages, Mac can-run pages). esc = HTML escaper; id = <pre> id for copy buttons.
   function mlxHtml(mx, esc, id, copy) {
     if (!mx) return "";
-    if (mx.none === "no-conversion") return `<p class="mut mlx-none" data-mlx="none">MLX: no MLX conversion yet for this model (none verified in mlx-community), so use llama.cpp or ollama above.</p>`;
-    if (mx.none === "no-fit") return `<p class="mut mlx-none" data-mlx="nofit">MLX: the mlx-community conversions (${mx.repos.map(r => esc(r.label) + " " + r.gb + " GB").join(", ")}) do not fit next to the KV cache in this memory.</p>`;
+    if (mx.none === "no-conversion") return `<p class="mut mlx-none" data-mlx="none">MLX: no MLX conversion yet for this model (none verified in mlx-community or from the publisher), so use llama.cpp or ollama above.</p>`;
+    if (mx.none === "no-fit") return `<p class="mut mlx-none" data-mlx="nofit">MLX: the MLX conversions (${mx.repos.map(r => esc(r.label) + " " + r.gb + " GB").join(", ")}) do not fit next to the KV cache in this memory.</p>`;
     return `<div class="cmd mlx" data-mlx="${esc(mx.repo)}"><div class="code"><div class="top"><span>MLX &middot; ${esc(mx.tool)} &middot; ${esc(mx.label)}, ${mx.gb} GB</span>${copy ? `<button class="copy" type="button" data-c="${id}">Copy</button>` : ""}</div><pre${id ? ` id="${id}"` : ""}>${esc(mx.text)}</pre></div></div><p class="mut">MLX runs on Apple Silicon only. Repo: <a href="https://huggingface.co/${esc(mx.repo)}" rel="noopener">${esc(mx.repo)}</a> (converted with ${esc(mx.tool)}, per its model card). These commands use MLX's default context handling; there is no MLX speed on this site yet.</p>`;
   }
 
@@ -213,7 +213,7 @@
       const sq = pick(same, () => true);
       if (sq) return mk(sq.e, "scaled-quant", sq.e.tg * sq.r);
       const moe = !!(model.moe && model.active_params_b);
-      const sim = pick(entries.filter(e => e.site_id !== model.id && !!(e.moe && e.active_b) === moe), (e, r) =>
+      const sim = pick(entries.filter(e => e.site_id !== model.id && !(e.moe && !e.active_b) && !!(e.moe && e.active_b) === moe), (e, r) =>
         r >= 0.6 && r <= 1.67 && (!moe || (e.params_b / model.params_b >= 0.6 && e.params_b / model.params_b <= 1.67)));
       return sim ? mk(sim.e, "scaled-similar", sim.e.tg * sim.r) : null;
     };

@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02",
+ "generated": "2026-11-09",
  "entries": {
   "rtx-5090": [
    {
@@ -34,7 +34,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-30"
+    "latest": "2026-11-06"
    },
    {
     "model": "Gemma 4 12B",
@@ -610,7 +610,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -633,7 +633,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -656,7 +656,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Nemotron 3 Nano 30B-A3B",
@@ -713,8 +713,8 @@
     "site_id": null,
     "qclass": "Q2",
     "params_b": 79.67,
-    "active_b": null,
-    "moe": false,
+    "active_b": 3.0,
+    "moe": true,
     "tg": 224.87,
     "pp": 4447.3,
     "n": 1,
@@ -839,7 +839,7 @@
     "qclass": "Q4",
     "params_b": 119.0,
     "active_b": null,
-    "moe": false,
+    "moe": true,
     "tg": 35.88,
     "pp": 243.1,
     "n": 1,
@@ -2043,7 +2043,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -2066,7 +2066,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -2089,7 +2089,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "rtx-4090": [
@@ -2129,7 +2129,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-30"
+    "latest": "2026-11-06"
    },
    {
     "model": "Gemma 4 12B",
@@ -2606,7 +2606,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -2629,7 +2629,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -2652,7 +2652,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.1 8B",
@@ -2793,7 +2793,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-30"
+    "latest": "2026-11-06"
    },
    {
     "model": "Gemma 4 12B",
@@ -3100,7 +3100,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -3109,11 +3109,11 @@
     "params_b": 14.77,
     "active_b": null,
     "moe": false,
-    "tg": 29.29,
-    "pp": 2256.4,
+    "tg": 30.23,
+    "pp": 2319.6,
     "n": 2,
     "tg_min": 25.52,
-    "tg_max": 33.06,
+    "tg_max": 34.95,
     "sources": [
      {
       "id": "localscore-model-pages",
@@ -3123,7 +3123,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -3146,7 +3146,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "qwen2.5-14b",
@@ -3336,7 +3336,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-30"
+    "latest": "2026-11-06"
    },
    {
     "model": "Gemma 4 12B",
@@ -3638,7 +3638,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -3661,7 +3661,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -3684,7 +3684,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "rtx-3090": [
@@ -3725,7 +3725,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-30"
+    "latest": "2026-11-06"
    },
    {
     "model": "Gemma 4 12B",
@@ -4202,7 +4202,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -4211,11 +4211,11 @@
     "params_b": 14.77,
     "active_b": null,
     "moe": false,
-    "tg": 56.24,
-    "pp": 1950.0,
+    "tg": 56.42,
+    "pp": 1947.3,
     "n": 1,
-    "tg_min": 56.24,
-    "tg_max": 56.24,
+    "tg_min": 56.42,
+    "tg_max": 56.42,
     "sources": [
      {
       "id": "localscore-model-pages",
@@ -4225,7 +4225,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -4248,7 +4248,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "rtx-5070": [
@@ -4473,7 +4473,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -4496,7 +4496,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -4519,7 +4519,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "rtx-5060ti-16": [
@@ -4844,7 +4844,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -4867,7 +4867,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -4890,7 +4890,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "rtx-3060-12": [
@@ -5105,21 +5105,27 @@
     "params_b": 8.03,
     "active_b": null,
     "moe": false,
-    "tg": 51.28,
-    "pp": 1482.6,
-    "n": 1,
-    "tg_min": 51.28,
-    "tg_max": 51.28,
+    "tg": 50.06,
+    "pp": 1477.5,
+    "n": 3,
+    "tg_min": 30.22,
+    "tg_max": 51.8,
     "sources": [
+     {
+      "id": "localscore-latest-runs",
+      "url": "https://www.localscore.ai/latest"
+     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/1"
      }
     ],
     "size_gb": null,
-    "backends": [],
+    "backends": [
+     "llamafile"
+    ],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -5128,21 +5134,27 @@
     "params_b": 14.77,
     "active_b": null,
     "moe": false,
-    "tg": 26.58,
-    "pp": 759.5,
-    "n": 1,
-    "tg_min": 26.58,
-    "tg_max": 26.58,
+    "tg": 28.16,
+    "pp": 796.5,
+    "n": 2,
+    "tg_min": 26.73,
+    "tg_max": 29.58,
     "sources": [
+     {
+      "id": "localscore-latest-runs",
+      "url": "https://www.localscore.ai/latest"
+     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/2"
      }
     ],
     "size_gb": null,
-    "backends": [],
+    "backends": [
+     "llamafile"
+    ],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -5151,21 +5163,27 @@
     "params_b": 1.5,
     "active_b": null,
     "moe": false,
-    "tg": 184.98,
-    "pp": 6042.3,
-    "n": 1,
-    "tg_min": 184.98,
-    "tg_max": 184.98,
+    "tg": 200.38,
+    "pp": 6234.0,
+    "n": 2,
+    "tg_min": 187.77,
+    "tg_max": 212.99,
     "sources": [
+     {
+      "id": "localscore-latest-runs",
+      "url": "https://www.localscore.ai/latest"
+     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/3"
      }
     ],
     "size_gb": null,
-    "backends": [],
+    "backends": [
+     "llamafile"
+    ],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "dgx-spark": [
@@ -5205,7 +5223,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-30"
+    "latest": "2026-11-06"
    },
    {
     "model": "nemotron_h_moe 31B.A3.5B",
@@ -5621,7 +5639,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -5644,7 +5662,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -5667,7 +5685,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "strix-halo": [
@@ -5707,7 +5725,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-25"
+    "latest": "2026-11-03"
    },
    {
     "model": "qwen35moe 122B.A10B",
@@ -6003,7 +6021,7 @@
     "qclass": "Q4",
     "params_b": 34.66,
     "active_b": null,
-    "moe": false,
+    "moe": true,
     "tg": 74.1,
     "pp": null,
     "n": 1,
@@ -6227,8 +6245,8 @@
     "site_id": null,
     "qclass": "Q4",
     "params_b": 109.0,
-    "active_b": null,
-    "moe": false,
+    "active_b": 17.0,
+    "moe": true,
     "tg": 18.32,
     "pp": 331.0,
     "n": 1,
@@ -6318,7 +6336,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -6341,7 +6359,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -6364,7 +6382,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "m4": [
@@ -6539,7 +6557,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -6562,7 +6580,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -6585,7 +6603,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "m4-max-32": [
@@ -6685,7 +6703,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -6708,7 +6726,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -6731,7 +6749,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "gpt-oss 20B",
@@ -6856,7 +6874,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -6879,7 +6897,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -6902,7 +6920,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen3.6 35B-A3B",
@@ -7042,7 +7060,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-30"
+    "latest": "2026-11-06"
    },
    {
     "model": "gemma3 27B",
@@ -7167,7 +7185,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -7190,7 +7208,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7213,7 +7231,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "m3-ultra": [
@@ -7245,7 +7263,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-30"
+    "latest": "2026-11-06"
    },
    {
     "model": "Meta Llama 3.1 8B Instruct",
@@ -7268,7 +7286,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -7291,7 +7309,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7314,7 +7332,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "gpt-oss 20B",
@@ -7366,7 +7384,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-30"
+    "latest": "2026-11-06"
    },
    {
     "model": "Gemma 4 12B",
@@ -7564,7 +7582,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -7587,7 +7605,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7610,7 +7628,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "rtx-4060": [
@@ -7735,7 +7753,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7758,7 +7776,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "rtx-4060ti-16": [
@@ -8058,7 +8076,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -8081,7 +8099,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -8104,7 +8122,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "m5-max-32": [
@@ -8129,7 +8147,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -8138,27 +8156,21 @@
     "params_b": 14.77,
     "active_b": null,
     "moe": false,
-    "tg": 34.03,
-    "pp": 340.9,
-    "n": 2,
-    "tg_min": 33.97,
+    "tg": 34.1,
+    "pp": 342.2,
+    "n": 1,
+    "tg_min": 34.1,
     "tg_max": 34.1,
     "sources": [
-     {
-      "id": "localscore-latest-runs",
-      "url": "https://www.localscore.ai/latest"
-     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/2"
      }
     ],
     "size_gb": null,
-    "backends": [
-     "llamafile"
-    ],
+    "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -8181,7 +8193,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "m4-max-40": [
@@ -8206,7 +8218,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -8229,7 +8241,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -8252,7 +8264,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "minicpm-v47 35B-A3B",
@@ -8302,7 +8314,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -8311,11 +8323,11 @@
     "params_b": 14.77,
     "active_b": null,
     "moe": false,
-    "tg": 23.73,
-    "pp": 215.7,
+    "tg": 23.48,
+    "pp": 212.9,
     "n": 5,
     "tg_min": 21.64,
-    "tg_max": 24.2,
+    "tg_max": 24.0,
     "sources": [
      {
       "id": "localscore-model-pages",
@@ -8325,7 +8337,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -8348,7 +8360,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "m4-pro": [
@@ -8359,27 +8371,21 @@
     "params_b": 8.03,
     "active_b": null,
     "moe": false,
-    "tg": 31.57,
-    "pp": 325.7,
-    "n": 6,
+    "tg": 32.53,
+    "pp": 349.4,
+    "n": 5,
     "tg_min": 29.89,
     "tg_max": 32.9,
     "sources": [
-     {
-      "id": "localscore-latest-runs",
-      "url": "https://www.localscore.ai/latest"
-     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/1"
      }
     ],
     "size_gb": null,
-    "backends": [
-     "llamafile"
-    ],
+    "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -8402,7 +8408,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -8425,7 +8431,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "m6": [
@@ -8450,7 +8456,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ],
   "m5": [
@@ -8461,27 +8467,21 @@
     "params_b": 8.03,
     "active_b": null,
     "moe": false,
-    "tg": 21.62,
-    "pp": 176.9,
-    "n": 5,
+    "tg": 20.93,
+    "pp": 182.7,
+    "n": 4,
     "tg_min": 20.01,
     "tg_max": 22.0,
     "sources": [
-     {
-      "id": "localscore-latest-runs",
-      "url": "https://www.localscore.ai/latest"
-     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/1"
      }
     ],
     "size_gb": null,
-    "backends": [
-     "llamafile"
-    ],
+    "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -8504,7 +8504,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -8527,7 +8527,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-02"
+    "latest": "2026-11-09"
    }
   ]
  },
@@ -9790,15 +9790,15 @@
  ],
  "calibration": {
   "moe_factor": {
-   "value": 0.789,
-   "n": 71,
+   "value": 0.793,
+   "n": 72,
    "basis": "measured on unified-memory hardware only (Strix Halo, DGX Spark); EXTRAPOLATED to other hardware, where there is no calibration data, so MoE estimates there are likely optimistic"
   },
   "by_hw": {
    "rtx-5090": {
-    "efficiency": 0.712,
-    "n": 73,
-    "p25": 0.656,
+    "efficiency": 0.709,
+    "n": 71,
+    "p25": 0.653,
     "p75": 0.777
    },
    "rtx-pro-6000": {
@@ -9844,10 +9844,10 @@
     "p75": 0.922
    },
    "rtx-3060-12": {
-    "efficiency": 0.859,
-    "n": 12,
-    "p25": 0.818,
-    "p75": 0.909
+    "efficiency": 0.858,
+    "n": 15,
+    "p25": 0.7,
+    "p75": 0.898
    },
    "dgx-spark": {
     "efficiency": 0.808,
@@ -9856,10 +9856,10 @@
     "p75": 0.873
    },
    "strix-halo": {
-    "efficiency": 0.796,
-    "n": 79,
+    "efficiency": 0.79,
+    "n": 77,
     "p25": 0.736,
-    "p75": 0.83
+    "p75": 0.828
    },
    "m4": {
     "efficiency": 0.674,
@@ -9909,12 +9909,6 @@
     "p25": 0.892,
     "p75": 1.001
    },
-   "m5-max-32": {
-    "efficiency": 0.661,
-    "n": 3,
-    "p25": 0.658,
-    "p75": 0.664
-   },
    "m4-max-40": {
     "efficiency": 0.473,
     "n": 6,
@@ -9922,36 +9916,36 @@
     "p75": 0.486
    },
    "m5-pro": {
-    "efficiency": 0.694,
+    "efficiency": 0.692,
     "n": 9,
     "p25": 0.684,
-    "p75": 0.706
+    "p75": 0.7
    },
    "m4-pro": {
-    "efficiency": 0.562,
-    "n": 12,
-    "p25": 0.545,
+    "efficiency": 0.576,
+    "n": 11,
+    "p25": 0.533,
     "p75": 0.587
    },
    "m5": {
-    "efficiency": 0.675,
-    "n": 7,
+    "efficiency": 0.66,
+    "n": 6,
     "p25": 0.637,
-    "p75": 0.7
+    "p75": 0.688
    }
   },
   "by_kind": {
    "gpu": {
     "efficiency": 0.69,
-    "n": 531
+    "n": 532
    },
    "unified": {
-    "efficiency": 0.798,
-    "n": 109
+    "efficiency": 0.796,
+    "n": 107
    },
    "apple": {
-    "efficiency": 0.634,
-    "n": 72
+    "efficiency": 0.631,
+    "n": 69
    }
   },
   "method": "efficiency = measured_tg / (memory_bandwidth_GBps / read_GB); dense models only; read_GB = params*bits_per_weight/8 >= 3.0 GB; single-device; median; per-hardware factor needs >= 3 rows, else per-kind median, else the global assumption.",
@@ -9993,7 +9987,7 @@
   }
  ],
  "counts": {
-  "rows_used": 964,
+  "rows_used": 965,
   "hardware": 25,
   "points": 336,
   "community": 0

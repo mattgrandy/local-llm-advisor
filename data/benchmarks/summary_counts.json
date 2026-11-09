@@ -1,5 +1,5 @@
 {
- "rows_total": 9662,
+ "rows_total": 9681,
  "dropped_dup_of_scoreboard": 425,
  "dropped_author_flagged_invalid": 2,
  "dropped_nonpositive": 0,
@@ -7,11 +7,11 @@
   "discussion-15013-scoreboard-tables": 112,
   "discussion-15013-comments": 1398,
   "discussion-4167-scoreboard-tables": 108,
-  "discussion-4167-comments": 256,
+  "discussion-4167-comments": 259,
   "discussion-15021-scoreboard-tables": 46,
-  "discussion-15021-comments": 449,
+  "discussion-15021-comments": 451,
   "discussion-10879-scoreboard-tables": 234,
-  "discussion-10879-comments": 1452,
+  "discussion-10879-comments": 1457,
   "discussion-16578-body": 0,
   "discussion-16578-comments": 318,
   "discussion-23659-body": 28,
@@ -37,11 +37,11 @@
   "llamacpp-discussion-15013-comments": 1295,
   "llamacpp-discussion-4167-summary": 96,
   "llamacpp-discussion-4167-m2ultra-history": 12,
-  "llamacpp-discussion-4167-comments": 169,
+  "llamacpp-discussion-4167-comments": 172,
   "llamacpp-discussion-15021-scoreboard": 46,
-  "llamacpp-discussion-15021-comments": 410,
+  "llamacpp-discussion-15021-comments": 412,
   "llamacpp-discussion-10879-scoreboard": 234,
-  "llamacpp-discussion-10879-comments": 1254,
+  "llamacpp-discussion-10879-comments": 1259,
   "llamacpp-discussion-16578-comments": 318,
   "llamacpp-discussion-23659-body": 28,
   "llamacpp-benches-dgx-spark": 138,
@@ -68,24 +68,24 @@
   },
   "discussion-4167": {
    "title": "Performance of llama.cpp on Apple Silicon M-series",
-   "comments_total": 280,
-   "replies_included_in_comment_list": 182,
+   "comments_total": 281,
+   "replies_included_in_comment_list": 183,
    "top_level": 98,
-   "comments_with_bench_tables": 75
+   "comments_with_bench_tables": 76
   },
   "discussion-15021": {
    "title": "Performance of llama.cpp on AMD ROCm (HIP)",
-   "comments_total": 218,
+   "comments_total": 219,
    "replies_included_in_comment_list": 140,
-   "top_level": 78,
-   "comments_with_bench_tables": 101
+   "top_level": 79,
+   "comments_with_bench_tables": 102
   },
   "discussion-10879": {
    "title": "Performance of llama.cpp with Vulkan",
-   "comments_total": 790,
-   "replies_included_in_comment_list": 477,
-   "top_level": 313,
-   "comments_with_bench_tables": 394
+   "comments_total": 802,
+   "replies_included_in_comment_list": 487,
+   "top_level": 315,
+   "comments_with_bench_tables": 398
   },
   "discussion-16578": {
    "title": "Performance of llama.cpp on NVIDIA DGX Spark",
@@ -142,18 +142,18 @@
    "license": "CC-BY-4.0"
   }
  },
- "rows_with_hw_id": 2301,
- "rows_device_unknown": 738,
- "generated": "2026-11-02 09:24 MST",
+ "rows_with_hw_id": 2302,
+ "rows_device_unknown": 742,
+ "generated": "2026-11-09 09:21 MST",
  "localscore": {
-  "rows": 1756,
-  "model_page_rows": 1746,
+  "rows": 1765,
+  "model_page_rows": 1755,
   "latest_rows": 10,
-  "hw_matched": 163,
-  "retrieved": "2026-11-02"
+  "hw_matched": 164,
+  "retrieved": "2026-11-09"
  },
  "pass2": {
-  "date": "2026-11-02",
+  "date": "2026-11-09",
   "new_rows": 2433,
   "by_source": {
    "llamacpp-discussion-15396": 942,
@@ -219,7 +219,7 @@
     },
     "ggml-org/llama.cpp#10982": {
      "title": "Research: Performance differences between Metal (macOS) and Vulkan (Linux)",
-     "comments": 53,
+     "comments": 58,
      "rows": 2,
      "pr": false
     },

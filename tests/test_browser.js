@@ -54,7 +54,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
     // ---- long context (up to 1M) ----
     assert.deepStrictEqual(await pg.$$eval("#ctx option", o => o.map(x => +x.value)), [4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1000000], "context presets up to 1M");
     assert.deepStrictEqual(await pg.$$eval("#kvq option", o => o.map(x => x.value)), ["f16", "q8_0", "q4_0"]);
-    await pg.goto(base + "index.html?kind=apple&device=m5-ultra&config=studio-m5-ultra-80&mem=512&use=all&ctx=1000000&kvq=f16", { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res");
+    await pg.goto(base + "index.html?kind=apple&device=m5-ultra&config=studio-m5-ultra-80&mem=512&use=all&ctx=1000000&kvq=f16&all=1", { waitUntil: "networkidle" }); await pg.waitForSelector("#results .res"); // all=1: more than 8 models run at 1M
     assert.strictEqual(await val("ctx"), "1000000", "?ctx=1000000 restored"); assert.strictEqual(await pg.$eval("#ctx + .seg button.on", b => b.dataset.value), "1000000");
     const lc = await pg.$$eval("#results .res", a => a.map(c => ({ n: c.querySelector("h3").textContent, t: c.textContent })));
     { const MM = JSON.parse(require("fs").readFileSync(require("path").join(__dirname, "..", "site", "data", "models.json"), "utf8")).models, AA = require("../site/advisor.js");

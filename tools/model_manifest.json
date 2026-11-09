@@ -416,6 +416,17 @@
         "chat"
       ],
       "vision": false
+    },
+    {
+      "id": "ricursiveAI/Ripple-65B-Preview",
+      "name": "Ripple 65B Preview",
+      "gguf": "prithivMLmods/Ripple-65B-Preview-GGUF",
+      "moe": false,
+      "tags": [
+        "coding",
+        "chat"
+      ],
+      "vision": false
     }
   ]
 }

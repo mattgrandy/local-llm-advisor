@@ -120,6 +120,21 @@
       "hw": "mac-m4-16gb",
       "model": "LiquidAI/LFM3-1.7B",
       "added": "2026-11-02"
+    },
+    {
+      "hw": "dual-rtx-3090-48gb",
+      "model": "ricursiveAI/Ripple-65B-Preview",
+      "added": "2026-11-09"
+    },
+    {
+      "hw": "mac-m4-pro-64gb",
+      "model": "ricursiveAI/Ripple-65B-Preview",
+      "added": "2026-11-09"
+    },
+    {
+      "hw": "macbook-pro-m5-max-128gb",
+      "model": "ricursiveAI/Ripple-65B-Preview",
+      "added": "2026-11-09"
     }
   ]
 }

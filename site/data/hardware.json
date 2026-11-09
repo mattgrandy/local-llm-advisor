@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-02",
+  "generated": "2026-11-09",
   "gpus": [
     {
       "id": "rtx-3060-12",
@@ -259,8 +259,8 @@
         192
       ],
       "source_url": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-400-series/amd-ryzen-ai-max-plus-pro-495.html",
-      "basis": "AMD page: 256-bit LPDDR5x-8533, max 192 GB, Radeon 8065S; 256 bit x 8533 MT/s / 8 = 273.1 GB/s (computed). AMD blog 2026-10-12 (https://www.amd.com/en/blogs/2026/meet-the-next-amd-ryzen-ai-halo.html): Ryzen AI Halo with up to 192 GB unified memory, up to 160 GB allocatable to the GPU, orderable from Micro Center.",
-      "last_verified": "2026-10-19"
+      "basis": "AMD page: 256-bit LPDDR5x-8533, max 192 GB, Radeon 8065S; 256 bit x 8533 MT/s / 8 = 273.1 GB/s (computed). AMD blog 2026-10-12 (https://www.amd.com/en/blogs/2026/meet-the-next-amd-ryzen-ai-halo.html): Ryzen AI Halo with up to 192 GB unified memory, up to 160 GB allocatable to the GPU, orderable from Micro Center. AMD blog 2026-11-09 (https://www.amd.com/en/blogs/2026/project-zenith-comes-to-amd-ryzen-ai-halo-ready-to-code.html): the PRO 495 Ryzen AI Halo is available now (with Project Zenith Windows 11), restating 273 GB/s and up to 160 GB for the GPU.",
+      "last_verified": "2026-11-09"
     },
     {
       "id": "rtx-spark-n1x",
@@ -652,7 +652,7 @@
     },
     {
       "slug": "macbook-pro-m6-32gb",
-      "title": "MacBook Pro 14 M6 32GB (ships Nov 6 2026)",
+      "title": "MacBook Pro 14 M6 32GB",
       "kind": "apple",
       "device": "m6",
       "config": "mbp-m6",
@@ -669,7 +669,7 @@
       "id": "studio-m5-ultra-80",
       "hw": "m5-ultra",
       "form_factor": "Mac Studio",
-      "name": "Mac Studio — M5 Ultra (80-core GPU)",
+      "name": "Mac Studio \u2014 M5 Ultra (80-core GPU)",
       "memory_options_gb": [
         256,
         512
@@ -685,7 +685,7 @@
       "id": "studio-m5-ultra-64",
       "hw": "m5-ultra",
       "form_factor": "Mac Studio",
-      "name": "Mac Studio — M5 Ultra (64-core GPU)",
+      "name": "Mac Studio \u2014 M5 Ultra (64-core GPU)",
       "memory_options_gb": [
         96
       ],
@@ -696,7 +696,7 @@
       "id": "studio-m5-max-40",
       "hw": "m5-max-40",
       "form_factor": "Mac Studio",
-      "name": "Mac Studio — M5 Max (40-core GPU)",
+      "name": "Mac Studio \u2014 M5 Max (40-core GPU)",
       "memory_options_gb": [
         48,
         64,
@@ -709,7 +709,7 @@
       "id": "studio-m5-max-32",
       "hw": "m5-max-32",
       "form_factor": "Mac Studio",
-      "name": "Mac Studio — M5 Max (32-core GPU)",
+      "name": "Mac Studio \u2014 M5 Max (32-core GPU)",
       "memory_options_gb": [
         36
       ],
@@ -720,7 +720,7 @@
       "id": "studio-m4-max-40",
       "hw": "m4-max-40",
       "form_factor": "Mac Studio",
-      "name": "Mac Studio (2025) — M4 Max (40-core GPU)",
+      "name": "Mac Studio (2025) \u2014 M4 Max (40-core GPU)",
       "memory_options_gb": [
         48,
         64,
@@ -733,7 +733,7 @@
       "id": "studio-m4-max-32",
       "hw": "m4-max-32",
       "form_factor": "Mac Studio",
-      "name": "Mac Studio (2025) — M4 Max (32-core GPU)",
+      "name": "Mac Studio (2025) \u2014 M4 Max (32-core GPU)",
       "memory_options_gb": [
         36
       ],
@@ -744,7 +744,7 @@
       "id": "studio-m3-ultra-80",
       "hw": "m3-ultra",
       "form_factor": "Mac Studio",
-      "name": "Mac Studio (2025) — M3 Ultra (80-core GPU)",
+      "name": "Mac Studio (2025) \u2014 M3 Ultra (80-core GPU)",
       "memory_options_gb": [
         256
       ],
@@ -756,7 +756,7 @@
       "id": "studio-m3-ultra-60",
       "hw": "m3-ultra",
       "form_factor": "Mac Studio",
-      "name": "Mac Studio (2025) — M3 Ultra (60-core GPU)",
+      "name": "Mac Studio (2025) \u2014 M3 Ultra (60-core GPU)",
       "memory_options_gb": [
         96
       ],
@@ -767,7 +767,7 @@
       "id": "mbp-m5-max-40",
       "hw": "m5-max-40",
       "form_factor": "MacBook Pro",
-      "name": "MacBook Pro 14/16 — M5 Max (40-core GPU)",
+      "name": "MacBook Pro 14/16 \u2014 M5 Max (40-core GPU)",
       "memory_options_gb": [
         48,
         64,
@@ -775,25 +775,25 @@
       ],
       "source_url": "https://support.apple.com/en-us/126318",
       "last_verified": "2026-11-02",
-      "note": "Same chip and memory options in the MacBook Pro with PROLED XDR Display (ships Nov 6 2026, per Apple specs)."
+      "note": "Same chip and memory options in the MacBook Pro with PROLED XDR Display (shipping since Nov 6 2026, per Apple)."
     },
     {
       "id": "mbp-m5-max-32",
       "hw": "m5-max-32",
       "form_factor": "MacBook Pro",
-      "name": "MacBook Pro 14/16 — M5 Max (32-core GPU)",
+      "name": "MacBook Pro 14/16 \u2014 M5 Max (32-core GPU)",
       "memory_options_gb": [
         36
       ],
       "source_url": "https://support.apple.com/en-us/126318",
       "last_verified": "2026-11-02",
-      "note": "Same chip and memory options in the MacBook Pro with PROLED XDR Display (ships Nov 6 2026, per Apple specs)."
+      "note": "Same chip and memory options in the MacBook Pro with PROLED XDR Display (shipping since Nov 6 2026, per Apple)."
     },
     {
       "id": "mbp-m5-pro-20",
       "hw": "m5-pro",
       "form_factor": "MacBook Pro",
-      "name": "MacBook Pro 14/16 — M5 Pro (20-core GPU)",
+      "name": "MacBook Pro 14/16 \u2014 M5 Pro (20-core GPU)",
       "memory_options_gb": [
         24,
         48,
@@ -801,26 +801,26 @@
       ],
       "source_url": "https://support.apple.com/en-us/126318",
       "last_verified": "2026-11-02",
-      "note": "Same chip and memory options in the MacBook Pro with PROLED XDR Display (ships Nov 6 2026, per Apple specs)."
+      "note": "Same chip and memory options in the MacBook Pro with PROLED XDR Display (shipping since Nov 6 2026, per Apple)."
     },
     {
       "id": "mbp-m5-pro-16",
       "hw": "m5-pro",
       "form_factor": "MacBook Pro",
-      "name": "MacBook Pro 14 — M5 Pro (16-core GPU)",
+      "name": "MacBook Pro 14 \u2014 M5 Pro (16-core GPU)",
       "memory_options_gb": [
         24,
         48
       ],
       "source_url": "https://support.apple.com/en-us/126318",
-      "note": "14-inch only. Apple lists 64GB only for the 20-core GPU M5 Pro. Same chip and memory options in the MacBook Pro with PROLED XDR Display (ships Nov 6 2026, per Apple specs).",
+      "note": "14-inch only. Apple lists 64GB only for the 20-core GPU M5 Pro. Same chip and memory options in the MacBook Pro with PROLED XDR Display (shipping since Nov 6 2026, per Apple).",
       "last_verified": "2026-11-02"
     },
     {
       "id": "mbp-m5",
       "hw": "m5",
       "form_factor": "MacBook Pro",
-      "name": "MacBook Pro 14 — M5 (10-core GPU)",
+      "name": "MacBook Pro 14 \u2014 M5 (10-core GPU)",
       "memory_options_gb": [
         16,
         24,
@@ -833,7 +833,7 @@
       "id": "mbp-m4-max-40",
       "hw": "m4-max-40",
       "form_factor": "MacBook Pro",
-      "name": "MacBook Pro 14/16 (2024) — M4 Max (40-core GPU)",
+      "name": "MacBook Pro 14/16 (2024) \u2014 M4 Max (40-core GPU)",
       "memory_options_gb": [
         48,
         64,
@@ -846,7 +846,7 @@
       "id": "mbp-m4-max-32",
       "hw": "m4-max-32",
       "form_factor": "MacBook Pro",
-      "name": "MacBook Pro 14/16 (2024) — M4 Max (32-core GPU)",
+      "name": "MacBook Pro 14/16 (2024) \u2014 M4 Max (32-core GPU)",
       "memory_options_gb": [
         36
       ],
@@ -857,7 +857,7 @@
       "id": "mbp-m4-pro",
       "hw": "m4-pro",
       "form_factor": "MacBook Pro",
-      "name": "MacBook Pro 14/16 (2024) — M4 Pro",
+      "name": "MacBook Pro 14/16 (2024) \u2014 M4 Pro",
       "memory_options_gb": [
         24,
         48
@@ -869,7 +869,7 @@
       "id": "air-m5-13",
       "hw": "m5",
       "form_factor": "MacBook Air",
-      "name": "MacBook Air 13 — M5",
+      "name": "MacBook Air 13 \u2014 M5",
       "memory_options_gb": [
         16,
         24,
@@ -883,7 +883,7 @@
       "id": "air-m5-15",
       "hw": "m5",
       "form_factor": "MacBook Air",
-      "name": "MacBook Air 15 — M5 (10-core GPU)",
+      "name": "MacBook Air 15 \u2014 M5 (10-core GPU)",
       "memory_options_gb": [
         16,
         24,
@@ -896,7 +896,7 @@
       "id": "mini-m5-pro-20",
       "hw": "m5-pro",
       "form_factor": "Mac mini",
-      "name": "Mac mini — M5 Pro (20-core GPU)",
+      "name": "Mac mini \u2014 M5 Pro (20-core GPU)",
       "memory_options_gb": [
         48,
         64
@@ -909,7 +909,7 @@
       "id": "mini-m5-pro-16",
       "hw": "m5-pro",
       "form_factor": "Mac mini",
-      "name": "Mac mini — M5 Pro (16-core GPU)",
+      "name": "Mac mini \u2014 M5 Pro (16-core GPU)",
       "memory_options_gb": [
         24
       ],
@@ -920,7 +920,7 @@
       "id": "mini-m6",
       "hw": "m6",
       "form_factor": "Mac mini",
-      "name": "Mac mini — M6",
+      "name": "Mac mini \u2014 M6",
       "memory_options_gb": [
         16,
         24,
@@ -934,7 +934,7 @@
       "id": "mini-m4-pro",
       "hw": "m4-pro",
       "form_factor": "Mac mini",
-      "name": "Mac mini (2024) — M4 Pro",
+      "name": "Mac mini (2024) \u2014 M4 Pro",
       "memory_options_gb": [
         24,
         48,
@@ -947,7 +947,7 @@
       "id": "mini-m4",
       "hw": "m4",
       "form_factor": "Mac mini",
-      "name": "Mac mini (2024) — M4",
+      "name": "Mac mini (2024) \u2014 M4",
       "memory_options_gb": [
         16,
         24,
@@ -960,7 +960,7 @@
       "id": "imac-m4",
       "hw": "m4",
       "form_factor": "iMac",
-      "name": "iMac 24 — M4",
+      "name": "iMac 24 \u2014 M4",
       "memory_options_gb": [
         16,
         24,
@@ -973,29 +973,29 @@
       "id": "imac-m6",
       "hw": "m6",
       "form_factor": "iMac",
-      "name": "iMac 24 — M6",
+      "name": "iMac 24 \u2014 M6",
       "memory_options_gb": [
         16,
         24,
         32
       ],
       "source_url": "https://www.apple.com/imac/specs/",
-      "note": "Ships Nov 6 2026 (pre-order from Oct 28). The 10-core GPU model tops out at 24GB; 32GB needs the 12-core GPU model. Apple lists only \"up to 170GB/s\" for iMac; per-memory bandwidth follows the M6 figures on the Mac mini and MacBook Pro spec pages.",
-      "last_verified": "2026-11-02"
+      "note": "Shipping since Nov 6 2026. The 10-core GPU model tops out at 24GB; 32GB needs the 12-core GPU model. Apple lists only \"up to 170GB/s\" for iMac; per-memory bandwidth follows the M6 figures on the Mac mini and MacBook Pro spec pages.",
+      "last_verified": "2026-11-09"
     },
     {
       "id": "mbp-m6",
       "hw": "m6",
       "form_factor": "MacBook Pro",
-      "name": "MacBook Pro 14 — M6 (12-core GPU)",
+      "name": "MacBook Pro 14 \u2014 M6 (12-core GPU)",
       "memory_options_gb": [
         16,
         24,
         32
       ],
       "source_url": "https://www.apple.com/macbook-pro/liquid-retina-xdr-display/specs/",
-      "last_verified": "2026-11-02",
-      "note": "Ships Nov 6 2026 (pre-order from Oct 28). Bandwidth is 153GB/s with 16GB and 170GB/s with 24GB/32GB (Apple)."
+      "last_verified": "2026-11-09",
+      "note": "Shipping since Nov 6 2026. Bandwidth is 153GB/s with 16GB and 170GB/s with 24GB/32GB (Apple)."
     }
   ],
   "apple_not_listed": [

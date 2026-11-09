@@ -55,6 +55,13 @@ SITE = {m['id']: m for m in MODELS}
 # fine-tunes / spec-decode / pruned / re-quantised variants must NOT inherit the base model's identity
 VARIANT = re.compile(r'mtp|reap|tune|qwopus|qwable|escha|compat|flash-next|heretic|abliter|uncensored|distill|ornith|muse', re.I)
 
+# unmatched MoE models whose names carry no "-A<n>B" tag: without this they were treated as dense and used to scale
+# dense models (e.g. Llama 4 Scout 18 tok/s on Strix Halo -> "Llama 3.3 70B Q8 ~16 tok/s"). active_b from the model
+# cards (Llama 4 Scout 109B/17B active, Qwen3-Coder-Next 80B/3B active); None = MoE with unknown active count
+# (excluded from calibration and from scaled-similar estimates).
+KNOWN_MOE = [(r'llama[ -]?4[ -]?scout', 17.0), (r'llama[ -]?4[ -]?maverick', 17.0), (r'qwen3-?coder-?next', 3.0),
+             (r'mistral[ -]?small[ -]?4\b', None), (r'ornith[ -]?1\.0[ -]?35b', None)]
+
 def canon(model, params_b):
     """-> (canonical name, site_id|None, total_b, active_b|None, moe)"""
     s = (model or '').strip(); l = s.lower()
@@ -68,6 +75,11 @@ def canon(model, params_b):
     except (TypeError, ValueError): tot = None
     if am:
         tot = tot or float(am.group(1)); return (s, None, tot, float(am.group(2)), True)
+    km = next((act for pat, act in KNOWN_MOE if re.search(pat, l)), False)
+    if km is not False:
+        if tot is None:
+            pm = re.search(r'(\d+(?:\.\d+)?)b\b', l); tot = float(pm.group(1)) if pm else None
+        return (s, None, tot, km, True) if tot else None
     if tot is None:
         pm = re.search(r'(\d+(?:\.\d+)?)b\b', l); tot = float(pm.group(1)) if pm else None
     if tot is None or '?' in l: return None
