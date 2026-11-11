@@ -106,6 +106,21 @@
     const tt = p.ttft != null ? `Time to first token for a full ${Advisor.fmtCtx(o.ctx)} prompt: <b>~${Advisor.fmtDur(p.ttft)}</b> (estimated).` : "Time to first token: not estimated (no prompt-processing data for this hardware, or the model is offloaded).";
     return `<p class="mut depthline"><span class="badge est">estimated</span> At ${Advisor.fmtCtx(o.ctx)} depth: <b>~${Math.round(d.tps)} tok/s</b> generation (${Math.round(d.ratio * 100)}% of the short-context speed). ${tt}${ex ? ` Beyond ${Advisor.fmtCtx(d.measuredDepthMax)} the slowdown is extrapolated; there are no measurements that deep for this model.` : ` Penalty fitted to measured runs up to ${Advisor.fmtCtx(d.measuredDepthMax)}; no measurement for this exact model and hardware at this depth.`}</p>`;
   }
+  function amazonInline(input, cfg) {
+    const A = window.LLMA_AFF;
+    const key = cfg ? cfg.id : input.device, e = A && A.tag && A.q[key];
+    if (!e) return "";
+    const q = e.q + (e.mem && input.memory_gb ? " " + input.memory_gb + "GB" : "");
+    const url = "https://www.amazon.com/s?k=" + encodeURIComponent(q).replace(/%20/g, "+") + "&tag=" + encodeURIComponent(A.tag);
+    return ` <a class="aff-inline" href="${esc(url)}" target="_blank" rel="sponsored noopener nofollow" data-affiliate="amazon" data-hardware="${esc(key)}" data-slot-id="advisor-inline">Amazon</a>`;
+  }
+  function rentInline(input, cfg) {
+    const A = window.LLMA_AFF, ps = A && A.cloud && A.cloud.partners || [];
+    if (!ps.length) return "";
+    const key = cfg ? cfg.id : input.device;
+    const links = ps.map(p => `<a class="aff-inline" href="${esc(p.url)}" target="_blank" rel="sponsored noopener nofollow" data-sponsor="${esc(p.id)}" data-hardware="${esc(key)}" data-slot-id="advisor-inline-rent">${esc(p.name)}</a>`).join(" / ");
+    return `<span class="rent-inline">Rent instead: ${links}</span>`;
+  }
   function affiliateSlot(input, cfg, hwr) {
     const A = window.LLMA_AFF;
     const key = cfg ? cfg.id : input.device, e = A && A.tag && A.q[key];
@@ -135,7 +150,7 @@
                     ram_gb: +$("ram").value, ram_type: $("ramt").value };
     const o = { use: $("use").value, ctx: +$("ctx").value, kvq: $("kvq").value };
     const { hwr, results: allRes, excluded } = Advisor.recommend(input, data, o);
-    $("hwinfo").innerHTML = `Using <b>${esc(hwr.name)}</b>: ${hwr.pool.toFixed(1)} GB usable for model + KV` +
+    $("hwinfo").innerHTML = `Using <b>${esc(hwr.name)}</b>${amazonInline(input, cfg)}: ${hwr.pool.toFixed(1)} GB usable for model + KV` +
       (hwr.discrete && !hwr.cpuOnly ? `, ${hwr.ramAvail.toFixed(0)} GB RAM available for offload` : "") +
       (hwr.frac ? ` (assumes ${Math.round(hwr.frac * 100)}% of unified memory usable)` : "") + `, ${hwr.gpuBw} GB/s memory bandwidth.` +
       (hwr.eff ? ` Estimated speeds use an efficiency factor of ${hwr.eff.toFixed(2)}, ${esc(hwr.effSource)}.` : "");
@@ -157,7 +172,7 @@
     const canToggle = effSort === "rec" && !active && allRes.length > 8;
     $("v-all").hidden = !canToggle; if (canToggle) $("v-all").textContent = view.all ? "Show top 8 only" : `Show all ${allRes.length} models`;
     $("viewbar").hidden = !allRes.length;
-    if (!allRes.length) { $("results").innerHTML = `<div class="card">Nothing in the dataset fits this setup at ${Advisor.fmtCtx(o.ctx)} context. Try a shorter context, a q8_0 or q4_0 KV cache, or more memory.</div>` + affHtml; return; }
+    if (!allRes.length) { $("results").innerHTML = `<div class="card">Nothing in the dataset fits this setup at ${Advisor.fmtCtx(o.ctx)} context. Try a shorter context, a q8_0 or q4_0 KV cache, or more memory. ${rentInline(input, cfg)}</div>` + affHtml; return; }
     if (!results.length) { $("results").innerHTML = `<div class="card">No models match these filters. Use <b>Reset sort &amp; filters</b> above, or loosen a filter (the minimum tokens/sec and speed source are the strictest).</div>` + affHtml; return; }
     const total = hwr.pool, ramTot = hwr.cpuOnly ? hwr.pool : (hwr.ramAvail || hwr.pool);
     const meter = (label, used, cap, cls) => { const pct = cap > 0 ? Math.min(100, used / cap * 100) : 0; return `<div class="meter"><div class="row"><span>${label}</span><span><b>${used.toFixed(1)}</b> / ${cap.toFixed(0)} GB &middot; ${Math.round(pct)}%</span></div><div class="bar" role="img" aria-label="${label} ${Math.round(pct)} percent used"><i class="${cls || (pct > 92 ? "warn" : "")}" style="width:${pct}%"></i></div></div>`; };
@@ -171,7 +186,7 @@
       <p class="mut q-line">${p.quality ? `LMArena ${esc(p.quality.category)} rank #${num(p.quality.rank)} (rating ${num(p.quality.rating)}, ${esc(p.quality.date)})` : "LMArena: not rated"} &middot; max context that fits here: ${p.maxCtx ? fc(p.maxCtx) : "under 4k"}${p.maxCtx > m.context_max ? " (extended)" : ""} &middot; model max context ${fc(m.context_max)}${p.limits.extended > m.context_max ? `, ${fc(p.limits.extended)} extended with YaRN` : ""}</p>
       ${p.ctxStatus === "extended" ? `<p class="mut ctxwarn"><span class="badge est">extended context</span> ${fc(o.ctx)} is beyond this model's native ${fc(m.context_max)}. ${esc(m.context_extended.source)}. ${esc(m.context_extended.caveat)}</p>` : ""}
       ${longBlock(p, o)}
-      <p class="mut">${esc(si.detail)}${p.speed ? " Source: " + p.speed.sources.map(x => `<a href="${safeUrl(x.url)}" rel="noopener">${esc(x.id)}</a>`).join(", ") + ", latest " + esc(p.speed.latest) + "." : ""} Memory: weights ${p.weightsGB.toFixed(1)} GB + KV cache ${p.kvGB.toFixed(2)} GB @ ${fc(o.ctx)} ctx (${o.kvq}${m.kv.linear_state_gb ? `, incl. ${m.kv.linear_state_gb.toFixed(2)} GB fixed linear-attention state` : ""}).</p>
+      <p class="mut">${esc(si.detail)}${p.speed ? " Source: " + p.speed.sources.map(x => `<a href="${safeUrl(x.url)}" rel="noopener">${esc(x.id)}</a>`).join(", ") + ", latest " + esc(p.speed.latest) + "." : ""} Memory: weights ${p.weightsGB.toFixed(1)} GB + KV cache ${p.kvGB.toFixed(2)} GB @ ${fc(o.ctx)} ctx (${o.kvq}${m.kv.linear_state_gb ? `, incl. ${m.kv.linear_state_gb.toFixed(2)} GB fixed linear-attention state` : ""}).${p.mode !== "gpu" ? " " + rentInline(input, cfg) : ""}</p>
       <div class="cmd"><div class="code"><div class="top"><span>llama.cpp</span><button class="copy" type="button" data-c="l${i}">Copy</button></div><pre id="l${i}">${esc(p.command.llama)}</pre></div>
       <div class="code"><div class="top"><span>ollama</span><button class="copy" type="button" data-c="o${i}">Copy</button></div><pre id="o${i}">${esc(p.command.ollama)}</pre></div></div>
       ${p.command.ollamaNote ? `<p class="mut">${esc(p.command.ollamaNote)}</p>` : ""}

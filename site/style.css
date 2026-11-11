@@ -152,3 +152,10 @@ pre{margin:0;padding:12px 14px;background:var(--code);border:1px solid var(--bd)
 figure{margin:14px 0}figcaption{font-size:.85rem;margin-top:4px}figure details{margin-top:8px}figure summary{cursor:pointer;color:var(--acc)}
 .cmp-boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 14px}
 #emb-hw{font:inherit;padding:6px 10px;border-radius:8px;border:1px solid var(--bd2);background:var(--card2);color:var(--fg);max-width:100%}
+
+/* compact in-recommendation affiliate / rent links */
+a.aff-inline{font-size:.8em;font-weight:600;white-space:nowrap;margin-left:.25em}
+.rent-inline{font-size:.85em;color:var(--mut);white-space:normal}
+.rent-inline a.aff-inline{margin-left:0}
+.guide-list{margin:8px 0 0;padding-left:1.2em;line-height:1.7}
+.cite pre,.embed-this pre{white-space:pre-wrap;word-break:break-word}

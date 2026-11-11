@@ -7,7 +7,7 @@ const ICON = {
 };
 // Analytics config: change the website id (or set to "" to disable analytics everywhere) here only.
 const ANALYTICS = { websiteId: "43daf16b-1b1a-4306-93fc-7c1e00fa0db9", src: "https://cloud.umami.is/script.js", doNotTrack: true };
-const VER = "20261020a";
+const VER = "20261111a";
 // Amazon Associates config: change the tracking tag (or set to "" to turn all Amazon links off) here only.
 const AFFILIATE = {
   amazonTag: "localllmadvis-20", disclosure: "As an Amazon Associate I earn from qualifying purchases.",
@@ -24,7 +24,7 @@ const cloudPartners = () => AFFILIATE.cloud.partners.filter(p => p.url && /^http
 const amazonUrl = q => `https://www.amazon.com/s?k=${encodeURIComponent(q).replace(/%20/g, "+")}&tag=${AFFILIATE.amazonTag}`;
 // Base Amazon search phrase per hardware id (GPU id, Apple config id, unified id). Missing id => no link (unreleased, cloud-only, not sold as a unit).
 function affiliateQueries(hw) {
-  const m = {}, skip = /^(studio-m5-ultra|mini-m6|mbp-m6|imac-m6)/;
+  const m = {}, skip = /^(studio-m5-ultra)/; // unreleased or not sold as a simple retail unit
   for (const g of hw.gpus) m[g.id] = { q: (/^rx-/.test(g.id) ? "AMD " : /^rtx-pro/.test(g.id) ? "NVIDIA " : "NVIDIA ") + g.name.replace(/ Workstation$/, "") + " graphics card" + (/12GB|16GB/.test(g.name) ? "" : ""), kind: "gpu" };
   for (const c of hw.apple_configs) if (!skip.test(c.id)) m[c.id] = { q: c.name.replace(/ — /g, " ").replace(/\s*\(\d+-core GPU\)/, "").replace(/14\/16 /, ""), kind: "apple", mem: true };
   m["strix-halo"] = { q: "AMD Ryzen AI Max+ 395 mini PC 128GB", kind: "unified" };
@@ -60,12 +60,12 @@ function head(d, title, desc) {
 function nav(d, cur) {
   const a = (href, label, key, opt) => `<a class="l${opt ? " opt" : ""}" href="${d}${href}"${cur === key ? ' aria-current="page"' : ""}>${label}</a>`;
   return `<nav class="nav" aria-label="Main"><div class="wrap"><a class="brand" href="${d}index.html"><span class="logo" aria-hidden="true">&gt;_</span>Local LLM Advisor</a>
-${a("hardware/index.html", "Hardware", "hw")}${a("compare/index.html", "Compare", "compare", true)}${a("blog/index.html", "Blog", "blog", true)}${a("submit.html", "Submit benchmark", "submit", true)}${a("data-sources.html", "Data", "data", true)}
+${a("hardware/index.html", "Hardware", "hw")}${a("compare/index.html", "Compare", "compare", true)}${a("guides/index.html", "Guides", "guides", true)}${a("blog/index.html", "Blog", "blog", true)}${a("submit.html", "Submit benchmark", "submit", true)}${a("data-sources.html", "Data", "data", true)}
 <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle theme"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></div></nav>`;
 }
 function footer(d) {
   return `<footer class="site"><div class="wrap"><div class="cols"><div><b style="color:var(--fg)">Local LLM Advisor</b><p>Free, no sign-up, no cookies. Sponsored and affiliate links are labelled. ${AFFILIATE.disclosure} <a href="${d}data-sources.html#affiliate-disclosure">Disclosure</a>. Model facts link to their source and show a last-verified date.</p><p class="mut" id="privacy">Privacy: anonymous, cookie-free analytics (Umami) count visits and which options are used. No personal data, no search text, and Do Not Track is respected. <a href="${d}data-sources.html#privacy">Details</a></p></div>
-<div><h4>Explore</h4><ul><li><a href="${d}index.html">Advisor</a></li><li><a href="${d}hardware/index.html">All hardware</a></li><li><a href="${d}vram/index.html">By VRAM</a></li><li><a href="${d}models/index.html">Models</a></li><li><a href="${d}leaderboard.html">Leaderboard</a></li><li><a href="${d}compare/index.html">Compare hardware</a></li><li><a href="${d}can-run/index.html">Can it run?</a></li><li><a href="${d}blog/index.html">Blog</a></li></ul></div>
+<div><h4>Explore</h4><ul><li><a href="${d}index.html">Advisor</a></li><li><a href="${d}hardware/index.html">All hardware</a></li><li><a href="${d}vram/index.html">By VRAM</a></li><li><a href="${d}models/index.html">Models</a></li><li><a href="${d}leaderboard.html">Leaderboard</a></li><li><a href="${d}compare/index.html">Compare hardware</a></li><li><a href="${d}guides/index.html">Guides</a></li><li><a href="${d}can-run/index.html">Can it run?</a></li><li><a href="${d}blog/index.html">Blog</a></li></ul></div>
 <div><h4>Data</h4><ul><li><a href="${d}submit.html">Submit a benchmark</a></li><li><a href="${d}embed/index.html">Embed a badge</a></li><li><a href="${d}data-sources.html">Sources &amp; attribution</a></li><li><a href="https://github.com/mattgrandy/local-llm-advisor" rel="noopener">GitHub</a></li></ul></div></div></div></footer></body></html>`;
 }
 // Direct sponsor/ad slots. Config-driven: a slot renders ONLY when SPONSOR_SLOTS[id].url is set (https). Empty = nothing rendered.
@@ -92,4 +92,46 @@ function mlxExplainer(d, opts) {
   if (short) return `<section class="card" id="mlx"><h2>MLX on this Mac</h2><p class="mut">MLX is Apple's machine-learning framework for Apple Silicon. Where a verified MLX conversion exists (mlx-community or the model's own publisher), the commands above include an MLX block next to llama.cpp and ollama.</p>${facts}<p class="mut">Repos are checked against the Hugging Face API (<a href="${d}data-sources.html#mlx">how</a>).</p></section>`;
   return `<section class="card" id="mlx"><h2>MLX conversions (Apple Silicon)</h2><p class="mut">On Apple hardware the advisor also shows an MLX command when a verified MLX conversion exists, from mlx-community or, if mlx-community has none, from the model's own publisher (for example LiquidAI). Each repo id is found and checked through the Hugging Face API by <code>tools/mlx_repos.py</code>: the repo must exist, ship .safetensors weights and name the original model as its base. Models without a match say "no MLX conversion yet". MLX commands never appear for NVIDIA, AMD or CPU setups.</p>${facts}${o.table || ""}</section>`;
 }
-module.exports = { mlxExplainer, MLX_SRC, AFFILIATE, cloudPartners, cloudBox, amazonUrl, affiliateQueries, affiliateBox, affiliateJs, ANALYTICS, VER, head, nav, footer, esc, ICON, slot, SPONSOR_SLOTS };
+
+const HF_DATASET = "https://huggingface.co/datasets/LocalLLMAdvisor/local-llm-advisor-benchmarks";
+const faqSection = items => `<section class="card" id="faq"><h2>FAQ</h2>${items.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${a}</p></details>`).join("")}</section>`;
+// Compact Amazon search link next to a named GPU/Mac. Empty when the id is not sold as a unit or the tag is off.
+function amazonLink(t, aq, o) {
+  o = o || {};
+  if (!AFFILIATE.amazonTag || !aq) return "";
+  const key = typeof t === "string" ? t : (t.config || t.device);
+  const e = aq[key]; if (!e) return "";
+  const mem = o.mem != null ? o.mem : t.memory_gb;
+  const q = e.q + (e.mem && mem ? " " + mem + "GB" : "");
+  const label = o.label || "Amazon";
+  return ` <a class="aff-inline" href="${esc(amazonUrl(q))}" target="_blank" rel="sponsored noopener nofollow" data-affiliate="amazon" data-hardware="${esc(key)}" data-slot-id="${esc(o.slot || "inline")}">${label}</a>`;
+}
+// Compact Vast/RunPod links for recommendations that do not fit. Empty when no partner url is set.
+function rentLinks(o) {
+  o = o || {};
+  const ps = cloudPartners(); if (!ps.length) return "";
+  const links = ps.map(p => `<a class="aff-inline" href="${esc(p.url)}" target="_blank" rel="sponsored noopener nofollow" data-sponsor="${esc(p.id)}" data-hardware="${esc(o.hardware || "")}" data-slot-id="${esc(o.slot || "inline-rent")}">${esc(p.name)}</a>`).join(" / ");
+  const disc = ps.length > 1 ? AFFILIATE.cloud.disclosure.replace("this link", "these links") : AFFILIATE.cloud.disclosure;
+  return `<span class="rent-inline">Rent instead: ${links}. <span class="mut">${esc(disc)}</span></span>`;
+}
+function citeBlock(d, o) {
+  o = o || {};
+  const url = o.url || "https://localllmadvisor.com/leaderboard.html";
+  const title = o.title || "Local LLM Advisor benchmarks";
+  const text = `Matt. "${title}." Local LLM Advisor, ${url}. Dataset: ${HF_DATASET} (CC BY 4.0).`;
+  return `<section class="card cite" id="cite"><h2>Cite this</h2><p>Please attribute our measurements to <b>Matt</b> and Local LLM Advisor. Own runs and curated tables are <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>; third-party rows keep their upstream licenses.</p><div class="cmd"><div class="code"><div class="top"><span>Suggested citation</span><button class="copy" type="button" data-c="${esc(o.citeId || "cite-text")}">Copy</button></div><pre id="${esc(o.citeId || "cite-text")}">${esc(text)}</pre></div><p class="mut"><a href="${HF_DATASET}" rel="noopener">Dataset on Hugging Face</a> &middot; <a href="${d}data-sources.html">Sources and licenses</a></p></section>`;
+}
+function embedBlock(d, o) {
+  o = o || {};
+  const boxes = [];
+  if (o.iframe) boxes.push(`<div class="code"><div class="top"><span>Embed (iframe)</span><button class="copy" type="button" data-c="${esc(o.embedId || "emb-iframe")}">Copy</button></div><pre id="${esc(o.embedId || "emb-iframe")}">${esc(o.iframe)}</pre></div>`);
+  if (o.img) boxes.push(`<div class="code"><div class="top"><span>Image + link</span><button class="copy" type="button" data-c="${esc((o.embedId || "emb") + "-img")}">Copy</button></div><pre id="${esc((o.embedId || "emb") + "-img")}">${esc(o.img)}</pre></div>`);
+  if (!boxes.length && o.page) {
+    const img = `<a href="${o.page}"><img src="https://localllmadvisor.com/og-image.png" alt="${o.alt || "Local LLM Advisor"}" width="600"></a>`;
+    boxes.push(`<div class="code"><div class="top"><span>Image + link</span><button class="copy" type="button" data-c="${esc((o.embedId || "emb") + "-img")}">Copy</button></div><pre id="${esc((o.embedId || "emb") + "-img")}">${esc(img)}</pre></div>`);
+  }
+  return `<section class="card embed-this" id="embed"><h2>Embed this chart</h2><p class="mut">Free to reuse. Please keep the link back; the data is licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>, attribute as <b>Data: Matt, Local LLM Advisor (localllmadvisor.com)</b>. The snippet is static and adds no scripts or cookies to your page.</p><div class="cmd">${boxes.join("")}</div>${o.preview || ""}</section>`;
+}
+
+module.exports = { mlxExplainer, MLX_SRC, AFFILIATE, cloudPartners, cloudBox, amazonUrl, affiliateQueries, affiliateBox, affiliateJs, amazonLink, rentLinks, citeBlock, embedBlock, faqSection, HF_DATASET, ANALYTICS, VER, head, nav, footer, esc, ICON, slot, SPONSOR_SLOTS };
+

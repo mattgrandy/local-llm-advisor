@@ -180,8 +180,6 @@ assert(Sub.issueUrl({ github_issue: { repo: "me/repo" } }, v.clean).startsWith("
   const cp = require("child_process"), lmf = p5.join(__dirname, "..", "tools", "lastmod.json"), before = fs5.readFileSync(lmf, "utf8"); // regenerate: nothing changed => lastmod map unchanged
   cp.execFileSync("node", [p5.join(__dirname, "..", "tools", "generate_pages.js")], { stdio: "ignore" }); assert.strictEqual(fs5.readFileSync(lmf, "utf8"), before, "lastmod stable when content is unchanged");
 }
-console.log("ALL TESTS PASSED");
-
 // ---- affiliate links + disclosure (Amazon Associates rules)
 {
   const fs2 = require("fs"), path2 = require("path"), assert2 = require("assert"), Lay = require("../tools/layout.js");
@@ -197,7 +195,7 @@ console.log("ALL TESTS PASSED");
     }
   }
   assert2(links >= 20, "expected hardware page links, got " + links);
-  for (const s of ["mac-studio-m5-ultra-256gb", "mac-studio-m5-ultra-512gb", "mac-mini-m6-32gb"]) assert2(!/amazon\.com/.test(fs2.readFileSync(path2.join(root, "hardware", s + ".html"), "utf8")), "unreleased hardware must not link: " + s);
+  for (const s of ["mac-studio-m5-ultra-256gb", "mac-studio-m5-ultra-512gb"]) assert2(!/amazon\.com/.test(fs2.readFileSync(path2.join(root, "hardware", s + ".html"), "utf8")), "hardware not sold as a simple retail unit must not link: " + s);
   console.log("affiliate checks ok:", links, "static links");
   // cloud GPU referral slot (Vast.ai)
   const walk = d => fs2.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(path2.join(d, e.name)) : e.name.endsWith(".html") ? [path2.join(d, e.name)] : []);
@@ -412,3 +410,56 @@ console.log("ALL TESTS PASSED");
   { const h = fs.readFileSync(path.join(S, "models", "qwen3-6-35b-a3b.html"), "utf8"); assert(h.includes("RTX 3060 12GB") && h.includes("--n-cpu-moe 22"), "3060 strata comparison on model page"); assert(h.includes("RTX 5060 Ti") && h.includes("llama-server, <code>--n-cpu-moe 13") && !h.includes("llama-server, <code>--n-cpu-moe 14") && h.includes("rerun on a less loaded host"), "5060 Ti strata + llama-server comparison"); assert(fs.readFileSync(path.join(S, "models", "qwen3-8-flash-next.html"), "utf8").includes("load average about 12"), "5060 Ti flash-next load note"); }
   console.log("strata rows:", st.length);
 }
+
+// Search-intent guides, home FAQ, cite/embed, in-recommendation affiliate links
+{
+  const fsG = require("fs"), pG = require("path"), root = S, rd = f => fsG.readFileSync(pG.join(root, f), "utf8");
+  const types = h => (h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g) || []).map(x => JSON.parse(x.replace(/<[^>]+>/g, "")));
+  const guides = ["guides/index.html", "guides/best-local-llm-mac-16gb.html", "guides/best-local-llm-mac-24gb.html", "guides/best-local-llm-mac-32gb.html", "guides/strata-vs-llamacpp.html"];
+  const sm = rd("sitemap.xml");
+  for (const f of guides) {
+    const h = rd(f), tps = types(h).map(o => o["@type"]);
+    assert(h.includes("<h1>") && h.includes('rel="canonical"') && h.includes('<meta name="description"'), "title/meta/canonical " + f);
+    assert(tps.includes("FAQPage") && tps.includes("BreadcrumbList") && !tps.includes("WebSite"), "ld " + f);
+    assert((h.match(/<section class="card" id="faq">/g) || []).length === 1, "one faq " + f);
+    assert((h.match(/<details><summary>/g) || []).length >= 3, "faq items " + f);
+    assert(sm.includes("/" + f), "sitemap " + f);
+    assert(!/<script(?![^>]*type="application\/ld\+json")[^>]*>\s*[^<\s]/.test(h.replace(/<script src=/g, "<script src=")), "no unexpected inline js " + f);
+    assert(!/\$\d/.test(h), "no dollar amounts in " + f);
+  }
+  const mac16 = rd("guides/best-local-llm-mac-16gb.html");
+  assert(/Best local LLMs for a 16GB Mac/.test(mac16) && mac16.includes("<tbody>") && /usable for model \+ KV cache/.test(mac16), "mac 16 content");
+  assert(rd("guides/best-local-llm-mac-24gb.html") !== rd("guides/best-local-llm-mac-32gb.html"), "mac pages distinct");
+  const stg = rd("guides/strata-vs-llamacpp.html");
+  assert(/busy shared host/.test(stg) && /90/.test(stg) && stg.includes("rtx-3060") && stg.includes("rtx-3090") && stg.includes("rtx-5060ti"), "strata caveat + three cards");
+  assert(/never engaged/.test(stg) && stg.includes("id=\"cite\"") && stg.includes("id=\"embed\"") && stg.includes("Matt"), "strata MTP + cite/embed");
+  assert(rd("embed/card/strata-vs-llamacpp.html").includes('content="noindex"') && !sm.includes("/embed/card/strata-vs-llamacpp.html"), "strata embed card noindex, not in sitemap");
+  const cmp = rd("compare/rtx-5060ti-16gb-vs-rtx-3060-12gb.html");
+  assert(cmp.includes("RTX 5060 Ti") && cmp.includes("RTX 3060") && types(cmp).some(o => o["@type"] === "FAQPage") && sm.includes("/compare/rtx-5060ti-16gb-vs-rtx-3060-12gb.html"), "5060 Ti vs 3060 compare");
+  const home = rd("index.html");
+  assert(home.includes('id="faq"') && types(home).some(o => o["@type"] === "FAQPage"), "home FAQ + FAQPage JSON-LD");
+  assert(types(home).filter(o => o["@type"] === "WebSite").length === 1, "home still has one WebSite");
+  assert(home.includes("guides/index.html") && home.includes("guides/strata-vs-llamacpp.html") && home.includes("guides/best-local-llm-mac-16gb.html"), "home links guides");
+  const nav = rd("hardware/rtx-4090-24gb.html");
+  assert(/href="(\.\.\/)?guides\/index\.html"/.test(nav) && /href="(\.\.\/)?guides\/index\.html"/.test(home), "nav/footer guides");
+  const lbh = rd("leaderboard.html");
+  assert(lbh.includes("id=\"cite\"") && lbh.includes("Matt.") && lbh.includes("huggingface.co/datasets/LocalLLMAdvisor/local-llm-advisor-benchmarks") && lbh.includes("id=\"embed\"") && lbh.includes("embed/card/leaderboard.html"), "leaderboard cite + embed");
+  assert(rd("embed/card/leaderboard.html").includes('content="noindex"') && rd("embed/card/leaderboard.html").includes("Matt, Local LLM Advisor") && !sm.includes("/embed/card/leaderboard.html"), "leaderboard card noindex");
+  const cr = fsG.readdirSync(pG.join(root, "can-run")).filter(f => f.endsWith(".html") && f !== "index.html" && !rd("can-run/" + f).includes("<!--canrun-redirect-->"))[0];
+  const crh = rd("can-run/" + cr);
+  assert(crh.includes("id=\"cite\"") && crh.includes("Matt.") && crh.includes("id=\"embed\""), "can-run cite + embed " + cr);
+  const vram16 = rd("vram/16gb.html");
+  assert(/data-affiliate="amazon"/.test(vram16) && /rel="sponsored noopener nofollow"/.test(vram16) && /data-slot-id="vram-gpu"/.test(vram16), "vram inline amazon");
+  assert(/data-sponsor="vast"/.test(vram16) && /data-sponsor="runpod"/.test(vram16) && /Rent instead/.test(vram16), "vram rent instead");
+  const macG = rd("guides/best-local-llm-mac-32gb.html");
+  assert(/data-affiliate="amazon"/.test(macG) || /Amazon/.test(macG) === false, "mac guide amazon is optional per config");
+  // M6 is now sold: hardware page should carry an Amazon box
+  const m6 = rd("hardware/macbook-pro-m6-32gb.html");
+  assert(m6.includes('data-affiliate="amazon"') && /rel="sponsored noopener nofollow"/.test(m6), "M6 Amazon box now that it ships");
+  const app = rd("app.js");
+  assert(app.includes("advisor-inline") && app.includes("Rent instead") && app.includes("data-affiliate=\"amazon\""), "advisor inline amazon + rent");
+  // JSON-LD script blocks are type=application/ld+json (not JS); CSP script-src 'self' still holds
+  assert(/script-src 'self' https:\/\/cloud\.umami\.is/.test(home) && home.includes('type="application/ld+json"') && types(home).some(o => o["@type"] === "FAQPage"), "CSP unchanged, FAQ JSON-LD present");
+  console.log("guides/seo growth ok:", guides.length, "guide pages + 5060ti vs 3060");
+}
+console.log("ALL TESTS PASSED");

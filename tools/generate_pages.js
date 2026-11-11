@@ -124,7 +124,25 @@ ${L.mlxExplainer("", { table: `<div class="tw"><table><thead><tr><th>Model</th><
 <section class="card" id="affiliate-disclosure"><h2>Affiliate disclosure</h2><p class="mut">${L.AFFILIATE.disclosure} Some pages also show a \u201cRent a cloud GPU\u201d link to Vast.ai${L.cloudPartners().some(p => p.id === "runpod") ? " or RunPod" : ""}; ${L.AFFILIATE.cloud.disclosure.replace("this link", "these links")} These are referral links, it does not cost you extra, and we state no prices for it. Some hardware links on this site go to Amazon search results and carry our Associates tracking tag; if you buy after clicking, we may earn a small commission at no extra cost to you. Links never change the recommendations, which come only from memory-fit math and benchmark data. We do not show Amazon prices; check the price on Amazon.</p></section>
 <section class="card" id="privacy"><h2>Privacy &amp; analytics</h2><p class="mut">This site uses <a href="https://umami.is" rel="noopener">Umami</a> Cloud for anonymous, cookie-free analytics: page views and which options are chosen (hardware type, device, use case, context length, sort and filter names, whether a command or link was copied, theme, and clicks on submit/sponsor/affiliate links, including which hardware an Amazon or cloud GPU rental link was shown for). We never record what you type in search or the benchmark form, and no personal data is stored in events. Browsers that send Do Not Track are not counted, and blockers work fine; the site behaves the same either way.</p></section>
 <section class="card"><h2>Community submissions</h2><p class="mut">${M.counts.community} reviewed submissions, always shown as unverified. <a href="submit.html">Submit yours</a>.</p></section></main>` + L.footer(""));
-    fs.writeFileSync(path.join(SITE, "index.html"), L.head("", "Local LLM Advisor - which local LLM should you run on your hardware?", "Free tool: pick your GPU, Mac or RAM and get local LLM recommendations with memory-fit math (incl. KV cache), measured or estimated speed and copy-paste ollama / llama.cpp commands.") + L.nav("", "home") + fs.readFileSync(path.join(__dirname, "pages", "index.body.html"), "utf8").replace(/\{\{SLOT:([a-z-]+)\}\}/g, (_, id) => L.slot(id)) + L.footer("").replace(/<\/body><\/html>$/, "") + "</body></html>");
+    const homeFaq = (() => {
+      const r = A.recommend({ kind: "gpu", device: "rtx-5070ti", count: 1, vram_gb: 16, ram_gb: 32, ram_type: "ddr5-5600" }, data, { use: "all", ctx: 16384, kvq: "f16" });
+      const top = r.results.filter(p => p.mode === "gpu").sort((a, b) => b.model.params_b - a.model.params_b)[0];
+      const ans16 = top ? `Of the models in our dataset, ${esc(top.model.name)} ${esc(top.quantLabel)} is the largest that fits fully in 16GB at 16k context (~${top.tps ? Math.round(top.tps) : "?"} tok/s, ${esc(A.speedInfo(top).short)}). See the <a href="vram/16gb.html">16GB VRAM guide</a> for the full table, including 8, 12 and 24GB GPUs.` : `See the <a href="vram/16gb.html">16GB VRAM guide</a> for what fits at 16k context.`;
+      return L.faqSection([
+        ["What is the best local LLM for a 16GB GPU?", ans16],
+        ["Can I run a local LLM on a 16GB, 24GB or 32GB Mac?", `Yes. Unified memory is shared with the system, so less than the advertised size is usable. See the guides for a <a href="guides/best-local-llm-mac-16gb.html">16GB Mac</a>, <a href="guides/best-local-llm-mac-24gb.html">24GB Mac</a> and <a href="guides/best-local-llm-mac-32gb.html">32GB Mac</a>.`],
+        ["What do measured, scaled and estimated speeds mean?", `<span class="badge measured">measured</span> is a median of real runs. <span class="badge scaled">scaled from measured</span> starts from a similar run and scales by bytes read. <span class="badge estimated">estimated</span> uses a bandwidth formula, not a benchmark.`],
+        ["Should I use Strata or llama.cpp?", `Strata can be faster when a MoE model is too big for VRAM, because it keeps experts in system RAM. When the model fits fully on the GPU, llama.cpp is often faster. See the <a href="guides/strata-vs-llamacpp.html">measured Strata vs llama.cpp comparison</a>.`],
+        ["The model I want does not fit. What can I do?", `Try a smaller quant, a shorter context, or a compressed KV cache (q8_0 or q4_0). You can also offload experts or layers to system RAM, or ${L.rentLinks({ hardware: "home", slot: "home-faq" })}.`]
+      ]);
+    })();
+    const guidesBrowse = `<a href="vram/8gb.html">8GB GPU</a> &middot; <a href="vram/12gb.html">12GB GPU</a> &middot; <a href="vram/16gb.html">16GB GPU</a> &middot; <a href="vram/24gb.html">24GB GPU</a> &middot; <a href="guides/best-local-llm-mac-16gb.html">16GB Mac</a> &middot; <a href="guides/best-local-llm-mac-24gb.html">24GB Mac</a> &middot; <a href="guides/best-local-llm-mac-32gb.html">32GB Mac</a> &middot; <a href="compare/rtx-5060ti-16gb-vs-rtx-3060-12gb.html">RTX 5060 Ti vs RTX 3060</a> &middot; <a href="guides/strata-vs-llamacpp.html">Strata vs llama.cpp</a> &middot; <a href="guides/index.html">all guides</a>`;
+    const body = fs.readFileSync(path.join(__dirname, "pages", "index.body.html"), "utf8")
+      .replace(/\{\{SLOT:([a-z-]+)\}\}/g, (_, id) => L.slot(id))
+      .replace(/\{\{HOME_FAQ\}\}/g, homeFaq)
+      .replace(/\{\{GUIDES_BROWSE\}\}/g, guidesBrowse)
+      .replace(/\{\{VER\}\}/g, L.VER);
+    fs.writeFileSync(path.join(SITE, "index.html"), L.head("", "Local LLM Advisor - which local LLM should you run on your hardware?", "Free tool: pick your GPU, Mac or RAM and get local LLM recommendations with memory-fit math (incl. KV cache), measured or estimated speed and copy-paste ollama / llama.cpp commands.") + L.nav("", "home") + body + L.footer("").replace(/<\/body><\/html>$/, "") + "</body></html>");
     fs.writeFileSync(path.join(SITE, "submit.html"), L.head("", "Submit your benchmark | Local LLM Advisor", "Share a llama-bench result so others with the same hardware know what to expect.") + L.nav("", "submit") + fs.readFileSync(path.join(__dirname, "pages", "submit.body.html"), "utf8") + L.footer("").replace(/<\/body><\/html>$/, "") + "</body></html>");
   }
   if (process.env.SITE_URL) {
@@ -137,7 +155,9 @@ ${L.mlxExplainer("", { table: `<div class="tw"><table><thead><tr><th>Model</th><
 
 const SEOR = SEOP.run({ A, data, L, esc, SITE });
 const EXR = EXTRA.run(SITE);
+const GR = require("./generate_guides.js").run({ A, data, L, esc, SITE, EXTRA });
 console.log("extra pages:", JSON.stringify(EXR));
+console.log("guides:", JSON.stringify(GR));
 console.log("seo pages:", SEOR.vram.length, "vram,", SEOR.models.length, "models, leaderboard rows", SEOR.lbRows);
 fs.writeFileSync(path.join(SITE, "affiliate.js"), L.affiliateJs(data.hardware));
 
