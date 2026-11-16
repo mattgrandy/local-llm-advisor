@@ -17,7 +17,7 @@ const SITE = path.join(__dirname, "..", "site"), MIME = { ".html": "text/html", 
   for (const bx of await pg.locator("svg.chart").all()) { const r = await bx.boundingBox(); assert(r && r.width > 300 && r.height > 40, "chart visible"); }
   console.log("  ok charts render:", await pg.locator("svg.chart").count());
   await pg.goto(base + "/compare/rtx-3090-24gb-vs-rtx-4090-24gb.html", { waitUntil: "networkidle" });
-  assert((await pg.locator('a[data-affiliate="amazon"]').count()) === 2 && (await pg.locator("a[data-sponsor]").count()) === 2); console.log("  ok compare has 2 amazon + 2 cloud links");
+  assert((await pg.locator('a[data-affiliate="amazon"][data-slot-id="compare-page"]').count()) === 2 && (await pg.locator("a[data-sponsor]").count()) === 2); console.log("  ok compare has 2 amazon + 2 cloud links (plus inline related-hardware links)");
   await pg.goto(base + "/can-run/qwen3-6-27b-on-rtx-3090-24gb.html", { waitUntil: "networkidle" });
   assert(await pg.locator("#alternatives a").count() >= 3, "alternatives links"); assert((await pg.locator('a[data-affiliate="amazon"]').count()) >= 1, "amazon slot on can-run");
   await pg.locator("#faq summary").nth(2).click(); assert(await pg.locator("#faq details").nth(2).evaluate(d => d.open), "faq opens");

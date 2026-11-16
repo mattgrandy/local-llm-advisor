@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-09",
+ "generated": "2026-11-16",
  "entries": {
   "rtx-5090": [
    {
@@ -34,7 +34,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-06"
+    "latest": "2026-11-16"
    },
    {
     "model": "Gemma 4 12B",
@@ -610,7 +610,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -633,7 +633,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -656,7 +656,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Nemotron 3 Nano 30B-A3B",
@@ -1387,7 +1387,7 @@
      "CUDA"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-16"
+    "latest": "2026-11-13"
    },
    {
     "model": "GLM-4.5-Air",
@@ -2043,7 +2043,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -2066,7 +2066,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -2089,7 +2089,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "rtx-4090": [
@@ -2129,7 +2129,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-06"
+    "latest": "2026-11-16"
    },
    {
     "model": "Gemma 4 12B",
@@ -2606,7 +2606,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -2629,7 +2629,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -2652,7 +2652,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.1 8B",
@@ -2793,7 +2793,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-06"
+    "latest": "2026-11-16"
    },
    {
     "model": "Gemma 4 12B",
@@ -3086,11 +3086,11 @@
     "params_b": 8.03,
     "active_b": null,
     "moe": false,
-    "tg": 43.95,
-    "pp": 4195.2,
+    "tg": 46.59,
+    "pp": 4311.9,
     "n": 2,
-    "tg_min": 43.0,
-    "tg_max": 44.91,
+    "tg_min": 44.91,
+    "tg_max": 48.27,
     "sources": [
      {
       "id": "localscore-model-pages",
@@ -3100,7 +3100,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -3109,11 +3109,11 @@
     "params_b": 14.77,
     "active_b": null,
     "moe": false,
-    "tg": 30.23,
-    "pp": 2319.6,
+    "tg": 30.55,
+    "pp": 2341.4,
     "n": 2,
     "tg_min": 25.52,
-    "tg_max": 34.95,
+    "tg_max": 35.58,
     "sources": [
      {
       "id": "localscore-model-pages",
@@ -3123,7 +3123,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -3132,10 +3132,10 @@
     "params_b": 1.5,
     "active_b": null,
     "moe": false,
-    "tg": 145.76,
-    "pp": 13613.7,
+    "tg": 148.67,
+    "pp": 13867.2,
     "n": 2,
-    "tg_min": 94.73,
+    "tg_min": 100.55,
     "tg_max": 196.79,
     "sources": [
      {
@@ -3146,7 +3146,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "qwen2.5-14b",
@@ -3336,7 +3336,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-06"
+    "latest": "2026-11-16"
    },
    {
     "model": "Gemma 4 12B",
@@ -3638,7 +3638,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -3661,7 +3661,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -3684,7 +3684,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "rtx-3090": [
@@ -3725,7 +3725,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-06"
+    "latest": "2026-11-16"
    },
    {
     "model": "Gemma 4 12B",
@@ -4188,11 +4188,11 @@
     "params_b": 8.03,
     "active_b": null,
     "moe": false,
-    "tg": 96.28,
-    "pp": 3549.6,
+    "tg": 96.58,
+    "pp": 3538.3,
     "n": 1,
-    "tg_min": 96.28,
-    "tg_max": 96.28,
+    "tg_min": 96.58,
+    "tg_max": 96.58,
     "sources": [
      {
       "id": "localscore-model-pages",
@@ -4202,7 +4202,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -4225,7 +4225,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -4234,11 +4234,11 @@
     "params_b": 1.5,
     "active_b": null,
     "moe": false,
-    "tg": 269.93,
-    "pp": 13482.3,
+    "tg": 276.08,
+    "pp": 13470.8,
     "n": 1,
-    "tg_min": 269.93,
-    "tg_max": 269.93,
+    "tg_min": 276.08,
+    "tg_max": 276.08,
     "sources": [
      {
       "id": "localscore-model-pages",
@@ -4248,7 +4248,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "rtx-5070": [
@@ -4275,7 +4275,7 @@
      "CUDA"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-16"
+    "latest": "2026-11-13"
    },
    {
     "model": "Gemma 4 12B",
@@ -4473,7 +4473,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -4496,7 +4496,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -4519,7 +4519,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "rtx-5060ti-16": [
@@ -4546,7 +4546,7 @@
      "CUDA"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-16"
+    "latest": "2026-11-13"
    },
    {
     "model": "Gemma 4 12B",
@@ -4844,7 +4844,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -4867,7 +4867,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -4890,7 +4890,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "rtx-3060-12": [
@@ -4921,7 +4921,7 @@
      "CUDA"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-10-16"
+    "latest": "2026-11-13"
    },
    {
     "model": "Gemma 4 12B",
@@ -5107,25 +5107,19 @@
     "moe": false,
     "tg": 50.06,
     "pp": 1477.5,
-    "n": 3,
-    "tg_min": 30.22,
-    "tg_max": 51.8,
+    "n": 1,
+    "tg_min": 50.06,
+    "tg_max": 50.06,
     "sources": [
-     {
-      "id": "localscore-latest-runs",
-      "url": "https://www.localscore.ai/latest"
-     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/1"
      }
     ],
     "size_gb": null,
-    "backends": [
-     "llamafile"
-    ],
+    "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -5134,11 +5128,11 @@
     "params_b": 14.77,
     "active_b": null,
     "moe": false,
-    "tg": 28.16,
-    "pp": 796.5,
-    "n": 2,
-    "tg_min": 26.73,
-    "tg_max": 29.58,
+    "tg": 16.59,
+    "pp": 747.3,
+    "n": 5,
+    "tg_min": 15.79,
+    "tg_max": 25.14,
     "sources": [
      {
       "id": "localscore-latest-runs",
@@ -5154,7 +5148,7 @@
      "llamafile"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -5163,27 +5157,21 @@
     "params_b": 1.5,
     "active_b": null,
     "moe": false,
-    "tg": 200.38,
-    "pp": 6234.0,
-    "n": 2,
+    "tg": 187.77,
+    "pp": 6070.3,
+    "n": 1,
     "tg_min": 187.77,
-    "tg_max": 212.99,
+    "tg_max": 187.77,
     "sources": [
-     {
-      "id": "localscore-latest-runs",
-      "url": "https://www.localscore.ai/latest"
-     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/3"
      }
     ],
     "size_gb": null,
-    "backends": [
-     "llamafile"
-    ],
+    "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "dgx-spark": [
@@ -5223,7 +5211,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-06"
+    "latest": "2026-11-16"
    },
    {
     "model": "nemotron_h_moe 31B.A3.5B",
@@ -5639,7 +5627,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -5662,7 +5650,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -5685,7 +5673,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "strix-halo": [
@@ -6336,7 +6324,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -6359,7 +6347,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -6382,7 +6370,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "m4": [
@@ -6557,7 +6545,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -6580,7 +6568,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -6603,7 +6591,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "m4-max-32": [
@@ -6689,21 +6677,27 @@
     "params_b": 8.03,
     "active_b": null,
     "moe": false,
-    "tg": 45.5,
-    "pp": 540.0,
-    "n": 1,
-    "tg_min": 45.5,
-    "tg_max": 45.5,
+    "tg": 47.17,
+    "pp": 563.1,
+    "n": 2,
+    "tg_min": 45.83,
+    "tg_max": 48.51,
     "sources": [
+     {
+      "id": "localscore-latest-runs",
+      "url": "https://www.localscore.ai/latest"
+     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/1"
      }
     ],
     "size_gb": null,
-    "backends": [],
+    "backends": [
+     "llamafile"
+    ],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -6712,21 +6706,27 @@
     "params_b": 14.77,
     "active_b": null,
     "moe": false,
-    "tg": 25.56,
-    "pp": 284.6,
-    "n": 1,
-    "tg_min": 25.56,
-    "tg_max": 25.56,
+    "tg": 26.24,
+    "pp": 297.8,
+    "n": 2,
+    "tg_min": 25.66,
+    "tg_max": 26.83,
     "sources": [
+     {
+      "id": "localscore-latest-runs",
+      "url": "https://www.localscore.ai/latest"
+     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/2"
      }
     ],
     "size_gb": null,
-    "backends": [],
+    "backends": [
+     "llamafile"
+    ],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -6735,21 +6735,27 @@
     "params_b": 1.5,
     "active_b": null,
     "moe": false,
-    "tg": 166.42,
-    "pp": 3255.2,
-    "n": 1,
-    "tg_min": 166.42,
-    "tg_max": 166.42,
+    "tg": 165.86,
+    "pp": 3293.2,
+    "n": 2,
+    "tg_min": 165.39,
+    "tg_max": 166.33,
     "sources": [
+     {
+      "id": "localscore-latest-runs",
+      "url": "https://www.localscore.ai/latest"
+     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/3"
      }
     ],
     "size_gb": null,
-    "backends": [],
+    "backends": [
+     "llamafile"
+    ],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "gpt-oss 20B",
@@ -6860,21 +6866,27 @@
     "params_b": 8.03,
     "active_b": null,
     "moe": false,
-    "tg": 71.25,
-    "pp": 718.4,
-    "n": 1,
-    "tg_min": 71.25,
-    "tg_max": 71.25,
+    "tg": 74.18,
+    "pp": 759.7,
+    "n": 2,
+    "tg_min": 72.71,
+    "tg_max": 75.65,
     "sources": [
+     {
+      "id": "localscore-latest-runs",
+      "url": "https://www.localscore.ai/latest"
+     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/1"
      }
     ],
     "size_gb": null,
-    "backends": [],
+    "backends": [
+     "llamafile"
+    ],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -6883,21 +6895,27 @@
     "params_b": 14.77,
     "active_b": null,
     "moe": false,
-    "tg": 39.48,
-    "pp": 391.8,
-    "n": 2,
+    "tg": 42.19,
+    "pp": 424.3,
+    "n": 3,
     "tg_min": 36.87,
-    "tg_max": 42.1,
+    "tg_max": 42.37,
     "sources": [
+     {
+      "id": "localscore-latest-runs",
+      "url": "https://www.localscore.ai/latest"
+     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/2"
      }
     ],
     "size_gb": null,
-    "backends": [],
+    "backends": [
+     "llamafile"
+    ],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -6906,21 +6924,27 @@
     "params_b": 1.5,
     "active_b": null,
     "moe": false,
-    "tg": 261.6,
-    "pp": 4307.3,
-    "n": 2,
-    "tg_min": 260.52,
-    "tg_max": 262.67,
+    "tg": 262.75,
+    "pp": 4339.9,
+    "n": 3,
+    "tg_min": 262.67,
+    "tg_max": 264.97,
     "sources": [
+     {
+      "id": "localscore-latest-runs",
+      "url": "https://www.localscore.ai/latest"
+     },
      {
       "id": "localscore-model-pages",
       "url": "https://www.localscore.ai/model/3"
      }
     ],
     "size_gb": null,
-    "backends": [],
+    "backends": [
+     "llamafile"
+    ],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen3.6 35B-A3B",
@@ -7060,7 +7084,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-06"
+    "latest": "2026-11-16"
    },
    {
     "model": "gemma3 27B",
@@ -7185,7 +7209,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -7208,7 +7232,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7231,7 +7255,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "m3-ultra": [
@@ -7263,7 +7287,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-06"
+    "latest": "2026-11-16"
    },
    {
     "model": "Meta Llama 3.1 8B Instruct",
@@ -7286,7 +7310,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -7309,7 +7333,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7332,7 +7356,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "gpt-oss 20B",
@@ -7384,7 +7408,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-06"
+    "latest": "2026-11-16"
    },
    {
     "model": "Gemma 4 12B",
@@ -7582,7 +7606,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -7605,7 +7629,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7614,11 +7638,11 @@
     "params_b": 1.5,
     "active_b": null,
     "moe": false,
-    "tg": 282.97,
-    "pp": 12717.5,
+    "tg": 296.26,
+    "pp": 12258.9,
     "n": 1,
-    "tg_min": 282.97,
-    "tg_max": 282.97,
+    "tg_min": 296.26,
+    "tg_max": 296.26,
     "sources": [
      {
       "id": "localscore-model-pages",
@@ -7628,7 +7652,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "rtx-4060": [
@@ -7753,7 +7777,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -7776,7 +7800,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "rtx-4060ti-16": [
@@ -8076,7 +8100,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -8099,7 +8123,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -8122,7 +8146,232 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
+   }
+  ],
+  "m5-ultra": [
+   {
+    "model": "Meta Llama 3.1 8B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 8.03,
+    "active_b": null,
+    "moe": false,
+    "tg": 94.3,
+    "pp": 1229.6,
+    "n": 1,
+    "tg_min": 94.3,
+    "tg_max": 94.3,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/1"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "engine": "llama.cpp",
+    "latest": "2026-11-16"
+   },
+   {
+    "model": "Humanizer 12B",
+    "site_id": null,
+    "qclass": "Q8",
+    "params_b": 12.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 63.98,
+    "pp": 2826.2,
+    "n": 2,
+    "tg_min": 63.92,
+    "tg_max": 64.03,
+    "sources": [
+     {
+      "id": "hf-tristanbes-m5-ultra-llm-bench",
+      "url": "https://huggingface.co/datasets/tristanbes/m5-ultra-llm-bench"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Metal"
+    ],
+    "engine": "llama.cpp",
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen3.8 27B",
+    "site_id": "Qwen/Qwen3.8-27B",
+    "qclass": "Q4",
+    "params_b": 27.78,
+    "active_b": null,
+    "moe": false,
+    "tg": 47.95,
+    "pp": 1119.6,
+    "n": 2,
+    "tg_min": 47.71,
+    "tg_max": 48.18,
+    "sources": [
+     {
+      "id": "hf-tristanbes-m5-ultra-llm-bench",
+      "url": "https://huggingface.co/datasets/tristanbes/m5-ultra-llm-bench"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Metal"
+    ],
+    "engine": "llama.cpp",
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "gpt-oss 20B",
+    "site_id": "openai/gpt-oss-20b",
+    "qclass": "Q4",
+    "params_b": 20.91,
+    "active_b": 3.6,
+    "moe": true,
+    "tg": 200.59,
+    "pp": 6545.0,
+    "n": 2,
+    "tg_min": 200.04,
+    "tg_max": 201.14,
+    "sources": [
+     {
+      "id": "hf-tristanbes-m5-ultra-llm-bench",
+      "url": "https://huggingface.co/datasets/tristanbes/m5-ultra-llm-bench"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Metal"
+    ],
+    "engine": "llama.cpp",
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Qwen3.6 35B-A3B",
+    "site_id": "Qwen/Qwen3.6-35B-A3B",
+    "qclass": "Q4",
+    "params_b": 35.95,
+    "active_b": 3,
+    "moe": true,
+    "tg": 136.62,
+    "pp": 4882.7,
+    "n": 2,
+    "tg_min": 134.49,
+    "tg_max": 138.74,
+    "sources": [
+     {
+      "id": "hf-tristanbes-m5-ultra-llm-bench",
+      "url": "https://huggingface.co/datasets/tristanbes/m5-ultra-llm-bench"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Metal"
+    ],
+    "engine": "llama.cpp",
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Gemma 4 31B",
+    "site_id": "google/gemma-4-31B-it",
+    "qclass": "Q4",
+    "params_b": 31.27,
+    "active_b": null,
+    "moe": false,
+    "tg": 43.56,
+    "pp": 1076.3,
+    "n": 2,
+    "tg_min": 43.23,
+    "tg_max": 43.9,
+    "sources": [
+     {
+      "id": "hf-tristanbes-m5-ultra-llm-bench",
+      "url": "https://huggingface.co/datasets/tristanbes/m5-ultra-llm-bench"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Metal"
+    ],
+    "engine": "llama.cpp",
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Devstral Small 2 24B",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 24.0,
+    "active_b": null,
+    "moe": false,
+    "tg": 59.97,
+    "pp": 1480.1,
+    "n": 2,
+    "tg_min": 59.7,
+    "tg_max": 60.23,
+    "sources": [
+     {
+      "id": "hf-tristanbes-m5-ultra-llm-bench",
+      "url": "https://huggingface.co/datasets/tristanbes/m5-ultra-llm-bench"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Metal"
+    ],
+    "engine": "llama.cpp",
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Nanbeige4.3 33B",
+    "site_id": "Nanbeige/Nanbeige4.3-33B",
+    "qclass": "Q4",
+    "params_b": 33.12,
+    "active_b": null,
+    "moe": false,
+    "tg": 44.75,
+    "pp": 1137.7,
+    "n": 2,
+    "tg_min": 44.68,
+    "tg_max": 44.81,
+    "sources": [
+     {
+      "id": "hf-tristanbes-m5-ultra-llm-bench",
+      "url": "https://huggingface.co/datasets/tristanbes/m5-ultra-llm-bench"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Metal"
+    ],
+    "engine": "llama.cpp",
+    "latest": "2026-10-26"
+   },
+   {
+    "model": "Flint 40B-A2.5B",
+    "site_id": "RecursiveSI/flint",
+    "qclass": "Q4",
+    "params_b": 39.79,
+    "active_b": 2.5,
+    "moe": true,
+    "tg": 118.65,
+    "pp": 4680.2,
+    "n": 2,
+    "tg_min": 118.39,
+    "tg_max": 118.91,
+    "sources": [
+     {
+      "id": "hf-tristanbes-m5-ultra-llm-bench",
+      "url": "https://huggingface.co/datasets/tristanbes/m5-ultra-llm-bench"
+     }
+    ],
+    "size_gb": null,
+    "backends": [
+     "Metal"
+    ],
+    "engine": "llama.cpp",
+    "latest": "2026-10-26"
    }
   ],
   "m5-max-32": [
@@ -8147,7 +8396,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -8170,7 +8419,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -8193,7 +8442,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "m4-max-40": [
@@ -8218,7 +8467,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -8241,7 +8490,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -8264,7 +8513,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "minicpm-v47 35B-A3B",
@@ -8314,7 +8563,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -8337,7 +8586,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -8360,7 +8609,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "m4-pro": [
@@ -8385,7 +8634,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -8408,7 +8657,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -8431,7 +8680,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "m6": [
@@ -8456,7 +8705,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    }
   ],
   "m5": [
@@ -8481,7 +8730,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Qwen2.5 14B Instruct",
@@ -8504,7 +8753,7 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
    },
    {
     "model": "Llama 3.2 1B Instruct",
@@ -8527,7 +8776,55 @@
     "size_gb": null,
     "backends": [],
     "engine": "llama.cpp",
-    "latest": "2026-11-09"
+    "latest": "2026-11-16"
+   }
+  ],
+  "rtx-spark-n1x": [
+   {
+    "model": "Qwen2.5 14B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 14.77,
+    "active_b": null,
+    "moe": false,
+    "tg": 18.33,
+    "pp": 922.2,
+    "n": 1,
+    "tg_min": 18.33,
+    "tg_max": 18.33,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/2"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "engine": "llama.cpp",
+    "latest": "2026-11-16"
+   },
+   {
+    "model": "Llama 3.2 1B Instruct",
+    "site_id": null,
+    "qclass": "Q4",
+    "params_b": 1.5,
+    "active_b": null,
+    "moe": false,
+    "tg": 80.09,
+    "pp": 6378.8,
+    "n": 1,
+    "tg_min": 80.09,
+    "tg_max": 80.09,
+    "sources": [
+     {
+      "id": "localscore-model-pages",
+      "url": "https://www.localscore.ai/model/3"
+     }
+    ],
+    "size_gb": null,
+    "backends": [],
+    "engine": "llama.cpp",
+    "latest": "2026-11-16"
    }
   ]
  },
@@ -9790,7 +10087,7 @@
  ],
  "calibration": {
   "moe_factor": {
-   "value": 0.793,
+   "value": 0.794,
    "n": 72,
    "basis": "measured on unified-memory hardware only (Strix Halo, DGX Spark); EXTRAPOLATED to other hardware, where there is no calibration data, so MoE estimates there are likely optimistic"
   },
@@ -9844,9 +10141,9 @@
     "p75": 0.922
    },
    "rtx-3060-12": {
-    "efficiency": 0.858,
-    "n": 15,
-    "p25": 0.7,
+    "efficiency": 0.838,
+    "n": 16,
+    "p25": 0.625,
     "p75": 0.898
    },
    "dgx-spark": {
@@ -9868,16 +10165,16 @@
     "p75": 0.686
    },
    "m4-max-32": {
-    "efficiency": 0.743,
-    "n": 8,
-    "p25": 0.69,
-    "p75": 0.841
+    "efficiency": 0.705,
+    "n": 10,
+    "p25": 0.576,
+    "p75": 0.784
    },
    "m5-max-40": {
-    "efficiency": 0.766,
-    "n": 8,
-    "p25": 0.614,
-    "p75": 0.808
+    "efficiency": 0.686,
+    "n": 10,
+    "p25": 0.6,
+    "p75": 0.792
    },
    "rx-7900xtx": {
     "efficiency": 0.607,
@@ -9909,6 +10206,12 @@
     "p25": 0.892,
     "p75": 1.001
    },
+   "m5-ultra": {
+    "efficiency": 0.683,
+    "n": 11,
+    "p25": 0.676,
+    "p75": 0.73
+   },
    "m4-max-40": {
     "efficiency": 0.473,
     "n": 6,
@@ -9936,16 +10239,16 @@
   },
   "by_kind": {
    "gpu": {
-    "efficiency": 0.69,
-    "n": 532
+    "efficiency": 0.689,
+    "n": 533
    },
    "unified": {
     "efficiency": 0.796,
-    "n": 107
+    "n": 108
    },
    "apple": {
-    "efficiency": 0.631,
-    "n": 69
+    "efficiency": 0.642,
+    "n": 84
    }
   },
   "method": "efficiency = measured_tg / (memory_bandwidth_GBps / read_GB); dense models only; read_GB = params*bits_per_weight/8 >= 3.0 GB; single-device; median; per-hardware factor needs >= 3 rows, else per-kind median, else the global assumption.",
@@ -9987,9 +10290,9 @@
   }
  ],
  "counts": {
-  "rows_used": 965,
-  "hardware": 25,
-  "points": 336,
+  "rows_used": 990,
+  "hardware": 27,
+  "points": 347,
   "community": 0
  }
 }

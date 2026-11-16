@@ -50,6 +50,7 @@ ALIASES += [
     (r'^(nvidia-)?nemotron[ -]?3[ -]?nano[ -]?30b', 'nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16'), (r'^(nvidia-)?nemotron[ -]?3[ -]?nano[ -]?4b', 'nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16'),
     (r'glm[ -]?4\.7[ -]?flash', 'zai-org/GLM-4.7-Flash'), (r'gemma[ -]?4[ -]?e4b', 'google/gemma-4-E4B-it'),
     (r'laguna[ -]?xs[ -.]?2\.1', 'poolside/Laguna-XS-2.1'), (r'llama[ -]?3\.3[ -]?70b', 'meta-llama/Llama-3.3-70B-Instruct'),
+    (r'^flint[ -]?40b', 'RecursiveSI/flint'), (r'^nanbeige[ -]?4\.3[ -]?33b', 'Nanbeige/Nanbeige4.3-33B'),
 ]
 SITE = {m['id']: m for m in MODELS}
 # fine-tunes / spec-decode / pruned / re-quantised variants must NOT inherit the base model's identity

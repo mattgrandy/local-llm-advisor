@@ -11,6 +11,8 @@ Sources (all permissive or public-facts, each row keeps source_url + author/date
   * HF dataset witcheer/rtx-5090-benchmarks (MIT): RTX 5090 llama.cpp pp/tg per model/quant + decode at depth.
   * HF dataset iBlessi/rtx-5080-llm-throughput (CC-BY-4.0): RTX 5080 16GB, Ollama, decode/prefill per model, 4k/16k ctx.
   * HF dataset steven0226/speculative-decoding-bench-rtx4090 (CC-BY-4.0): RTX 4090 baseline (no speculation) decode tok/s.
+  * HF dataset tristanbes/m5-ultra-llm-bench (CC-BY-4.0, added 2026-11-16): Mac Studio M5 Ultra (80-core GPU, 256 GB) llama.cpp
+    llama-bench rows, decode at depth 0 only (MLX rows decode right after the prompt, i.e. at depth, so they are not ingested).
 Never touched: Reddit, LocalScore /api, anything behind a 403/challenge, unlicensed repos/datasets (link-only).
 """
 import os, sys, re, csv, json, io, time, statistics as st, collections
@@ -24,7 +26,7 @@ from threads_list import THREADS
 ROOT = os.path.join(os.path.dirname(__file__), '..', 'data', 'benchmarks')
 REFRESH = '--refresh' in sys.argv
 TODAY = time.strftime('%Y-%m-%d')
-PREFIXES = ('llamacpp-thread-', 'llamacpp-pr-', 'ik_llama-pr-', 'llamacpp-discussion-15396', 'ik_llama-thread-', 'hf-witcheer-', 'hf-iBlessi-', 'hf-steven0226-', 'hf-studioburnside-', 'hf-pgmharikrishnan-')
+PREFIXES = ('llamacpp-thread-', 'llamacpp-pr-', 'ik_llama-pr-', 'llamacpp-discussion-15396', 'ik_llama-thread-', 'hf-witcheer-', 'hf-iBlessi-', 'hf-steven0226-', 'hf-studioburnside-', 'hf-pgmharikrishnan-', 'hf-tristanbes-')
 R = X.R
 
 
@@ -161,10 +163,34 @@ def mlx_apple():
             rows.append(X.fin(rr, None, 40))
     return rows, dict(license='apache-2.0 / mit', rows=len(rows))
 
+def m5ultra():
+    """tristanbes/m5-ultra-llm-bench (CC-BY-4.0): llama.cpp rows only, generation at depth 0.
+    (a) 'llama-bench defaults (-ub 512), decode depth 0' rows: pp512 + tg128 at depth 0 (the p4096 row repeats the same tg, skipped).
+    (b) matched rows (-ub 2048, 2026-10-26+): pp512 + decode_tps_depth0 (tg128 at depth 0). 'superseded' rows skipped."""
+    repo = 'tristanbes/m5-ultra-llm-bench'; lic, lm = X.hf_info(repo); url = f'https://huggingface.co/datasets/{repo}'
+    txt = X._dl(f'{url}/resolve/main/results.jsonl', 'tristanbes_m5ultra_results.jsonl', REFRESH); rows = []
+    for line in txt.splitlines():
+        if not line.strip(): continue
+        d = json.loads(line)
+        if d.get('runtime') != 'llama.cpp' or int(d.get('prompt_tokens') or 0) != 512: continue
+        setting = d.get('setting') or ''
+        if 'superseded' in setting: continue
+        if setting.startswith('llama-bench defaults'):
+            tg, how = d['decode_tps'], 'llama-bench defaults (-ub 512), tg128 at depth 0'
+        elif d.get('decode_tps_depth0'):
+            tg, how = d['decode_tps_depth0'], f"matched settings (-ub {d.get('n_ubatch', 2048)}, fa {d.get('flash_attn', '')}), tg128 at depth 0"
+        else: continue
+        rr = R(device_raw=f"{d['chip']} {d['gpu_cores']}-core GPU", device_count=1, backend='Metal', model=d['model'], quant=d['quant'],
+               pp_n=512, pp_tps=round(float(d['prefill_tps']), 2), tg_n=int(d.get('generated_tokens') or 128), tg_tps=round(float(tg), 2), n_samples=d.get('trials', 3),
+               build=d.get('runtime_version', ''), source='hf-tristanbes-m5-ultra-llm-bench', source_url=url, author='tristanbes', date=d['date'],
+               notes=f"Mac Studio M5 Ultra, {d['gpu_cores']}-core GPU, {d['memory_gb']} GB; {how}; mean of {d.get('trials', 3)} trials; file {d.get('file') or ''}; dataset license {lic}")
+        rows.append(X.fin(rr, d.get('memory_gb'), d.get('gpu_cores')))
+    return rows, dict(license=lic, url=url, hf_last_modified=lm)
+
 def main():
     allr, notes = [], {}
     tr, ts = thread_rows(); allr += tr; notes['threads'] = ts
-    for name, fn in (('witcheer', witcheer), ('iblessi', ibl5080), ('steven', s4090), ('mlx_apple', mlx_apple)):
+    for name, fn in (('witcheer', witcheer), ('iblessi', ibl5080), ('steven', s4090), ('mlx_apple', mlx_apple), ('m5ultra', m5ultra)):
         rows, meta = fn(); allr += rows; notes[name] = dict(meta, rows=len(rows))
     # de-dup: identical (device, backend, model, quant, pp, tg, depth) from different comments (e.g. quoted tables)
     seen = set(); keep = []

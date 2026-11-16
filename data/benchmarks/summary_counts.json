@@ -1,17 +1,17 @@
 {
- "rows_total": 9681,
+ "rows_total": 9729,
  "dropped_dup_of_scoreboard": 425,
  "dropped_author_flagged_invalid": 2,
  "dropped_nonpositive": 0,
  "counts_by_source_raw": {
   "discussion-15013-scoreboard-tables": 112,
-  "discussion-15013-comments": 1398,
+  "discussion-15013-comments": 1406,
   "discussion-4167-scoreboard-tables": 108,
   "discussion-4167-comments": 259,
   "discussion-15021-scoreboard-tables": 46,
   "discussion-15021-comments": 451,
   "discussion-10879-scoreboard-tables": 234,
-  "discussion-10879-comments": 1457,
+  "discussion-10879-comments": 1462,
   "discussion-16578-body": 0,
   "discussion-16578-comments": 318,
   "discussion-23659-body": 28,
@@ -34,14 +34,14 @@
  },
  "counts_by_source_final": {
   "llamacpp-discussion-15013-scoreboard": 112,
-  "llamacpp-discussion-15013-comments": 1295,
+  "llamacpp-discussion-15013-comments": 1303,
   "llamacpp-discussion-4167-summary": 96,
   "llamacpp-discussion-4167-m2ultra-history": 12,
   "llamacpp-discussion-4167-comments": 172,
   "llamacpp-discussion-15021-scoreboard": 46,
   "llamacpp-discussion-15021-comments": 412,
   "llamacpp-discussion-10879-scoreboard": 234,
-  "llamacpp-discussion-10879-comments": 1259,
+  "llamacpp-discussion-10879-comments": 1264,
   "llamacpp-discussion-16578-comments": 318,
   "llamacpp-discussion-23659-body": 28,
   "llamacpp-benches-dgx-spark": 138,
@@ -61,10 +61,10 @@
  "notes": {
   "discussion-15013": {
    "title": "Performance of llama.cpp on Nvidia CUDA",
-   "comments_total": 234,
-   "replies_included_in_comment_list": 105,
-   "top_level": 129,
-   "comments_with_bench_tables": 138
+   "comments_total": 238,
+   "replies_included_in_comment_list": 106,
+   "top_level": 132,
+   "comments_with_bench_tables": 140
   },
   "discussion-4167": {
    "title": "Performance of llama.cpp on Apple Silicon M-series",
@@ -82,10 +82,10 @@
   },
   "discussion-10879": {
    "title": "Performance of llama.cpp with Vulkan",
-   "comments_total": 802,
+   "comments_total": 804,
    "replies_included_in_comment_list": 487,
-   "top_level": 315,
-   "comments_with_bench_tables": 398
+   "top_level": 317,
+   "comments_with_bench_tables": 399
   },
   "discussion-16578": {
    "title": "Performance of llama.cpp on NVIDIA DGX Spark",
@@ -142,19 +142,19 @@
    "license": "CC-BY-4.0"
   }
  },
- "rows_with_hw_id": 2302,
- "rows_device_unknown": 742,
- "generated": "2026-11-09 09:21 MST",
+ "rows_with_hw_id": 2328,
+ "rows_device_unknown": 747,
+ "generated": "2026-11-16 09:20 MST",
  "localscore": {
-  "rows": 1765,
-  "model_page_rows": 1755,
+  "rows": 1783,
+  "model_page_rows": 1773,
   "latest_rows": 10,
-  "hw_matched": 164,
-  "retrieved": "2026-11-09"
+  "hw_matched": 173,
+  "retrieved": "2026-11-16"
  },
  "pass2": {
-  "date": "2026-11-09",
-  "new_rows": 2433,
+  "date": "2026-11-16",
+  "new_rows": 2450,
   "by_source": {
    "llamacpp-discussion-15396": 942,
    "llamacpp-pr-16634": 26,
@@ -181,9 +181,10 @@
    "hf-iBlessi-rtx-5080-llm-throughput": 34,
    "hf-steven0226-speculative-decoding-bench-rtx4090": 5,
    "hf-studioburnside-mlx-local-inference-benchmarks": 4,
-   "hf-pgmharikrishnan-mlx-serve-local-llm-benchmarks-2026-10": 3
+   "hf-pgmharikrishnan-mlx-serve-local-llm-benchmarks-2026-10": 3,
+   "hf-tristanbes-m5-ultra-llm-bench": 17
   },
-  "hw_matched": 475,
+  "hw_matched": 492,
   "refilled_hw_id": 0,
   "notes": {
    "threads": {
@@ -353,6 +354,12 @@
    "mlx_apple": {
     "license": "apache-2.0 / mit",
     "rows": 7
+   },
+   "m5ultra": {
+    "license": "cc-by-4.0",
+    "url": "https://huggingface.co/datasets/tristanbes/m5-ultra-llm-bench",
+    "hf_last_modified": "2026-10-30",
+    "rows": 17
    }
   }
  }

@@ -83,11 +83,12 @@
   "non_llama2_rows": 18
  },
  "m4-max-32": {
-  "rows": 21,
+  "rows": 24,
   "sources": [
    "llamacpp-discussion-15396",
    "llamacpp-discussion-4167-comments",
    "llamacpp-discussion-4167-summary",
+   "localscore-latest-runs",
    "localscore-model-pages"
   ],
   "models": [
@@ -98,7 +99,7 @@
    "gpt-oss 20B",
    "llama 7B"
   ],
-  "non_llama2_rows": 12
+  "non_llama2_rows": 15
  },
  "m4-max-40": {
   "rows": 15,
@@ -156,11 +157,12 @@
   "non_llama2_rows": 3
  },
  "m5-max-40": {
-  "rows": 15,
+  "rows": 18,
   "sources": [
    "hf-studioburnside-mlx-local-inference-benchmarks",
    "llamacpp-discussion-4167-comments",
    "llamacpp-discussion-4167-summary",
+   "localscore-latest-runs",
    "localscore-model-pages"
   ],
   "models": [
@@ -171,7 +173,7 @@
    "Tess-4-27B (Qwen3.6-27B fine-tune)",
    "llama 7B"
   ],
-  "non_llama2_rows": 9
+  "non_llama2_rows": 12
  },
  "m5-pro": {
   "rows": 17,
@@ -187,12 +189,25 @@
   "non_llama2_rows": 11
  },
  "m5-ultra": {
-  "rows": 3,
+  "rows": 21,
   "sources": [
-   "llamacpp-discussion-4167-summary"
+   "hf-tristanbes-m5-ultra-llm-bench",
+   "llamacpp-discussion-4167-summary",
+   "localscore-model-pages"
   ],
-  "models": [],
-  "non_llama2_rows": 0
+  "models": [
+   "Devstral Small 2 24B",
+   "Flint 40B-A2.5B",
+   "Gemma 4 31B",
+   "Humanizer 12B",
+   "Meta Llama 3.1 8B Instruct",
+   "Mistral-Large-4-1T-A52B",
+   "Nanbeige4.3 33B",
+   "Qwen3.6 35B-A3B",
+   "Qwen3.8 27B",
+   "gpt-oss 20B"
+  ],
+  "non_llama2_rows": 18
  },
  "m6": {
   "rows": 4,
@@ -552,10 +567,15 @@
   "non_llama2_rows": 96
  },
  "rtx-spark-n1x": {
-  "rows": 0,
-  "sources": [],
-  "models": [],
-  "non_llama2_rows": 0
+  "rows": 2,
+  "sources": [
+   "localscore-model-pages"
+  ],
+  "models": [
+   "Llama 3.2 1B Instruct",
+   "Qwen2.5 14B Instruct"
+  ],
+  "non_llama2_rows": 2
  },
  "rx-7900xtx": {
   "rows": 189,
