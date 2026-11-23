@@ -4,432 +4,432 @@
   "d": "2026-11-16"
  },
  "blog/state-of-local-llm-hardware-oct-2026.html": {
-  "h": "09af4617c60e07fb",
-  "d": "2026-11-16"
+  "h": "a77dba2857c2fc64",
+  "d": "2026-11-23"
  },
  "can-run/gemma-4-12b-on-rtx-3060-12gb.html": {
-  "h": "f49e8535a7504c9e",
-  "d": "2026-11-11"
+  "h": "a3ab6d8507f69c7e",
+  "d": "2026-11-23"
  },
  "can-run/gemma-4-12b-on-rtx-3090-24gb.html": {
-  "h": "d8753b433bdd7a93",
-  "d": "2026-11-11"
+  "h": "78dc94dfebe521b6",
+  "d": "2026-11-23"
  },
  "can-run/gemma-4-12b-on-rtx-4060ti-16gb.html": {
-  "h": "deb5ed133eeb5e02",
-  "d": "2026-11-11"
+  "h": "2f2b55b40558d869",
+  "d": "2026-11-23"
  },
  "can-run/gemma-4-12b-on-rtx-4070-12gb.html": {
-  "h": "2b596f0a254a877d",
-  "d": "2026-11-11"
+  "h": "207d528c4180883c",
+  "d": "2026-11-23"
  },
  "can-run/gemma-4-12b-on-rtx-4090-24gb.html": {
-  "h": "37e47366d07bedaa",
-  "d": "2026-11-11"
+  "h": "d54ce85e025be5b5",
+  "d": "2026-11-23"
  },
  "can-run/gemma-4-12b-on-rtx-5070-12gb.html": {
-  "h": "3ba2f5fb679ed8c0",
-  "d": "2026-11-11"
+  "h": "5533ad0b9c182bb6",
+  "d": "2026-11-23"
  },
  "can-run/gemma-4-12b-on-rtx-5090-32gb.html": {
-  "h": "684e663544e3edb9",
-  "d": "2026-11-11"
+  "h": "5d42142e3139bf84",
+  "d": "2026-11-23"
  },
  "can-run/gemma-4-26b-a4b-on-rtx-3090-24gb.html": {
-  "h": "526ca98aff7d94cd",
-  "d": "2026-11-16"
+  "h": "06f592c4ecd08c0c",
+  "d": "2026-11-23"
  },
  "can-run/gemma-4-26b-a4b-on-rtx-4090-24gb.html": {
-  "h": "9891e3adb2a98e75",
-  "d": "2026-11-16"
+  "h": "e73e5264798e75e9",
+  "d": "2026-11-23"
  },
  "can-run/gemma-4-26b-a4b-on-rtx-5090-32gb.html": {
-  "h": "02501d689670f661",
-  "d": "2026-11-16"
+  "h": "11f4fc906436ac98",
+  "d": "2026-11-23"
  },
  "can-run/gemma-4-31b-on-rtx-3090-24gb.html": {
-  "h": "7e89d067fb4e94bd",
-  "d": "2026-11-11"
+  "h": "ed68e27d085bcc78",
+  "d": "2026-11-23"
  },
  "can-run/gemma-4-31b-on-rtx-4090-24gb.html": {
-  "h": "4f41bdad68c1b53f",
-  "d": "2026-11-11"
+  "h": "14e13d9b8f8bdd20",
+  "d": "2026-11-23"
  },
  "can-run/gemma-4-31b-on-rtx-5090-32gb.html": {
-  "h": "7e573d6db1abe4d6",
-  "d": "2026-11-11"
+  "h": "088935aef4886861",
+  "d": "2026-11-23"
  },
  "can-run/glm-4-5-air-on-dgx-spark-128gb.html": {
-  "h": "9251457f32eb8581",
-  "d": "2026-11-16"
+  "h": "509f152bcd4ab323",
+  "d": "2026-11-23"
  },
  "can-run/glm-4-5-air-on-rtx-pro-6000-96gb.html": {
-  "h": "fb0e5e6416f25e0d",
-  "d": "2026-11-16"
+  "h": "7962300d2fc67040",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-120b-on-dgx-spark-128gb.html": {
-  "h": "6b46d6bde886bfa5",
-  "d": "2026-11-16"
+  "h": "495551b07492f820",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-120b-on-mac-studio-m3-ultra-96gb.html": {
-  "h": "6a7cf43fda730d89",
-  "d": "2026-11-16"
+  "h": "1af3f684693018f3",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-120b-on-macbook-pro-m4-max-128gb.html": {
-  "h": "a70bfa89c31eda64",
-  "d": "2026-11-16"
+  "h": "e49bfe8608f873d8",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-120b-on-macbook-pro-m5-max-128gb.html": {
-  "h": "72028263cbfc59b2",
-  "d": "2026-11-16"
+  "h": "c3bb25ce38d96bd3",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-120b-on-rtx-pro-6000-96gb.html": {
-  "h": "21586176c3f72e9c",
-  "d": "2026-11-16"
+  "h": "be92dd96fbbd5b76",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-120b-on-strix-halo-128gb.html": {
-  "h": "1341b89cf45defdc",
-  "d": "2026-11-16"
- },
- "can-run/gpt-oss-20b-on-dgx-spark-64gb.html": {
-  "h": "9f0b59edcd69d06b",
-  "d": "2026-11-11"
+  "h": "0914607beb495af6",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-20b-on-macbook-air-m5-32gb.html": {
-  "h": "dfdb8f4f026257ad",
-  "d": "2026-11-16"
+  "h": "183ae7d804599d56",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-20b-on-macbook-pro-m6-32gb.html": {
-  "h": "95653a2acf7fb9ea",
-  "d": "2026-11-16"
+  "h": "05f15cab04253bff",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-20b-on-rtx-3090-24gb.html": {
-  "h": "510280a9b4cd450e",
-  "d": "2026-11-16"
+  "h": "c46e6bbc0584b162",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-20b-on-rtx-4060ti-16gb.html": {
-  "h": "5a8d6aa262a846bc",
-  "d": "2026-11-11"
+  "h": "a3edf3f58fa129d4",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-20b-on-rtx-4090-24gb.html": {
-  "h": "9a9a00178275c57d",
-  "d": "2026-11-11"
+  "h": "9828516c7f233f7c",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-20b-on-rtx-5070ti-16gb.html": {
-  "h": "04bfe52fc9904714",
-  "d": "2026-11-11"
+  "h": "8c24d794edb2ada9",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-20b-on-rtx-5080-16gb.html": {
-  "h": "1c45061ef591a827",
-  "d": "2026-11-16"
+  "h": "217dd010815b13f8",
+  "d": "2026-11-23"
  },
  "can-run/gpt-oss-20b-on-rtx-5090-32gb.html": {
-  "h": "9340eee1c65cae97",
-  "d": "2026-11-11"
+  "h": "4e8060c566f05930",
+  "d": "2026-11-23"
  },
  "can-run/index.html": {
-  "h": "7c02520128a41463",
-  "d": "2026-11-16"
+  "h": "cbe6332f36aa33f7",
+  "d": "2026-11-23"
  },
- "can-run/lfm3-1-7b-on-rtx-4060-8gb.html": {
-  "h": "227e4e8e50d4b49f",
-  "d": "2026-11-11"
+ "can-run/inkling-2-mini-on-macbook-pro-m6-32gb.html": {
+  "h": "1cb4a871aba1c2e5",
+  "d": "2026-11-23"
+ },
+ "can-run/inkling-2-mini-on-rtx-3090-24gb.html": {
+  "h": "7daf0517f0cc6bf2",
+  "d": "2026-11-23"
+ },
+ "can-run/inkling-2-mini-on-rtx-4090-24gb.html": {
+  "h": "f301d52095d0106f",
+  "d": "2026-11-23"
+ },
+ "can-run/inkling-2-mini-on-rtx-5090-32gb.html": {
+  "h": "c1ef0cb162c23bbb",
+  "d": "2026-11-23"
  },
  "can-run/mistral-small-3-2-24b-on-rtx-3090-24gb.html": {
-  "h": "12ab64e49bb1b01b",
-  "d": "2026-11-16"
+  "h": "ea744ed1be2eabad",
+  "d": "2026-11-23"
  },
  "can-run/mistral-small-3-2-24b-on-rtx-4060ti-16gb.html": {
   "h": "3c88f55524303931",
   "d": "2026-11-16"
  },
  "can-run/mistral-small-3-2-24b-on-rtx-4090-24gb.html": {
-  "h": "0a1e36517ab5ded2",
-  "d": "2026-11-16"
+  "h": "5c3e8a962ff2c36d",
+  "d": "2026-11-23"
  },
  "can-run/mistral-small-3-2-24b-on-rtx-5090-32gb.html": {
-  "h": "0c00e290d5680edd",
-  "d": "2026-11-16"
+  "h": "4a98f2c8e080f16c",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-4b-on-rtx-3060-12gb.html": {
-  "h": "534a92e183c3cfbf",
-  "d": "2026-11-11"
+  "h": "6feb7e14cbd04dfe",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-4b-on-rtx-3090-24gb.html": {
-  "h": "af041d2696ace69e",
-  "d": "2026-11-16"
+  "h": "e8090e87123c57ea",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-4b-on-rtx-4060-8gb.html": {
-  "h": "cfcaac9ce58e8b2e",
-  "d": "2026-11-11"
+  "h": "8acb80b8916545d5",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-4b-on-rtx-4060ti-16gb.html": {
-  "h": "c40c12830a74f4cb",
-  "d": "2026-11-11"
+  "h": "4b9d2a2d6b5742b0",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-4b-on-rtx-4070-12gb.html": {
-  "h": "5807f3c985851803",
-  "d": "2026-11-11"
+  "h": "279eb864e0ca6c1e",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-4b-on-rtx-4090-24gb.html": {
-  "h": "2b6338d8e3d5ec8a",
-  "d": "2026-11-11"
+  "h": "0c63f3607687e000",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-4b-on-rtx-5070-12gb.html": {
-  "h": "a2920ccebdb4fedc",
-  "d": "2026-11-11"
+  "h": "f1082907f280e014",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-4b-on-rtx-5090-32gb.html": {
-  "h": "4523728ef7996d1f",
-  "d": "2026-11-11"
+  "h": "82ed99ded3e1c6cf",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-9b-on-mac-m4-16gb.html": {
-  "h": "e00c5bcd7b3e590c",
-  "d": "2026-11-11"
- },
- "can-run/qwen3-5-9b-on-macbook-pro-m6-32gb.html": {
-  "h": "095213c50c957a64",
-  "d": "2026-11-16"
+  "h": "de1a2b28f2e8ae94",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-9b-on-rtx-3060-12gb.html": {
-  "h": "5588036ac92e64c5",
-  "d": "2026-11-11"
+  "h": "2bd27ebee608b251",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-9b-on-rtx-3090-24gb.html": {
-  "h": "8f1953e43fa919c6",
-  "d": "2026-11-11"
+  "h": "cad80c6b756363c9",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-9b-on-rtx-4060-8gb.html": {
-  "h": "dd8ea39b05bb764e",
-  "d": "2026-11-11"
+  "h": "815aa93e92c11a2e",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-9b-on-rtx-4060ti-16gb.html": {
-  "h": "5874556d16ea9c42",
-  "d": "2026-11-11"
+  "h": "92197862fe9e6d75",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-9b-on-rtx-4070-12gb.html": {
-  "h": "657b0acb1226dde7",
-  "d": "2026-11-11"
+  "h": "3a6bf29174b320c1",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-9b-on-rtx-4090-24gb.html": {
-  "h": "670755115acd236a",
-  "d": "2026-11-11"
+  "h": "1a6dffcbe7c45281",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-9b-on-rtx-5070-12gb.html": {
-  "h": "274228e182a5ee6a",
-  "d": "2026-11-11"
+  "h": "af75369120e6b5c0",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-5-9b-on-rtx-5090-32gb.html": {
-  "h": "ac6e8a1087c66843",
-  "d": "2026-11-11"
+  "h": "8382b3b1a7e07a8f",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-6-27b-on-macbook-pro-m5-pro-48gb.html": {
-  "h": "b1be117cff51401d",
-  "d": "2026-11-11"
+  "h": "085ffc2321ea7abf",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-6-27b-on-rtx-3090-24gb.html": {
-  "h": "d3a7f8d80ec7e16c",
-  "d": "2026-11-11"
+  "h": "22b070212e887797",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-6-27b-on-rtx-4090-24gb.html": {
-  "h": "69dc2f9234f926d2",
-  "d": "2026-11-11"
+  "h": "e402b72cb3eaf84d",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-6-27b-on-rtx-5090-32gb.html": {
-  "h": "187937803a2508b8",
-  "d": "2026-11-11"
- },
- "can-run/qwen3-6-35b-a3b-on-dgx-spark-64gb.html": {
-  "h": "606bd31ea00ceb98",
-  "d": "2026-11-16"
+  "h": "74f8ba85331c7f5f",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-6-35b-a3b-on-mac-m4-pro-64gb.html": {
-  "h": "37ad0d030efebbd0",
-  "d": "2026-11-16"
+  "h": "f8d5985a0c69055f",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-6-35b-a3b-on-rtx-3090-24gb.html": {
-  "h": "f34ed3a015485126",
-  "d": "2026-11-16"
+  "h": "36577ed0fa47fcc9",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-6-35b-a3b-on-rtx-4090-24gb.html": {
-  "h": "90b8d808565fc675",
-  "d": "2026-11-16"
+  "h": "0aee7cf72413715e",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-6-35b-a3b-on-rtx-5090-32gb.html": {
-  "h": "94a9af098e00ad73",
-  "d": "2026-11-16"
+  "h": "3e69e151683cd09d",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-6-35b-a3b-on-strix-halo-128gb.html": {
-  "h": "211d53f213c263ca",
-  "d": "2026-11-16"
+  "h": "b0bfea366bcefdaa",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-8-27b-on-rtx-3090-24gb.html": {
-  "h": "2833a3462c167daf",
-  "d": "2026-11-16"
+  "h": "90093874c053812e",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-8-27b-on-rtx-4090-24gb.html": {
-  "h": "4a350ab48b257ec5",
-  "d": "2026-11-16"
+  "h": "75970d00124f8b7a",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-8-27b-on-rtx-5090-32gb.html": {
-  "h": "053690d23df2f987",
-  "d": "2026-11-11"
+  "h": "fea4c781620e03cf",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-coder-30b-a3b-on-rtx-3090-24gb.html": {
-  "h": "1ec1654150690a41",
-  "d": "2026-11-16"
+  "h": "49cee8e01d1d74ee",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-coder-30b-a3b-on-rtx-4090-24gb.html": {
-  "h": "a9b71d3b9605551b",
-  "d": "2026-11-16"
+  "h": "595911f38b3c7090",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-coder-30b-a3b-on-rtx-5090-32gb.html": {
-  "h": "82b737a34e6bbff8",
-  "d": "2026-11-16"
+  "h": "6d2209a63f62a092",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-vl-8b-on-rtx-3060-12gb.html": {
-  "h": "28fad6bd38f75934",
-  "d": "2026-11-11"
+  "h": "97a683869eab82fc",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-vl-8b-on-rtx-3090-24gb.html": {
-  "h": "46167e5233bdc4c9",
-  "d": "2026-11-11"
+  "h": "8b217b1524365b88",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-vl-8b-on-rtx-4060-8gb.html": {
   "h": "c66adb640272f09e",
   "d": "2026-11-11"
  },
  "can-run/qwen3-vl-8b-on-rtx-4060ti-16gb.html": {
-  "h": "d9b1c0ab2dbdace0",
-  "d": "2026-11-11"
+  "h": "379c72708fbccfe4",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-vl-8b-on-rtx-4070-12gb.html": {
-  "h": "ad02a04f94ac466d",
-  "d": "2026-11-11"
+  "h": "9391c00eef8566c0",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-vl-8b-on-rtx-4090-24gb.html": {
-  "h": "fe7f67c890b2536d",
-  "d": "2026-11-11"
+  "h": "2fa22713fedac849",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-vl-8b-on-rtx-5070-12gb.html": {
-  "h": "00031426a789dd72",
-  "d": "2026-11-11"
+  "h": "2dbdc7f883c9ca53",
+  "d": "2026-11-23"
  },
  "can-run/qwen3-vl-8b-on-rtx-5090-32gb.html": {
-  "h": "d6c52285a0e94882",
-  "d": "2026-11-11"
+  "h": "4a398479e4dc8b96",
+  "d": "2026-11-23"
  },
  "can-run/ripple-65b-preview-on-dual-rtx-3090-48gb.html": {
-  "h": "c40777aa35f47f1a",
-  "d": "2026-11-16"
+  "h": "ca9182b719037675",
+  "d": "2026-11-23"
  },
  "can-run/ripple-65b-preview-on-mac-m4-pro-64gb.html": {
-  "h": "f7fb01b7ce3b556f",
-  "d": "2026-11-16"
+  "h": "d9d471f6deee750e",
+  "d": "2026-11-23"
  },
  "can-run/ripple-65b-preview-on-macbook-pro-m5-max-128gb.html": {
-  "h": "391a3a59cb0aa4b6",
-  "d": "2026-11-16"
+  "h": "07f9f808b4f172ae",
+  "d": "2026-11-23"
  },
  "compare/dual-rtx-3090-48gb-vs-rtx-5090-32gb.html": {
-  "h": "e13f6baf76251a02",
-  "d": "2026-11-16"
+  "h": "25a5d7bdb0359c00",
+  "d": "2026-11-23"
  },
  "compare/dual-rtx-3090-48gb-vs-rtx-pro-6000-96gb.html": {
-  "h": "ba0054fc33972a9d",
-  "d": "2026-11-16"
+  "h": "b5b0d9f66b9ccdfa",
+  "d": "2026-11-23"
  },
  "compare/index.html": {
-  "h": "1b9ee7b7689f398e",
-  "d": "2026-11-16"
+  "h": "157dad3f1489ab55",
+  "d": "2026-11-23"
  },
  "compare/mac-studio-m3-ultra-96gb-vs-dual-rtx-3090-48gb.html": {
-  "h": "0dd53ab389db450e",
-  "d": "2026-11-16"
+  "h": "9bd23e1327c6ab3e",
+  "d": "2026-11-23"
  },
  "compare/macbook-pro-m4-max-128gb-vs-rtx-4090-24gb.html": {
-  "h": "79606ba545c07c5e",
-  "d": "2026-11-16"
+  "h": "e93196aa3e99a767",
+  "d": "2026-11-23"
  },
  "compare/macbook-pro-m5-max-128gb-vs-macbook-pro-m4-max-128gb.html": {
-  "h": "65045448c12379d8",
-  "d": "2026-11-16"
+  "h": "5d834e392b62ac62",
+  "d": "2026-11-23"
  },
  "compare/rtx-3060-12gb-vs-rtx-4060-8gb.html": {
-  "h": "acf90702dc74f52f",
-  "d": "2026-11-16"
+  "h": "9b6c8449bf887f24",
+  "d": "2026-11-23"
  },
  "compare/rtx-3090-24gb-vs-rtx-4090-24gb.html": {
-  "h": "1e9e009d19e258b4",
-  "d": "2026-11-16"
+  "h": "c2e76167a9a988d5",
+  "d": "2026-11-23"
  },
  "compare/rtx-3090-24gb-vs-rtx-5090-32gb.html": {
-  "h": "294601bb555fa06a",
-  "d": "2026-11-16"
+  "h": "98b2de88f001edc3",
+  "d": "2026-11-23"
  },
  "compare/rtx-3090-24gb-vs-rx-7900-xtx-24gb.html": {
-  "h": "c514adaeef238796",
-  "d": "2026-11-16"
+  "h": "59fe691ab6a9b07a",
+  "d": "2026-11-23"
  },
  "compare/rtx-4070-12gb-vs-rtx-5070-12gb.html": {
-  "h": "36ce966f4aec9b64",
-  "d": "2026-11-11"
+  "h": "153e996e61d834b8",
+  "d": "2026-11-23"
  },
  "compare/rtx-4090-24gb-vs-rtx-5090-32gb.html": {
-  "h": "e881106b6f919b46",
-  "d": "2026-11-16"
+  "h": "b16715da83ff74bd",
+  "d": "2026-11-23"
  },
  "compare/rtx-4090-24gb-vs-rx-7900-xtx-24gb.html": {
-  "h": "0ed0b6f0ecc717f6",
-  "d": "2026-11-16"
+  "h": "4a2267d3bb51eeb1",
+  "d": "2026-11-23"
  },
  "compare/rtx-5060ti-16gb-vs-rtx-3060-12gb.html": {
-  "h": "b9a3056f48fd7e02",
-  "d": "2026-11-16"
+  "h": "76467c789e77214e",
+  "d": "2026-11-23"
  },
  "compare/rtx-5060ti-16gb-vs-rtx-4060ti-16gb.html": {
-  "h": "48b9154c70fc1909",
-  "d": "2026-11-16"
+  "h": "9489019cd205e627",
+  "d": "2026-11-23"
  },
  "compare/rtx-5060ti-16gb-vs-rtx-5070ti-16gb.html": {
-  "h": "cc0b38136c34389d",
-  "d": "2026-11-16"
+  "h": "bed89a5ea1e4259a",
+  "d": "2026-11-23"
  },
  "compare/rtx-5070ti-16gb-vs-rtx-4060ti-16gb.html": {
-  "h": "06bee1c9f9b9c46d",
-  "d": "2026-11-16"
+  "h": "a6dde9103db6634b",
+  "d": "2026-11-23"
  },
  "compare/rtx-5080-16gb-vs-rtx-4090-24gb.html": {
-  "h": "ac2575eaf32fd44b",
-  "d": "2026-11-16"
+  "h": "6d22ebcf8a4cb247",
+  "d": "2026-11-23"
  },
  "compare/strix-halo-128gb-vs-dgx-spark-128gb.html": {
-  "h": "3e2095b6e7ba4c8e",
-  "d": "2026-11-16"
+  "h": "c0e87e16551345ea",
+  "d": "2026-11-23"
  },
  "compare/strix-halo-128gb-vs-macbook-pro-m4-max-128gb.html": {
-  "h": "c0a2f2aef94f38c4",
-  "d": "2026-11-16"
+  "h": "5a40a429109eba22",
+  "d": "2026-11-23"
  },
  "data-sources.html": {
-  "h": "fc18becc67062edc",
-  "d": "2026-11-16"
+  "h": "b63e478dc1ab3039",
+  "d": "2026-11-23"
  },
  "embed/index.html": {
   "h": "8c38e5bc7e5acfc2",
   "d": "2026-11-11"
  },
  "guides/best-local-llm-mac-16gb.html": {
-  "h": "c12b85b6ff0604fd",
-  "d": "2026-11-16"
+  "h": "39cae0fd29e2b871",
+  "d": "2026-11-23"
  },
  "guides/best-local-llm-mac-24gb.html": {
-  "h": "97574c9c1c1ab9fd",
-  "d": "2026-11-16"
+  "h": "f66d5d3f97e31da3",
+  "d": "2026-11-23"
  },
  "guides/best-local-llm-mac-32gb.html": {
-  "h": "408a80dc05f715fb",
-  "d": "2026-11-16"
+  "h": "f9036ec61f10abb1",
+  "d": "2026-11-23"
  },
  "guides/index.html": {
   "h": "7e3c04aa932020d2",
@@ -440,132 +440,132 @@
   "d": "2026-11-11"
  },
  "hardware/dgx-spark-128gb.html": {
-  "h": "3658bbcba1b6905a",
-  "d": "2026-11-16"
+  "h": "d48a4f8ac66add75",
+  "d": "2026-11-23"
  },
  "hardware/dgx-spark-64gb.html": {
-  "h": "107a754b4bf76694",
-  "d": "2026-11-16"
+  "h": "481932e5e135735c",
+  "d": "2026-11-23"
  },
  "hardware/dual-rtx-3090-48gb.html": {
-  "h": "2def658cc7a5977f",
-  "d": "2026-11-16"
+  "h": "50ea2c36695561d2",
+  "d": "2026-11-23"
  },
  "hardware/index.html": {
   "h": "834c42418f956fec",
   "d": "2026-11-11"
  },
  "hardware/mac-m4-16gb.html": {
-  "h": "8026f5461324d58a",
-  "d": "2026-11-16"
+  "h": "4feb7ec02ca16a7f",
+  "d": "2026-11-23"
  },
  "hardware/mac-m4-pro-64gb.html": {
-  "h": "c640b258e087823b",
-  "d": "2026-11-16"
+  "h": "10489f612b2b67ec",
+  "d": "2026-11-23"
  },
  "hardware/mac-mini-m6-32gb.html": {
-  "h": "a30caf581a239fd7",
-  "d": "2026-11-16"
+  "h": "ec9322ee08801aea",
+  "d": "2026-11-23"
  },
  "hardware/mac-studio-m3-ultra-96gb.html": {
-  "h": "7a98347e4e25251d",
-  "d": "2026-11-16"
+  "h": "4bf385e4cc3b25c7",
+  "d": "2026-11-23"
  },
  "hardware/mac-studio-m5-max-128gb.html": {
-  "h": "c95abafa7b6852e5",
-  "d": "2026-11-16"
+  "h": "57628ff5519de46e",
+  "d": "2026-11-23"
  },
  "hardware/mac-studio-m5-ultra-256gb.html": {
-  "h": "e8e33b0e5d59d508",
-  "d": "2026-11-16"
+  "h": "32086ed57580dfee",
+  "d": "2026-11-23"
  },
  "hardware/mac-studio-m5-ultra-512gb.html": {
-  "h": "ace44bb8defc39de",
-  "d": "2026-11-16"
+  "h": "a9d09933889abd6f",
+  "d": "2026-11-23"
  },
  "hardware/macbook-air-m5-32gb.html": {
-  "h": "f529a624cc31fb7a",
-  "d": "2026-11-16"
+  "h": "d58c1625aeedc55e",
+  "d": "2026-11-23"
  },
  "hardware/macbook-pro-m4-max-128gb.html": {
-  "h": "3bc695f6131d326e",
-  "d": "2026-11-16"
+  "h": "c6c2f9dac4e75cf3",
+  "d": "2026-11-23"
  },
  "hardware/macbook-pro-m5-max-128gb.html": {
-  "h": "2b845c11094ab7b4",
-  "d": "2026-11-16"
+  "h": "6d2a13056296455e",
+  "d": "2026-11-23"
  },
  "hardware/macbook-pro-m5-pro-48gb.html": {
-  "h": "ab232ee8bb76bf9c",
-  "d": "2026-11-16"
+  "h": "6171b3677994bbae",
+  "d": "2026-11-23"
  },
  "hardware/macbook-pro-m6-32gb.html": {
-  "h": "aa5513aabe64c31d",
-  "d": "2026-11-16"
+  "h": "13e7f9d364e904ba",
+  "d": "2026-11-23"
  },
  "hardware/rtx-3060-12gb.html": {
-  "h": "37f549f54a39a129",
-  "d": "2026-11-16"
+  "h": "c60f0474318219c2",
+  "d": "2026-11-23"
  },
  "hardware/rtx-3090-24gb.html": {
-  "h": "77678686c3b82672",
-  "d": "2026-11-16"
+  "h": "1528c53e32c4b5f7",
+  "d": "2026-11-23"
  },
  "hardware/rtx-4060-8gb.html": {
-  "h": "21e8267932a5905e",
-  "d": "2026-11-16"
+  "h": "28338dee1e7a9f90",
+  "d": "2026-11-23"
  },
  "hardware/rtx-4060ti-16gb.html": {
-  "h": "01eebdbad4506878",
-  "d": "2026-11-16"
+  "h": "eeb9b753ce7aafcb",
+  "d": "2026-11-23"
  },
  "hardware/rtx-4070-12gb.html": {
-  "h": "376090e16f0cba6e",
-  "d": "2026-11-16"
+  "h": "f1fab05ab21d844e",
+  "d": "2026-11-23"
  },
  "hardware/rtx-4090-24gb.html": {
-  "h": "3ddf87d8749395e5",
-  "d": "2026-11-16"
+  "h": "33b7584d217355f9",
+  "d": "2026-11-23"
  },
  "hardware/rtx-5060ti-16gb.html": {
-  "h": "4c4650a888e0bfc8",
-  "d": "2026-11-16"
+  "h": "977da8a437c24c01",
+  "d": "2026-11-23"
  },
  "hardware/rtx-5070-12gb.html": {
-  "h": "828ab242c0893aad",
-  "d": "2026-11-16"
+  "h": "5dce26f8ba952e12",
+  "d": "2026-11-23"
  },
  "hardware/rtx-5070ti-16gb.html": {
-  "h": "c8891a50f77c658f",
-  "d": "2026-11-16"
+  "h": "d26ce7a167a5fa4c",
+  "d": "2026-11-23"
  },
  "hardware/rtx-5080-16gb.html": {
-  "h": "d57f98eed63cdc21",
-  "d": "2026-11-16"
+  "h": "f17cf1d42bbdd882",
+  "d": "2026-11-23"
  },
  "hardware/rtx-5090-32gb.html": {
-  "h": "558faee0ab8fb15d",
-  "d": "2026-11-16"
+  "h": "d84b576a29167ba4",
+  "d": "2026-11-23"
  },
  "hardware/rtx-pro-6000-96gb.html": {
-  "h": "d76469a6181ce417",
-  "d": "2026-11-16"
+  "h": "560181023e5b31fc",
+  "d": "2026-11-23"
  },
  "hardware/rtx-spark-n1x-128gb.html": {
-  "h": "51c0355c32f29845",
-  "d": "2026-11-16"
+  "h": "e4b944fa77ce511a",
+  "d": "2026-11-23"
  },
  "hardware/rx-7900-xtx-24gb.html": {
-  "h": "d20fe89352211904",
-  "d": "2026-11-16"
+  "h": "aca7d6731ed20f11",
+  "d": "2026-11-23"
  },
  "hardware/ryzen-ai-halo-495-192gb.html": {
-  "h": "805055091c39e812",
-  "d": "2026-11-16"
+  "h": "40b863b668a093bf",
+  "d": "2026-11-23"
  },
  "hardware/strix-halo-128gb.html": {
-  "h": "94c083350a35ea8f",
-  "d": "2026-11-16"
+  "h": "75aa669f4d8a3dcf",
+  "d": "2026-11-23"
  },
  "index.html": {
   "h": "59a373a10b875489",
@@ -576,195 +576,199 @@
   "d": "2026-11-16"
  },
  "models/deepseek-r1-distill-qwen-32b.html": {
-  "h": "5aa6a5ed680c84eb",
-  "d": "2026-11-16"
+  "h": "dc7b02b70c3ac558",
+  "d": "2026-11-23"
  },
  "models/deepseek-r1-distill-qwen-7b.html": {
-  "h": "4d0437c72afa5077",
-  "d": "2026-11-16"
+  "h": "b491e803f0d60074",
+  "d": "2026-11-23"
  },
  "models/flint-40b-a2-5b.html": {
-  "h": "da7617cba69db973",
-  "d": "2026-11-16"
+  "h": "a8f180cc9b84504c",
+  "d": "2026-11-23"
  },
  "models/gemma-4-12b.html": {
-  "h": "7449b14e02c69dce",
-  "d": "2026-11-16"
+  "h": "2e5de838c5a30b5a",
+  "d": "2026-11-23"
  },
  "models/gemma-4-26b-a4b.html": {
-  "h": "f1ae2f8d0446e39b",
-  "d": "2026-11-16"
+  "h": "c1cc4fd63a97eb33",
+  "d": "2026-11-23"
  },
  "models/gemma-4-31b.html": {
-  "h": "d6cb0a878ac1786e",
-  "d": "2026-11-16"
+  "h": "d059c277ba1122db",
+  "d": "2026-11-23"
  },
  "models/gemma-4-e4b.html": {
-  "h": "90e6a96cac4c9b22",
-  "d": "2026-11-16"
+  "h": "4effc11fad349d10",
+  "d": "2026-11-23"
  },
  "models/glm-4-5-air.html": {
-  "h": "7de788ab0136ea64",
-  "d": "2026-11-16"
+  "h": "96cf4edaef036e27",
+  "d": "2026-11-23"
  },
  "models/glm-4-7-flash.html": {
-  "h": "90578e24490d647b",
-  "d": "2026-11-16"
+  "h": "b44ac1125c48f109",
+  "d": "2026-11-23"
  },
  "models/gpt-oss-120b.html": {
-  "h": "67be43c30e824295",
-  "d": "2026-11-16"
+  "h": "2e260ba996704761",
+  "d": "2026-11-23"
  },
  "models/gpt-oss-20b.html": {
-  "h": "bb3c5a96e1b86058",
-  "d": "2026-11-16"
+  "h": "95fbce0adf821a0d",
+  "d": "2026-11-23"
  },
  "models/index.html": {
-  "h": "3549054220ff58fe",
-  "d": "2026-11-16"
+  "h": "666456aaf08c3312",
+  "d": "2026-11-23"
+ },
+ "models/inkling-2-mini.html": {
+  "h": "62d7ee40147c7efe",
+  "d": "2026-11-23"
  },
  "models/laguna-xs-2-1.html": {
-  "h": "2dcf241f60798979",
-  "d": "2026-11-16"
+  "h": "34688dce533452f9",
+  "d": "2026-11-23"
  },
  "models/lfm2-5-24b-a2b.html": {
-  "h": "b9b4559a094dc6cd",
-  "d": "2026-11-16"
+  "h": "a77842de7b6d0508",
+  "d": "2026-11-23"
  },
  "models/lfm3-1-7b.html": {
-  "h": "213633230eb3cfff",
-  "d": "2026-11-16"
+  "h": "7d3f694a87bf1e13",
+  "d": "2026-11-23"
  },
  "models/llama-3-3-70b.html": {
-  "h": "f81d56322ba2ef83",
-  "d": "2026-11-16"
+  "h": "325e6620df8c15b7",
+  "d": "2026-11-23"
  },
  "models/mistral-small-3-2-24b.html": {
-  "h": "e17eeb2fe4af1e74",
-  "d": "2026-11-16"
+  "h": "21e0ed6612564725",
+  "d": "2026-11-23"
  },
  "models/nanbeige4-3-33b.html": {
-  "h": "0ad32d18b0468dbe",
-  "d": "2026-11-16"
+  "h": "6bd338e386f2b078",
+  "d": "2026-11-23"
  },
  "models/nemotron-3-5-lightning-30b-a3b.html": {
-  "h": "fd3379b028321ad5",
-  "d": "2026-11-16"
+  "h": "c9bc5e04ac6d5e3c",
+  "d": "2026-11-23"
  },
  "models/nemotron-3-5-super-vl-120b-a12b.html": {
-  "h": "1cce3ffdd764fa83",
-  "d": "2026-11-16"
+  "h": "5231f647ae89f7fb",
+  "d": "2026-11-23"
  },
  "models/nemotron-3-nano-30b-a3b.html": {
-  "h": "ea107799cfc87ceb",
-  "d": "2026-11-16"
+  "h": "cb438976eb53c1a9",
+  "d": "2026-11-23"
  },
  "models/nemotron-3-nano-4b.html": {
-  "h": "e35b276a791597db",
-  "d": "2026-11-16"
+  "h": "e46ca9f3fd75a635",
+  "d": "2026-11-23"
  },
  "models/ornith-1-5-35b-a3b.html": {
-  "h": "996974e8d00c1b5f",
-  "d": "2026-11-16"
+  "h": "a904cd212d447a9a",
+  "d": "2026-11-23"
  },
  "models/ornith-1-5-9b.html": {
-  "h": "8bedc13356e81e89",
-  "d": "2026-11-16"
+  "h": "be85c2e312fedc77",
+  "d": "2026-11-23"
  },
  "models/popular.html": {
-  "h": "a443cc5c54352d98",
-  "d": "2026-11-16"
+  "h": "bdf0878b21d1152e",
+  "d": "2026-11-23"
  },
  "models/qwen3-5-4b.html": {
-  "h": "ecb13241962f4e9e",
-  "d": "2026-11-16"
+  "h": "6e70afc57aaae34a",
+  "d": "2026-11-23"
  },
  "models/qwen3-5-9b.html": {
-  "h": "8e95bfb87adf7d91",
-  "d": "2026-11-16"
+  "h": "339690e222f92fc4",
+  "d": "2026-11-23"
  },
  "models/qwen3-6-27b.html": {
-  "h": "ac9bba338bd49382",
-  "d": "2026-11-16"
+  "h": "d81f19cf3c7e8a8b",
+  "d": "2026-11-23"
  },
  "models/qwen3-6-35b-a3b.html": {
-  "h": "edee4ff183cf9c4e",
-  "d": "2026-11-16"
+  "h": "3755ea3790dd4140",
+  "d": "2026-11-23"
  },
  "models/qwen3-8-27b.html": {
-  "h": "22e6bea070f2359f",
-  "d": "2026-11-16"
+  "h": "9120ea352015eba9",
+  "d": "2026-11-23"
  },
  "models/qwen3-8-flash-next.html": {
-  "h": "0f1c6e7e1f4d5da6",
-  "d": "2026-11-16"
+  "h": "2e07711323ef26f5",
+  "d": "2026-11-23"
  },
  "models/qwen3-coder-30b-a3b.html": {
-  "h": "2d5b92b90838b3c1",
-  "d": "2026-11-16"
+  "h": "224884dc3255d095",
+  "d": "2026-11-23"
  },
  "models/qwen3-vl-8b.html": {
-  "h": "232ed8566063c518",
-  "d": "2026-11-16"
+  "h": "df4d9db6d9965ea7",
+  "d": "2026-11-23"
  },
  "models/ripple-65b-preview.html": {
-  "h": "d89523b3d49c1209",
-  "d": "2026-11-16"
+  "h": "1474a5f75b244200",
+  "d": "2026-11-23"
  },
  "submit.html": {
   "h": "81a3726ba575b704",
   "d": "2026-11-11"
  },
  "vram/128gb.html": {
-  "h": "a9e579538ac0c885",
-  "d": "2026-11-11"
+  "h": "fefd76b051cbf76b",
+  "d": "2026-11-23"
  },
  "vram/12gb.html": {
-  "h": "a00191b35b8c2c2c",
-  "d": "2026-11-16"
+  "h": "840cbfd434b327db",
+  "d": "2026-11-23"
  },
  "vram/16gb.html": {
-  "h": "99b995cfb1e85b75",
-  "d": "2026-11-16"
+  "h": "dcfadffe7179ab25",
+  "d": "2026-11-23"
  },
  "vram/192gb.html": {
-  "h": "f27cc9626bd43db1",
-  "d": "2026-11-11"
+  "h": "40f5d9d5b51e3a88",
+  "d": "2026-11-23"
  },
  "vram/24gb.html": {
-  "h": "97d7cf3c6424edd5",
-  "d": "2026-11-16"
+  "h": "e69a3c99044b8c90",
+  "d": "2026-11-23"
  },
  "vram/256gb.html": {
-  "h": "7bf5c783cf00bff2",
-  "d": "2026-11-11"
+  "h": "8a3b80a5c17a4df9",
+  "d": "2026-11-23"
  },
  "vram/32gb.html": {
-  "h": "fba6f2c135366710",
-  "d": "2026-11-11"
+  "h": "39b0a317c38425c8",
+  "d": "2026-11-23"
  },
  "vram/48gb.html": {
-  "h": "85129f237ae19313",
-  "d": "2026-11-11"
+  "h": "682d8914e37e4e3c",
+  "d": "2026-11-23"
  },
  "vram/512gb.html": {
-  "h": "601127a5b8b6619d",
-  "d": "2026-11-11"
+  "h": "9c66550f6fa12a5b",
+  "d": "2026-11-23"
  },
  "vram/64gb.html": {
-  "h": "b5bab15133e4a4ea",
-  "d": "2026-11-11"
+  "h": "454196347683761d",
+  "d": "2026-11-23"
  },
  "vram/8gb.html": {
-  "h": "ee7ba1bd0d36db88",
-  "d": "2026-11-16"
+  "h": "8c5ece4c5c509c4f",
+  "d": "2026-11-23"
  },
  "vram/96gb.html": {
-  "h": "32ff0e1d3bc7be90",
-  "d": "2026-11-11"
+  "h": "b0fb60946b2099d2",
+  "d": "2026-11-23"
  },
  "vram/index.html": {
-  "h": "f7c925fbfd8d2bfc",
-  "d": "2026-11-11"
+  "h": "e0dd738aac4f0bbc",
+  "d": "2026-11-23"
  }
 }

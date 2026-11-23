@@ -25,7 +25,7 @@ BASE = 'https://www.localscore.ai'
 UA = 'llm-advisor-research/0.1 (polite low-rate fetch of public pages; non-commercial research prototype; respects 403/429)'
 DELAY = 1.5
 REFRESH = '--refresh' in sys.argv
-TODAY = time.strftime('%Y-%m-%d')
+TODAY = os.environ.get('LOCALSCORE_CACHE_DATE') or time.strftime('%Y-%m-%d')  # set to the original fetch date when rebuilding from the cache (e.g. LocalScore unreachable), so dates stay honest
 _last = [0.0]
 
 def get(path):

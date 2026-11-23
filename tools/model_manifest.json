@@ -427,6 +427,19 @@
         "chat"
       ],
       "vision": false
+    },
+    {
+      "id": "thinkingmachines/Inkling-2-Mini",
+      "name": "Inkling 2 Mini",
+      "gguf": "bartowski/thinkingmachines_Inkling-2-Mini-GGUF",
+      "active_b": 5.4,
+      "moe": true,
+      "tags": [
+        "chat",
+        "coding"
+      ],
+      "vision": true,
+      "active_source": "model card text: \"26.4B, 3.4B active\" and \"each extra pass through the looped layers adds about 1.0B effective active parameters. Since the model runs with three passes, there are 5.4B effective active parameters per token.\" 5.4B used because the looped layers' weights are read once per pass."
     }
   ]
 }

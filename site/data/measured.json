@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16",
+ "generated": "2026-11-23",
  "entries": {
   "rtx-5090": [
    {
@@ -34,7 +34,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-16"
+    "latest": "2026-11-22"
    },
    {
     "model": "Gemma 4 12B",
@@ -2129,7 +2129,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-16"
+    "latest": "2026-11-22"
    },
    {
     "model": "Gemma 4 12B",
@@ -2793,7 +2793,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-16"
+    "latest": "2026-11-22"
    },
    {
     "model": "Gemma 4 12B",
@@ -3336,7 +3336,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-16"
+    "latest": "2026-11-22"
    },
    {
     "model": "Gemma 4 12B",
@@ -3725,7 +3725,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-16"
+    "latest": "2026-11-22"
    },
    {
     "model": "Gemma 4 12B",
@@ -5211,7 +5211,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-16"
+    "latest": "2026-11-22"
    },
    {
     "model": "nemotron_h_moe 31B.A3.5B",
@@ -7084,7 +7084,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-16"
+    "latest": "2026-11-22"
    },
    {
     "model": "gemma3 27B",
@@ -7287,7 +7287,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-16"
+    "latest": "2026-11-22"
    },
    {
     "model": "Meta Llama 3.1 8B Instruct",
@@ -7408,7 +7408,7 @@
      "Vulkan"
     ],
     "engine": "llama.cpp",
-    "latest": "2026-11-16"
+    "latest": "2026-11-22"
    },
    {
     "model": "Gemma 4 12B",

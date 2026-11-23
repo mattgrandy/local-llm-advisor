@@ -1,5 +1,5 @@
 {
- "rows_total": 9729,
+ "rows_total": 9743,
  "dropped_dup_of_scoreboard": 425,
  "dropped_author_flagged_invalid": 2,
  "dropped_nonpositive": 0,
@@ -11,7 +11,7 @@
   "discussion-15021-scoreboard-tables": 46,
   "discussion-15021-comments": 451,
   "discussion-10879-scoreboard-tables": 234,
-  "discussion-10879-comments": 1462,
+  "discussion-10879-comments": 1476,
   "discussion-16578-body": 0,
   "discussion-16578-comments": 318,
   "discussion-23659-body": 28,
@@ -41,7 +41,7 @@
   "llamacpp-discussion-15021-scoreboard": 46,
   "llamacpp-discussion-15021-comments": 412,
   "llamacpp-discussion-10879-scoreboard": 234,
-  "llamacpp-discussion-10879-comments": 1264,
+  "llamacpp-discussion-10879-comments": 1278,
   "llamacpp-discussion-16578-comments": 318,
   "llamacpp-discussion-23659-body": 28,
   "llamacpp-benches-dgx-spark": 138,
@@ -82,10 +82,10 @@
   },
   "discussion-10879": {
    "title": "Performance of llama.cpp with Vulkan",
-   "comments_total": 804,
-   "replies_included_in_comment_list": 487,
-   "top_level": 317,
-   "comments_with_bench_tables": 399
+   "comments_total": 808,
+   "replies_included_in_comment_list": 489,
+   "top_level": 319,
+   "comments_with_bench_tables": 401
   },
   "discussion-16578": {
    "title": "Performance of llama.cpp on NVIDIA DGX Spark",
@@ -143,8 +143,8 @@
   }
  },
  "rows_with_hw_id": 2328,
- "rows_device_unknown": 747,
- "generated": "2026-11-16 09:20 MST",
+ "rows_device_unknown": 759,
+ "generated": "2026-11-23 09:24 MST",
  "localscore": {
   "rows": 1783,
   "model_page_rows": 1773,
@@ -153,7 +153,7 @@
   "retrieved": "2026-11-16"
  },
  "pass2": {
-  "date": "2026-11-16",
+  "date": "2026-11-23",
   "new_rows": 2450,
   "by_source": {
    "llamacpp-discussion-15396": 942,

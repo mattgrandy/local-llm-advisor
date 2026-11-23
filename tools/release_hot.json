@@ -135,6 +135,26 @@
       "hw": "macbook-pro-m5-max-128gb",
       "model": "ricursiveAI/Ripple-65B-Preview",
       "added": "2026-11-09"
+    },
+    {
+      "hw": "rtx-4090-24gb",
+      "model": "thinkingmachines/Inkling-2-Mini",
+      "added": "2026-11-23"
+    },
+    {
+      "hw": "rtx-3090-24gb",
+      "model": "thinkingmachines/Inkling-2-Mini",
+      "added": "2026-11-23"
+    },
+    {
+      "hw": "rtx-5090-32gb",
+      "model": "thinkingmachines/Inkling-2-Mini",
+      "added": "2026-11-23"
+    },
+    {
+      "hw": "macbook-pro-m6-32gb",
+      "model": "thinkingmachines/Inkling-2-Mini",
+      "added": "2026-11-23"
     }
   ]
 }

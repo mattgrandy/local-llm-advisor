@@ -54,6 +54,14 @@ def kv_from_config(c):
             per = t["hidden_size"] * t["conv_L_cache"] * 4
             lin_layers, lin_bytes = nconv, nconv * per
             lin_note = "Short-convolution (LFM2/LFM3) layers keep a tiny fixed-size state (does not grow with context); computed from config.json hidden_size and conv_L_cache."
+    elif t.get("loop_config") and t.get("local_layer_ids") is not None:  # looped transformer (Inkling 2 inkling2_loop): layers core_start..core_end-1 run num_passes times, each pass with its own KV cache
+        lc = t["loop_config"]; local = set(t["local_layer_ids"])
+        passes = [lc["num_passes"] if lc["core_start"] <= i < lc["core_end"] else 1 for i in range(L)]
+        full = sum(p for i, p in enumerate(passes) if i not in local)
+        swa = sum(p for i, p in enumerate(passes) if i in local)
+        loop_note = (f"Looped layers {lc['core_start']}-{lc['core_end'] - 1} run {lc['num_passes']} times per token and each pass keeps its own KV cache, "
+                     f"so the cache counts {sum(passes)} layer evaluations ({full} global, {swa} sliding-window) for {L} physical layers; computed from config.json loop_config and local_layer_ids. "
+                     "The small fixed-size short-convolution state is not counted.")
     else:
         full, swa = L, 0
     out = {"layers": L, "full_layers": full,
@@ -66,6 +74,11 @@ def kv_from_config(c):
         out["kv_shared_layers"] = shared
     if swa:
         out.update({"swa_layers": swa, "swa_kv_heads": kvh, "swa_head_dim": hd, "window": t.get("sliding_window")})
+    if t.get("loop_config") and t.get("local_layer_ids") is not None:
+        out["loop_note"] = loop_note
+        if not t.get("sliding_window") and t.get("sliding_window_size"): out["window"] = t["sliding_window_size"]
+        if t.get("swa_num_key_value_heads"): out["swa_kv_heads"] = t["swa_num_key_value_heads"]
+        if t.get("swa_head_dim"): out["swa_head_dim"] = t["swa_head_dim"]
     if lin_layers:
         out.update({"linear_layers": lin_layers, "linear_state_gb": round(lin_bytes / 1e9, 4), "linear_note": lin_note})
     return out
@@ -108,7 +121,7 @@ def main():
         rec = {"id": m["id"], "name": m["name"],
                "params_b": round(total / 1e9, 2) if total else None,
                "moe": m["moe"], "tags": m["tags"], "vision": m["vision"],
-               "license": lic, "context_max": text_cfg(cfg).get("max_position_embeddings"),
+               "license": lic, "context_max": text_cfg(cfg).get("max_position_embeddings") or text_cfg(cfg).get("model_max_length"),
                "kv": kv_from_config(cfg), "gguf_repo": m["gguf"], "quants": q,
                "source_url": f"https://huggingface.co/{m['id']}",
                "gguf_source_url": f"https://huggingface.co/{m['gguf']}",

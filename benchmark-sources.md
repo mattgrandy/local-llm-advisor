@@ -76,3 +76,6 @@ Used: witcheer/rtx-5090-benchmarks (HF, MIT), iBlessi/rtx-5080-llm-throughput (H
 
 ## Update 2026-11-16
 Added: tristanbes/m5-ultra-llm-bench (HF dataset, CC-BY-4.0; Mac Studio M5 Ultra 80-core GPU, 256 GB; `results.jsonl`). Ingested by `tools/ingest_more.py` (`m5ultra()`, source id `hf-tristanbes-m5-ultra-llm-bench`): llama.cpp rows at prompt 512 only, generation at depth 0 (llama-bench-defaults rows use `decode_tps`; matched -ub 2048 rows use `decode_tps_depth0`); rows marked "superseded" skipped. MLX rows not ingested (mlx_lm.benchmark decodes right after the prompt, i.e. at depth). Long-context (`results_long.jsonl`) and speculative (`results_spec.jsonl`) files not used yet; the long-context file could later feed `tools/calibrate_depth.py`. 17 rows; 9 measured entries on m5-ultra; M5 Ultra calibration 0.683 (n=11).
+
+## Update 2026-11-23
+Re-pulled only llama.cpp discussion #10879 (Vulkan scoreboard; the only tracked thread whose `updated_at` changed since Nov 16, checked with the GitHub API). LocalScore returned HTTP 402 for every page (site-wide, including `/`); per policy not retried or worked around. LocalScore rows rebuilt from the Nov 16 cache with `LOCALSCORE_CACHE_DATE=2026-11-16` so their dates stay honest. tristanbes/m5-ultra-llm-bench unchanged since 2026-10-30 (`results_long.jsonl` still not ingested).

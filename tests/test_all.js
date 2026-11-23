@@ -87,9 +87,9 @@ assert(Sub.issueUrl({ github_issue: { repo: "me/repo" } }, v.clean).startsWith("
   }
   const at1m = A.recommend(big, dd, { use: "all", ctx: 1000000, kvq: "f16" });
   const ids1m = at1m.results.map(p => p.model.id).sort(); console.log("models at 1M on M5 Ultra 512GB:", ids1m.join(", "));
-  assert.deepStrictEqual(ids1m, ["Qwen/Qwen3-Coder-30B-A3B-Instruct", "Qwen/Qwen3-VL-8B-Instruct", "Qwen/Qwen3.5-4B", "Qwen/Qwen3.5-9B", "Qwen/Qwen3.6-27B", "Qwen/Qwen3.6-35B-A3B", "Qwen/Qwen3.8-27B", "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16", "ricursiveAI/Ripple-65B-Preview"]);
+  assert.deepStrictEqual(ids1m, ["Qwen/Qwen3-Coder-30B-A3B-Instruct", "Qwen/Qwen3-VL-8B-Instruct", "Qwen/Qwen3.5-4B", "Qwen/Qwen3.5-9B", "Qwen/Qwen3.6-27B", "Qwen/Qwen3.6-35B-A3B", "Qwen/Qwen3.8-27B", "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16", "ricursiveAI/Ripple-65B-Preview", "thinkingmachines/Inkling-2-Mini"]);
   assert(at1m.excluded.some(e => e.model.id === "openai/gpt-oss-120b" && e.native === 131072) && at1m.excluded.every(e => !e.model.context_extended));
-  // 1M is beyond the native window of every model except those whose own config allows >= 1M (Nemotron 3.5 Super VL: 1,048,576; Ripple 65B Preview: 2,097,152 in config, card says 1M): those run native, no YaRN
+  // 1M is beyond the native window of every model except those whose own config allows >= 1M (Nemotron 3.5 Super VL: 1,048,576; Ripple 65B Preview: 2,097,152 in config, card says 1M; Inkling 2 Mini: model_max_length 1,048,576): those run native, no YaRN
   assert(at1m.results.every(p => p.model.context_max >= 1000000 ? p.ctxStatus === "native" && !/rope-scaling/.test(p.command.llama) : p.ctxStatus === "extended" && p.command.llama.includes("--rope-scale 4")));
   assert(at1m.results.some(p => p.ctxStatus === "native") && at1m.results.filter(p => p.ctxStatus === "extended").length === 7);
   const at512 = A.recommend(big, dd, { use: "all", ctx: 524288, kvq: "f16" }); assert(at512.results.every(p => p.model.context_max >= 524288 ? p.ctxStatus === "native" && !/rope-scaling/.test(p.command.llama) : /--rope-scale 2 /.test(p.command.llama)));
@@ -357,7 +357,7 @@ assert(Sub.issueUrl({ github_issue: { repo: "me/repo" } }, v.clean).startsWith("
 {
   const fsP = require("fs"), pP = require("path"), S2 = pP.join(__dirname, "..", "site"), rdP = f => fsP.readFileSync(pP.join(S2, f), "utf8");
   const ms = data.models.models, slugify = require("../tools/generate_seo_pages.js").slugify;
-  assert(ms.length >= 25 && ms.length <= 32, "model list is 25-32 models: " + ms.length);
+  assert(ms.length >= 25 && ms.length <= 40, "model list is 25-40 models: " + ms.length); // upper bound raised from 32 on 2026-11-23 (Inkling 2 Mini = 33rd model)
   assert.strictEqual(new Set(ms.map(m => m.id)).size, ms.length, "no duplicate model ids");
   for (const m of ms) {
     for (const k of ["source_url", "gguf_source_url", "license", "gguf_repo"]) assert(m[k], m.name + " has " + k);
